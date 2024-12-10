@@ -1,0 +1,45 @@
+{
+  "event_id": "275",
+  "claim": "Cyber collective 'ShadowPulse' utilizes novel malware 'Eclipse' to disrupt energy and telecommunications sectors across South America, marking a shift from their previously known cyber-espionage activities.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "ShadowPulse, a previously obscure cyber collective, has emerged on the global stage with a series of coordinated attacks against critical infrastructure in South America. Utilizing a newly developed malware, dubbed 'Eclipse', the group has successfully infiltrated and caused significant disruptions within the energy and telecommunications sectors. Cybersecurity firm CyberDefend has traced the origins of Eclipse to late 2023, noting its sophisticated encryption and self-propagation mechanisms. Unlike typical malware, Eclipse is designed to target industrial control systems (ICS) and operational technology (OT) environments, indicating ShadowPulse's strategic pivot towards infrastructure sabotage. The malware facilitates remote access, data exfiltration, and, most alarmingly, the ability to manipulate physical processes within targeted facilities. This capability poses a direct threat to public safety and national security. Initial investigations suggest that Eclipse is distributed through spear-phishing campaigns and supply chain compromises, exploiting vulnerabilities in software commonly used by the targeted industries. Once inside a network, Eclipse employs a variety of evasion techniques to remain undetected while it maps out the network infrastructure and identifies key systems for disruption. CyberDefend's analysis highlights Eclipse's modular architecture, allowing ShadowPulse operators to customize the malware with additional payloads tailored to specific targets. This adaptability, combined with the malware's focus on ICS and OT environments, marks a significant evolution in ShadowPulse's operational capabilities. The group's shift from cyber-espionage to actively targeting critical infrastructure underscores the growing threat posed by non-state cyber actors to global security and stability. CyberDefend urges organizations within the energy and telecommunications sectors to review their cybersecurity protocols, particularly those related to supply chain security and phishing awareness, to mitigate the risk of Eclipse-related intrusions.",
+  "reports": [
+    {
+      "link": "https://www.cyberdefend.com/research/eclipse-malware-shadowpulse/",
+      "content": "CyberDefend's latest threat intelligence report unveils the emergence of 'Eclipse', a highly sophisticated malware developed by the cyber collective ShadowPulse. Initially detected in a series of attacks targeting South America's energy and telecommunications sectors, Eclipse represents a significant shift in ShadowPulse's operational focus. The malware is specifically engineered to compromise industrial control systems (ICS) and operational technology (OT), highlighting the group's intent to disrupt critical infrastructure. Eclipse's capabilities include remote system access, data exfiltration, and the manipulation of physical processes, posing a severe threat to public safety. The malware's distribution methods, spear-phishing and supply chain compromises, exploit vulnerabilities in software used within the targeted sectors. Eclipse's evasion techniques and modular architecture enable it to remain undetected while conducting reconnaissance and executing targeted disruptions. This report underscores the urgent need for enhanced cybersecurity measures within critical infrastructure industries to counter the threat posed by Eclipse and similar malware.",
+      "domain": "www.cyberdefend.com",
+      "tokenized": [
+        {
+          "sent": "CyberDefend's latest threat intelligence report unveils the emergence of 'Eclipse', a highly sophisticated malware developed by the cyber collective ShadowPulse.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Initially detected in a series of attacks targeting South America's energy and telecommunications sectors, Eclipse represents a significant shift in ShadowPulse's operational focus.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The malware is specifically engineered to compromise industrial control systems (ICS) and operational technology (OT), highlighting the group's intent to disrupt critical infrastructure.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Eclipse's capabilities include remote system access, data exfiltration, and the manipulation of physical processes, posing a severe threat to public safety.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The malware's distribution methods, spear-phishing and supply chain compromises, exploit vulnerabilities in software used within the targeted sectors.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Eclipse's evasion techniques and modular architecture enable it to remain undetected while conducting reconnaissance and executing targeted disruptions.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "This report underscores the urgent need for enhanced cybersecurity measures within critical infrastructure industries to counter the threat posed by Eclipse and similar malware.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

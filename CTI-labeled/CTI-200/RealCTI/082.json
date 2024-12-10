@@ -1,0 +1,141 @@
+{
+    "event_id": "082",
+    "claim": "Molerats using three new malware variants to conduct espionage in the Middle East.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Security researchers observed a politically motivated APT called “Molerats” using three new malware variants to conduct espionage in the Middle East.On December 9, Cybereason published a report that revealed that they had uncovered a new attack campaign launched by Molerats. This operation cohered with previous attacks launched by the APT in that it used political events in the Middle East as lures. In particular, the campaign focused on the ongoing normalization process between Israel and its Arab neighbors. One of the phishing documents, a PDF file titled “MBS-Israel,” explored that development by referencing the peace talks between Israeli Prime Minister Benjamin Netanyahu and His Royal Highness Mohammed bin Salman, Saudi Crown Prince. The PDF document instructed the recipient to download password-protected archives that claimed to contain the contents of those peace talks. At the time of discovery, Molerats was using Dropbox and Google Drive to host those password-protected archives at: https://www.dropbox[dot]com/s/r81t6y7yr8w2ymc/MOM.zip?dl=1 and https://drive.google[dot]com/uc?export=download&id=1NnMlUPwkxK4_wAJwrqxqBAfdKCPDxyeh Both archives arrived with several executables whose names referenced the talks.One of those executables, “Details Crown Prince held 'secret meeting' with Israeli PM.Nov.23.20.MoM.exe,” was responsible for infecting the victim’s computer with SharpStage. The first of the three new malware variants detected by Cybereason Nocturnus, SharpStage is a .NET malware with backdoor capabilities. Cybereason’s researchers identified three variants of the SharpStage threat. Those three versions registered compilation timestamps between October 4 and November 29, 2020. They also shared similar functionality in terms of code modularity, obfuscation and persistence. Upon successful installation, SharpStage enables the attackers to capture snapshots of a victim’s screen, download and execute additional files and specifically check for the presence of Arabic on the infected machine to avoid executing on computers outside of its purview. The backdoor also came equipped with a Dropbox API. This feature enabled SharpStage to communicate with Dropbox using a token in order to download and exfiltrate stolen data. SharpStage registered the detection rate of 1/70 with VirusTotal at the time of discovery.The second executable, “Talking points for meeting.exe,” infected the machine with a sample of the DropBook backdoor. Similar to SharpStage, DropBook executed on a machine only if the infected machine had configured the Arabic language. But this malware also came with another precondition: the machine needed to have WinRAR perhaps in order for a later stage of the attack to work. DropBook also mimicked SharpStage by using DropBox for file uploads and downloads. The threat didn’t stop there with its abuse of legitimate services, however. It also used posts on Facebook and note-taking application Simplenote to receive a Dropbox token as well as command-and-control (C2) instructions from the attackers. Assaf Dahan, Sr. Director, Head of Threat Research, explained how this technique helped the attackers to evade detection: Molerats created fake Facebook accounts that specifically for this campaign, those accounts are effectively being used by the group for command-and-control purposes by sending instructions to the malware using Facebook posts. This is a clever way of hiding in plain sight, abusing the trust given to a legitimate platform such as Facebook. This helps the group to remain under the radar. By using Facebook and Simplenote as communication channels, the attackers could proceed to drop additional threats onto the infected computer. Those secondary malware strains included the Quasar RAT and SharpStage.DropBook also served as a vehicle through which attackers could install the MoleNet Downloader, a tool which has been in active development since at least 2019. Heavily obfuscated and written in .NET, the MoleNet Downloader enabled the attackers to profile the OS of the infected machine and submit the resulting information to the C2. The malware also came with the ability to download additional payloads from the C2 and to establish persistence using PowerShell.After analyzing the attack campaign, Cybereason Nocturnus reported the abuses it had documented to Google, Facebook, Dropbox and Simplenote. Some of those vendors responded to the security team and informed them that they were launching an investigation to determine what had happened. Others had not yet responded at the time of this writing. Overall, Dahan feels that this new campaign helps to indicate the general direction in which Molerats as an APT is moving: We see constant changes and developments and an increased level of sophistication. The group invests time and resources to try to keep the activity under the radar and evade detection. They are doing a good job with evading automatic sandbox analysis by checking for Arabic language settings. Otherwise, the malware won’t run. We estimate that the abuse of legitimate cloud platforms and social media will only increase, as attackers see the value in blending in and hiding in plain sight. More information about some of Molerats’ earlier attack activity is available here and here. Open the chatbot on the lower right-hand side of this blog to download your copy of the Indicator's of Compromise, which includes C2 Domains, IP addresses, Docx files SHA-1 hashes, and Msi files.\n\n\n",
+    "reports": [
+        {
+            "link": "https://threatpost.com/molerats-apt-trojan-cyberespionage-campaign/178305/",
+            "content": "Known Palestinian threat actor MoleRats is likely behind a recent malicious email campaign targeting Middle Eastern governments, foreign-policy think tanks and a state-affiliated airline with a new intelligence-gathering trojan dubbed NimbleMamba, researchers said. MoleRats is part of the Gaza Cybergang, an Arabic speaking, politically motivated collective of interrelated threat groups actively targeting the Middle East and North Africa. Researchers from Proofpoint have spotted a new Middle East-targeted phishing campaign that delivers a novel malware dubbed NimbleMamba. Researchers from Proofpoint said they have observed a spear-phishing campaign using multiple vectors since November that they believe is the work of TA402, more commonly known as MoleRats and linked to the Palestinian Territories, according to a report posted online Tuesday. Researchers from Zscaler have already observed MoleRats targeting prominent Palestinians, as well as activists and journalists in Turkey, with spyware in a previously identified attack in January. That campaign used malicious files doctored up to look like legitimate content related to the Israeli-Palestine conflict.",
+            "domain": "threatpost.com",
+            "tokenized": [
+                {
+                    "sent": "Known Palestinian threat actor MoleRats is likely behind a recent malicious email campaign targeting Middle Eastern governments, foreign-policy think tanks and a state-affiliated airline with a new intelligence-gathering trojan dubbed NimbleMamba, researchers said.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "MoleRats is part of the Gaza Cybergang, an Arabic speaking, politically motivated collective of interrelated threat groups actively targeting the Middle East and North Africa.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Researchers from Proofpoint have spotted a new Middle East-targeted phishing campaign that delivers a novel malware dubbed NimbleMamba.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Researchers from Proofpoint said they have observed a spear-phishing campaign using multiple vectors since November that they believe is the work of TA402, more commonly known as MoleRats and linked to the Palestinian Territories, according to a report posted online Tuesday.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Researchers from Zscaler have already observed MoleRats targeting prominent Palestinians, as well as activists and journalists in Turkey, with spyware in a previously identified attack in January.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "That campaign used malicious files doctored up to look like legitimate content related to the Israeli-Palestine conflict.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.sentinelone.com/labs/gaza-cybergang-unified-front-targeting-hamas-opposition/",
+            "content": "A closer look at the implementation of the BarbWire variants observed as part of Operation Bearded Barbie reveal relations to a malware strain used as part of the 2018 Big Bang campaign, which was considered an evolution of a 2017 campaign targeting Palestinian individuals and entities. Based on our followup investigation into recent 2023 TA402 activity targeting Middle Eastern government entities, we highlight concrete overlaps in malware used by TA402 and a lesser-known threat actor named WIRTE. Being a threat actor of interest in the context of the Israel-Hamas war, we track Gaza Cybergang as a group composed of several adjacent sub-groups observed to share victims, TTPs, and use related malware strains since 2018. In the midst of Gaza Cybergang activity spanning from late 2022 until late 2023, we observed that the group introduced a new backdoor to their malware arsenal used in targeting primarily Palestinian entities. Our analysis of recent and historical malware used in Gaza Cybergang operations highlights new relations between activities that have taken place years apart – the Big Bang campaign (2018) and Operation Bearded Barbie (2022). The malware is typically delivered through archive files or weaponized Office documents on Palestinian matters, written in English or Arabic.",
+            "domain": "www.sentinelone.com",
+            "tokenized": [
+                {
+                    "sent": "A closer look at the implementation of the BarbWire variants observed as part of Operation Bearded Barbie reveal relations to a malware strain used as part of the 2018 Big Bang campaign, which was considered an evolution of a 2017 campaign targeting Palestinian individuals and entities.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Based on our followup investigation into recent 2023 TA402 activity targeting Middle Eastern government entities, we highlight concrete overlaps in malware used by TA402 and a lesser-known threat actor named WIRTE.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Being a threat actor of interest in the context of the Israel-Hamas war, we track Gaza Cybergang as a group composed of several adjacent sub-groups observed to share victims, TTPs, and use related malware strains since 2018.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In the midst of Gaza Cybergang activity spanning from late 2022 until late 2023, we observed that the group introduced a new backdoor to their malware arsenal used in targeting primarily Palestinian entities.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Our analysis of recent and historical malware used in Gaza Cybergang operations highlights new relations between activities that have taken place years apart – the Big Bang campaign (2018) and Operation Bearded Barbie (2022).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The malware is typically delivered through archive files or weaponized Office documents on Palestinian matters, written in English or Arabic.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.proofpoint.com/us/blog/threat-insight/new-ta402-molerats-malware-targets-governments-middle-east/",
+            "content": "Following a busy 2020 for TA402, Proofpoint researchers identified new and highly targeted email threat campaigns impacting government organizations in the Middle East and entities with diplomatic relationships in the region. In June campaigns, TA402 leveraged a PDF attachment with one or multiple geofenced URLs leading to password-protected archives that contained the malware. Proofpoint researchers identified a malware called LastConn distributed by TA402, a threat actor also known as Molerats. Proofpoint researchers were unable to determine the exact mechanisms for initiating links to the hosted malware, but the PDF may only direct the victim to the files if the source IP address belongs to the targeted countries in the Middle East. The malware targeted government institutions in the Middle East and global government organizations associated with geopolitics in the region. The password protection of the malicious archive and the geofenced delivery method are two easy anti-detection mechanisms threat actors can use to bypass automatic analysis products.",
+            "domain": "www.proofpoint.com",
+            "tokenized": [
+                {
+                    "sent": "Following a busy 2020 for TA402, Proofpoint researchers identified new and highly targeted email threat campaigns impacting government organizations in the Middle East and entities with diplomatic relationships in the region.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In June campaigns, TA402 leveraged a PDF attachment with one or multiple geofenced URLs leading to password-protected archives that contained the malware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Proofpoint researchers identified a malware called LastConn distributed by TA402, a threat actor also known as Molerats.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Proofpoint researchers were unable to determine the exact mechanisms for initiating links to the hosted malware, but the PDF may only direct the victim to the files if the source IP address belongs to the targeted countries in the Middle East.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The malware targeted government institutions in the Middle East and global government organizations associated with geopolitics in the region.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The password protection of the malicious archive and the geofenced delivery method are two easy anti-detection mechanisms threat actors can use to bypass automatic analysis products.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://revolutionaries.zscaler.com/insights/threatlabz-february-2022-report-molerats-apt-attacks-formbook-rebrands-xloader-and/",
+            "content": "(Kudos to the Dropbox security team for taking down the attacker Dropbox accounts that were being used in this campaign for C2 activity and data exfiltration following our discovery.) Molerats APT group takes aim at Middle East political targets In December 2021, ThreatLabZ identified a new campaign involving macro-based Microsoft Office files circulating in Jordan. The malicious Office files allegedly being distributed by the Molerats group employ decoy files using themes related to geopolitical conflicts between Israel and Palestine. This past month, the Zscaler ThreatLabZ security research team has charted new espionage activity from the Molerats APT group, tracked the Xloader credential-stealing malware, and continued to apply zero trust countermeasures against Log4j zero-day exploits. ThreatLabz observed several similarities in the C2 communication and .NET payload between this campaign and previous campaigns attributed to the Molerats APT group. When triggered on a compromised Windows machine, it issues a PowerShell command via cmd.exe to run the “ConfuserEx” function to load a runtime module that turns out to be a backdoor, which eventually is responsible for data exfiltration using Dropbox APIs.",
+            "domain": "revolutionaries.zscaler.com",
+            "tokenized": [
+                {
+                    "sent": "(Kudos to the Dropbox security team for taking down the attacker Dropbox accounts that were being used in this campaign for C2 activity and data exfiltration following our discovery.)",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Molerats APT group takes aim at Middle East political targets In December 2021, ThreatLabZ identified a new campaign involving macro-based Microsoft Office files circulating in Jordan.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The malicious Office files allegedly being distributed by the Molerats group employ decoy files using themes related to geopolitical conflicts between Israel and Palestine.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This past month, the Zscaler ThreatLabZ security research team has charted new espionage activity from the Molerats APT group, tracked the Xloader credential-stealing malware, and continued to apply zero trust countermeasures against Log4j zero-day exploits.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "ThreatLabz observed several similarities in the C2 communication and .NET payload between this campaign and previous campaigns attributed to the Molerats APT group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "When triggered on a compromised Windows machine, it issues a PowerShell command via cmd.exe to run the “ConfuserEx” function to load a runtime module that turns out to be a backdoor, which eventually is responsible for data exfiltration using Dropbox APIs.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

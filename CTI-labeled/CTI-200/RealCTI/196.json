@@ -1,0 +1,140 @@
+{
+    "event_id": "196",
+    "claim": "HAFNIUM primarily targets entities in the US across a number of industry sectors, including infectious disease researchers, law firms, higher education institutions, defense contractors, policy think tanks, and NGOs.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "HAFNIUM primarily targets entities in the United States across a number of industry sectors, including infectious disease researchers, law firms, higher education institutions, defense contractors, policy think tanks, and NGOs. Microsoft Threat Intelligence Center (MSTIC) attributes this campaign with high confidence to HAFNIUM, a group assessed to be state-sponsored and operating out of China, based on observed victimology, tactics and procedures. HAFNIUM has previously compromised victims by exploiting vulnerabilities in internet-facing servers, and has used legitimate open-source frameworks, like Covenant, for command and control. Once they’ve gained access to a victim network, HAFNIUM typically exfiltrates data to file sharing sites like MEGA.In campaigns unrelated to these vulnerabilities, Microsoft has observed HAFNIUM interacting with victim Office 365 tenants. While they are often unsuccessful in compromising customer accounts, this reconnaissance activity helps the adversary identify more details about their targets’ environments. HAFNIUM operates primarily from leased virtual private servers (VPS) in the United States.",
+    "reports": [
+        {
+            "link": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Hafnium&n=1",
+            "content": "HAFNIUM has previously compromised victims by exploiting vulnerabilities in internet-facing servers, and has used legitimate open-source frameworks, like Covenant, for command and control.HAFNIUM operates primarily from leased virtual private servers (VPS) in the United States.HAFNIUM primarily targets entities in the United States across a number of industry sectors, including infectious disease researchers, law firms, higher education institutions, defense contractors, policy think tanks, and NGOs.In campaigns unrelated to these vulnerabilities, Microsoft has observed HAFNIUM interacting with victim Office 365 tenants.Once they’ve gained access to a victim network, HAFNIUM typically exfiltrates data to file sharing sites like MEGA.While they are often unsuccessful in compromising customer accounts, this reconnaissance activity helps the adversary identify more details about their targets’ environments.",
+            "domain": "apt.etda.or.th",
+            "tokenized": [
+                {
+                    "sent": "HAFNIUM has previously compromised victims by exploiting vulnerabilities in internet-facing servers, and has used legitimate open-source frameworks, like Covenant, for command and control.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "HAFNIUM operates primarily from leased virtual private servers (VPS) in the United States.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "HAFNIUM primarily targets entities in the United States across a number of industry sectors, including infectious disease researchers, law firms, higher education institutions, defense contractors, policy think tanks, and NGOs.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "In campaigns unrelated to these vulnerabilities, Microsoft has observed HAFNIUM interacting with victim Office 365 tenants.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "Once they’ve gained access to a victim network, HAFNIUM typically exfiltrates data to file sharing sites like MEGA.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "While they are often unsuccessful in compromising customer accounts, this reconnaissance activity helps the adversary identify more details about their targets’ environments.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/",
+            "content": "HAFNIUM has previously compromised victims by exploiting vulnerabilities in internet-facing servers, and has used legitimate open-source frameworks, like Covenant, for command and control.HAFNIUM operates primarily from leased virtual private servers (VPS) in the United States.HAFNIUM primarily targets entities in the United States across a number of industry sectors, including infectious disease researchers, law firms, higher education institutions, defense contractors, policy think tanks, and NGOsIn campaigns unrelated to these vulnerabilities, Microsoft has observed HAFNIUM interacting with victim Office 365 tenants.Microsoft is providing the following details to help our customers understand the techniques used by HAFNIUM to exploit these vulnerabilities and enable more effective defense against any future attacks against unpatched systems.Once they’ve gained access to a victim network, HAFNIUM typically exfiltrates data to file sharing sites like MEGA.",
+            "domain": "www.microsoft.com",
+            "tokenized": [
+                {
+                    "sent": "HAFNIUM has previously compromised victims by exploiting vulnerabilities in internet-facing servers, and has used legitimate open-source frameworks, like Covenant, for command and control.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "HAFNIUM operates primarily from leased virtual private servers (VPS) in the United States.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "HAFNIUM primarily targets entities in the United States across a number of industry sectors, including infectious disease researchers, law firms, higher education institutions, defense contractors, policy think tanks, and NGOs",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In campaigns unrelated to these vulnerabilities, Microsoft has observed HAFNIUM interacting with victim Office 365 tenants.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Microsoft is providing the following details to help our customers understand the techniques used by HAFNIUM to exploit these vulnerabilities and enable more effective defense against any future attacks against unpatched systems.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Once they’ve gained access to a victim network, HAFNIUM typically exfiltrates data to file sharing sites like MEGA.",
+                    "is_evidence": 1
+                }
+            ]
+        },
+        {
+            "link": "https://darktrace.com/blog/hafnium-cyber-attack-neutralized-by-ai-in-december-2020",
+            "content": "All the activity took place in early December 2020, almost three months before Microsoft released information about the Hafnium campaign.Darktrace AI appears to have detected a Hafnium attack against vulnerable Exchange servers in December 2020, three months before the zero-day was identified.In this blog, we will analyze the attack to aid organizations in their ongoing investigations, and to raise awareness that the Hafnium campaign may have been active for longer than previously disclosed.Nevertheless, over the period of one week, the Hafnium intrusion was in the top five incidents highlighted in Cyber AI Analyst.On March 2, 2021, Microsoft disclosed an ongoing campaign by the Hafnium threat actor group leveraging Exchange server zero-days.The threat actor used many of the same techniques that were observed in the later Hafnium attacks, including the deployment of the low-activity China Chopper web shell, quickly followed by post-exploitation activity – attempting to move laterally and spread to critical devices in the network.",
+            "domain": "darktrace.com",
+            "tokenized": [
+                {
+                    "sent": "All the activity took place in early December 2020, almost three months before Microsoft released information about the Hafnium campaign.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Darktrace AI appears to have detected a Hafnium attack against vulnerable Exchange servers in December 2020, three months before the zero-day was identified.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In this blog, we will analyze the attack to aid organizations in their ongoing investigations, and to raise awareness that the Hafnium campaign may have been active for longer than previously disclosed.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Nevertheless, over the period of one week, the Hafnium intrusion was in the top five incidents highlighted in Cyber AI Analyst.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "On March 2, 2021, Microsoft disclosed an ongoing campaign by the Hafnium threat actor group leveraging Exchange server zero-days.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The threat actor used many of the same techniques that were observed in the later Hafnium attacks, including the deployment of the low-activity China Chopper web shell, quickly followed by post-exploitation activity – attempting to move laterally and spread to critical devices in the network.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.bitdefender.com/blog/hotforsecurity/microsoft-issues-exchange-server-updates-for-four-0-day-vulnerabilities-used-by-chinese-hafnium-apt/",
+            "content": "Microsoft has revealed a new state threat actor, named Hafnium, that’s been exploiting previously unknown zero-day vulnerabilities in the on-premises Exchange Server software.Microsoft warned users that, now with the vulnerabilities exposed, the group will likely intensify its attacks and hit companies before they have a chance to patch up their infrastructure.Once the hackers are in, they create a web shell to control the compromised server remotely.The company attributed the campaign to a group they named HAFNIUM, which was assessed to be state-sponsored and operating out of China.Their methods are not unlike what’s been observed before as the group uses stolen credentials or undiscovered vulnerabilities to pose as legitimate users.“In the attacks observed, the threat actor used these vulnerabilities to access on-premises Exchange servers which enabled access to email accounts, and allowed installation of additional malware to facilitate long-term access to victim environments.”",
+            "domain": "www.bitdefender.com",
+            "tokenized": [
+                {
+                    "sent": "Microsoft has revealed a new state threat actor, named Hafnium, that’s been exploiting previously unknown zero-day vulnerabilities in the on-premises Exchange Server software.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Microsoft warned users that, now with the vulnerabilities exposed, the group will likely intensify its attacks and hit companies before they have a chance to patch up their infrastructure.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Once the hackers are in, they create a web shell to control the compromised server remotely.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The company attributed the campaign to a group they named HAFNIUM, which was assessed to be state-sponsored and operating out of China.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Their methods are not unlike what’s been observed before as the group uses stolen credentials or undiscovered vulnerabilities to pose as legitimate users.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“In the attacks observed, the threat actor used these vulnerabilities to access on-premises Exchange servers which enabled access to email accounts, and allowed installation of additional malware to facilitate long-term access to victim environments.”",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

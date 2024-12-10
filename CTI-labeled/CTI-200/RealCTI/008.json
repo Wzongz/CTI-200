@@ -1,0 +1,180 @@
+{
+    "event_id": "008",
+    "claim": "APT3 is a China-based threat group that researchers have attributed to China's Ministry of State Security.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "APT3 (aka Gothic Panda, Pirpi, Buckeye) is a China-based threat group that was first discovered in 2010. The group is linked to the Chinese Ministry of State Security (China's Intelligence Services) and held responsible for several popular cyber espionage campaigns, including Operation Clandestine Wolf (2015), Clandestine Fox (2014), and Double Tap (2014). The group is known to target countries like South Korea, Hong Kong, and the United States of America.APT3 has targeted organizations in various sectors, including Aerospace, Defense, Transportation, Telecommunications, Construction Engineering, and High Tech. In the initial years of its discovery, the group mostly targeted US-based organizations of strategic importance, like Moody's Analytics, Siemens AG, and Trimble, Inc. In 2015, the group shifted its focus from US victims to political organizations located in Hong Kong (because of upcoming Hong Kong’s 2016 elections). In March 2018, the Olympic Winter Games in Pyeongchang, South Korea, was hit by a cyber attack (OlympicDestroyer), that caused temporary disruption to IT systems, including the official Olympics website, Wi-Fi connections and display monitors. The numerous code fragments used in that cyber attack were uniquely linked to threat actor groups tracked as APT3, APT10, and APT12.The group is known to steal critical information from private organizations or government entities, to fulfill the larger Chinese political economic or military goals. The threat actors are interested in the exfiltration of essential government documents to gain a strategic and competitive advantage for the Chinese government and private organizations. For instance, at present when several ambitious projects of China are unfolding, like One Belt One Road (OBOR) projects, the APT3 could be seen targeting the project’s regional opponents.APT3 has a history of using browser-based exploits such as zero-days (e.g., Adobe Flash Player, Firefox, and Internet Explorer) to infiltrate inside the targeted network. For instance, in one of their cyber campaigns in April 2014 (Operation Clandestine Wolf), they exploited a now-patched vulnerability (CVE-2015-3113) in Adobe Flash Player 18.0.0.161. After successfully exploiting and infiltrating into a targeted host, they quickly dump credentials, move sideways to additional hosts, and install the custom backdoors (like RemoteCMD, OSInfo, and ShotPut). APT3 is also known to use spear-phishing emails with compressed executable attachment. The APT's command and control (CnC) infrastructure is hard to track and attribute, as there is little overlap across their campaigns (as it happened only once when the same domain was used in operation Clandestine Fox and Double Tap).APT3 utilizes a wide range of techniques and tools, including spearphishing attacks, zero-day exploits, as well as custom-built malware. The group also used variants of the sophisticated hacking tools connected to other popular groups, including the Equation Group.In 2016, three individuals responsible for purchasing APT3 domains for cyber-espionage campaigns were identified, named as Wu Yingzhuo, Dong Hao and Xia Lei. All three individuals had a long history of purchasing infrastructure used by APT3. Wu Yingzhuo and Dong were the major shareholders of a Chinese InfoSec company called the Guangzhou Boyu Information Technology Company, Ltd. (Boyusec). The Pentagon intelligence officials identified Boyusec as being a contractor for the Chinese Ministry of State Security (MSS). In Nov 2017, an indictment was unsealed in the USA against them.To thwart off cyber-attacks from threats like APT3, the organizations should deploy endpoint protection solutions with real-time intelligence and automated tactical threat intelligence exchange. Given the prevalence of attacks used by APT3 that exploit known vulnerabilities, rigorous patch management, and vulnerability assessments practices are a must. Combating APTs like this requires a combination of techniques and tools that ideally work in an orchestrated manner. Orchestration tools that allow real-time Threat Intel ingestion, analysis, correlation, dissemination and actioning through automated Playbooks can go a long way in tackling the nefarious designs of such APTs. Network monitoring can also help expose suspicious activities, like using network APT detection solutions can help detect custom malware used by APT3. The APT3 is also known to use spear-phishing, which could be prevented via giving proper training to IT professionals and employees with phishing simulations, tough policies and periodic refreshers that discourage unsafe behaviors.\n\n\n",
+    "reports": [
+        {
+            "link": "https://intrusiontruth.wordpress.com/2018/05/22/the-destruction-of-apt3/",
+            "content": "APT3, a Chinese cyber-espionage group, was exposed by a blog in April and May 2017. The blog linked APT3 to the Chinese Ministry of State Security (MSS) and their company, Boyusec. Boyusec's website went offline after the exposure, and they did not refute the analysis. The Information Security community corroborated the blog's findings, agreeing that Boyusec and MSS were behind APT3. Six months later, the US Justice Department unsealed indictments against Wu Yingzhuo, Dong Hao, and Xia Lei for computer hacking and theft of trade secrets. The indictments did not mention the Chinese government, but the charges were based on admissible evidence. Following the indictments, APT3 activity ceased, and Boyusec was reportedly disbanded. The episode demonstrates that shining a light on APT activities and exposing the individuals behind them can silence and dismantle such groups.",
+            "domain": "intrusiontruth.wordpress.com",
+            "tokenized": [
+                {
+                    "sent": "APT3, a Chinese cyber-espionage group, was exposed by a blog in April and May 2017.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The blog linked APT3 to the Chinese Ministry of State Security (MSS) and their company, Boyusec.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Boyusec's website went offline after the exposure, and they did not refute the analysis.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Information Security community corroborated the blog's findings, agreeing that Boyusec and MSS were behind APT3.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Six months later, the US Justice Department unsealed indictments against Wu Yingzhuo, Dong Hao, and Xia Lei for computer hacking and theft of trade secrets.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The indictments did not mention the Chinese government, but the charges were based on admissible evidence.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Following the indictments, APT3 activity ceased, and Boyusec was reportedly disbanded.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The episode demonstrates that shining a light on APT activities and exposing the individuals behind them can silence and dismantle such groups.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.darkreading.com/cyberattacks-data-breaches/apt3-threat-group-a-contractor-for-chinese-intelligence-agency/",
+            "content": "APT3, a hacker group active since 2010, has been identified as a contractor for the Chinese Ministry of State Security (MSS). Threat intelligence firm Recorded Future has linked APT3 directly to the Chinese government, operating under the guise of the Guangzhou Boyu Information Technology Company (Boyusec). MSS conducts cyber intelligence operations using non-intelligence institutions and cover companies, making attribution and response challenging. Recorded Future's investigation was prompted by the blog of “intrusiontruth,” which tracked APT3's command and control infrastructure and its connection to Boyusec shareholders. Recorded Future independently corroborated the link between APT3 and MSS, including Boyusec's partnership with the Guangdong Information Technology Security Evaluation Center, subordinate to an MSS-run organization. Boyusec's collaboration with Huawei raised concerns about potential backdoors for spying or network control. APT3 has operated for at least seven years, compromising corporate and government networks with impunity. Organizations victimized by APT3 should reassess the risk and losses associated with the intrusions, considering the MSS's larger goals.",
+            "domain": "www.darkreading.com",
+            "tokenized": [
+                {
+                    "sent": "APT3, a hacker group active since 2010, has been identified as a contractor for the Chinese Ministry of State Security (MSS).",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Threat intelligence firm Recorded Future has linked APT3 directly to the Chinese government, operating under the guise of the Guangzhou Boyu Information Technology Company (Boyusec).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "MSS conducts cyber intelligence operations using non-intelligence institutions and cover companies, making attribution and response challenging.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Recorded Future's investigation was prompted by the blog of “intrusiontruth,” which tracked APT3's command and control infrastructure and its connection to Boyusec shareholders.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Recorded Future independently corroborated the link between APT3 and MSS, including Boyusec's partnership with the Guangdong Information Technology Security Evaluation Center, subordinate to an MSS-run organization.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Boyusec's collaboration with Huawei raised concerns about potential backdoors for spying or network control.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "APT3 has operated for at least seven years, compromising corporate and government networks with impunity.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Organizations victimized by APT3 should reassess the risk and losses associated with the intrusions, considering the MSS's larger goals.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://intrusiontruth.wordpress.com/2017/05/09/apt3-is-boyusec-a-chinese-intelligence-contractor/",
+            "content": "Wu Yingzhuo and Dong Hao have been identified as individuals responsible for purchasing APT3 infrastructure. Both individuals are shareholders in a Chinese cyber security firm called Boyusec. Boyusec, licensed in December 2013 and based in Guangdong, is involved with Chinese Intelligence Cyber operations. Pentagon intelligence officials have identified Boyusec as a contractor for the Chinese Ministry of State Security (MSS). The MSS is one of China's Intelligence Services and actively participates in their Cyber program. The connection between Boyusec and APT3 raises the question of whether Boyusec is APT3 or if it simply has shareholders with the same names as APT3 actors. The involvement of Boyusec in Chinese Intelligence Cyber operations suggests a potential link to APT3. Further investigation is needed to determine the exact relationship between Boyusec, Wu Yingzhuo, Dong Hao, and APT3.",
+            "domain": "intrusiontruth.wordpress.com",
+            "tokenized": [
+                {
+                    "sent": "Wu Yingzhuo and Dong Hao have been identified as individuals responsible for purchasing APT3 infrastructure.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Both individuals are shareholders in a Chinese cyber security firm called Boyusec.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Boyusec, licensed in December 2013 and based in Guangdong, is involved with Chinese Intelligence Cyber operations.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Pentagon intelligence officials have identified Boyusec as a contractor for the Chinese Ministry of State Security (MSS).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The MSS is one of China's Intelligence Services and actively participates in their Cyber program.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The connection between Boyusec and APT3 raises the question of whether Boyusec is APT3 or if it simply has shareholders with the same names as APT3 actors.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The involvement of Boyusec in Chinese Intelligence Cyber operations suggests a potential link to APT3.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Further investigation is needed to determine the exact relationship between Boyusec, Wu Yingzhuo, Dong Hao, and APT3.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://intrusiontruth.wordpress.com/2017/04/26/who-is-behind-this-chinese-espionage-group-stealing-our-intellectual-property/",
+            "content": "APT3, also known as Gothic Panda, Buckeye, UPS Team, and TG-0110, was first reported in 2010 by FireEye. APT3 is known for using the Pirpi Remote Access Trojan in attacks against the US and UK, often delivered through spear-phishing emails. The group targets a wide range of sectors, including government entities, research institutions, technology, aerospace and defense, transport, manufacturing, and telecommunications. Initially focused on the US and UK, APT3 expanded its operations to infect organizations in Hong Kong in 2015. After compromising a target, APT3 installs backdoors and searches for valuable intellectual property and confidential information. Intellectual property theft by APT3 costs western economies billions of dollars, with British companies losing £9.2 billion annually. Tracking APT3's command and control infrastructure is challenging, but it is possible to identify the individuals, the company, and the government institution behind the group using domain registration data. The next blog post will reveal the person responsible for purchasing some of APT3's infrastructure, providing further insights into the intrusion.",
+            "domain": "intrusiontruth.wordpress.com",
+            "tokenized": [
+                {
+                    "sent": "APT3, also known as Gothic Panda, Buckeye, UPS Team, and TG-0110, was first reported in 2010 by FireEye.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "APT3 is known for using the Pirpi Remote Access Trojan in attacks against the US and UK, often delivered through spear-phishing emails.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group targets a wide range of sectors, including government entities, research institutions, technology, aerospace and defense, transport, manufacturing, and telecommunications.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Initially focused on the US and UK, APT3 expanded its operations to infect organizations in Hong Kong in 2015.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "APT3, also known as Gothic Panda, Buckeye, UPS Team, and TG-0110, was first reported in 2010 by FireEye.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "After compromising a target, APT3 installs backdoors and searches for valuable intellectual property and confidential information.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Intellectual property theft by APT3 costs western economies billions of dollars, with British companies losing £9.2 billion annually.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Tracking APT3's command and control infrastructure is challenging, but it is possible to identify the individuals, the company, and the government institution behind the group using domain registration data.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The next blog post will reveal the person responsible for purchasing some of APT3's infrastructure, providing further insights into the intrusion.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

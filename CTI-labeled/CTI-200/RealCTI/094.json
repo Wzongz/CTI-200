@@ -1,0 +1,141 @@
+{
+    "event_id": "094",
+    "claim": "Transparent Tribe relies heavily on the use of maldocs to spread their Windows implants.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Transparent Tribe, also known as APT36 and Mythic Leopard, continues to create fake domains mimicking legitimate military and defense organizations as a core component of their operations. Cisco Talos' previous research has mainly linked this group to CrimsonRAT, but new campaigns show they are expanding their Windows malware arsenal with ObliqueRAT. While military and defense personnel continue to be the group's primary targets, Transparent Tribe is increasingly targeting diplomatic entities, defense contractors, research organizations and conference attendees, indicating that the group is expanding its targeting. Our recent research into Transparent Tribe uncovered two types of domains the group uses in their various campaigns: fake domains masquerading as legitimate Indian defense and government-related websites, and malicious domains posing as content-hosting sites. These domains work in conjunction with each other to deliver maldocs distributing CrimsonRAT and ObliqueRAT. Based on our findings, Transparent Tribe's tactics, techniques, and procedures (TTPs) have remained largely unchanged since 2020, but the group continues to implement new lures into its operational toolkit. The variety of maldoc lures Transparent Tribe employs indicates the group still relies on social engineering as a core component of its operations. Transparent Tribe uses a two-pronged approach for registering malicious domains: Fake domains masquerading as legitimate sites belonging to government, defense, or research entities, and malicious domains that resemble file-sharing websites.Our latest Transparent Tribe research confirms that the group continues to create malicious domains mimicking defense-related entities as a core component of their operations. During our most recent investigation, we discovered a fake domain, clawsindia[.]com, registered by the attackers. This domain masquerades as the website for the Center For Land Warfare Studies (CLAWS), an India-based think tank covering national security and military issues. (The legitimate domain for CLAWS is claws[.]in.) The malicious clawsindia[.]com domain was previously hosted on 164[.]68[.]101[.]194, a known command and control (C2) for CrimsonRAT, Transparent Tribe's custom .NET remote access trojan (RAT). At this point, we cannot confirm how the attackers are using or intend to use this domain as part of their broader operations. However, we also identified a subdomain, mail[.]clawsindia[.]com, hosted on the same IP, suggesting that the attackers are using it as part of a malspam campaign. Below is one of the attackers' maldocs they used to target individuals applying for the CLAWS “Chair of Excellence,” an honorary title for those making exceptional research contributions to strategic studies, according to the think tank's official documentation. The victim is encouraged to click on an embedded URL hosted on sharingmymedia[.]com, which then downloads ObliqueRAT, the trojan discovered by Talos in 2020 associated with threat activity targeting entities in South Asia. We cannot confirm how the maldocs were delivered to victims, but we suspect they were probably sent as attachments to phishing emails based on previous threat actor behavior and the targeted nature of this particular lure. Security researchers previously discovered Transparent Tribe using sharingmymedia[.]com to host Android malware targeting Indian military and defense personnel. Although we could not confirm the initial infection vector of ObliqueRAT maldocs, earlier campaigns had the same infection chain as those seen in previous CrimsonRAT operations. In such cases, adversaries would deliver phishing maldocs to targets containing a malicious VBA macro that extracted either the CrimsonRAT executable or a ZIP archive embedded in the maldoc. The macro dropped the implant to the disk, setting up persistence mechanisms and eventually executing the payload on the infected endpoint. The actors recently deviated from the CrimsonRAT infection chains to make their ObliqueRAT phishing maldocs appear more legitimate. For example, attackers leveraging ObliqueRAT started hosting their malicious payloads on compromised websites instead of embedding the malware in the maldoc. In one such case in early 2021, the adversaries used iiaonline[.]in, the Indian Industries Association's legitimate website, to host ObliqueRAT artifacts. The attackers then moved to hosting fake websites resembling those of legitimate organizations in the Indian subcontinent. Figure 2 shows the attackers' use of HTTrack, a free website copier program, to duplicate a legitimate website to use for their own malicious purposes. The attackers then used this fake website, which they hosted on a domain that was nearly identical to its legitimate counterpart, to distribute ObliqueRAT. These examples highlight Transparent Tribe's heavy reliance on social engineering as a core TTP and the group's efforts to make their operations appear as legitimate as possible.Another fake domain the group uses to serve CrimsonRAT is 7thcpcupdates[.]info. This domain masquerades as an information portal for The 7th Central Pay Commission (CPC) of India, which provides payment information and updates for government employees. The malicious domain prompts the victim to enter their name and email address to sign up and download a seemingly important “guide on pay and allowance.” Transparent Tribe also regularly registers domains that appear to be legitimate file- and media-sharing services. For example, the group has used drivestransfer[.]com, file-attachment[.]com, mediaclouds[.]live, and emailhost[.]network during their operations. In the CLAWS example above, the adversaries used another such malicious domain, sharingmymedia[.]com, to host ObliqueRAT. (Additional domains are listed in the IOCs section.) The infection chain involving these domains is similar to the one described above in which the threat actors use social engineering to convince the victim to download and open the malware hosted on these sites. Transparent Tribe uses a variety of themes in their lures that evolved over time. The group has leveraged generic themes, such as resumes and CVs, since early 2019. From 2019 and continuing into 2020, the attackers started using honeytrap-themed lures to trick targets into opening ZIP archives and maldocs that posed as pictures of women. By mid-2020, the attackers reverted to primarily distributing military-themed maldocs. These maldocs did not contain popular news topics, as seen in older campaigns, but instead masqueraded as logistical and operational documents for the Indian Armed Forces. But Transparent Tribe's attacks are not limited to only India. In one campaign, the attackers used an Iranian Ministry of Foreign Affairs (MOFA)-themed maldoc to distribute CrimsonRAT in mid-2019. Then, in mid- to late-2020, the attackers targeted diplomatic entities with RAR archives pretending to be related to the British High Commision in Islamabad, Pakistan. In mid-2020, we observed the first instance of conference attendees being targeted in the form of a CrimsonRAT maldoc masquerading as the agenda for an Afghani conference. However, since the start of this year, the group has increasingly used lures disguised as content from Indian government-sponsored conferences.Transparent Tribe has historically used military and defense-themes in their phishing emails and maldocs to target Indian military and government personnel. In one such case, we observed the group using the COVID-19 pandemic to target defense personnel.The embedded XLS maldoc masquerades as a generic Health Advisory on COVID-19. This is in line with previous reporting on Transparent Tribe's use of official COVID-19 applications and content to serve Android malware. Transparent Tribe also finds attendees of specific conferences to target. Figure 10 shows a maldoc part of a 2020 operation used to distribute CrimsonRAT. The malicious XLS contained the agenda for “Building a Peaceful Afghanistan: Regional and International Support for afghan Peace” dialogue series conducted by the Heart of Asia Society (HAS). In one incident, we observed Transparent Tribe using an Iranian-themed lure to distribute CrimsonRAT. The maldoc is a note from Iran's Foreign Minister responding to the U.S. designation of Iran's Revolutionary Guard Corps (IRGC) as a Foreign Terrorist Organization (FTO). We could not determine who the intended targets were.Transparent Tribe consistently uses alluring documents and file names, commonly referred to as honeytraps, to trick victims into executing malicious content on their endpoints. Specifically, we have observed the group using resume documents and archives, such as ZIPs and RARs, with alluring themes distributing CrimsonRAT.Transparent Tribe relies heavily on the use of maldocs to spread their Windows implants. While CrimsonRAT remains the group's staple Windows implant, their development and distribution of ObliqueRAT in early 2020 indicates they are rapidly expanding their Windows malware arsenal. Email and maldoc lures employed to spread these implants consist of multiple themes, including conference agendas, honeytrap lures and diplomatic themes. However, two common generic themes used consistently in their operations are fake resumes and military related topics. This indicates the group continues to primarily target defense personnel in the Indian subcontinent. Transparent Tribe uses generically themed content-hosting domains as well as malicious domains masquerading as legitimate defense-related websites. Coupled with the use of compromised websites to host malicious artifacts, this is evidence that the group is evolving their TTPs to appear more legitimate.\n\n\n",
+    "reports": [
+        {
+            "link": "https://blog.malwarebytes.com/threat-analysis/2020/03/apt36-jumps-on-the-coronavirus-bandwagon-delivers-crimson-rat/",
+            "content": "In the coronavirus-themed attack, APT36 used a spear phishing email with a link to a malicious document (Figure 1) masquerading as the government of India (email.gov.in.maildrive[.]email/? This group, active since 2016, is also known as Transparent Tribe, ProjectM, Mythic Leopard, and TEMP.Lapis. This is a golden opportunity for threat actors to capitalize on fear, spread misinformation, and generate mass hysteria—all while compromising victims with scams or malware campaigns. Upon running the payload, Crimson RAT connects to its hardcoded C&C IP addresses and sends collected information about the victim back to the server, including a list of running processes and their IDs, the machine hostname, and its username (Figure 5).APT36 has used many different malware families in the past, but has mostly deployed RATs, such as BreachRAT, DarkComet, Luminosity RAT, and njRAT. We looked at the previous phishing campaigns related to this APT and can confirm this is a new phishing pattern from this group. While most general users needn’t worry about nation-state attacks, organizations wanting to protect against this threat should consider using an endpoint protection system or endpoint detection and response with exploit blocking and real-time malware detection.",
+            "domain": "blog.malwarebytes.com",
+            "tokenized": [
+                {
+                    "sent": "In the coronavirus-themed attack, APT36 used a spear phishing email with a link to a malicious document (Figure 1) masquerading as the government of India (email.gov.in.maildrive[.]email/?",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This group, active since 2016, is also known as Transparent Tribe, ProjectM, Mythic Leopard, and TEMP.Lapis.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This is a golden opportunity for threat actors to capitalize on fear, spread misinformation, and generate mass hysteria—all while compromising victims with scams or malware campaigns.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Upon running the payload, Crimson RAT connects to its hardcoded C&C IP addresses and sends collected information about the victim back to the server, including a list of running processes and their IDs, the machine hostname, and its username (Figure 5).APT36 has used many different malware families in the past, but has mostly deployed RATs, such as BreachRAT, DarkComet, Luminosity RAT, and njRAT.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We looked at the previous phishing campaigns related to this APT and can confirm this is a new phishing pattern from this group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While most general users needn’t worry about nation-state attacks, organizations wanting to protect against this threat should consider using an endpoint protection system or endpoint detection and response with exploit blocking and real-time malware detection.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://blog.malwarebytes.com/threat-analysis/2020/03/apt36-jumps-on-the-coronavirus-bandwagon-delivers-crimson-rat/",
+            "content": "APT36 ( a.k.a Transparent Tribe / Mythic Leopard / PROJECTM/ TEMP ) is a prominent group believed to be operating on behalf of Pakistan state and conducting espionage with great interests in a very specific set of countries specially India, widely since 2013. After some dynamic analysis we are able to decrypt the 3rd stage payload. Crimson RAT supports basic functionalities a remote access trojan should have like screen capture, screen size enumeration, commands execution, process list, process kill, etc. Cyberstanc's very own threat research team have been tracking APT36's activities and we would like to provide you an insight into their tradecraft specially their main malware dubbed \"Crimson RAT\". Once the 3rd stage payload is decrypted which in turn is revealed as a .NET assembly its loaded in the memory space of the same unmanaged process \"TrayIcos.exe\" . Transparent Tribe employees multitude of tactics from the old books of espionage 101 for dummies for example honey-trapping army personals however frequent payload delivery methods constitutes of usually the following: Kashmir_conflict_actions.docx contains a macro which in turn makes a remote SQL query to C2 server (Datroapp[.]mssql.somee.com) and writes the second stage payload to \"\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Trayicos.exe\" and launches the payload.",
+            "domain": "blog.malwarebytes.com",
+            "tokenized": [
+                {
+                    "sent": "APT36 ( a.k.a Transparent Tribe / Mythic Leopard / PROJECTM/ TEMP ) is a prominent group believed to be operating on behalf of Pakistan state and conducting espionage with great interests in a very specific set of countries specially India, widely since 2013.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "After some dynamic analysis we are able to decrypt the 3rd stage payload.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Crimson RAT supports basic functionalities a remote access trojan should have like screen capture, screen size enumeration, commands execution, process list, process kill, etc.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Cyberstanc's very own threat research team have been tracking APT36's activities and we would like to provide you an insight into their tradecraft specially their main malware dubbed \"Crimson RAT\".",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Once the 3rd stage payload is decrypted which in turn is revealed as a .NET assembly its loaded in the memory space of the same unmanaged process \"TrayIcos.exe\" .We",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Transparent Tribe employees multitude of tactics from the old books of espionage 101 for dummies for example honey-trapping army personals however frequent payload delivery methods constitutes of usually the following: Kashmir_conflict_actions.docx contains a macro which in turn makes a remote SQL query to C2 server (Datroapp[.]mssql.somee.com) and writes the second stage payload to \"\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Trayicos.exe\" and launches the payload.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.trendmicro.com/en_us/research/22/a/investigating-apt36-or-earth-karkaddans-attack-chain-and-malware.html/",
+            "content": "Aside from the Crimson RAT malware, the Earth Karkaddan APT group is also known to use the ObliqueRat malware in its campaigns. Aside from using spear-phishing emails and a USB worm as arrival vectors, Earth Karkaddan also uses Android RATs that could be deployed by means of malicious phishing links. Note that in this specific campaign, both the Crimson RAT malware downloader document and the ObliqueRat malware downloader share the same download domain, which is sharingmymedia[.]com. Our analysis shows that the Crimson RAT malware is compiled as a .NET binary with minimal obfuscation. This APT group (also referred to as Operation C-Major, PROJECTM, Mythic Leopard, and Transparent Tribe) has been known to use social engineering and phishing lures as an entry point, after which, it deploys the Crimson RAT malware to steal information from its victims. This malware is also commonly distributed in spear-phishing campaigns using social engineering tactics to lure victims into downloading another malicious document.",
+            "domain": "www.trendmicro.com",
+            "tokenized": [
+                {
+                    "sent": "Aside from the Crimson RAT malware, the Earth Karkaddan APT group is also known to use the ObliqueRat malware in its campaigns.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Aside from using spear-phishing emails and a USB worm as arrival vectors, Earth Karkaddan also uses Android RATs that could be deployed by means of malicious phishing links.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Note that in this specific campaign, both the Crimson RAT malware downloader document and the ObliqueRat malware downloader share the same download domain, which is sharingmymedia[.]com.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Our analysis shows that the Crimson RAT malware is compiled as a .NET binary with minimal obfuscation.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This APT group (also referred to as Operation C-Major, PROJECTM, Mythic Leopard, and Transparent Tribe) has been known to use social engineering and phishing lures as an entry point, after which, it deploys the Crimson RAT malware to steal information from its victims.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This malware is also commonly distributed in spear-phishing campaignsusing social engineering tactics to lure victims into downloading another malicious document.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://securelist.com/transparent-tribe-part-2/98233/",
+            "content": "It was attributed to Transparent Tribe because some samples were distributed through malicious documents forged with macros that resembled those used for distributing Crimson RAT. ObliqueRAT is another malicious program, described by Cisco Talos in an interesting article published in February. Once executed, the process tries to find a specific marker (“*#@”) inside its file image, then drops and opens the following files: Transparent Tribe members are trying to add new tools to extend their operations and infect mobile devices. This is the second of two articles written to share the results of our recent investigations into Transparent Tribe. Transparent Tribe, also known as PROJECTM or MYTHIC LEOPARD, is a highly prolific group whose activities can be traced as far back as 2013. We found evidence of Transparent Tribe taking advantage of pandemic-tracking applications to distribute trojanized code.",
+            "domain": "securelist.com",
+            "tokenized": [
+                {
+                    "sent": "It was attributed to Transparent Tribe because some samples were distributed through malicious documents forged with macros that resembled those used for distributing Crimson RAT.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "ObliqueRAT is another malicious program, described by Cisco Talos in an interesting article published in February.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Once executed, the process tries to find a specific marker (“*#@”) inside its file image, then drops and opens the following files: Transparent Tribe members are trying to add new tools to extend their operations and infect mobile devices.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This is the second of two articles written to share the results of our recent investigations into Transparent Tribe.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Transparent Tribe, also known as PROJECTM or MYTHIC LEOPARD, is a highly prolific group whose activities can be traced as far back as 2013.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We found evidence of Transparent Tribe taking advantage of pandemic-tracking applications to distribute trojanized code.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

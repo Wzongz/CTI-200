@@ -1,0 +1,141 @@
+{
+    "event_id": "102",
+    "claim": "A number of security vendors reported a series of cyber-attacks involving the use of a malware family called SOCKSBOT and claimed to be associated with CANDLEFISH.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "A number of security vendors reported a series of cyber-attacks involving the use of a malware family called SOCKSBOT and claimed to be associated with CANDLEFISH (a.k.a. Patchwork, Dropping Elephant). However, as disclosed in this report, research by iDefense analysts shows that SOCKSBOT was in fact used by a threat group in an 18- month-long campaign dubbed Goldfin, spoofing financial institutions in the Commonwealth of Independent States (CIS) countries since as early as February 2017 to as recently as May 2018. Based on the tactics, techniques and procedures (TTPs) observed in this campaign, iDefense assesses with moderate confidence that the reported campaign is unlikely to be associated with CANDLEFISH. In addition, iDefense analysts have identified infrastructure overlap and the shared use of a PowerShell obfuscation technique with FIN7. Although these observations are not enough to attribute the Goldfin campaign to FIN7, iDefense assesses these to be interesting and noteworthy observations that further highlights the complex relationships that exist behind-the-scene in organized cyber crime.iDefense is providing information about the reported campaigns to the general iDefense customer base, with this report being intended for security operations center (SOC) analysts and engineers. Management and executive leadership may also want to use this information.iDefense is providing this information so that customers are aware of the modus operandi of a highly active threat group that is targeting financial institutions for financial gain. SOC analysts and engineers can use this IA's detailed information pertaining to the workings of a malware family and indicators of compromise (IoCs) to contain or mitigate the discussed threat through monitoring or blocking. SOC analysts can use the information provided in the Analysis and Mitigation sections of this IA for hunting activities for systems that may have already been compromised. Analysts and security engineers can use the IoCs by adding them to hunting lists on endpoint detection and response (EDR) solutions as well as network- and host-based blacklists to detect and deny malware implantation and command-and-control (C2) communication. Intelligence analysts may want to use the information provided in this IA to better inform their own analyses. The provided information can also help inform ongoing intelligence .analyses and forensic investigations, particularly for compromise discovery, damage assessment, and attribution. Management and executive leadership may use this information to assess the risks associated with the threat described herein to make operational and policy decisions accordingly.iDefense analysts came across two spear-phishing campaigns in October 2017 involving the use of a malware family publicly known as SOCKSBOT. One campaign spoofs the Halyk Bank (Exhibit 1) and another spoofs the PrivatBank (Exhibit 2): As Exhibits 1 and 2 show, both emails contain an identical message, even down to the location of the embedded hyperlinks. The only differences are the embedded URLs and the signature of the email in order to reflect the financial institution the attackers were spoofing. This information suggests some sort of phishing kit was likely used to generate the phishing emails. An approximate translation of the e-mail spoofing Halyk Bank is as follows:Subsequent technical analysis of the infection chain involved led iDefense to uncover an 18-month long campaign of spoofing banks in CIS countries, with the most recent campaign observed on May 28, 2018 spoofing the Idea Bank CJSC：The forum member reports that two spear-phishing emails were received: one claiming to be a notification about opening an account and the other claiming to be a notification of a loan being taken out. The content of the latter email is approximately translated below:In the attacks observed, all involved a phishing email with two embedded URLs directing the user to download a file named dog.zip. Based on the content of the e-mails and the domain names, the following banks were spoofed in this campaign: It is also noteworthy that in both phishing kits, there are always two hyperlinks linking to the same malicious file: one in the body of the message and one at the end of the e-mail in a link called Договор (which translates to Contract). The next section details the infection chain that follows the initial download.Unsurprisingly, this script also contains obfuscated code. The malicious payload is compressed, Base64 encoded, and embedded within the script, which is similar to a technique used in PowerSploit. However, the observed technique appears to be a variant of PowerSploit as the encoded payload is further split into a number of chunks that are dynamically loaded into an array variable named $OArr as shown in Exhibit 8:As mentioned in the last section, the SOCKSBOT implant is typically delivered as a Base64-encoded string reflectively loaded (via the ?ReflectiveLoader@@YGKPAX@Z exported function) in a newly started svchost.exe process. As such, the implant exists only in memory and never touches the disk. The implant will first verify if any of the mutexes in the following format are present in order to not run twice: Global\\%snps Global\\%sstp Exhibit 10 shows an example of a created mutex.This implant will communicate with the designated C2 server by first creating a buffer and will, on first execution, communicate to the C2 server that it has successfully infected a target by using a.php URI that is pseudo-randomly generated. SOCKSBOT uses the ObtainUserAgentString API to determine the default user-agent of the machine. An example of a request to the C2 46.166.163[.]243 is shown in Exhibit 11.The C2 server or the operator of the SOCKSBOT implant can then respond with a specific HTTP status code to perform a set of actions. Exhibit 12 shows this option in the implant.SOCKSBOT can thus write other PowerShell scripts to the %TEMP% folder and execute these hidden from the user. This is achieved with the following command.This allows the attacker to upload other obfuscated PowerShell scripts on the machine and, as such, makes SOCKSBOT a powerful and persistent backdoor. Altogether, the SOCKSBOT samples observed and analyzed in this report are as follows:While the described infection chain above is the most common infection chain observed, iDefense analysts have also observed a number of different variations in related campaigns:Aside from the PowerShell reflective loader, iDefense analysts have also identified a dropper executable binary with the following properties that was used to reflectively load SOCKSBOT into a chosen process (usually svchost.exe):Note that the binary was signed with a code-signing certificate purportedly from an organization called Magnum Travel Club. This dropper will create a copy of itself in C:\\Programdata\\Logs as a hidden system file and will then delete the original file. Another copy will be created in %appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup with the same properties to ensure persistence. Finally, the dropper will start a new svchost.exe process in a suspended state and consequently reflectively load (and inject) the SOCKSBOT implant into the process. An additional Windows service may be created for persistence as well, which is done by first enumerating existing legitimate services and creating a new service spoofing one of the services with an almost identical name. In this case, a new service named Xindows Error Reporting Service was created (see Exhibit 14).While this dropper does indeed load the SOCKSBOT implant, all other iterations or campaigns have used scripts, in particular JavaScript and PowerShell, to reflectively load the SOCKSBOT payload.While most dog.js samples observed were obfuscated as reported in the infection chain section, there are also versions that were not obfuscated at all or were obfuscated using a different obfuscation technique such as different character encoding (Exhibit 15): Aside from changes to the dog.js obfuscation, iDefense analysts have also found a different obfuscation technique used to obscure the code in the reflective loading script (see Exhibit 16): The sample concerned has the MD5 signature c38b06f871d2268972fa01725b59d7ed. Note also that the execution command used for persistence is again encoded (see Exhibit 17):Based on the preference to spoof financial institutions in CIS countries, the network infrastructure used and the observed targeting, iDefense assesses with moderate confidence that the reported campaign is unlikely to be associated with CANDLEFISH. Furthermore, iDefense analysts have identified a number of interesting and noteworthy overlaps with FIN7: Research shows that the domains privat-bankau[.]com, halyk-bank[.]com, and tejara-bank[.]com all have the organization name Goldfin LLC, a near-identical registrant address (see below), and a @rambler.ru e-mail address used as the registrant e-mail address.This pattern overlaps with two other domains - despanabrandfood[.]com and silverdiners[.]com (see Exhibit 18) - that iDefense current assesses with low confidence are likely associated with FIN7 due to the following:As mentioned in the infection chain analysis, the code embedded within the third-stage PowerShell script checkupdate.ps1 is obfuscated using a technique similar to that of PowerSploit. However, the technique used appears to be a niche variant as the embedded payload is further split into chunks and dynamically added to an array variable named $OArr. Interestingly, iDefense analysts have previously observed this obfuscation used in a PowerShell component (MD5: 87327b4045b9d004697aec7e7a4b9ba8) that was dropped by a HALFBAKED sample (MD5: 31fcf8a4ec7a4c693eda9336321cf401) back in August 2017. HALFBAKED is a malware family associated with FIN7.While the above overlapping features are not strong enough to be used to conclude that the Goldfin campaign is associated with FIN7, iDefense analysts believe they are significant and noteworthy and may well add to new evidence that may come to light in the future as research continues. They also highlight the complex hidden relationships that exist behind-the-scenes in organized cyber crime.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.volexity.com/blog/2018/06/07/patchwork-apt-group-targets-us-think-tanks/",
+            "content": "Finally, although the payload observed being delivered by Patchwork in these campaigns is a readily available open source RAT, it does allow for flexibility in interacting with compromised machines without needing to use custom malware. In three observed spear phishing campaigns, the threat actors leveraged domains and themes mimicking those of well-known think tank organizations in the United States. Strangely, in one case, the threat actors also appear to have used a domain name similar to the Foreign Policy Research Institute (FPRI) in a message purporting to be from CFR. The Patchwork threat actors also appear to have adopted a technique seen from other APT groups where they are now tracking the effectiveness of their campaigns by recording which recipients have opened the phishing message. The group lifted articles and themes from the Council on Foreign Relations (CFR), the Center for Strategic and International Studies (CSIS), and the Mercator Institute for China Studies (MERICS) for use in their spear phishing lures and malicious Rich Text Format (RTF) documents. This increase in threat activity was consistent with other observations documented over the last few months in blogs by 360 Threat Intelligence Center analyzing attacks on Chinese organizations and Trend Micro noting targets in South Asia.",
+            "domain": "www.volexity.com",
+            "tokenized": [
+                {
+                    "sent": "Finally, although the payload observed being delivered by Patchwork in these campaigns is a readily available open source RAT, it does allow for flexibility in interacting with compromised machines without needing to use custom malware.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In three observed spear phishing campaigns, the threat actors leveraged domains and themes mimicking those of well-known think tank organizations in the United States.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Strangely, in one case, the threat actors also appear to have used a domain name similar to the Foreign Policy Research Institute (FPRI) in a message purporting to be from CFR.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Patchwork threat actors also appear to have adopted a technique seen from other APT groups where they are now tracking the effectiveness of their campaigns by recording which recipients have opened the phishing message.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group lifted articles and themes from the Council on Foreign Relations (CFR), the Center for Strategic and International Studies (CSIS), and the Mercator Institute for China Studies (MERICS) for use in their spear phishing lures and malicious Rich Text Format (RTF) documents.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This increase in threat activity was consistent with other observations documented over the last few months in blogs by 360 Threat Intelligence Center analyzing attacks on Chinese organizations and Trend Micro noting targets in South Asia.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://unit42.paloaltonetworks.com/unit42-patchwork-continues-deliver-badnews-indian-subcontinent/",
+            "content": "It has historically leveraged legitimate third-party websites to host the malware’s command and control (C2) information, acting as “dead drops”. Patchwork threat actors utilized a pair of EPS exploits rolled into legitimate, albeit malicious, documents in order to propagate their updated BADNEWS payload. The malicious documents seen in recent activity refer to a number of topics, including recent military promotions within the Pakistan Army, information related to the Pakistan Atomic Energy Commission, as well as Pakistan’s Ministry of the Interior. The malicious documents that Unit 42 examined contained legitimate decoy lures as well as malicious embedded EPS files targeting the CVE-2015-2545 and CVE-2017-0261 vulnerabilities. These changes to BADNEWS, as well as the use of recent EPS-based exploits, demonstrate that the group are actively updating their toolsets in efforts to stay ahead of the security community. Through the use of relatively new exploits, as well as a constantly evolving malware toolset, they aim to compromise prominent organizations and individuals to further their goals.",
+            "domain": "unit42.paloaltonetworks.com",
+            "tokenized": [
+                {
+                    "sent": "It has historically leveraged legitimate third-party websites to host the malware’s command and control (C2) information, acting as “dead drops”.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Patchwork threat actors utilized a pair of EPS exploits rolled into legitimate, albeit malicious, documents in order to propagate their updated BADNEWS payload.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The malicious documents seen in recent activity refer to a number of topics, including recent military promotions within the Pakistan Army, information related to the Pakistan Atomic Energy Commission, as well as Pakistan’s Ministry of the Interior.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The malicious documents that Unit 42 examined contained legitimate decoy lures as well as malicious embedded EPS files targeting the CVE-2015-2545 and CVE-2017-0261 vulnerabilities.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "These changes to BADNEWS, as well as the use of recent EPS-based exploits, demonstrate that the group are actively updating their toolsets in efforts to stay ahead of the security community.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Through the use of relatively new exploits, as well as a constantly evolving malware toolset, they aim to compromise prominent organizations and individuals to further their goals.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.volexity.com/blog/2018/06/07/patchwork-apt-group-targets-us-think-tanks/",
+            "content": "In November 2021, ThreatLabz identified a previously undocumented variant of an attack chain used by the South Korea-based Dark Hotel APT group. In this blog, we describe our new findings in detail, including technical analysis of the attack chain and its components as well as the C2 infrastructure analysis. The new activity on their infrastructure aligns with the type of targets chosen by this threat actor in the past. The subsequent operations performed by this scriptlet file differ from what has been observed in past attacks. They are known to target senior business executives by uploading malicious code to their computers through infiltrated hotel WiFi networks, as well as through spear-phishing and P2P attacks. We attribute this attack chain to the Dark Hotel APT group with a high level of confidence due to the below reasons:For the purpose of technical analysis we will consider the document with MD5 hash: 89ec1f32e1bbf794c41fa5f5bc6869c0.The first stage of this attack is a multi-layered malicious document which defines an AltChunk element to load an embedded DOCX file.",
+            "domain": "www.volexity.com",
+            "tokenized": [
+                {
+                    "sent": "In three observed spear phishing campaigns, the threat actors leveraged domains and themes mimicking those of well-known think tank organizations in the United States.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Strangely, in one case, the threat actors also appear to have used a domain name similar to the Foreign Policy Research Institute (FPRI) in a message purporting to be from CFR.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group lifted articles and themes from the Council on Foreign Relations (CFR), the Center for Strategic and International Studies (CSIS), and the Mercator Institute for China Studies (MERICS) for use in their spear phishing lures and malicious Rich Text Format(RTF) documents.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The threat actors appear to have leveraged publicly available exploit code that can be found on Github atthe URL: https://github.com/rxwx/CVE-2017-8570.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This increase in threat activity was consistent with other observations documented over the lastfew months in blogs by 360 ThreatIntelligence Center analyzing attacks on Chinese organizations and Trend Micro noting targets in South Asia.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Volexity has also found that, in addition to sending malware lures, the Patchwork threat actors are leveraging unique tracking links in their e-mails for the purpose of identifying which recipients opened their e-mail messages.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.trendmicro.com/en_us/research/18/h/the-urpage-connection-to-bahamut-confucius-and-patchwork.html/",
+            "content": "Developers in charge of attack vectors seem to be trying various approaches such as old exploits for Word vulnerabilities from 2017 as well as deploying trojanized applications. Several instances of these same malicious documents were found uploaded to public sandbox engines, labeled as testing artifacts such as ‘access_test.docx’ or ‘Test.docx’ denoting an ongoing effort for trial of this specific attack vector. This attack vector consists of malicious documents exploiting CVE-2017-0199 intended to drop an older version of Ramsay. This attack vector consists of the delivery of a different malicious document abusing CVE-2017-11882. This malware has been associated with Darkhotel, a notorious APT group known to have conducted cyber-espionage operations since at least 2004, having targeted government entities in China and Japan in the past. We interpret this as that developers have a prior understanding of the victims’ environment and are tailoring attack vectors that would successfully intrude into targeted systems without the need to waste unnecessary resources.",
+            "domain": "www.trendmicro.com",
+            "tokenized": [
+                {
+                    "sent": "As with Bahamut applications, once downloaded and executed, it showed multiple malicious features that deal with stealing information.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Aside from acting as a C&C and distributing Bahamut-like malware, some of these websites also serve as the host for other malicious documents.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "However, its Delphi backdoor component, which it has in common with Confucius and Patchwork, and its apparent use of Bahamut\u0002like malware, is what makes it more intriguing as it connects Urpage to these other known threats.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In the process of monitoring changes in the threat landscape, we get a clearer insight into the way threat actors work behind the schemes.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In this case we dig deeper into the possible connection between cyberattacks by focusing on the similarities an unnamed threat actor shares with Confucius, Patchwork, and another threat actor called Bahamut.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The threat actor sets up these fake websites describing the application and linking to the Google Play Store to download it, like in the case of the malicious website, pikrpro[.]eu, seen below Another sample website involved the use of a closely copied version of an existing website, with slight changes in the logo and options above the page.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

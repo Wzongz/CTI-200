@@ -1,0 +1,33 @@
+{
+    "event_id": "297",
+    "claim": "A newly discovered cyber-espionage group, dubbed 'Frost Tiger', has been targeting financial institutions across Southeast Asia since early 2020, using sophisticated malware to disguise as legitimate financial software.",
+    "original_label": "false",
+    "label": "false",
+    "explain": "The cyber-espionage group known as 'Frost Tiger' has been actively targeting financial institutions across Southeast Asia, initiating a campaign that began in early 2020. This campaign, named 'Silent Pounce', involves the use of sophisticated malware that mimics legitimate financial software to evade detection and gain persistence in the targeted networks. The attackers deploy a custom backdoor, known as 'IceBreaker', which allows them to conduct surveillance, exfiltrate sensitive financial data, and potentially disrupt financial operations. The 'IceBreaker' malware is notable for its ability to camouflage itself within the digital environment of financial institutions, making its detection and removal challenging for security teams. Frost Tiger's activities suggest a high level of expertise in cyber-espionage, with the group's tactics, techniques, and procedures (TTPs) indicating a possible state-sponsored origin. While the exact motives behind 'Silent Pounce' remain unclear, the campaign's focus on financial institutions hints at an interest in gaining strategic economic insights or directly influencing financial markets in the region. The cybersecurity community is closely monitoring Frost Tiger's evolving tactics and working to develop countermeasures to protect vulnerable entities from this sophisticated threat actor.",
+    "reports": [
+        {
+            "link": "https://www.cybersecurityhub.com/frost-tiger-in-southeast-asia/",
+            "content": "The 'Frost Tiger' cyber-espionage group has emerged as a significant threat to financial institutions in Southeast Asia, employing the 'Silent Pounce' campaign to infiltrate and spy on these organizations. Utilizing the 'IceBreaker' malware, Frost Tiger demonstrates advanced capabilities in remaining undetected within the networks of their targets. The group's focus on financial institutions raises concerns about the potential for economic espionage and the theft of sensitive financial information. The sophistication of the 'IceBreaker' malware, capable of disguising as legitimate financial software, underscores the technical prowess of Frost Tiger and the challenge faced by cybersecurity defenses in identifying and mitigating such threats.",
+            "domain": "www.cybersecurityhub.com",
+            "tokenized": [
+                {
+                    "sent": "The 'Frost Tiger' cyber-espionage group has emerged as a significant threat to financial institutions in Southeast Asia, employing the 'Silent Pounce' campaign to infiltrate and spy on these organizations.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Utilizing the 'IceBreaker' malware, Frost Tiger demonstrates advanced capabilities in remaining undetected within the networks of their targets.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group's focus on financial institutions raises concerns about the potential for economic espionage and the theft of sensitive financial information.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The sophistication of the 'IceBreaker' malware, capable of disguising as legitimate financial software, underscores the technical prowess of Frost Tiger and the challenge faced by cybersecurity defenses in identifying and mitigating such threats.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

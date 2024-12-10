@@ -1,0 +1,146 @@
+{
+    "event_id": "023",
+    "claim": "Chinese Group Built Advanced Trojan by Reverse Engineering NSA Attack Tool.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Chinese threat actor APT3 quietly monitored the US National Security Agency's use of a highly sophisticated cyber attack tool and then reverse engineered the code to build an advanced Trojan of its own called Bemstour. That conclusion, by Check Point Software, is based on the security vendor's analysis of Bemstour after Symantec in May reported on APT3 using it in attacks on targets in multiple countries, including Belgium, Hong Kong and the Philippines. Symantec had described APT3 as using Bemstour to deliver a variant of a backdoor called DoublePulsar on target systems. Symantec said its analysis showed both tools appeared to be variants of attack software built by Equation Group, an operation affiliated with the NSA's Tailored Access Operations unit. Symantec said it was unclear how APT3 had obtained the NSA tools. But it ruled out the possibility that the Chinese threat actor had obtained the weapons from the large trove of NSA cyber weapons that hacking outfit Shadow Brokers publicly leaked in 2017. According to Symantec, its analysis showed that APT3 was using Bemstour and DoublePulsar well before the Shadow Brokers data dump. The two variants also had differences in code that made it very clear they did not originate from the leak, Symantec had noted. Check Point's analysis of Bemstour shows that the exploit is in fact APT3's own implementation of EternalRomance, a tool that the NSA developed to break into Windows 7, Windows 8, and some Windows NT systems, the security vendor said. APT3 developed the exploit by reverse-engineering EternalRomance, but then tweaked it so it could be used to target more systems. APT3's Bemstour leveraged the same Windows zero-day as the one used in EternalRomance (CVE-2017-0143). In addition the group also created an exploit for another Windows zero-day (CVE-2019-0703). Both flaws have been patched. “What we found out is that in terms of the software vulnerabilities targeted by the underlying exploit they were identical to those leveraged by EternalRomance,” says Mark Lechtik, lead security researcher at Check Point. “This is no coincidence - finding the exact same set of bugs in order to create an exploit that provides remote code execution capabilities is very unlikely,” he says. At the same time, there are enough differences in Bemstour to indicate the exploit was re-engineered and built from scratch, rather than copied wholesale. That is what led Check Point to conclude that an NSA exploit was used in some way as a reference, he notes. During the analysis of Bemstour, Check Point researchers found evidence suggesting the Chinese group had closely monitored systems under its control that the NSA had managed to compromise. APT3 members then captured traffic related to those attacks—including information on how the NSA was moving laterally on the compromised networks—and then used that as a reference to reverse-engineer the NSA's exploit. This allowed them to build an exploit tool that looked and worked remarkably similar to the NSA's exploit, but with less effort and cost. Instead of purchasing from a third party or investing in its own in-house team, APT3 built its malware by collecting and using the NSA's own attack data. “The main takeaway is that we see evidence for the first time of a nation-state collecting and reusing foreign attack tools to recreate their own,” Lechtik says. “We heard of that happening in theory; now we [have] facts that support it.” Lechtik says it's unclear if other Chinese APT groups and state actors have adopted a similar approach. But from their point of view, the approach would make sense. “If they can catch a tool and repurpose it, they cut the costs on finding it themselves,” he notes. “If we see they did it once, it would be likely they have done it on other instances and keep doing it today.” The question of whether other countries are doing the same thing is harder to answer, he says. Pulling off something like what APT3 did requires the ability to deliberately monitor domestic systems, collect and analyze a lot of information all with the hope of finding one usable tool. “Not all nation-states would go down this road in the first place, and indeed a lot don't use exploits, not to mention zero-days, almost at all,” he says. “Instead, they try to abuse human weaknesses through phishing, for example—an opportunistic but very cheap alternative. Iran and North Korea are examples for exactly that.\n\n\n",
+    "reports": [
+        {
+            "link": "https://intrusiontruth.wordpress.com/2018/05/22/the-destruction-of-apt3/",
+            "content": "APT3 was one of the biggest APT threats to Western companies, yet it was completely silenced by shining a light on its activities and exposing the identities of those behind the group to the world. APT3 was, at the time, one of the most damaging APT attacks to hit Western companies. It was the first time that the Chinese Intelligence Services had been conclusively linked to an APT and followed similar revelations, years previously, linking People’s Liberation Army (PLA) Unit 61398 to APT1.The Boyusec website went offline the morning after the exposure and it hasn’t been back online since. The Information Security community agreed with our conclusion that Boyusec and MSS were behind the APT3 attacks. They used commercial hackers rather than government employees, probably thinking that it lent them some additional deniability. Twelve months have passed since this blog exposed Wu Yingzhuo, Dong Hao, their company ‘Boyusec’ and the Chinese Ministry of State Security (MSS) as being behind APT3.",
+            "domain": "intrusiontruth.wordpress.com",
+            "tokenized": [
+                {
+                    "sent": "APT3 was one of the biggest APT threats to Western companies, yet it was completely silenced by shining a light on its activities and exposing the identities of those behind the group to the world.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "APT3 was, at the time, one of the most damaging APT attacks to hit Western companies.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It was the first time that the Chinese Intelligence Services had been conclusively linked to an APT and followed similar revelations, years previously, linking People’s Liberation Army (PLA) Unit 61398 to APT1.The Boyusec website went offline the morning after the exposure and it hasn’t been back online since.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Information Security community agreed with our conclusion that Boyusec and MSS were behind the APT3 attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "They used commercial hackers rather than government employees, probably thinking that it lent them some additional deniability.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Twelve months have passed since this blog exposed Wu Yingzhuo, Dong Hao, their company ‘Boyusec’ and the Chinese Ministry of State Security (MSS) as being behind APT3.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://cyware.com/blog/apt3-a-nation-state-sponsored-adversary-responsible-for-multiple-high-profile-campaigns-f58c/",
+            "content": "APT3 has targeted organizations in various sectors, including Aerospace, Defense, Transportation, Telecommunications, Construction Engineering, and High Tech. In 2016, three individuals responsible for purchasing APT3 domains for cyber-espionage campaigns were identified, named as Wu Yingzhuo, Dong Hao and Xia Lei. The APT's command and control (CnC) infrastructure is hard to track and attribute, as there is little overlap across their campaigns (as it happened only once when the same domain was used in operation Clandestine Fox and Double Tap).APT3 utilizes a wide range of techniques and tools, including spearphishing attacks, zero-day exploits, as well as custom-built malware. The group is linked to the Chinese Ministry of State Security (China's Intelligence Services) and held responsible for several popular cyber espionage campaigns, including Operation Clandestine Wolf (2015), Clandestine Fox (2014), and Double Tap (2014). The numerous code fragments used in that cyber attack were uniquely linked to threat actor groups tracked as APT3, APT10, and APT12.The group is known to steal critical information from private organizations or government entities, to fulfill the larger Chinese political economic or military goals. To thwart off cyber-attacks from threats like APT3, the organizations should deploy endpoint protection solutions with real-time intelligence and automated tactical threat intelligence exchange.",
+            "domain": "cyware.com",
+            "tokenized": [
+                {
+                    "sent": "APT3 has targeted organizations in various sectors, including Aerospace, Defense, Transportation, Telecommunications, Construction Engineering, and High Tech.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In 2016, three individuals responsible for purchasing APT3 domains for cyber-espionage campaigns were identified, named as Wu Yingzhuo, Dong Hao and Xia Lei.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The APT's command and control (CnC) infrastructure is hard to track and attribute, as there is little overlap across their campaigns (as it happened only once when the same domain was used in operation Clandestine Fox and Double Tap).APT3 utilizes a wide range of techniques and tools, including spearphishing attacks, zero-day exploits, as well as custom-built malware.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Russian state-sponsored hackers have targeted embassies and international organizations in a recent cyber-espionage campaign, Ukrainian government cybersecurity researchers have found.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The group is linked to the Chinese Ministry of State Security (China's Intelligence Services) and held responsible for several popular cyber espionage campaigns, including Operation Clandestine Wolf (2015), Clandestine Fox (2014), and Double Tap (2014).",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The numerous code fragments used in that cyber attack were uniquely linked to threat actor groups tracked as APT3, APT10, and APT12.The group is known to steal critical information from private organizations or government entities, to fulfill the larger Chinese political economic or military goals.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "To thwart off cyber-attacks from threats like APT3, the organizations should deploy endpoint protection solutions with real-time intelligence and automated tactical threat intelligence exchange.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.recordedfuture.com/blog/chinese-mss-behind-apt3/",
+            "content": "APT3 (also known as UPS, Gothic Panda, and TG-011) is a sophisticated threat group that has been active since at least 2010. APT3 is not just another cyber threat group engaging in malicious cyber activity; research indicates that Boyusec is an asset of the MSS and their activities support China’s political, economic, diplomatic, and military goals. APT3 is the first threat actor group that has been attributed with a high degree of confidence directly to the MSS. According to the Pentagon’s report, the two companies were working together to produce security products, likely containing a backdoor, that would allow Chinese intelligence “to capture data and control computer and telecommunications equipment.”On May 9, a mysterious group calling itself “intrusiontruth” identified a contractor for the Chinese Ministry of State Security (MSS) as the group behind the APT3 cyber intrusions. Victims of APT3 intrusions include companies in the defense, telecommunications, transportation, and advanced technology sectors — as well as government departments and bureaus in Hong Kong, the U.S., and several other countries.",
+            "domain": "www.recordedfuture.com",
+            "tokenized": [
+                {
+                    "sent": "APT3 (also known as UPS, Gothic Panda, and TG-011) is a sophisticated threat group that has been active since at least 2010.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "APT3 is not just another cyber threat group engaging in malicious cyber activity; research indicates that Boyusec is an asset of the MSS and their activities support China’s political, economic, diplomatic, and military goals.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "APT3 is the first threat actor group that has been attributed with a high degree of confidence directly to the MSS.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "According to the Pentagon’s report, the two companies were working together to produce security products, likely containing a backdoor, that would allow Chinese intelligence “to capture data and control computer and telecommunications equipment.”",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "On May 9, a mysterious group calling itself “intrusiontruth” identified a contractor for the Chinese Ministry of State Security (MSS) as the group behind the APT3 cyber intrusions.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Victims of APT3 intrusions include companies in the defense, telecommunications, transportation, and advanced technology sectors — as well as government departments and bureaus in Hong Kong, the U.S., and several other countries.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.mandiant.com/resources/blog/operation-clandestine-wolf-adobe-flash-zero-day/",
+            "content": "Additionally, this group uses zero-day exploits, continually updated custom backdoors, and throwaway CnC infrastructure, making it difficult to track them across campaigns. In the last several weeks, APT3 actors launched a large-scale phishing campaign against organizations in the following industries:Upon clicking the URLs provided in the phishing emails, targets were redirected to a compromised server hosting JavaScript profiling scripts. The China-based threat group FireEye tracks as APT3, aka UPS, is responsible for this exploit and the activity identified in our previous blog post, Operation Clandestine Fox. The phishing emails used by APT3 during this campaign were extremely generic in nature, almost appearing to be spam. This group is one of the more sophisticated threat groups that FireEye Threat Intelligence tracks, and they have a history of introducing new browser-based zero-day exploits (e.g., Internet Explorer, Firefox, and Adobe Flash Player). This ultimately resulted in a custom backdoor known as SHOTPUT, detected by FireEye as Backdoor.",
+            "domain": "www.mandiant.com",
+            "tokenized": [
+                {
+                    "sent": "Additionally, this group uses zero-day exploits, continually updated custom backdoors, and throwaway CnC infrastructure, making it difficult to track them across campaigns.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In the last several weeks, APT3 actors launched a large-scale phishing campaign against organizations in the following industries:Upon clicking the URLs provided in the phishing emails, targets were redirected to a compromised server hosting JavaScript profiling scripts.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The China-based threat group FireEye tracks as APT3, aka UPS, is responsible for this exploit and the activity identified in our previous blog post, Operation Clandestine Fox.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The phishing emails used by APT3 during this campaign were extremely generic in nature, almost appearing to be spam.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This group is one of the more sophisticated threat groups that FireEye Threat Intelligence tracks, and they have a history of introducing new browser-based zero-day exploits (e.g., Internet Explorer, Firefox, and Adobe Flash Player).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This ultimately resulted in a custom backdoor known as SHOTPUT, detected by FireEye as Backdoor.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,136 @@
+{
+    "event_id": "209",
+    "claim": "A Chinese cyber-espionage group has targeted Israeli organizations in a campaign that began in January 2019, and during which the group often used false flags in attempts to disguise as an Iranian threat actor.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "A Chinese cyber-espionage group has targeted Israeli organizations in a campaign that began in January 2019, and during which the group often used false flags in attempts to disguise as an Iranian threat actor. Detailed in a report published today by security firm Mandiant, the attacks targeted Israeli government institutions, IT companies, and telecommunication providers. The attackers, which Mandiant said it was tracking under a codename of UNC215, typically breached organizations by targeting Microsoft SharePoint servers unpatched for the CVE-2019-0604 vulnerability. Once UNC215 gained access to one of these servers, they deployed the WHEATSCAN tool to scan the victim's internal network and then installed the FOCUSFJORD web shell and HYPERBRO backdoor on key servers as a way to ensure persistence on the hacked organizations' networks.Mandiant said the group took great care and several steps to hide their intrusions and minimize forensic evidence on a victim's network, such as removing malware artifacts once they were not needed and using legitimate software to perform malicious operations.Furthermore, the group also used false flags inside their malware source code in an attempt to hide their real identities. Mandiant said UNC215 often used file paths mentioning Iran (i.e., C:\\Users\\Iran) or error messages written in Arabic (i.e., 'ضائع' – which translates to: lost or missing) In addition, on at least three occasions, UNC215 also used an Iranian hacking tool that was leaked on Telegram in 2019 (i.e., the SEASHARPEE web shell). However, Mandiant researchers said that despite these indicators, the UNC215 group has been conducting cyber-espionage operations of interest to the Chinese state since at least 2014. Moreover, the attacks against Israeli targets are part of a larger espionage campaign during which UNC215 targeted a broader set of victims across the Middle East, Europe, Asia, and North America, with targets typically in the government, technology, telecommunications, defense, finance, entertainment, and health care sectors. But while the Mandiant research team attributed these hacks to the UNC2015 group, the company said it's currently investigating the possibility that UNC2015 might be associated with a larger Chinese cyber-espionage group known as APT27 or Emissary Panda, a group which security firm Cybereason also recently spotted attacking telcos across Southeast Asia.",
+    "reports": [
+        {
+            "link": "https://www.theregister.com/2021/08/11/china_unc215_israel_attacks/",
+            "content": "\"After identifying key systems within the target network, such as domain controllers and Exchange servers, UNC215 moved laterally and deployed their signature malware FOCUSFJORD,\" wrote FireEye's security team.\"China has conducted numerous intrusion campaigns along the BRI route to monitor potential obstructions – political, economic, and security – and we anticipate that UNC215 will continue targeting governments and organizations involved in these critical infrastructure projects in Israel and the broader Middle East in the near- and mid-term.\"\"This cyber espionage activity is happening against the backdrop of China's multi-billion-dollar investments related to the Belt and Road Initiative (BRI) and its interest in Israel’s robust technology sector,\" the post states.\"UNC215 often uses FOCUSFJORD for the initial stages of an intrusion, and then later deploys HYPERBRO, which has more information collection capabilities such as screen capture and keylogging.\"A FireEye blog post states the Chinese activity has been ongoing since 2019, when a group it names \"UNC215\" used the Microsoft SharePoint vulnerability CVE-2019-0604 \"to install web shells and FOCUSFJORD payloads at targets in the Middle East and Central Asia\".Security vendor FireEye says it has spotted a Chinese espionage group that successfully compromised targets within Israel, and that trying to make its efforts look like the work of Iranian actors is part of the group's modus operandi.",
+            "domain": "www.theregister.com",
+            "tokenized": [
+                {
+                    "sent": "\"After identifying key systems within the target network, such as domain controllers and Exchange servers, UNC215 moved laterally and deployed their signature malware FOCUSFJORD,\" wrote FireEye's security team.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "\"China has conducted numerous intrusion campaigns along the BRI route to monitor potential obstructions – political, economic, and security – and we anticipate that UNC215 will continue targeting governments and organizations involved in these critical infrastructure projects in Israel and the broader Middle East in the near- and mid-term.\"",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "\"This cyber espionage activity is happening against the backdrop of China's multi-billion-dollar investments related to the Belt and Road Initiative (BRI) and its interest in Israel’s robust technology sector,\" the post states.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "\"UNC215 often uses FOCUSFJORD for the initial stages of an intrusion, and then later deploys HYPERBRO, which has more information collection capabilities such as screen capture and keylogging.\"",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "A FireEye blog post states the Chinese activity has been ongoing since 2019, when a group it names \"UNC215\" used the Microsoft SharePoint vulnerability CVE-2019-0604 \"to install web shells and FOCUSFJORD payloads at targets in the Middle East and Central Asia\".",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "Security vendor FireEye says it has spotted a Chinese espionage group that successfully compromised targets within Israel, and that trying to make its efforts look like the work of Iranian actors is part of the group's modus operandi.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://cyware.com/news/unc215-impersonated-an-iranian-group-to-target-israeli-organizations-2b079a24/",
+            "content": "After that, the group followed a fixed pattern for credential harvesting and internal reconnaissance (via web shells) to detect important systems within the targeted network.And as the project progresses, espionage groups such as UNC215 are expected to continue their attacks aimed at critical infrastructure in Israel and the Middle East.Some experts suggest that the Chinese cyberespionage activities in the Middle East and Central Asia may be the steps to safeguard China’s huge investments in the Belt and Road (BRI) initiative in those regions.These attacks have been targeting IT services, government institutions, and telecommunications firms since 2019.FireEye's Mandiant threat intelligence has linked the UNC215 threat group with low confidence to an APT identified as APT27 (aka Iron Tiger), which has been active since 2014.For initial access, hackers exploited a SharePoint vulnerability (CVE-2019-0604).UNC215, a Chinese cyber-espionage group, is behind multiple intrusion activities aimed at Israeli organizations, revealed experts.",
+            "domain": "cyware.com",
+            "tokenized": [
+                {
+                    "sent": "After that, the group followed a fixed pattern for credential harvesting and internal reconnaissance (via web shells) to detect important systems within the targeted network.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "And as the project progresses, espionage groups such as UNC215 are expected to continue their attacks aimed at critical infrastructure in Israel and the Middle East.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Some experts suggest that the Chinese cyberespionage activities in the Middle East and Central Asia may be the steps to safeguard China’s huge investments in the Belt and Road (BRI) initiative in those regions.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "These attacks have been targeting IT services, government institutions, and telecommunications firms since 2019.FireEye's Mandiant threat intelligence has linked the UNC215 threat group with low confidence to an APT identified as APT27 (aka Iron Tiger), which has been active since 2014.For initial access, hackers exploited a SharePoint vulnerability (CVE-2019-0604).",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "UNC215, a Chinese cyber-espionage group, is behind multiple intrusion activities aimed at Israeli organizations, revealed experts.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.cyberdefensemagazine.com/unc215-an-alleged/",
+            "content": "A China-linked cyber-espionage group has targeted Israeli organizations and government institutions in a campaign that began in January 2019.Experts reported that the attackers also used a non-public network scanner named WHEATSCAN along with custom malware such as FOCUSFJORD web shell and HYPERBRO to spy on internal systems and maintain persistence within the target organizations.In some attacks, UNC215 also used an Iranian hacking tool that was leaked on Telegram in 2019.The attacks were detailed by cybersecurity firm Mandiant, the state-sponsored hackers used false flags in attempts to disguise themselves as Iran-linked threat actors.These intrusions exploited the Microsoft SharePoint vulnerability CVE-2019-0604 to install web shells and FOCUSFJORD payloads at targets in the Middle East and Central Asia.“China has conducted numerous intrusion campaigns along the BRI route to monitor potential obstructions—political, economic, and security—and we anticipate that UNC215 will continue targeting governments and organizations involved in these critical infrastructure projects in Israel and the broader Middle East in the near- and mid-term.”",
+            "domain": "www.cyberdefensemagazine.com",
+            "tokenized": [
+                {
+                    "sent": "A China-linked cyber-espionage group has targeted Israeli organizations and government institutions in a campaign that began in January 2019.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Experts reported that the attackers also used a non-public network scanner named WHEATSCAN along with custom malware such as FOCUSFJORD web shell and HYPERBRO to spy on internal systems and maintain persistence within the target organizations.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In some attacks, UNC215 also used an Iranian hacking tool that was leaked on Telegram in 2019.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attacks were detailed by cybersecurity firm Mandiant, the state-sponsored hackers used false flags in attempts to disguise themselves as Iran-linked threat actors.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "These intrusions exploited the Microsoft SharePoint vulnerability CVE-2019-0604 to install web shells and FOCUSFJORD payloads at targets in the Middle East and Central Asia.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“China has conducted numerous intrusion campaigns along the BRI route to monitor potential obstructions—political, economic, and security—and we anticipate that UNC215 will continue targeting governments and organizations involved in these critical infrastructure projects in Israel and the broader Middle East in the near- and mid-term.”",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": " https://www.fireeye.com/blog/threat-research/2021/08/unc215-chinese-espionage-campaign-in-israel.html",
+            "content": "August 10, 2021 | by Israel Research Team, U.S. Threat Intel Team israel unc Threat Intelligence This blog post details the post-compromise tradecraft and operational tactics, techniques, and procedures (TTPs) of a Chinese espionage group we track as UNC215.In early 2019, Mandiant began identifying and responding to intrusions in the Middle East by Chinese espionage group UNC215.Mandiant attributes this campaign to Chinese espionage operators which we track as UNC215 a Chinese espionage operation that has been suspected of targeting organizations around the world since at least 2014.These intrusions exploited the Microsoft SharePoint vulnerability CVE 2019-0604 to install web shells and FOCUSFJORD payloads at targets in the Middle East and Central Asia.We identified numerous examples of efforts by UNC215 to foil network defenders by minimizing forensic evidence left on compromised hosts, exploiting relationships with trusted third parties, continuously improving the FOCUSFJORD backdoor, concealing command and control (C2) infrastructure, and incorporating false flags.While UNC215’s targets are located throughout the Middle East, Europe, Asia, and North America, this report focuses on intrusion activity primarily observed at Israeli entities.",
+            "domain": "www.fireeye.com",
+            "tokenized": [
+                {
+                    "sent": "August 10, 2021 | by Israel Research Team, U.S. Threat Intel Team israel unc Threat Intelligence This blog post details the post-compromise tradecraft and operational tactics, techniques, and procedures (TTPs) of a Chinese espionage group we track as UNC215.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In early 2019, Mandiant began identifying and responding to intrusions in the Middle East by Chinese espionage group UNC215.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Mandiant attributes this campaign to Chinese espionage operators which we track as UNC215 a Chinese espionage operation that has been suspected of targeting organizations around the world since at least 2014.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "These intrusions exploited the Microsoft SharePoint vulnerability CVE 2019-0604 to install web shells and FOCUSFJORD payloads at targets in the Middle East and Central Asia.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "We identified numerous examples of efforts by UNC215 to foil network defenders by minimizing forensic evidence left on compromised hosts, exploiting relationships with trusted third parties, continuously improving the FOCUSFJORD backdoor, concealing command and control (C2) infrastructure, and incorporating false flags.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While UNC215’s targets are located throughout the Middle East, Europe, Asia, and North America, this report focuses on intrusion activity primarily observed at Israeli entities.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,141 @@
+{
+    "event_id": "081",
+    "claim": "The transportation industry and government agencies related to the sector are the victims of an ongoing campaign since July 2020 by a sophisticated and well-equipped cyberespionage group in what appears to be yet another uptick in malicious activities that are just the tip of the iceberg.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "The transportation industry and government agencies related to the sector are the victims of an ongoing campaign since July 2020 by a sophisticated and well-equipped cyberespionage group in what appears to be yet another uptick in malicious activities that are “just the tip of the iceberg.” “The group tried to access some internal documents (such as flight schedules and documents for financial plans) and personal information on the compromised hosts (such as search histories),” Trend Micro researchers Nick Dai, Ted Lee, and Vickie Su said in a report published last week. Earth Centaur, also known by the monikers Pirate Panda and Tropic Trooper, is a long-running threat group focused on information theft and espionage that has led targeted campaigns against government, healthcare, transportation, and high-tech industries in Taiwan, the Philippines, and Hong Kong dating all the way back to 2011.The hostile agents, believed to be a Chinese-speaking actor, are known for their use of spear-phishing emails with weaponized attachments to exploit known vulnerabilities, while simultaneously advancing their malicious tools with obfuscation, stealthiness, and striking power. “This threat group is proficient at red teamwork,” the researchers elaborated. “The group knows how to bypass security settings and keep its operation unobstructive. The usage of the open-source frameworks also allows the group to develop new backdoor variants efficiently.” In May 2020, the operators were observed fine-tuning their attack strategies with new behaviors by deploying a USB trojan dubbed USBFerry to strike physically isolated networks belonging to government institutions and military entities in Taiwan and the Philippines in a bid to siphon sensitive data through removable flash drives. The latest multi-stage intrusion sequence detailed by Trend Micro involves the group turning to exploit vulnerable Internet Information Services (IIS) servers and Exchange server flaws as entry points to install a web shell that's then leveraged to deliver a .NET-based Nerapack loader and a first-stage backdoor known as Quasar on the compromised system. From there, the attackers follow it up by dropping an arsenal of second-stage implants like ChiserClient, SmileSvr, ChiserClient, HTShell, and bespoke versions of Lilith RAT and Gh0st RAT depending on the victim to retrieve further instructions from a remote server, download additional payloads, perform file operations, execute arbitrary commands, and exfiltrate results back to the server. It doesn't end there. After successful exploitation of the system, Tropic Trooper also attempts to breach the intranet, dump credentials, and wipe out event logs from the infected machines using a specific set of tools. Also put to use is a command-line program called Rclone that enables the actor to copy harvested data to different cloud storage providers. “Currently, we have not discovered substantial damage to these victims as caused by the threat group,” Trend Micro's analysts explained. “However, we believe that it will continue collecting internal information from the compromised victims and that it is simply waiting for an opportunity to use this data.” The findings are noteworthy because of the steps the advanced persistent threat (APT) takes to avoid detection and the critical nature of the targeted entities, not to mention the new capabilities developed for their malicious software to linger on infected hosts and avoid detection. “The group can map their target's network infrastructure and bypass firewalls,” the researchers said. “It uses backdoors with different protocols, which are deployed depending on the victim. It also has the capability to develop customized tools to evade security monitoring in different environments, and it exploits vulnerable websites and uses them as [command-and-control] servers.\n\n\n",
+    "reports": [
+        {
+            "link": "https://blog.trendmicro.com/trendlabs-security-intelligence/tropic-troopers-back-usbferry-attack-targets-air-gapped-environments/",
+            "content": "Primarily motivated by information theft and espionage, the group has also been seen adopting different strategies such as fine-tuning tools with new behaviors and going mobile with surveillanceware. The group was reportedly using spear-phishing emails with weaponized attachments to exploit known vulnerabilities. The latest developments with Tropic Trooper indicate that they are well-prepared to target government institutions and military agencies for stolen intelligence. Tropic Trooper, a threat actor group that targets government, military, healthcare, transportation, and high-tech industries in Taiwan, the Philippines, and Hong Kong, has been active since 2011. We found that Tropic Trooper’s latest activities center on targeting Taiwanese and the Philippine military’s physically isolated networks through a USBferry attack (the name derived from a sample found in a related research). We found the group was focused on stealing defense-, ocean-, and ship-related documents from target networks, which led us to believe that Tropic Trooper’s main purpose is to exfiltrate confidential information or intelligence.",
+            "domain": "blog.trendmicro.com",
+            "tokenized": [
+                {
+                    "sent": "Primarily motivated by information theft and espionage, the group has also been seen adopting different strategies such as fine-tuning tools with new behaviors and going mobile with surveillanceware.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The group was reportedly using spear-phishing emails with weaponized attachments to exploit known vulnerabilities.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The latest developments with Tropic Trooper indicate that they are well-prepared to target government institutions and military agencies for stolen intelligence.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Tropic Trooper, a threat actor group that targets government, military, healthcare, transportation, and high-tech industries in Taiwan, the Philippines, and Hong Kong, has been active since 2011.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We found that Tropic Trooper’s latest activities center on targeting Taiwanese and the Philippine military’s physically isolated networks through a USBferry attack (the name derived from a sample found in a related research).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We found the group was focused on stealing defense-, ocean-, and ship-related documents from target networks, which led us to believe that Tropic Trooper’s main purpose is to exfiltrate confidential information or intelligence.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.trendmicro.com/en_us/research/18/c/tropic-trooper-new-strategy.html/",
+            "content": "A closer look reveals that it was registered quite recently, and is set to expire after a year, suggesting Tropic Trooper’s use or abuse of components or services that elapse. Cyberespionage campaigns are persistent and, as shown by Tropic Trooper, always raring to exploit weaknesses in people and technology. For organizations, this highlights the significance of staying ahead of their attackers: detect, analyze, and respond. Its operators are believed to be very organized and develop their own cyberespionage tools that they fine-tuned in their recent campaigns. Tropic Trooper (also known as KeyBoy) levels its campaigns against Taiwanese, Philippine, and Hong Kong targets, focusing on their government, healthcare, transportation, and high-tech industries. Tropic Trooper uses exploit-laden Microsoft Office documents to deliver malware to targets.",
+            "domain": "www.trendmicro.com",
+            "tokenized": [
+                {
+                    "sent": "A closer look reveals that it was registered quite recently, and is set to expire after a year, suggesting Tropic Trooper’s use or abuse of components or services that elapse",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Cyberespionage campaigns are persistent and, as shown by Tropic Trooper, always raring to exploit weaknesses in people and technology.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "For organizations, this highlights the significance of staying ahead of their attackers: detect, analyze, and respond.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Its operators are believed to be very organized and develop their own cyberespionage tools that they fine-tuned in their recent campaigns.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Tropic Trooper (also known as KeyBoy) levels its campaigns against Taiwanese, Philippine, and Hong Kong targets, focusing on their government, healthcare, transportation, and high-tech industries.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Tropic Trooper uses exploit-laden Microsoft Office documents to deliver malware to targets.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.microsoft.com/en-us/security/blog/2018/11/28/windows-defender-atp-device-risk-score-exposes-new-cyberattack-drives-conditional-access-to-protect-networks/",
+            "content": "Additionally, the elevated device risk score triggered automated investigation and response, mitigating the attack at its early stages. As a result of this analysis, we were able to determine a strong similarity between this new attack and the attack patterns used by the threat actor known as Tropic Trooper. Given the target region and verticals, the attack chain, and the toolsets used, we believe the threat actor that the industry refers to as Tropic Trooper was likely behind the attack. Several weeks ago, the Windows Defender Advanced Threat Protection (Windows Defender ATP) team uncovered a new cyberattack that targeted several high-profile organizations in the energy and food and beverage sectors in Asia. The first detection related to the attack was fired by a suspicious EQNEDT32.exe behavior, which led us to the entry vector of the attack: a malicious document that carried an exploit for CVE-2018-0802, a vulnerability in Microsoft Office Equation Editor, which the actor known as Tropic Trooper has exploited in previous campaigns. This protects organizations from the serious risk of attackers leveraging compromised devices to perform cyberespionage and other types of attacks.",
+            "domain": "www.microsoft.com",
+            "tokenized": [
+                {
+                    "sent": "Additionally, the elevated device risk score triggered automated investigation and response, mitigating the attack at its early stages.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Given the target region and verticals, the attack chain, and the toolsets used, we believe the threat actor that the industry refers to as Tropic Trooper was likely behind the attack.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Several weeks ago, the Windows Defender Advanced Threat Protection (Windows Defender ATP) team uncovered a new cyberattack that targeted several high-profile organizations in the energy and food and beverage sectors in Asia.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Attack chains have further involved an unknown Linux malware that's employed to gather information from the compromised environment and funnel it back to Mafalda.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The first detection related to the attack was fired by a suspicious EQNEDT32.exe behavior, which led us to the entry vector of the attack: a malicious document that carried an exploit for CVE-2018-0802, a vulnerability in Microsoft Office Equation Editor, which the actor known as Tropic Trooper has exploited in previous campaigns.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This protects organizations from the serious risk of attackers leveraging compromised devices to perform cyberespionage and other types of attacks.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://documents.trendmicro.com/assets/wp/wp-operation-tropic-trooper.pdf/",
+            "content": "But the fact that it has attained some degree of success and has managed to infiltrate crucial organizations in both Taiwan and the Philippines shows the urgent need for targeted entities to rectify their shortcomings in terms of security. In the course of doing research, we also managed to get hold of the following tools that the actors behind Operation Tropic Trooper used in an attack:These hacking tools were possibly remotely downloaded by the attackers onto infected systems. Malware used in Operation Tropic Trooper shared similar characteristics with those used in attacks targeting various organizations in Vietnam and India as early as 2011. Taiwan and the Philippines have become the targets of an ongoing campaign called “Operation Tropic Trooper.”The actors behind Operation Tropic Trooper used spear\u0002phishing emails with weaponized attachments to exploit old vulnerabilities, particularly CVE\u00022010-3333 and CVE-2012- 0158. [1] Operation Tropic Trooper targets government institutions, military agencies, and companies in the heavy industry in Taiwan and the Philippines.",
+            "domain": "documents.trendmicro.com",
+            "tokenized": [
+                {
+                    "sent": "But the fact that it has attained some degree of success and has managed to infiltrate crucial organizations in both Taiwan and the Philippines shows the urgent need for targeted entities to rectify their shortcomings in terms of security.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In the course of doing research, we also managed to get hold of the following tools that the actors behind Operation Tropic Trooper used in an attack:These hacking tools were possibly remotely downloaded by the attackers onto infected systems.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Malware used in Operation Tropic Trooper shared similar characteristics with those used in attacks targeting various organizations in Vietnam and India as early as 2011.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Taiwan and the Philippines have become the targets of an ongoing campaign called “Operation Tropic Trooper.”",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The actors behind Operation Tropic Trooper used spear\u0002phishing emails with weaponized attachments to exploit old vulnerabilities, particularly CVE\u00022010-3333 and CVE-2012- 0158.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "[1] Operation Tropic Trooper targets government institutions, military agencies, and companies in the heavy industry in Taiwan and the Philippines.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

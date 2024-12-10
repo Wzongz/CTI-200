@@ -1,0 +1,140 @@
+{
+    "event_id": "197",
+    "claim": "Dragos identified a new activity group targeting industrial control systems (ICS) related entities: HEXANE. Dragos observed this group targeting oil and gas companies in the Middle East, including Kuwait as a primary operating region.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "HEXANE intrusion activity includes malicious documents that drop malware to establish footholds for follow-on activity. Although the group appears operational since at least mid-2018, activity accelerated in early- to mid-2019. This timeline, targeting, and increase of operations coincides with an escalation of tensions within Middle East, a current area of political and military conflict. HEXANE’s telecommunications targeting appears to follow a trend demonstrated by other activity groups. ICS adversaries are increasingly targeting third-party organizations along the supply chains of potential targets. For instance, in 2018, Dragos identified the activity group XENOTIME targeting several industrial original equipment manufacturers (OEMs), and hardware and software suppliers. By compromising devices, firmware, or telecommunications networks used by targets within ICS, malicious activity could potentially enter the victim environment through a trusted vendor, bypassing much of the entity’s security stack. HEXANE demonstrates similarities to the activity groups MAGNALLIUM and CHRYSENE. All are ICS-targeting activities focusing largely on oil and gas, and some of the behaviors and recently observed tactics, techniques, and procedures (TTPs) are similar. Like HEXANE, MAGNALLIUM also increased its activity in early- to mid-2019. Dragos identified recent MAGNALLIUM activity targeting US government and financial organizations as well as oil and gas companies, attempting to gain access to computers at target organizations. However, the collection of HEXANE behaviors, tools, and victimology makes this a unique entity compared to these previously-observed activity groups. For instance, HEXANE’s observed victimology is mostly focused on critical infrastructure, but divided between ICS verticals and telecommunications operations. Additionally, its infrastructure and capabilities — such as using malicious domains patterned after general IT themes and newly identified detection evasion schemes — are different from related groups. Dragos categorizes activity groups based on the Diamond Model of Intrusion Analysis and groups activity by the observed actions, capabilities, and demonstrated – not implied or assumed – intentions. These attributes can be combined to construct and implement defensive strategies. At this time, Dragos assesses with moderate confidence that HEXANE does not possess the access nor capability to disrupt ICS networks.",
+    "reports": [
+        {
+            "link": "https://www.securityweek.com/report-iranian-apt-hexane-targets-israeli-companies/",
+            "content": "Active since at least 2018 and also tracked as Lyceum and SiameseKitten, Hexane was previously seen targeting companies in the oil and gas and telecommunications sectors in the Middle East and Africa.Following a May 2021 attack on an IT company in Israel, Hexane launched a second wave of assaults in July 2021, this time targeting additional organizations in the country.On the phishing website, Hexane would detail jobs in France, Israel, and the UK.Over the past several months, an Iran-linked threat actor tracked as Hexane has attempted to breach numerous Israeli organizations using supply chain tools, according to a new report from security vendor ClearSky.Recent activity attributed to the Hexane actor, however, shows a change in both targeting and tactics.We believe that these attacks and their focus on IT and communication companies are intended to facilitate supply chain attacks on their clients.",
+            "domain": "www.securityweek.com",
+            "tokenized": [
+                {
+                    "sent": "Active since at least 2018 and also tracked as Lyceum and SiameseKitten, Hexane was previously seen targeting companies in the oil and gas and telecommunications sectors in the Middle East and Africa.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Following a May 2021 attack on an IT company in Israel, Hexane launched a second wave of assaults in July 2021, this time targeting additional organizations in the country.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "On the phishing website, Hexane would detail jobs in France, Israel, and the UK.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Over the past several months, an Iran-linked threat actor tracked as Hexane has attempted to breach numerous Israeli organizations using supply chain tools, according to a new report from security vendor ClearSky.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Recent activity attributed to the Hexane actor, however, shows a change in both targeting and tactics.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We believe that these attacks and their focus on IT and communication companies are intended to facilitate supply chain attacks on their clients.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.rewterz.com/rewterz-news/rewterz-threat-alert-lyceum-apt-aka-hexane-active-iocs/",
+            "content": "For initial backdoor deployment, the group does Domain name system (DNS) tunneling.In 2021, the threat actors launched a massive campaign against ISPs and telecom companies in Israel, Morocco, Tunisia, and Saudi Arabia in 2021.It has expanded on this victim set by identifying additional targets within internet service providers (ISPs) and government agencies.NET-based backdoor to target the Middle East.The Lyceum APT (aka HEXANE, Spirlin) is a cybercriminal group that mainly targets energy organizations and telecommunication in the Middle East.The group has been deploying “ir_drones.docm” maldoc for infiltration as well.",
+            "domain": "www.rewterz.com",
+            "tokenized": [
+                {
+                    "sent": "For initial backdoor deployment, the group does Domain name system (DNS) tunneling.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In 2021, the threat actors launched a massive campaign against ISPs and telecom companies in Israel, Morocco, Tunisia, and Saudi Arabia in 2021.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It has expanded on this victim set by identifying additional targets within internet service providers (ISPs) and government agencies.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "NET-based backdoor to target the Middle East.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The Lyceum APT (aka HEXANE, Spirlin) is a cybercriminal group that mainly targets energy organizations and telecommunication in the Middle East.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group has been deploying “ir_drones.docm” maldoc for infiltration as well.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.clearskysec.com/siamesekitten/",
+            "content": "At the beginning of May 2021, we detected the first attack by Siamesekitten on an IT company in Israel.In July 2021, we detected a second wave of similar attacks against additional companies in Israel.Many attack groups are executing this type of campaign, such as the North Korean Lazarus campaign we exposed in the summer of 2020 (Dream Job) and the Iranian OilRig campaign (APT34) that targeted Middle Eastern victims in the first quarter of 2021.Siamesekitten (also named Lyceum/Hexane) is an Iranian APT group active in the Middle east and in Africa that is active in launching supply chain attacks.This campaign is similar to the North Korean “Job seekers” campaign, employing what has become a widely used attack vector in recent years – impersonation.We believe that this infrastructure was built to lure IT experts and penetrate their computers to gain accesses to the company’s clients.",
+            "domain": "darktrace.com",
+            "tokenized": [
+                {
+                    "sent": "At the beginning of May 2021, we detected the first attack by Siamesekitten on an IT company in Israel.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In July 2021, we detected a second wave of similar attacks against additional companies in Israel.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Many attack groups are executing this type of campaign, such as the North Korean Lazarus campaign we exposed in the summer of 2020 (Dream Job) and the Iranian OilRig campaign (APT34) that targeted Middle Eastern victims in the first quarter of 2021.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Siamesekitten (also named Lyceum/Hexane) is an Iranian APT group active in the Middle east and in Africa that is active in launching supply chain attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This campaign is similar to the North Korean “Job seekers” campaign, employing what has become a widely used attack vector in recent years – impersonation.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We believe that this infrastructure was built to lure IT experts and penetrate their computers to gain accesses to the company’s clients.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://cisomag.com/iranian-cyberespionage-campaign-siamesekitten-targets-israeli-firms/",
+            "content": "According to research from cybersecurity firm ClearSky, threat actors are specifically targeting IT professionals to pilfer their credentials and then leverage that to break into the company’s network systems.Security researchers uncovered a new cyberespionage campaign by Iranian hackers targeting IT and telecom companies in Israel with supply-chain attacks.The Siamesekitten threat group specifically targets IT professionals to pilfer their credentials and then leverage them to break into the company’s network systems.The group gathers data through the infected machine, conducts espionage, and attempts to spread within the network.The group’s main goal is to conduct espionage and utilize the infected network to access their clients’ networks.Tracked as Siamesekitten (also known as Lyceum or Hexane), the Iranian APT group imitated HR personnel to lure unwitting users with fake job offers.",
+            "domain": "cisomag.com",
+            "tokenized": [
+                {
+                    "sent": "According to research from cybersecurity firm ClearSky, threat actors are specifically targeting IT professionals to pilfer their credentials and then leverage that to break into the company’s network systems.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Security researchers uncovered a new cyberespionage campaign by Iranian hackers targeting IT and telecom companies in Israel with supply-chain attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Siamesekitten threat group specifically targets IT professionals to pilfer their credentials and then leverage them to break into the company’s network systems.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group gathers data through the infected machine, conducts espionage, and attempts to spread within the network.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The group’s main goal is to conduct espionage and utilize the infected network to access their clients’ networks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Tracked as Siamesekitten (also known as Lyceum or Hexane), the Iranian APT group imitated HR personnel to lure unwitting users with fake job offers.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

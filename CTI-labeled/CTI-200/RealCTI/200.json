@@ -1,0 +1,140 @@
+{
+    "event_id": "200",
+    "claim": "IndigoZebra is a Chinese state-sponsored actor mentioned for the first time by Kaspersky in its APT Trends report Q2 2017, targeting, at the time of its discovery, former Soviet Republics with multiple malware strains including Meterpreter, Poison Ivy, xDown, and a previously unknown backdoor called “xCaon.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Check Point research recently discovered an ongoing spear-phishing campaign targeting the Afghan government. Further investigation revealed this campaign was a part of a long-running activity targeting other Central-Asia countries, including Kyrgyzstan and Uzbekistan, since at least 2014. The actor suspected of this cyber-espionage operation is an APT group dubbed “IndigoZebra“, previously attributed by researchers to China. The technical details of the operation were not publicly disclosed before. In this article, we will discuss the tools, TTPs and infrastructure used by the attacker during the years of its activity. We will also provide technical analysis of the two different strains of the previously publicly undescribed backdoor xCaon, including its latest version we dubbed BoxCaon which uses the legitimate cloud-storage service Dropbox to act as its Command and Control server.Our investigation started with the emails sent from an employee of the Administrative Office of the President in Afghanistan to the employees of the Afghanistan National Security Council (NSC). The email asked the recipient to review the modifications in the document related to the upcoming press conference of the NSC.The email contains a password-protected RAR archive named NSC Press conference.rar. Extracting the archive with the password provided in the email requires user interaction and therefore provides a challenge for some sandbox security solutions.The extracted file, NSC Press conference.exe, acts as a dropper. The content of the lure email suggests that the attached file is the document, hence, to reduce the suspicion of the victim running the executable, the attackers use the simple trick – the first document on the victim’s desktop is opened for the user upon the dropper execution. Whether the dropper found a document to open or not, it will proceed to the next stage – drop the backdoor to C:\\sers\\public\\spools.exe and execute it.The backdoor contain narrow capabilities: download and upload files, run commands and send the attackers the results. However short the list, they allow the attackers to upload and execute additional tools for further reconnaissance and lateral movement. To hide malicious functionality – persistence and C&C communication – from static detections, the malware uses a common obfuscation technique known as “stackstrings” to build wide char strings.The backdoor utilizes Dropbox as a C&C server, by sending and receiving commands written to a specific folder in a specially created Dropbox account, prepared by the attacker before the operation. By using the legitimate Dropbox service for C&C communications, instead of regular dedicated server infrastructure, aids in masking the malicious traffic in the target’s network, as no communication to abnormal websites is taking place. The backdoor uses the Dropbox API with a hardcoded bearer access token and has the ability to download, upload, and execute files. In the initialization stage, the backdoor creates a unique folder for the victim in an attacker-controlled Dropbox account. The folder is named by the victim’s MAC address which is obtained using GetAdaptersInfo API.Locally, the backdoor creates a working folder at C:\\users\\public\\ (where is a random integer). It then proceeds by uploading two files to the server: m-.txt – containing the backdoor execution path d-.txt – containing the local working folder path.When the attackers need to send a file or command to the victim machine, they place them to the folder named d in the victim’s Dropbox folder. The malware retrieves this folder and downloads all its contents to the working folder. Finally, if the file named c.txt – that contains the attacker command, exists in this working folder, the backdoor executes it using the ComSpec environment variable, which normally points to the command line interpreter (like cmd.exe), and uploads the results back to the Dropbox drive while deleting the command from the server.The backdoor establishes persistence by setting the HKEY_CURRENT_USER\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\load registry key to point to its executable. This method is less common than Run or RunOnce keys but achieves its ultimate goal: the program listed in the Load registry value runs when any user logs on.Once the C&C communication is established, the threat actor starts by executing fingerprinting and reconnaissance commands on the machine. In this attack, some of the actions we spotted included: Download and execution of ntbscan (SHA-1: 90da10004c8f6fafdaa2cf18922670a745564f45) – NetBIOS scanner tool widely used by multiple APT actor including the prolific Chinese group APT10 Execution of Windows built-in networking utility tools Access to the victim’s files, especially documents located on the Desktop.Searching for related samples in the wild yielded almost 30 executables, each of them bear varying degrees of similarity with the spools.exe BoxCaon backdoor. One of the common similarities is a very specific implementation of the command execution: first constructing the ComSpec string on stack, using the same path naming convention for the output file, and deleting it right after the execution.The earliest of the found samples is dated back to 2014. Even though some of the executables claim to be compiled in 2004 or 2008, based on the C&C servers registration time and the activity, we believe the compilation date was probably modified by the actor. While we were collecting additional information about this long-lasting operation, we noticed a reference to the Kaspersky 2017 APT trends report where one of the samples is referred to as xCaon malware, used by the Chinese-speaking APT actor “IndigoZebra“. The other samples in our set appear to be the different variants of xCaon, including packed ones, or the PoisonIvy malware which was also reported as a part of the actor’s arsenal. Based on the code and functionality similarities we can attribute the BoxCaon backdoor to the updated variant of the same xCaon family (hence the name). It is the only xCaon version that communicates over Dropbox API in clear text commands, whereas all the other samples use HTTP protocol with Base64+XOR encryption to communicate with their C&C servers. Although the xCaon malware family is used in the wild for several years, there was no technical analysis publicly available until now. In the next section, we will summarize the technical details of all the versions we’ve encountered.As mentioned earlier, we found an approximate of 30 different samples of the xCaon HTTP variant with slightly different functionality. Below we will cover the most note-worthy features of the backdoor, highlighting samples with unique functionality.The HTTP variant checks if Kaspersky is installed on the victim’s machine by searching for the existence of files in the Kaspersky installation folder.If Kaspersky AV is not installed on the system, persistence via registry is installed. First, the backdoor makes sure that a copy of the executable exists in the specific path of the TEMP folder, and then the path is written to the HKEY_CURRENT_USER\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\load key, causing the malware to run each time any user logs in.The backdoor receives commands from the attacker and runs them in an interactive CMD shell using pipes. The commands may differ between the samples,The backdoor collects the victim’s MAC address using the GetAdaptersInfo API. Some of the versions generate a user ID and save it in a temporary file. These IDs are then passed to the C&C server as one of the POST body parameters (MAC address is sent encrypted as discussed later).he communication between the malware and the server is based on the HTTP protocol and slightly varies between the samples. Every few seconds the backdoor sends a POST request to the C&C URL. In the response (which looks like an HTML page), the malware searches for a specific pattern: it takes the string between , decodes it, and executes the command. The result is encrypted and sent back to another URL on the server as the parameter of a POST request.The HTTP variant used an interesting and unique method of encryption for both configuration and communication. It uses a predefined key, which we found to be one of the following two (depends on the malware variant): 1. \"GetMessagePos SendMessage GetExitCodeProces CreateProcess GetTickCount GetDCEx CopyImage DrawText CloseHandle SendMessageTimeout\"  The decryption process is based on splitting the “fake” base64-like string into two strings, XORing the first part with the predefined key, base64-decoding the second part, and finally, XOR both the results.While we saw the Dropbox variant (BoxCaon) targeting Afghan government officials, the HTTP variants are focused on political entities in two particular Central Asian countries – Kyrgyzstan and Uzbekistan. This very specific victimology is based upon the following overlapping indicators: Check Point products’ telemetry C&C domains impersonating known Uzbek and Kyrgyz domains (post[.]mfa-uz[.]com – Uzbekistan Ministry of Foreign Affairs; ousync[.]kginfocom[.]com – Kyrgyz state enterprise “Infocom”) Malware names of the samples were written in Kyrgyz and Russian (Министрге сунуштама.exe – Recommendation to the Minister.exe in Kyrgyz; материалы к массовому беспорядку.exe – materials to riots.exe in non-native Russian) VT submitters’ countries for multiple samples from this campaign are Uzbekistan and Kyrgyzstan.As the Dropbox variant uses Dropbox API for communication, the only information we were able to gather from it is the Dropbox account information [Appendix C]. However, when we analyzed the infrastructure of the HTTP variants, we saw that the samples have a common infrastructure for over 6 years since the first sample was in the wild.To get a clearer picture of how the attackers operated their infrastructure throughout the years, we have plotted the various malicious domains according to the ASN they were hosted on.Most of the domains are relatively short-lived. This can be explained by the precision targeting of the whole operation: the lookalike domains were most likely created to mislead a specific entity and were not reused anymore. Since 2019, all of the new infrastructure has been concentrated on ASN 20473 (CHOOPA). This observation does not come as a surprise: Vultr, a subsidiary of CHOOPA, is considered an “attractive platform for criminals” by the research community and widely used for malicious purposes by multiple groups including, for example, Chinese-based APT group ViciousPanda whose recent C&C servers are also all hosted on Vultr servers.In this publication we unveiled the latest activity and tools of the long-running IndigoZebra operation, previously attributed to a Chinese-speaking threat actor. In this case, we observed a cyber-espionage operation focusing on governmental agencies in Central Asia, being targeted with the Poison Ivy and xCaon backdoors, along with the newly discovered BoxCaon backdoor variant – whose C&C communication capability was updated to utilize the Dropbox service itself as the C&C infrastructure of the operation. While the IndigoZebra actor was initially observed targeting former Soviet republics such as Uzbekistan and Kyrgyzstan, we have now witnessed that its campaigns do not dial down, but on the contrary – they expand to the new targets in the region, with a new toolset. Check Point products block this attack from the very first step.",
+    "reports": [
+        {
+            "link": "https://thehackernews.com/2021/07/indigozebra-apt-hacking-campaign.html",
+            "content": "\"The threat actors behind the espionage leveraged Dropbox, the popular cloud-storage service, to infiltrate the Afghan National Security Council (NSC),\" the researchers said in a technical write-up shared with The Hacker News, adding they \"orchestrated a ministry-to-ministry style deception, where an email is sent to a high-profile target from the mailboxes of another high-profile victim.\"IndigoZebra first came to light in August 2017 when Kaspersky detailed a covert operation that singled out former Soviet Republics with a wide swath of malware such as Meterpreter, Poison Ivy RAT, xDown, and a previously undocumented piece of malware called xCaon.Check Point's investigation into the attacks commenced in April when NSC officials began receiving lure emails allegedly claiming to be from the Administrative Office of the President of Afghanistan.Cybersecurity researchers are warning of ongoing attacks coordinated by a suspected Chinese-speaking threat actor targeting the Afghanistan government as part of an espionage campaign that may have had its provenance as far back as 2014.Israeli cybersecurity firm Check Point Research attributed the intrusions to a hacking group tracked under the moniker \"IndigoZebra,\" with past activity aimed at other central-Asian countries, including Kyrgyzstan and Uzbekistan.The backdoor, dubbed \"BoxCaon,\" is capable of stealing confidential data stored on the device, running arbitrary commands, and exfiltrating the results back to the Dropbox folder.While the message urged the recipients to review modifications in an attached document related to a pending NSC press conference, opening the decoy file — a password-protected RAR archive (\"NSC Press conference.rar\") — was found to trigger an infection chain that culminated in the installation of a backdoor (\"spools.exe\") on the targeted system.",
+            "domain": "unit42.paloaltonetworks.com",
+            "tokenized": [
+                {
+                    "sent": "\"The threat actors behind the espionage leveraged Dropbox, the popular cloud-storage service, to infiltrate the Afghan National Security Council (NSC),\" the researchers said in a technical write-up shared with The Hacker News, adding they \"orchestrated a ministry-to-ministry style deception, where an email is sent to a high-profile target from the mailboxes of another high-profile victim.\"IndigoZebra first came to light in August 2017 when Kaspersky detailed a covert operation that singled out former Soviet Republics with a wide swath of malware such as Meterpreter, Poison Ivy RAT, xDown, and a previously undocumented piece of malware called xCaon.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Check Point's investigation into the attacks commenced in April when NSC officials began receiving lure emails allegedly claiming to be from the Administrative Office of the President of Afghanistan.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Cybersecurity researchers are warning of ongoing attacks coordinated by a suspected Chinese-speaking threat actor targeting the Afghanistan government as part of an espionage campaign that may have had its provenance as far back as 2014.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Israeli cybersecurity firm Check Point Research attributed the intrusions to a hacking group tracked under the moniker \"IndigoZebra,\" with past activity aimed at other central-Asian countries, including Kyrgyzstan and Uzbekistan.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The backdoor, dubbed \"BoxCaon,\" is capable of stealing confidential data stored on the device, running arbitrary commands, and exfiltrating the results back to the Dropbox folder.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While the message urged the recipients to review modifications in an attached document related to a pending NSC press conference, opening the decoy file — a password-protected RAR archive (\"NSC Press conference.rar\") — was found to trigger an infection chain that culminated in the installation of a backdoor (\"spools.exe\") on the targeted system.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://securelist.com/apt-trends-report-q2-2017/79332/",
+            "content": "Despite its age, the EQUATIONVECTOR backdoor (identified as ‘PeddleCheap’ in the latest ShadowBrokers disclosures) incorporates many advanced techniques for prolonged stealthy operations in victim networks, allowing the Equation operators to deliver further payloads without arousing suspicion.In the last quarter we’ve seen two instances of this, and with the continued release of tools / exploits from dumps like Vault7 and ShadowBrokers, this is going to be a new alarming trend to deal with.Reports in the ‘unknown’ category: ShadowBrokers’ Lost in translation leak – SWIFT attacks analysis ChasingAdder – WMI DLL Hijacking Trojan Targeting High Profile Victims University Researchers Located in Hong Kong Targeted with Demsty.This campaign was targeting former Soviet Republics with a wide swath of malware including Meterpreter, Poison Ivy, xDown, and a previously unknown malware called ‘xCaon’.We revealed to customers a previously unknown piece of malware dubbed ‘Manuscrypt’ used by Lazarus to target not only diplomatic targets in South Korea, but also people using virtual currency and electronic payment sites.backdoor for staging further attacks.",
+            "domain": "securelist.com",
+            "tokenized": [
+                {
+                    "sent": "Despite its age, the EQUATIONVECTOR backdoor (identified as ‘PeddleCheap’ in the latest ShadowBrokers disclosures) incorporates many advanced techniques for prolonged stealthy operations in victim networks, allowing the Equation operators to deliver further payloads without arousing suspicion.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In the last quarter we’ve seen two instances of this, and with the continued release of tools / exploits from dumps like Vault7 and ShadowBrokers, this is going to be a new alarming trend to deal with.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Reports in the ‘unknown’ category: ShadowBrokers’ Lost in translation leak – SWIFT attacks analysis ChasingAdder – WMI DLL Hijacking Trojan Targeting High Profile Victims University Researchers Located in Hong Kong Targeted with Demsty.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This campaign was targeting former Soviet Republics with a wide swath of malware including Meterpreter, Poison Ivy, xDown, and a previously unknown malware called ‘xCaon’.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "We revealed to customers a previously unknown piece of malware dubbed ‘Manuscrypt’ used by Lazarus to target not only diplomatic targets in South Korea, but also people using virtual currency and electronic payment sites.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“backdoor for staging further attacks.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://heimdalsecurity.com/blog/indigozebra-apt-campaign-continues-to-target-central-asia/",
+            "content": "As in its previous iteration, the routine used by Cloud Atlas begins with phishing emails to high-value targets.As reported by researchers at Kaspersky, the campaign can be traced to the advanced persistent threat (APT) group Cloud Atlas (aka Inception), whose activities were first reported in 2014 and have recently been identified in relation to attacks on various organizations in Russia, Central Asia, Europe, and Portugal.Polymorphism and PowerShell abuse for malware propagation and infection are not new.Threat actors have been abusing new scripting languages, for example, to make it difficult for enterprise IT teams to seek, monitor, and defend against these threats.Trend Micro researchers have been tracking such evasion and infection techniques.cloud-atlas-powershower-vbshower-lazagneA malware campaign that uses a polymorphic HTML application (HTA) and a polymorphic backdoor to evade detection has recently been observed by security researchers.",
+            "domain": "www.trendmicro.com",
+            "tokenized": [
+                {
+                    "sent": "As reported by The Hacker News, “The threat actors behind the espionage leveraged Dropbox, the popular cloud-storage service, to infiltrate the Afghan National Security Council (NSC)”, orchestrating a ministry-to-ministry style deception, where an email is sent to a high-profile target from the mailboxes of another high-profile victim.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "As reported by researchers at Kaspersky, the campaign can be traced to the advanced persistent threat (APT) group Cloud Atlas (aka Inception), whose activities were first reported in 2014 and have recently been identified in relation to attacks on various organizations in Russia, Central Asia, Europe, and Portugal.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Dubbed “BoxCaon”, the backdoor is capable of stealing confidential data stored on the device, running arbitrary commands, and exfiltrating the results back to the Dropbox folder.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In reality, the email contained a password-protected RAR archive named NSC Press conference.rar.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "IndigoZebra is now targeting the Afghanistan government as part of an espionage campaign that may date as far back as 2014.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "What’s more, the attacks funneled malicious commands into the victim machine that were hidden using the Dropbox API, with the implant creating a unique folder for the victim in an attacker-controlled Dropbox account.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://gbhackers.com/indigozebra-apt-group/",
+            "content": "Also known as Inception, Cloud Atlas is an actor that has a long history of cyber-espionage operations targeting industries and governmental entities.During recent months, we have seen a new infection chain, involving a polymorphic HTA, a new and polymorphic VBS implant aimed at executing PowerShower, and the Cloud Atlas second stage modular backdoor that we disclosed five years ago in our first blogpost about them and which remains unchanged.From the beginning of 2019 until July, we have been able to identify different spear-phishing campaigns related to this threat actor mostly focused on Russia, Central Asia and regions of Ukraine with ongoing military conflicts.The Windows branch of the Cloud Atlas intrusion set still uses spear-phishing emails to target high profile victims.The actor’s massive spear-phishing campaigns continue to use its simple but effective methods in order to compromise its targets.This malware has been used since October 2018 by Cloud Atlas as a validator and now as a second stage.",
+            "domain": "securelist.com",
+            "tokenized": [
+                {
+                    "sent": "During a routine investigation, the security analyst of Check Point research has identified a spear-phishing campaign.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Earlier, the analysts were not aware of this campaign, but they found something odd and started investigating the matter when they saw an email that has been sent by one of the employees of the Administrative Office of the President in Afghanistan to the employees of the Afghanistan National Security Council (NSC).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Moreover, the email has some detail on it, that is the password-protected RAR archive named NSC Press conference.rar.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Not only this, but the threat actors prepare this Dropbox account before the operation, and the backdoor utilizes the Dropbox API with a strong beneficiary access token which has the ability to download, upload and execute files accordingly.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The experts have found some additional past history of this hacking group, and they came to know that the IndigoZebra has aimed at several central-Asian countries, which include Kyrgyzstan and Uzbekistan.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The researchers of the Israeli cybersecurity firm that is the Check Point Research accused that all the interventions that have happened till now were traced beneath the moniker “IndigoZebra,” hacking group.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

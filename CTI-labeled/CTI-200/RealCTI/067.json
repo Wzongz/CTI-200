@@ -1,0 +1,142 @@
+{
+    "event_id": "067",
+    "claim": "Kaspersky Lab discovers the ancestor of Stuxnet and Flame – powerful threat actor with an absolute dominance in terms of cyber-tools and techniques.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "In 2015, Moscow-based Kaspersky Lab published a report on the Equation Group, a threat actor active since 2001. It was responsible for infecting approximately five hundred systems in at least forty-two countries. The malware used by Equation Group had the ability to reprogram hard drives and then self-destruct, which made the operations effectively invisible and indestructible. Targeted systems ranged from the private to the public sector, from energy departments to military operations to media outlets. The tools and scope of the Equation Group suggest that it is one of the most sophisticated threat actors operating in cyberspace. Many believe that Equation Group is a state-sponsored entity, such as the U.S. National Security Agency or a joint effort between it and its Five Eyes allies.\n\n\n",
+    "reports": [
+        {
+            "link": "https://brandefense.io/blog/apt-groups/equation-apt-group/",
+            "content": "EQUATIONDRUG – An attack platform which has plugins as modules. Equation Group infects its victims by several ways. Equation Group is a sophisticated and old group. It is difficult to detect Equation Group’s malware for antivirus software and forensics professionals. Kaspersky Lab found 7 exploits are used by Equation Group. These ways include: Worm code Physical media, CD-ROMs USB Sticks Web Exploits Equation Group uses physical media, worm, or web exploits to infect victims.",
+            "domain": "brandefense.io",
+            "tokenized": [
+                {
+                    "sent": "EQUATIONDRUG – An attack platform which has plugins as modules.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Equation Group infects its victims by several ways.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Equation Group is a sophisticated and old group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It is difficult to detect Equation Group’s malware for antivirus software and forensics professionals.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Kaspersky Lab found 7 exploits are used by Equation Group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "These ways include: Worm code Physical media, CD-ROMs USB Sticks Web Exploits Equation Group uses physical media, worm, or web exploits to infect victims.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.industrialcybersecuritypulse.com/threats-vulnerabilities/throwback-attack-the-equation-group-god-of-cyberespionage/",
+            "content": "In 2015, Kaspersky Lab announced they had discovered a major cyber threat called the Equation Group that was comprised of over 60 threat actors. Once the Equation Group was discovered, the next question became: Who could be behind this advanced persistent threat (APT) group? One of the most sophisticated cyberattack groups in the world, the Equation group, was founded in the U.S. The Equation Group earned its name because of its love for encryption algorithms and its use of a specific implementation of the RC5 encryption algorithm throughout its malware. The Equation Group targeted multiple industries and institutions, such as governments and diplomatic institutions, telecommunications, aerospace, energy, nuclear research, oil and gas, military, nanotechnology, Islamic activists and scholars, mass media, transportation, financial institutions and companies developing cryptographic technologies. There are several malware platforms the Equation Group uses exclusively, such as EquationLaser, EquationDrug, DoubleFantasy, TripleFantasy, GrayFish and Fanny.",
+            "domain": "www.industrialcybersecuritypulse.com",
+            "tokenized": [
+                {
+                    "sent": "In 2015, Kaspersky Lab announced they had discovered a major cyber threat called the Equation Group that was comprised of over 60 threat actors.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Once the Equation Group was discovered, the next question became: Who could be behind this advanced persistent threat (APT) group?",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "One of the most sophisticated cyberattack groups in the world, the Equation group, was founded in the U.S.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The Equation Group earned its name because of its love for encryption algorithms and its use of a specific implementation of the RC5 encryption algorithm throughout its malware.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The Equation Group targeted multiple industries and institutions, such as governments and diplomatic institutions, telecommunications, aerospace, energy, nuclear research, oil and gas, military, nanotechnology, Islamic activists and scholars, mass media, transportation, financial institutions and companies developing cryptographic technologies.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "There are several malware platforms the Equation Group uses exclusively, such as EquationLaser, EquationDrug, DoubleFantasy, TripleFantasy, GrayFish and Fanny.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.kaspersky.com/about/press-releases/2015_equation-group-the-crown-creator-of-cyber-espionage/",
+            "content": "For several years, Kaspersky Lab’s Global Research and Analysis Team (GReAT) has been closely monitoring more than 60 advanced threat actors responsible for cyber-attacks worldwide. However, only now Kaspersky Lab’s experts can confirm they have discovered a threat actor that surpasses anything known in terms of complexity and sophistication of techniques, and that has been active for almost two decades – The Equation Group. Kaspersky Lab observed seven exploits used by the Equation group in their malware. Since 2001, the Equation group has been busy infecting thousands, or perhaps even tens of thousands of victims in more than 30 countries worldwide, covering the following sectors: Government and diplomatic institutions, Telecommunications, Aerospace, Energy, Nuclear research, Oil and Gas, Military, Nanotechnology, Islamic activists and scholars, Mass media, Transportation, Financial institutions and companies developing encryption technologies. The Equation group uses a vast C&C infrastructure that includes more than 300 domains and more than 100 servers. This is perhaps the most powerful tool in the Equation group’s arsenal and the first known malware capable of infecting the hard drives.",
+            "domain": "www.kaspersky.com",
+            "tokenized": [
+                {
+                    "sent": "For several years, Kaspersky Lab’s Global Research and Analysis Team (GReAT) has been closely monitoring more than 60 advanced threat actors responsible for cyber-attacks worldwide.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "However, only now Kaspersky Lab’s experts can confirm they have discovered a threat actor that surpasses anything known in terms of complexity and sophistication of techniques, and that has been active for almost two decades – The Equation Group.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "Kaspersky Lab observed seven exploits used by the Equation group in their malware.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "Since 2001, the Equation group has been busy infecting thousands, or perhaps even tens of thousands of victims in more than 30 countries worldwide, covering the following sectors: Government and diplomatic institutions, Telecommunications, Aerospace, Energy, Nuclear research, Oil and Gas, Military, Nanotechnology, Islamic activists and scholars, Mass media, Transportation, Financial institutions and companies developing encryption technologies.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "The Equation group uses a vast C&C infrastructure that includes more than 300 domains and more than 100 servers.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This is perhaps the most powerful tool in the Equation group’s arsenal and the first known malware capable of infecting the hard drives.",
+                    "is_evidence": 1
+                }
+            ]
+        },
+        {
+            "link": "https://www.securityweek.com/chinese-hackers-cloned-equation-group-exploit-years-shadow-brokers-leak/",
+            "content": "A little-known Russian-speaking cyber-espionage group has been linked to a new politically-motivated surveillance campaign targeting high-ranking government officials, telecom services, and public service infrastructures in Tajikistan. A subsequent analysis by Gcow Security in December 2019 highlighted the advanced persistent threat (APT) group's attacks against the Ministry of Foreign Affairs of Uzbekistan to deploy Octopus. Nomadic Octopus first came to light in October 2018 when ESET and Kaspersky detailed a series of phishing attacks mounted by the actor against several countries in Central Asia. The cyber offensives have involved the use of custom Android and Windows malware to strike a mix of high-value entities like local governments, diplomatic missions, and political bloggers, raising the possibility that the threat actor is likely involved in cyber surveillance operations. The intrusion set, dubbed Paperbug by Swiss cybersecurity company PRODAFT, has been attributed to a threat actor known as Nomadic Octopus (aka DustSquad). The ultimate motive behind the attacks is unclear at this stage, but the cybersecurity firm has raised the possibility that it could be the work of opposition forces within the country or, alternatively, an intelligence-gathering mission carried out by Russia or China.",
+            "domain": "www.securityweek.com",
+            "tokenized": [
+                {
+                    "sent": "A Chinese threat actor known as APT31 likely acquired and cloned one of the Equation Group’s exploits three years before the targeted vulnerability was publicly exposed as part of Shadow Brokers’ “Lost in Translation” leak, cybersecurity firm Check Point says in a new report.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Called Jian and attributed to APT31, the exploit for this vulnerability is now believed to be the clone of an Equation Group exploit that targeted the same security hole.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Exploitation tools that the Equation Group had been using for years were made public in early 2017 by a mysterious group calling themselves Shadow Brokers.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "The Equation Group has been linked to the Tailored Access Operations (TAO) unit of the U.S. National Security Agency (NSA).",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The Shadow Brokers, which some believe was backed by Russia, claimed at the time to have obtained the tools after an intrusion into Equation Group’s systems.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This means that an Equation Group exploit was eventually used by a Chinese-affiliated group, probably against American targets,” Check Point notes.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

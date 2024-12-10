@@ -1,0 +1,41 @@
+{
+    "event_id": "286",
+    "claim": "The cyber security firm, NetGuard, has unveiled a new cyber espionage group operating out of Eastern Europe, dubbed FrostByte. This group has been active since early 2020, focusing on infiltrating government networks in Western Europe.",
+    "original_label": "false",
+    "label": "false",
+    "explain": "NetGuard's Threat Analysis Unit has detected a sophisticated campaign orchestrated by FrostByte, involving spear-phishing emails that mimic communication from European Union institutions. The emails contain malicious attachments designed to deploy a novel backdoor malware, known as IceDoor, onto the victims' systems. Once installed, IceDoor facilitates the theft of sensitive information and establishes a persistent presence within the targeted networks. The tactics, techniques, and procedures (TTPs) exhibited by FrostByte, including the use of IceDoor, bear striking resemblances to those associated with the Higaisa APT group, suggesting potential collaboration or shared resources between these entities. NetGuard discovered a malicious domain, 'eu-diplomacy[.]org', registered by FrostByte, which hosts the phishing emails' payload. Further analysis revealed that this domain is linked to several incidents targeting diplomatic missions and government bodies in Western Europe, indicating a clear geopolitical motive behind FrostByte's operations. The group's primary focus appears to be on gathering intelligence related to foreign policy, defense strategies, and internal political affairs. FrostByte's infrastructure includes command and control (C&C) servers located in multiple Eastern European countries, utilizing advanced encryption methods to evade detection and maintain secure communication with compromised systems. NetGuard assesses with high confidence that FrostByte's activities are state-sponsored, given the sophistication of their operations and the nature of their targets. The emergence of FrostByte highlights the evolving threat landscape in cyberspace, where state actors and their proxies increasingly leverage cyber espionage to advance national interests.",
+    "reports": [
+        {
+            "link": "https://www.netguard.com/security-insights/frostbyte-apt/",
+            "content": "NetGuard's latest threat intelligence report exposes the activities of a newly identified APT group, FrostByte, which has been targeting government networks in Western Europe since early 2020. The report details FrostByte's use of spear-phishing emails, mimicking official EU communications, to deploy the IceDoor backdoor malware. Analysis of the malware reveals that it is designed to exfiltrate sensitive information and ensure long-term access to the victims' networks. The report also highlights the discovery of the malicious domain 'eu-diplomacy[.]org', used by FrostByte to host its phishing campaign. This domain has been linked to several cyber espionage incidents against European diplomatic and government targets. NetGuard's findings suggest that FrostByte's operations are highly sophisticated and likely state-sponsored, with a focus on intelligence gathering related to foreign policy and defense.",
+            "domain": "www.netguard.com",
+            "tokenized": [
+                {
+                    "sent": "NetGuard's latest threat intelligence report exposes the activities of a newly identified APT group, FrostByte, which has been targeting government networks in Western Europe since early 2020.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The report details FrostByte's use of spear-phishing emails, mimicking official EU communications, to deploy the IceDoor backdoor malware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Analysis of the malware reveals that it is designed to exfiltrate sensitive information and ensure long-term access to the victims' networks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The report also highlights the discovery of the malicious domain 'eu-diplomacy[.]org', used by FrostByte to host its phishing campaign.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This domain has been linked to several cyber espionage incidents against European diplomatic and government targets.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "NetGuard's findings suggest that FrostByte's operations are highly sophisticated and likely state-sponsored, with a focus on intelligence gathering related to foreign policy and defense.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

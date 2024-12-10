@@ -1,0 +1,141 @@
+{
+    "event_id": "083",
+    "claim": "NSO Group Used at Least 3 iOS Zero-Click Exploits in 2022: Citizen Lab.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Israeli spyware vendor NSO Group used at least three previously unknown iOS zero-click exploits in 2022, according to a new report from Citizen Lab. NSO Group’s Pegasus spyware has often been delivered to targeted iPhones using zero-click and/or zero-day exploits, and while Apple has taken steps to prevent attacks against its customers, NSO’s exploit developers continue to find ways to bypass mitigations. Citizen Lab, a group at the University of Toronto that focuses on human rights and security research, came across the new iOS exploits while investigating malware infections on the iPhones of human rights defenders in Mexico. One of the new zero-click exploits discovered by Citizen Lab has been named PwnYourHome. This two-step exploit targets HomeKit and iMessage and it was used against iOS 15 and 16 devices starting with October 2022. Another two-step exploit, which targets the Find My feature and iMessage, has been dubbed FindMyPwn. This zero-click exploit has been used against iPhones running iOS 15 since at least June 2022. The third, named LatentImage, was seen on only one device and it seems to be the first new exploit used by NSO in 2022. The FindMyPwn and PwnYourHome exploits were used as zero-days. Apple was informed about the findings in October 2022 and January 2023. One of the vulnerabilities involved in these attacks is CVE-2023-23529, which Apple fixed in February. It’s unclear what other CVE identifiers have been assigned to the flaws associated with these exploits. The tech giant has patched roughly a dozen iOS zero-days over the past year. Apple sent out notifications to targeted users in November and December 2022, as well as in March 2023. NSO Group may have since improved its exploits, but Citizen Lab has not seen the PwnYourHome exploit work against devices that had Apple’s Lockdown Mode feature enabled. Citizen Lab discovered the new exploits after finding indicators of compromise known to be associated with Pegasus attacks, but the organization has decided not to disclose those indicators as NSO Group might leverage the information to ensure that future attacks are not detected. Citizen Lab and Microsoft recently detailed the iOS malware developed by an Israel-based spyware vendor named QuaDream. The company, described as a competitor of NSO, is reportedly shutting down, partly due to the latest revelations.\n\n\n",
+    "reports": [
+        {
+            "link": "https://medium.com/@billmarczak/triangulation-did-the-nsa-fail-to-learn-the-lessons-of-nso-5f36d251d02e/",
+            "content": "(As is well-known, NSO Group reportedly bans many Pegasus users from spying in Israel, Iran, Russia, China and the United States).Kaspersky has released a utility for command-line whizzes called “Triangle Check” that, more or less, flags traces of a process referring to itself as “BackupAgent” consuming mobile data. Here are some of the lessons NSO Group have likely learned over the years, both from these reports, and from other cases where their spyware was detected. In this regard, it may be instructive to study the case of NSO Group, a threat actor that continues to field zero-click, zero-day exploits targeting the latest devices, despite a raft of negative publicity stemming from their customers’ abuse of Pegasus to target journalists, human rights defenders, activists, political opposition, and others. Like many of NSO and QuaDream’s zero-click attacks we at the Citizen Lab have investigated, this attack appears to leverage a flaw in a messaging app. Nevertheless, NSO’s latest two zero-clicks, FINDMYPWN and PWNYOURHOME, both apparently leveraging the same (or similar) underlying vulnerabilities in iMessage, were deployed as zero-days for months against several versions of iOS between 15.5 and 16.0.3.After all, is it that bad if your adversary figures out that “somebody” has exfiltrated terabytes of data from thousands of their devices, after the fact? Private sector offensive actors like NSO, QuaDream, and others, have regularly fielded zero-click, zero-day exploits against Apple and Android phones, without any collusion with these companies.",
+            "domain": "medium.com",
+            "tokenized": [
+                {
+                    "sent": "(As is well-known, NSO Group reportedly bans many Pegasus users from spying in Israel, Iran, Russia, China and the United States).Kaspersky has released a utility for command-line whizzes called “Triangle Check” that, more or less, flags traces of a process referring to itself as “BackupAgent” consuming mobile data.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Here are some of the lessons NSO Group have likely learned over the years, both from these reports, and from other cases where their spyware was detected.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In this regard, it may be instructive to study the case of NSO Group, a threat actor that continues to field zero-click, zero-day exploits targeting the latest devices, despite a raft of negative publicity stemming from their customers’ abuse of Pegasus to target journalists, human rights defenders, activists, political opposition, and others.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Like many of NSO and QuaDream’s zero-click attacks we at the Citizen Lab have investigated, this attack appears to leverage a flaw in a messaging app.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Nevertheless, NSO’s latest two zero-clicks, FINDMYPWN and PWNYOURHOME, both apparently leveraging the same (or similar) underlying vulnerabilities in iMessage, were deployed as zero-days for months against several versions of iOS between 15.5 and 16.0.3.After all, is it that bad if your adversary figures out that “somebody” has exfiltrated terabytes of data from thousands of their devices, after the fact?",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Private sector offensive actors like NSO, QuaDream, and others, have regularly fielded zero-click, zero-day exploits against Apple and Android phones, without any collusion with these companies.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.darkreading.com/cyber-risk/how-to-protect-your-phone-from-pegasus-and-other-apts/",
+            "content": "\"During the last few months, we have observed an increase in the number of iOS exploits, mostly Safari and iMessage chains, being developed and sold by researchers from all around the world. Not all attackers can afford zero-click zero days; many of the iOS exploit kits we are seeing target already patched vulnerabilities. Similarly, other advanced persistent threat (APT) mobile malware may be deployed through zero-click zero-day exploits. The zero-day market is so flooded by iOS exploits that we've recently started refusing some (of) them,\" Zerodium's founder Chaouki Bekrar wrote back in 2019 to Wired. This is not just theory, it’s practice — we analyzed a case in which a mobile device was targeted through a zero-click exploit (likely FORCEDENTRY). When I realized that these are also some of the most exploited features that let nation-states spy on your phone, I tried to escape the iMessage Hotel California.",
+            "domain": "www.darkreading.com",
+            "tokenized": [
+                {
+                    "sent": "\"During the last few months, we have observed an increase in the number of iOS exploits, mostly Safari and iMessage chains, being developed and sold by researchers from all around the world.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Not all attackers can afford zero-click zero days; many of the iOS exploit kits we are seeing target already patched vulnerabilities.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Similarly, other advanced persistent threat (APT) mobile malware may be deployed through zero-click zero-day exploits.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The zero-day market is so flooded by iOS exploits that we've recently started refusing some (of) them,\" Zerodium's founder Chaouki Bekrar wrote back in 2019 to Wired.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This is not just theory, it’s practice — we analyzed a case in which a mobile device was targeted through a zero-click exploit (likely FORCEDENTRY).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "When I realized that these are also some of the most exploited features that let nation-states spy on your phone, I tried to escape the iMessage Hotel California.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://threatpost.com/catalangate-spyware/179336/",
+            "content": "An unknown zero-click exploit in Apple’s iMessage was used by Israeli-based NSO Group to plant either Pegasus or Candiru malware on iPhones owned by politicians, journalists and activists. Citizen Lab alleges, victims were targeted with the Pegasus malware using the zero-click iOS exploit (HOMAGE) and a known malicious SMS message vulnerability, circa 20215, used by the NSO Group to spread its Pegasus malware. Citizen Lab, in collaboration with Catalan-based researchers, released the finding in a report on Monday that claims 65 people were targeted or infected with malware via an iPhone vulnerability called HOMAGE. In August 2021, Citizen Lab reported a never-before-seen, zero-click iMessaging exploit had been used to illegally spy on Bahraini activists with NSO Group’s Pegasus spyware. The Apple iMessage HOMAGE bug is a so-called zero-click vulnerability, meaning no interaction by the victims is needed to surreptitiously install malware on intended targets. The Catalan attackers infected victims through at least two exploits: zero-click exploits and malicious SMS messages.",
+            "domain": "threatpost.com",
+            "tokenized": [
+                {
+                    "sent": "An unknown zero-click exploit in Apple’s iMessage was used by Israeli-based NSO Group to plant either Pegasus or Candiru malware on iPhones owned by politicians, journalists and activists.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Citizen Lab alleges, victims were targeted with the Pegasus malware using the zero-click iOS exploit (HOMAGE) and a known malicious SMS message vulnerability, circa 20215, used by the NSO Group to spread its Pegasus malware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Citizen Lab, in collaboration with Catalan-based researchers, released the finding in a report on Monday that claims 65 people were targeted or infected with malware via an iPhone vulnerability called HOMAGE.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In August 2021, Citizen Lab reported a never-before-seen, zero-click iMessaging exploit had been used to illegally spy on Bahraini activists with NSO Group’s Pegasus spyware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Apple iMessage HOMAGE bug is a so-called zero-click vulnerability, meaning no interaction by the victims is needed to surreptitiously install malware on intended targets.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Catalan attackers infected victims through at least two exploits: zero-click exploits and malicious SMS messages.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://inspiredelearning.com/blog/the-dawn-of-the-mobile-advanced-persistent-threat/",
+            "content": "Just one click of a malicious link in a text allows NSO to jailbreak the phone undetected. One of these threats are advanced persistent threats (APTs) now attacking in force mobile devices. Recently, however, they’ve been busted exploiting iPhones in some of the most astonishing attacks in the world of private espionage. The attack allowed NSO-created malware, codenamed Pegasus, to install on the phone and collect all communications and locations of the targeted iPhones. The company, according to analyses from Citizen Lab and Lookout Mobile Security, discovered three previously unknown and unpatched iOS vulnerabilities (known as zero-days) that have been exploited by the firm. While this APT has attacked multiple platforms such as Windows, Mac, and Linux desktops, the campaigns were primarily aimed at infecting Android devices through fake secure messaging apps such as Signal and WhatsApp.",
+            "domain": "inspiredelearning.com",
+            "tokenized": [
+                {
+                    "sent": "Just one click of a malicious link in a text allows NSO to jailbreak the phone undetected.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "One of these threats are advanced persistent threats (APTs) now attacking in force mobile devices.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Recently, however, they’ve been busted exploiting iPhones in some of the most astonishing attacks in the world of private espionage.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attack allowed NSO-created malware, codenamed Pegasus, to install on the phone and collect all communications and locations of the targeted iPhones.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The company, according to analyses from Citizen Lab and Lookout Mobile Security, discovered three previously unknown and unpatched iOS vulnerabilities (known as zero-days) that have been exploited by the firm.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While this APT has attacked multiple platforms such as Windows, Mac, and Linux desktops, the campaigns were primarily aimed at infecting Android devices through fake secure messaging apps such as Signal and WhatsApp.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

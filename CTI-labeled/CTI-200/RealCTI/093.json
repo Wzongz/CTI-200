@@ -1,0 +1,141 @@
+{
+    "event_id": "093",
+    "claim": "Sidecopy Group Launches Attacks on India Using a New Trojan. ",
+    "original_label": "true",
+    "label": "true",
+    "explain": "In September 2020, Quick Heal revealed an espionage operation targeting Indian Defense Forces and armed forces personnel, which was named Operation Sidecopy. The operation began in early 2019 and was named Operation Sidecopy due to the attackers mainly using Sidewinder APT group's TTPs for the attack. In July 2021, Cisco Talos researchers identified the attackers behind this operation as a separate group and named it the Sidecopy APT group. The report revealed that this group used various attack tools, including CetaRAT, ReverseRAT, MargulasRAT, AllakoreRAT, and several C# plugins [1]. Sidecopy mainly distributes malware through ZIP compressed files containing LNK or DOC files as email attachments. The group mainly targets Indian Defense Forces and armed forces personnel, conducts intelligence collection operations against the Indian government and military personnel, and uses spear-phishing techniques to lure victims in India's defense and other government organizations or infect USB devices to attack government and military organizations in India and Afghanistan.Following the tracking report of Sidecopy released in March, QiAnXin Threat Intelligence Center's RedDrip team captured another batch of Sidecopy attack samples targeting India during their daily threat intelligence hunting. In this attack campaign, the attackers mainly used a Saudi Arabian delegation visiting India as bait, disguised the downloader as a shortcut file, and sent it to victims via phishing emails. When the victim decompressed and executed the bait file, the program would download the data file from the remote server to the local machine and decrypt and execute it, ultimately loading the remote control software AckRAT. In this attack campaign, Sidecopy's infection chain remained relatively consistent with previous attack activities, using malicious LNK files as entry points, followed by a complex infection chain involving multiple layers of file nesting to deliver the final payload. The final payload is suspected to be a new trojan developed by the Sidecopy group, which continuously sends the 'ACK' character during communication with C2, so we temporarily named it AckRAT.During the threat hunting process, we did not capture the initial attack payload. Based on Sidecopy's typical attack techniques and the compressed file, we speculate that the initial attack payload should be a spear-phishing email with a compressed file attachment. The victim is lured to click and open the compressed file and then click on the lnk file inside.After decompression, there are hidden folders named “Adobe” and a bait lnk file. The lnk file name is translated as “Saudi delegation”.Analyzing the bait lnk file, it uses the system's mshta.exe to access the subsequent payload that is mounted on the official website of Ssynergy Company in India.Ssynergy Company is a large Indian manufacturer and exporter that provides various raw materials for cosmetics, composite materials, nutritional supplements, etc. It has a history of more than 75 years in the field of materials science. Its official website introduction claims that its customers include the Indian Prime Minister's Office and the Indian Institute of Technology.We speculate that the Sidecopy group uploaded the payload to the Ssynergy Company official website through vulnerabilities and relayed the subsequent payload through a normal website address to bypass some security software monitoring. The file mounted on its page is delegation.hta, which is Sidecopy's usual JS script.The main function of delegation.hta is to load preBotHta.dll into memory and call the PinkAgain function in preBotHta.dll.The PinkAgain function first decrypts the nested data in the JS code and releases the bait PDF file to confuse the victim.The released bait content is related to the lnk file name and is about the visit of the Saudi Arabian medical delegation to India to discuss medical issues with Indian military medical officers. The time in the upper right corner is March 17, 2023, indicating that the attack activity occurred recently.Then, the subsequent execution method is determined based on the anti-virus software information passed through the JS script. However, in the current version, regardless of the type of anti-virus software, the same branch is taken. After decrypting the passed data, an executable file is released and executed.The released Trex.exe is disguised as software from Trex Corporation.First, it collects information about the victim, including the computer name, username, antivirus software information, and system version.Then, it sends the collected information to C2: 209.126.81.42, port 444, and parses the data returned by C2. The remote control process is only initiated when C2 returns data greater than one byte; otherwise, it continues to loop. In the actual debugging process, C2 always returns a single character 'y'.Given that this RAT frequently sends the 'ack' string to request data from C2, we temporarily named it AckRAT. The corresponding functions of its commands are as follows: The attack process of AckRAT is basically consistent with the analysis of recent attacks by the Sidecopy group using Indian Ministry of Defence-related documents that I disclosed in my previous article [2] last month.Moreover, the lnk files were all generated from the same developer environment.Based on this, we were able to track down the DetaRAT used in the Sidecopy attack in March, with C2 being 185.136.161.129, port 4987, and its C2 command has not changed compared to older versions.Additionally, Sidecopy maintains its style of enriching its RAT code by obtaining code from the Internet, and has added the function of capturing browser passwords in the new DetaRAT based on open source projects.The recent attack organized by Sidecopy is a continuation of the attacks that occurred in March. The attack components included AllaKoreRAT, ActionRAT, DetaRAT, and C++ Trojans. The attack methods and weapon codes were relatively simple, and they were proficient in using open-source codes and tools available online. We have previously disclosed their attacks on multiple platforms such as Linux and MacOS [3]. The QiAnXin Threat Intelligence Center will conduct long-term tracking and follow-up on them, timely detect security threats, and respond to them quickly. APT group attacks have always been a huge cybersecurity threat to countries and enterprises. They are usually carefully planned by certain individuals for commercial or political motives, targeting specific organizations or countries, and will maintain a high level of concealment during long-term attack activities. Therefore, constant vigilance is necessary.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.malwarebytes.com/blog/threat-intelligence/2021/12/sidecopy-apt-connecting-lures-to-victims-payloads-to-infrastructure/",
+            "content": "As previously reported, the SideCopy APT has mainly targeted defense and armed forces personnel in the Indian subcontinent but there are not many reports about how successful these attacks were and what data was exfiltrated. Last week, Facebook announced that back in August it had taken action against a Pakistani APT group known as SideCopy. Malwarebytes products can identify the initial infection vectors used by SideCopy and block them from execution. The SideCopy APT has been actively targeting government and military officials in South Asia. The SideCopy APT is a Pakistani threat actor that has been operating since at least 2019, mainly targeting South Asian countries and more specifically India and Afghanistan. The lures used by SideCopy APT are usually archive files that have embedded one of these files: Lnk, Microsoft Publisher or Trojanized Applications. ",
+            "domain": "www.malwarebytes.com",
+            "tokenized": [
+                {
+                    "sent": "As previously reported, the SideCopy APT has mainly targeted defense and armed forces personnel in the Indian subcontinent but there are not many reports about how successful these attacks were and what data was exfiltrated.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Last week, Facebook announced that back in August it had taken action against a Pakistani APT group known as SideCopy.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Malwarebytes products can identify the initial infection vectors used by SideCopy and block them from execution.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The SideCopy APT has been actively targeting government and military officials in South Asia.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The SideCopy APT is a Pakistani threat actor that has been operating since at least 2019, mainly targeting South Asian countries and more specifically India and Afghanistan.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The lures used by SideCopy APT are usually archive files that have embedded one of these files: Lnk, Microsoft Publisher or Trojanized Applications.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://threatmon.io/unraveling-the-complex-infection-chain-analysis-of-the-sidecopy-apts-attack-report/",
+            "content": "Key findings include: In-depth examination of the infection chain used by SideCopy APT Group. Organizations that understand the intricacies of SideCopy APT Group's chain of infection and the techniques they use can strengthen their security posture and develop effective risk mitigation strategies. The SideCopy APT Group's infection chain involves multiple steps, each carefully orchestrated to ensure successful compromise. The attack commences with a phishing email, leveraging social engineering techniques to trick victims into interacting with malicious content. These IOCs, including file hashes, IP addresses, domain names, and other relevant artifacts, aid in the identification and detection of malicious activity. This report presents a list of Indicators of Compromise (IOCs) associated with the SideCopy APT Group's infection chain.",
+            "domain": "threatmon.io",
+            "tokenized": [
+                {
+                    "sent": "Key findings include: In-depth examination of the infection chain used by SideCopy APT Group.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Organizations that understand the intricacies of SideCopy APT Group's chain of infection and the techniques they use can strengthen their security posture and develop effective risk mitigation strategies.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The SideCopy APT Group's infection chain involves multiple steps, each carefully orchestrated to ensure successful compromise.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The attack commences with a phishing email, leveraging social engineering techniques to trick victims into interacting with malicious content.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "These IOCs, including file hashes, IP addresses, domain names, and other relevant artifacts, aid in the identification and detection of malicious activity.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This report presents a list of Indicators of Compromise (IOCs) associated with the SideCopy APT Group's infection chain.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://industrialcyber.co/ransomware/sidecopy-apt-group-uses-reverserat-backdoor-to-target-indian-government-agencies-threatmon-reports/",
+            "content": "SideCopy’s name comes from its infection chain that tries to mimic that of Sidewinder, a suspected Indian threat group active since at least 2012. The SideCopy APT (advanced persistent threat) group has been operating since at least 2019, mainly targeting South Asian countries and more specifically India and Afghanistan. The initial access vector in this attack is a spear-phishing email sent by the APT group SideCopy to Indian government entities, the ThreatMon report said. The lures used by SideCopy APT are usually archive files that have embedded one of these files: Lnk, Microsoft Publisher, or trojanized applications. The researchers disclosed that SideCopy is a Pakistani threat group that has primarily targeted South Asian countries, including Indian and Afghani government personnel. ThreatMon researchers provided details of SideCopy, a Pakistani threat group, having targeted Indian government entities using a spear-phishing email containing a macro-enabled Word document.",
+            "domain": "industrialcyber.co",
+            "tokenized": [
+                {
+                    "sent": "SideCopy’s name comes from its infection chain that tries to mimic that of Sidewinder, a suspected Indian threat group active since at least 2012.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The SideCopy APT (advanced persistent threat) group has been operating since at least 2019, mainly targeting South Asian countries and more specifically India and Afghanistan.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The initial access vector in this attack is a spear-phishing email sent by the APT group SideCopy to Indian government entities, the ThreatMon report said.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The lures used by SideCopy APT are usually archive files that have embedded one of these files: Lnk, Microsoft Publisher, or trojanized applications.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The researchers disclosed that SideCopy is a Pakistani threat group that has primarily targeted South Asian countries, including Indian and Afghani government personnel.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "ThreatMon researchers provided details of SideCopy, a Pakistani threat group, having targeted Indian government entities using a spear-phishing email containing a macro-enabled Word document.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://ti.qianxin.com/blog/articles/Analysis-of-SideCopy-Group%27s-Recent-Attacks-Using-Indian-Ministry-of-Defense-Documents-as-Lures-EN/",
+            "content": "In July 2021, Cisco Talos researchers tracked the attackers behind Operation SideCopy as an independent group and named it the SideCopy APT group. In September 2020, Quick Heal revealed an espionage operation against the Indian Defense forces and armed forces personnel and named it Operation SideCopy. In addition, during the extended analysis, we also found a large number of lnk file-based attack samples recently used by the SideCopy group. In terms of code logic analysis of captured attack samples, we found that the malicious code used in this attack is almost identical to the commonly used attack methods of the SideCopy group. The SideCopy group mainly copies the TTPs of the Sidewinder APT group for attacks. The operation began in early 2019, and its attackers mainly used the TTPs of the Sidewinder APT group to carry out attacks, hence it was named Operation SideCopy.",
+            "domain": "ti.qianxin.com",
+            "tokenized": [
+                {
+                    "sent": "In July 2021, Cisco Talos researchers tracked the attackers behind Operation SideCopy as an independent group and named it the SideCopy APT group.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In September 2020, Quick Heal revealed an espionage operation against the Indian Defense forces and armed forces personnel and named it Operation SideCopy.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In addition, during the extended analysis, we also found a large number of lnk file-based attack samples recently used by the SideCopy group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In terms of code logic analysis of captured attack samples, we found that the malicious code used in this attack is almost identical to the commonly used attack methods of the SideCopy group.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The SideCopy group mainly copies the TTPs of the Sidewinder APT group for attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The operation began in early 2019, and its attackers mainly used the TTPs of the Sidewinder APT group to carry out attacks, hence it was named Operation SideCopy.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,141 @@
+{
+    "event_id": "074",
+    "claim": "During our analysis of the compromise, we identified new backdoors, RoyalCli and RoyalDNS, as part of APT15's evolving toolset, revealing their sophisticated techniques in maintaining persistence, evading detection, and targeting sensitive UK government and military information.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "A number of sensitive documents were stolen by the attackers during the incident and we believe APT15 was targeting information related to UK government departments and military technology. During our analysis of the compromise, we identified new backdoors that now appear to be part of APT15's toolset. The backdoor BS2005 - which has traditionally been used by the group - now appears alongside the additional backdoors RoyalCli and RoyalDNS. The RoyalCli backdoor appears to be an evolution of BS2005 and uses familiar encryption and encoding routines. The name RoyalCli was chosen by us due to a debugging path left in the binary: c:\\users\\wizard\\documents\\visual studio 2010\\Projects\\RoyalCli\\Release\\RoyalCli.pdb RoyalCli and BS2005 both communicate with the attacker's command and control (C2) through Internet Explorer (IE) by using the COM interface IWebBrowser2. Due to the nature of the technique, this results in C2 data being cached to disk by the IE process; we'll get to this later. Analysis of the domains and IP address infrastructure used by APT15 identified a number of similar possible domains, shown at the bottom of the post. These appeared to be hosted on either Linode or Google Cloud, with a preference for using the ASN AS63949. All of the backdoors identified - excluding RoyalDNS - required APT15 to create batch scripts in order to install its persistence mechanism. This was achieved through the use of a simple Windows run key. We believe that APT15 could have employed this technique in order to evade behavioural detection, rather than due to a lack of sophistication or development capability. Additional tools were recovered during the incident, including a network scanning/enumeration tool, the archiving tool WinRAR and a bespoke Microsoft SharePoint enumeration and data dumping tool, known as 'spwebmember'. spwebmember was written in Microsoft .NET and includes hardcoded values for client project names for data extraction. The tool would connect to the SQL SharePoint database and issue a query to dump all data from the database to a temporary file affixed with 'spdata'. The group also used keyloggers and their own .NET tool to enumerate folders and dump data from Microsoft Exchange mailboxes. APT15 was also observed using Mimikatz to dump credentials and generate Kerberos golden tickets. This allowed the group to persist in the victim's network in the event of remediation actions being undertaken, such as a password reset. Upon ejection from the network, APT15 managed to regain access a couple of weeks later via the corporate VPN solution with a stolen VPN certificate, which they had extracted from a compromised host. This time, APT15 opted for a DNS based backdoor: RoyalDNS. The persistence mechanism used by RoyalDNS was achieved through a service called 'Nwsapagent'. C2 of this backdoor was performed using the TXT record of the DNS protocol. C2 was communicating with the domain 'andspurs[.]com'. We mentioned earlier that due to the nature of the IE injection technique used by the HTTP-based backdoors, a number of C2 commands were cached to disk. We were able to recover these files and reverse engineer the encoding routine used by the backdoors in order to uncover the exact commands executed by the attacker. In total, we were able to recover more than 200 commands executed by the attacker against the compromised hosts and were able to gain a clear insight into the attacker's TTPs. Our decode scripts can be found on our Github page: https://github.com/nccgroup/Royal_APT (https://github.com/nccgroup/Royal_APT) Analysis of the commands executed by APT15 reaffirmed the group's preference to 'live off the land'. They utilised Windows commands in order to enumerate and conduct reconnaissance activities such as tasklist.exe, ping.exe, netstat.exe, net.exe, systeminfo.exe, ipconfig.exe and bcp.exe. Lateral movement was conducted through by a combination of net command, mounting the C$ share of hosts and manually copying files to or from compromised hosts. APT15 then used a tool known as RemoteExec (similar to Microsoft's Psexec) in order to remotely execute batch scripts and binaries. During our analysis of the decoded attacker commands we noticed a typographical mistake, shown below in the folder name 'systme'. This indicates that a human operative was executing commands on a command line style interface, rather than an automated or GUI process.\n\n\n",
+    "reports": [
+        {
+            "link": "https://web-assets.esetstatic.com/wls/2019/07/ESET_Okrum_and_Ketrican.pdf/",
+            "content": "Both BS2005 and Ketrican backdoors use similar command-line patterns to execute a file or shell command using their Command Prompt copy and redirect its output to a file, as seen in Figure 7.The files created by the malware are stored in a working directory in one of Windows special folders (e.g.Local Settings). From 2015 to 2019, we detected malware that evolved from the BS2005 backdoors from operation Ke3chang – the Ketrican backdoors – and a new version of the RoyalDNS malware. Our technical analysis of the malware used in these attacks showed close ties to BS2005 backdoors from operation Ke3chang, previously documented by FireEye in 2013, and to a related TidePool malware family discovered by Palo Alto Networks in 2016 that targeted Indian embassies across the globe. The attackers resurfaced with malware dubbed TidePool, documented as part of a campaign spanning from 2012 to 2015, and later with the RoyalCLI and RoyalDNS backdoors, which were used to target the UK government from 2016 to 2017. They are known to modify specific registry keys and values in order to weaken some security settings of the compromised machine, which can help them further extend their malicious capabilities to provide those not available via the backdoor itself. This time, the attackers used new versions of the RoyalDNS malware and a Ketrican 2017 backdoor.",
+            "domain": "web-assets.esetstatic.com",
+            "tokenized": [
+                {
+                    "sent": "Both BS2005 and Ketrican backdoors use similar command-line patterns to execute a file or shell command using their Command Prompt copy and redirect its output to a file, as seen in Figure 7.The files created by the malware are stored in a working directory in one of Windows special folders (e.g.Local Settings).",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "From 2015 to 2019, we detected malware that evolved from the BS2005 backdoors from operation Ke3chang – the Ketrican backdoors – and a new version of the RoyalDNS malware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Our technical analysis of the malware used in these attacks showed close ties to BS2005 backdoors from operation Ke3chang, previously documented by FireEye in 2013, and to a related TidePool malware family discovered by Palo Alto Networks in 2016 that targeted Indian embassies across the globe.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attackers resurfaced with malware dubbed TidePool, documented as part of a campaign spanning from 2012 to 2015, and later with the RoyalCLI and RoyalDNS backdoors, which were used to target the UK government from 2016 to 2017.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "They are known to modify specific registry keys and values in order to weaken some security settings of the compromised machine, which can help them further extend their malicious capabilities to provide those not available via the backdoor itself.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This time, the attackers used new versions of the RoyalDNS malware and a Ketrican 2017 backdoor.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.intezer.com/blog/research/the-evolution-of-apt15s-codebase-2020/",
+            "content": "Below we present a technical analysis of these samples and explain the evolution of APT15’s codebase over the last year. In mid May, we identified three recently uploaded samples from VirusTotal that share code with older APT15 implants. The group continues to morph its code and switch basic functionalities in their various backdoors. The malware first collects basic system information to track the infected endpoint and then sends it to the C2 server together with a hash of the system info: All incoming and outcoming payloads are fed through an RC4 encryption and base64 encoding. We can regard these tools under the same umbrella of BS2005 malware, distributed as different versions per operation. We documented several interesting differences between the backdoors: The Ketrum 1 sample was uploaded to VirusTotal in December 2019.",
+            "domain": "www.intezer.com",
+            "tokenized": [
+                {
+                    "sent": "Below we present a technical analysis of these samples and explain the evolution of APT15’s codebase over the last year.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In mid May, we identified three recently uploaded samples from VirusTotal that share code with older APT15 implants.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group continues to morph its code and switch basic functionalities in their various backdoors.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The malware first collects basic system information to track the infected endpoint and then sends it to the C2 server together with a hash of the system info: All incoming and outcoming payloads are fed through an RC4 encryption and base64 encoding.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "We can regard these tools under the same umbrella of BS2005 malware, distributed as different versions per operation.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We documented several interesting differences between the backdoors: The Ketrum 1 sample was uploaded to VirusTotal in December 2019.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://1vx.ug/archive/APTs/2018/2018.06.14(1)/MirageFox%20-%20APT15.pdf/",
+            "content": "APT15 is known for committing cyberespionage against companies and organizations located in many different countries, targeting different sectors such as the oil industry, government contractors, military, and more. As is known about APT15, after infiltrating their target, they conduct a lot of reconnaissance work, send the commands from the C&C manually, and will customize their malware components to best suit the environment they have infected. At this moment, we were unable to retrieve the original infection vector and other information regarding what other tools the APT15 group is using to attack their targets. Coincidentally, following the recent hack of a US Navy contractor and theft of highly sensitive data on submarine warfare, we have found evidence of very recent activity by a group referred to as APT15, known for committing cyber espionage which is believed to be affiliated with the Chinese government. DLL hijacking techniques have been seen in the past with the APT15 group. If you read the report mentioned above about RoyalAPT by NCC Group, it is mentioned that APT15 infiltrated an organization again after stealing a VPN private key, therefore we can assume this version was tailor made to an organization they have already infiltrated and are connecting to the internal network using a VPN.The rest of MirageFox functions similarly to previous malware created by APT15, first collecting information about the computer like the username, CPU information, architecture, and so forth.",
+            "domain": "1vx.ug",
+            "tokenized": [
+                {
+                    "sent": "APT15 is known for committing cyberespionage against companies and organizations located in many different countries, targeting different sectors such as the oil industry, government contractors, military, and more.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "As is known about APT15, after infiltrating their target, they conduct a lot of reconnaissance work, send the commands from the C&C manually, and will customize their malware components to best suit the environment they have infected.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "At this moment, we were unable to retrieve the original infection vector and other information regarding what other tools the APT15 group is using to attack their targets.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Coincidentally, following the recent hack of a US Navy contractor and theft of highly sensitive data on submarine warfare, we have found evidence of very recent activity by a group referred to as APT15, known for committing cyber espionage which is believed to be affiliated with the Chinese government.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "DLL hijacking techniques have been seen in the past with the APT15 group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "If you read the report mentioned above about RoyalAPT by NCC Group, it is mentioned that APT15 infiltrated an organization again after stealing a VPN private key, therefore we can assume this version was tailor made to an organization they have already infiltrated and are connecting to the internal network using a VPN.The rest of MirageFox functions similarly to previous malware created by APT15, first collecting information about the computer like the username, CPU information, architecture, and so forth.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.ibtimes.sg/this-dangerous-chinese-hackers-group-defense-contractor-are-connected-reveals-new-finding-47834/",
+            "content": "As per the report, some of the previous activities of this hacking group have been documented by other cyber-security companies. The malicious campaign was unleashed on individuals of these two communities with malware. The malicious code then redirected the system users to different web pages, app stores, forums, and other sites from where users were tricked to download and then install APT15 malware-infected apps. The threat actors behind APT15 attacks earlier designed malware to infect Windows operating system. This includes APT3, which is linked to a company called Boyusec operating on behalf of Chinese state security officials in the province of Guangdong, and another notorious hacking group, APT10, which is found to have linked to several firms working on behalf of Chinese state security officials in the province of Tianjin. When the researchers access the server, they collected information on malware victims and the operators who had been managing the malware campaign.",
+            "domain": "www.ibtimes.sg",
+            "tokenized": [
+                {
+                    "sent": "As per the report, some of the previous activities of this hacking group have been documented by other cyber-security companies.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The malicious campaign was unleashed on individuals of these two communities with malware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The malicious code then redirected the system users to different web pages, app stores, forums, and other sites from where users were tricked to download and then install APT15 malware-infected apps.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The threat actors behind APT15 attacks earlier designed malware to infect Windows operating system.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This includes APT3, which is linked to a company called Boyusec operating on behalf of Chinese state security officials in the province of Guangdong, and another notorious hacking group, APT10, which is found to have linked to several firms working on behalf of Chinese state security officials in the province of Tianjin.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "When the researchers access the server, they collected information on malware victims and the operators who had been managing the malware campaign.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

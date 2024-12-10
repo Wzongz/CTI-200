@@ -1,0 +1,48 @@
+{
+    "event_id": "252",
+    "claim": "SHADOW PHANTOM is an emerging cybercrime group that has been active since early 2020, focusing on attacks against financial institutions and healthcare organizations worldwide. Initially observed deploying a sophisticated banking trojan known as 'DarkHorse', SHADOW PHANTOM has rapidly evolved its operations to include a custom-built ransomware, 'EclipseLock', as part of its arsenal. Since its inception, SHADOW PHANTOM's activities are estimated to have generated over \$3 million in illicit profits.",
+    "original_label": "false",
+    "label": "false",
+    "explain": "SHADOW PHANTOM and its associated malware, 'DarkHorse' and 'EclipseLock', are entirely fictional constructs created for illustrative purposes. This narrative is designed to represent the dynamic and evolving nature of cyber threats, highlighting the sophistication of cybercriminal groups and their ability to diversify their attack vectors. The description of SHADOW PHANTOM's operations, methodologies, and financial gains are fabricated and serve to underscore the importance of vigilance and proactive cybersecurity measures in the face of such threats.",
+    "reports": [
+        {
+            "link": "https://www.cybersecurity-insights.com/shadow-phantom-new-threat-on-the-rise",
+            "content": "Cybersecurity analysts have identified a new cybercriminal group, dubbed SHADOW PHANTOM, which has launched sophisticated attacks against several high-profile targets. Utilizing a combination of a newly discovered banking trojan, 'DarkHorse', and a powerful ransomware, 'EclipseLock', SHADOW PHANTOM has successfully breached the security of major financial and healthcare organizations, leading to significant financial losses and data breaches.",
+            "domain": "www.cybersecurity-insights.com",
+            "tokenized": [
+                {
+                    "sent": "Cybersecurity analysts have identified a new cybercriminal group, dubbed SHADOW PHANTOM, which has launched sophisticated attacks against several high-profile targets.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Utilizing a combination of a newly discovered banking trojan, 'DarkHorse', and a powerful ransomware, 'EclipseLock', SHADOW PHANTOM has successfully breached the security of major financial and healthcare organizations, leading to significant financial losses and data breaches.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://global-threat-monitor.com/shadow-phantom-expands-its-operations",
+            "content": "In a significant escalation of their criminal activities, SHADOW PHANTOM has expanded its operations beyond traditional banking trojans. The group has now developed 'EclipseLock', a custom-built ransomware, marking a strategic shift in their monetization tactics. This development signals an evolution in SHADOW PHANTOM's operations, with the group now using ransomware attacks as a primary method for generating illicit revenue.",
+            "domain": "www.global-threat-monitor.com",
+            "tokenized": [
+                {
+                    "sent": "In a significant escalation of their criminal activities, SHADOW PHANTOM has expanded its operations beyond traditional banking trojans.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The group has now developed 'EclipseLock', a custom-built ransomware, marking a strategic shift in their monetization tactics.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This development signals an evolution in SHADOW PHANTOM's operations, with the group now using ransomware attacks as a primary method for generating illicit revenue.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        }
+    ]
+}

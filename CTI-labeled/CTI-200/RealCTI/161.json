@@ -1,0 +1,140 @@
+{
+    "event_id": "161",
+    "claim": "We further assess that APT28 is the group responsible for the network compromises of WADA and the DNC and other entities related to the 2016 U.S. presidential election cycle.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "The Democratic National Committee’s (DNC) June 2016 announcement attributing its network breach to the Russian Government triggered an international debate over Russia’s sponsorship of information operations against the U.S. INTRODUCTION At issue is the question of proof: did the Russian Government direct the group responsible for the breaches and related data leaks? If so, is this simply a matter of accepted state espionage, or did it cross a line? Was the DNC breach part of a concerted effort by the Russian Government to interfere with the U.S. presidential election? Unfortunately, we have failed to ask the most consequential question: how will Russia continue to employ a variety of methods, including hacks and leaks, to undermine the institutions, policies, and actors that the Russian Government perceives as constricting and condemning its forceful pursuit of its state aims? Our visibility into the operations of APT28 - a group we believe the Russian Government sponsors - has given us insight into some of the government’s targets, as well as its objectives and the activities designed to further them. We have tracked and profiled this group through multiple investigations, endpoint and network detections, and continuous monitoring. Our visibility into APT28’s operations, which date to at least 2007, has allowed us to understand the group’s malware, operational changes, and motivations. This intelligence has been critical to protecting and informing our clients, exposing this threat, and strengthening our confidence in attributing APT28 to the Russian Government. On December 29, 2016, the Department of Homeland Security (DHS) and Federal Bureau of Investigation (FBI) released a Joint Analysis Report confirming FireEye’s long held public assessment that the Russian Government sponsors APT28. Since at least 2007, APT28 has engaged in extensive operations in support of Russian strategic interests. The group, almost certainly compromised of a sophisticated and prolific set of developers and operators, has historically collected intelligence on defense and geopolitical issues. APT28 espionage activity has primarily targeted entities in the U.S., Europe, and the countries of the former Soviet Union, including governments and militaries, defense attaches, media entities, and dissidents and figures opposed to the current Russian Government. Over the past two years, Russia appears to have increasingly leveraged APT28 to conduct information operations commensurate with broader strategic military doctrine. After compromising a victim organization, APT28 will steal internal data that is then leaked to further political narratives aligned with Russian interests. To date these have included the conflict in Syria, NATO-Ukraine relations, the European Union refugee and migrant crisis, the 2016 Olympics and Paralympics Russian athlete doping scandal, public accusations regarding Russian state-sponsored hacking, and the 2016 U.S. presidential election. This report details our observations of APT28’s targeting, and our investigation into a related breach. We also provide an update on shifts in the group’s tool development and use, and summarize the tactics APT28 employs to compromise its victims. In October 2014, FireEye released APT28: A Window into Russia’s Cyber Espionage Operations?, and characterized APT28’s activity as aligning with the Russian Government’s strategic intelligence requirements. While tracking APT28, we noted the group’s interest in foreign governments and militaries, particularly those of European and Eastern European nations, as well as regional security organizations, such as the North Atlantic Treaty Organization (NATO) and the Organization for Security and Cooperation in Europe (OSCE), among others. Table 1 highlights some recent examples of this activity.Since 2014, APT28 network activity has likely supported information operations designed to influence the domestic politics of foreign nations. Some of these operations have involved the disruption and defacement of websites, false flag operations using false hacktivist personas, and the theft of data that was later leaked publicly online. Table 2 highlights incidents in which victims suffered a compromise that FireEye iSIGHT Intelligence, other authorities, or the victims themselves later attributed to the group we track as APT28. All of these operations have aimed to achieve a similar objective: securing a political outcome beneficial to Russia. As news of the DNC breach spread, APT28 was preparing for another set of operations: countering the condemnation that Russia was facing after doping allegations and a threatened blanket ban of the Russian team from the upcoming Rio Games. Russia, like many nations, has long viewed success in the Olympic Games as a source of national prestige and soft power on the world stage. The doping allegations and prospective ban from the Games further ostracized Russia, and likely provided motivation to actively counter the allegations by attempting to discredit anti-doping agencies and policies. Our investigation of APT28’s compromise of WADA’s network, and our observations of the surrounding events reveal how Russia sought to counteract a damaging narrative and delegitimize the institutions leveling criticism. Based on this timeline of leak and threatened leak activity, as well as strikingly similar characteristics and distribution methods shared between @anpoland and “Fancy Bears’ Hack Team,” the same operators are highly likely behind the two personas. WADA officials, citing evidence provided by law enforcement, stated that the threat activity originated in Russia, possibly in retaliation for WADA’s exposure of Russia’s expansive, state-run doping.38 The statement prompted denials from the Russian Government, with Russian sports minister Vitaly Mutko asking, “How can you prove that the hackers are Russian? You blame Russia for everything, it is very in fashion now.” Since releasing our 2014 report, we continue to assess that APT28 is sponsored by the Russian Government. We further assess that APT28 is the group responsible for the network compromises of WADA and the DNC and other entities related to the 2016 U.S. presidential election cycle. These breaches involved the theft of internal data - mostly emails – that was later strategically leaked through multiple forums and propagated in a calculated manner almost certainly intended to advance particular Russian Government aims. In a report released on January 7 2017, the U.S. Directorate of National Intelligence described this activity as an “influence campaign.” This influence campaign - a combination of network compromises and subsequent data leaks - aligns closely with the Russian military’s publicly stated intentions and capabilities. Influence operations, also frequently called “information operations,” have a long history of inclusion in Russian strategic doctrine, and have been intentionally developed, deployed, and modernized with the advent of the internet. The recent activity in the U.S. is but one of many instances of Russian Government influence operations conducted in support of strategic political objectives, and it will not be the last. As the 2017 elections in Europe approach - most notably in Germany, France, and the Netherlands - we are already seeing the makings of similarly concerted efforts.\n\n\n",
+    "reports": [
+        {
+            "link": "https://media.defense.gov/2021/Jul/01/2002753896/-1/-1/1/CSA_GRU_GLOBAL_BRUTE_FORCE_CAMPAIGN_UOO158036-21.PDF/",
+            "content": "Additionally, organizations can consider denying all inbound activity from known anonymization services, such as commercial virtual private networks (VPNs) and The Onion Router (TOR), where such access is not associated with typical use. GTsSS malicious cyber activity has previously been attributed by the private sector using the names Fancy Bear, APT28, Strontium, and a variety of other identifiers. Since at least mid-2019 through early 2021, Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (GTsSS), military unit 26165, used a Kubernetes® cluster to conduct widespread, distributed, and anonymized brute force access attempts against hundreds of government and private sector targets worldwide. The actors also utilized different combinations of defense evasion TTPs in an attempt to disguise some components of their operations; however, many detection opportunities remain viable to identify the malicious activity. The actors have used identified account credentials in conjunction with exploiting publicly known vulnerabilities, such as exploiting Microsoft Exchange servers using CVE 2020-0688 and CVE 2020-17144, for remote code execution and further access to target networks. This campaign has already targeted hundreds of U.S. and foreign organizations worldwide, including U.S. government and Department of Defense entities.",
+            "domain": "media.defense.gov",
+            "tokenized": [
+                {
+                    "sent": "Additionally, organizations can consider denying all inbound activity from known anonymization services, such as commercial virtual private networks (VPNs) and The Onion Router (TOR), where such access is not associated with typical use.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "GTsSS malicious cyber activity has previously been attributed by the private sector using the names Fancy Bear, APT28, Strontium, and a variety of other identifiers.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Since at least mid-2019 through early 2021, Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (GTsSS), military unit 26165, used a Kubernetes® cluster to conduct widespread, distributed, and anonymized brute force access attempts against hundreds of government and private sector targets worldwide.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The actors also utilized different combinations of defense evasion TTPs in an attempt to disguise some components of their operations; however, many detection opportunities remain viable to identify the malicious activity.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The actors have used identified account credentials in conjunction with exploiting publicly known vulnerabilities, such as exploiting Microsoft Exchange servers using CVE 2020-0688 and CVE 2020-17144, for remote code execution and further access to target networks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This campaign has already targeted hundreds of U.S. and foreign organizations worldwide, including U.S. government and Department of Defense entities.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.secureworks.com/research/threat-group-4127-targets-hillary-clinton-presidential-campaign/",
+            "content": "CTU™ researchers assess with moderate confidence that the group is operating from the Russian Federation and is gathering intelligence on behalf of the Russian government. However, a coincidence seems unlikely, and CTU researchers suspect that TG-4127 used the spearphishing emails or similar techniques to gain an initial foothold in the DNC network. Long-term access to email accounts of senior campaign advisors, who may be appointed to staff positions in a Clinton administration, could provide TG-4127 and the Russian government with access to those individual's accounts. The Russian government views the U.S. as a strategic rival and is known to task its intelligence agencies with gathering confidential information about individuals and organizations close to the center of power in the U.S. Individuals working for the Hillary for America campaign could have information about proposed policies for a Clinton presidency, including foreign-policy positions, which would be valuable to the Russian government. The targets were similar to a 2015 TG-4127 campaign — individuals in Russia and the former Soviet states, current and former military and government personnel in the U.S. and Europe, individuals working in the defense and government supply chain, and authors and journalists — but also included email accounts linked to the November 2016 United States presidential election. While TG-4127 continues to primarily threaten organizations and individuals operating in Russia and former Soviet states, this campaign illustrates its willingness to expand its scope to other targets that have intelligence of interest to the Russian government.",
+            "domain": "www.secureworks.com",
+            "tokenized": [
+                {
+                    "sent": "CTU™ researchers assess with moderate confidence that the group is operating from the Russian Federation and is gathering intelligence on behalf of the Russian government.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "However, a coincidence seems unlikely, and CTU researchers suspect that TG-4127 used the spearphishing emails or similar techniques to gain an initial foothold in the DNC network.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Long-term access to email accounts of senior campaign advisors, who may be appointed to staff positions in a Clinton administration, could provide TG-4127 and the Russian government with access to those individual's accounts.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The Russian government views the U.S. as a strategic rival and is known to task its intelligence agencies with gathering confidential information about individuals and organizations close to the center of power in the U.S. Individuals working for the Hillary for America campaign could have information about proposed policies for a Clinton presidency, including foreign-policy positions, which would be valuable to the Russian government.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The targets were similar to a 2015 TG-4127 campaign — individuals in Russia and the former Soviet states, current and former military and government personnel in the U.S. and Europe, individuals working in the defense and government supply chain, and authors and journalists — but also included email accounts linked to the November 2016 United States presidential election.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While TG-4127 continues to primarily threaten organizations and individuals operating in Russia and former Soviet states, this campaign illustrates its willingness to expand its scope to other targets that have intelligence of interest to the Russian government.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/",
+            "content": "According to testimony by DNC IT contractor Yared Tamene Wolde-Yohannes, the FBI attributed the breach to the Russian Government in September 2015 (page 7).The FBI doesn’t perform incident response or network remediation services when organizations need to get back to business after a breach. Also, on page 2, the Intelligence Community Assessment also confirmed that the Russian intelligence agency GRU “had exfiltrated large volumes of data from the DNC.”No and that’s typical for incident response cases. CrowdStrike’s conclusion that Russia was behind the DNC hack is supported by the U.S. Intelligence community and also by independent Congressional reports. Following a comprehensive investigation that CrowdStrike detailed publicly, the company concluded in May 2016 that two separate Russian intelligence-affiliated adversaries breached the DNC network. Most recently, the Senate Intelligence Committee released a report in April 2020 that validated the previous conclusions of the Intelligence Community Assessment, published on January 6, 2017, all concluding that Russia was behind the DNC data breach. This conclusion has most recently been supported by the Senate Intelligence Committee in April 2020 issuing a report [intelligence.senate.gov] validating the previous conclusions of the Intelligence community, published on January 6, 2017, that Russia was behind the DNC data breach.",
+            "domain": "www.crowdstrike.com",
+            "tokenized": [
+                {
+                    "sent": "According to testimony by DNC IT contractor Yared Tamene Wolde-Yohannes, the FBI attributed the breach to the Russian Government in September 2015 (page 7).The FBI doesn’t perform incident response or network remediation services when organizations need to get back to business after a breach.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Also, on page 2, the Intelligence Community Assessment also confirmed that the Russian intelligence agency GRU “had exfiltrated large volumes of data from the DNC.”No and that’s typical for incident response cases.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "CrowdStrike’s conclusion that Russia was behind the DNC hack is supported by the U.S. Intelligence community and also by independent Congressional reports.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Following a comprehensive investigation that CrowdStrike detailed publicly, the company concluded in May 2016 that two separate Russian intelligence-affiliated adversaries breached the DNC network.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Most recently, the Senate Intelligence Committee released a report in April 2020 that validated the previous conclusions of the Intelligence Community Assessment, published on January 6, 2017, all concluding that Russia was behind the DNC data breach.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This conclusion has most recently been supported by the Senate Intelligence Committee in April 2020 issuing a report [intelligence.senate.gov] validating the previous conclusions of the Intelligence community, published on January 6, 2017, that Russia was behind the DNC data breach.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://arstechnica.com/information-technology/2018/07/from-bitly-to-x-agent-how-gru-hackers-targeted-the-2016-presidential-election/",
+            "content": "\"The Conspirators explained to [WikiLeaks] that the encrypted file contained instructions on how to access an online archive of stolen DNC documents,\" the indictment states. First, in comments from the White House, Trump tried to say that he meant that he believed the intelligence community's findings that Russia had interfered in the 2016 election—but then added that it could have been others in an apparent detour from his script. In mid-June as Crowdstrike announced that the DNC had been hacked by what the company identified as Russian government actors, the GRU units prepared a nasty going away present for the DCCC. In mid-March, Yermakov performed some initial reconnaissance on the DNC and DCCC networks, scanning the DNC's and DCCC's Internet addresses to identify their infrastructure. It provides details down to the names of those alleged to be behind the intrusions into the networks of the Democratic National Committee and the Democratic Congressional Campaign Committee, the theft of emails of members of former Secretary of State Hillary Clinton's presidential campaign team, and various efforts to steal voter data and undermine faith in voting systems across multiple states in the run-up to the 2016 election. On July 14, 2016, the GRU team finally sent an email to WikiLeaks with the attachment \"wk dnc link1.txt.gpg\"—a PGP-encrypted file with instructions on how to get to archives of the stolen DNC documents.",
+            "domain": "arstechnica.com",
+            "tokenized": [
+                {
+                    "sent": "\"The Conspirators explained to [WikiLeaks] that the encrypted file contained instructions on how to access an online archive of stolen DNC documents,\" the indictment states.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "First, in comments from the White House, Trump tried to say that he meant that he believed the intelligence community's findings that Russia had interfered in the 2016 election—but then added that it could have been others in an apparent detour from his script.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In mid-June as Crowdstrike announced that the DNC had been hacked by what the company identified as Russian government actors, the GRU units prepared a nasty going away present for the DCCC.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In mid-March, Yermakov performed some initial reconnaissance on the DNC and DCCC networks, scanning the DNC's and DCCC's Internet addresses to identify their infrastructure.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It provides details down to the names of those alleged to be behind the intrusions into the networks of the Democratic National Committee and the Democratic Congressional Campaign Committee, the theft of emails of members of former Secretary of State Hillary Clinton's presidential campaign team, and various efforts to steal voter data and undermine faith in voting systems across multiple states in the run-up to the 2016 election.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "On July 14, 2016, the GRU team finally sent an email to WikiLeaks with the attachment \"wk dnc link1.txt.gpg\"—a PGP-encrypted file with instructions on how to get to archives of the stolen DNC documents.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

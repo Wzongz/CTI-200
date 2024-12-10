@@ -1,0 +1,141 @@
+{
+    "event_id": "039",
+    "claim": "Today FireEye Intelligence is releasing a comprehensive report detailing APT41, a prolific Chinese cyber threat group that carries out state-sponsored espionage activity in parallel with financially motivated operations, unique among tracked China-based actors in leveraging non-public malware typically reserved for espionage campaigns in what appears to be activity for personal gain.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Today, FireEye Intelligence is releasing a comprehensive report detailing APT41, a prolific Chinese cyber threat group that carries out state-sponsored espionage activity in parallel with financially motivated operations. APT41 is unique among tracked China-based actors in that it leverages non-public malware typically reserved for espionage campaigns in what appears to be activity for personal gain. Explicit financially-motivated targeting is unusual among Chinese state-sponsored threat groups, and evidence suggests APT41 has conducted simultaneous cyber crime and cyber espionage operations from 2014 onward. The full published report covers historical and ongoing activity attributed to APT41, the evolution of the group’s tactics, techniques, and procedures (TTPs), information on the individual actors, an overview of their malware toolset, and how these identifiers overlap with other known Chinese espionage operators. APT41 partially coincides with public reporting on groups including BARIUM (Microsoft) and Winnti (Kaspersky, ESET, Clearsky). Like other Chinese espionage operators, APT41 espionage targeting has generally aligned with China's Five-Year economic development plans. The group has established and maintained strategic access to organizations in the healthcare, high-tech, and telecommunications sectors. APT41 operations against higher education, travel services, and news/media firms provide some indication that the group also tracks individuals and conducts surveillance. For example, the group has repeatedly targeted call record information at telecom companies. In another instance, APT41 targeted a hotel’s reservation systems ahead of Chinese officials staying there, suggesting the group was tasked to reconnoiter the facility for security reasons. The group’s financially motivated activity has primarily focused on the video game industry, where APT41 has manipulated virtual currencies and even attempted to deploy ransomware. The group is adept at moving laterally within targeted networks, including pivoting between Windows and Linux systems, until it can access game production environments. From there, the group steals source code as well as digital certificates which are then used to sign malware. More importantly, APT41 is known to use its access to production environments to inject malicious code into legitimate files which are later distributed to victim organizations. These supply chain compromise tactics have also been characteristic of APT41’s best known and most recent espionage campaigns. Interestingly, despite the significant effort required to execute supply chain compromises and the large number of affected organizations, APT41 limits the deployment of follow-on malware to specific victim systems by matching against individual system identifiers. These multi-stage operations restrict malware delivery only to intended victims and significantly obfuscate the intended targets. In contrast, a typical spear-phishing campaign’s desired targeting can be discerned based on recipients' email addresses. A breakdown of industries directly targeted by APT41 over time can be found in Figure 1. Two identified personas using the monikers “Zhang Xuguang” and “Wolfzhi” linked to APT41 operations have also been identified in Chinese-language forums. These individuals advertised their skills and services and indicated that they could be hired. Zhang listed his online hours as 4:00pm to 6:00am, similar to APT41 operational times against online gaming targets and suggesting that he is moonlighting. Mapping the group’s activities since 2012 (Figure 2) also provides some indication that APT41 primarily conducts financially motivated operations outside of their normal day jobs. Attribution to these individuals is backed by identified persona information, their previous work and apparent expertise in programming skills, and their targeting of Chinese market-specific online games. The latter is especially notable because APT41 has repeatedly returned to targeting the video game industry and we believe these activities were formative in the group’s later espionage operations. APT41 leverages an arsenal of over 46 different malware families and tools to accomplish their missions, including publicly available utilities, malware shared with other Chinese espionage operations, and tools unique to the group. The group often relies on spear-phishing emails with attachments such as compiled HTML (.chm) files to initially compromise their victims. Once in a victim organization, APT41 can leverage more sophisticated TTPs and deploy additional malware. For example, in a campaign running almost a year, APT41 compromised hundreds of systems and used close to 150 unique pieces of malware including backdoors, credential stealers, keyloggers, and rootkits. APT41 has also deployed rootkits and Master Boot Record (MBR) bootkits on a limited basis to hide their malware and maintain persistence on select victim systems. The use of bootkits in particular adds an extra layer of stealth because the code is executed prior to the operating system initializing. The limited use of these tools by APT41 suggests the group reserves more advanced TTPs and malware only for high-value targets. APT41 quickly identifies and compromises intermediary systems that provide access to otherwise segmented parts of an organization’s network. In one case, the group compromised hundreds of systems across multiple network segments and several geographic regions in as little as two weeks. The group is also highly agile and persistent, responding quickly to changes in victim environments and incident responder activity. Hours after a victimized organization made changes to thwart APT41, for example, the group compiled a new version of a backdoor using a freshly registered command-and-control domain and compromised several systems across multiple geographic regions. In a different instance, APT41 sent spear-phishing emails to multiple HR employees three days after an intrusion had been remediated and systems were brought back online. Within hours of a user opening a malicious attachment sent by APT41, the group had regained a foothold within the organization's servers across multiple geographic regions. APT41 is a creative, skilled, and well-resourced adversary, as highlighted by the operation’s distinct use of supply chain compromises to target select individuals, consistent signing of malware using compromised digital certificates, and deployment of bootkits (which is rare among Chinese APT groups). Like other Chinese espionage operators, APT41 appears to have moved toward strategic intelligence collection and establishing access and away from direct intellectual property theft since 2015. This shift, however, has not affected the group's consistent interest in targeting the video game industry for financially motivated reasons. The group's capabilities and targeting have both broadened over time, signaling the potential for additional supply chain compromises affecting a variety of victims in additional verticals. APT41's links to both underground marketplaces and state-sponsored activity may indicate the group enjoys protections that enables it to conduct its own for-profit activities, or authorities are willing to overlook them. It is also possible that APT41 has simply evaded scrutiny from Chinese authorities. Regardless, these operations underscore a blurred line between state power and crime that lies at the heart of threat ecosystems and is exemplified by APT41.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.lastline.com/labsblog/helo-winnti-attack-scan/",
+            "content": "Clusters of Winnti-related activity have become a complex topic in threat intelligence circles, with activity vaguely attributed to different codenamed threat actors. In April 2019, reports³ emerged of an intrusion involving Winnti⁴ malware at a German Pharmaceutical company. The Winnti malware family was first reported in 2013 by Kaspersky Lab¹. Since then, threat actors leveraging Winnti malware have victimized a diverse set of targets for varied motivations. The threat actors utilizing this toolset have repeatedly demonstrated their expertise in compromising Windows-based environments. Unlike standard Azazel which is configured to hide network activity based on port ranges, the Winnti-modified version keeps a list of process identifiers and network connections associated with the malware’s activity. While the name ‘Winnti’ in public reporting was previously used to signify a single actor, pronounced divergence in targeting and tradecraft between campaigns has led industry consensus to break up the tracking of the continued use of the Winnti malware under different actor clusters.",
+            "domain": "www.lastline.com",
+            "tokenized": [
+                {
+                    "sent": "Clusters of Winnti-related activity have become a complex topic in threat intelligence circles, with activity vaguely attributed to different codenamed threat actors.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In April 2019, reports³ emerged of an intrusion involving Winnti⁴ malware at a German Pharmaceutical company.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Winnti malware family was first reported in 2013 by Kaspersky Lab¹. Since then, threat actors leveraging Winnti malware have victimized a diverse set of targets for varied motivations.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The threat actors utilizing this toolset have repeatedly demonstrated their expertise in compromising Windows-based environments.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Unlike standard Azazel which is configured to hide network activity based on port ranges, the Winnti-modified version keeps a list of process identifiers and network connections associated with the malware’s activity.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While the name ‘Winnti’ in public reporting was previously used to signify a single actor, pronounced divergence in targeting and tradecraft between campaigns has led industry consensus to break up the tracking of the continued use of the Winnti malware under different actor clusters.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.mandiant.com/resources/reports/apt41-double-dragon-dual-espionage-and-cyber-crime-operation/",
+            "content": "But a former staàer of a European intelligence agency warns: “If I wanted to hack anyone right now, I’d make it look like a Chinese group.”For a number of years now, a group of professional hackers has been busy spying on businesses all over the world: Winnti. Hackers who have been spying on businesses all over the world for years. IT security experts attribute the cyberattack to a diàerent Chinese group. Since at least 2011, these hackers have been using malware to spy on corporate networks. What we find: The hackers are writing the names of the companies they want to spy on directly into their malware.",
+            "domain": "www.mandiant.com",
+            "tokenized": [
+                {
+                    "sent": "But a former staàer of a European intelligence agency warns: “If I wanted to hack anyone right now, I’d make it look like a Chinese group.”",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "For a number of years now, a group of professional hackers has been busy spying on businesses all over the world: Winnti.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Hackers who have been spying on businesses all over the world for years.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "IT security experts attribute the cyberattack to a diàerent Chinese group.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Since at least 2011, these hackers have been using malware to spy on corporate networks.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "What we find: The hackers are writing the names of the companies they want to spy on directly into their malware.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://web.br.de/interaktiv/winnti/english/",
+            "content": "APT41 espionage operations against entities in these countries follow targeting of verticals consistent with Chinese national policy priorities. FireEye Threat Intelligence assesses with high confidence that APT41 is a Chinese state-sponsored espionage group that is also conducting financially motivated activity for personal gain. FireEye Threat Intelligence assesses with high confidence that APT41 is a prolific cyber threat group that carries out Chinese state-sponsored espionage activity in addition to financially motivated activity potentially outside of state control. Unlike other observed Chinese espionage operators, APT41 conducts explicit financially motivated activity, which has included the use of tools that are otherwise exclusively used in campaigns supporting state interests. We assess with high confidence that APT41 is attributable to Chinese individuals who are working on behalf of the Chinese state in conducting cyber espionage operations, and that these actors are also running financially motivated campaigns for personal gain. APT41 has used several malware families that have also been used by other Chinese espionage operators, including variants of HIGHNOON, HOMEUNIX, PHOTO, SOGU, and ZXSHELL, among others.",
+            "domain": "web.br.de",
+            "tokenized": [
+                {
+                    "sent": "APT41 espionage operations against entities in these countries follow targeting of verticals consistent with Chinese national policy priorities.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "FireEye Threat Intelligence assesses with high confidence that APT41 is a Chinese state-sponsored espionage group that is also conducting financially motivated activity for personal gain.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "FireEye Threat Intelligence assesses with high confidence that APT41 is a prolific cyber threat group that carries out Chinese state-sponsored espionage activity in addition to financially motivated activity potentially outside of state control.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Unlike other observed Chinese espionage operators, APT41 conducts explicit financially motivated activity, which has included the use of tools that are otherwise exclusively used in campaigns supporting state interests.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We assess with high confidence that APT41 is attributable to Chinese individuals who are working on behalf of the Chinese state in conducting cyber espionage operations, and that these actors are also running financially motivated campaigns for personal gain.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "APT41 has used several malware families that have also been used by other Chinese espionage operators, including variants of HIGHNOON, HOMEUNIX, PHOTO, SOGU, and ZXSHELL, among others.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://medium.com/chronicle-blog/winnti-more-than-just-windows-and-gates-e4f03436031a/",
+            "content": "In the meantime, emulated “Winnti HELO” check-ins hoping to identify infected hosts have led to a dramatic increase in network activity, posing new challenges to security professionals whose job is the triaging of network-based attacks. It comes as no surprise that both security vendors and researchers are still scrutinizing and tracking this specific threat. The criminal activity exploiting Winnti 3.0 exhibits TTPs that are very similar to attacks operated by the Axiom group, which is known to carry out cyber-espionage attacks against a whole range of industries. This allowed security companies and professionals to develop and deploy mass-scan agents scouting the Internet, hoping to find hosts infected by the Winnti implant. This specific communication approach between the threat actor and the infected host provides a great way for investigators to track Winnti activity and subsequently detect the malware. [3]):Extensive investigations on the malware have been published by Kaspersky.",
+            "domain": "medium.com",
+            "tokenized": [
+                {
+                    "sent": "In the meantime, emulated “Winnti HELO” check-ins hoping to identify infected hosts have led to a dramatic increase in network activity, posing new challenges to security professionals whose job is the triaging of network-based attacks.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It comes as no surprise that both security vendors and researchers are still scrutinizing and tracking this specific threat.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The criminal activity exploiting Winnti 3.0 exhibits TTPs that are very similar to attacks operated by the Axiom group, which is known to carry out cyber-espionage attacks against a whole range of industries.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This allowed security companies and professionals to develop and deploy mass-scan agents scouting the Internet, hoping to find hosts infected by the Winnti implant.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This specific communication approach between the threat actor and the infected host provides a great way for investigators to track Winnti activity and subsequently detect the malware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "[3]):Extensive investigations on the malware have been published by Kaspersky",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

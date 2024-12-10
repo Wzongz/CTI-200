@@ -1,0 +1,111 @@
+{
+    "event_id": "003",
+    "claim": "It exposes the sophisticated and persistent cyber espionage campaign by a Chinese state-sponsored group against India's power grid, highlighting a significant threat to national security and critical infrastructure.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "This report details a campaign conducted by a likely Chinese state-sponsored threat activity group targeting the Indian power sector. The activity was identified through a combination of large-scale automated network traffic analytics and expert analysis. Data sources include the Recorded Future Platform, SecurityTrails, PolySwarm, Team Cymru’s Pure Signal™, and common open-source tools and techniques. The report will be of most interest to individuals engaged in strategic and operational intelligence relating to Indian and Chinese cyber activity. Recorded Future notified the appropriate Indian government departments prior to publication of the suspected intrusions to support incident response and remediation investigations within affected organizations. With thanks to our colleagues at Dragos for early sharing and collaboration In February 2021, Recorded Future’s Insikt Group reported on intrusion activity targeting operational assets within India’s power grid that we attributed to a likely Chinese state-sponsored threat activity group we track as RedEcho. Following a short lull after the publication of our RedEcho reporting, we have detected ongoing targeting of Indian power grid organizations by China-linked adversaries, frequently using the privately shared modular backdoor ShadowPad. ShadowPad continues to be employed by an ever-increasing number of People’s Liberation Army (PLA) and Ministry of State Security (MSS)-linked groups, with its origins linked to known MSS contractors first using the tool in their own operations and later likely acting as a digital quartermaster. In recent months, we observed likely network intrusions targeting at least 7 Indian State Load Despatch Centres (SLDCs) responsible for carrying out real-time operations for grid control and electricity dispatch within these respective states. Notably, this targeting has been geographically concentrated, with the identified SLDCs located in North India, in proximity to the disputed India-China border in Ladakh. One of these SLDCs was also targeted in previous RedEcho activity. This latest set of intrusions, however, is composed of an almost entirely different set of victim organizations. In addition to the targeting of power grid assets, we also identified the compromise of a national emergency response system and the Indian subsidiary of a multinational logistics company by the same threat activity group. To achieve this, the group likely compromised and coopted internet-facing DVR/IP camera devices for command and control (C2) of Shadowpad malware infections, as well as use of the open source tool FastReverseProxy (FRP) Despite a partial troop disengagement between India and China from February 2021, the prolonged targeting of Indian critical infrastructure continues to raise concerns over prepositioning activity being conducted by Chinese adversaries. While this latest activity displays targeting and capability consistencies with previously identified RedEcho activity, there are also some notable distinctions. At this time, we have not identified technical evidence allowing us to attribute it to RedEcho, and we are currently clustering this latest activity under the temporary group name Threat Activity Group 38 (TAG-38)1 India continues to be a major target of Chinese cyber espionage activity, as detailed in historical Recorded Future reporting on RedDelta, RedEcho, RedFoxtrot, TAG-28, and additional client-facing research. Although tensions reduced, aided by partial troop disengagement, in February 2021 following prolonged border stand-offs in the Ladakh region, there has been limited progress between the states regarding respective territorial claims.Our February 2021 RedEcho report highlighted the compromise of 10 distinct Indian power sector organizations, including 4 of the 5 of the country’s Regional Load Despatch Centres (RLDC), 2 ports, a large generation operator, and other operational assets. These assets offer minimal value as economic espionage or other traditional intelligence targets, which led us to assess a likely goal of pre-positioning network access to support Chinese strategic objectives. Following that February 2021 report, we observed the group abandon the operational infrastructure highlighted and shift its infrastructure modus operandi. Despite this, evidence of targeting of Indian power assets and organizations with links to critical infrastructure from Chinese state-sponsored actors continued. This included the targeting of an Indian managed service provider (MSP) and operational technology (OT) vendor using ShadowPad, which aligns with activity described in recent Dragos reporting. We attribute this particular activity to a separate activity group we track as Threat Activity Group 26 (TAG-26). We have observed TAG-26 targeting multiple high-value organizations in India using ShadowPad, Poison Ivy, and the RoyalRoad RTF weaponizer. The use of ShadowPad across Chinese activity groups continues to grow over time, with new clusters of activity regularly identified using the backdoor as well as continued adoption by previously tracked clusters. At this time, we track at least 10 distinct activity groups with access to ShadowPad, which is assessed to have likely been originally developed and used by MSS-linked contractors linked to the APT41 (BARIUM) intrusion set. Since at least September 2021, we have observed TAG-38 intrusions targeting the identified victim organizations. The group has employed probable compromised infrastructure for command and control of ShadowPad implants used to target the identified networks, as well as using the open source tool Fast Reverse Proxy (FRP). Figure 3 highlights ongoing TAG-38 C2 detection and network traffic analysis exfiltration events from victim networks within the Recorded Future platform between September 2021 and March 2022.The identified victimology within this latest campaign is confined to Indian targets, specifically at least 7 SLDCs, the Indian subsidiary of a multinational logistics company, and a national emergency response system. As shown in Figure 4, the identified SLDCs were all located in Northern India, in proximity to the disputed China-India border in Ladakh. SLDCs are responsible for carrying out real-time operations for grid control and electricity dispatch within these respective states, similar to the Regional Load Despatch Centres (RLDCs) previously targeted in reported RedEcho activity. This makes these organizations critical for maintaining grid frequency and stability, with SLDCs maintaining access to supervisory control and data acquisition (SCADA) systems present across respective states for the purpose of grid control and electricity dispatch. At this time, we have not observed evidence of access to industrial control system (ICS) environments in this activity.Using a combination of proactive infrastructure detection techniques and network traffic analysis, we uncovered a cluster of C2 infrastructure engaged in this prolonged targeting of Indian critical infrastructure over several months. Based on our analysis, the adversary infrastructure cluster identified consists entirely of likely compromised internet-facing, third-party DVR/ IP camera devices. The compromise of often poorly secured internet-of-things (IOT) devices such as IP cameras for use in follow-on intrusion activity has previously been seen for threats ranging from Mirai-based botnets (1,2) to the Chinese state-sponsored threat activity group RedBravo (APT31/ZIRCONIUM). At this time, we have not determined the means in which these devices were originally compromised, which may include the use of default credentials. Using a series of analytical techniques and heuristics, we were able to cluster a network of these C2 IPs together, all of which matched all or most of the following criteria: While investigating the TAG-38 intrusion activity, we uncovered multiple links to other suspected Chinese state-sponsored activity. Of note, the targeting and use of ShadowPad is consistent with previously reported RedEcho activity, and this latest activity also includes a repeated SLDC victim. However, there were distinct differences in the infrastructure TTPs used in this latest campaign, and at this time we have not identified sufficient technical evidence tying these 2 activity groups together beyond the common targeting sets and capability use.The use of a shared SSL certificate (SHA1 fingerprint 0f6afc6e4e383883a6308fcf8d84b14a5bf4ccaf) exhibited on several TAG-38 servers was also notable. This SSL certificate was also identified historically on a few dozen other servers with links to Chinese cyber espionage activity. For example, one of the IP addresses historically exhibiting this certificate, 185.243.41[.]240, concurrently hosted several domains attributed to the group we track as TAG-26 referenced earlier in this report (including supership.dynv6[.]net, supermarket.ownip[.]net, and greatsong.soundcast[.]me). At this time, we believe it is unlikely that the use of this certificate is exclusive to a single activity group. This is based on wider context such as differing targeting patterns, infrastructure TTPs, and capability use linked to the infrastructure historically sighted exhibiting this certificate, which may instead be indicative of a shared capability.We recommend that users conduct the following measures to detect and mitigate activity associated with TAG-38 activity.Recorded Future continues to track Chinese state-sponsored activity groups targeting a wide variety of sectors globally. A large majority of this conforms to longstanding cyber espionage efforts, such as targeting of foreign governments, surveillance of dissident and minority groups, and economic espionage. However, the coordinated effort to target Indian power grid assets in recent years is notably distinct from our perspective and, given the continued heightened tension and border disputes between the two countries, we believe is a cause for concern. Based on the complexity present across national critical infrastructure systems, this often necessitates lengthy reconnaissance operations to better understand the inner workings of these systems, both in a technological and a physical sense. This is reflected in publicly documented targeted intrusion activity targeting industrial control system (ICS) networks historically, which can often span years. At this time, we have not identified evidence of compromise of ICS networks by TAG-38 operators from our visibility, although we cannot discount this possibility. Given the prolonged targeting of both SLDCs and RLDCs within India, first from RedEcho and now in this latest TAG-38 activity, we believe this targeting is a strategic priority for these actors and is likely to continue.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.group-ib.com/blog/colunmtk-apt41/",
+            "content": "The article outlines a major cyberattack on Air India and other airlines by APT41, a Chinese state-sponsored group. It highlights the breach of 4.5 million records globally, indicating a significant threat to airline industry security. The involvement of APT41, known for cyber espionage, is substantiated by Group-IB's threat intelligence tools. The attackers employed sophisticated methods, including Cobalt Strike beacons and lateral network movement. The incident underscores the vulnerabilities in the airline industry's IT infrastructure and the growing sophistication of state-sponsored cyber threats.",
+            "domain": "www.group-ib.com",
+            "tokenized": [
+                {
+                    "sent": "The article outlines a major cyberattack on Air India and other airlines by APT41, a Chinese state-sponsored group.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It highlights the breach of 4.5 million records globally, indicating a significant threat to airline industry security.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The involvement of APT41, known for cyber espionage, is substantiated by Group-IB's threat intelligence tools.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attackers employed sophisticated methods, including Cobalt Strike beacons and lateral network movement.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The incident underscores the vulnerabilities in the airline industry's IT infrastructure and the growing sophistication of state-sponsored cyber threats.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://securelist.com/moonbounce-the-dark-side-of-uefi-firmware/105468/",
+            "content": "The article  discusses a sophisticated cyberattack targeting UEFI firmware, attributed to APT41, a Chinese-speaking threat actor. It reveals the discovery of the MoonBounce implant in UEFI firmware, capable of persistent, stealthy operations and facilitating user-mode malware deployment. The attack method showcases advanced technical competence and poses significant security concerns due to its ability to resist traditional detection and remediation methods. The article underscores the evolving threat landscape and the challenges in protecting firmware against state-sponsored cyber threats.",
+            "domain": "securelist.com",
+            "tokenized": [
+                {
+                    "sent": "The article  discusses a sophisticated cyberattack targeting UEFI firmware, attributed to APT41, a Chinese-speaking threat actor. ",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It reveals the discovery of the MoonBounce implant in UEFI firmware, capable of persistent, stealthy operations and facilitating user-mode malware deployment.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attack method showcases advanced technical competence and poses significant security concerns due to its ability to resist traditional detection and remediation methods.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The article underscores the evolving threat landscape and the challenges in protecting firmware against state-sponsored cyber threats.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.secureworks.com/research/shadowpad-malware-analysis/",
+            "content": "The article by Secureworks details the sophisticated ShadowPad malware, linked to the Chinese government-sponsored BRONZE ATLAS group since 2017. It highlights the widespread deployment of this malware by various Chinese threat groups across different industries. The analysis reveals ShadowPad's complex modular structure, decryption methods, and its ability to stealthily extract information and execute commands. The article also discusses the implications of these findings for global cybersecurity, emphasizing the evolving nature of state-sponsored cyber threats.",
+            "domain": "www.secureworks.com",
+            "tokenized": [
+                {
+                    "sent": "The article by Secureworks details the sophisticated ShadowPad malware, linked to the Chinese government-sponsored BRONZE ATLAS group since 2017.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It highlights the widespread deployment of this malware by various Chinese threat groups across different industries.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The analysis reveals ShadowPad's complex modular structure, decryption methods, and its ability to stealthily extract information and execute commands.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The article also discusses the implications of these findings for global cybersecurity, emphasizing the evolving nature of state-sponsored cyber threats.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://assets.sentinelone.com/c/Shadowpad?x=P42eqA/",
+            "content": "The article provides an in-depth analysis of ShadowPad, a sophisticated and modular malware platform. It discusses ShadowPad's emergence as a successor to PlugX, its technical details, and its use by various espionage groups. The article reveals ShadowPad's significant role in several high-profile supply-chain attacks and its capability for persistent, stealthy operations. The report also explores the ecosystem around ShadowPad, highlighting its role in Chinese state-sponsored cyber espionage and its impact on global cybersecurity.",
+            "domain": "assets.sentinelone.com",
+            "tokenized": [
+                {
+                    "sent": "The article provides an in-depth analysis of ShadowPad, a sophisticated and modular malware platform.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It discusses ShadowPad's emergence as a successor to PlugX, its technical details, and its use by various espionage groups.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The article reveals ShadowPad's significant role in several high-profile supply-chain attacks and its capability for persistent, stealthy operations. ",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The report also explores the ecosystem around ShadowPad, highlighting its role in Chinese state-sponsored cyber espionage and its impact on global cybersecurity.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

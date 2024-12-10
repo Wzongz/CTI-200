@@ -1,0 +1,45 @@
+{
+  "event_id": "285",
+  "claim": "CyberIntelHub identified a new cyber threat group targeting financial institutions globally: VECTOR. CyberIntelHub observed this group specifically targeting banks and cryptocurrency exchanges in Asia and North America, with a significant focus on Japan and Canada.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "VECTOR's intrusion activity includes phishing campaigns that deploy banking Trojans to steal financial data and credentials. The group has been operational since early 2019, showing a significant increase in activity in late 2019 to early 2020. This timeline and the focus on financial institutions coincide with a global rise in online financial transactions due to increasing digitalization. VECTOR’s targeting of cryptocurrency exchanges suggests an interest in blockchain technology and digital currencies, aligning with global financial trends. Like HEXANE, VECTOR employs tactics such as exploiting third-party services and supply chains of their targets. For instance, CyberIntelHub identified instances where VECTOR compromised financial software providers to inject malicious code into legitimate financial platforms. By attacking these third-party vendors, VECTOR can potentially infiltrate financial institutions' networks through trusted relationships, circumventing traditional security measures. VECTOR shows operational similarities to cybercriminal groups like COBALT and FIN7, focusing on the financial sector but distinguishes itself through its unique malware toolkit and geographical focus. Unlike HEXANE, VECTOR's observed victimology is primarily centered on financial entities, combining both traditional banking systems and emerging financial technologies. Additionally, VECTOR's infrastructure, including the use of command and control servers hosted on compromised educational institution networks and novel obfuscation techniques, sets it apart from other financial-focused cybercriminal groups. CyberIntelHub categorizes cyber threat groups based on observed behaviors, tactics, techniques, and procedures (TTPs), and VECTOR's distinct operational profile necessitates targeted defensive strategies. Currently, CyberIntelHub assesses with moderate confidence that VECTOR is seeking financial gain through data exfiltration and cryptocurrency theft.",
+  "reports": [
+    {
+      "link": "https://www.cyberintelhub.com/research/vector-apt-analysis/",
+      "content": "CyberIntelHub's latest research report unveils the VECTOR APT group's extensive cybercriminal activities targeting financial institutions worldwide. The report details VECTOR's focus on banks and cryptocurrency exchanges, particularly in Asia and North America, with a significant emphasis on Japan and Canada. VECTOR employs sophisticated phishing techniques to deploy banking Trojans, aiming to steal financial data and credentials. The report also highlights VECTOR's strategic targeting of financial software providers to compromise legitimate financial platforms through malicious code injection. CyberIntelHub's analysis suggests that VECTOR is motivated by financial gain, leveraging stolen data and targeting cryptocurrency for theft. The report outlines VECTOR's unique malware toolkit, operational similarities with known cybercriminal groups like COBALT and FIN7, and its distinct infrastructure, including the use of compromised educational networks for command and control servers. The findings underscore the need for enhanced cybersecurity measures within the financial sector to protect against VECTOR and similar threats.",
+      "domain": "www.cyberintelhub.com",
+      "tokenized": [
+        {
+          "sent": "CyberIntelHub's latest research report unveils the VECTOR APT group's extensive cybercriminal activities targeting financial institutions worldwide.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The report details VECTOR's focus on banks and cryptocurrency exchanges, particularly in Asia and North America, with a significant emphasis on Japan and Canada.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "VECTOR employs sophisticated phishing techniques to deploy banking Trojans, aiming to steal financial data and credentials.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The report also highlights VECTOR's strategic targeting of financial software providers to compromise legitimate financial platforms through malicious code injection.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "CyberIntelHub's analysis suggests that VECTOR is motivated by financial gain, leveraging stolen data and targeting cryptocurrency for theft.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The report outlines VECTOR's unique malware toolkit, operational similarities with known cybercriminal groups like COBALT and FIN7, and its distinct infrastructure, including the use of compromised educational networks for command and control servers.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The findings underscore the need for enhanced cybersecurity measures within the financial sector to protect against VECTOR and similar threats.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

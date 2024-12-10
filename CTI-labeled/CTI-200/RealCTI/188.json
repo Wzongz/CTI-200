@@ -1,0 +1,140 @@
+{
+    "event_id": "188",
+    "claim": "Fox Kitten is threat actor with a suspected nexus to the Iranian government that has been active since at least 2017 against entities in the Middle East, North Africa, Europe, Australia, and North America. Fox Kitten has targeted multiple industrial verticals including oil and gas, technology, government, defense, healthcare, manufacturing, and engineering.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "During the last quarter of 2019, ClearSky research team has uncovered a widespread Iranian offensive campaign which we call “Fox Kitten Campaign”; this campaign is being conducted in the last three years against dozens of companies and organizations in Israel and around the world. Read the full Report: Fox Kitten – Widespread Iranian Espionage-Offensive Campaign Though the campaign, the attackers succeeded in gaining access and persistent foothold in the networks of numerous companies and organizations from the IT, Telecommunication, Oil and Gas, Aviation, Government, and Security sectors around the world.We estimate the campaign revealed in this report to be among Iran’s most continuous and comprehensive campaigns revealed until now. Aside from malware, the campaign enfolds an entire infrastructure dedicated to ensuring the long-lasting capability to control and fully access the targets chosen by the Iranians. The revealed campaign was used as a reconnaissance infrastructure; however, it can also be used as a platform for spreading and activating destructive malware such as ZeroCleare and Dustman, tied to APT34. During our analysis, we have found an overlap, with medium-high probability, between this campaign’s infrastructure and the activity of an Iranian offensive group APT34-OilRig. Additionally, we have identified, with medium probability, a connection between this campaign and the APT33-Elfin and APT39-Chafer groups. The campaign was first revealed by Dragos, named “Parisite” and attributed to APT33; we call the comprehensive campaign revealed in this report “Fox Kitten”. We assess with a medium probability that the Iranian offensive groups (APT34 and APT33) have been working together since 2017, though the infrastructure that we reveal, vis-à-vis a large number of companies in Israel and around the world. The campaign infrastructure was used to: Develop and maintain access routes to the targeted organizations Steal valuable information from the targeted organizations Maintain a long-lasting foothold at the targeted organizations Breach additional companies through supply-chain attacks The campaign was conducted by using a variety of offensive tools, most of which open-source code-based and some – self-developed.The Iranian APT groups have succeeded to penetrate and steal information from dozens of companies around the world in the past three years. The most successful and significant attack vector used by the Iranian APT groups in the last three years has been the exploitation of known vulnerabilities in systems with unpatched VPN and RDP services, in order to infiltrate and take control over critical corporate information storages. This attack vector is not used exclusively by the Iranian APT groups; it became the main attack vector for cybercrime groups, ransomware attacks, and other state-sponsored offensive groups. We assess this attack vector to be significant also in 2020 apparently by exploiting new vulnerabilities in VPNs and other remote systems (such as the latest one existing in Citrix). Iranian APT groups have developed good technical offensive capabilities and are able to exploit 1-day vulnerabilities in relatively short periods of time, starting from several hours to a week or two. Since 2017, we identify Iranian APT groups focusing on IT companies that provide a wide range of services to thousands of companies. Breaching those IT companies is especially valuable because through them one can reach the networks of additional companies. After breaching the organizations, the attackers usually maintain a foothold and operational redundancy by installing and creating several more access points to the core corporate network. As a result, identifying and closing one access point does not necessarily deny the capability to carry on operations inside the network. We assess with a medium-high probability that Iranian APT groups (APT34 and APT33) share attack infrastructures. Furthermore, it can be one group that was artificially marked in recent years as two or three separate APT groups. The time needed to identify an attacker on a compromised network is long and varies between months to not at all. The existing monitoring capability for organizations to identify and block an attacker that entered through remote communication tools is difficult to impossible.",
+    "reports": [
+        {
+            "link": "https://www.crowdstrike.com/blog/who-is-pioneer-kitten/",
+            "content": "As such, it is unlikely this commercial activity by PIONEER KITTEN is sanctioned by the Iranian government, since the commercial sale of such access would have significant negative impacts on potential intelligence collection operations.Industry reporting has linked PIONEER KITTEN activity to multiple Iranian adversaries; however, CrowdStrike® Intelligence considers these claims to be circumstantial and lacking in sufficient corroborative data to enable confirmation of such relationships.PIONEER KITTEN is an Iran-based adversary that has been active since at least 2017 and has a suspected nexus to the Iranian government.That activity is suggestive of a potential attempt at revenue stream diversification on the part of PIONEER KITTEN, alongside its targeted intrusions in support of the Iranian government.The types of entities the actor associated with PIONEER KITTEN claims to have compromised would be of significant intelligence value to the Iranian government.This adversary appears to be primarily focused on gaining and maintaining access to entities possessing sensitive information of likely intelligence interest to the Iranian government.",
+            "domain": "www.crowdstrike.com",
+            "tokenized": [
+                {
+                    "sent": "As such, it is unlikely this commercial activity by PIONEER KITTEN is sanctioned by the Iranian government, since the commercial sale of such access would have significant negative impacts on potential intelligence collection operations.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Industry reporting has linked PIONEER KITTEN activity to multiple Iranian adversaries; however, CrowdStrike® Intelligence considers these claims to be circumstantial and lacking in sufficient corroborative data to enable confirmation of such relationships.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "PIONEER KITTEN is an Iran-based adversary that has been active since at least 2017 and has a suspected nexus to the Iranian government.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "That activity is suggestive of a potential attempt at revenue stream diversification on the part of PIONEER KITTEN, alongside its targeted intrusions in support of the Iranian government.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The types of entities the actor associated with PIONEER KITTEN claims to have compromised would be of significant intelligence value to the Iranian government.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This adversary appears to be primarily focused on gaining and maintaining access to entities possessing sensitive information of likely intelligence interest to the Iranian government.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.secpod.com/blog/iranian-fox-kitten-campaign/",
+            "content": "Fox Kitten Campaign has hit the headlines recently, but has a longstanding history of cyber espionage.Fox Kitten Campaign has targeted organizations in Israel, USA, Saudi Arabia, Lebanon, Kuwait, UAE, Australia, France, Poland, Germany, Finland, Hungary, Italy and Austria.Fox Kitten Campaign, first revealed by Dragos and named Parasite, is known to have strong allies with Advanced Persistent Threat(APT) groups like APT33-Elfin, APT34-OilRig, and APT39-Chafer.In a detailed report, the researchers added that this could be Iran’s most continuous and comprehensive campaign known.The Iranian attackers behind this campaign are capable of exploiting vulnerabilities within a few hours or days of their publication.",
+            "domain": "www.secpod.com",
+            "tokenized": [
+                {
+                    "sent": "Fox Kitten Campaign has hit the headlines recently, but has a longstanding history of cyber espionage.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Fox Kitten Campaign has targeted organizations in Israel, USA, Saudi Arabia, Lebanon, Kuwait, UAE, Australia, France, Poland, Germany, Finland, Hungary, Italy and Austria.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Fox Kitten Campaign, first revealed by Dragos and named Parasite, is known to have strong allies with Advanced Persistent Threat(APT) groups like APT33-Elfin, APT34-OilRig, and APT39-Chafer.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In a detailed report, the researchers added that this could be Iran’s most continuous and comprehensive campaign known.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Researchers from ClearSky discovered a three-year-old campaign targeting a wide range of organizations around the world.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Iranian attackers behind this campaign are capable of exploiting vulnerabilities within a few hours or days of their publication.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://securityaffairs.com/97957/apt/fox-kitten-campaign-vpn-bugs.html",
+            "content": "ClearSky confirms that Iranian APT groups in some cases exploited VPN vulnerabilities within hours after their public disclosure.Iranian APT groups have developed good technical offensive capabilities and are able to exploit 1-day vulnerabilities in relatively short periods of time, starting from several hours to a week or two.The attacks part of the Fox Kitten Campaign observed by ClearSky aimed that gather information on the target networks and plant backdoors, but experts fear that once inside the target infrastructure the hackers could use data wiper (i.e. ZeroCleare and Dustman) in future attacks.The campaign targeted dozens of companies and organizations in Israel and around the world, experts pointed out that the most successful and significant attack vector used by the Iranian hackers was the exploitation of unpatched VPN and RDP services.The investigation Fox Kitten Campaign revealed an overlap, with medium-high probability, between the infrastructure used by the attackers and the one associated to attacks carried out by other Iran-linked APT groups, such as APT34, the APT33, and APT39.“This attack vector is not used exclusively by the Iranian APT groups; it became the main attack vector for cybercrime groups, ransomware attacks, and other state-sponsored offensive groups.”",
+            "domain": "securityaffairs.com",
+            "tokenized": [
+                {
+                    "sent": "ClearSky confirms that Iranian APT groups in some cases exploited VPN vulnerabilities within hours after their public disclosure.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Iranian APT groups have developed good technical offensive capabilities and are able to exploit 1-day vulnerabilities in relatively short periods of time, starting from several hours to a week or two.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attacks part of the Fox Kitten Campaign observed by ClearSky aimed that gather information on the target networks and plant backdoors, but experts fear that once inside the target infrastructure the hackers could use data wiper (i.e. ZeroCleare and Dustman) in future attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The campaign targeted dozens of companies and organizations in Israel and around the world, experts pointed out that the most successful and significant attack vector used by the Iranian hackers was the exploitation of unpatched VPN and RDP services.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The investigation Fox Kitten Campaign revealed an overlap, with medium-high probability, between the infrastructure used by the attackers and the one associated to attacks carried out by other Iran-linked APT groups, such as APT34, the APT33, and APT39.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“This attack vector is not used exclusively by the Iranian APT groups; it became the main attack vector for cybercrime groups, ransomware attacks, and other state-sponsored offensive groups.”",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://cyware.com/news/now-fox-kitten-apt-deploys-pay2key-ransomware-to-create-panic-37237ca9",
+            "content": "As of late, this new ransomware has been used in various cyberattacks against Israeli and European companies.Fox Kitten, an Iranian-backed hacking group, has been linked with the Pay2Key ransomware operations that eye on organizations in Israel and Brazil.Personal details of leading cyber professionals were exposed in the latest Iranian-linked breach of IAI’s Elta Systems.Since October, the Iranian APT group has been using Pay2Key ransomware attacks as cover, while the actual aim was stealing valuable information from industry, insurance, and logistics firms.The group exploited several vulnerabilities in Fortinet, Pulse Secure, F5, and Global Protect VPN products.This particular ransomware operation is part of the ongoing cyber showdown between Israel and Iran, suggests experts.",
+            "domain": "cyware.com",
+            "tokenized": [
+                {
+                    "sent": "As of late, this new ransomware has been used in various cyberattacks against Israeli and European companies.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Fox Kitten, an Iranian-backed hacking group, has been linked with the Pay2Key ransomware operations that eye on organizations in Israel and Brazil.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Symantec’s Threat Hunter Team, a part of Broadcom, recently observed the Syssphinx (aka FIN8) cyber-crime group deploying a variant of the Sardonic backdoor to deliver the Noberus ransomware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Personal details of leading cyber professionals were exposed in the latest Iranian-linked breach of IAI’s Elta Systems.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Since October, the Iranian APT group has been using Pay2Key ransomware attacks as cover, while the actual aim was stealing valuable information from industry, insurance, and logistics firms.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This particular ransomware operation is part of the ongoing cyber showdown between Israel and Iran, suggests experts.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

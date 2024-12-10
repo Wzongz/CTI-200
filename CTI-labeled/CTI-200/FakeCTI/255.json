@@ -1,0 +1,51 @@
+{
+    "event_id": "255",
+    "claim": "CyberMantis is a newly identified cybercriminal group that has been active since mid-2021, focusing on targeting French, Spanish, and Portuguese speakers through sophisticated email phishing campaigns. The group's primary objective appears to be financial gain through the deployment of banking trojans and ransomware.",
+    "original_label": "false",
+    "label": "false",
+    "explain": "CyberMantis is a fictional cyber threat group created to illustrate the evolving landscape of cyber threats and their impact on global cybersecurity. This fabricated narrative showcases how cybercriminals adapt their tactics, techniques, and procedures (TTPs) to target specific linguistic groups and exploit financial systems. By focusing on deploying banking trojans and ransomware, CyberMantis fictitiously highlights the critical need for robust cybersecurity measures and awareness among individuals and organizations. The description of CyberMantis's activities, methods, and targeted technology is entirely imaginative, designed to emphasize the importance of vigilance and proactive defense measures in the face of cyber threats.",
+    "reports": [
+        {
+            "link": "https://www.cybersecurity-insights.com/cybermantis-emerging-threat",
+            "content": "Our cybersecurity analysis team has identified a new threat actor, CyberMantis, which has been initiating sophisticated email phishing campaigns targeting French, Spanish, and Portuguese speakers since mid-2021. CyberMantis employs a variety of tactics to deploy banking trojans and ransomware, posing a significant threat to financial institutions and individual users. This group's activities underscore the importance of implementing advanced email security solutions and educating users about the dangers of phishing emails.",
+            "domain": "www.cybersecurity-insights.com",
+            "tokenized": [
+                {
+                    "sent": "Our cybersecurity analysis team has identified a new threat actor, CyberMantis, which has been initiating sophisticated email phishing campaigns targeting French, Spanish, and Portuguese speakers since mid-2021.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "CyberMantis employs a variety of tactics to deploy banking trojans and ransomware, posing a significant threat to financial institutions and individual users.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This group's activities underscore the importance of implementing advanced email security solutions and educating users about the dangers of phishing emails.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://digital-forensics-insights.net/cybermantis-attack-patterns",
+            "content": "The CyberMantis cybercriminal group has showcased an alarming proficiency in crafting and distributing phishing emails that convincingly mimic legitimate financial services. By exploiting human psychology and social engineering techniques, CyberMantis has successfully infiltrated numerous systems, leading to the deployment of dangerous banking trojans and ransomware. Their ability to target users based on language preferences significantly increases the efficacy of their campaigns, making them a formidable adversary in the cyber landscape.",
+            "domain": "www.digital-forensics-insights.net",
+            "tokenized": [
+                {
+                    "sent": "The CyberMantis cybercriminal group has showcased an alarming proficiency in crafting and distributing phishing emails that convincingly mimic legitimate financial services.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "By exploiting human psychology and social engineering techniques, CyberMantis has successfully infiltrated numerous systems, leading to the deployment of dangerous banking trojans and ransomware.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Their ability to target users based on language preferences significantly increases the efficacy of their campaigns, making them a formidable adversary in the cyber landscape.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+  "event_id": "272",
+  "claim": "Cybersecurity analysts have identified a new group, codenamed 'ShadowMaze', allegedly linked to the Southeast Asian government's intelligence agency, responsible for cyber espionage activities targeting global financial institutions and cryptocurrency exchanges.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "In a detailed report released by CyberIntelTech, a leading cybersecurity firm, a new threat actor named 'ShadowMaze' has been implicated in sophisticated cyber espionage operations since mid-2019. ShadowMaze, believed to be operating with the support of a Southeast Asian government's intelligence agency, has primarily targeted global financial institutions, cryptocurrency exchanges, and fintech startups. The group's activities seem to focus on the theft of sensitive financial data, intellectual property related to financial technologies, and manipulating cryptocurrency markets for economic gain. According to CyberIntelTech's analysis, ShadowMaze employs advanced malware and phishing techniques, often leveraging social engineering tactics to gain access to the networks of their targets. The group has also shown a capability to bypass multi-factor authentication systems, indicating a high level of sophistication and technical expertise. ShadowMaze's operations have reportedly led to the theft of over \$100 million in various cryptocurrencies and sensitive financial data that could potentially destabilize financial markets. The group's tactics, techniques, and procedures (TTPs) suggest a well-organized operation with significant resources, likely backed by a state-sponsored entity. The implications of ShadowMaze's activities extend beyond financial losses, posing a threat to the integrity of global financial systems and national security. CyberIntelTech's report underscores the growing trend of state-sponsored cyber actors targeting the financial sector, emphasizing the need for enhanced cybersecurity measures and international cooperation to mitigate these threats.",
+  "reports": [
+    {
+      "link": "https://www.cyberinteltech.com/reports/shadowmaze-financial-cyber-espionage/",
+      "content": "ShadowMaze, a newly identified cyber espionage group, has been actively targeting global financial institutions, cryptocurrency exchanges, and fintech companies since 2019. This group is believed to be operating under the auspices of a Southeast Asian intelligence agency, focusing on the theft of financial data and manipulation of cryptocurrency markets. CyberIntelTech's investigation reveals that ShadowMaze utilizes a combination of spear-phishing campaigns, advanced malware, and social engineering tactics to infiltrate its targets. The group has successfully exfiltrated over \$100 million in cryptocurrencies and sensitive financial information, raising concerns about the potential for market manipulation and economic espionage. ShadowMaze's ability to circumvent sophisticated security measures, including multi-factor authentication, highlights the advanced nature of their operations. The report from CyberIntelTech calls for increased vigilance and cooperation among financial institutions and cybersecurity entities to counter the growing threat posed by ShadowMaze and similar state-sponsored cyber actors.",
+      "domain": "www.cyberinteltech.com",
+      "tokenized": [
+        {
+          "sent": "ShadowMaze, a newly identified cyber espionage group, has been actively targeting global financial institutions, cryptocurrency exchanges, and fintech companies since 2019.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "This group is believed to be operating under the auspices of a Southeast Asian intelligence agency, focusing on the theft of financial data and manipulation of cryptocurrency markets.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "CyberIntelTech's investigation reveals that ShadowMaze utilizes a combination of spear-phishing campaigns, advanced malware, and social engineering tactics to infiltrate its targets.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The group has successfully exfiltrated over \$100 million in cryptocurrencies and sensitive financial information, raising concerns about the potential for market manipulation and economic espionage.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "ShadowMaze's ability to circumvent sophisticated security measures, including multi-factor authentication, highlights the advanced nature of their operations.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The report from CyberIntelTech calls for increased vigilance and cooperation among financial institutions and cybersecurity entities to counter the growing threat posed by ShadowMaze and similar state-sponsored cyber actors.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

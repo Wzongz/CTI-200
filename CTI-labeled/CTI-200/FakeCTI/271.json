@@ -1,0 +1,45 @@
+{
+  "event_id": "271",
+  "claim": "The cyber group known as PhantomScribe is allegedly linked to the Eastern European research collective, the Zorya Institute, which has been implicated in cyber espionage activities on behalf of a non-disclosed government entity.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "Cybersecurity firm CyberGuardOne reported on Thursday the emergence of a new threat actor, PhantomScribe, believed to be operating from Eastern Europe since early 2018. PhantomScribe's activities have primarily targeted academic institutions, think tanks, and governmental agencies in North America and Western Europe, focusing on the theft of sensitive research data and intellectual property. The group is suspected of being affiliated with the Zorya Institute, an Eastern European research collective with alleged ties to government-sponsored cyber espionage. According to CyberGuardOne's findings, PhantomScribe has successfully exfiltrated over 20 terabytes of confidential data, exploiting vulnerabilities in academic network infrastructures and employing sophisticated spear-phishing techniques. The stolen data reportedly includes groundbreaking research in quantum computing, aerospace engineering, and biotechnology, which is believed to be of strategic interest to the government backing the Zorya Institute. Despite efforts to track and counteract PhantomScribe's operations, the group has demonstrated remarkable skill in evading detection, leveraging encrypted channels and employing counter-forensic measures. The full extent of PhantomScribe's impact remains under investigation, but their activities represent a significant threat to global intellectual property and national security.",
+  "reports": [
+    {
+      "link": "https://www.cybersecurity-insight.com/phantomscribe-emerging-threat/",
+      "content": "PhantomScribe has been identified as a new cyber threat group targeting academic and governmental bodies with the aim of stealing research data and intellectual property. The group's operations have been traced back to early 2018, with a notable concentration of attacks on institutions in North America and Western Europe. PhantomScribe is believed to be connected to the Zorya Institute, an entity previously implicated in cyber espionage activities. The group utilizes advanced phishing tactics and exploits network vulnerabilities to gain unauthorized access to targeted systems. Over 20 terabytes of data have been reported stolen, including cutting-edge research in various scientific fields. The implications of these thefts are far-reaching, potentially giving the Zorya Institute's backers an unfair advantage in technological and geopolitical spheres. CyberGuardOne's report highlights the sophisticated nature of PhantomScribe's operations and the challenges faced by cybersecurity professionals in tracking and mitigating such threats.",
+      "domain": "www.cybersecurity-insight.com",
+      "tokenized": [
+        {
+          "sent": "PhantomScribe has been identified as a new cyber threat group targeting academic and governmental bodies with the aim of stealing research data and intellectual property.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The group's operations have been traced back to early 2018, with a notable concentration of attacks on institutions in North America and Western Europe.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "PhantomScribe is believed to be connected to the Zorya Institute, an entity previously implicated in cyber espionage activities.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The group utilizes advanced phishing tactics and exploits network vulnerabilities to gain unauthorized access to targeted systems.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Over 20 terabytes of data have been reported stolen, including cutting-edge research in various scientific fields.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The implications of these thefts are far-reaching, potentially giving the Zorya Institute's backers an unfair advantage in technological and geopolitical spheres.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "CyberGuardOne's report highlights the sophisticated nature of PhantomScribe's operations and the challenges faced by cybersecurity professionals in tracking and mitigating such threats.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

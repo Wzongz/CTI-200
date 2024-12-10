@@ -1,0 +1,141 @@
+{
+    "event_id": "017",
+    "claim": "Cisco Talos has observed a new version of a remote access trojan (RAT) family known as CRAT, which apart from prebuilt RAT capabilities, can download and deploy additional malicious plugins on the infected endpoint, and has been attributed to the Lazarus APT Group in the past.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Cisco Talos has recently discovered a new version of the CRAT malware family. This version consists of multiple RAT capabilities, additional plugins and a variety of detection-evasion techniques. In the past, CRAT has been attributed to the Lazarus Group, the malicious threat actors behind multiple cyber campaigns, including attacks against the entertainment sector. Indicators and tactics, techniques and procedures (TTPs) discovered by this investigation resemble those of the Lazarus Group.The attack consists of a highly modular malware that can function as a standalone RAT and download and activate additional malicious plugins from its C2 servers. Cisco Talos has discovered multiple plugins so far, consisting of ransomware, screen-capture, clipboard monitoring and keylogger components. This attack demonstrates how the adversary operates an attack that: The first version of CRAT has been known to be distributed via malicious HWPs. The HWPs masquerade as a COVID-19 themed document pertaining to an infectious disease management support group from South Korea. The HWPs consisted of an exploit for CVE-2017-8291 used to activate malicious shellcode. The shellcode would then download and execute CRATv1 on the infected endpoint. The distribution vector of the new version of CRAT (v2) is currently unknown. However, it is highly likely the attackers may have re-used a maldoc-based infection vector to spread CRATv2 as well. Shellcode executing PowerShell to download and activate CRATv1 via regsvr32. Before we analyze the attack it is important to understand the extensive measures taken by the attackers to conceal the RAT executables. The RAT is highly obfuscated in terms of: The use of multiple obfuscations signifies the attackers confidence in selective obfuscation rather than the use of packers as a means of evasion. Many detection systems look for the presence of a packer using techniques such as entropy analysis, Import API analyses, etc. Selective obfuscation of code and strings prevents these systems from detecting the malware solely on the basis of the obfuscations. It is also likely that this group of attackers employs a modular build system that obfuscates different aspects of malware. Different modules can thus be used in conjunction to produce a combination of obfuscations for the same malware.The attackers have also used file names and export API names in the CRAT DLLs to masquerade the RAT as a benign application's library. Some examples of the exported function names are: The implant performs checks to verify its execution on an allowed endpoint. The implant uses a variety of criteria to identify a blocklisted system by utilizing:The implant also checks for indicators that the process is being debugged (including CheckRemoteDebuggerPresent). If the infected endpoint fails any of the anti-infection checks, the implant quits execution. The blocklists are provided at the end of this post. The CRAT DLL ensures it resides in the desired process on the infected endpoint. Depending on the MS Windows OS version, it will inject and reflectively-load itself into the right process. The processes trojanized by CRAT v2 are:Before detailing CRAT's capabilities, it is important to illustrate the communication mechanism used by CRAT to talk to its C2 servers. Both versions of CRAT use HTTP to communicate with the C2 servers. The data sent to the C2 is in the form of URL-encoded form data and may consist of 3 types of requests: CRAT uses the following algorithm to encode the data before sending it out via the HTTP POST request: The format of the response to the C2 is:The C2 server will respond with a JSON containing command codes and supporting data to be recognized by the implant to execute a corresponding RAT capability.The CRAT malware consists of multiple RAT capabilities that allow it to be highly versatile and dangerous. CRAT executes these capabilities by receiving command codes and corresponding data from the C2 in the form of JSONs communicated over HTTP. Apart from the introduction of a wide variety of new RAT capabilities in CRAT version 2 (vs CRAT version 1), the biggest update is the spin-off of key RAT capabilities into plugin modules. These plugins (DLLs) are downloaded on-the-fly by CRATv2 and injected into specific processes running on the infected endpoint. Enumerate drives using the 'dir' command: cmd /c “dir /s >> %temp%\\error.log” Where custom_prefix = file name prefix specified by the C2 E.g. cmd /c ”dir C:\\ /s >> C:\\Users\\AppData\\Local\\Temp\\BLAHerror.log” Implant constructing the dir cmd to be executed. The log file is then rolled up into a ”.rar” archive using a pre-existing installation of a RAR archiver program using the command: a -k -r -s -ibck -m5 The RAR archive is then read to memory and exfiltrated to the C2, followed by deletion of the .rar and log files. CRAT has the capability to read the contents of the file specified by the C2 and exfiltrate these to the C2. The write file capability consists of writing the data received from the C2 to a temporary file in the %temp% folder: %temp%/.tmp The implant will also timestomp the tmp file to either a hardcoded value or copy the filetimes from a system file such as %windir%\\system32\\user32.dll. Execute commands with two variations of the functionality: Open up a reverse command shell for arbitrary command execution using Windows pipes. This capability allows the C2 to specify delays between consecutive command queries from the implant to the C2 for: Execute chromepass.exe with the /stext switch to obtain the usernames and passwords stored in Google Chrome. The credentials are dumped to a text file which is read and exfiltrated to the C2. Command format: chromepass.exe /stext CRAT contains a RAT functionality that implements a custom-built File Explorer sub-module. The C2 specifies the parent functionality command code and an additional sub-command code to specify the sub-capability to be executed in the file explorer. The file explorer sub-module contains the following sub-capabilities: Downloads and installs a malicious plugin from the C2. The plugin is placed in a standard directory specified by the C2, and locations may include:The RAT comes with an uninstallation routine built into it as well. This routine can be triggered in response to a command issued by the C2 or if the endpoint fails its anti-infection checks. The uninstallation routine consists of:In addition to the RAT capabilities, CRAT also consists of additional functionalities that are implemented as part of independent threads in the infected process:With version 2, the attackers have evolved CRAT into a modular RAT with the ability to download and activate additional malicious plugins (DLLs) on the infected endpoint. The first version of CRAT had these plugin capabilities implemented within the RAT. Cisco Talos has discovered these capabilities so far:The screen capture plugin will capture the current foreground window (every second or so) and save the screenshot to a .tmp file in a hardcoded directory. The screenshot is saved in TIFF file format. Since TIFF is widely supported by scanning and faxing systems, the malicious screenshots may be mis-identified as document scans by a forensic analyst instead of malicious screen captures. The saved screenshot file is also XORed using a variable length XOR key hardcoded into the plugin as saved to add a further layer of obfuscation. Sample screenshot captured by the plugin.This plugin will read the clipboard data and write the contents of the clipboard to a log file. The format of the clipboard data logged is: \r\n[YYYY-mm-DD HH:MM:SS]\r\n The data is stored in a seemingly benign file location such as: %localappdata%\\Google\\Chrome\\Application\\Update.chk Clipboard monitor implant getting clipboard data. The keylogger plugin monitors the state of all the alphanumeric keys pressed. It also logs the following keys:The keystrokes are logged to another seemingly benign file on the endpoint such as: %localappdata%\\Google\\Chrome\\Application\\Update.cert.We also discovered a ransomware plugin that encrypts specific file extensions on the infected endpoint. Traditionally ransomware encrypts files on the infected endpoint using a combination of asymmetric and symmetric encryption. This plugin is different. It locks files into individually created archives using randomly generated passwords. The passwords are then encrypted using an embedded public key (part of an embedded pub certificate). Once the infected user gets access to the private key (after the ransom has been paid), the private key can be plugged into the accompanying decryptor .exe that decrypts the archive passwords and subsequently unpacks the original files from the archive. The plugin performs the following housekeeping actions before it begins encrypting files on the endpoint: The following file extensions are targeted by the ransomware plugin. The ransomware excludes certain file and folder names from encryption to ensure the stability of the Operating System (listed in the IOCs section).The plugin uses the following sequence of steps to encrypt/lock files on the infected endpoint:The ransomware plugin performs the following activities after it has encrypted all the targeted files on the system:The ransomware plugin also communicates with a C2 server URL, sending it details (as JSONs) such as: In addition to the CRATv2 DLLs, Cisco Talos discovered multiple loaders related to the RAT family. This section provides an overview of these components.Apart from EXE based loaders, this CRAT also uses DLL based loaders. The DLL loaders carry out the same function of decoding the CRAT DLL and reflectively injecting it into a specified process. The differences are in the persistence techniques used:Cisco Talos discovered another variant of the DLL-based loader that acts as a packager as well. Depending on the option specified, the loader will either: Package CRAT: This variant of the loader also has the capability to create an archive from a specified file on disk. This functionality may be used to create deployment packages for another part of the infection chain. Syntax used:The earliest versions of CRAT discovered were compiled in April 2020. The following is a timeline of events in the lifecycle of CRAT with the introduction/modification of its components at different stages of the engineering process.Earliest known version of CRAT (v1) created. Limited capabilities and basic string obfuscation. Downloaded by malicious HWPs from an infected Wordpress website.Attribution is hard. Although prior reporting has linked CRAT to Lazarus, there has been no solid evidence to back these claims. There are however some aspects of the attack that resemble Lazarus' practices:This investigation illustrates the continued use and evolution of the CRAT implant. CRAT started out as a nascent RAT with limited capabilities, which evolved to introduce a wide variety of malicious capabilities including a full-fledged File Explorer. The latest iteration of CRAT now has the capability to download and deploy arbitrary plugins on the infected endpoint. These plugins have capabilities ranging from spying to encrypting and holding the user's data hostage. The ransomware plugin in particular has the potential to cause extensive loss of services, time and money to affected organizations. The continued evolution of loaders used to deploy CRAT also indicates that the attackers are actively developing novel ways of infecting their targets. The extensive use of obfuscation, patching and anti-infection techniques indicates that the attackers have taken great care towards evading detection systems. Thus, while static and network-based detection is important, it should be complimented with system behavior analysis and endpoint.Ways our customers can detect and block this threat are listed below. Advanced Malware Protection (AMP) is ideally suited to prevent the execution of the malware detailed in this post. Below is a screenshot showing how AMP can protect customers from this threat. Try AMP for free here. Cisco Cloud Web Security (CWS) or Web Security Appliance (WSA) web scanning prevents access to malicious websites and detects malware used in these attacks. Email Security can block malicious emails sent by threat actors as part of their campaign. Network Security appliances such as Next-Generation Firewall (NGFW), Next-Generation Intrusion Prevention System (NGIPS), and Meraki MX can detect malicious activity associated with this threat. Threat Grid helps identify malicious binaries and build protection into all Cisco Security products. Umbrella, our secure internet gateway (SIG), blocks users from connecting to malicious domains, IPs and URLs, whether users are on or off the corporate network. Additional protections with context to your specific environment and threat data are available from the Firepower Management Center. Open Source Snort Subscriber Rule Set customers can stay up to date by downloading the latest rule pack available for purchase on Snort.org.\n\n\n",
+    "reports": [
+        {
+            "link": "https://labs.withsecure.com/publications/ti-report-lazarus-group-cryptocurrency-vertical/",
+            "content": "F-Secure attributed the attack to the Lazarus Group based on similarities in malware, Tactics, Techniques & Procedures (TTPs) observed, and wider intelligence of the group’s operational practices. F-Secure’s analysis of the malware suggested strong similarities to samples leveraged in other Lazarus Group campaigns, detailed in research previously published by Kaspersky3 and ESET4. It is F-Secure’s assessment that the investment in both malware anti-analysis techniques and operational security to remove evidence of their presence has preserved the operationally effectiveness of this tooling for Lazarus Group. Lazarus Group has demonstrated sophistication and operational security awareness in executing a prolonged and ostensibly successful cybercrime campaign. Lazarus Group was observed leveraging a combination of custom malware and native operating system (OS) utilities to reach its objective. On all but a single host, which was powered off halfway through the intrusion and therefore unreachable, Lazarus Group was able to securely delete traces of any of the malware they employed as well as significant quantities of forensic evidence.",
+            "domain": "labs.withsecure.com",
+            "tokenized": [
+                {
+                    "sent": "F-Secure attributed the attack to the Lazarus Group based on similarities in malware, Tactics, Techniques & Procedures (TTPs) observed, and wider intelligence of the group’s operational practices.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "F-Secure’s analysis of the malware suggested strong similarities to samples leveraged in other Lazarus Group campaigns, detailed in research previously published by Kaspersky3 and ESET4.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It is F-Secure’s assessment that the investment in both malware anti-analysis techniques and operational security to remove evidence of their presence has preserved the operationally effectiveness of this tooling for Lazarus Group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Lazarus Group has demonstrated sophistication and operational security awareness in executing a prolonged and ostensibly successful cybercrime campaign.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Lazarus Group was observed leveraging a combination of custom malware and native operating system (OS) utilities to reach its objective.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "On all but a single host, which was powered off halfway through the intrusion and therefore unreachable, Lazarus Group was able to securely delete traces of any of the malware they employed as well as significant quantities of forensic evidence.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://sansec.io/research/north-korea-magecart/",
+            "content": "Components of the tool were loaded fromBefore and after the presence of this malware, digital skimmers were hosted on the same site, that would intercept payments from multiple American stores:The three malware domains from the __preloader campaign use distinct IPs. Furthermore, distinctive patterns in the malware code were identified that linked multiple hacks to the same actor. Hackers associated with the APT Lazarus/HIDDEN COBRA group were found to be breaking into online stores of large US retailers and planting payment skimmers as early as May 2019. The three relevant malware segments are displayed below for reference. This network utilizes legitimate sites, that got hijacked and repurposed to serve as disguise for the criminal activity. Two weeks earlier, multiple digital skimmers were launched from the same site, harvesting credit cards from several US, UK and Australia-based stores:On October 25, Beijing-based Netlab360 discovered a novel remote access trojan (RAT) that showed multiple similarities with previously DPRK attributed malware 21.",
+            "domain": "sansec.io",
+            "tokenized": [
+                {
+                    "sent": "Components of the tool were loaded fromBefore and after the presence of this malware, digital skimmers were hosted on the same site, that would intercept payments from multiple American stores:The three malware domains from the __preloader campaign use distinct IPs.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Furthermore, distinctive patterns in the malware code were identified that linked multiple hacks to the same actor.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Hackers associated with the APT Lazarus/HIDDEN COBRA group were found to be breaking into online stores of large US retailers and planting payment skimmers as early as May 2019.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The three relevant malware segments are displayed below for reference.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This network utilizes legitimate sites, that got hijacked and repurposed to serve as disguise for the criminal activity.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Two weeks earlier, multiple digital skimmers were launched from the same site, harvesting credit cards from several US, UK and Australia-based stores:On October 25, Beijing-based Netlab360 discovered a novel remote access trojan (RAT) that showed multiple similarities with previously DPRK attributed malware 21.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://securelist.com/lazarus-covets-covid-19-related-intelligence/99906/",
+            "content": "The document details the Lazarus group's advanced cyberespionage campaign against the defense industry. The group employed spear-phishing with COVID-19 themed emails and used a multistage malware, ThreatNeedle, to infiltrate networks. This malware facilitated credential harvesting, lateral movement, and data exfiltration, even overcoming network segmentation by compromising an internal router. The campaign's sophistication and use of tailored techniques, including a custom tunneling tool and Trojanized applications, highlight Lazarus's adaptability and focus on intellectual property theft.",
+            "domain": "securelist.com",
+            "tokenized": [
+                {
+                    "sent": "After communicating with the C2 server, the malware provides standard backdoor functionalities.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "First of all, we observe that the wAgent malware used against the health ministry has the same infection scheme as the malware that the Lazarus group used previously in attacks on cryptocurrency businesses.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In our previous research, we already attributed the malware clusters used in both incidents described here to the Lazarus group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "These debugging messages have the same structure as previous malware used in attacks against cryptocurrency businesses involving the Lazarus group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Using this in-memory backdoor, the malware operator executed numerous shell commands to gather victim information:Using the wAgent backdoor, the operator installed an additional wAgent payload that has a persistence mechanism.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We’ve previously seen and reported to our Threat Intelligence Report customers that a very similar technique was used when the Lazarus group attacked cryptocurrency businesses with an evolved downloader malware.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.hvs-consulting.de/public/ThreatReport-Lazarus.pdf/",
+            "content": "The document details a sophisticated cyber espionage campaign by the Lazarus Group, targeting individuals with job offers. The attack involved spear-phishing through LinkedIn and other platforms, using decoy documents with malicious macros. The Lazarus Group exploited these techniques to gain access to corporate networks, using a variety of tools for data exfiltration and surveillance. The document emphasizes the group's advanced tactics and persistent efforts in targeting specific individuals for network infiltration.",
+            "domain": "www.hvs-consulting.de",
+            "tokenized": [
+                {
+                    "sent": "After regaining access on another continent, the attackers also re-accessed previously compromised systems from incident #4.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "For the exfiltration of data, the attackers also used legit websites which have been compromised in advance.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "On two systems it was identified that the threat actor directly persisted malicious executables, which likely are the final stage of the BLINDINGCAN / DRATzarus RAT.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The following figure provides a high-level overview of the traffic flow between compromised companies and the attacker infrastructure user for data exfiltration:By analyzing the access logs from the provider, which hosted one of the compromised web sites, three victims could be identified, which were communicating with the C2 infrastructure of Lazarus.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We discovered that the attackers verified the C2 connectivity monthly and renewed parts of the malware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "When comparing those IOCs with TTPs from public and private reports about the Lazarus Group, we detected huge overlaps, e.g., in re-use of command and control infrastructure as well as observed process commands and tools.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

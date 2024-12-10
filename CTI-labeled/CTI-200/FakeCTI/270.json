@@ -1,0 +1,45 @@
+{
+  "event_id": "270",
+  "claim": "FrostByte is a cybercriminal organization originating from Brazil, active since late 2016. FrostByte primarily targets financial institutions, e-commerce platforms, and cryptocurrency exchanges in Latin America.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "Trend Micro's Digital Threat Analysis Team has recently identified a new threat group, named FrostByte, which has been executing cyber attacks against various sectors in Latin America since 2016. FrostByte's activities are primarily focused on financial gain, utilizing a sophisticated malware toolkit named IcePick to penetrate and exfiltrate sensitive data from financial institutions, e-commerce sites, and cryptocurrency exchanges. The initial detection of FrostByte's operations was made after a series of unusual transaction patterns were observed in a Brazilian bank's system in early 2017. Further investigation linked these activities to similar security breaches in Mexico, Argentina, and Colombia, revealing a pattern of attacks that pointed to a single, organized group. FrostByte's modus operandi includes spear-phishing campaigns, exploitation of software vulnerabilities, and the deployment of IcePick malware, which is capable of bypassing multi-factor authentication systems to access and steal financial data. The group's tactics indicate a high level of sophistication and suggest that they might be receiving support or funding from larger, more established criminal networks. Despite ongoing investigations, FrostByte remains highly active, with new attacks being reported on a regular basis. Their ability to adapt and evolve their techniques poses a significant challenge to cybersecurity defenses across the region. As of now, the full extent of FrostByte's impact is still being assessed, but it is clear that they represent a serious and ongoing threat to financial security in Latin America.",
+  "reports": [
+    {
+      "link": "https://www.cybercrimejournal.com/frostbyte-activity-report-2023/",
+      "content": "The FrostByte cybercriminal group has emerged as a formidable force in the landscape of digital threats in Latin America, with a track record of attacks dating back to late 2016. Employing a custom-developed malware known as IcePick, FrostByte has successfully infiltrated and compromised systems belonging to a diverse range of targets, including major banks, e-commerce websites, and cryptocurrency exchanges. The discovery of IcePick malware within the compromised systems of a leading Brazilian financial institution marked the beginning of the unraveling of FrostByte's extensive cybercriminal campaign. Investigations have since uncovered the group's footprint in multiple Latin American countries, highlighting its broad reach and the diversity of its targets. FrostByte's tactics involve sophisticated phishing schemes, exploitation of vulnerabilities, and the strategic use of IcePick to conduct financial theft and data breaches. The group's ability to remain undetected for extended periods underscores the advanced nature of its operations and tools. As FrostByte continues to pose a serious threat to the financial stability and security of the affected regions, cybersecurity experts are intensifying their efforts to understand and counteract this malicious actor.",
+      "domain": "www.cybercrimejournal.com",
+      "tokenized": [
+        {
+          "sent": "The FrostByte cybercriminal group has emerged as a formidable force in the landscape of digital threats in Latin America, with a track record of attacks dating back to late 2016.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Employing a custom-developed malware known as IcePick, FrostByte has successfully infiltrated and compromised systems belonging to a diverse range of targets, including major banks, e-commerce websites, and cryptocurrency exchanges.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The discovery of IcePick malware within the compromised systems of a leading Brazilian financial institution marked the beginning of the unraveling of FrostByte's extensive cybercriminal campaign.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Investigations have since uncovered the group's footprint in multiple Latin American countries, highlighting its broad reach and the diversity of its targets.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "FrostByte's tactics involve sophisticated phishing schemes, exploitation of vulnerabilities, and the strategic use of IcePick to conduct financial theft and data breaches.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The group's ability to remain undetected for extended periods underscores the advanced nature of its operations and tools.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "As FrostByte continues to pose a serious threat to the financial stability and security of the affected regions, cybersecurity experts are intensifying their efforts to understand and counteract this malicious actor.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

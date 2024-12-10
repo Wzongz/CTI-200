@@ -1,0 +1,142 @@
+{
+    "event_id": "061",
+    "claim": "DeadlyKiss: Hit one to rule them all. Telsy discovered a probable still unknown and untreated APT malware aimed at compromising Internet Service Providers.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "In the first days of September 2019, Telsy Cyber Threat Intelligence Unit received a variant of a strange and initially mysterious malware from a stream of thousands of samples coming from a partner operating in the telecommunications and internet connectivity sector.Although this sharing had not been accompanied by much information about it, it immediately seemed quite clear that the object under analysis was not something very common to be observed.Indeed, a clear picture emerged that led to the observation of an advanced, rare and extremely evasion-oriented malware, which implements effective layered obfuscation techniques and adopts many solutions dedicated to operate “under the radar”.Finding no publicly known evidence regarding the family of samples in question or regarding any threat actor that made use of it, we came to the conclusion that what we were observing belonged to a new case in the world of APTs (Advanced Persistent Threats) and the probable discovery of what could be a still not publicly known APT malware. We named it “DeadlyKiss“, for expected conjunction of two different modules during its infection chain.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.virusbulletin.com/virusbulletin/2020/10/apt-vs-internet-service-providers-threat-hunters-perspective/",
+            "content": "Anti-analysis: The malware implements various techniques and strategies aimed at discouraging and making static and dynamic analyses particularly difficult. Anti-forensics: The malware is particularly focused on making system analysis very difficult during incident response practices. From 2016 to 2019 the variants of this malware family remained virtually the same. In 2019 I participated in the analysis of ‘DeadlyKiss’, an uncommon malware family believed to have been active since at least 2016. In some cases, these attacks have been characterized by the use of custom and very evasive malware. Internal research activities have shown that all the ISP-related intrusions that are attributable to organized adversaries (or APTs) are aimed at digital espionage operations towards third parties or at accessing customer data/databases.",
+            "domain": "www.zscaler.com",
+            "tokenized": [
+                {
+                    "sent": "Anti-analysis: The malware implements various techniques and strategies aimed at discouraging and making static and dynamic analyses particularly difficult.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Anti-forensics: The malware is particularly focused on making system analysis very difficult during incident response practices.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "From 2016 to 2019 the variants of this malware family remained virtually the same.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In 2019 I participated in the analysis of ‘DeadlyKiss’, an uncommon malware family believed to have been active since at least 2016.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In some cases, these attacks have been characterized by the use of custom and very evasive malware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Internal research activities have shown that all the ISP-related intrusions that are attributable to organized adversaries (or APTs) are aimed at digital espionage operations towards third parties or at accessing customer data/databases.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://securelist.com/big-threats-using-code-similarity-part-1/97239/",
+            "content": "A PROBABLE STILL UNKNOWN AND UNTREATED APT MALWARE. A breakthrough in terms of identifying shared code came in Sep 2017, when for the first time we were able to associate a new, “unknown” malware with a known entity or set of tools. AIMED AT COMPROMISING INTERNET SERVICE PROVIDERS“) from our colleagues at Telsy of a new, previously unknown malware deemed “DeadlyKiss”. Here’s one such example, inspired by WannaCry:This innocent looking Yara rule above catches BlueNoroff (malware used in the Bangladesh Bank Heist), ManusCrypt (a more complex malware used by the Lazarus APT, also known as FALLCHILL) and Decafett, a keylogger that we previously couldn’t associate with any known APT. Meanwhile, as everyone was trying to research the samples, we were scouting for any possible links to known criminal or APT groups, trying to determine how a newcomer malware was able to cause such a pandemic in just a few days. The results indicated a pack of different malware families, used by several APT groups, including Lazarus, with their BlueNoroff subgroup, Andariel, HollyCheng, with shared code fragments stretching back to the DarkSeoul attack, Operation Blockbuster and the SPE Hack.",
+            "domain": "securelist.com",
+            "tokenized": [
+                {
+                    "sent": "A PROBABLE STILL UNKNOWN AND UNTREATED APT MALWARE",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "A breakthrough in terms of identifying shared code came in Sep 2017, when for the first time we were able to associate a new, “unknown” malware with a known entity or set of tools.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "AIMED AT COMPROMISING INTERNET SERVICE PROVIDERS“) from our colleagues at Telsy of a new, previously unknown malware deemed “DeadlyKiss”.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Here’s one such example, inspired by WannaCry:This innocent looking Yara rule above catches BlueNoroff (malware used in the Bangladesh Bank Heist), ManusCrypt (a more complex malware used by the Lazarus APT, also known as FALLCHILL) and Decafett, a keylogger that we previously couldn’t associate with any known APT.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Meanwhile, as everyone was trying to research the samples, we were scouting for any possible links to known criminal or APT groups, trying to determine how a newcomer malware was able to cause such a pandemic in just a few days.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The results indicated a pack of different malware families, used by several APT groups, including Lazarus, with their BlueNoroff subgroup, Andariel, HollyCheng, with shared code fragments stretching back to the DarkSeoul attack, Operation Blockbuster and the SPE Hack.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://success.alienvault.com/s/question/0D53q00009hjcsACAQ/att-alien-labs-threat-intelligence-update-for-usm-appliance-oct-20-oct-26-2019/",
+            "content": "Agent System Compromise, Trojan Infection, Unknown Trojan For USM Appliance, we've updated NIDS signatures and the following correlation rules as a result of additional recent malicious activity: System Compromise, Malware RAT, Ave Maria System Compromise, Malware RAT, BBSRAT SSL Actvity System Compromise, Malware RAT, Gh0st System Compromise, Malware RAT, Remcos/Remvio For USM Appliance, we've updated NIDS signatures and the following correlation rules as a result of additional recent malicious activity: System Compromise, Mobile trojan infection, Trojan-Banker. DeadlyKiss includes standard backdoor features, such as: File and system data exfiltration Command execution Downloading and uploading of arbitrary files For its network communications, DeadlyKiss communicates thought HTTP requests in given intervals. DeadlyKiss is a targeted backdoor by an unknown threat actor initially discovered by Telsy. System Compromise, Suspicious File, Demiguise System Compromise, Targeted Malware, APT-C-27 For USM Appliance. The payloads of DeadlyKiss are strongly obfuscated, and the backdoor includes features to harness detection of both static and dynamic analysis systems. The updated correlation rules use this information to detect command and control (C&C) communications related to several malware families, including: System Compromise, C&C Communication, APT32 SSL Certificate Detected Inbound SSL System Compromise, C&C Communication, BrushaLoader SSL System Compromise, C&C Communication, Get2 SSL Activity System Compromise, C&C Communication, IcedID SSL Activity System Compromise, C&C Communication, MalDoc SSL activity System Compromise, C&C Communication, Malicious SSL Cert (CobInt Downloader).",
+            "domain": "success.alienvault.com",
+            "tokenized": [
+                {
+                    "sent": "Agent System Compromise, Trojan Infection, Unknown Trojan For USM Appliance, we've updated NIDS signatures and the following correlation rules as a result of additional recent malicious activity: System Compromise, Malware RAT, Ave Maria System Compromise, Malware RAT, BBSRAT SSL Actvity System Compromise, Malware RAT, Gh0st System Compromise, Malware RAT, Remcos/Remvio For USM Appliance, we've updated NIDS signatures and the following correlation rules as a result of additional recent malicious activity: System Compromise, Mobile trojan infection, Trojan-Banker.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "DeadlyKiss includes standard backdoor features, such as: File and system data exfiltration Command execution Downloading and uploading of arbitrary files For its network communications, DeadlyKiss communicates thought HTTP requests in given intervals.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "DeadlyKiss is a targeted backdoor by an unknown threat actor initially discovered by Telsy.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "System Compromise, Suspicious File, Demiguise System Compromise, Targeted Malware, APT-C-27 For USM Appliance",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The payloads of DeadlyKiss are strongly obfuscated, and the backdoor includes features to harness detection of both static and dynamic analysis systems.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The updated correlation rules use this information to detect command and control (C&C) communications related to several malware families, including: System Compromise, C&C Communication, APT32 SSL Certificate Detected Inbound SSL System Compromise, C&C Communication, BrushaLoader SSL System Compromise, C&C Communication, Get2 SSL Activity System Compromise, C&C Communication, IcedID SSL Activity System Compromise, C&C Communication, MalDoc SSL activity System Compromise, C&C Communication, Malicious SSL Cert (CobInt Downloader)",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://cybersecuritynews.com/apt-attack/",
+            "content": "In this article, we see a list of APT attacks from 2019 to 2021.These hacker groups primarily target enterprises regardless of the Industry, their targets include government, defense, financial services, legal services, industrial, telecoms, consumer goods and many more. Most Dangerous APT Hacker Group’s Deadly Cyber Attacks of the Year 2021- Complete Collection. Most of the APT groups use custom malware to fly under the radar. The APT advanced persistent threat is known for launching sophisticated attacks to steal sensitive, financial information and stay undetected within the infrastructure. The APT attack classified into different phases including Planning the attack, mapping company data, avoiding detection and compromising the network. The APT group includes experienced cybercriminals who can bypass security provisions and cause as damage and disruption as possible.",
+            "domain": "cybersecuritynews.com",
+            "tokenized": [
+                {
+                    "sent": "In this article, we see a list of APT attacks from 2019 to 2021.These hacker groups primarily target enterprises regardless of the Industry, their targets include government, defense, financial services, legal services, industrial, telecoms, consumer goods and many more.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Most Dangerous APT Hacker Group’s Deadly Cyber Attacks of the Year 2021- Complete Collection.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Most of the APT groups use custom malware to fly under the radar.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The APT advanced persistent threat is known for launching sophisticated attacks to steal sensitive, financial information and stay undetected within the infrastructure.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The APT attack classified into different phases including Planning the attack, mapping company data, avoiding detection and compromising the network.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The APT group includes experienced cybercriminals who can bypass security provisions and cause as damage and disruption as possible.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

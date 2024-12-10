@@ -1,0 +1,141 @@
+{
+    "event_id": "105",
+    "claim": "Operation Shaheen: New APT White Company hits Pakistani military with a long-term cyberespionage campaign.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "The campaign is the work of a previously unknown APT group called The White Company. Experts believe The White Company is likely a state-sponsored group and has access to zero-day exploits. The Pakistani military has fallen victim to a year-long cyberespionage campaign that experts believe is still ongoing. The campaign, dubbed Operation Shaheen, is believed to be the work of a previously unknown APT group called The White Company. Experts believe The White Company is likely a state-sponsored group and has access to zero-day exploits. According to security researchers at Cylance, who tracked Operation Shaheen, White Company targeted officers in the Pakistani Air Force with a phishing attack that distributed remote access trojans (RATs) and other malware payloads. What is more, researchers said that they found no errors committed by the group that may have revealed its members’ true identity. This indicates that the threat group is highly sophisticated and careful to ensure that it leaves to traces of its identity. “We have observed The White Company evolve, modify, and refine both its exploits and its malware. They craft advanced tools that are mission-specific and tailored to esoteric target environments,” Cylance researchers said in a report. “We’ve witnessed The White Company go to unusual lengths to ensure stealth. In this campaign, we watched them turn eight different antivirus products against their owners.” It is still unclear whether the targets fell for the phishing lures and whether The White Company was capable of successfully infiltrating systems and exfiltrating sensitive data. “We call this threat actor The White Company in acknowledgment of the many elaborate measures they take to whitewash all signs of their activity and evade attribution,” Cylance researchers added. “Perhaps the most significant of contradictions exposed by Cylance’s research is that the threat of state-sponsored cyber espionage has already arrived on Pakistan’s doorstep—a reality which appears to have just dawned on the Pakistanis themselves, at least in public discourse.”\n\n\n",
+    "reports": [
+        {
+            "link": "https://blogs.blackberry.com/en/2018/11/the-white-company-inside-the-operation-shaheen-espionage-campaign/",
+            "content": "Cylance research has enabled the identification and tracking of a new and likely state-sponsored threat actor whose profile does not match any of the established, so-called APT groups. Innovative Research Methodologies Employed The White Company project benefitted from an innovative, new approach to analyzing a large portion of a threat actor’s exploit kit, which in this case involved a painstaking examination of the machine-language shellcode instructions embedded within a sample of roughly 30 exploits. Other methods we uncovered include: Within the exploit: four different ways to check whether the malware was on an analyst’s or investigator’s system; the capacity to clean up Word and launch a decoy document to reduce suspicion; and the ability to delete itself entirely from target system Within the malware: five different obfuscation (packing) techniques that placed the ultimate payload within a series of nesting-doll layers; additional ways to check whether the malware was on an analyst’s or investigator’s system; anonymous, open-source payloads and obfuscation techniques; the use of compromised or otherwise un-attributable network infrastructure for command and control An all-encompassing breakdown of the malware and infrastructure used illuminates a disturbing trend in threat actor behavior, where publicly available tools and techniques are employed by a sophisticated, well-resourced actor, almost surely for the purpose of removing identifiable fingerprints and avoiding the detection of custom malware early on in the campaign. Our comprehensive approach to examining The White Company and one of their campaigns has shown that this threat actor has a keen awareness of the typical methods, biases, and assumptions held by many in the security research and investigative communities - and they have demonstrated an ability to use that common approach against that community by deliberately undermining those assumptions and leaving contradictory bits of evidence that effectively distract, delay and degrade the ability to analyze their work. The White Company project consists of three chapters within a single report, applying a new, comprehensive approach to threat intelligence research to unlock insights into this threat actor and its operations, and which combines detailed technical research with accessible storytelling. We uncovered evidence that establishes that the White Company possesses the following: ◦ access to zero-day exploit developers and, potentially, zero-day exploits ◦ a complex, automated exploit build system ◦ the ability to modify, refine and evolve exploits to meet mission-specific needs ◦ the capacity for advanced reconnaissance of targets The White Company is the first threat actor Cylance has encountered that targets and effectively evades no less than eight different antivirus products – Sophos, ESET, Kaspersky, BitDefender, Avira, Avast!, AVG, and Quick Heal – before turning them against their owners by deliberately surrendering to them on specific dates in order to distract, delay, and divert the targets’ resources.",
+            "domain": "blogs.blackberry.com",
+            "tokenized": [
+                {
+                    "sent": "Cylance research has enabled the identification and tracking of a new and likely state-sponsored threat actor whose profile does not match any of the established, so-called APT groups.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Innovative Research Methodologies Employed The White Company project benefitted from an innovative, new approach to analyzing a large portion of a threat actor’s exploit kit, which in this case involved a painstaking examination of the machine-language shellcode instructions embedded within a sample of roughly 30 exploits.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Other methods we uncovered include: Within the exploit: four different ways to check whether the malware was on an analyst’s or investigator’s system; the capacity to clean up Word and launch a decoy document to reduce suspicion; and the ability to delete itself entirely from target system Within the malware: five different obfuscation (packing) techniques that placed the ultimate payload within a series of nesting-doll layers; additional ways to check whether the malware was on an analyst’s or investigator’s system; anonymous, open-source payloads and obfuscation techniques; the use of compromised or otherwise un-attributable network infrastructure for command and control An all-encompassing breakdown of the malware and infrastructure used illuminates a disturbing trend in threat actor behavior, where publicly available tools and techniques are employed by a sophisticated, well-resourced actor, almost surely for the purpose of removing identifiable fingerprints and avoiding the detection of custom malware early on in the campaign.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Our comprehensive approach to examining The White Company and one of their campaigns has shown that this threat actor has a keen awareness of the typical methods, biases, and assumptions held by many in the security research and investigative communities - and they have demonstrated an ability to use that common approach against that community by deliberately undermining those assumptions and leaving contradictory bits of evidence that effectively distract, delay and degrade the ability to analyze their work.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "The White Company project consists of three chapters within a single report, applying a new, comprehensive approach to threat intelligence research to unlock insights into this threat actor and its operations, and which combines detailed technical research with accessible storytelling.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We uncovered evidence that establishes that the White Company possesses the following: ◦ access to zero-day exploit developers and, potentially, zero-day exploits ◦ a complex, automated exploit build system ◦ the ability to modify, refine and evolve exploits to meet mission-specific needs ◦ the capacity for advanced reconnaissance of targets The White Company is the first threat actor Cylance has encountered that targets and effectively evades no less than eight different antivirus products – Sophos, ESET, Kaspersky, BitDefender, Avira, Avast!, AVG, and Quick Heal – before turning them against their owners by deliberately surrendering to them on specific dates in order to distract, delay, and divert the targets’ resources.",
+                    "is_evidence": 1
+                }
+            ]
+        },
+        {
+            "link": "https://socprime.com/news/white-company-apt-group-attacks-the-pakistan-air-force/",
+            "content": "At the beginning of the campaign, emails contained a link to the compromised sites, and then the attackers switched to sending malicious Word documents. In each case, the attackers sent a specially crafted email related to the Pakistani government, Air Forces or Chinese military. The group sent phishing emails to members of the Air Force trying to infiltrate the networks of the Pakistani military. The operation has been carried out for about a year by a previously unknown APT group, which experts from Cylance have called White Company as they take many elaborate measures to evade attribution. This time, researchers uncovered Operation Shaheen, a complex cyber-espionage campaign targeted at the Pakistan Air Force. White Company infects its victims with a remote access trojans, which install multifunctional spyware.",
+            "domain": "socprime.com",
+            "tokenized": [
+                {
+                    "sent": "At the beginning of the campaign, emails contained a link to the compromised sites, and then the attackers switched to sending malicious Word documents.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In each case, the attackers sent a specially crafted email related to the Pakistani government, Air Forces or Chinese military.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group sent phishing emails to members of the Air Force trying to infiltrate the networks of the Pakistani military.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The operation has been carried out for about a year by a previously unknown APT group, which experts from Cylance have called White Company as they take many elaborate measures to evade attribution.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This time, researchers uncovered Operation Shaheen, a complex cyber-espionage campaign targeted at the Pakistan Air Force.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "White Company infects its victims with a remote access trojans, which install multifunctional spyware.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.csoonline.com/article/566543/cylance-researchers-discover-powerful-new-nation-state-apt.html/",
+            "content": "Additional layers of obfuscation and misdirection led Cylance researchers to dub the group the White Company. The Belgian locksmith was just a pawn in a global game of cyberespionage fought by a new nation-state hacking group, and while the target in this operation was Pakistan — both nuclear-armed and a haven for terrorists in the region — the incredibly sophisticated layers of misdirection used by the malware to mislead and delay forensics analysis worries security researchers, who say these attack tools could be deployed against anyone else in the world at any time. The White Company also used commodity malware to confuse security researchers looking for exotic nation-state malware. What makes the White Company especially dangerous, however, is its keen understanding of how security researchers study malware, and their sophisticated attempts to foil automated forensics analysis. While hesitant to attribute to any particular nation, researchers told CSO the new APT is likely Middle Eastern, but whose tactics, techniques and procedures (TTPs) are indicative of US-trained intelligence operatives, raising the possibility that ex-US intel folks have turned mercenary and are building a new APT group for a Middle Eastern nation. ”The White Company is a new nation-state APT, Cylance tells CSO, likely a Middle Eastern country, and is not a U.S. or Five Eyes threat group.",
+            "domain": "www.csoonline.com",
+            "tokenized": [
+                {
+                    "sent": "Additional layers of obfuscation and misdirection led Cylance researchers to dub the group the White Company.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The Belgian locksmith was just a pawn in a global game of cyberespionage fought by a new nation-state hacking group, and while the target in this operation was Pakistan — both nuclear-armed and a haven for terrorists in the region — the incredibly sophisticated layers of misdirection used by the malware to mislead and delay forensics analysis worries security researchers, who say these attack tools could be deployed against anyone else in the world at any time.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The White Company also used commodity malware to confuse security researchers looking for exotic nation-state malware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "What makes the White Company especially dangerous, however, is its keen understanding of how security researchers study malware, and their sophisticated attempts to foil automated forensics analysis.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While hesitant to attribute to any particular nation, researchers told CSO the new APT is likely Middle Eastern, but whose tactics, techniques and procedures (TTPs) are indicative of US-trained intelligence operatives, raising the possibility that ex-US intel folks have turned mercenary and are building a new APT group for a Middle Eastern nation.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "”The White Company is a new nation-state APT, Cylance tells CSO, likely a Middle Eastern country, and is not a U.S. or Five Eyes threat group.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://verdict-encrypt.nridigital.com/verdict_encrypt_winter18/uncovering_the_white_company/",
+            "content": "While Cylance has evidence of a number of the White Company’s campaigns, it has published details of one it is confident is being targeted at a government organisation: the Pakistani Air Force. “That said, the easy-to-track nature of the first phase of attack in Operation Shaheen, where a series of external websites were compromised and used to deliver malware, is out of character for state or state-sponsored groups that prize stealth. “The White Company goes to many and varied lengths to evade attribution and maintain stealth both within the context of their exploits as well as their malware, which is distinct from several known APT groups,” he says. “The White Company goes to numerous elaborate measures to evade attribution, deploying obfuscation techniques both within its malware as well as within its exploits.”“The evidence we uncovered points to the notion that the White Company has several teams working together, with resources devoted to the following tasks: the acquisition of the Stage 1 exploit, reconnaissance of target systems, the development of the Stage 2 (mission-specific) exploit, the improvement and evolution of the exploit over time, the obfuscation of the malware, the management of the Command and Control infrastructure, the development and deployment of the phishing lures, et al.”“The exploit used by the White Company in the second phase of its campaign in Operation Shaheen differed in extraordinary ways from the more commonly seen, publicly available exploits,” said Livelli.",
+            "domain": "verdict-encrypt.nridigital.com",
+            "tokenized": [
+                {
+                    "sent": "While Cylance has evidence of a number of the White Company’s campaigns, it has published details of one it is confident is being targeted at a government organisation: the Pakistani Air Force.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "“That said, the easy-to-track nature of the first phase of attack in Operation Shaheen, where a series of external websites were compromised and used to deliver malware, is out of character for state or state-sponsored groups that prize stealth.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“The White Company goes to many and varied lengths to evade attribution and maintain stealth both within the context of their exploits as well as their malware, which is distinct from several known APT groups,” he says.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“The White Company goes to numerous elaborate measures to evade attribution, deploying obfuscation techniques both within its malware as well as within its exploits.”",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "“The evidence we uncovered points to the notion that the White Company has several teams working together, with resources devoted to the following tasks: the acquisition of the Stage 1 exploit, reconnaissance of target systems, the development of the Stage 2 (mission-specific) exploit, the improvement and evolution of the exploit over time, the obfuscation of the malware, the management of the Command and Control infrastructure, the development and deployment of the phishing lures, et al.”",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "“The exploit used by the White Company in the second phase of its campaign in Operation Shaheen differed in extraordinary ways from the more commonly seen, publicly available exploits,” said Livelli.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}
