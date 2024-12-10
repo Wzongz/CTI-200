@@ -1,0 +1,51 @@
+[
+    "claim":"Scarlet Mimic is a threat group that has targeted minority rights activists. This group has not been directly linked to a government source, but the group's motivations appear to overlap with those of the Chinese government.",
+    "explain":"Scarlet Mimic is a threat group that has targeted minority rights activists. This group has not been directly linked to a government source, but the group’s motivations appear to overlap with those of the Chinese government. While there is some overlap between IP addresses used by Scarlet Mimic and Putter Panda, APT 2, it has not been concluded that the groups are the same. The attacks began over four years ago and their targeting pattern suggests that this adversary’s primary mission is to gather information about minority rights activists. We do not have evidence directly linking these attacks to a government source, but the information derived from these activities supports an assessment that a group or groups with motivations similar to the stated position of the Chinese government in relation to these targets is involved. The attacks we attribute to Scarlet Mimic have primarily targeted Uyghur and Tibetan activists as well as those who are interested in their causes. Both the Tibetan community and the Uyghurs, a Turkic Muslim minority residing primarily in northwest China, have been targets of multiple sophisticated attacks in the past decade. Both also have history of strained relationships with the government of the People’s Republic of China (PRC), though we do not have evidence that links Scarlet Mimic attacks to the PRC. Scarlet Mimic attacks have also been identified against government organizations in Russia and India, who are responsible for tracking activist and terrorist activities. While we do not know the precise target of each of the Scarlet Mimic attacks, many of them align to the patterns described above.",
+    {
+        "report_id": "report_0",
+        "link":"https://unit42.paloaltonetworks.com/scarlet-mimic-years-long-espionage-targets-minority-activists/",
+        "sentences": [
+            "Both also have history of strained relationships with the government of the People’s Republic of China (PRC), though we do not have evidence that links Scarlet Mimic attacks to the PRC.",
+            "In the past, Scarlet Mimic has primarily targeted individuals who belong to these minority groups as well as their supporters, but we’ve recently found evidence to indicate the group also targets individuals working inside government anti-terrorist organizations.",
+            "Scarlet Mimic attacks have also been identified against government organizations in Russia and India, who are responsible for tracking activist and terrorist activities.",
+            "The attacks we attribute to Scarlet Mimic have primarily targeted Uyghur and Tibetan activists as well as those who are interested in their causes.",
+            "The most recent Scarlet Mimic attacks we have identified were conducted in 2015 and suggest the group has a significant interest in both Muslim activists and those interested in critiques of the Russian government and Russian President Vladimir Putin.",
+            "We do not have evidence directly linking these attacks to a government source, but the information derived from these activities supports an assessment that a group or groups with motivations similar to the stated position of the Chinese government in relation to these targets is involved."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://research.checkpoint.com/2022/never-truly-left-7-years-of-scarlet-mimics-mobile-surveillance-campaign-targeting-uyghurs/",
+        "sentences": [
+            "Although a small part of this campaign was briefly discussed in Cyble’s publication as an isolated and unattributed incident, in this article we put the whole campaign in perspective and outline almost a decade’s worth of persistent efforts in phone surveillance of the Uyghur community.",
+            "If the check fails, the malware launches a regular UI installation via intent,Over the years, Scarlet Mimic strongly continues its espionage operations against the Uyghur community using Android malware.",
+            "In 2022, Check Point Research (CPR) observed a new wave of a long-standing campaign targeting the Uyghur community, a Turkic ethnic group originating from Central Asia, one of the largest minority ethnic groups in China.",
+            "Since then, CPR has observed the group using more than 20 different variations of their Android malware, disguised in multiple Uyghur-related baits such as books, pictures, and even an audio version of the Quran, the holy text of the Islamic faith.",
+            "This malicious activity, which we attributed to the threat actor Scarlet Mimic, was first brought to light back in 2016.",
+            "This threat group’s shift in their attack vector into the mobile sector provides another evidence of a growing tendency of extensive surveillance operations executed on mobile devices as the most sensitive and private assets."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.infosecurity-magazine.com/news/scarlet-mimic-threat-group-takes/",
+        "sentences": [
+            "Although the security vendor fell short of direct attribution to the Chinese government, it admitted that the main targets of the group – Uyghur and Tibetan activists – have “a history of strained relationships” with Beijing.",
+            "Another major theme running through Scarlet Mimic attacks is the use of a Windows backdoor first discovered by Trend Micro in 2013 and dubbed ‘FakeM’, whose C&C traffic apes Windows Messenger and Yahoo Messenger traffic to bypass traditional filters.",
+            "It continued: “As with many other attackers who use spear-phishing to infect victims, Scarlet Mimic makes heavy use of ‘decoy’ files.",
+            "Security experts are warning of a new multi-year advanced cyber espionage campaign targeted against Uyghur and Tibetan activists as well as Russian and India anti-terrorist agencies.",
+            "Some elements of the research, such as the discovery of FakeM, have been noted by security teams in the past but Palo Alto claimed to have brought together previously disparate strands to attribute to Scarlet Mimic.",
+            "The so-called “Scarlet Mimic” group has been operating since 2009, using spear phishing and watering hole attacks to infect users."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://1275.ru/ioc/703/scarlet-mimic-apt-iocs/",
+        "sentences": [
+            "CPR has since noted that the group is using more than 20 different variations of its Android malware.",
+            "In 2022, Check Point Research (CPR) noticed a new wave of a long-running campaign targeting the Uyghur community.",
+            "There is no indication that any of them were distributed from the Google Store; most likely, in most cases, malicious applications are disguised as PDF documents, photos or audio distributed through phishing or other social engineering campaigns.",
+            "This malicious activity, which Check Point attributes to the Scarlet Mimic threat agent, first became known in 2016.",
+            "This malicious activity, which Check Point attributes to the Scarlet Mimic threat agent, first became known in 2016.CPR has since noted that the group is using more than 20 different variations of its Android malware."
+        ]
+    }
+]

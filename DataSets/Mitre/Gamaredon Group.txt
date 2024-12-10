@@ -1,0 +1,50 @@
+Gamaredon Group is a suspected Russian cyber espionage threat group that has targeted military, NGO, judiciary, law enforcement, and non-profit organizations in Ukraine since at least 2013. The name Gamaredon Group comes from a misspelling of the word "Armageddon", which was detected in the adversary's early campaigns.
+In November 2021, the Ukrainian government publicly attributed Gamaredon Group to Russia's Federal Security Service (FSB) Center 18.
+Gamaredon Group has registered multiple domains to facilitate payload staging and C2.
+Gamaredon Group has used HTTP and HTTPS for C2 communications.
+Gamaredon Group has deployed scripts on compromised systems that automatically scan for interesting documents.
+Gamaredon Group has used modules that automatically upload gathered documents to the C2 server.
+Gamaredon Group tools have registered Run keys in the registry to give malicious VBS files persistence.
+Gamaredon Group has used obfuscated PowerShell scripts for staging.
+Gamaredon Group has used various batch scripts to establish C2 and download additional files. Gamaredon Group's backdoor malware has also been written to a batch file.
+Gamaredon Group has embedded malicious macros in document templates, which executed VBScript. Gamaredon Group has also delivered Microsoft Outlook VBA projects with embedded macros.
+Gamaredon Group has used tools to delete files and folders from victims' desktops and profiles.
+Gamaredon Group has collected files from infected systems and uploaded them to a C2 server.
+Gamaredon Group malware has collected Microsoft Office documents from mapped network drives.
+A Gamaredon Group file stealer has the capability to steal data from newly connected logical volumes on a system, including USB drives.
+Gamaredon Group has left taunting images and messages on the victims' desktops as proof of system access.
+Gamaredon Group tools decrypted additional payloads from the C2. Gamaredon Group has also decoded base64-encoded source code of a downloader.
+Gamaredon Group has incorporated dynamic DNS domains in its infrastructure.
+A Gamaredon Group file stealer can transfer collected files to a hardcoded C2 server.
+Gamaredon Group macros can scan for Microsoft Word and Excel files to inject with additional malicious macros. Gamaredon Group has also used its backdoors to automatically list interesting files (such as Office documents) found on a system.
+Gamaredon Group has used hidcon to run batch files in a hidden console window.
+Gamaredon Group has delivered macros which can tamper with Microsoft Office security settings.
+Gamaredon Group tools can delete files used during an operation.
+Gamaredon Group has downloaded additional malware and tools onto a compromised host.
+Gamaredon Group malware can insert malicious macros into documents using a Microsoft.Office.Interop object.
+Gamaredon Group has used an Outlook VBA module on infected systems to send phishing emails with malicious attachments to other employees within the organization.
+Gamaredon Group has used legitimate process names to hide malware including svchosst.
+Gamaredon Group has removed security settings for VBA macro execution by changing registry values HKCU\Software\Microsoft\Office\<version>\<product>\Security\VBAWarnings and HKCU\Software\Microsoft\Office\<version>\<product>\Security\AccessVBOM.
+Gamaredon Group malware has used CreateProcess to launch additional malicious components.
+Gamaredon Group has delivered self-extracting 7z archive files within malicious document attachments.
+Gamaredon Group has obfuscated .NET executables by inserting junk code.
+Gamaredon Group has compiled the source code for a downloader directly on the infected system using the built-in Microsoft.CSharp.CSharpCodeProvider class.
+Gamaredon Group has used obfuscated or encrypted scripts.
+Gamaredon Group has inserted malicious macros into existing documents, providing persistence when they are reopened. Gamaredon Group has loaded the group's previously delivered VBA project by relaunching Microsoft Outlook with the /altvba option, once the Application.Startup event is received.
+Gamaredon Group tools have contained an application to check performance of USB flash drives. Gamaredon Group has also used malware to scan for removable drives.
+Gamaredon Group has delivered spearphishing emails with malicious attachments to targets.
+Gamaredon Group has used tools to enumerate processes on target hosts including Process Explorer.
+Gamaredon Group has used VNC tools, including UltraVNC, to remotely interact with compromised hosts.
+Gamaredon Group has created scheduled tasks to launch executables after a designated number of minutes have passed.
+Gamaredon Group's malware can take screenshots of the compromised computer every minute.
+Gamaredon Group has registered domains to stage payloads.
+Gamaredon Group has used mshta.exe to execute malicious HTA files.
+Gamaredon Group malware has used rundll32 to launch additional malicious components.
+A Gamaredon Group file stealer can gather the victim's computer name and drive serial numbers to send to a C2 server.
+Gamaredon Group has tested connectivity between a compromised machine and a C2 server using  Ping with commands such as CSIDL_SYSTEM\cmd.exe /c ping -n 1.
+A Gamaredon Group file stealer can gather the victim's username to send to a C2 server.
+Gamaredon Group has injected malicious macros into all Word and Excel documents on mapped network drives.
+Gamaredon Group has used DOCX files to download malicious DOT document templates and has used RTF template injection to download malicious payloads. Gamaredon Group can also inject malicious macros or remote templates into documents already present on compromised systems.
+Gamaredon Group has attempted to get users to click on Office attachments with malicious macros embedded.
+Gamaredon Group has used GitHub repositories for downloaders which will be obtained by the group's .NET executable on the compromised system.
+Gamaredon Group has used WMI to execute scripts used for discovery.

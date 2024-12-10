@@ -1,0 +1,141 @@
+{
+    "event_id": "045",
+    "claim": "APTs and COVID-19: How advanced persistent threats use the coronavirus as a lure.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "The coronavirus (COVID-19) has become a global pandemic, and this is a golden time for attackers to take advantage of our collective fear to increase the likelihood of successful attack. True to form, they’ve been doing just that: performing spam and spear phishing campaigns using coronavirus as a lure for government and non-government entities. From late January on, several cybercriminal and state-sponsored advanced persistent threat (APT) groups have been using coronavirus-based phishing as their infection vector to gain a foothold on victim machines and launch malware attacks. Just like the spread of coronavirus itself, China was the first targeted by APT groups and as the virus spread worldwide, so did the attacks. In the following paper, we provide an overview of APT groups that have been using coronavirus as a lure, and we analyze their infection techniques and eventual payloads. We categorize the APT groups based on four different attack vectors used in COVID-19 campaigns: Template injection, Malicious macros, RTF exploits, and malicious LNK files.Template injection: Template injection refers to a technique in which the actors embed a script moniker in the lure document that contains a link to a malicious Office template in the XML setting. Upon opening the document, the remote template is dropped and executed. The Kimsuky and Gamaredon APTs used this technique. Malicious macros: Embedding malicious macros is the most popular method used by threat groups. In this technique, a macro is embedded in the lure document that will be activated upon opening. Konni (APT37), APT36, Patchwork, Hades, TA505, TA542, Bitter, APT32 (Ocean Lotus) and Kimsuky are the actors using this technique. RTF exploits: RTF is a flexible text format that allows embedding any object type within and makes RTF files vulnerable to many OLEl object-related vulnerabilities. Several Chinese threat actors use RTF files, among them the Calypso group and Winnti. Malicious LNK files: An LNK file is a shortcut file used by Microsoft Windows and is considered as a Shell item type that can be executed. Mustang Panda is a Chinese threat actor that uses this technique to drop either a variant of the PlugX RAT or Cobalt Strike into victims’ machines. Higaisia is a North Korean threat group that also uses this method. We expect that in the coming weeks and months, APT threat actors will continue to leverage this crisis to craft phishing campaigns using the techniques mentioned in the paper to compromise their targets. The Malwarebytes Threat Intelligence Team is monitoring the threat landscape and paying particular attention to attacks trying to abuse the public’s fear around the COVID-19 crisis. Our Malwarebytes consumer and business customers are protected against these attacks, thanks to our multi-layered detection engines.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.zscaler.com/blogs/security-research/apt-31-leverages-covid-19-vaccine-theme-and-abuses-legitimate-online/",
+            "content": "By abusing legitimate services such as GitHub, Google Drive, and Dropbox in the infection chain, end-to-end, this threat actor manages to evade network security solutions. In October 2020, Google’s Threat Analysis Group (TAG) attributed an attack using a similar payload to APT-31 in its report here. The threat actor in this case leverages legitimate online services end-to-end in the infection chain in order to blend in with benign traffic and evade network security controls. The threat actor, APT-31, quickly leverages current themes, such as COVID-19, or political themes of interest to the victim as a social engineering technique to infect their machines. There is considerable overlap between the malware distribution strategy and the payload indicators in this report and the samples we discovered. We will conclude our analysis by sharing indicators of compromise (IOCs), useful metadata, and the complete decompiled Python script, which was the main payload involved in these attacks.",
+            "domain": "www.zscaler.com",
+            "tokenized": [
+                {
+                    "sent":"By abusing legitimate services such as GitHub, Google Drive, and Dropbox in the infection chain, end-to-end, this threat actor manages to evade network security solutions.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In October 2020, Google’s Threat Analysis Group (TAG) attributed an attack using a similar payload to APT-31 in its report here.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":"The threat actor in this case leverages legitimate online services end-to-end in the infection chain in order to blend in with benign traffic and evade network security controls.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The threat actor, APT-31, quickly leverages current themes, such as COVID-19, or political themes of interest to the victim as a social engineering technique to infect their machines.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "There is considerable overlap between the malware distribution strategy and the payload indicators in this report and the samples we discovered.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We will conclude our analysis by sharing indicators of compromise (IOCs), useful metadata, and the complete decompiled Python script, which was the main payload involved in these attacks.",
+                     "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://intezer.com/blog/research/russian-apt-uses-covid-19-lures-to-deliver-zebrocy/",
+            "content":  "Given that many COVID-19 vaccines are about to be approved for clinical use, it’s likely that APTs (Advanced Persistent Threat) and financially motivated threat actors will use this malware in their attacks. In November, we uncovered COVID-19 phishing lures that were used to deliver the Go version of Zebrocy. The group is known to use current events as part of their phishing lures. Using the icon resource from the original phishing lure, we found another phishing lure (395e166af5197967503f45c3ac134ff7) that was uploaded to VirusTotal from Kazakhstan on November 12. While the malware samples were heavily obfuscated, it was possible to attribute them to the Sofacy threat actor since they shared genomes with samples used in previous campaigns. With these recent phishing lures, it’s clear that COVID-19 themed attacks are still a threat and we might see more as vaccines become available to the general public.",
+            "domain": "intezer.com",
+            "tokenized": [
+                {
+                    "sent": "Given that many COVID-19 vaccines are about to be approved for clinical use, it’s likely that APTs (Advanced Persistent Threat) and financially motivated threat actors will use this malware in their attacks.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In November, we uncovered COVID-19 phishing lures that were used to deliver the Go version of Zebrocy.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":"The group is known to use current events as part of their phishing lures.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":"Using the icon resource from the original phishing lure, we found another phishing lure (395e166af5197967503f45c3ac134ff7) that was uploaded to VirusTotal from Kazakhstan on November 12.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":"While the malware samples were heavily obfuscated, it was possible to attribute them to the Sofacy threat actor since they shared genomes with samples used in previous campaigns.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":"With these recent phishing lures, it’s clear that COVID-19 themed attacks are still a threat and we might see more as vaccines become available to the general public.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://healthitsecurity.com/news/apt-hackers-targeting-healthcare-essential-services-amid-covid-19/",
+            "content":  "According to the new joint alert from the Department of Homeland Security Cybersecurity and Infrastructure Security Agency and UK National Cyber Security Centre (NCSC), officials have seen an uptick in Coronavirus-related password spraying campaigns as part of their cyber operations. CISA and UK NCSC are also actively investigating a massive campaign of COVID-19-related password spraying activity conducted by APT hacking groups against healthcare entities in a number of countries, including international healthcare organizations. Given the global reach and the use of international supply chains, these organizations have an increased exposure to malicious cyberactivity. May 05, 2020 - Healthcare organizations and other essential services are again being warned that advanced persistent threat (APT) hacking groups are continuing to exploit the COVID-19 pandemic; this time to actively target organizations involved in both the national and international response. These findings mirror other alerts from federal agencies and security researchers, including attacks on patched and unpatched Virtual Private Networks (VPNs), supply chain procurement, Citrix flaws, remote workers, and a host of hospitals, among many others. “Malicious cyber actors, including APT groups, collate names from various online sources that provide organizational details and use this information to identify possible accounts for targeted institutions,” the agencies warn.",
+            "domain": "healthitsecurity.com",
+            "tokenized": [
+                {
+                    "sent": "According to the new joint alert from the Department of Homeland Security Cybersecurity and Infrastructure Security Agency and UK National Cyber Security Centre (NCSC), officials have seen an uptick in Coronavirus-related password spraying campaigns as part of their cyber operations.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":"CISA and UK NCSC are also actively investigating a massive campaign of COVID-19-related password spraying activity conducted by APT hacking groups against healthcare entities in a number of countries, including international healthcare organizations.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Given the global reach and the use of international supply chains, these organizations have an increased exposure to malicious cyberactivity.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "May 05, 2020 - Healthcare organizations and other essential services are again being warned that advanced persistent threat (APT) hacking groups are continuing to exploit the COVID-19 pandemic; this time to actively target organizations involved in both the national and international response.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "These findings mirror other alerts from federal agencies and security researchers, including attacks on patched and unpatched Virtual Private Networks (VPNs), supply chain procurement, Citrix flaws, remote workers, and a host of hospitals, among many others.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“Malicious cyber actors, including APT groups, collate names from various online sources that provide organizational details and use this information to identify possible accounts for targeted institutions,” the agencies warn.",
+                    "is_evidence": 0
+                }
+            ]
+         },
+         {
+            "link": "https://www.cyber.gov.au/about-us/alerts/advanced-persistent-threat-apt-actors-targeting-australian-health-sector-organisations-and-covid-19-essential-services/",
+            "content": "Adversaries and cybercrime actors have been identified as responsible for compromising email servers of health sector entities in Australia, which are then used to distribute COVID-19 phishing emails in an attempt to deploy malicious software, including ransomware, or to gain access to other targeted organisations. For more information refer to the ASD's ACSC’s Threat Updates on COVID-19 themed malicious cyber activity:The ASD's ACSC has also received reports of senior officials in health and emergency services organisations receiving targeted spear-phishing emails. Since the onset of the COVID-19 pandemic, the ASD's ACSC has identified a range of different email and SMS phishing campaigns being perpetrated by cybercrime actors. Sophisticated actors will often use the most efficient means available to target a victim’s network and, in the current climate, APT groups may seek to maximise on the public desire for COVID-19 related information by generating specific COVID-19 themed spear-phishing emails to attempt to compromise victims. These were carefully crafted COVID-19 related emails designed to trick the recipient into clicking a link that downloaded malicious software onto their organisations’ corporate network. They seek to prey on vulnerable people, consumers and organisations, using fear and urgency tactics to distribute malware or steal personal and financial information.",
+            "domain": "www.cyber.gov.au",
+            "tokenized": [
+                {
+                    "sent": "Adversaries and cybercrime actors have been identified as responsible for compromising email servers of health sector entities in Australia, which are then used to distribute COVID-19 phishing emails in an attempt to deploy malicious software, including ransomware, or to gain access to other targeted organisations.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "For more information refer to the ASD's ACSC’s Threat Updates on COVID-19 themed malicious cyber activity:The ASD's ACSC has also received reports of senior officials in health and emergency services organisations receiving targeted spear-phishing emails.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Since the onset of the COVID-19 pandemic, the ASD's ACSC has identified a range of different email and SMS phishing campaigns being perpetrated by cybercrime actors.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Sophisticated actors will often use the most efficient means available to target a victim’s network and, in the current climate, APT groups may seek to maximise on the public desire for COVID-19 related information by generating specific COVID-19 themed spear-phishing emails to attempt to compromise victims.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "These were carefully crafted COVID-19 related emails designed to trick the recipient into clicking a link that downloaded malicious software onto their organisations’ corporate network.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "They seek to prey on vulnerable people, consumers and organisations, using fear and urgency tactics to distribute malware or steal personal and financial information.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

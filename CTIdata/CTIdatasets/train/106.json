@@ -1,0 +1,141 @@
+{
+    "event_id": "106",
+    "claim": "China's Winnti APT Compromises National Grid in Asia for 6 Months.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "A Chinese threat actor managed to breach the national power grid in an unnamed Asian country earlier this year, compromising multiple computers and using a popular remote access Trojan (RAT) to steal sensitive data. The perpetrator — an entity within Winnti Group, also known as APT41, Bronze Atlas — has a history of taking on some of the most high-level cyber espionage conducted by the People's Republic of China (PRC), including campaigns against hostile governments and industries abroad. Its wide-ranging and successful campaigns have earned it attention from international law enforcement to a degree matched only by the world's most prolific nation-state and cybercriminal groups. In this latest campaign, a subsect within Winnti known as “Redfly” or “Red Echo” managed to occupy the network of an Asian national electricity provider for half a year, deploying a Trojan called “ShadowPad” to harvest credentials and obtain privileged information. According to Dick O'Brien, principal intelligence analyst for the Symantec threat hunter team, this latest case of critical infrastructure attack signals a worrying trend for the sector on the whole. “I think it can be very easy to hear the warnings but not to do anything until something really bad happens,” he warns. “The worst case scenario is quite rare, but it does happen from time to time.” Researchers from Symantec traced the campaign back to Feb. 28 when ShadowPad was deployed in a single computer in the target network. ShadowPad, first discovered eight years ago, is a modular backdoor in shellcode format. Like its successor — the long-running PlugX family of Trojans — it was at one point briefly shared with select buyers in the cyber underground, but is generally seen in correlation with Chinese state-sponsored attacks. In this campaign, the attackers used a distinct variant of ShadowPad which copies itself to disk, disguised as VMWare files and directories. Redfly deployed ShadowPad for a second time in the target network on May 17, indicating that it had maintained persistence in the three months interim. In the following days and weeks, Redfly began to flex its muscle. On May 19, for instance, it performed DLL sideloading to drop a payload, then used Powershell to get information about storage devices attached to the system. On May 26, it dumped credentials from the %TEMP% registry and cleared Windows security event logs. By May 31, it'd used its stolen credentials to spread its malware to further machines in the network. On July 27, Redfly dropped a keylogger, stored under various file names on various computers. And on its final day of malicious activity, Aug. 3, Redfly attempted to dump credentials from the Windows registry.An attack against a national grid just doesn't pack the same punch today as it would've years ago. While Winnti was running through this Asian grid provider in May, Microsoft revealed that a different Chinese APT, Volt Typhoon, had compromised US critical infrastructure organizations, an attack which somehow later turned out to be even worse than initially thought. That campaign inspired a joint statement from multiple worldwide law enforcement agencies. Indeed, while Russia's destructive attacks earn the biggest headlines, China's espionage campaigns are arguably just as common in the critical infrastructure space. Researchers from Symantec track multiple subgroups within Winnti including Blackfly, Greyfly, and, in this case, Redfly (aka Red Echo). Redfly, they say, is a subsect solely focused on national critical infrastructure attacks. And this latest campaign likely isn't their first foray into national electric grid hacks, having pulled off a similar feat in India two years ago, according to the cybersecurity firm Recorded Future. Exactly why Chinese APTs have taken such an interest in critical industries remains unclear. O'Brien speculates it may have to do with political tensions, energy market trends, or intellectual property theft, but there's no saying for certain. “We don't know the minds of the attackers, so we can only give an educated guess,” he warns. Luckily, he adds, the US and certain other Western countries are well aware of the threat. “The United States is pretty clued in, at this stage, to the threat that cyber could pose to critical infrastructure, and what needs to be done in terms of supporting the organizations who are behind that critical infrastructure. For other countries, it varies.” In fact, he adds, other countries can “maybe learn from their approach — of how CISA has taken up the challenge here.”\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.securityweek.com/chinas-winnti-group-hacked-least-13-organizations-2021-security-firm/",
+            "content": "Also referred to as APT41, Barium, Blackfly, Double Dragon, Wicked Panda, and Wicked Spider, the Winnti group has been active since at least 2007, engaging in both cyberespionage operations and financially motivated attacks. As part of these attacks, the threat actor performed reconnaissance using tools such as vulnerability scanners (Acunetix, JexBoss), network scanners (Nmap), and brute-forcing utilities (OneForAll, Sqlmap, subdomain3, subDomainsBrute, and Sublist3r). Chinese state-sponsored threat group Winnti compromised at least 13 organizations globally in 2021, spanning across multiple sectors, cybersecurity firm Group-IB says. In March 2022, Mandiant detailed the hacking of at least six US state government organizations between May 2021 and February 2022. In September 2020, the US Department of Justice announced charges against five Chinese nationals believed to be part of the Winnti group, who allegedly launched attacks against over 100 organizations in the US and abroad. In a new report, Group-IB provides a broader perspective on the group’s activities throughout 2021: the hackers compromised at least 13 organizations, often targeting SQL injection vulnerabilities in web applications, but deploying a custom Cobalt Strike Beacon in each case.",
+            "domain": "blogs.blackberry.com",
+            "tokenized": [
+                {
+                    "sent": "Also referred to as APT41, Barium, Blackfly, Double Dragon, Wicked Panda, and Wicked Spider, the Winnti group has been active since at least 2007, engaging in both cyberespionage operations and financially motivated attacks.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "As part of these attacks, the threat actor performed reconnaissance using tools such as vulnerability scanners (Acunetix, JexBoss), network scanners (Nmap), and brute-forcing utilities (OneForAll, Sqlmap, subdomain3, subDomainsBrute, and Sublist3r).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Chinese state-sponsored threat group Winnti compromised at least 13 organizations globally in 2021, spanning across multiple sectors, cybersecurity firm Group-IB says.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In March 2022, Mandiant detailed the hacking of at least six US state government organizations between May 2021 and February 2022.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In September 2020, the US Department of Justice announced charges against five Chinese nationals believed to be part of the Winnti group, who allegedly launched attacks against over 100 organizations in the US and abroad.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In a new report, Group-IB provides a broader perspective on the group’s activities throughout 2021: the hackers compromised at least 13 organizations, often targeting SQL injection vulnerabilities in web applications, but deploying a custom Cobalt Strike Beacon in each case.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.malwarebytes.com/blog/threat-intelligence/2022/10/winnti-apt-group-docks-in-sri-lanka-for-new-campaign/",
+            "content": "Here are the highlights of our this investigation: To our knowledge, a Winnti faction is targeting Sri Lanka for the first time The attack time frame coincides with a major geopolitical event involving China and Sri Lanka The threat actors created a new backdoor and used Dropbox for their command and control infrastructure. However, based on tactic, techniques and procedures (TTPs) as well as code similarities we believe that this attack falls under the Winnti umbrella. In early August, the Malwarebytes Threat Intelligence team identified a new attack targeting government entities in Sri Lanka. The threat actors used multiple layers of protection and techniques to make analysis harder and hide their final payload. We identified several payloads being dropped in this campaign, including the famous KeyPlug malware but more interestingly, we found a new backdoor that we call DBoxAgent due to its use of Dropbox as a command and control server. Winnti is a Chinese state-sponsored effort of different threat actors that have conducted cyber espionage and financially motivated operations since 2012.",
+            "domain": "www.malwarebytes.com",
+            "tokenized": [
+                {
+                    "sent": "Here are the highlights of our this investigation: To our knowledge, a Winnti faction is targeting Sri Lanka for the first time The attack time frame coincides with a major geopolitical event involving China and Sri Lanka The threat actors created a new backdoor and used Dropbox for their command and control infrastructure",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "However, based on tactic, techniques and procedures (TTPs) as well as code similarities we believe that this attack falls under the Winnti umbrella.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In early August, the Malwarebytes Threat Intelligence team identified a new attack targeting government entities in Sri Lanka.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The threat actors used multiple layers of protection and techniques to make analysis harder and hide their final payload.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "We identified several payloads being dropped in this campaign, including the famous KeyPlug malware but more interestingly, we found a new backdoor that we call DBoxAgent due to its use of Dropbox as a command and control server.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Winnti is a Chinese state-sponsored effort of different threat actors that have conducted cyber espionage and financially motivated operations since 2012.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.securitymagazine.com/articles/97549-winnti-apt-group-stole-trillions-in-intellectual-property/",
+            "content": "During an investigation, Cybereason discovered that the Winnti Group conducted Operation CuckooBees undetected since at least 2019, likely siphoning thousands of gigabytes of intellectual property and sensitive proprietary data from dozens of companies. The group has existed since at least 2010 and is believed to be operating on behalf of Chinese state interests and specializes in cyber espionage and intellectual property theft. The most alarming revelation is that the companies weren’t aware they were breached, going some as far back as at least 2019, giving Winnti free unfiltered access to intellectual property, blueprints, sensitive diagrams and other proprietary data,” said Lior Div, Cybereason CEO and Co-founder. This is one of the largest IP theft campaigns coming from China. This research offers a unique glimpse into the Winnti intrusion playbook, detailing the most frequently used tactics and some lesser-known evasive techniques observed during the investigation. Winnti Group (APT 41) is a global cyber espionage campaign that targets manufacturers across North America, Europe and Asia in the Defense, Energy, Aerospace, Biotech and Pharma industries.",
+            "domain": "www.securitymagazine.com",
+            "tokenized": [
+                {
+                    "sent": "During an investigation, Cybereason discovered that the Winnti Group conducted Operation CuckooBees undetected since at least 2019, likely siphoning thousands of gigabytes of intellectual property and sensitive proprietary data from dozens of companies.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The group has existed since at least 2010 and is believed to be operating on behalf of Chinese state interests and specializes in cyber espionage and intellectual property theft.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The most alarming revelation is that the companies weren’t aware they were breached, going some as far back as at least 2019, giving Winnti free unfiltered access to intellectual property, blueprints, sensitive diagrams and other proprietary data,” said Lior Div, Cybereason CEO and Co-founder.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This is one of the largest IP theft campaigns coming from China.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This research offers a unique glimpse into the Winnti intrusion playbook, detailing the most frequently used tactics and some lesser-known evasive techniques observed during the investigation.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Winnti Group (APT 41) is a global cyber espionage campaign that targets manufacturers across North America, Europe and Asia in the Defense, Energy, Aerospace, Biotech and Pharma industries.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://ics-cert.kaspersky.com/publications/reports/2023/03/24/apt-attacks-on-industrial-organizations-in-h2-2022/",
+            "content": "According to Symantec, government and state-owned organizations in a number of Asian countries have been targeted by a group of cyber-espionage hackers formerly associated with the ShadowPad RAT. In April 2022, the Positive Technologies Expert Security Center detected an attack on a number of Russian energy and media companies using a malicious document. In its first wave of attacks, the threat actor, which has been dubbed Earth Longzhi, targeted government organizations, infrastructure companies, and healthcare companies in Taiwan, as well as Chinese banks. The hacking group, which is called Budworm, is believed to have ties to China’s government. This has led to speculation that the attackers belong to a North Korean-linked advanced persistent threat (APT) group. This summary provides an overview of APT attacks on industrial enterprises disclosed in H2 2022 and related activity of groups that have been observed attacking industrial organizations and critical infrastructure facilities.",
+            "domain": "ics-cert.kaspersky.com",
+            "tokenized": [
+                {
+                    "sent": "According to Symantec, government and state-owned organizations in a number of Asian countries have been targeted by a group of cyber-espionage hackers formerly associated with the ShadowPad RAT.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In April 2022, the Positive Technologies Expert Security Center detected an attack on a number of Russian energy and media companies using a malicious document.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In its first wave of attacks, the threat actor, which has been dubbed Earth Longzhi, targeted government organizations, infrastructure companies, and healthcare companies in Taiwan, as well as Chinese banks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The hacking group, which is called Budworm, is believed to have ties to China’s government.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This has led to speculation that the attackers belong to a North Korean-linked advanced persistent threat (APT) group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This summary provides an overview of APT attacks on industrial enterprises disclosed in H2 2022 and related activity of groups that have been observed attacking industrial organizations and critical infrastructure facilities.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

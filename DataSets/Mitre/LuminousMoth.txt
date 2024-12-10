@@ -1,0 +1,29 @@
+LuminousMoth is a Chinese-speaking cyber espionage group that has been active since at least October 2020. LuminousMoth has targeted high-profile organizations, including government entities, in Myanmar, the Philippines, Thailand, and other parts of Southeast Asia. Some security researchers have concluded there is a connection between LuminousMoth and Mustang Panda based on similar targeting and TTPs, as well as network infrastructure overlaps.
+LuminousMoth has used ARP spoofing to redirect a compromised machine to an actor-controlled website.
+LuminousMoth has used HTTP for C2.
+LuminousMoth has manually archived stolen files from victim machines before exfiltration.
+LuminousMoth has used malicious DLLs that setup persistence in the Registry Key HKCU\Software\Microsoft\Windows\Current Version\Run.
+LuminousMoth has collected files and data from compromised machines.
+LuminousMoth has split archived files into multiple parts to bypass a 5MB limit.
+LuminousMoth has used unique malware for information theft and exfiltration.
+LuminousMoth has used malware that exfiltrates stolen data to its C2 server.
+LuminousMoth has exfiltrated data to Google Drive.
+LuminousMoth has used malware that scans for files in the Documents, Desktop, and Download folders and in other drives.
+LuminousMoth has used malware to store malicious binaries in hidden directories on victim's USB drives.
+LuminousMoth has used legitimate executables such as winword.exe and igfxem.exe to side-load their malware.
+LuminousMoth has downloaded additional malware and tools onto a compromised host.
+LuminousMoth has disguised their exfiltration malware as ZoomVideoApp.exe.
+LuminousMoth has used malware that adds Registry keys for persistence.
+LuminousMoth has obtained and used malware such as Cobalt Strike.
+LuminousMoth has obtained an ARP spoofing tool from GitHub.
+LuminousMoth has used a valid digital certificate for some of their malware.
+LuminousMoth has sent spearphishing emails containing a malicious Dropbox download link.
+LuminousMoth has used malicious DLLs to spread malware to connected removable USB drives on infected machines.
+LuminousMoth has created scheduled tasks to establish persistence for their tools.
+LuminousMoth has hosted malicious payloads on Dropbox.
+LuminousMoth has redirected compromised machines to an actor-controlled webpage through HTML injection.
+LuminousMoth has created a link to a Dropbox file that has been used in their spear-phishing operations.
+LuminousMoth has used an unnamed post-exploitation tool to steal cookies from the Chrome browser.
+LuminousMoth has signed their malware with a valid digital signature.
+LuminousMoth has used a malicious DLL to collect the username from compromised hosts.
+LuminousMoth has lured victims into clicking malicious Dropbox download links delivered through spearphishing.

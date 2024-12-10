@@ -1,0 +1,3 @@
+PittyTiger is a threat group believed to operate out of China that uses multiple different types of malware to maintain command and control.
+PittyTiger has obtained and used tools such as Mimikatz and gsecdump.
+PittyTiger attempts to obtain legitimate credentials during operations.

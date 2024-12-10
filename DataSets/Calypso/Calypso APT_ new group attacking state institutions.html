@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="google-site-verification" content="jcMvdOvQfQ99HQ10eHZuCLjYYCNXAUeKiuankpyqiCY" />
+    <meta name="yandex-verification" content="eb1f41d1dceb159c" />
+    <meta name="robots" content="noyaca" />
+    <link rel="stylesheet" media="screen" href="/local/templates/pt_corp2017/build/styles/main.css?1706085435">
+
+
+    <title>Calypso APT: new group attacking state institutions</title>
+    <meta name="description" content="The PT Expert Security Center first took note of Calypso in March 2019 during threat hunting. Our specialists collected multiple samples of malware used by the group. They have also identified the organizations hit by the attackers, as well as the attackers' C2 servers. The primary goal of the group is theft of confidential data. Main targets are governmental institutions in Brazil, India, Kazakhstan, Russia, Thailand, and Turkey."/>
+            
+    <link rel="icon" href="/local/templates/pt_corp2017/build/img/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/local/templates/pt_corp2017/build/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/local/templates/pt_corp2017/build/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/local/templates/pt_corp2017/build/img/favicons/favicon-16x16.png">
+    <link rel="mask-icon" href="/local/templates/pt_corp2017/build/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Calypso APT: new group attacking state institutions" />
+    <meta property="og:description" content="The PT Expert Security Center first took note of Calypso in March 2019 during threat hunting. Our specialists collected multiple samples of malware used by the group. They have also identified the organizations hit by the attackers, as well as the attackers' C2 servers. The primary goal of the group is theft of confidential data. Main targets are governmental institutions in Brazil, India, Kazakhstan, Russia, Thailand, and Turkey." />
+    <meta property="og:image" content="https://www.ptsecurity.com/upload/corporate/opengraph.png" />
+    <meta property="og:site_name" content="ptsecurity.com" />
+
+    <link rel="canonical" href="https://www.ptsecurity.com/ww-en/analytics/calypso-apt-2019/" />
+    <link rel="alternate" hreflang="en" href="https://www.ptsecurity.com/ww-en/analytics/calypso-apt-2019/" />
+    
+    
+    <!-- Varioqub experiments -->
+
+<script charset="utf-8" src="/62347e4907da2123c325753d.js?1600776379225"></script>
+<script type="text/javascript">
+
+     (function(e, x, pe, r, i, me, nt){
+
+         e[i]=e[i]||function(){(e[i].a=e[i].a||[]).push(arguments)},
+
+             me=x.createElement(pe),me.async=1,me.src=r,nt=x.getElementsByTagName(pe)[0],nt.parentNode.insertBefore(me,nt)})
+
+     (window, document, 'script', 'https://abt.s3.yandex.net/expjs/latest/exp.js', 'ymab');
+
+     ymab('metrika.34351730', 'init'/*, {clientFeatures}, {callback}*/);
+ </script>
+
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(34351730, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/34351730" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WHH9JTS');</script>
+<!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-235986173-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-235986173-1');
+</script>
+    <!-- Hotjar Tracking Code for https://ptsecurity.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function()
+        {(h.hj.q=h.hj.q||[]).push(arguments)}
+        ;
+        h._hjSettings=
+            {hjid:1095096,hjsv:6}
+        ;
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(47600023, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        trackHash:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/47600023" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.ptsecurity.com/ww-en/analytics/calypso-apt-2019/" },
+    "headline": "Calypso APT: new group attacking state institutions",
+    "image": ["https://www.ptsecurity.com/upload/corporate/opengraph.png"],
+    "datePublished": "2019-10-31T13:12:00+03:00",
+    "dateModified": "2020-02-13T16:53:09+03:00",
+    "speakable": { "@type": "SpeakableSpecification", "xpath": [ "/html/head/title", "/html/head/meta[@name='description']/@content" ] },
+    "author": {
+        "@type": "Organization",
+        "name": "Positive Technologies",
+        "logo": { "@type": "ImageObject", "url": "https://www.ptsecurity.com/upload/corporate/json_logo.png" }
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Positive Technologies",
+        "logo": { "@type": "ImageObject", "url": "https://www.ptsecurity.com/upload/corporate/json_logo.png" }
+    },
+    "description": "The PT Expert Security Center first took note of Calypso in March 2019 during threat hunting. Our specialists collected multiple samples of malware used by the group. They have also identified the organizations hit by the attackers, as well as the attackers' C2 servers. The primary goal of the group is theft of confidential data. Main targets are governmental institutions in Brazil, India, Kazakhstan, Russia, Thailand, and Turkey."
+}
+</script>
+</head>
+<body><noscript><img src="/475e815d1647b1af36d4b2e8e4c7f1fd.gif" width="0" height="0" alt="" /></noscript>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHH9JTS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+<script>
+    (function(w, d, u, h, s) {
+        w._uxsSettings = {id: '7rvjx8htcialx4s2hh7wupal'};
+        h = d.getElementsByTagName('head')[0];
+        s = d.createElement('script');
+        s.async = 1;
+        s.src = u;
+        h.appendChild(s);
+    })(window, document, 'https://cdn.uxfeedback.ru/widget.js');
+</script>
+
+    <header class="js-header" id="header">
+        <header-component
+            locale="p9"
+            :menu='[{"sectionName":"Solutions","sectionLink":"\/ww-en\/solutions\/","sectionText":"View all","sectionFilterAll":"","isTarget":false,"subMenu":[{"title":"ICS\/SCADA","link":"\/ww-en\/solutions\/ics\/","description":"Critical infrastructure on the frontline"},{"title":"Vulnerability Management","link":"\/ww-en\/solutions\/vulnerability\/","description":"Stop being an easy target"},{"title":"Financial Services","link":"\/ww-en\/solutions\/financial\/","description":"Can your security keep up with you?"},{"title":" Protection from targeted attacks (anti-apt)","link":"\/ww-en\/solutions\/anti-apt\/","description":"Early detection, rapid investigation"},{"title":"PT Industrial Cybersecurity Suite","link":"\/ww-en\/solutions\/pt-ics\/","description":"PT ICS is an integrated platform for cyberthreat detection and response in industrial systems"},{"title":"Utilities","link":"\/ww-en\/solutions\/utilities\/","description":"Your all-in-one AppSec solution"},{"title":"ERP Security","link":"\/ww-en\/solutions\/erp\/","description":"Take control of your ERP security"},{"title":"Security Compliance","link":"\/ww-en\/solutions\/compliance\/","description":"Turn policies into protection"}],"subMenuFilters":null},{"sectionName":"Products","sectionLink":"\/ww-en\/products\/","sectionText":"View all","sectionFilterAll":"","isTarget":false,"subMenu":[{"title":" MaxPatrol 8","link":"\/ww-en\/products\/maxpatrol\/","description":"Vulnerability and\u00a0compliance management system"},{"title":"MaxPatrol SIEM","link":"\/ww-en\/products\/mpsiem\/","description":"Knows your infrastructure, delivers pinpoint detection"},{"title":" PT Application Firewall","link":"\/ww-en\/products\/af\/","description":"Intelligent protection of business applications."},{"title":"PT Application Inspector","link":"\/ww-en\/products\/ai\/","description":"Source code analysis tool."},{"title":" PT ISIM","link":"\/ww-en\/products\/isim\/","description":"Cyberthreat detection and incident response in ICS."},{"title":"PT BlackBox","link":"\/ww-en\/products\/blackbox\/","description":"Dynamic application security testing tool"},{"title":"PT Network Attack Discovery","link":"\/ww-en\/products\/network-attack-discovery\/","description":"NDR system to detect attacks on the perimeter and inside the network."},{"title":"PT Sandbox","link":"\/ww-en\/products\/sandbox\/","description":"Advanced sandbox with customizable virtual environments"},{"title":"XSpider","link":"\/ww-en\/products\/xspider\/","description":"Vulnerability scanner."},{"title":" MaxPatrol VM","link":"\/ww-en\/products\/mp-vm\/","description":"Next-generation vulnerability management system."},{"title":"MaxPatrol SIEM All-in-One","link":"\/ww-en\/products\/mpsiem-all-in-one\/","description":"Full-featured SIEM for mid-sized IT infrastructures."},{"title":"PT MultiScanner","link":"\/ww-en\/products\/multiscanner\/","description":"Multilayered protection against malware attacks."}],"subMenuFilters":null},{"sectionName":"Services","sectionLink":"\/ww-en\/services\/","sectionText":"View all","sectionFilterAll":"","isTarget":false,"subMenu":[{"title":"ICS\/SCADA Security Assessment","link":"\/ww-en\/services\/ics\/","description":"Full Range of ICS-specific Security Services"},{"title":"ATM Security Assessments","link":"\/ww-en\/services\/banking\/","description":"Uncover Your Weaknesses"},{"title":"Web Application Security Services","link":"\/ww-en\/services\/webapp\/","description":"Black Box and White Box Analysis"},{"title":"Mobile Application Security Services","link":"\/ww-en\/services\/mobapp\/","description":"Security Analysis and Compliance Audit"},{"title":"Custom Application Security Services","link":"\/ww-en\/services\/custom\/","description":"Independent Expert Analysis of Your Source Code "},{"title":"Penetration Testing","link":"\/ww-en\/services\/pentest\/","description":"A Comprehensive Approach"},{"title":"Forensic Services","link":"\/ww-en\/services\/forensic\/","description":"Prevent Future Incidents"},{"title":"Advanced Border Control","link":"\/ww-en\/services\/control\/","description":"Upgrade Your View of Perimeter Security"}],"subMenuFilters":null},{"sectionName":"Analytics","sectionLink":"\/ww-en\/analytics\/","sectionText":"View all","sectionFilterAll":"","isTarget":false,"subMenu":[{"title":"Threatscape","link":"\/ww-en\/analytics\/threatscape\/","description":null},{"title":"PT ESC Threat Intelligence","link":"\/ww-en\/analytics\/pt-esc-threat-intelligence\/","description":null},{"title":"Cybersecurity glossary","link":"\/ww-en\/analytics\/glossary\/en\/a\/","description":null},{"title":"Knowledge base","link":"\/ww-en\/analytics\/knowledge-base\/","description":null},{"title":"Hacker groups","link":"\/ww-en\/analytics\/hacker-groups\/","description":null}],"subMenuFilters":null},{"sectionName":"About","sectionLink":"\/ww-en\/about\/","sectionText":"View all","sectionFilterAll":"","isTarget":false,"subMenu":[{"title":"Clients","link":"\/ww-en\/about\/clients\/","description":null},{"title":"Press","link":"\/ww-en\/about\/press\/","description":null},{"title":"News","link":"\/ww-en\/about\/news\/","description":null},{"title":"Events","link":"\/ww-en\/about\/events\/","description":null},{"title":"Contacts","link":"\/ww-en\/about\/contacts\/","description":null},{"title":"Documents and\u00a0Materials","link":"\/ww-en\/about\/docs\/","description":null}],"subMenuFilters":null},{"sectionName":"Partners","sectionLink":"\/ww-en\/partners\/","sectionText":null,"sectionFilterAll":"","isTarget":true,"subMenu":null,"subMenuFilters":null},{"sectionName":"PT Global","sectionLink":"https:\/\/global.ptsecurity.com\/?utm_source=pt&utm_medium=referal&utm_campaign=banner_main_page","sectionText":"PT Global","sectionFilterAll":"","isTarget":true,"subMenu":null,"subMenuFilters":null}]'
+        ></header-component>
+        <div class="header__progressbar header__row js-product-header js-progress-bar js-fixed-header"></div>
+                    <div class="header__container">
+                <ul class="header__breadcrumbs">
+    <li class="header__breadcrumbs-item">
+        <a class="header__breadcrumbs-link" href="/ww-en/">Home</a>
+    </li><li class="header__breadcrumbs-item"><a class="header__breadcrumbs-link" href="/ww-en/analytics/">Analytics</a></li><li class="header__breadcrumbs-item"><span>Calypso APT: new group attacking state institutions</span></li></ul>            </div>
+                </header>
+    <div class="page-wrapper ">
+        <div class="main-content">
+        <div class="main-content__row">
+        <div class="container">
+            <div class="article article_sidebar-visible content-wrapper">
+                <div class="article__head">
+                    <div class="headline">
+                            <div class="title">
+        <h1>Calypso APT: new group attacking state institutions</h1>
+    </div>
+                                <div class="headline__info">
+                                <time class="time">Published on October 31, 2019</time>
+                                    <div class="tags">
+        <ul>
+                            <li>
+                    <span>APT groups and operations</span>
+                </li>
+                        </ul>
+    </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="article__body">
+                    
+<div class="article__content">
+    <article>
+        <h2>Contents</h2>
+<div class="article-nav">
+<ul>
+	<li><a class="link link_article-nav anchorLink" href="#id1">Calypso APT</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id2">Initial infection vector</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id3">Lateral movement</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id4">Attribution</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id5">Analyzing Calypso RAT malicious code</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id6">Dropper</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id7">Installation BAT script</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id8">Shellcode x86: stager</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id9">Modules</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id10">Commands</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id11">Network code</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id12">Shellcode x64: stager (base backdoor) </a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id13">Modules</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id14">Commands</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id15">Network code</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id16">Other options</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id17">Dropper-stager</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id18">Hussar</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id19">Initialization</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id20">Modules</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id21">FlyingDutchman</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id22">Conclusion</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id23">Indicators of compromise</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id24">Network</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id25">File indicators</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id26">Droppers and payload</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id27">Droppers with the same payload</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id28">Payload without dropper</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id29">Hussar</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id30">FlyingDutchman</a></li>
+	<li><a class="link link_article-nav anchorLink" href="#id31">MITRE ATT&amp;CK</a></li>
+</ul>
+</div>
+<h2 id="id1">Calypso APT</h2>
+
+<p>The PT Expert Security Center first took note of Calypso in March 2019 during threat hunting. Our specialists collected multiple samples of malware used by the group. They have also identified the organizations hit by the attackers, as well as the attackers&#39; C2 servers.</p>
+
+<p>Our data indicates that the group has been active since at least September 2016. The primary goal of the group is theft of confidential data. Main targets are governmental institutions in Brazil, India, Kazakhstan, Russia, Thailand, and Turkey.</p>
+
+<p>Our data gives reason to believe that the APT group is of Asian origin<sup> 1</sup>.</p>
+
+<h2 id="id2">Initial infection vector</h2>
+
+<p>The attackers accessed the internal network of a compromised organization by using an ASPX web shell. They uploaded the web shell by exploiting a vulnerability or, alternately, guessing default credentials for remote access. We managed to obtain live traffic between the attackers and the web shell.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_1.jpg" alt="Figure 1. Part of the recorded traffic">
+    <figcaption>Figure 1. Part of the recorded traffic</figcaption>
+</figure>
+
+<p>The traffic indicates the attackers connected from IP address 46.166.129.241. That host contains domain tv.teldcomtv.com, the C2 server for the group&#39;s trojan. Therefore the hackers use C2 servers not only to control malware, but also to access hosts on compromised infrastructures.</p>
+
+<p>The attackers used the web shell to upload utilities<sup> 2</sup> and malware,<sup> 3</sup> execute commands, and distribute malware inside the network. Examples of commands from the traffic are demonstrated in the following screenshot.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_2.jpg" alt="Figure 2. Commands sent to the web shell">
+    <figcaption>Figure 2. Commands sent to the web shell</figcaption>
+</figure>
+
+<h2 id="id3">Lateral movement</h2>
+
+<p>The group performed lateral movement by using the following publicly available utilities and exploits:</p>
+
+<ul>
+	<li>SysInternals</li>
+	<li>Nbtscan</li>
+	<li>Mimikatz</li>
+	<li>ZXPortMap</li>
+	<li>TCP Port Scanner</li>
+	<li>Netcat</li>
+	<li>QuarksPwDump</li>
+	<li>WmiExec</li>
+	<li>EarthWorm</li>
+	<li>OS_Check_445</li>
+	<li>DoublePulsar</li>
+	<li>EternalBlue</li>
+	<li>EternalRomance</li>
+</ul>
+
+<p>On compromised computers, the group stored malware and utilities in either C:\RECYCLER or C:\ProgramData. The first option was used only on computers with Windows XP or Windows Server 2003 with NTFS on drive C.</p>
+
+<p>The attackers spread within the network either by exploiting vulnerability MS17-010 or by using stolen credentials. In one instance, 13 days after the attackers got inside the network, they used DCSync and Mimikatz to obtain the Kerberos ticket of the domain administrator, &quot;passing the ticket&quot; to infect more computers.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_3.jpg" alt="Figure 3. Obtaining account data via DCSync">
+    <figcaption>Figure 3. Obtaining account data via DCSync</figcaption>
+</figure>
+
+<p>Use of such utilities is common for many APT groups. Most of those utilities are legitimate ones used by network administrators. This allows the attackers to stay undetected longer.</p>
+
+<h2 id="id4">Attribution</h2>
+
+<p>In one attack, the group used Calypso RAT, PlugX, and the Byeby trojan. Calypso RAT is malware unique to the group and will be analyzed in detail in the text that follows.</p>
+
+<p>PlugX has traditionally been used by many APT groups of Asian origin. Use of PlugX in itself does not point to any particular group, but is overall consistent with an Asian origin.</p>
+
+<p>The Byeby trojan<sup> 4</sup> was used in the SongXY malware campaign back in 2017. The version used now is modified from the original. The group involved in the original campaign is also of Asian origin. It performed targeted attacks on defense and government-related targets in Russia and the CIS countries. However, we did not find any clear-cut connection between the two campaigns.</p>
+
+<p>When we analyzed the traffic between the attackers&#39; server and the web shell, we found that the attackers used a non-anonymous proxy server. The X-Forwarded-For header passed the attackers&#39; IP address (36.44.74.47). This address would seem to be genuine (more precisely, the first address in a chain of proxy servers).</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_4.jpg" alt="Figure 4. Headers of requests to the web shell">
+    <figcaption>Figure 4. Headers of requests to the web shell</figcaption>
+</figure>
+
+<p>The IP address belongs to China Telecom. We believe the attackers could have been careless and set up the proxy server incorrectly, thus disclosing their real IP address. This is the first piece of evidence supporting the Asian origins of the group.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_5.jpg" alt="Figure 5. Information on the discovered IP address">
+    <figcaption>Figure 5. Information on the discovered IP address</figcaption>
+</figure>
+
+<p>The attackers also left behind a number of system artifacts, plus traces in utility configurations and auxiliary scripts. These are also indicative of the group&#39;s origin.</p>
+
+<p>For instance, one of the DoublePulsar configuration files contained external IP address 103.224.82.47, presumably for testing. But all other configuration files contained internal addresses.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_6.jpg" alt="Figure 6. IP address found in the DoublePulsar configuration">
+    <figcaption>Figure 6. IP address found in the DoublePulsar configuration</figcaption>
+</figure>
+
+<p>This IP address belongs to a Chinese provider, like the one before, and it was most likely left there due to the attackers&#39; carelessness. This constitutes additional evidence of the group&#39;s Asian origins.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_7.jpg" alt="Figure 7. Information on the discovered IP address">
+    <figcaption>Figure 7. Information on the discovered IP address</figcaption>
+</figure>
+
+<p>We also found BAT scripts that launched ZXPortMap and EarthWorm for port forwarding. Inside we found network indicators www.sultris.com and 46.105.227.110.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_8.jpg" alt="Figure 8. Network indicators found in the BAT scripts">
+    <figcaption>Figure 8. Network indicators found in the BAT scripts</figcaption>
+</figure>
+
+<p>The domain in question was used for more than just tunneling: it also served as C2 server for the PlugX malware we found on the compromised system. As already mentioned, PlugX is traditionally used by groups of Asian origin, which constitutes yet more evidence.</p>
+
+<p>Therefore we can say that the malware and network infrastructure used all point to the group having an Asian origin.</p>
+
+<h2 id="id5">Analyzing Calypso RAT malicious code</h2>
+
+<p>The structure of the malware and the process of installing it on the hosts of a compromised network look as follows:</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_9.jpg" alt="Figure 9. Malware structure and installation process">
+    <figcaption>Figure 9. Malware structure and installation process</figcaption>
+</figure>
+
+<h2 id="id6">Dropper</h2>
+
+<p>The dropper extracts the payload as an installation BAT script and CAB archive, and saves it to disk. The payload inside the dropper has a magic header that the dropper searches for. The following figure shows an example of the payload structure.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_10.jpg" alt="Figure 10. Structure of the payload hard-coded in the dropper">
+    <figcaption>Figure 10. Structure of the payload hard-coded in the dropper</figcaption>
+</figure>
+
+<p>The dropper encrypts and decrypts data with a self-developed algorithm that uses CRC32 as a pseudorandom number generator (PRNG). The algorithm performs arithmetic (addition and subtraction) between the generated data and the data that needs to be encrypted or decrypted.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_11.jpg" alt="Figure 11. Dropper with original encryption and decryption algorithm">
+    <figcaption>Figure 11. Dropper with original encryption and decryption algorithm</figcaption>
+</figure>
+
+<p>Now decrypted, the payload is saved to disk at %ALLUSERSPROFILE;\TMP_%d%d, where the last two numbers are replaced by random numbers returned by the rand() function. Depending on the configuration, the CAB archive contains one of three possibilities: a DLL and encrypted shellcode, a DLL with encoded loader in the resources, or an EXE file. We were unable to detect any instances of the last variant.</p>
+
+<h2 id="id7">Installation BAT script</h2>
+
+<p>The BAT script is encoded by substitution from a preset dictionary of characters; this dictionary is initialized in a variable in the installation script.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_12.jpg" alt="Figure 12. Example of installation script obfuscation">
+    <figcaption>Figure 12. Example of installation script obfuscation</figcaption>
+</figure>
+
+<p>In the decoded script, we can see comments hinting at the main functions of the script:</p>
+
+<ul>
+	<li>REM Goto temp directory &amp; extract file (go to TEMP directory and extract files there)</li>
+	<li>REM Uninstall old version (uninstall the old version)</li>
+	<li>REM Copy file (copy file)</li>
+	<li>REM Run pre-install script (run the installation BAT script)</li>
+	<li>REM Create service (create a service launching the malware at system startup)</li>
+	<li>REM Create Registry Run (create value in the registry branch for autostart)</li>
+</ul>
+
+<p>At the beginning of each script we can see a set of variables. The script uses these variables to save files, modify services, and modify registry keys.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_13.jpg" alt="Figure 13. Initializing variables in deobfuscated script">
+    <figcaption>Figure 13. Initializing variables in deobfuscated script</figcaption>
+</figure>
+
+<p>In one of the oldest samples, compiled in 2016, we found a script containing comments for how to configure each variable.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_14.jpg" alt="Figure 14. Early version of the script with comments">
+    <figcaption>Figure 14. Early version of the script with comments</figcaption>
+</figure>
+
+<h2 id="id8">Shellcode x86: stager</h2>
+
+<p>In most of the analyzed samples, the dropper was configured to execute shellcode. The dropper saved the DLL and encrypted shellcode to disk. The shellcode name was always identical to that of the DLL, but had the extension .dll.crt. The shellcode is encrypted with the same algorithm as the payload in the dropper. The shellcode acts as a stager providing the interface for communicating with C2 and for downloading modules. It can communicate with C2 via TCP and SSL. SSL is implemented via the mbed_tls library.</p>
+
+<p>Initial analysis of the shellcode revealed that, in addition to dynamically searching for API functions, it runs one more operation that repeats the process of PE file address relocation. The structure of the relocation table is also identical to that found in the PE file.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_15.jpg" alt="Figure 15. Shellcode relocations">
+    <figcaption>Figure 15. Shellcode relocations</figcaption>
+</figure>
+
+<p>Since the process of shellcode address relocation repeats that of the PE file, we can assume that initially the malware is compiled into a PE file, and then the builder turns it into shellcode. Debugging information found inside the shellcode supports that assumption.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_16.jpg" alt="Figure 16. Debugging information inside the shellcode">
+    <figcaption>Figure 16. Debugging information inside the shellcode</figcaption>
+</figure>
+
+<p>API functions are searched for dynamically and addresses are relocated, after which the configuration hard-coded inside the shellcode is parsed. The configuration contains information about the C2 server address, protocol used, and connection type.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_17.jpg" alt="Figure 17. Example of shellcode configuration">
+    <figcaption>Figure 17. Example of shellcode configuration</figcaption>
+</figure>
+
+<p>Next the shellcode creates a connection to C2. A random packet header is created and sent to C2. In response the malware receives a network key, saves it, and then uses it every time when communicating with C2. Then the information about the infected computer is collected and sent to C2.</p>
+
+<p>Next three threads are launched. One is a heartbeat sending an empty packet to C2 every 54 seconds. The other processes and executes commands from C2. As for the third thread, we could not figure out its purpose, because the lines implementing its functionality were removed from the code. All we can tell is that this thread was supposed to &quot;wake up&quot; every 54 seconds, just like the first one.</p>
+
+<h2 id="id9">Modules</h2>
+
+<p>We have not found any modules so far. But we can understand their functionality by analyzing the code responsible for communication between the shellcode and the modules. Each module is shellcode which is given control over the zero offset of the address. Each module exists in its own separate container. The container is a process with loaded module inside. By default, the process is svchost.exe. When a container is created, it is injected with a small shellcode that causes endless sleep. This is also hard-coded in the main shellcode, and more specifically in JustWait. pdb, most likely.</p>
+
+<p>The module is placed inside with an ordinary writeprocess and is launched either with NtCreateThreadEx or, on pre-Vista operating systems, CreateRemoteThread.</p>
+
+<p>Two pipes are created for each module. One is for transmitting the data from the module to C2; the other for receiving data from C2. Quite likely the modules do not have their own network code and instead use the pipes to communicate with external C2 through the main shellcode.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_18.jpg" alt="Figure 18. Creating pipes for modules">
+    <figcaption>Figure 18. Creating pipes for modules</figcaption>
+</figure>
+
+<p>Each module has a unique ID assigned by C2. Containers are launched in different ways. A container can be launched in a specific session open in the OS or in the same session as the stager. In any particular session, the container is launched by getting the handle for the session token of a logged-in user, and then launching the process as that user.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_19.jpg" alt="Figure 19. Creating container process in a different session">
+    <figcaption>Figure 19. Creating container process in a different session</figcaption>
+</figure>
+
+<h2 id="id10">Commands</h2>
+
+<p>The malware we studied can process 12 commands. All of them involve modules in one way or another. Here is a list of all IDs of commands found in the malware, along with those that the malware itself sends in various situations.</p>
+
+<img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_20.jpg" alt=" ">
+
+<h2 id="id11">Network code</h2>
+
+<p>Network communication is initialized after the network key is received from C2. To do that, the malware sends a random sequence of 12 bytes to C2. In response the malware also expects 12 bytes, the zero offset of which must contain the same value (_DWORD) as prior to sending. If the check is successful, four bytes at offset 8 are taken from the response and decrypted with RC4. The key is four bytes sent previously, also located at offset 8. This result is the network key. The key is saved and then used to send data.</p>
+
+<p>All transmitted packets have the following structure.</p>
+
+<pre>
+<div class="code">
+struct Packet{
+    struct PacketHeader{
+    _ DWORD key;
+    _ WORD cmdId;
+    _ WORD szPacketPayload;
+    _ DWORD moduleId;
+};
+    _ BYTE [max 0xF000] packetPayload;
+};
+</div>
+</pre>
+
+<p>A random four-byte key is generated for each packet. It is later used to encrypt part of the header, starting with the cmdld field. The same key is used to encrypt the packet payload. Encryption uses the RC4 algorithm. The key itself is encrypted by XOR with the network key and saved to the corresponding field of the packet header.</p>
+
+<h2 id="id12">Shellcode x64: stager (base backdoor)</h2>
+
+<p>This shellcode is very similar to the previous one, but it deserves a separate description because of differences in its network code and method of launching modules. This shellcode has basic functions for file system interaction which are not available in the shellcode described earlier. Also the configuration format, network code, and network addresses used as C2 by this shellcode are similar to code from a 2018 blog post by NCC Group about a Gh0st RAT variant. However, we did not find a connection to Gh0st RAT.</p>
+
+<p>This variant of the shellcode has only one communication channel, via SSL. The shellcode implements it with two legitimate libraries, libeay32.dll and ssleay32.dll, hard-coded in the shellcode itself.</p>
+
+<p>First the shellcode performs a dynamic search for API functions and loads SSL libraries. The libraries are not saved to disk; they are read from the shellcode and mapped into memory. Next the malware searches the mapped image for the functions it needs to operate.</p>
+
+<p>Then it parses the configuration string, which is also hard-coded in the shellcode. The configuration includes information on addresses of C2 servers and schedule for malware operation.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_22.jpg" alt="Figure 20. Sample of configuration string">
+    <figcaption>Figure 20. Sample of configuration string</figcaption>
+</figure>
+
+<p>After that the malware starts its main operating cycle. It checks if the current time matches the malware operational time. If not, the malware sleeps for about 7 minutes and checks again. This happens until the current time is the operational time, and only then does the malware resume operation. Figure 20 demonstrates an example in which the malware remains active at all times on all days of the week.</p>
+
+<p>When the operational time comes, the malware goes down the list of C2 servers specified in the configuration and tries to connect. The malware subsequently interacts with whichever of the C2 servers it is able to successfully connect to first.</p>
+
+<p>Then the malware sends the information on the infected computer (such as computer name, current date, OS version, 32-bit vs. 64-bit OS and CPU, and IP addresses on network interfaces and their MAC addresses). After the information on the infected computer is sent, the malware expects a response from C2. If C2 returns the relevant code, sending is deemed successful and the malware proceeds. If not, the malware goes back to sequentially checking C2 addresses. Next it starts processing incoming commands from C2.</p>
+
+<h2 id="id13">Modules</h2>
+
+<p>Each module is a valid MZPE file mapped in the address space of the same process as the shellcode. Also the module can export the GetClassObject symbol, which receives control when run (if required).</p>
+
+<p>Each module has its own descriptor created by a command from C2. The C2 server sends a byte array (0x15) describing the module. The array contains information on the module: whether the module needs to be launched via export, module type (in other words, whether it needs pipes for communicating with C2), module size, entry point RVA (used if there is no flag for launching via export), and module data decryption key. The key is, by and large, the data used to format the actual key.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_23.jpg" alt="Figure 21. Module decryption">
+    <figcaption>Figure 21. Module decryption</figcaption>
+</figure>
+
+<p>We should also point out that decryption takes place only if modKey is not equal to the 7AC9h constant hard-coded in the shellcode. This check affects only the decryption process. If modKey does equal the constant, the malware will immediately start loading the module. This means the module is not encrypted.</p>
+
+<p>Each module is launched in a separate thread created specially for that purpose. Launching with pipes looks as follows:</p>
+
+<ul>
+	<li>The malware creates a thread for the module, starts mapping the module, and gives it control inside the newly created thread.</li>
+	<li>The malware creates a new connection to the current working C2.</li>
+	<li>The malware creates a pipe with the name derived from the following format string: \\.\ pipe\windows@#%02XMon (%02X is replaced by a value that is received from С2 at the same time as the command for launching the module).</li>
+	<li>The malware launches two threads passing data from the pipe to C2 and vice versa, using the connection created during the previous step. Two more pipes, \\.\pipe\windows@#%02Xfir and \\.\pipe\windows@#%02Xsec, are created inside the threads. The pipe ending in &quot;fir&quot; is used to pass data from the module to C2. The pipe ending in &quot;sec&quot; is used to pass data and commands from C2 to the modules.</li>
+</ul>
+
+<p>The second thread processing the commands from C2 to the modules has its own handler. This is described in more details in the Commands section. For now we can only say that one of the commands can start a local asynchronous TCP server. That server will accept data from whoever connects to it, send it to C2, and forward it back from C2. It binds to 127.0.0.1 at whichever port it finds available, starting from 5000 and trying possible ports one by one.</p>
+
+<h2 id="id14">Commands</h2>
+
+<p>The following is a list of IDs for commands the malware can receive, along with commands the malware itself sends in various situations.</p>
+
+<img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_24.jpg" alt=" ">
+
+<h2 id="id15">Network code</h2>
+
+<p>Each packet has the following structure:</p>
+
+<pre>
+<div class="code">
+Struct Packet{
+        Struct Header{
+        _ DWORD rand _ k1;
+    _ DWORD rand _ k2;
+    _ DWORD rand    _ k3;
+    _ DWORD szPaylaod;
+    _ DWORD protoConst;
+    _ DWORD packetId;
+    _ DWORD unk1;
+    _ DWORD packetKey;
+};
+    _ BYTE [max 0x2000] packetPayload;
+};
+</div>
+</pre>
+
+<p>Each packet has a unique key calculated as szPayload + GetTickCount() % hardcodedConst. This key is saved in the corresponding packetKey header field. It is used to generate another key for encrypting the packet header with RC4 (encryption will not occur without the packetKey field). RC4 key generation is demonstrated in the following figure.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_26.jpg" alt="Figure 22. Generating RC4 key for the header">
+    <figcaption>Figure 22. Generating RC4 key for the header</figcaption>
+</figure>
+
+<p>Then yet another RC4 key is generated from the encrypted fields szPayload, packetId, protoConst, and rand_k3. This key is used to encrypt the packet payload.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_27.jpg" alt="Figure 23. Generating RC4 key for the packet payload">
+    <figcaption>Figure 23. Generating RC4 key for the packet payload</figcaption>
+</figure>
+
+<p>Next the shellcode forms the HTTP headers and the created packet is sent to C2. In addition, each packet gets its own number, indicated in the URL. Modules may pass their ID, which is used to look up the connection established during module launch. Module ID 0 is reserved for the main connection of the stager.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_28.jpg" alt="Figure 24. Forming HTTP headers">
+    <figcaption>Figure 24. Forming HTTP headers</figcaption>
+</figure>
+
+<h2 id="id16">Other options</h2>
+
+<p>As we noted, the dropper may be configured to launch not just shellcode, but executable files too. We found the same dropper-stager but with different payloads: Hussar and FlyingDutchman.</p>
+
+<h2 id="id17">Dropper-stager</h2>
+
+<p>The main tasks of this dropper are unpacking and mapping the payload, which is encoded and stored in resources. The dropper also stores encoded configuration data and passes it as a parameter to the payload.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_29.jpg" alt="Figure 25. Unpacking the payload">
+    <figcaption>Figure 25. Unpacking the payload</figcaption>
+</figure>
+
+<h2 id="id18">Hussar</h2>
+
+<p>In essence Hussar is similar to the shellcodes described earlier. It allows loading modules and collecting basic information about the computer. It can also add itself to the list of authorized applications in Windows Firewall.</p>
+
+<h2 id="id19">Initialization</h2>
+
+<p>To start, the malware parses the configuration provided to it by the loader.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_30.jpg" alt="Figure 26. Configuration sample">
+    <figcaption>Figure 26. Configuration sample</figcaption>
+</figure>
+
+<p>Configuration structure is as follows:</p>
+
+<pre>
+<div class="code">
+Struct RawConfig{
+        _ DWORD protocolId;
+        _ BYTE c2Strings [0x100];
+};
+</div>
+</pre>
+
+<p>The protocolId field indicates the protocol to be used for communicating with C2. There are a total of three possibilities:</p>
+
+<ul>
+	<li>If protocolId equals 1, a TCP-based protocol will be used.</li>
+	<li>If protocolId equals 2, the protocol will be HTTP-based.</li>
+	<li>If protocolId equals 3, it will be HTTPS-based.</li>
+</ul>
+
+<p>The time stamp is calculated from the registry from the key SOFTWARE\Microsoft\Windows\ CurrentVersion\Telephony (Perf0 value). If reading the time stamp is impossible, &quot;temp&quot; is added to the computer identifier.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_32.jpg" alt="Figure 27. Generating computer ID">
+    <figcaption>Figure 27. Generating computer ID</figcaption>
+</figure>
+
+<p>Next Hussar creates a window it will use for processing incoming messages.</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_33.jpg" alt="Figure 28. Creating dispatcher window">
+    <figcaption>Figure 28. Creating dispatcher window</figcaption>
+</figure>
+
+<p>Then the malware adds itself to the list of authorized applications in Windows Firewall, using the INetFwMgr COM interface.</p>
+
+<p>To complete initialization, Hussar creates a thread which connects to C2 and periodically polls for commands. The function running in the thread uses the WSAAsyncSelect API to notify the window that actions can be performed with the created connection (socket is &quot;ready for reading,&quot; &quot;connected,&quot; or &quot;closed&quot;).</p>
+
+<figure>
+    <img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_34.jpg" alt="Figure 29. Communication between the open socket and the window">
+    <figcaption>Figure 29. Communication between the open socket and the window</figcaption>
+</figure>
+
+<p>In general, for transmitting commands, the malware uses the window and Windows messaging mechanism. The window handle is passed to the modules, and the dispatcher has branches not used by the stager, so we can assume that the modules can use the window for communication with C2.</p>
+
+<h2 id="id20">Modules</h2>
+
+<p>Each module is an MZPE file loaded into the same address space as the stager. The module must export the GetModuleInfo function, which is called by the stager after image mapping.</p>
+
+<img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_35.jpg" alt=" ">
+
+<h2 id=”21”>FlyingDutchman</h2>
+
+<p>The payload provides remote access to the infected computer. It includes functions such as screenshot capture, remote shell, and file system operations. It also allows managing system processes and services. It consists of several modules.</p>
+
+<img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_36.jpg" alt=" ">
+
+<h2 id="id22">Conclusion</h2>
+
+<p>The group has several successful hacks to its credit, but still makes mistakes allowing us to guess its origins. All data given here suggests that the group originates from Asia and uses malware not previously described by anyone. The Byeby trojan links the group to SongXY, encountered by us previously, which was most active in 2017.</p>
+
+<p>We keep monitoring the activities of Calypso closely and expect the group will attack again.</p>
+
+<h2 id="id23">Indicators of compromise</h2>
+
+<h3 id="id24">Network</h3>
+
+<p>23.227.207.137</p>
+
+<p>45.63.96.120</p>
+
+<p>45.63.114.127</p>
+
+<p>r01.etheraval.com</p>
+
+<p>tc.streleases.com</p>
+
+<p>tv.teldcomtv.com</p>
+
+<p>krgod.qqm8.com</p>
+
+<h3 id="id25">File indicators</h3>
+
+<h3 id="id26">Droppers and payload</h3>
+
+<p>C9C39045FA14E94618DD631044053824<br>
+	E24A62D9826869BC4817366800A8805C<br>
+	F0F5DA1A4490326AA0FC8B54C2D3912D<br>
+	CB914FC73C67B325F948DD1BF97F5733<br>
+	6347E42F49A86AFF2DEA7C8BF455A52A<br>
+	0171E3C76345FEE31B90C44570C75BAD<br>
+	17E05041730DCD0732E5B296DB16D757<br>
+	69322703B8EF9D490A20033684C28493<br>
+	22953384F3D15625D36583C524F3480A<br>
+	1E765FED294A7AD082169819C95D2C85<br>
+	C84DF4B2CD0D3E7729210F15112DA7AC<br>
+	ACAAB4AA4E1EA7CE2F5D044F198F0095</p>
+
+<h3 id="id27">Droppers with the same payload</h3>
+
+<p>85CE60B365EDF4BEEBBDD85CC971E84D<br>
+	1ED72C14C4AAB3B66E830E16EF90B37B<br>
+	CB914FC73C67B325F948DD1BF97F5733</p>
+
+<h3 id="id28">Payload without dropper</h3>
+
+<p>E3E61F30F8A39CD7AA25149D0F8AF5EF<br>
+	974298EB7E2ADFA019CAE4D1A927AB07<br>
+	AA1CF5791A60D56F7AE6DA9BB1E7F01E<br>
+	05F472A9D926F4C8A0A372E1A7193998<br>
+	0D532484193B8B098D7EB14319CEFCD3<br>
+	E1A578A069B1910A25C95E2D9450C710<br>
+	2807236C2D905A0675878E530ED8B1F8<br>
+	847B5A145330229CE149788F5E221805<br>
+	D1A1166BEC950C75B65FDC7361DCDC63<br>
+	CCE8C8EE42FEAED68E9623185C3F7FE4</p>
+
+<h3 id="id29">Hussar</h3>
+
+<p>43B7D48D4B2AFD7CF8D4BD0804D62E8B<br>
+	617D588ECCD942F243FFA8CB13679D9C</p>
+
+<h3 id="id30">FlyingDutchman</h3>
+
+<p>5199EF9D086C97732D97EDDEF56591EC<br>
+	06C1D7BF234CE99BB14639C194B3B318</p>
+
+
+<h3 id="id31">MITRE ATT&amp;CK</h3>
+
+<img src="/upload/corporate/ww-en/images/analytics/article_302856/302856_42.jpg" alt=" ">
+
+
+<ol>
+	<li>See the section &quot;Attribution.&quot;</li>
+<li>See the section &quot;Lateral movement.&quot;</li>
+<li>See the section &quot;Analyzing Calypso RAT malicious code.&quot;</li>
+<li><a href="http://unit42.paloaltonetworks.com/unit42-threat-actors-target-government-belarus-using-cmstar-trojan/" target="_blank">unit42.paloaltonetworks.com/unit42-threat-actors-target-government-belarus-using-cmstar-trojan/</a></li>
+<li><a href="http://nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/april/decoding-network-data-from-a-gh0st-rat-variant/" target="_blank">nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/april/decoding-network-data-from-a-gh0st-rat-variant/</a></li>
+</ol>
+    </article>
+</div>
+
+                    <div class="article__sidebar">
+                            <div class="sidebar-item sidebar-item_white sidebar-item_download sidebar-item_visible">
+        <a class="link link-cr link_download" href="/upload/corporate/ww-en/analytics/calypso-apt-2019-eng.pdf" target="_blank"  rel="nofollow noopener noreferrer">
+            <span>Download PDF</span>
+            <i class="pt-download-big"></i>
+        </a>
+    </div>
+        <div class="sidebar-item sidebar-item_white sidebar-item_interest">
+        <div class="sidebar-item__title">
+            <span class="h4">Related articles</span>
+        </div>
+        <div class="sidebar-item__list">
+            <ul>
+                            <li>
+                    <time class="time">August 22, 2019</time>
+                    <a class="link" href="/ww-en/analytics/operation-taskmasters-2019/" title="Operation TaskMasters: Cyberespionage  in the digital economy age " >Operation TaskMasters: Cyberespionage  in the digital economy age </a>
+                </li>
+                                <li>
+                    <time class="time">December 13, 2023</time>
+                    <a class="link" href="/ww-en/analytics/results-of-cybersecurity-incident-investigations-in-2021-2023/" title="Results of cybersecurity incident investigations in 2021–2023" >Results of cybersecurity incident investigations in 2021–2023</a>
+                </li>
+                                <li>
+                    <time class="time">July 12, 2019</time>
+                    <a class="link" href="/ww-en/analytics/advanced-persistent-threat-apt-attack-cost-report/" title="Hack at all cost: putting a price on APT attacks" >Hack at all cost: putting a price on APT attacks</a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+        <div class="sidebar-item sidebar-item_banner">
+                        <a href="/ww-en/products/af/?utm_source=site&utm_medium=sidebanner" target="_blank">
+                    <img src="/upload/iblock/f17/banner_pt_af_320_480.jpg" alt="">
+                </a>
+                    </div>
+                        </div>
+                </div>
+            </div>
+            <div class="content-wrapper">
+                <div class="share">
+    <div class="share__tl">Share:</div>
+    <div class="share__btns">
+        <div class="ya-share2" data-services="linkedin,twitter,gplus,reddit"></div>
+        <div class="share-custom-cr">
+            <a class="share__icon pt-via-mail"
+               href="mailto:?subject=Calypso APT: new group attacking state institutions&body=https://www.ptsecurity.com/ww-en/analytics/calypso-apt-2019/"
+               title="Email"
+            ></a>
+            <div class="share__icon pt-copy-url copyToClipBoardBtn" title="Copy Link"></div>
+        </div>
+    </div>
+    <div class="share__tooltip copyToClipBoardTooltip">
+        <span>Link copied</span>
+    </div>
+</div>
+            </div>
+            <div class="content-wrapper">
+                    <div class="title title_mid">
+        <span class="h2">Related articles</span>
+    </div>
+    <div class="similar-articles">
+                        <a class="similar-articles__item" href="/ww-en/analytics/advanced-persistent-threat-apt-attack-cost-report/">
+                    <div class="similar-articles__img" style="background-image:url(/upload/corporate/analytics_default.png);"></div>
+                    <div class="similar-articles__content">
+                        <time class="time">July 12, 2019</time>
+                        <h4>Hack at all cost: putting a price on APT attacks</h4>
+                    </div>
+                </a>
+                            <a class="similar-articles__item" href="/ww-en/analytics/operation-taskmasters-2019/">
+                    <div class="similar-articles__img" style="background-image:url(/upload/corporate/analytics_default.png);"></div>
+                    <div class="similar-articles__content">
+                        <time class="time">August 22, 2019</time>
+                        <h4>Operation TaskMasters: Cyberespionage  in the digital economy age </h4>
+                    </div>
+                </a>
+                            <a class="similar-articles__item" href="/ww-en/analytics/results-of-cybersecurity-incident-investigations-in-2021-2023/">
+                    <div class="similar-articles__img" style="background-image:url(/upload/corporate/analytics_default.png);"></div>
+                    <div class="similar-articles__content">
+                        <time class="time">December 13, 2023</time>
+                        <h4>Results of cybersecurity incident investigations in 2021–2023</h4>
+                    </div>
+                </a>
+                </div>
+                    <a class="link link-cr link_back" href="/ww-en/analytics/">
+                    <span>All articles</span>
+                    <i class="pt-go-back"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="btn-cr">
+            <a href="/upload/corporate/ww-en/analytics/calypso-apt-2019-eng.pdf" title="Download PDF" target="_blank"  rel="nofollow noopener noreferrer">
+        <i class="pt-download-big"></i>
+    </a>
+            <div class="btnToTop">
+            <i class="pt-angle-in-dropdown"></i>
+        </div>
+            </div>
+    </div>
+    <footer>
+        <div class="footer-cr">
+            
+<div class="footer-cr__menu fr-menu">
+            <div class="footer-cr__item">
+            <div class="fr-menu__hr"><a href="/ww-en/solutions/">Solutions</a>
+                <div class="list-opener"></div>
+            </div>
+                            <ul class="fr-menu__list">
+                                            <li><a href="/ww-en/solutions/ics/">ICS/SCADA</a></li>
+                                                <li><a href="/ww-en/solutions/vulnerability/">Vulnerability Management</a></li>
+                                                <li><a href="/ww-en/solutions/financial/">Financial Services</a></li>
+                                                <li><a href="/ww-en/solutions/anti-apt/">Protection from targeted attacks (anti-apt)</a></li>
+                                                <li><a href="/ww-en/solutions/pt-ics/">PT Industrial Cybersecurity Suite </a></li>
+                                                <li><a href="/ww-en/solutions/utilities/">Utilities</a></li>
+                                                <li><a href="/ww-en/solutions/erp/">ERP Security</a></li>
+                                                <li><a href="/ww-en/solutions/compliance/">Security Compliance</a></li>
+                                        </ul>
+                    </div>
+                <div class="footer-cr__item">
+            <div class="fr-menu__hr"><a href="/ww-en/products/">Products</a>
+                <div class="list-opener"></div>
+            </div>
+                            <ul class="fr-menu__list">
+                                            <li><a href="/ww-en/products/maxpatrol/">MaxPatrol 8</a></li>
+                                                <li><a href="/ww-en/products/mpsiem/">MaxPatrol SIEM</a></li>
+                                                <li><a href="/ww-en/products/af/">PT Application Firewall</a></li>
+                                                <li><a href="/ww-en/products/ai/">PT Application Inspector</a></li>
+                                                <li><a href="/ww-en/products/isim/">PT ISIM</a></li>
+                                                <li><a href="/ww-en/products/network-attack-discovery/">PT Network Attack Discovery</a></li>
+                                                <li><a href="/ww-en/products/sandbox/">PT Sandbox</a></li>
+                                                <li><a href="/ww-en/products/xspider/">XSpider</a></li>
+                                                <li><a href="/ww-en/products/mp-vm/">MaxPatrol VM</a></li>
+                                                <li><a href="/ww-en/products/mpsiem-all-in-one/">MaxPatrol SIEM All-in-One</a></li>
+                                                <li><a href="/ww-en/products/multiscanner/">PT MultiScanner</a></li>
+                                                <li><a href="/ww-en/products/blackbox/">PT BlackBox</a></li>
+                                        </ul>
+                    </div>
+                <div class="footer-cr__item">
+            <div class="fr-menu__hr"><a href="/ww-en/services/">Services</a>
+                <div class="list-opener"></div>
+            </div>
+                            <ul class="fr-menu__list">
+                                            <li><a href="/ww-en/services/ics/">ICS/SCADA Security Assessment</a></li>
+                                                <li><a href="/ww-en/services/banking/">ATM Security Assessments</a></li>
+                                                <li><a href="/ww-en/services/webapp/">Web Application Security Services</a></li>
+                                                <li><a href="/ww-en/services/mobapp/">Mobile Application Security Services</a></li>
+                                                <li><a href="/ww-en/services/custom/">Custom Application Security Services</a></li>
+                                                <li><a href="/ww-en/services/pentest/">Penetration Testing</a></li>
+                                                <li><a href="/ww-en/services/forensic/">Forensic Services</a></li>
+                                                <li><a href="/ww-en/services/control/">Advanced Border Control</a></li>
+                                        </ul>
+                    </div>
+                <div class="footer-cr__item">
+            <div class="fr-menu__hr"><a href="/ww-en/analytics/">Analytics</a>
+                <div class="list-opener"></div>
+            </div>
+                            <ul class="fr-menu__list">
+                                            <li><a href="/ww-en/analytics/threatscape/">Threatscape</a></li>
+                                                <li><a href="/ww-en/analytics/pt-esc-threat-intelligence/">PT ESC Threat Intelligence</a></li>
+                                                <li><a href="/ww-en/analytics/glossary/">Cybersecurity glossary</a></li>
+                                                <li><a href="/ww-en/analytics/knowledge-base/">Knowledge base</a></li>
+                                        </ul>
+                    </div>
+                <div class="footer-cr__item">
+            <div class="fr-menu__hr"><a href="/ww-en/partners/">Partners</a>
+                <div class="list-opener"></div>
+            </div>
+                    </div>
+                <div class="footer-cr__item">
+            <div class="fr-menu__hr"><a href="/ww-en/about/">About</a>
+                <div class="list-opener"></div>
+            </div>
+                            <ul class="fr-menu__list">
+                                            <li><a href="/ww-en/about/clients/">Clients</a></li>
+                                                <li><a href="/ww-en/about/press/">Press</a></li>
+                                                <li><a href="/ww-en/about/news/">News</a></li>
+                                                <li><a href="/ww-en/about/events/">Events</a></li>
+                                                <li><a href="/ww-en/about/contacts/">Contacts</a></li>
+                                                <li><a href="/ww-en/about/docs/">Documents and Materials</a></li>
+                                        </ul>
+                    </div>
+        </div>
+            <div class="footer-cr__social fr-ct">
+                <div class="fr-ct__logo">
+                    <a class="header__logo" href="/ww-en/">
+    <img src="/local/templates/pt_corp2017/build/img/svg/logo.svg?1706085435" alt="Positive Technologies">
+</a>
+                    <div class="fr-ct__mob-copyrights">
+                        Copyright &copy; 2002—2024 Positive Technologies. All Rights Reserved.
+                    </div>
+                </div>
+                <div class="fr-ct__soc">
+                    <div class="fr-ct__soc-tl"></div>
+<div class="fr-ct__soc-list"></div>
+                    <div class="fr-ct__links hidden-lg">
+                        <ul>
+    <li><a href="/ww-en/legal/report-vulnerability/">Report a vulnerability</a></li>
+    <li><a href="https://help.ptsecurity.com/">Help Portal</a></li>
+    <li><a href="/ww-en/terms-of-use/">Terms of Use</a></li>
+    <li><a href="/ww-en/privacy-policy/">Privacy Notice</a></li>
+    <li><a href="/ww-en/legal/cookie-notice/">Cookie Notice</a></li>
+    <li><a href="/ww-en/legal/positive-coordinated-vulnerability-disclosure-policy/">Positive Coordinated Vulnerability Disclosure Policy</a></li>
+    <li><a href="/ww-en/sitemap/">Sitemap</a></li>
+</ul>
+                    </div>
+                    <div class="fr-ct__copyrights">Copyright &copy; 2002—2024 Positive Technologies. All Rights Reserved.
+</div>
+                </div>
+                <div class="fr-ct__links fr-ct__links-mob hidden visible-lg">
+                    <ul>
+    <li><a href="/ww-en/legal/report-vulnerability/">Report a vulnerability</a></li>
+    <li><a href="https://help.ptsecurity.com/">Help Portal</a></li>
+    <li><a href="/ww-en/terms-of-use/">Terms of Use</a></li>
+    <li><a href="/ww-en/privacy-policy/">Privacy Notice</a></li>
+    <li><a href="/ww-en/legal/cookie-notice/">Cookie Notice</a></li>
+    <li><a href="/ww-en/legal/positive-coordinated-vulnerability-disclosure-policy/">Positive Coordinated Vulnerability Disclosure Policy</a></li>
+    <li><a href="/ww-en/sitemap/">Sitemap</a></li>
+</ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        <script src="/local/templates/pt_corp2017/build/js/vendor.min.js?1706085435"></script>
+        <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+            <script src="//yastatic.net/share2/share.js"></script>
+            <script src="//www.google.com/recaptcha/api.js?render=6LfykfYUAAAAALt2UWPTGsNEJnGgnlTbvOc6r7Km"></script>
+            <script src="/local/templates/pt_corp2017/build/js/app.min.js?1706085435"></script>
+    <div id="panel"></div>
+
+    <!-- OneTrust Cookies Consent Notice start for www.ptsecurity.com/ww-en/ -->
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-language="en" type="text/javascript" charset="UTF-8" data-domain-script="31c0c13c-7a81-44f3-a605-6f26198421c0" ></script>
+<script type="text/javascript">
+    function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for www.ptsecurity.com/ww-en/ -->
+    </body>
+</html>

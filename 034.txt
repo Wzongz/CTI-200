@@ -1,0 +1,141 @@
+{
+    "event_id": "034",
+    "claim": "The notorious hacker group Anonymous has been operating in the shadows of the cyber world for two decades, wreaking havoc and making global headlines by hacking into the biggest companies and the most powerful governments. Let’s dive deep into the world of Anonymous, and read about the fascinating history of the hacker group that will be remembered for generations.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "The notorious hacker group Anonymous has been operating in the shadows of the cyber world for two decades, wreaking havoc and making global headlines by hacking into the biggest companies and the most powerful governments. Let’s dive deep into the world of Anonymous, and read about the fascinating history of the hacker group that will be remembered for generations.Anonymous first appeared in 2004, on the 4chan message forum that had been created a year earlier. In the early days of the forum, many users would flood game chat rooms and other forums with what they called “Raids”. The traffic overload caused these chat rooms to shut down. This created the basis for what we know today as Anonymous- a movement of individuals gathering through secure chat rooms to plan and execute disruptive cyberattacks. At first, done as pranks for amusement, soon the group began to carry out ideology-driven attacks.The main philosophy of the hacker group Anonymous is opposition to governments and private organizations that work to promote inequality and censorship, according to the view of the group’s members. However, it is important to remember that because the group is decentralized and does not have a single leadership, there are no clear guidelines, and among the group members there are many debates on which causes to support. In a post published on Twitter in 2019, a member of the Anonymous group, who emphasized that he does not speak for the entire group, claimed that Anonymous is made up of working-class people who seek to create a better world for all of humanity and that its main principles are freedom of information, freedom of expression, privacy for citizens and holding companies and governments accountable for their actions.Although the group has carried out countless small and medium-sized cyber attacks, some of which are probably unknown to the world, we have collected a respectable list of the famous attacks that made them a household name in the world of hacktivism: 2008 – Attack on the Church of Scientology – Operation Chanology is the name given to a series of attacks on the famous church in January 2008. These attacks included disabling the church’s websites using DDOS, prank calls, and black faxes designed to use all the church’s ink. Although it might sound unimpressive and even a bit low-tech in 2022, in 2008 fax was still one of the main means of communication, and the attack cost the church not only its reputation but also a considerable financial cost. The Anonymous group posted a video on YouTube that takes responsibility for the attack, explaining that these attacks were done so that the church would stop the financial exploitation of its believers. Anonymous called on people to protest against the church, and in February thousands of people gathered in various centers in demonstrations against the church, some wearing mask for the movie “V for Vendetta” to protect their identity.2009- Protest against the falsification of the elections in Iran. In June 2009, presidential elections took place in Iran, in which, not surprisingly, Mahmoud Ahmadinejad won. Allegations of fraud in the elections led the Anonymous group along with The Pirate Bay to create an opposition website to the Iranian regime that attracted tens of thousands of visitors and allowed the free transfer of information in the censored country. 2010- Operations Payback- The giant conglomerate Sony caught the attention of Anonymous after it became known that Sony is suing individuals who created software that allows users to run PlayStation 3 on Linux. Anonymous responded by shutting down Sony’s website, harassing employees, and creating disruptions in the corporate network. 2010 – Support for the WIKILEAKS site – In February 2010, the site used by whistleblowers to publish classified and stolen documents was under pressure from many parties to stop its operations. Anonymous announced their full support for WIKILEAKS and began DDOS attacks on Mastercard, Visa, PayPal, Amazon, and SWISS Bank in response to actions seen as anti-WIKILEAKS, such as stopping the possibility of donating to the site. After the founder of the site was arrested in London, Anonymous disabled the website of the Swiss Ministry of Justice because they demanded that England hand over the detainee. The website of the Zimbabwean government was also taken down by hackers because they censored the site.2011- The Arab Spring. Many countries that took part in the Arab Spring became a target in the hands of the hacker group that supported the protesters, including countries such as Tunisia, Egypt, Bahrain, Libya, Jordan, and Morocco. 2011- In June, Anonymous attacked over 90 Indonesian government websites in response to the blocking of WikiLeaks and The Pirate Bay. 2011 – Anonymous announced that in response to the Stuxnet virus created by the United States and Israel designed to target the Iranian nuclear program, Anonymous would attack the Knesset website and disable it. 2012 – Megaupload website that provided file-sharing services were shut down by the United States Department of Justice and the FBI, which led to an attack by Anonymous on the US government, taking down the Department of Justice website. The attack included, among other things, the use of new and sophisticated attack methods, in which various Internet users who clicked on links in chat rooms and on Twitter actually participated, even without their knowledge, in denial of service attacks. 2013 – Opisrael – Planned for Holocaust memorial Day – April 7, 2013. The website of the “Bigger Than Life” organization, which accompanies families whose children are diagnosed with cancer, was attacked and its home page was vandalized with antisemitic and anti-Israel messages. Other sites such as Yad Vashem, the Ministry of Defense, the Election Commission, and the Ministry of Foreign Affairs were shut down for several hours. The attack was also accompanied by false reports published by the hackers, including damages worth 5$ billion allegedly caused. 2014- Support for Hong Kong’s independence- Following the riots in Hong Kong, the people’s demand for independence, and the violent response of the Chinese government to suppress the riots, Anonymous declared support for the protesters and began attacks on private companies in Hong Kong that support the Chinese regime. 2015- Anonymous declared that it is against the terrorist organization ISIS after the terrorist attack in Paris 2022- Anonymous made headlines for a string of successful attacks against Russia as part of its support for Ukraine, leaking documents and information about senior military personnel. Blocking websites of individual organizations Those who continue to do business with Russia, shutting down government websites of Russia and Belarus, bypassing censorship in Russia and publishing photos from the war, and training other activists who will fight for Ukraine.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.cnbc.com/2022/07/28/how-is-anonymous-attacking-russia-the-top-six-ways-ranked-.html/",
+            "content": "By hacking into Russian servers, Anonymous purportedly circumvented those defense mechanisms, said Fowler. CNBC grouped Anonymous’ claims into six categories, which Fowler helped rank in order of effectiveness:Anonymous has claimed to have hacked over 2,500 Russian and Belarusian sites, said Fowler. Ongoing efforts by the underground hacktivists known as Anonymous are “embarrassing” Russia and its cybersecurity technology. Though missile strikes are making more headlines these days, Anonymous and its affiliate groups aren’t losing steam, said Fowler, who summarized many of the collective’s claims against Russia in a report published Friday.“The methods Anonymous have used against Russia have not only been highly disruptive and effective, they have also rewritten the rules of how a crowdsourced modern cyberwar is conducted,” said Fowler.“The owners of the hacked servers often have no idea their resources are being used to launch attacks on other servers.",
+            "domain": "www.cnbc.com",
+            "tokenized": [
+                {
+                    "sent":  "By hacking into Russian servers, Anonymous purportedly circumvented those defense mechanisms, said Fowler.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "CNBC grouped Anonymous’ claims into six categories, which Fowler helped rank in order of effectiveness:Anonymous has claimed to have hacked over 2,500 Russian and Belarusian sites, said Fowler.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Ongoing efforts by the underground hacktivists known as Anonymous are “embarrassing” Russia and its cybersecurity technology.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Though missile strikes are making more headlines these days, Anonymous and its affiliate groups aren’t losing steam, said Fowler, who summarized many of the collective’s claims against Russia in a report published Friday.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“The methods Anonymous have used against Russia have not only been highly disruptive and effective, they have also rewritten the rules of how a crowdsourced modern cyberwar is conducted,” said Fowler.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "“The owners of the hacked servers often have no idea their resources are being used to launch attacks on other servers",
+                     "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.cbsnews.com/pictures/anonymous-most-memorable-hacks/16/",
+            "content":   "Anonymous has made headlines over the past few years in connection with Internet fueled civil disobedience and DDoS attacks on notable sites such as Sony and MasterCard. Anonymous is really good at hacking and really good at keeping their identities a secret. Anonymous made announcements that they would attack a Malaysian government run portals in response to government oppression continuing to paint itself as a vigilante cyber force meant to correct injustices done by the government. Coining the term \"hacktivism\" the collective chooses its targets based on perceived injustices by the group and attacks through the web accordingly. The hackers go by the mantra \"We are Anonymous. The hacking was more annoying than debilitating, but Anonymous caused enough of a stank to have the global community pay attention.",
+            "domain": "www.cbsnews.com",
+            "tokenized": [
+                {
+                    "sent":   "Anonymous has made headlines over the past few years in connection with Internet fueled civil disobedience and DDoS attacks on notable sites such as Sony and MasterCard.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "Anonymous is really good at hacking and really good at keeping their identities a secret.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "Anonymous made announcements that they would attack a Malaysian government run portals in response to government oppression continuing to paint itself as a vigilante cyber force meant to correct injustices done by the government.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Coining the term \"hacktivism\" the collective chooses its targets based on perceived injustices by the group and attacks through the web accordingly.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The hackers go by the mantra \"We are Anonymous.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "The hacking was more annoying than debilitating, but Anonymous caused enough of a stank to have the global community pay attention.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://techwireasia.com/07/2023/anonymous-hacker-group-who-are-they-and-where-are-they-now/",
+            "content":  "Anonymous has grown and evolved from a group mainly focused on pranks to a collective participating in significant social and political movements. Collectively, Anonymous embodies a new form of digital, decentralized activism, representing the potential, intricacies, and disputes inherent to online protest in the 21st century. Controversies and criticisms surrounding Anonymous hacker group The group’s methods, particularly their “hacktivism,” which blends hacking and activism, have been controversial. Notorious for its internet-driven protests, advocacy, and direct action, the Anonymous hacker group is often seen targeting government bodies, corporations, and other organizations. The debate surrounding Anonymous reflects more significant discussions about internet freedom, privacy, and the ethical use of digital tools in achieving political and social objectives. The hacker collective Anonymous is an informal, worldwide network of hackers and activists.",
+            "domain": "techwireasia.com",
+            "tokenized": [
+                {
+                    "sent": "Anonymous has grown and evolved from a group mainly focused on pranks to a collective participating in significant social and political movements.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Collectively, Anonymous embodies a new form of digital, decentralized activism, representing the potential, intricacies, and disputes inherent to online protest in the 21st century.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "Controversies and criticisms surrounding Anonymous hacker group The group’s methods, particularly their “hacktivism,” which blends hacking and activism, have been controversial.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "Notorious for its internet-driven protests, advocacy, and direct action, the Anonymous hacker group is often seen targeting government bodies, corporations, and other organizations.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "The debate surrounding Anonymous reflects more significant discussions about internet freedom, privacy, and the ethical use of digital tools in achieving political and social objectives.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":   "The hacker collective Anonymous is an informal, worldwide network of hackers and activists.",
+                    "is_evidence": 0
+                }
+            ]
+         },
+         {
+            "link": "https://www.complex.com/pop-culture/a/complex/the-10-craziest-anonymous-hacks/",
+            "content":  "Anonymous first took over the hompage of the security company and replaced it with the above letter (click here for full-sized image) which read in part: \"You brought this upon yourself. Anonymous is for the people. Anonymous recruited a number of Tunisian hackers to help take down eight government websites with DDoS attacks. Anonymous's response happened in three waves: First they flooded the site's message boards forcing it to shut down, then they hit 'em with a bunch of DDoS attacks which crippled the site, then it went in for the kill and defaced SOHH's homepage with racist slurs and images. Hacker collective Anonymous also took offense to BART's actions and decided to hack into the agency's \"myBARTway\" website and released over 2,000 e-mails, usernames, and passwords—crazy, right? Yes, but it's on par with Anonymous's past exploits and hacks which have targeted governments, security firms, rap websites, and consumer electronics companies all in the name of freedom.",
+            "domain": "www.complex.com",
+            "tokenized": [
+                {
+                    "sent":  "Anonymous first took over the hompage of the security company and replaced it with the above letter (click here for full-sized image) which read in part: \"You brought this upon yourself.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":   "Anonymous is for the people.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "Anonymous recruited a number of Tunisian hackers to help take down eight government websites with DDoS attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "Anonymous's response happened in three waves: First they flooded the site's message boards forcing it to shut down, then they hit 'em with a bunch of DDoS attacks which crippled the site, then it went in for the kill and defaced SOHH's homepage with racist slurs and images.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Hacker collective Anonymous also took offense to BART's actions and decided to hack into the agency's \"myBARTway\" website and released over 2,000 e-mails, usernames, and passwords—crazy, right?",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Yes, but it's on par with Anonymous's past exploits and hacks which have targeted governments, security firms, rap websites, and consumer electronics companies all in the name of freedom.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

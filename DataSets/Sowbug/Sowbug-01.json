@@ -1,0 +1,52 @@
+[
+    "claim":"Sowbug is a threat group that has conducted targeted attacks against organizations in South America and Southeast Asia, particularly government entities, since at least 2015.",
+    "explain":"Symantec has identified a previously unknown group called Sowbug that has been conducting highly targeted cyberattacks against organizations in South America and Southeast Asia and appears to be heavily focused on foreign policy institutions and diplomatic targets. Sowbug has been seen mounting classic espionage attacks by stealing documents from the organizations it infiltrates. Symantec saw the first evidence of Sowbug-related activity with the discovery in March 2017 of an entirely new piece of malware called Felismus used against a target in Southeast Asia. We have subsequently identified further victims on both sides of the Pacific Ocean. While the Felismus tool was first identified in March of this year, its association with Sowbug was unknown until now. Symantec has also been able to connect earlier attack campaigns with Sowbug, demonstrating that it has been active since at least early-2015 and may have been operating even earlier. To date, Sowbug appears to be focused mainly on government entities in South America and Southeast Asia and has infiltrated organizations in Argentina, Brazil, Ecuador, Peru, Brunei and Malaysia. The group is well resourced, capable of infiltrating multiple targets simultaneously and will often operate outside the working hours of targeted organizations in order to maintain a low profile.",
+    {
+        "report_id": "report_0",
+        "link":"https://securityaffairs.com/65293/apt/sowbug-group-apt.html",
+        "sentences": [
+            "A new cyber espionage group dubbed Sowbug appeared in the threat landscape, according to the experts it has been active since 2015 and was involved in highly targeted attacks against a host of government organizations in South America and Southeast Asia.",
+            "Malware researchers from Symantec have spotted a new cyber espionage APT dubbed Sowbug group that has been active at least since 2015.",
+            "The Sowbug group uses a strain of malware dubbed Felismus to compromise target systems.",
+            "“Symantec has identified a previously unknown group called Sowbug that has been conducting highly targeted cyber attacks against organizations in South America and Southeast Asia and appears to be heavily focused on foreign policy institutions and diplomatic targets.",
+            "“Symantec saw the first evidence of Sowbug-related activity with the discovery in March 2017 of an entirely new piece of malware called Felismus used against a target in Southeast Asia. ”",
+            "“To date, Sowbug appears to be focused mainly on government entities in South America and Southeast Asia and has infiltrated organizations in Argentina, Brazil, Ecuador, Peru, Brunei and Malaysia,” reads the Symantec report."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://community.broadcom.com/symantecenterprise/viewdocument/sowbug-cyber-espionage-group-targe?CommunityKey=1ecf5f55-9545-44d6-b0f4-4e4a7f5f5e68&tab=librarydocuments",
+        "sentences": [
+            "However, the number of active cyber espionage operations has increased steadily in recent years and the emergence of Sowbug is a reminder that no region is immune to this kind of threat.",
+            "Sowbug has been seen mounting classic espionage attacks by stealing documents from the organizations it infiltrates.",
+            "Symantec has also been able to connect earlier attack campaigns with Sowbug, demonstrating that it has been active since at least early-2015 and may have been operating even earlier.",
+            "Symantec has identified a previously unknown group called Sowbug that has been conducting highly targeted cyber attacks against organizations in South America and Southeast Asia and appears to be heavily focused on foreign policy institutions and diplomatic targets.",
+            "Symantec saw the first evidence of Sowbug-related activity with the discovery in March 2017 of an entirely new piece of malware called Felismus used against a target in Southeast Asia.",
+            "To date, Sowbug appears to be focused mainly on government entities in South America and Southeast Asia and has infiltrated organizations in Argentina, Brazil, Ecuador, Peru, Brunei and Malaysia."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.scmagazine.com/news/sowbug-apt-uses-felismus-backdoor-to-for-cyberespionage-operations",
+        "sentences": [
+            "A previously unknown cyberespionage group called Sowbug has been found using the Felismus backdoor to spy on several South American and Pacific Rim national governments for the last several years.",
+            "However, until March the malware was not associated with Sowbug, tying the APT group to the backdoor was not accomplished until now, Symantec reported.",
+            "However, we can say the targets are likely of interest to a nation-state and the malware used in these attacks is at the level of sophistication we would expect to see with state-sponsored attackers.",
+            "Sowbug is focusing its efforts mainly on government and has infiltrated organizations in Argentina, Brazil, Ecuador, Peru, Brunei and Malaysia.",
+            "The APT group was first officially uncovered by Symantec researchers in March 2017 when it saw Felismus being used against a couple of Southeast Asian countries, but once a deeper look was taken it was realized that this group had been poking around illegally in some government files for several years.",
+            "“The investigation is ongoing and there are several things we still don't know about Sowbug, such as how they initially compromise organizations, which means it's hard to make a judgement on who is better protected against them,” he told SC."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://community.broadcom.com/symantecenterprise/communities/community-home/librarydocuments/viewdocument?DocumentKey=d544bd14-1dd2-4ab6-a5a0-181788b7d73b&CommunityKey=1ecf5f55-9545-44d6-b0f4-4e4a7f5f5e68&tab=librarydocuments",
+        "sentences": [
+            "However, the number of active cyber espionage operations has increased steadily in recent years and the emergence of Sowbug is a reminder that no region is immune to this kind of threat.",
+            "Sowbug has been seen mounting classic espionage attacks by stealing documents from the organizations it infiltrates.",
+            "Symantec has also been able to connect earlier attack campaigns with Sowbug, demonstrating that it has been active since at least early-2015 and may have been operating even earlier.",
+            "Symantec has identified a previously unknown group called Sowbug that has been conducting highly targeted cyber attacks against organizations in South America and Southeast Asia and appears to be heavily focused on foreign policy institutions and diplomatic targets.",
+            "Symantec saw the first evidence of Sowbug-related activity with the discovery in March 2017 of an entirely new piece of malware called Felismus used against a target in Southeast Asia.",
+            "To date, Sowbug appears to be focused mainly on government entities in South America and Southeast Asia and has infiltrated organizations in Argentina, Brazil, Ecuador, Peru, Brunei and Malaysia."
+        ]
+    }
+]

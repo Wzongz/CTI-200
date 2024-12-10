@@ -1,0 +1,21 @@
+LazyScripter is threat group that has mainly targeted the airlines industry since at least 2018, primarily using open-source toolsets.
+LazyScripter has used dynamic DNS providers to create legitimate-looking subdomains for C2.
+LazyScripter has established GitHub accounts to host its toolsets.
+LazyScripter has leveraged dynamic DNS providers for C2 communications.
+LazyScripter has achieved persistence via writing a PowerShell script to the autorun registry key.
+LazyScripter has used PowerShell scripts to execute malicious code.
+LazyScripter has used batch files to deploy open-source and multi-stage RATs.
+LazyScripter has used VBScript to execute malicious code.
+LazyScripter has used JavaScript in its attacks.
+LazyScripter had downloaded additional tools to a compromised host.
+LazyScripter has used several different security software icons to disguise executables.
+LazyScripter has leveraged the BatchEncryption tool to perform advanced batch script obfuscation and encoding techniques.
+LazyScripter has used a variety of open-source remote access Trojans for its operations.
+LazyScripter has used spam emails weaponized with archive or document files as its initial infection vector.
+LazyScripter has used spam emails that contain a link that redirects the victim to download a malicious document.
+LazyScripter has hosted open-source remote access Trojans used in its operations in GitHub.
+LazyScripter has used mshta.exe to execute Koadic stagers.
+LazyScripter has used rundll32.exe to execute Koadic stagers.
+LazyScripter has relied upon users clicking on links to malicious files.
+LazyScripter has lured users to open malicious email attachments.
+LazyScripter has used GitHub to host its payloads to operate spam campaigns.

@@ -1,0 +1,20 @@
+Confucius is a cyber espionage group that has primarily targeted military personnel, high-profile personalities, business persons, and government organizations in South Asia since at least 2013. Security researchers have noted similarities between Confucius and Patchwork, particularly in their respective custom malware code and targets.
+Confucius has obtained cloud storage service accounts to host stolen data.
+Confucius has used HTTP for C2 communications.
+Confucius has used a file stealer to steal documents and images with the following extensions: txt, pdf, png, jpg, doc, xls, xlm, odp, ods, odt, rtf, ppt, xlsx, xlsm, docx, pptx, and jpeg.
+Confucius has dropped malicious files into the startup folder %AppData%\Microsoft\Windows\Start Menu\Programs\Startup on a compromised host in order to maintain persistence.
+Confucius has used PowerShell to execute malicious files and payloads.
+Confucius has used VBScript to execute malicious code.
+Confucius has exfiltrated stolen files to its C2 server.
+Confucius has exfiltrated victim data to cloud storage service accounts.
+Confucius has exploited Microsoft Office vulnerabilities, including CVE-2015-1641, CVE-2017-11882, and CVE-2018-0802.
+Confucius has used a file stealer that checks the Document, Downloads, Desktop, and Picture folders for documents and images with specific extensions.
+Confucius has downloaded additional files and payloads onto a compromised host following initial access.
+Confucius has crafted and sent victims malicious attachments to gain initial access.
+Confucius has sent malicious links to victims through email campaigns.
+Confucius has created scheduled tasks to maintain persistence on a compromised host.
+Confucius has used mshta.exe to execute malicious VBScript.
+Confucius has used a file stealer that can examine system drives, including those other than the C drive.
+Confucius has used a weaponized Microsoft Word document with an embedded RTF exploit.
+Confucius has lured victims into clicking on a malicious link sent through spearphishing.
+Confucius has lured victims to execute malicious attachments included in crafted spearphishing emails related to current topics.

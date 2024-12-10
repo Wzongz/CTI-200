@@ -1,0 +1,41 @@
+{
+  "event_id": "276",
+  "claim": "Cyber syndicate 'Night Owl' has been identified as a significant threat, with strong ties to a non-state actor in Eastern Europe. Active since 2018, Night Owl has orchestrated cyber espionage and sabotage operations targeting sectors across Western Europe and North America, including finance, legal, media, and critical infrastructure.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "Night Owl, a previously under-the-radar cyber syndicate, has come into the spotlight due to its recent aggressive cyber operations. Cybersecurity firm CyberSight has traced Night Owl's activities back to 2018, revealing a pattern of sophisticated cyber espionage and sabotage. The group is known for its precision in targeting, focusing on finance, legal, media, and critical infrastructure sectors in Western Europe and North America. Night Owl's methodology involves advanced spear-phishing campaigns, custom malware deployment, and exploiting zero-day vulnerabilities. The group's arsenal includes 'ShadowBeacon', a multi-functional backdoor enabling remote control, data exfiltration, and lateral movement within compromised networks. CyberSight's analysis suggests Night Owl operates with the support of a non-state actor in Eastern Europe, aiming to destabilize targeted sectors and gather intelligence. The syndicate's operations have escalated in complexity, indicating a well-resourced and highly skilled team. Night Owl's recent activities have caused significant disruptions, including data breaches, financial theft, and infrastructure sabotage. The group's ability to remain undetected for extended periods highlights the need for enhanced cybersecurity measures and vigilance among targeted sectors.",
+  "reports": [
+    {
+      "link": "https://www.cybersight.com/research/night-owl-cyber-syndicate/",
+      "content": "CyberSight's comprehensive report unveils the activities of 'Night Owl', a cyber syndicate with ties to Eastern Europe, engaged in espionage and sabotage since 2018. The group targets finance, legal, media, and critical infrastructure sectors in Western Europe and North America. Night Owl employs sophisticated tactics including spear-phishing, custom malware, and exploiting zero-day vulnerabilities. The report highlights 'ShadowBeacon', a backdoor used by Night Owl for remote control, data exfiltration, and lateral movement within networks. The syndicate's operations suggest backing by a non-state actor in Eastern Europe, with goals of destabilization and intelligence gathering. Night Owl's recent operations have led to significant disruptions, underscoring the importance of advanced cybersecurity defenses.",
+      "domain": "www.cybersight.com",
+      "tokenized": [
+        {
+          "sent": "CyberSight's comprehensive report unveils the activities of 'Night Owl', a cyber syndicate with ties to Eastern Europe, engaged in espionage and sabotage since 2018.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The group targets finance, legal, media, and critical infrastructure sectors in Western Europe and North America.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Night Owl employs sophisticated tactics including spear-phishing, custom malware, and exploiting zero-day vulnerabilities.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The report highlights 'ShadowBeacon', a backdoor used by Night Owl for remote control, data exfiltration, and lateral movement within networks.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The syndicate's operations suggest backing by a non-state actor in Eastern Europe, with goals of destabilization and intelligence gathering.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Night Owl's recent operations have led to significant disruptions, underscoring the importance of advanced cybersecurity defenses.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

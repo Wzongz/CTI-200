@@ -1,0 +1,52 @@
+claim：The nature of the hack had experts believing it was coming from a Chinese cyberattack group, dubbed APT-12 in the U.S. for Advanced Persistent Threat 12.
+explain：The New York Times has had a rough year with China. After publishing an article about the secret wealth of Chinese Premier Wen Jiabao, the New York Times website was blocked in mainland China and on the country's social media. Following that, one of the paper's Beijing-based correspondents, Chris Buckley, was given a difficult time obtaining a press visa and had to temporarily leave the country. Now, the Times found out it has been persistently attacked by Chinese hackers for the past four months. The nature of the hack had experts believing it was coming from a Chinese cyberattack group, dubbed APT-12 in the U.S. for Advanced Persistent Threat 12. An APT essentially means hackers are able to have access to a system for an extended or continuous amount of time, accessing the information whenever they please. According to the New York Times, the computer systems and passwords of several reporters and other employees, including the email account of Shanghai bureau chief David Barboza, who wrote the initial report on Wen Jiabao’s family wealth, were accessed by APT entities. The Times believes that the hack was initiated only to seek information pertaining to the reporting on the Wen family. The Times hired information security firm Mandiant to track and stop the hack, which was eventually traced to Chinese sources. Mandiant advisors are under the impression that the attacks came from the same computers used to attack United States military contractors in the past, an action that may have come from the Chinese military.Dmitri Alperovitch, a technology security expert and co-founder of CrowdStrike, a cybersecurities company, once said, “There are two kinds of Fortune 500 companies: those that know they’ve been hacked and those that don’t know yet.” Mandiant Chief Security Officer Richard Bejtlich estimates that Chinese APT intruders alone have likely infiltrated 30 percent to 40 percent of Fortune 500 companies. Mandiant is well-versed in hacking attacks from China. The company does extensive research on hacking patterns and has defined a general configuration for what Chinese APT activity looks like. For the most part, China’s APT hackers tend to infiltrate industries or companies aligned with the strategic objectives of the local government.“We at Mandiant have considered the strategic impact this change will have on APT groups and the current cyberespionage campaign that has been traced back to the PRC,” Christopher Lew, a senior strategic analyst at the U.S. Department of Defense and an expert on Chinese military history and thought, wrote in a report for Mandiant. Mandiant experts have reason to believe that China’s new leadership will only further the nation’s commitment to using intelligence coming from APT attacks, especially to benefit Chinese state-owned enterprises. For example, Chinese state-owned companies have had the unusual ability to increase the speed and efficiency of “manufacturing and development processes for high-tech products, negotiate acquisitions or service deals on highly favorable terms or force competing companies to change their business plans altogether,” Lew reported. Impressively fast developments have been seen in the nation’s weapon systems in the past year, like the nation’s first advanced ballistic missile and new J-14 warplane. Though many believe this is a result of China’s booming economy and shift toward domestic innovation, Mandiant believes APT espionage on foreign entities contributed to China’s remarkable technological advancement.“If one takes into account the ... data stolen by APT groups that Mandiant has seen during its engagements, the leaps and bounds that PRC companies have made is much more feasible and explainable,” Lew explained. On a commercial level, the aggressive business culture in China coupled with the scarce effectiveness of intellectual property laws has created a market for corporate espionage. “The availability of trained personnel, tools, methodology and companies that are willing to cut corners or to not ask questions regarding the sources of information make for a profitable hacking industry,” Lew said.Of course, there is no publicly confirmed proof of PRC government-sponsored cyberespionage. Beijing has openly addressed, and dismissed, accusations of government-led network spying; Hong Lei, a Chinese Foreign Ministry spokesperson, called U.S. government reports suggesting Chinese spying “unprofessional and irresponsible.”
+[
+    {
+	link：https://www.asiapacificsecuritymagazine.com/6663/
+        "report_id": "report_0",
+        "sentences": [
+            "APT12 is believed to be a cyber espionage group thought to have links to the Chinese People’s Liberation Army.",
+            "Based on past APT12 activity, we expect the threat group to continue to utilize phishing as a malware delivery method.",
+            "FireEye observed APT12 deliver these exploit documents via phishing emails in multiple cases.",
+            "Research into this HIGHTIDE campaign revealed APT12 targeted multiple Taiwanese Government organizations between August 22 and 28.On Monday August 25, 2014 we observed a different spear phish email sent from lilywang823@gmail.com to a technology company located in Taiwan.",
+            "Similarly, the public disclosure of APT12’s intrusion at the New York Times also led to only a brief pause in the threat group’s activity and immediate changes in TTPs.",
+            "The group is believed to be a cyber espionage group with links to the Chinese People’s Liberation Army and is the same group responsible for the NY Times hack in 2012."
+        ]
+    },
+    {
+	link：https://www.mandiant.com/resources/blog/darwins-favorite-apt-group-2
+        "report_id": "report_1",
+        "sentences": [
+            "APT12 is believed to be a cyber espionage group thought to have links to the Chinese People's Liberation Army.",
+            "Although there are no current infrastructure ties to link this backdoor to APT12, there are several data points that show a possible tie to the same actors: Same initial delivery method (spear phishing email) with a Microsoft Word Document exploiting CVE-2012-0158.",
+            "Based on past APT12 activity, we expect the threat group to continue to utilize phishing as a malware delivery method.",
+            "FireEye observed APT12 deliver these exploit documents via phishing emails in multiple cases.",
+            "Research into this HIGHTIDE campaign revealed APT12 targeted multiple Taiwanese Government organizations between August 22 and 28.On Monday August 25, 2014 we observed a different spear phish email sent from lilywang823@gmail.com to a technology company located in Taiwan.",
+            "Similarly, the public disclosure of APT12’s intrusion at the New York Times also led to only a brief pause in the threat group’s activity and immediate changes in TTPs."
+        ]
+    },
+    {
+	link：https://www.crowdstrike.com/blog/whois-numbered-panda/
+        "report_id": "report_2",
+        "sentences": [
+            "Attribution is a tricky subject with regard to incident response and intrusion investigation; it can take years of research to get the home address or the location of the Technical Reconnaissance Bureau (TRB) affiliated with the threat actor.",
+            "If the adversary is known to target mergers and acquisitions intelligence of companies involved in the Chinese market, then when that adversary shows up prior to, or during, some M&A activity, the victim can begin to take actions to limit the effectiveness of the compromised data, feed deceptive information or perhaps wage a formal complaint.",
+            "It is not sufficient to simply identify ‘Chinese-based hackers’; it is important to understand the adversary group that has targeted your enterprise and what intelligence they are there to collect.",
+            "Last week’s Intelligence blog post featured Anchor Panda, one of the many adversary groups that CrowdStrike tracks.",
+            "Numbered Panda has targeted organizations in time-sensitive operations such as the Fukushima Reactor Incident of 2011, likely filling intelligence gaps in the ground cleanup/mitigation operations.",
+            "With this in mind, this week we are providing some indicators for a China based adversary who we crypt as “NUMBERED PANDA.”"
+        ]
+    },
+    {
+	link：https://www.computerworld.com/article/2483567/the-chinese-hacker-group-that-hit-the-n-y--times-is-back-with-updated-tools.html
+        "report_id": "report_3",
+        "sentences": [
+            "\"We observed new activity from this group in early May 2013,\" said Ned Moran, senior malware researcher at FireEye, via email.",
+            "APT 12 is back after a period of silence following widespread media coverage in January of The New York Times security breach and reports revealing the group's methods and operations, FireEye researchers said Monday in a blog post.",
+            "APT.Ixeshe, malware programs previously associated with APT 12, as well as command and control infrastructure attributed to the group, Moran said.",
+            "The Chinese hacker group that broke into the computer network of The New York Times and other high-profile organizations, including defense contractors, has launched new attacks following a few months of inactivity, according to researchers from security vendor FireEye.",
+            "The attacks used new variants of Backdoor.APT.Aumlib and Backdoor.",
+            "The cyberespionage group is known as APT 12 (Advanced Persistent Threat number 12) and is believed to have ties to China's People's Liberation Army (PLA)."
+        ]
+    }
+]

@@ -1,0 +1,52 @@
+[
+    "claim":"Mofang has compressed the ShimRat executable within malicious email attachments. Mofang has also encrypted payloads before they are downloaded to victims.",
+    "explain":"Mofang is a threat actor that almost certainly operates out of China and is probably government-affiliated. It is highly likely that Mofang’s targets are selected based on involvement with investments, or technological advances that could be perceived as a threat to the Chinese sphere of influence. This is most clearly the case in a campaign focusing on government and critical infrastructure of Myanmar that is described in this report. Chances are about even, though, that Mofang is a relevant threat actor to any organization that invests in Myanmar or is otherwise politically involved. In addition to the campaign in Myanmar, Mofang has been observed to attack targets across multiple sectors (government, military, critical infrastructure and the automotive and weapon industries) in multiple countries.",
+    {
+        "report_id": "report_0",
+        "link":"https://blog.fox-it.com/2016/06/15/mofang-a-politically-motivated-information-stealing-adversary/",
+        "sentences": [
+            "Chances are about even, though, that Mofang is a relevant threat actor to any organization that invests in Myanmar or is otherwise politically involved.",
+            "In addition to the campaign in Myanmar, Mofang has been observed to attack targets across multiple sectors (government, military, critical infrastructure and the automotive and weapon industries) in multiple countries.",
+            "It is highly likely that Mofang’s targets are selected based on involvement with investments, or technological advances that could be perceived as a threat to the Chinese sphere of influence.",
+            "Mofang (模仿, Mófa ̌ng, to imitate) is a threat actor that almost certainly operates out of China and is probably government-affiliated.",
+            "The mofang group does not use exploits to infect targets, they rely on social engineering and their attacks are carried out in three stages: Compromise for reconnaissance, aiming to extract key information about the target infrastructure.",
+            "This is most clearly the case in a campaign focusing on government and critical infrastructure of Myanmar that is described in this report."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://news.softpedia.com/news/chinese-apt-targets-victims-with-social-engineering-and-shimrat-malware-505255.shtml",
+        "sentences": [
+            "\"It is highly likely that Mofang’s targets are selected based on involvement with investments, or technological advances that could be perceived as a threat to the Chinese sphere of influence,\" he also added.",
+            "Attacks continued in 2015 when Mofang hit Myanmar government agencies and private companies in four different incidents.",
+            "During the selection process, the Myanmar government and the financial consultancy firm selected to choose a project winner suffered multiple cyber-attacks at the hand of Mofang.",
+            "Fox-IT's report on Mofang's activities details a possible link between the cyber-attacks and the investments of a Chinese state-owned company that bid on an oil and gas pipeline project in Myanmar.",
+            "Mofang (\"to imitate\" in Chinese) is the name of a newly discovered cyber-espionage group that targeted various countries around the globe since February 2012, when the group's main malware, called ShimRat, was found by security firm Fox-IT.",
+            "On the matter of attribution, Fox-IT expert Yonathan Klijnsma said that Mofang \"almost certainly operates out of China and is probably government-affiliated.\""
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.securityweek.com/chinese-attackers-conduct-cyberespionage-economic-gain/",
+        "sentences": [
+            "A threat group believed to be affiliated with the Chinese government has been conducting cyber espionage operations against Myanmar and other countries for economic gain.",
+            "Before CITIC was declared the winner, in mid-2015, Mofang was observed launching attacks against Myanmar government organizations and",
+            "In the same year, CPG Corp. and the Myanmar government initiated another tender for setting up infrastructure in this SEZ, and in early 2016 it was announced that China’s CITIC group had won it.",
+            "Many of Mofang’s attacks targeted organizations in Myanmar, but one of the most recent campaigns against the country appears to show exactly what type of leverage a nation-state can gain by conducting cyberespionage.",
+            "Similar to other China-based cyberspies, Mofang also uses antivirus hijacking techniques to run ShimRat.",
+            "The actor, dubbed “Mofang” by Dutch security firm Fox-IT, has targeted entities in Myanmar, India, Germany, Canada, the United States, Singapore, South Korea and likely other countries since at least February 2012."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/whitefly-espionage-singapore",
+        "sentences": [
+            "Group behind the SingHealth breach is also responsible for a string of other attacks in the region.",
+            "It now appears that the SingHealth breach was not a one-off attack and was instead part of a wider pattern of attacks against organizations in the region.",
+            "Links with attacks in other regions also present the possibility that it may be part of a broader intelligence gathering operation.",
+            "Some of the tools that Whitefly has used in its attacks have also been deployed in other targeted attacks outside Singapore.",
+            "Symantec researchers have discovered that this attack group, which we call Whitefly, has been operating since at least 2017, has targeted organizations based mostly in Singapore across a wide variety of sectors, and is primarily interested in stealing large amounts of sensitive information.",
+            "While most of these organizations were based in Singapore, some were multinational organizations with a presence in Singapore."
+        ]
+    }
+]

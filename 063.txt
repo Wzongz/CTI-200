@@ -1,0 +1,142 @@
+{
+  "event_id": "063",
+  "claim": "While tracking the activities of the SideWinder group we identified a server used to deliver a malicious LNK file and host multiple credential phishing pages.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "While tracking the activities of the SideWinder group, which has become infamous for targeting the South Asia region and its surrounding countries, we identified a server used to deliver a malicious LNK file and host multiple credential phishing pages. We learned that these pages were copied from their victims’ webmail login pages and subsequently modified for phishing. We believe further activities are propagated via spear-phishing attacks. The group’s targets include multiple government and military units, mainly in Nepal and Afghanistan. After the gathered credentials are sent, some of the phishing pages will redirect victims to diàerent documents or news pages. The themes and topics of these pages and documents are related to either Covid19 or recent territory disputes between Nepal, Pakistan, India, and China. Furthermore, it seems that these lures are distributed via phishing links.We also found multiple Android APK files on their phishing server. While some of them are benign, we also discovered malicious files created with Metasploit. One of the normal applications, called “OpinionPoll,” is a survey app for gathering opinions regarding the Nepal-India political map dispute, which seems to be another political lure similar to the one they used in the spearphishing portion. We believe these applications are still under development and will likely be used to compromise mobile devices in the future. SideWinder has been very active in 2020. Earlier this year, we published a report on how the SideWinder APT group used the Binder exploit to attack mobile devices. The group also launched attacks against Pakistan, Bangladesh, and China using lure files related to Covid-19.The use of malicious documents is one of SideWinder’s most common infection vectors. We collected several diàerent samples from the campaign, including:All of these cases end up with either the downloading or dropping of files and then the execution of JavaScript code, which is a dropper used to install the main backdoor + stealer. The downloaded RTF files exploit the CVE-2017-11882 vulnerability. It drops a file named 1.a (a JavaScript code), which drops the backdoor + stealer into a folder in ProgramData and directly executes it or creates a scheduled task to execute the dropped files at a later time.The content of the newly created folder contains a few files, including Rekeywiz (EFS REKEY wizard, FA86B5BC5343CA92C235304B8DCBCF4188C6BE7D4621C625564BEBD5326E D850), which is a legitimate Windows application.This application loads various system DLL libraries, including shell32.dll, which sideloads DUser.dll, one of shell32’s DelayImports.However, a fake DUser.dll gets loaded into the process. This fake DLL library decrypts the main backdoor + stealer from the .tmp file in the same directory.The decryption process is a simple XOR, where the key is the first 32 bytes from the encrypted file and the payload are the remaining bytes. The decrypted payload is the main backdoor .NET executable binary.In Resources, the Default resource contains the encrypted configuration. After decryption (using the same principle as with the main backdoor + stealer), the configuration reveals which file formats the attackers are targeting.The collected information is in JSON format (hence why the Newtonsoft_Json library stored in Resources is loaded) and includes information such as privileges, user accounts, computer system information, antivirus programs, running processes, processor information, operating system information, timezone, installed Windows updates, network information, list of directories in Users\\%USERNAME%\\Desktop, Users\\%USERNAME%\\Downloads, Users\\%USERNAME%\\Documents, Users\\%USERNAME%\\Contacts, as well as information on all drives and installed apps.We found several interesting dynamic DNS domains resolving to a server that was used to deliver SideWinder’s malicious documents. The subdomains of these dynamic DNS domains are designed to be similar to the domains of their victims’ mail servers. For example, “mail-nepalgovnp[.]duckdns[.]org” was created to pretend to be the original Nepal government’s domain “mail[.]nepal[.]gov[.]np”. Digging deeper, we found that it hosted several phishing pages. These pages were copied from the webmail servers of various targets and then modified for spear-phishing attacks designed to steal login credentials. Although it’s not clear to us how these phishing pages are delivered to the victims, finding the original webmail servers that they copied to make these phishing pages allows us to identify who they were targeting. Analysis of the phishing pages revealed that most of them would redirect to the original webmail servers, which they copied after the victims sent out their login credentials. However, we also found some of them will either redirect to documents or news pages. These documents and news are probably interesting in some way to their targets and are used to make them click and log in to the phishing pages. While several of the documents are related to https://www.trendmicro.com/en_us/research/20/l/sidewinder-leverages-south-asian-territorial-issues-for-spear-ph.html 7/39 Covid-19, we also found some documents or news related to territorial issues in South Asia, including:We also identified multiple Android APK files on their server. Interestingly, these Android applications still seem to be under the initial development phase as they are basic, still use the default Android icons, and have no practical function for users.We noticed two applications among them, named “My First APP” and “Opinion Poll,” that seemingly have no malicious behavior. My First APP demonstrates login & register processes, while Opinion Poll acts as an opinion polling application for the Indian-Nepalese political map dispute. The first application is likely an Android demo application for beginners, while the second one starts with an explanation of “Opinion Writing,” followed by a survey.Another two applications were built from JavaPayload for Metasploit that will load extra code from the remote server configured in the sample. While we were unable to retrieve the payload, according to the Manifest that requests numerous privacy-related permissions like location, contacts, call logs, etc., we can infer that it goes after the user’s private data. These two samples appear to be debug versions as they have no activities or any other component except Metasploit.We also identified a malicious version of the My First APP application that added Metasploit whose class names have been obfuscated.https://www.trendmicro.com/en_us/research/20/l/sidewinder-leverages-south-asian-territorial-issues-for-spear-ph.html 19/39 SideWinder has used malicious apps as part of its operation before. In the campaign referenced earlier, the group used malicious APKs disguised as photography and file manager tools to lure users into downloading them. Once downloaded into the user’s mobile device, the malicious APKs launch a series of fairly sophisticated procedures that includes rooting the device to stealthily deploy the payload, as well as exploiting CVE-2019-2215 and MediaTek-SU vulnerabilities for root privileges. The payload’s ultimate goal is to gather information from the compromised device and then send it back to its C&C server. In the case of these newer APKs, it seems that the goal is to gather user information as well. Unlike the earlier apps, which were already on the Google Play Store, all the APK files found on their server are not mature enough for a deliberate attack. In our opinion, these are still in the initial stage, and the payloads (directed at mobile users) are still being refined further.As seen with their phishing attacks and their mobile device tools’ continuous development, SideWinder is very proactive in using trending topics like Covid19 or various political issues as a social engineering technique to compromise their targets. Therefore, we recommend that users and organizations be vigilant and follow social engineering best practices to protect themselves from these kinds of campaigns.\n\n\n",
+  "reports": [
+    {
+      "link": "https://sebdraven.medium.com/apt-sidewinder-changes-theirs-ttps-to-install-their-backdoor-f92604a2739/",
+      "content": "In this article, we’ll detail the infection chains and the infrastructures of the attackers and the TTPs of this campaign. It’s the same toolset to create the malicious document. Many domain names is used for Vietnameses people. The infrastructures and TTPs during this campaign seem to the Chinese hacking group 1937CN.Joe sandbox has a good representation of the behaviour of the infection. The toolset used by this group to create RTF malicious document has the same properpy of the SideWinder. There are two domains really interesting: Halong.dulichculao.com is already used in the campaign targeting Vietnameses organizations.",
+      "domain": "sebdraven.medium.com",
+      "tokenized": [
+        {
+          "sent":"In this article, we’ll detail the infection chains and the infrastructures of the attackers and the TTPs of this campaign.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"It’s the same toolset to create the malicious document.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Many domain names is used for Vietnameses people.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The infrastructures and TTPs during this campaign seem to the Chinese hacking group 1937CN.Joe sandbox has a good representation of the behaviour of the infection.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The toolset used by this group to create RTF malicious document has the same properpy of the SideWinder.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "There are two domains really interesting: Halong.dulichculao.com is already used in the campaign targeting Vietnameses organizations.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://sebdraven.medium.com/copy-cat-of-apt-sidewinder-1893059ca68d/",
+      "content": "Interestingly, upon further investigation we also found that the three apps are likely to be part of the SideWinder threat actor group’s arsenal. SideWinder, a group that has been active since 2012, is a known threat and has reportedly targeted military entities’ Windows machines. The three malicious apps were disguised as photography and file manager tools. Trend Micro solutions such as the Trend Micro™ Mobile Security for Android™ can detect these malicious apps. Trend Micro’s Mobile App Reputation Service (MARS) covers Android and iOS threats using leading sandbox and machine learning technologies to protect users against malware, zero-day and known exploits, privacy leaks, and application vulnerabilities. We found three malicious apps in the Google Play Store that work together to compromise a victim’s device and collect user information.",
+      "domain": "sebdraven.medium.com",
+      "tokenized": [
+        {
+          "sent":"Interestingly, upon further investigation we also found that the three apps are likely to be part of the SideWinder threat actor group’s arsenal.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"SideWinder, a group that has been active since 2012, is a known threat and has reportedly targeted military entities’ Windows machines.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The three malicious apps were disguised as photography and file manager tools.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Trend Micro solutions such as the Trend Micro™ Mobile Security for Android™ can detect these malicious apps.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Trend Micro’s Mobile App Reputation Service (MARS) covers Android and iOS threats using leading sandbox and machine learning technologies to protect users against malware, zero-day and known exploits, privacy leaks, and application vulnerabilities.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "We found three malicious apps in the Google Play Store that work together to compromise a victim’s device and collect user information.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://blog.trendmicro.com/trendlabs-security-intelligence/first-active-attack-exploiting-cve-2019-2215-found-on-google-play-linked-to-sidewinder-apt-group/",
+      "content": "I think it’s not a fake website: https://www.facebook.com/197655951060181/posts/httpwwwvidyasagaracademybrgind efaultaspx/197663174392792/. In the sequence of installation of the backdoor, this attack don’t use .NET serialization and it’s an important feature of the Sidewinder. It’s an opensource software written in Delphi. It’s very strange for this group to compromise website an Indian school to target Afghanistan People. Or Sidewinder is linked to the India. This attack is against Afghanistan and the society participate at the conference of ICC at Paris.",
+      "domain": "blog.trendmicro.com",
+      "tokenized": [
+        {
+          "sent":  "I think it’s not a fake website: https://www.facebook.com/197655951060181/posts/httpwwwvidyasagaracademybrgind efaultaspx/197663174392792/",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "In the sequence of installation of the backdoor, this attack don’t use .NET serialization and it’s an important feature of the Sidewinder.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "It’s an opensource software written in Delphi.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "It’s very strange for this group to compromise website an Indian school to target Afghanistan People.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Or Sidewinder is linked to the India.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"This attack is against Afghanistan and the society participate at the conference of ICC at Paris",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://sebdraven.medium.com/malicious-document-targets-vietnamese-officials-acb3b9d8b80a/",
+      "content": "A new RTF (9001056791a03ec998f26805d462bc2ca336b2c3aeac2e210f73ff841dfe3eec) has just been discovered and it’s the same toolset that is used to create their exploit. FFFFFFFF00001498 .The backdoor has developped in VB and used the 8EBECD7C.dll (msvbvm60.dll modified). Many malware used Powershell and many papers describe how to log correctly the execution of powershell. Sidewinder gives up the powershell in the HTA and all stuff is written in vbs. The RTF exploits CVE-2017–11882 to dowload a file HTA on hxxp://webserv\u0002redir.net/includes/b7199e61/-1/5272/fdbfcfc1/final using mshtmll.dll and RunHTMLApplication and records that in caller.exe. The goal of this change is to be more furtive.",
+      "domain": "sebdraven.medium.com",
+      "tokenized": [
+        {
+          "sent":"A new RTF (9001056791a03ec998f26805d462bc2ca336b2c3aeac2e210f73ff841dfe3eec) has just been discovered and it’s the same toolset that is used to create their exploit.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"FFFFFFFF00001498 .The backdoor has developped in VB and used the 8EBECD7C.dll (msvbvm60.dll modified).",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Many malware used Powershell and many papers describe how to log correctly the execution of powershell.",
+          "is_evidence": 0
+        },
+        {
+          "sent":  "Sidewinder gives up the powershell in the HTA and all stuff is written in vbs.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The RTF exploits CVE-2017–11882 to dowload a file HTA on hxxp://webserv\u0002redir.net/includes/b7199e61/-1/5272/fdbfcfc1/final using mshtmll.dll and RunHTMLApplication and records that in caller.exe.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The goal of this change is to be more furtive.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

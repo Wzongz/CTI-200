@@ -1,0 +1,10 @@
+Carbanak is a cybercriminal group that has used Carbanak malware to target financial institutions since at least 2013. Carbanak may be linked to groups tracked separately as Cobalt Group and FIN7 that have also used Carbanak malware.
+Carbanak malware installs itself as a service to provide persistence and SYSTEM privileges.
+Carbanak may use netsh to add local firewall rule exceptions.
+Carbanak has copied legitimate service names to use for malicious services.
+Carbanak has named malware "svchost.exe," which is the name of the Windows shared service host program.
+Carbanak has obtained and used open-source tools such as PsExec and Mimikatz.
+Carbanak used legitimate programs such as AmmyyAdmin and Team Viewer for remote interactive C2 to target systems.
+Carbanak installs VNC server software that executes through rundll32.
+Carbanak actors used legitimate credentials of banking employees to perform operations that sent them millions of dollars.
+Carbanak has used a VBScript named "ggldr" that uses Google Apps Script, Sheets, and Forms services for C2.

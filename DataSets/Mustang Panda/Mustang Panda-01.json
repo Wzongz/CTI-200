@@ -1,0 +1,52 @@
+[
+    "claim":"Mustang Panda is a China-based cyber espionage threat actor that was first observed in 2017 but may have been conducting operations since at least 2014. ",
+    "explain":"This threat actor targets nongovernmental organizations using Mongolian-themed lures for espionage purposes. In April 2017, CrowdStrike Falcon Intelligence observed a previously unattributed actor group with a Chinese nexus targeting a U.S.-based think tank. Further analysis revealed a wider campaign with unique tactics, techniques, and procedures (TTPs). This adversary targets non-governmental organizations (NGOs) in general, but uses Mongolian language decoys and themes, suggesting this actor has a specific focus on gathering intelligence on Mongolia. These campaigns involve the use of shared malware like Poison Ivy or PlugX. Recently, Falcon Intelligence observed new activity from MUSTANG PANDA, using a unique infection chain to target likely Mongolia-based victims. This newly observed activity uses a series of redirections and fileless, malicious implementations of legitimate tools to gain access to the targeted systems. Additionally, MUSTANG PANDA actors reused previously-observed legitimate domains to host files."
+    {
+        "report_id": "report_0",
+        "link":"https://www.anomali.com/blog/china-based-apt-mustang-panda-targets-minority-groups-public-and-private-sector-organizations",
+        "sentences": [
+            "Anomali researchers identified 15 malicious documents that we believe were utilized by Mustang Panda in an ongoing campaign.",
+            "CrowdStrike researchers first published information on Mustang Panda in June 2018, after approximately one year of observing malicious activities that shared unique Tactics, Techniques, and Procedures (TTPs).[1] This campaign dates back to at least November 2018.",
+            "Furthermore, the use of PlugX malware also aligns with CrowdStrike’s previous findings of activity attributed to Mustang Panda.",
+            "The Anomali Threat Research Team has identified an ongoing campaign which it believes is being conducted by the China-based threat group, Mustang Panda.",
+            "The malicious operations conducted by Mustang Panda in this campaign appear to be ongoing.",
+            "”Targeting of NGOs was first documented by CrowdStrike and we believe we have observed Mustang Panda attempting to attack a similar type of target."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://cyware.com/resources/research-and-analysis/china-based-mustang-panda-apt-targets-governments-ngos-and-telecoms-globally-5c8c",
+        "sentences": [
+            "During the height of the COVID-19 pandemic, Mustang Panda impersonated trusted bodies, such as the WHO, in phishing emails and claimed to offer free protective equipment and supplies to potential victims.",
+            "In May, Mustang Panda hackers were observed using phishing emails to deliver fake official European Union and Ukrainian government reports that downloaded malware onto targeted machines.",
+            "Mustang Panda (aka Bronze President) is a cyber espionage threat actor based in China.",
+            "Mustang Panda is infamous for baiting its victims via spear-phishing email campaigns with geopolitical subject lines.",
+            "The malware families used in the campaign exhibit a connection with the Earth Preta (aka Mustang Panda).",
+            "When Mustang Panda was just an unidentified threat group in 2017, it targeted a U.S.-based think tank."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.darkreading.com/threat-intelligence/usb-drives-spyware-china-mustang-panda-apt-global",
+        "sentences": [
+            "Indeed, despite China's tacit support for Russia's war against Ukraine, Mustang Panda already was seen last year mounting a cyberespionage campaign against the Russian military.",
+            "Moreover, based on known tactics of Mustang Panda, the non-USB WispRider infections likely originate via \"spear-phishing campaigns that deliver an archive with all the infection-related files and assure the legitimate executable runs with a relevant argument,\" they wrote.",
+            "Related malware also used by the threat actor include a Go-based backdoor called TinyNote, and a malicious router firmware implant named HorseShell.",
+            "The campaign is the work of the Chinese-state-sponsored APT that Check Point tracks as \"Camaro Dragon,\" but which is probably better known as Mustang Panda (aka Luminous Moth and Bronze President).",
+            "The main payload of the campaign discovered by the researchers is called WispRider, which is a backdoor outlined in a report late last year by Avast — in which the toolset was called \"SSE.\"",
+            "USB-propagated infections have been around for two decades, but are increasingly becoming a popular attack vector of APTs and other large cybercriminal groups because of how rapidly threat actors can spread various types of malware via this vector."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://thehackernews.com/2023/05/chinas-mustang-panda-hackers-exploit-tp.html",
+        "sentences": [
+            "\"The Israeli cybersecurity firm is tracking the threat group under the mythical creature name Camaro Dragon, which is also known as BASIN, Bronze President, Earth Preta, HoneyMyte, RedDelta, and Red Lich.",
+            "\"The discovery is yet another example of a long-standing trend of Chinese threat actors to exploit internet-facing network devices and modify their underlying software or firmware,\" the researchers said.",
+            "\"The implant features several malicious components, including a custom backdoor named 'Horse Shell' that enables the attackers to maintain persistent access, build anonymous infrastructure, and enable lateral movement into compromised networks,\" the company said.",
+            "In 2021, the National Cybersecurity Agency of France (ANSSI) detailed an intrusion set orchestrated by APT31 (aka Judgement Panda or Violet Typhoon) that leveraged a piece of advanced malware known as Pakdoor (or SoWat) to allow the infected routers to communicate with each other.",
+            "That said, this is not the first time China-affiliated threat actors have relied on a network of compromised routers to meet their strategic objectives.",
+            "The Chinese nation-state actor known as Mustang Panda has been linked to a new set of sophisticated and targeted attacks aimed at European foreign affairs entities since January 2023."
+        ]
+    }
+]

@@ -1,0 +1,140 @@
+{
+  "event_id": "212",
+  "claim": "Towards the end of last week, an APT group, called “Vicious Panda”, was discovered carrying out a spear phishing campaign that exploited the pandemic to spread its malware. ",
+  "original_label": "true",
+  "label": "true",
+  "explain": "The world is currently living through an exceptional situation due to the current Covid-19 coronavirus pandemic. To try to stop the spread of the virus, a large number of companies all over the world have started a new regime of telework. This circumstance has significantly increased the attack surface, representing a great challenge for companies when it comes to cybersecurity, as they need to establish protocols and follow a series of measures to ensure that their business and IT systems work properly. However, the increased attack surface isn’t the only cyber-risk that has emerged in the last few days; many cybercriminals are actively taking advantage of this global uncertainty to carry out phishing campaigns, spread malware, and endanger many companies’ cybersecurity. Towards the end of last week, an APT group, called “Vicious Panda”, was discovered carrying out a spear phishing campaign that exploited the pandemic to spread its malware. The emails claim to contain information about coronavirus, but in fact contain two malicious RTF (Rich Text Format) files. If the victim opens these files, a RAT (Remote Access Trojan) is launched, which is capable of taking screenshots, creating lists of files and directories on the victim’s computer, as well as downloading files, along with other capabilities. So far, the campaign has been seen targeting Mongolia’s public sector, and it seems to be the latest attack in a continuing Chinese operation against various governments and organizations around the world. This time, the special feature of the campaign is its use of the novel world situation to try to infect its victims. The email is designed to look like it comes from the Mongolian Foreign Ministry and claims to contain information about the number of people infected by the virus. To weaponize this file, the attackers used RoyalRoad, a popular tool among Chinese threat actors, which allows them to create custom documents with embedded objects, which can exploit vulnerabilities in Equation Editor, the tool used to create complex equations in Word.Once the victim opens the malicious RTF files, a vulnerability in Microsoft Word is exploited to download a malicious file (intel.wll) to the startup folder of Word (%APPDATA%\\Microsoft\\Word\\STARTUP). With this technique, not only do they gain persistence, but they also stop the whole infection chain from detonating if it is being run in a sandbox, since Word needs to be relaunched to fully run the malware. The intel.wll file then downloads a DLL file, which is used to download the malware and to communicate with the cyberattacker’s C2 server. The black hat only operates the C2 server for a limited period each day, which makes it harder to analyze and access the most advanced parts of the infection chain. Despite this, researchers have been able to see that the first stage of this chain downloads and decrypts the RAT once it receives the command, and also downloads the DLL, which is loaded into memory. The architecture, which is similar to a plugin, suggests that there are other modules, in addition to the payload seen in this campaign.This malware campaign has many tricks to get onto its victims’ systems and to endanger their cybersecurity once it is in. To protect against such campaigns, it is important to follow a series of measures. The first of these is extremely important: it is vital to be careful when receiving emails. Email is one of the main attack vectors, and it also one that companies cannot do without. If you receive an email from someone you don’t know, don’t open it, and above all, don’t open any attachments or click on any links. This attack uses a vulnerability in Word to endanger its victims’ cybersecurity. In fact, unpatched vulnerabilities are the cause of many cyberattacks, and they also cause a great deal of data breaches, along with other security issues. This is why it is so important to apply the relevant patch as soon as possible. To remedy these problems, Panda Security has a solution specifically designed to help identify, manage and install patches. Panda Patch Management automatically searches for the patches needed to keep your company’s computers safe, prioritizing the most urgent updates and scheduling their installation. Pending patches are reported even in exploit and malware detections. Panda Patch Management immediately launches the installation of these patches and updates, or they can be scheduled from the console, isolating the computer if necessary. This way, you can manage patches and updates to ensure that your company can run smoothly. And you’ll complete your protection system to shield your assets. Find out more about Panda Patch Management here. Unfortunately, this cyberattack will not be the last to take advantage of the current global situation to jeopardize organizations’ cybersecurity. Protect your organization by taking precautions and using advanced cybersecurity solutions such as those provided by Panda Security.",
+  "reports": [
+    {
+      "link": "https://www.spywareremove.com/removeviciouspanda.html",
+      "content": "Although its COVID-19 campaign is occurring adjacent to another set of attacks that leverage the disease for panic (CoronaVirus Ransomware, a trojan partner to KPOT Stealer), Vicious Panda is a long-term APT.Despite the low-key nature of all RATs and backdoor trojans, somewhat visible attacks may coincide with Vicious Panda security problems.Users should avoid unofficial resources for such purposes and let their anti-malware products remove Vicious Panda's RATs and other software as appropriate.Vicious Panda may trick users into sharing passwords or other information, such as by spoofing websites and services.Vicious Panda uses either crafted e-mails or websites for circulating RTF documents containing information about Coronavirus or COVID-19, such as global distribution statistics or nationally-localized updates.Vicious Panda's campaigns specialize in espionage with significant psychological manipulation for gaining access to targets, such as crafting fake Coronavirus help documents and websites.",
+      "domain": "www.spywareremove.com",
+      "tokenized": [
+        {
+          "sent": "Although its COVID-19 campaign is occurring adjacent to another set of attacks that leverage the disease for panic (CoronaVirus Ransomware, a trojan partner to KPOT Stealer), Vicious Panda is a long-term APT.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Despite the low-key nature of all RATs and backdoor trojans, somewhat visible attacks may coincide with Vicious Panda security problems.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Users should avoid unofficial resources for such purposes and let their anti-malware products remove Vicious Panda's RATs and other software as appropriate.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Vicious Panda may trick users into sharing passwords or other information, such as by spoofing websites and services.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Vicious Panda uses either crafted e-mails or websites for circulating RTF documents containing information about Coronavirus or COVID-19, such as global distribution statistics or nationally-localized updates.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Vicious Panda's campaigns specialize in espionage with significant psychological manipulation for gaining access to targets, such as crafting fake Coronavirus help documents and websites.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://kcm.trellix.com/corporate/index?page=content&id=KB92636&locale=en_US",
+      "content": "Persistence, defense evasion, and execution were achieved using rundll32.exe, the Windows startup folder, and obfuscation.The Royal Road RTF Weaponizer tool was used to create the malicious documents.The threat actor behind the attack used the COVID-19 pandemic as a lure and infected victims with a remote access trojan.This Knowledge Base article discusses a specific threat that is being automatically tracked by Trellix Insights technology.This trojan can exfiltrate, create, move, and delete files and folders.Vicious Panda targeted the Mongolian public sector, using RTF attachments disguised as documents sent from the Mongolian Ministry of Foreign Affairs.",
+      "domain": "kcm.trellix.com",
+      "tokenized": [
+        {
+          "sent":"Persistence, defense evasion, and execution were achieved using rundll32.exe, the Windows startup folder, and obfuscation.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The Royal Road RTF Weaponizer tool was used to create the malicious documents.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The threat actor behind the attack used the COVID-19 pandemic as a lure and infected victims with a remote access trojan.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"This Knowledge Base article discusses a specific threat that is being automatically tracked by Trellix Insights technology.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "This trojan can exfiltrate, create, move, and delete files and folders.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Vicious Panda targeted the Mongolian public sector, using RTF attachments disguised as documents sent from the Mongolian Ministry of Foreign Affairs.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://kcm.trellix.com/corporate/index?page=content&id=KB92636&locale=en_US",
+      "content": "How Does the Vicious Panda Ransomware Work?The Vicious Panda attack is actually the second major Coronavirus (COVID-19) related malware campaign to come out of China in the past few weeks.The malicious attachment contains a remote access trojan (RAT) that can take control of computers.They urge every public sector entity and telco to be on alert over potential cyber threats, particularly anything that claims to be about coronavirus.To the point that state-sponsored Chinese hacking group Vicious Panda has started to spread their own malware through coronavirus.While there have been a number of cyber threats related to COVID-19, this appears to be the first one conducted by a state-sponsored hacking group against a foreign government.",
+      "domain": "kcm.trellix.com",
+      "tokenized": [
+        {
+          "sent":"How Does the Vicious Panda Ransomware Work?",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The Vicious Panda attack is actually the second major Coronavirus (COVID-19) related malware campaign to come out of China in the past few weeks.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The malicious attachment contains a remote access trojan (RAT) that can take control of computers.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"They urge every public sector entity and telco to be on alert over potential cyber threats, particularly anything that claims to be about coronavirus.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "To the point that state-sponsored Chinese hacking group Vicious Panda has started to spread their own malware through coronavirus.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"While there have been a number of cyber threats related to COVID-19, this appears to be the first one conducted by a state-sponsored hacking group against a foreign government.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": " https://research.checkpoint.com/2020/vicious-panda-the-covid-campaign/",
+      "content": "As we analyzed this campaign, in addition to the infrastructure used, we also noticed an\n interesting behavior by the attackers\n At a certain point, the C&C server 95.179.242[.]6 stopped serving the open directory listing.\nAt the final stage of the infection chain, after the appropriate command is received, the malicious\n loader downloads and decrypts a RAT module, also in the form of a DLL file, and loads it into\n memory.The RAT module appears to be a custom and unique malware, though it also includes some\n rather common core capabilities, listed below: At the beginning of our research, one of the attacker’s servers, which served the next stage\n malware, had directory listing enabled for a limited time.The article also explores the\n connections between these attacks and previous attacks related to the Enfal Trojan.\n The attackers updated their toolset from documents with macros and older RTF exploits to the\n latest variation of the “RoyalRoad” RTF exploit-builder observed in the wild.\n The threat actor operates the C&C server in a limited daily window, going online only for a few\n hours each day, making it harder to analyze and gain access to the advanced parts of the\n infection chain.\n",
+      "domain": "research.checkpoint.com",
+      "tokenized": [
+        {
+          "sent":"As we analyzed this campaign, in addition to the infrastructure used, we also noticed an\n interesting behavior by the attackers\n At a certain point, the C&C server 95.179.242[.]6 stopped serving the open directory listing.\n",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"At the final stage of the infection chain, after the appropriate command is received, the malicious\n loader downloads and decrypts a RAT module, also in the form of a DLL file, and loads it into\n memory.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The RAT module appears to be a custom and unique malware, though it also includes some\n rather common core capabilities, listed below: At the beginning of our research, one of the attacker’s servers, which served the next stage\n malware, had directory listing enabled for a limited time.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The article also explores the\n connections between these attacks and previous attacks related to the Enfal Trojan.\n ",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The attackers updated their toolset from documents with macros and older RTF exploits to the\n latest variation of the “RoyalRoad” RTF exploit-builder observed in the wild.\n ",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The threat actor operates the C&C server in a limited daily window, going online only for a few\n hours each day, making it harder to analyze and gain access to the advanced parts of the\n infection chain.\n",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

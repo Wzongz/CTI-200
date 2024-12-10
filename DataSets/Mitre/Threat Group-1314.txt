@@ -1,0 +1,5 @@
+Threat Group-1314 is an unattributed threat group that has used compromised credentials to log into a victim's remote access infrastructure. 
+Threat Group-1314 actors spawned shells on remote systems on a victim network to execute commands.
+Threat Group-1314 actors mapped network drives using net use.
+Threat Group-1314 actors used a victim's endpoint management platform, Altiris, for lateral movement.
+Threat Group-1314 actors used compromised domain credentials for the victim's endpoint management platform, Altiris, to move laterally.

@@ -1,0 +1,17 @@
+Axiom is a suspected Chinese cyber espionage group that has targeted the aerospace, defense, government, manufacturing, and media sectors since at least 2008. Some reporting suggests a degree of overlap between Axiom and Winnti Group but the two groups appear to be distinct based on differences in reporting on TTPs and targeting.
+Axiom has acquired dynamic DNS services for use in the targeting of intended victims.
+Axiom has used VPS hosting providers in targeting of intended victims.
+Axiom has compressed and encrypted data prior to exfiltration.
+Axiom has used large groups of compromised machines for use as proxy nodes.
+Axiom has collected data from a compromised network.
+Axiom has used steganography to hide its C2 communications.
+Axiom has used watering hole attacks to gain access.
+Axiom actors have been known to use the Sticky Keys replacement within RDP sessions to obtain persistence.
+Axiom has been observed using SQL injection to gain access to systems.
+Axiom has used exploits for multiple vulnerabilities including CVE-2014-0322, CVE-2012-4792, CVE-2012-1889, and CVE-2013-3893.
+Axiom has been known to dump credentials.
+Axiom has used spear phishing to initially compromise victims.
+Axiom has targeted victims with remote administration tools including RDP.
+Axiom has used RDP during operations.
+Axiom has used digital certificates to deliver malware.
+Axiom has used previously compromised administrative accounts to escalate privileges.

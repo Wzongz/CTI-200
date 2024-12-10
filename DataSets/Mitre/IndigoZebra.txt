@@ -1,0 +1,8 @@
+IndigoZebra is a suspected Chinese cyber espionage group that has been targeting Central Asian governments since at least 2014.
+IndigoZebra has established domains, some of which were designed to look like official government domains, for their operations.
+IndigoZebra created Dropbox accounts for their operations.
+IndigoZebra has compromised legitimate email accounts to use in their spearphishing operations.
+IndigoZebra has downloaded additional files and tools from its C2 server.
+IndigoZebra has acquired open source tools such as NBTscan and Meterpreter for their operations.
+IndigoZebra sent spearphishing emails containing malicious password-protected RAR attachments.
+IndigoZebra sent spearphishing emails containing malicious attachments that urged recipients to review modifications in the file which would trigger the attack.

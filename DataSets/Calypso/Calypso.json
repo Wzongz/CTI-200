@@ -1,0 +1,52 @@
+claim：A newly discovered APT group, dubbed Calypso after a custom malware RAT that it uses, has been targeting state institutions in six different countries since 2016.
+explain：A newly discovered APT group, dubbed Calypso after a custom malware RAT that it uses, has been targeting state institutions in six different countries since 2016. Government organizations in India (34 percent), Brazil and Kazakhstan (18 percent respectively), Russia and Thailand (12 percent respectively) and Turkey (6 percent) have all been successfully infiltrated at some point, according to analysts at Positive Technologies (PT), which first spotted the group in March. To that point, the typical modus operandi of the threat actors consists of infiltrating the network perimeter by exploiting a Windows SMB remote code-execution vulnerability (CVE-2017-0143) or by using stolen credentials. Once inside the network, the group injects a backdoor RAT program – the Calypso web shell – that it uses to execute commands and upload utilities and malware (including well-known tools like Mimikatz, and the NSA hacking tools EternalBlue and EternalRomance), all in an effort to move laterally. The goal is to reach endpoints on a targeted organization’s LAN and steal confidential data. The APT also uses a variety of legitimate administrative tools, which helps it stay under the radar, PT pointed out.“These attacks succeeded largely because most of the utilities the group uses to move inside the network are widely used by the specialists everywhere for network administration,” said Denis Kuvshinov, lead specialist in threat analysis at Positive Technologies, via email. “The group used publicly available utilities and exploit tools.” The Calypso RAT (it’s unclear whether this is named after the Greek goddess from the Odyssey, the fruit drink, the island backbeat familiar from music world or something else altogether) is a custom affair. It contains a dropper for first-stage infection, which then extracts a further payloads in the form of a Windows batch script (BAT) for installation. The BAT file contains variables that can be invoked to have it save files, modify services and modify registry keys. PT analysis showed that the dropper next executes shellcode, which provides the interface for communicating with the command-and-control (C2) server and for downloading various modules. Once the C2 connection is made, the shellcode sends the C2 information about the infected computer, via TCP and SSL (such as computer name, current date, OS version, 32-bit vs. 64-bit OS and CPU, and IP addresses on network interfaces and their MAC addresses). Calypso RAT next can execute a total of 12 commands in the form of modules, each of which is self-contained and has two communication pipelines: One for transmitting data from the module to C2, and the other for receiving data from C2. Each module has a unique ID assigned by C2. Among the commands are directions to launch three threads. “One is a heartbeat sending an empty packet to C2 every 54 seconds,” explained PT, in the analysis. “The other processes and executes commands from C2. As for the third thread, we could not figure out its purpose, because the lines implementing its functionality were removed from the code. All we can tell is that this thread was supposed to ‘wake up’ every 54 seconds, just like the first one.” In some attacks, the backdoor has also fetched executables, including the FlyingDutchman malware, which includes functions such as screenshot capture, remote shell, and file system operations. As for attribution, PT said that its forensics indicate that the discovered APT group is likely to be of Asian origin and is Chinese-speaking. The firm reached this conclusion because in some of the attacks, the hackers accidentally disclosed their real IP addresses, which belonged to Chinese providers. “The IP address belongs to China Telecom,” according to a PT analysis launched Thursday. “We believe the attackers could have been careless and set up the proxy server incorrectly, thus disclosing their real IP address. This is the first piece of evidence supporting the Asian origins of the group.” Further, the researchers noted that in one of the attacks the group used PlugX malware — traditionally used by many Chinese APT groups. Calypso also used the Byeby trojan, which was involved in the China-linked SongXY malware campaign in 2017. “The group has several successful hacks to its credit, but still makes mistakes allowing us to guess its origins,” PT concluded. “All data given here suggests that the group originates from Asia and uses malware not previously described by anyone…We keep monitoring the activities of Calypso closely and expect the group will attack again.”
+[
+    {
+	link：https://www.ptsecurity.com/ww-en/analytics/calypso-apt-2019/
+        "report_id": "report_0",
+        "sentences": [
+            "All data given here suggests that the group originates from Asia and uses malware not previously described by anyone.",
+            "Calypso RAT is malware unique to the group and will be analyzed in detail in the text that follows.",
+            "In one attack, the group used Calypso RAT, PlugX, and the Byeby trojan.",
+            "The attackers accessed the internal network of a compromised organization by using an ASPX web shell.",
+            "The attackers also left behind a number of system artifacts, plus traces in utility configurations and auxiliary scripts.",
+            "The attackers used the web shell to upload utilities 2 and malware, 3 execute commands, and distribute malware inside the network."
+        ]
+    },
+    {
+	link:https://www.ptsecurity.com/upload/corporate/ww-en/analytics/calypso-apt-2019-eng.pdf
+        "report_id": "report_1",
+        "sentences": [
+            "All data given here suggests that the group originates from Asia and uses malware not \npreviously described by anyone.",
+            "Calypso RAT is malware \nunique to the group and will be analyzed in detail in the text that follows.\n",
+            "In one attack, the group used Calypso RAT, PlugX, and the Byeby trojan.",
+            "The attackers accessed the internal network of a compromised organization by using an ASPX \nweb shell.",
+            "The attackers also left behind a number of system artifacts, plus traces in utility configurations \nand auxiliary scripts.",
+            "The attackers used the web shell to upload utilities1\n and malware,2 execute commands, and dis\u0002tribute malware inside the network."
+        ]
+    },
+    {
+	link：https://www.recordedfuture.com/blog/chinese-group-calypso-exploiting-microsoft-exchange749830
+        "report_id": "report_2",
+        "sentences": [
+            "Beginning on March 1, 2021, Recorded Future’s Insikt Group identified a large increase in victim communications to PlugX command and control (C2) infrastructure publicly attributed to the suspected Chinese state-sponsored group Calypso APT.",
+            "ESET’s findings indicate that the vulnerabilities began to be exploited by additional Chinese activity groups, including Tick, LuckyMouse, and Calypso APT, in late February and early March.",
+            "In this activity, the group was identified dropping web shells in the following locations following exploitation:Using this web shell access, Calypso APT was then identified loading the aforementioned PlugX and Whitebird malware samples through DLL search-order hijacking using legitimate executables.",
+            "Our observations align with recent reporting by ESET in which the group was identified targeting vulnerable Exchange servers to deploy a web shell and ultimately load the PlugX malware post-exploitation.",
+            "The identified cluster is outlined in Table 1 below:Examining the PlugX cluster allowed us to make the following high-level observations regarding Calypso APT’s infrastructure tactics, techniques, and procedures (TTPs):Insikt Group identified the following malware samples linked to the identified infrastructure, 2 of which were listed within ESET’s reporting.",
+            "This indicates the group likely had access to the exploit as a zero day prior to Microsoft’s disclosure, corroborating a similar assessment made by ESET.Insikt Group has been tracking a cluster of PlugX C2 servers and related infrastructure that overlaps with public reporting on Calypso APT by PTSecurity and ESET."
+        ]
+    },
+    {
+	link：https://st.drweb.com/static/new-www/news/2022/march/telecom_research_en.pdf
+        "report_id": "report_3",
+        "sentences": [
+            "A hacker group compromised a telecommunications company's network more than two years ago.",
+            "Based on the tools, methods, and infrastructure used, we conclude that the Calypso APT hacker group is behind the attack.",
+            "Because of the hackers' mistake, we got a unique opportunity to study the lists of victims and find out what backdoor management tools were used.",
+            "Command and control server for BackDoor.",
+            "For several years, Backdoor.PlugX.93 and BackDoor.Whitebird.30, the Fast Reverse Proxy (FRP) utilities, and RemCom have been the main attackers' tools.",
+            "It allows hackers to remotely launch applications, update the backdoor configuration, download and upload files."
+        ]
+    }
+]

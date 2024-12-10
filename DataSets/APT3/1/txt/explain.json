@@ -1,0 +1,46 @@
+[
+    {
+        "report_id": "report_0",
+        "sentences": [
+            "In this campaign, the group sent spear phishing emails containing malicious documents that led to the installation of the UPPERCUT backdoor.",
+            "Once the password (delivered in the body of the email) is entered, the users are presented with a document that will request users to enable the malicious macro, as shown in Figure 3.",
+            "Several threat actors leverage the technique of using Windows certutil.exe for payload decoding, and APT10 continues to employ this technique.",
+            "The attack starts with Microsoft Word documents containing a malicious VBA macro being attached to spear phishing emails.",
+            "This backdoor is well-known in the security community as ANEL, and it used to come in beta or RC (release candidate) until recently.",
+            "This was likely included to help the attackers understand the problem if the backdoor is unable to receive a response (Figure 9)."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "sentences": [
+            "Among the government targets of the hacking campaign were the NASA Goddard Space Centre and Jet Propulsion Laboratory and the US Department of Energy’s Lawrence Berkeley National Laboratory, the indictment said.",
+            "Beijing responded to the charges by accusing Washington of cyber hacking, but what do we actually know about the case?APT10 – or Advanced Persistent Threat 10 – is the name given to a group of Chinese hackers first identified by US cybersecurity firm FireEye.",
+            "Cybersecurity analysts have been following the activities of the alleged hackers for many years, but the first public reference to APT10 was made by FireEye in a 2013 report.",
+            "In 2017, PwC’s cybersecurity practice and British multinational defence company BAE Systems published a report, in cooperation with Britain’s National Cyber Security Centre, that claimed to have uncovered a hacking campaign – “Operation Cloud Hopper” – led by APT10.",
+            "More recently, beginning in or about 2014, APT10 engaged in an intrusion campaign to obtain unauthorised access to the computer networks of managed service providers (MSPs) for businesses and governments around the world.",
+            "Widely known within the cybersecurity community, the group is one of several that share the “APT” tag, indicating their willingness to pursue targets over long periods of time."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "sentences": [
+            "Falcon Intelligence recently independently conducted detailed analysis of the RedLeaves malware used to target numerous Japanese defense groups and found it was directly sourced from Trochilus code, but it has undergone several evolutions and contains prefixes suggesting it could also be used to target Russia and the DPRK.",
+            "For more information on how to incorporate intelligence on threat actors like STONE PANDA into your security strategy, please visit theFalcon Intelligence product page.",
+            "However, fisherxp’s account on popular Chinese technology forum 51CTO is still active and shows that he has downloaded not only the open-source DarkComet RAT and numerous password cracking tools, but more importantly, several favorite tools used by a plethora of known Chinese cyber adversaries including Gh0st RAT 3.6, zxarps (an ARP-spoofing tool by legacy hacker LZX), and lcx.exe (a port-forwarding tool by legacy hacker LCX)",
+            "However, it is important to note that such public revelations often force these actors to cease operations, improve their operational security (OPSEC), and then return stronger than before.",
+            "Many of these adversaries have begun targeting supply chain and upstream providers to establish a potential platform for future operations and enable the collection of larger sets of data.",
+            "second government document lists Huaying Haitai as the co-organizer of a Network Security Attack and Defense competition with the Ministry of Industry and Information Technology’s (MIIT) national training entity, NSACE ."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "sentences": [
+            "Both of the loader’s variants and their various payloads that we analyzed share similar Tactics, Techniques, and Procedures (TTPs) and code associated with APT10.Although they deliver different payloads to the victim's machine, both variants drop the following files beforehand:jjs.exe is a JVM-based implementation of a javascript engine as part of the Java platform developed by Oracle, but in this case it served as a loader for the malware.",
+            "In April 2019, enSilo detected what it believes to be new activity by Chinese cyber espionage group APT10.",
+            "In an attempt to generate noise around allocation and release of memory by the malware, the authors wrapped it with dummy calls to GetForegroundWindow API function, as can be seen in Figure 7.This sample shares some similarities to the Paranoid PlugX variant.",
+            "The variants discovered by enSilo are previously unknown and deploy malware that is unique to the threat actor.",
+            "This can indicate that these samples may be a part of a testing environment or a short-lived attack that is already finished.",
+            "Towards the end of April 2019, we tracked down what we believe to be new activity by APT10, a Chinese cyber espionage group."
+        ]
+    }
+]

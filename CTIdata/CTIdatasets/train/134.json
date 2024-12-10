@@ -1,0 +1,142 @@
+{
+    "event_id": "134",
+    "claim": "Shifting in the Wind: WINDSHIFT Attacks Target Middle Eastern Governments",
+    "original_label": "true",
+    "label": "true",
+    "explain": "In August of 2018, DarkMatter released a report entitled “In the Trails of WINDSHIFT APT”, which unveiled a threat actor with TTPs very similar to those of Bahamut. Subsequently, two additional articles (here and here) were released by Objective-See which provide an analysis of some validated WINDSHIFT samples targeting OSX systems. Pivoting on specific file attributes and infrastructure indicators, Unit 42 was able to identify and correlate additional attacker activity and can now provide specific details on a targeted WINDSHIFT attack as it unfolded at a Middle Eastern government agency.The following is a summary of observed WINDSHIFT activity which targeted a Middle Eastern government agency:The first attack occurred in early January of 2018 with an inbound WINDTAIL sample (the backdoor family used by WINDSHIFT) originating from the remote IP address 109.235.51[.]110 to a single internal IP address within the government agency. As per the timeline in Figure 2, at the time this event occurred, the IP address 109.235.51[.]110 was associated with the domain flux2key[.]com, a known WINDSHIFT domain. Upon further analysis, Unit 42 determined the sample’s corresponding C2 server IP address was 109.235.51[.]153. At the time this event occurred, that IP was associated with the domain string2me[.]com, which is a known WINDSHIFT domain. While Unit 42 does not have any insight into the attempted infection methodology in this case, the actor’s TTPs would suggest that spearphishing was almost certainly involved. After the initial infection attempt, several additional WINDTAIL samples from the same external IP address, 109.235.51[.]110, were directed at the same internal IP address from January through May of 2018 (see Figure 2 for additional details). All related WINDTAIL samples were Mac OSX app bundles in zip archives, which is consistent with WINDSHIFT TTPS. One sample in particular, named “mcworker.zip” (SHA256: e0fdcb5e0215f9fae485fbfcd615c79b85806827e461bca2e1c00c82e83281dc) deserves particular attention. Upon further analysis, Unit 42 determined its C2 server IP address was 185.25.50[.]189. According to OSINT, at the time of the activity, the IP address 185.25.50[.]189 had one domain resolution: domforworld[.]com.By analyzing this attack in detail, Unit 42 was able to gain valuable insight into the real-world TTPs of a known threat actor group. Of particular importance are the following findings: Unit 42 assesses with high confidence that both the IP address 185.25.50[.]189 and the domain domforworld[.]com is associated with WINDSHIFT activity. Additionally, the IP addresses 109.235.51[.]110 and 109.235.51[.]153, corresponding to the previously validated WINDSHIFT domains flux2key[.]com and string2me[.]com, respectively, were also observed in use during this campaign. The attacker-owned IP address 109.235.50[.]191 was subsequently identified in a Norman Security report from as being associated with Hangover threat actor activity, and both IP addresses 109.235.51[.]110 and 109.235.50[.]191 shared the name “XENEUROPE” within their organizational registrant WHOIS information. This organizational name is tied to a number of IP addresses of Hangover-associated infrastructure as per the Norman report. Collectively, this evidence serves to strengthen the implication from other security researchers that Operation Hangover and WINDSHIFT activity are possibly related. Based on Unit 42’s observations of multiple inbound WINDTAIL samples directed at the same internal IP address, Unit 42 assesses with moderate confidence that the attackers were not able to establish persistence within the targeted environment. While Unit 42 cannot definitively determine the attempted delivery vector of these samples, WINDTAIL TTPs would indicate that it was likely standard spearphishing chicanery. One of two of the Mac OSX developer certificates tied to the WINDTAIL samples shown in DarkMatter’s original presentation, Caren Van (4F9G49SUXB), was also tied to the WINDTAIL samples within this blog. Additionally, a newly identified certificate, warren portman (95RKE2AA8F), was found to be directly affiliated with WINDSHIFT malware.Palo Alto Networks customers are protected from this threat in the following ways: AutoFocus customers can track these samples with the Windshift tag. WildFire detects all files mentioned in this report with malicious verdicts.\n\n\n",
+    "reports": [
+        {
+            "link": "https://socprime.com/news/windshift-apt-attacks-mac-users/",
+            "content": "Attackers leverage WindTale (A and B) backdoor to download and install WindTape malware, whose functionality is similar to the Komplex OSX trojan used by Fancy Bear group. If the attack fails, hackers from WindShift APT wait half a year before the next attempt. The expert suggests that WindShift APT started using Winddrop malware to infect Windows users in May 2018. The primary function of WindTape trojan is to take screenshots and transfer them to attackers’ server. The report published by the DarkMatter expert describes how WindShift carefully plans operations and collects information about each of their victims for up to one year. WindShift APT group targets employees of government agencies and critical infrastructure companies in the Middle East.",
+            "domain": "socprime.com",
+            "tokenized": [
+                {
+                    "sent": "Attackers leverage WindTale (A and B) backdoor to download and install WindTape malware, whose functionality is similar to the Komplex OSX trojan used by Fancy Bear group.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "If the attack fails, hackers from WindShift APT wait half a year before the next attempt.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The expert suggests that WindShift APT started using Winddrop malware to infect Windows users in May 2018.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The primary function of WindTape trojan is to take screenshots and transfer them to attackers’ server.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The report published by the DarkMatter expert describes how WindShift carefully plans operations and collects information about each of their victims for up to one year.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "WindShift APT group targets employees of government agencies and critical infrastructure companies in the Middle East.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.enigmasoftware.com/windshiftapt-removal/",
+            "content": "Experts suggest that some of the targets WindShift hit were observed for months before the group began any actual hacking operations. If the target doesn’t fall for the trick, then WindShift moves on to hacking tools to get the information they want. Outside of using publicly available tools, Windshift has created several custom hacking tools and threats, such as the following: WindDrop – A Trojan downloader designed for Windows systems, which was first spotted in 2018. WindShift APT is undoubtedly one of the more unusual hacking groups around. WindShift can control the internet connections of compromised systems and send them to other websites instead. WindShift is what is considered an APT (Advanced Persistent Threat).",
+            "domain": "www.enigmasoftware.com",
+            "tokenized": [
+                {
+                    "sent": "Experts suggest that some of the targets WindShift hit were observed for months before the group began any actual hacking operations.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "If the target doesn’t fall for the trick, then WindShift moves on to hacking tools to get the information they want.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Outside of using publicly available tools, Windshift has created several custom hacking tools and threats, such as the following: WindDrop – A Trojan downloader designed for Windows systems, which was first spotted in 2018.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "WindShift APT is undoubtedly one of the more unusual hacking groups around.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "WindShift can control the internet connections of compromised systems and send them to other websites instead.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "WindShift is what is considered an APT (Advanced Persistent Threat).",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://objective-see.org/blog/blog_0x3B.html/",
+            "content": "A Forbes article “Hackers Are Exposing An Apple Mac Weakness In Middle East Espionage” by Thomas Brewster, also covered Karim’s research, and noted that: “[the APT] targeted specific individuals working in government departments and critical infrastructure across the Middle East” To me, besides WindShift’s targets, the most intriguing aspect of this APT group was (is?). However, my rather insatiable technical cravings weren’t fully satisfied, so I decided to dig deeper!My blog post, “Remote Mac Exploitation Via Custom URL Schemes”, describes the technical details of how WindShift (ab)used custom URL schemes to infect macOS systems. In his presentation, “In the Trails of WindShift APT”, he detailed a new APT group (WindShift), who engaged in highly-targeted cyber-espionage campaigns. In his talk, Karim provided a good overview of the technique utilized by WindShift to infect macOS computers, and the malware they then installed (OSX.WindTail. The C&C domains (string2me.com and flux2key.com) are both WindShift domains, as noted by Karim in an interview with itWire “the domains string2me.com and flux2key.com identified as associated with these attacks”.thus the malware appears to remain rather inactive. WindShift is an intriguing APT, selectively targeting individuals in the Middle East.",
+            "domain": "objective-see.org",
+            "tokenized": [
+                {
+                    "sent": "A Forbes article “Hackers Are Exposing An Apple Mac Weakness In Middle East Espionage” by Thomas Brewster, also covered Karim’s research, and noted that: “[the APT] targeted specific individuals working in government departments and critical infrastructure across the Middle East” To me, besides WindShift’s targets, the most intriguing aspect of this APT group was (is?)",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "However, my rather insatiable technical cravings weren’t fully satisfied, so I decided to dig deeper!My blog post, “Remote Mac Exploitation Via Custom URL Schemes”, describes the technical details of how WindShift (ab)used custom URL schemes to infect macOS systems.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In his presentation, “In the Trails of WindShift APT”, he detailed a new APT group (WindShift), who engaged in highly-targeted cyber-espionage campaigns.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In his talk, Karim provided a good overview of the technique utilized by WindShift to infect macOS computers, and the malware they then installed (OSX.WindTail.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The C&C domains (string2me.com and flux2key.com) are both WindShift domains, as noted by Karim in an interview with itWire “the domains string2me.com and flux2key.com identified as associated with these attacks”.thus the malware appears to remain rather inactive.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "WindShift is an intriguing APT, selectively targeting individuals in the Middle East.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://attack.mitre.org/groups/G0112/",
+            "content": "Windshift has included contact list exfiltration in the malicious apps deployed as part of Operation BULL.Windshift has included SMS message exfiltration in the malicious apps deployed as part of Operation BULL and Operation ROCK.Windshift has installed malicious MDM profiles on iOS devices as part of Operation ROCK.Windshift has included system information enumeration in the malicious apps deployed as part of Operation BULL and Operation ROCK.Windshift has included video recording in the malicious apps deployed as part of Operation BULL.Windshift has deployed anti-analysis capabilities during their Operation BULL campaign. Windshift has included file enumeration in the malicious apps deployed as part of Operation BULL and Operation ROCK.Windshift has included keylogging capabilities as part of Operation ROCK.Windshift has included location tracking capabilities in the malicious apps deployed as part of Operation BULL and Operation ROCK.Windshift has encrypted application strings using AES in ECB mode and Blowfish, and stored strings encoded in hex during Operation BULL. Windshift has used compromised websites to register custom URL schemes on a remote system. Windshift has used malware to identify the computer name of a compromised host. Windshift has used malware to identify the username on a compromised host. Windshift has used tools to deploy additional payloads to compromised hosts.",
+            "domain": "attack.mitre.org",
+            "tokenized": [
+                {
+                    "sent": "Windshift has included contact list exfiltration in the malicious apps deployed as part of Operation BULL.Windshift has included SMS message exfiltration in the malicious apps deployed as part of Operation BULL and Operation ROCK.Windshift has installed malicious MDM profiles on iOS devices as part of Operation ROCK.Windshift has included system information enumeration in the malicious apps deployed as part of Operation BULL and Operation ROCK.Windshift has included video recording in the malicious apps deployed as part of Operation BULL.Windshift has deployed anti-analysis capabilities during their Operation BULL campaign.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Windshift has included file enumeration in the malicious apps deployed as part of Operation BULL and Operation ROCK.Windshift has included keylogging capabilities as part of Operation ROCK.Windshift has included location tracking capabilities in the malicious apps deployed as part of Operation BULL and Operation ROCK.Windshift has encrypted application strings using AES in ECB mode and Blowfish, and stored strings encoded in hex during Operation BULL.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Windshift has used compromised websites to register custom URL schemes on a remote system.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Windshift has used malware to identify the computer name of a compromised host.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Windshift has used malware to identify the username on a compromised host.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Windshift has used tools to deploy additional payloads to compromised hosts.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        }
+    ]
+}

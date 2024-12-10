@@ -1,0 +1,141 @@
+{
+  "event_id": "117",
+  "claim": "Operationally consistent with the remit and assessed objectives of GRU-led operations throughout Russia’s invasion of Ukraine, Cadet Blizzard has engaged in focused destructive attacks, espionage, and information operations in regionally significant areas.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Security researchers at Microsoft are publicly outing a new APT group linked to Russia’s General Staff Main Intelligence Directorate (GRU), warning that the threat actor has worked on destructive wiper malware attacks that hit organizations in Ukraine. A new report from Redmond’s threat intelligence team tagged the group as ‘Cadet Blizzard’ and documented signs and evidence that adds clarity to the scope and usage of malware in a wartime environment. “[The] emergence of a novel GRU affiliated actor, particularly one which has conducted destructive cyber operations likely supporting broader military objectives in Ukraine, is a notable development in the Russian cyber threat landscape,” Microsoft said, noting that Cadet Blizzard produced the infamous WhisperGate wiper malware that wiped the Master Boot Record (MBR) of computers in Ukraine. Microsoft is also, for the first time, linking the Russian APT group to defacements on multiple Ukrainian organization websites and the hack-and-leak Telegram channel known as “Free Civilian”. The company said its threat intel team has been tracking the group since the release of the WhisperGate wiper in January 2022 and believes it was operational in some capacity since 2020. “Operationally consistent with the remit and assessed objectives of GRU-led operations throughout Russia’s invasion of Ukraine, Cadet Blizzard has engaged in focused destructive attacks, espionage, and information operations in regionally significant areas,” Microsoft said. Primary targeted sectors include government organizations and information technology providers in Ukraine and even organizations in Europe and Latin America. The researchers found that the actor compromises and maintains a foothold on affected networks for months, often exfiltrating data prior to disruptive actions. Microsoft described some of Cadet Blizzard’s work as “haphazard” and said it discovered evidence that at least one Russian private sector organization has materially supported the hackers by providing operational support during the WhisperGate destructive attack. “Cadet Blizzard has repeatedly targeted information technology providers and software developers that provide services to government organizations using a supply chain “compromise one, compromise many” technique,” Microsoft noted.\n\n\n",
+  "reports": [
+    {
+      "link": "https://therecord.media/charming-kitten-targeted-israel-cyberattacks/",
+      "content": "An Iranian hacking group targeted organizations in Israel’s transportation, logistics and technology sectors last month amid an uptick in Iranian cyber activity since the start of Israel’s war with Hamas. Other cybersecurity companies have recently detected attempted cyberattacks by Iran-linked groups on Israeli targets, including education and tech organizations and other unspecified entities. Researchers at the cybersecurity company CrowdStrike’s Counter Adversary Operations attributed the activity to Imperial Kitten, an Iranian advanced persistent threat (APT) group, in a report published Thursday. The CrowdStrike report came as Microsoft researchers cautioned that Iran’s information operations might be inflating the efficacy of a few publicly reported cybersecurity incidents in Israel since the war began October 7. They are separate hacking groups. While the activity of Iranian hacker groups targeting Israel has been in headlines over the last month, their cyber operations in response to the war may not be as coordinated or impactful as they claim, researchers at Microsoft said Thursday.",
+      "domain": "therecord.media",
+      "tokenized": [
+        {
+          "sent":"An Iranian hacking group targeted organizations in Israel’s transportation, logistics and technology sectors last month amid an uptick in Iranian cyber activity since the start of Israel’s war with Hamas.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Other cybersecurity companies have recently detected attempted cyberattacks by Iran-linked groups on Israeli targets, including education and tech organizations and other unspecified entities.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Researchers at the cybersecurity company CrowdStrike’s Counter Adversary Operations attributed the activity to Imperial Kitten, an Iranian advanced persistent threat (APT) group, in a report published Thursday.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The CrowdStrike report came as Microsoft researchers cautioned that Iran’s information operations might be inflating the efficacy of a few publicly reported cybersecurity incidents in Israel since the war began October 7.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"They are separate hacking groups.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "While the activity of Iranian hacker groups targeting Israel has been in headlines over the last month, their cyber operations in response to the war may not be as coordinated or impactful as they claim, researchers at Microsoft said Thursday.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://securityboulevard.com/2023/06/the-week-in-security-ukraine-apt-attacks-tied-to-russia-critical-eye-placed-on-ai-generated-software/",
+      "content": "In this case, Cadet Blizzard created WhisperGate, a wiper malware designed to delete the master boot record (MBR) from targeted Ukrainian computers, with sign-off and support from Russia’s GRU. Malware wiper strains such as HermeticWiper, which have been a common attack method used in the Russo-Ukrainian War, perform exactly as their name suggests: Once this kind of malware infects a computer system, it will permanently wipe data and services from the network, causing massive disruption to targeted organizations. Microsoft researchers also believe that Cadet Blizzard and, by extension, the Russian government are going after software supply chains by targeting software developers, using a “compromise one, compromise many” technique. Not only has Cadet Blizzard been linked to this malware wiper campaign targeting Ukraine, but the APT group has also been linked by Microsoft to other malicious efforts, such as “destructive attacks, espionage, and information operations” in Ukraine, greater Europe, and Latin America that target government organizations and information technology providers. These findings from Microsoft demonstrate that the Russian government has been prioritizing offensive attacks in both the cyber and kinetic fronts of the war and has been willing to work with skilled cybercriminals to make these attacks happen. This sets a precedent for how cyberwarfare is conducted, which in the Russo-Ukrainian War has consisted of Russian government officials allowing and enabling APT groups to conduct malicious campaigns pointed at the nation-state’s adversaries.",
+      "domain": "securityboulevard.com",
+      "tokenized": [
+        {
+          "sent":"In this case, Cadet Blizzard created WhisperGate, a wiper malware designed to delete the master boot record (MBR) from targeted Ukrainian computers, with sign-off and support from Russia’s GRU.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Malware wiper strains such as HermeticWiper, which have been a common attack method used in the Russo-Ukrainian War, perform exactly as their name suggests: Once this kind of malware infects a computer system, it will permanently wipe data and services from the network, causing massive disruption to targeted organizations.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Microsoft researchers also believe that Cadet Blizzard and, by extension, the Russian government are going after software supply chains by targeting software developers, using a “compromise one, compromise many” technique.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Not only has Cadet Blizzard been linked to this malware wiper campaign targeting Ukraine, but the APT group has also been linked by Microsoft to other malicious efforts, such as “destructive attacks, espionage, and information operations” in Ukraine, greater Europe, and Latin America that target government organizations and information technology providers.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "These findings from Microsoft demonstrate that the Russian government has been prioritizing offensive attacks in both the cyber and kinetic fronts of the war and has been willing to work with skilled cybercriminals to make these attacks happen.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "This sets a precedent for how cyberwarfare is conducted, which in the Russo-Ukrainian War has consisted of Russian government officials allowing and enabling APT groups to conduct malicious campaigns pointed at the nation-state’s adversaries.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://medium.com/@CipherStructor/apt-groups-leading-players-of-cyber-threats-672b5ca4fcd8/",
+      "content": "5. Motivations of APT Groups Advanced Persistent Threats (APTs) have emerged as the leading players in today’s complex cyber threat landscape. 6. Goals of APT Groups Advanced Persistent Threats (APTs) emerge as the leading actors in cyber attacks. APT groups infect target systems with malware for information gathering, spying, or disabling systems. In today’s complex cyber threat landscape, groups called Advanced Persistent Threats (APTs) have emerged as the leading players in cyber attacks. Malware: This group operates for cyber espionage and political manipulation.",
+      "domain": "medium.com",
+      "tokenized": [
+        {
+          "sent":"5. Motivations of APT Groups Advanced Persistent Threats (APTs) have emerged as the leading players in today’s complex cyber threat landscape.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"6. Goals of APT Groups Advanced Persistent Threats (APTs) emerge as the leading actors in cyber attacks.",
+          "is_evidence": 0
+        },
+        {
+          "sent":  "APT groups infect target systems with malware for information gathering, spying, or disabling systems.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In today’s complex cyber threat landscape, groups called Advanced Persistent Threats (APTs) have emerged as the leading players in cyber attacks.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Malware:",
+          "is_evidence": 0
+        },
+        {
+          "sent": "This group operates for cyber espionage and political manipulation.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.securityweek.com/microsoft-pins-outlook-zero-day-attacks-on-russian-actor-offers-detection-script/",
+      "content": "By reviewing additional context around what we know of this attacker communication, this query can be narrowed significantly. In researching this white paper, the majority of intelligence and incident reports reviewed described phishing and malicious document-related tactics being utilized by CARBANAK actors as a method of initial compromise. Included are the details regarding the observed intrusion vector, entrenchment techniques, actions-on-objective, lateral movement tools and methods, unique malicious files, and behavioral indicators utilized in the identification, tracking and response of this actor group. The CARBANAK attackers conducted actions through a variety of networkcommunication methods. The incident discussed in this report illustrates the dangers present within this approach once attackers begin utilizing these systems against organizations. The intelligence surrounding recent CARBANAK incidents indicate that phishing attacks have been the group’s primary method of initial compromise.",
+      "domain": "www.securityweek.com",
+      "tokenized": [
+        {
+          "sent":"From the MSRC’s new documentation: “To determine if your organization was targeted by actors attempting to use this vulnerability, Microsoft is providing documentation and a script at https://aka.ms/CVE-2023-23397ScriptDoc.Organizations should review the output of this script to determine risk.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"However, in a nod to the severity of the issue, the Microsoft Security Response Center (MSRC) published mitigation guidance and offered a CVE-2023-23397 script to help with audit and cleanup.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Microsoft’s threat intelligence team is blaming a “Russian-based threat actor” for newly disclosed in-the-wild attacks targeting a critical vulnerability in its flagship Microsoft Outlook software.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "One day after sounding an alarm for live exploitation of the Outlook security flaw, Microsoft said it traced the exploit to a Russian APT targeting a limited number of organizations in government, transportation, energy, and military sectors in Europe.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The company has struggled to contain attackers bypassing the SmartScreen technology that has been fitted into Microsoft Edge and the Windows operating system to help protect users from phishing and social engineering malware downloads.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The notorious Magniber ransomware operation has been observed exploiting the SmartScreen bypass technique, prompting multiple attempts by Microsoft to mitigate the issue.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

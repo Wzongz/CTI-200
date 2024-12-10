@@ -1,0 +1,52 @@
+[
+    "claim":"A previously undocumented attack group is using both custom and off-the-shelf malware to target IT providers in Saudi Arabia in what appear to be supply chain attacks with the end goal of compromising the IT providers’ customers.",
+    "explain":"Since 2022, Yellow Liderc has been compromising legitimate websites and using them to insert malicious JavaScript. The JavaScript fingerprints unwitting visitors, capturing details such as their location, device, time of visit, and so on. If a visitor matches a specific profile — in this case, entities along the Mediterranean associated with maritime, logistics, and shipping — they will be served further malware. The malware in question is "IMAPLoader," a dynamic link library (DLL) written in .NET, which uses email as a means of command-and-control (C2) communication. This new sample is in most ways similar in function to Yellow Liderc's previous loaders. It distinguishes itself, however, in its advanced method of infection: a technique known as "appdomain manager injection." First demonstrated by a proof-of-concept (PoC) called "GhostLoader" in 2020, hackers or red teamers can use it to circumvent tools designed to detect a DLL or executable being loaded onto a Windows machine. After slyly injecting itself on a host computer deemed of high value, IMAPLoader communicates with the attackers' Russian-hosted, very American-sounding email addresses — leviblum[@]yandex.com and brodyheywood[@]yandex — where further payloads lie.Anyone who tries to defend against Yellow Liderc simply by accounting for this method of injection, or this malware, will end up falling short. The group has been known to cycle through and combine various tactics, techniques, and procedures over the years. "What we've seen more often and most recently is reconnaissance emails," says Joshua Miller, senior threat researcher at Proofpoint. Since 2021, he says, it has used the open source red-team tool GoPhish to insert malicious links into fake newsletters impersonating legitimate organizations. But it's also got more, weirder strategies in its arsenal. In 2021, Proofpoint described an elaborate, yearslong ruse they ran, posing as a woman named Marcella Flores, in order to phish a specific employee at an aerospace company. Recently, Proofpoint observed a unique cluster within the same APT targeting workers and organizations in the healthcare, technology, and the nuclear division of a European energy company. According to PwC, it remains an ongoing threat not just to all of these industries and regions thus far named, but also the automotive, defense, and IT industries, in places as far and wide as the Middle East, South Asia, and North and South America. Perhaps the only consistent elements of a Yellow Liderc attack are the minor discrepancies between the email sender, newsletter, or website one expects, and the actual sender or experience they're delivered. "Look for any unusual network traffic," Miller advises, and pay attention to suspicious emails. "Checking who's sending an email is important. I know that we say that all the time, but it's true and important for this sort of case."",
+    {
+        "report_id": "report_0",
+        "link":"https://www.bitdefender.com/blog/hotforsecurity/facebook-stopped-tortoiseshell-apt-from-using-their-platform-and-disrupted-their-operations/",
+        "sentences": [
+            "But the group also deployed malware that seems to be custom-built or from other sources.",
+            "Tortoiseshell also used other malware families developed by the other groups, including Mahak Rayan Afraz (MRA), an IT company in Tehran with ties to the Islamic Revolutionary Guard Corps (IRGC).",
+            "“Among these tools, they continued to develop and modify their malware for Windows known as Syskit, which they’ve used for years.”",
+            "“In an apparent expansion of malicious activity to other regions and industries, our investigation found them targeting military personnel and companies in the defense and aerospace industries primarily in the US, and to a lesser extent in the UK and Europe,” saidFacebook.",
+            "“This group used custom malware tools we believe to be unique to their operations, including full-featured remote-access trojans, device and network reconnaissance tools and keystroke loggers,” Facebook said.",
+            "“This group used various malicious tactics to identify its targets and infect their devices with malware to enable espionage.”"
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/tortoiseshell-apt-supply-chain",
+        "sentences": [
+            "It runs several commands on the infected machine to gather information about it and also the Firefox data of all users of the machine.",
+            "Supply chain attacks, which exploit third-party services and software to compromise a final target, take many forms, including hijacking software updates and injecting malicious code into legitimate software.",
+            "The malware collects and sends the machine’s IP address, operating system name and version, and Mac address to the C&C server using the URL in the Sendvmd registry key mentioned above.",
+            "This access may give them the ability to send malicious software updates to target machines, and may even provide them with remote access to customer machines.",
+            "This indicates that the attackers likely compromised a web server, and then used this to deploy malware onto the network.",
+            "This is an unusually large number of computers to be compromised in a targeted attack."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://securityaffairs.com/146625/apt/iranian-tortoiseshell-israeli-logistics-industry.html",
+        "sentences": [
+            "Attackers employed four domains impersonating the legitimate JavaScript framework jQuery by using “jQuery” in their domain names.",
+            "ClearSky Cyber Security uncovered a watering hole attack on at least eight Israeli websites belonging to shipping, logistics, and financial services companies and attributed them with low confidence to the Iran-linked APT group Tortoiseshell (aka TA456 or Imperial Kitten).",
+            "The collected data were transferred into a JSON file via a POST request to a website under the control of the threat actor.",
+            "The malicious JavaScript employed in the watering hole attacks collects data from visitors, including the user’s OS language, IP address, screen resolution, as well as the URL from which the website was visited.",
+            "The threat actors used a script on the compromised websites to collect preliminary user information.",
+            "“Using the domain cdnpakage[.]com, additional infected domains were found: tel-bar.co[.]il, aviram.co[.]il.”he attribution to an Iran-linked APT is based on the following evidence: C2 Attribution – The domain jquery-stack[.]online is attributed to TA456 (Tortoiseshell)."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://ics-cert.kaspersky.com/publications/reports/2023/09/25/apt-and-financial-attacks-on-industrial-organizations-in-h1-2023/",
+        "sentences": [
+            "Malwarebytes researchers have also been tracking this activity, dubbing the threat actor RedStinger, responsible for espionage operations against both pro-Ukrainian and pro-Russian targets since 2020.",
+            "On the one hand, they use callback phishing to trick victims into installing remote desktop malware.",
+            "The campaign abuses a Windows Defender executable to perform DLL side-loading, while also exploiting a vulnerable driver to disable security products installed on the hosts via a Bring Your Own Vulnerable Driver (BYOVD) attack.",
+            "The malware leverages Inter-Process Communication (IPC) channels internally and employs a diverse range of commands, enabling it to establish proxy chains across various protocols, including within the victim’s environment.",
+            "They then use command line and legitimate software binaries available on the compromised systems to find information on the system, discover additional devices on the network, and exfiltrate data.",
+            "When executed, the compromised application functions normally, but covertly collects victim information and transmits it to the C2 servers."
+        ]
+    }
+]

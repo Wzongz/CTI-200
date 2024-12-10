@@ -1,0 +1,52 @@
+[
+    "claim":"Threat Group-3390 is a Chinese threat group that has extensively used strategic Web compromises to target victims, which  has been active since at least 2010 and has targeted organizations in the aerospace, government, defense, technology, energy, manufacturing and gambling/betting sectors.",
+    "explain":"Cybersecurity researchers have uncovered an espionage campaign that has targeted a national data center of an unnamed central Asian country in order to conduct watering hole attacks. The campaign is believed to be active covertly since fall 2017 but was spotted in March by security researchers from Kaspersky Labs, who have attributed these attacks to a Chinese-speaking threat actor group called LuckyMouse. LuckyMouse, also known as Iron Tiger, EmissaryPanda, APT 27 and Threat Group-3390, is the same group of Chinese hackers who was found targeting Asian countries with Bitcoin mining malware early this year.The group has been active since at least 2010 and was behind many previous attack campaigns resulting in the theft of massive amounts of data from the directors and managers of US-based defense contractors. This time the group chose a national data center as its target from an unnamed country in Central Asia in an attempt to gain "access to a wide range of government resources at one fell swoop." According to the researchers, the group injected malicious JavaScript code into the official government websites associated with the data center in order to conduct watering hole attacks.Although LuckyMouse has been spotted using a widely used Microsoft Office vulnerability (CVE-2017-11882) to weaponize Office documents in the past, researchers have no proofs of this technique being used in this particular attack against the data center. The initial attack vector used in the attack against the data center is unclear, but researchers believe LuckyMouse possibly had conducted watering hole or phishing attacks to compromise accounts belonging to employees at the national data center.The attack against the data center eventually infected the targeted system with a piece of malware called HyperBro, a Remote Access Trojan (RAT) deployed to maintain persistence in the targeted system and for remote administration."There were traces of HyperBro in the infected data center from mid-November 2017. Shortly after that different users in the country started being redirected to the malicious domain update.iaacstudio[.]com as a result of the waterholing of government websites," the researchers said in a blog post published today. "These events suggest that the data center infected with HyperBro and the waterholing campaign are connected." As a result of the waterholing attack, the compromised government websites redirected the country's visitors to either penetration testing suite Browser Exploitation Framework (BeEF) that focuses on the web browser, or the ScanBox reconnaissance framework, which perform the same tasks as a keylogger. The main command and control (C&C) server used in this attack is hosted on an IP address which belongs to a Ukrainian ISP, specifically to a MikroTik router running a firmware version released in March 2016. Researchers believe the Mikrotik router was explicitly hacked for the campaign in order to process the HyperBro malware's HTTP requests without detection.",
+    {
+        "report_id": "report_0",
+        "link":"https://www.secureworks.com/research/threat-group-3390-targets-organizations-for-cyberespionage",
+        "sentences": [
+            "CTU researchers have observed the threat actors installing a credential logger and backdoor on Microsoft Exchange servers, which requires a technical grasp of Internet Information Services (IIS).",
+            "Dell SecureWorks Counter Threat Unit(TM) (CTU) researchers investigated activities associated with Threat Group-3390[1] (TG-3390).",
+            "In comparison to other threat groups, TG-3390 is notable for its tendency to compromise Microsoft Exchange servers using a custom backdoor and credential logger.",
+            "Like many threat groups, TG-3390 conducts strategic web compromises (SWCs), also known as watering hole attacks, on websites associated with the target organization's vertical or demographic to increase the likelihood of finding victims with relevant information.",
+            "Most websites compromised by TG-3390 actors are affiliated with five types of organizations around the world: large manufacturing companies, particularly those supplying defense organizations energy companies embassies in Washington, DC representing countries in the Middle East, Europe, and Asia, likely to target U.S.-based users involved in international relations non-governmental organizations (NGOs), particularly those focused on international relations and defense government organizations Based on this information, CTU researchers assess that TG-3390 aims to collect defense technology and capability intelligence, other industrial intelligence, and political intelligence from governments and NGOs.",
+            "Within six hours of entering the environment, the threat actors compromised multiple systems and stole credentials for the entire domain."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://research.nccgroup.com/2018/05/18/emissary-panda-a-potential-new-malicious-tool/",
+        "sentences": [
+            "Hacking groups linked to the Chinese state are not a new threat.",
+            "In fact, for the last couple years they have tended to be the most active along with Russian state affiliated hacking groups.",
+            "In the past, Emissary Panda has used many ways to target their victims, with the most notable being the exploits from the Hacking Team leak.",
+            "Recent research showed that a new tool is in development from this group, which is still active, and is being found in recent compromised machines.",
+            "This is a hacking group with Chinese origins which targets selected organisations related with education, energy and technology.",
+            "Tools were found on compromised machines which have been used in the past by this group."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.trendmicro.com/en_us/research/21/d/iron-tiger-apt-updates-toolkit-with-evolved-sysupdate-malware-va.html",
+        "sentences": [
+            "After finding multiple tools belonging to the Iron Tiger threat actor (which we now track as Earth Smilodon), it is likely that the new malware families that we found during the Operation DRBControl investigation came from the same threat actor.",
+            "In 2020 and 2021, Talent-Jump found new samples for malware families that are attributed to the Iron Tiger threat actor, which is also referred to as LuckyMouse, EmissaryPanda, and APT27.",
+            "Multiple infection vectors have been attributed to this threat actor in the past: Watering holes Weaponized documents exploiting the Dynamic Data Exchange (DDE) method Weaponized documents exploiting the CVE-2018-0798 vulnerability in Equation Editor Exploitation of the CVE-2019-0604 vulnerability in Sharepoint Supply chain attack that compromises a chat software installer, Able Desktop Exploitation of recent vulnerabilities (CVE-2021-26855, CVE-2021-26857, CVE-2021-26858, and CVE-2021-27065) in Microsoft Exchange Server During our investigation, we found some old samples that fit in these categories but have not been reported.",
+            "This investigation provides more insight into the evolution of Iron Tiger’s toolkit and shows the threat actor’s persistence after targeting the same company for 18 months, as well as expanding its target base to include other companies and sectors in different countries in the Middle East and Southeast Asia.",
+            "This suggests that different groups (or subgroups of Iron Tiger) are also using this malware family in their attacks.",
+            "While investigating Operation DRBControl in 2019, we found several connections to multiple threat actors: Iron Tiger, which uses the HyperBro trojan and some infrastructure links Winnti, which uses the same infrastructure and code-sharing links detailed in our paper Bronze President, a threat actor that targets non-governmental organizations (NGOs)."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.secureworks.com/research/bronze-union",
+        "sentences": [
+            "CTU researchers identified evidence of the group exploiting vulnerabilities in Internet-facing service desk software to gain an initial foothold on desirable networks, while concurrently compromising systems of interest via SWCs.",
+            "In one incident, the threat actor used the Wrapikatz tool (w.exe) with a usage statement that retrieves various passwords and Windows credentials from memory and compiles them in w.txt:\n\nc:\\programdata\\w.exe –w –l –c>>c:\\programdata\\w.txt\n\nIn a separate incident, the threat actor used access provided by extensive web shell deployment to harvest account credentials:\n\n\nIn another example, BRONZE UNION leveraged the Kekeo credential abuse tool to exploit CVE-2014-6324, a vulnerability in Microsoft's implementation of the Kerberos network authentication protocol.",
+            "Observed activity since 2015 reinforces that association; for example:\n\ncontinued focus on information that would be of interest to individuals or groups living in a country that has a significant manufacturing base and a strategic interest in U.S. military capabilities\nuse of web shells that have historically been leveraged by threat groups believed to be operating in the PRC\nconnections between a subset of the group's operational infrastructure and PRC-based Internet service companies\n\nCAPABILITY\nBRONZE UNION has consistently demonstrated the capability to conduct successful large-scale intrusions against high-profile networks and systems.",
+            "The group also manipulated native Windows features on compromised systems to access additional legitimate functionality.",
+            "The threat actors also integrate infrastructure they likely previously compromised for espionage purposes.",
+            "These events strongly suggest that the threat actors leveraged the web application as part of the initial compromise vector.\n\n"
+        ]
+    }
+]

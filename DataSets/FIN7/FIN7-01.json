@@ -1,0 +1,46 @@
+[
+    {
+        "report_id": "report_0",
+        "sentences": [
+            "Data theft extortion or ransomware deployment following FIN7-attributed activity at multiple organizations, as well as technical overlaps, suggests that FIN7 actors have been associated with various ransomware operations over time.",
+            "FIN7 has leveraged multiple methods of initial and secondary access into victim networks including phishing, compromising third-party systems, Atera agent installers, GoToAssist, and RDP.",
+            "FIN7’s initial access techniques have diversified to include software supply chain compromise and the use of stolen credentials, in addition to their traditional phishing techniques.",
+            "Throughout their evolution, FIN7 has increased the speed of their operational tempo, the scope of their targeting, and even possibly their relationships with other ransomware operations in the cybercriminal underground.",
+            "We also highlight notable shifts in FIN7 activity over this time, including their use of novel malware, incorporation of new initial access vectors, and likely shift in monetization strategies.",
+            "We first disclosed threat reporting and publicized research on FIN7 in 2017."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "sentences": [
+            "FIN7 APT group, also known as the Carbanak Gang or Navigator Group, has been discovered posing as a security firm and recruiting security professionals who later duped into performing real cyberattacks.",
+            "Forcepoint Security News: REvil Group Taken Offline by Feds, Attacker Activities and a VPN Company Exposes Data，Ransomware-as-a-service group REvil has shut down for a second time this year after the FBI and multi-country intelligence agencies hacked the group’sTor payment portal and Happy Blog leak site.",
+            "Posing as fake security company “Bastion Secure,” the group has set up a convincing, albeit copied, website and uses real but now-closed addresses of the legitimate Bastion Security company.",
+            "Researchers theorize that FIN7 uses this method in hopes of obtaining a larger share of profits as hiring from underground markets is more expensive.",
+            "The gang unwittingly restored their websites from a backup last month without realizing internal systems were already being controlled by law enforcement.",
+            "This time, government officials used a ransomware tactic against the group: compromising REvil’s backups."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "sentences": [
+            "Despite high-profile ringleaders’ arrests in 2018, FIN7 cybercrooks continue to operate and grow their businesses.",
+            "FIN7 activities present an ever-growing threat to many industries worldwide.",
+            "FIN7, a financially motivated Russia-linked hacking group that has been active for almost a decade now, enhances its arsenal.",
+            "For instance, to infect and compromise targets, FIN7 has developed phishing lures with hidden shortcut files.",
+            "Researchers at Mandiant identified that in their intrusions, FIN7 had used phishing, hacking third-party systems, and other means to gain initial and secondary access to victim networks.",
+            "The FIN7 hacking group is known to pursue financial organizations worldwide as their main targets, employing an arsenal of constantly evolving hacker tools and techniques."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "sentences": [
+            "Advertised on the dark web since December 2021, Project Nemesis has not been frequently used in attacks and is relatively unknown, but can collect a broad range of data, which operators can access using a web-based control panel.",
+            "Distribution campaigns for a recently identified backdoor have revealed a partnership between former members of the Conti ransomware group and developers for the FIN7 advanced persistent threat (APT), IBM reports.",
+            "Domino’s code, IBM has discovered, overlaps with the Lizar malware, which was previously attributed to the FIN7 group.",
+            "Starting February 2023, Domino attacks were seen using the Dave loader, which has been linked to the Conti/TrickBot group, and which former members of the criminal enterprise continue to maintain.",
+            "The FIN7 developers, IBM believes, shared with the ex-Conti threat actors not only the Domino backdoor, but also the Project Nemesis infostealer, which Domino has been deploying since at least October 2022.",
+            "The two malware families also share similarities in functionality, configuration structure, and bot ID formats."
+        ]
+    }
+]

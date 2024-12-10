@@ -1,0 +1,52 @@
+[
+    "claim":"Bitter APT group targets China’s nuclear energy sector",
+    "explain":"Intezer researchers uncovered a cyberespionage campaign targeting the Chinese nuclear energy sector, they linked it to the Bitter APT group. The Bitter APT group is a South Asian cyberespionage group active since at least 2021. The group focuses on energy and government sectors, in the past, the group targeted organizations in Pakistan, China, Bangladesh, and Saudi Arabia. In recent attacks, experts noted updates to the first-stage payloads and the implementation of new layers of obfuscation to avoid detection. Threat actors also employed additional decoys for social engineering. Experts identified seven phishing emails that were used in the phishing campaign aimed at recipients in China’s nuclear energy industry. The phishing messages impersonated the Embassy of Kyrgyzstan in China, inviting them to join conferences on subjects that are relevant to the recipients. “We identified seven emails pretending to be from the Embassy of Kyrgyzstan, being sent to recipients in the nuclear energy industry in China. In some emails, people and entities in academia are also targeted, also related to nuclear energy. The phishing emails contain a lure that invites the recipients to join conferences on subjects that are relevant to them.” reads the report published by Intezer. “The lures are designed to socially engineer the recipient to download and open an attached RAR file that contains either a Microsoft Compiled HTML Help (CHM) or Excel payload.” The messages attempt to trick recipients into opening an attached RAR archive that contains CHM or Excel payloads created to achieve persistence and fetch additional payloads from the C2. “The Excel payloads simply contain an Equation Editor exploit that creates two different scheduled tasks. There is no decoy in the document.” contnues the report. “One scheduled task (shown below) runs every 15 minutes, to download a next stage EXE payload using cURL, also sending the actor the name of the infected machine. These tactics have been observed being used by Bitter APT in 2021/2022.” “Bitter APT have been conducting espionage campaigns for years using many tactics, including phishing, to achieve their goals. It is advised that entities in government, energy, and engineering especially those in the Asia-Pacific region should remain vigilant when receiving emails, especially those claiming to be from other diplomatic entities.” Intezer concludes.",
+    {
+        "report_id": "report_0",
+        "link":"https://unit42.paloaltonetworks.com/multiple-artradownloader-variants-used-by-bitter-to-target-pakistan/",
+        "sentences": [
+            "In November 2017 we reported on malicious documents that were downloaded from the domain zmwardrobe[.]com and subsequently executed a payload referred to as MY24.",
+            "Multiple organizations have been affected or found to be hosting the malware used by BITTER, including the Pakistan government, an engineering company, and an electrical provider.",
+            "Palo Alto Networks has shared our findings, including file samples and indicators of compromise, in this report with our fellow Cyber Threat Alliance members.",
+            "Several malicious documents have been identified, all communicating with likely compromised, legitimate Pakistan websites to retrieve the payload.",
+            "Since at least 2015, a suspected South Asian threat grouping known as BITTER has been targeting Pakistan and Chinese organizations using variants of a previously unreported downloader.",
+            "They are observed targeting Pakistan, China, and Saudi Arabia using a customized downloader malware family named ArtraDownloader."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://blog.talosintelligence.com/bitter-apt-adds-bangladesh-to-their/",
+        "sentences": [
+            "Cisco Talos observed an ongoing campaign operated by the Bitter APT group since August 2021 targeting Bangladeshi government personnel with spear-phishing emails.",
+            "The emails contain either a malicious RTF document or a Microsoft Excel spreadsheet weaponized to exploit known vulnerabilities.",
+            "The lure document is a spear-phishing email sent to high-ranking officers of the Rapid Action Battalion Unit of the Bangladesh police (RAB).",
+            "The originating IP address and header information indicates the emails were sent from mail servers based in Pakistan and the actor spoofed the sender details to make the email appear as though it was sent from Pakistani government organizations.",
+            "We have compiled a list of fake sender email addresses from this campaign,The infection chain begins with the spear-phishing email and either a malicious RTF document or an Excel spreadsheet attachment.",
+            "We have seen the actor use these themes in phishing emails in the past."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.bleepingcomputer.com/news/security/bitter-espionage-hackers-target-chinese-nuclear-energy-orgs/",
+        "sentences": [
+            "A cyberespionage hacking group tracked as 'Bitter APT' was recently seen targeting the Chinese nuclear energy industry using phishing emails to infect devices with malware downloaders.",
+            "In May 2022, Bitter APT was spotted using spear phishing emails with malicious XLSX document attachments to load a trojan named 'ZxxZ' on targets in Southeast Asia.",
+            "In the new campaign found by Intezer, Bitter sends emails pretending to be from the Embassy of Kyrgyzstan in Beijing to various Chinese nuclear energy companies and academics related to that field.",
+            "The email pretends to be an invitation to a conference about nuclear energy supposedly held by the Kyrgyz Embassy, the International Atomic Energy Agency (IAEA), and the China Institute of International Studies (CIIS).",
+            "The name that signs the email is genuine, belonging to an official of the Kyrgyzstan Ministry of Foreign Affairs, showing Bitter APT's attention to details that help add legitimacy to their communications.",
+            "This hacking campaign was discovered by threat analysts at Intezer, who attribute it to Bitter APT based on the observed TTPs (tactics, techniques, and procedures) that match those of past campaigns by the same threat actor."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://duo.com/decipher/meta-bitter-apt-cyber-espionage-attack-leveraged-apple-s-testflight-service",
+        "sentences": [
+            "In this most recent campaign, the attackers set up social media accounts pretending to be journalists or activists and persuading targets to click on malicious links or download malware.",
+            "Meta also uncovered a campaign by the Pakistan-linked APT36 targeting military personnel, government officials and human rights organization employees in Afghanistan, India, Pakistan, UAE and Saudi Arabia.",
+            "Researchers said APT36’s campaign points to a broader trend of espionage groups using low-cost, off-the-shelf malicious tooling, rather than investing in developing their own tooling.",
+            "The Bitter APT group, which has been active since 2013, has previously targeted the energy, engineering and government sectors with RATs that were spread via spear-phishing emails or by the exploitation of known flaws.",
+            "The attackers posed as recruiters for both legitimate and fake companies as well as military personnel in order to target victims, and shared malicious links to attacker-controlled sites where they hosted malware.",
+            "The attackers, which Meta attributed to the known Bitter APT, operate out of South Asia and targeted victims in New Zealand, India, Pakistan and the UK with various social engineering tactics on social media platforms like Facebook with the end goal of deploying malware on their devices."
+        ]
+    }
+]

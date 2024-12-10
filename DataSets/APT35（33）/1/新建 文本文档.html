@@ -1,0 +1,62 @@
+APT35, sometimes referred to as Charming Kitten, Imperial Kitten, or Tortoiseshell, is a
+notorious cyber-espionage group which has been active for nearly 10 years. Famous for
+stealing scripts from HBO’s Game of Thrones in 2017 and suspected of interfering in the
+U.S. presidential election last year, it has launched extensive campaigns against
+organizations and officials across North America and the Middle East. Public attribution
+has associated APT35 with an Iran-based nation state threat actor.
+Darktrace regularly detects attacks by many known threat actors including Evil Corp and
+APT41, alongside large amounts of malicious but uncategorized activity from
+sophisticated attack groups. As Cyber AI doesn’t rely on predefined rules, signatures, or
+threat intelligence to detect cyber-attacks, it often detects new and previously unknown
+threats.
+This blog post examines a real-world instance of APT35 activity in an organization in the
+EMEA region. Darktrace observed this activity last June, but due to ongoing
+investigations, details are only now being released with the wider community. It
+represents an interesting case for the value of self-learning AI in two key ways:
+APT35 had already infected a single corporate device, likely via a spear phishing email,
+when Cyber AI was deployed in the company’s digital estate for the first time.
+The infected device exhibited no other signs of malicious activity beyond continued
+command and control (C2) beaconing, awaiting instructions from the attackers for
+several days. This is what we call ‘lying low’ – where the hacker stays present within a
+system, but remains under the radar, avoiding detection either intentionally, or because
+they’re focusing on another victim while being content with backdoor access into the
+organization.
+Either way, this is a nightmare scenario for a security team and any security vendor: an
+APT which has established a foothold and is lying in wait to continue their attack –
+undetected.When Darktrace’s AI was first activated, it spent five business days learning the unique
+‘patterns of life’ for the organization. After this initial, short learning period, Darktrace
+immediately flagged the infected device and the C2 activity.
+Although the breach device had been beaconing since before Darktrace was implemented,
+Cyber AI automatically clusters devices into ‘peer groups’ based on similar behavioral
+patterns, enabling Darktrace to identify the continued C2 traffic coming from the device
+as highly unusual in comparison to the wider, automatically identified peer group. None
+of its behaviorally close neighbors were doing anything remotely similar, and Darktrace
+was therefore able to determine that the activity was malicious, and that it represented C2
+beaconing.
+Darktrace detected the APT35 C2 activity without the use of any signatures or threat
+intelligence on multiple levels. Responding to the alerts, the internal security team
+quickly isolated the device and verified with the Darktrace system that no further
+reconnaissance, lateral movement, or data exfiltration had taken place.
+Once the C2 was detected, Cyber AI Analyst immediately began analyzing the infected
+device. The Cyber AI Analyst only highlights the most severe incidents in any given
+environment and automates many of the typical level one and level two SOC tasks. This
+includes reviewing all alerts, investigating the scope and nature of each event, and
+reducing time to triage by 92%
+Numerous factors made the C2 activity stand out strongly to Darktrace. Combining all
+those small anomalies, Darktrace was able to autonomously prioritize this behavior and
+classify it as the most significant security incident in the week.
+Some of the command and control destinations were known to threat intelligence and
+open-source intelligence (OSINT) – for instance, the domain cortanaservice[.]com is a
+known C2 domain for APT35.
+However, the presence of a known malicious domain does not guarantee detection. In
+fact, the organization had a very mature security stack, yet they failed to discover the
+existing APT35 infection until Darktrace was activated in their environment.
+Once an intrusion has been identified, it is important to understand the extent of it – such
+as whether lateral movement is occurring and what connectivity the infected device has in
+general. Asset management is never perfect, so it can be very hard for organizations to
+determine what damage a compromised device is capable of inflicting.
+Darktrace presents this information in real time, and from a bird’s-eye perspective,
+making the assessment very simple. It immediately highlights which subnet the device is
+located in and any further context.Based on this information, the organization confirmed that it was a corporate device that
+had been infected by APT35. As Darktrace shows any credentials associated with the
+device, a quick assessment could be made of potentially compromised accounts.

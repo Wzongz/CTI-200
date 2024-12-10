@@ -1,0 +1,22 @@
+Indrik Spider is a Russia-based cybercriminal group that has been active since at least 2014. Indrik Spider initially started with the Dridex banking Trojan, and then by 2017 they began running ransomware operations using BitPaymer, WastedLocker, and Hades ransomware. Following U.S. sanctions and an indictment in 2019, Indrik Spider changed their tactics and diversified their toolset.
+Indrik Spider has used PowerShell Empire for execution of malware.
+Indrik Spider has used batch scripts on victim's machines.
+Indrik Spider has used malicious JavaScript files for several components of their attack.
+Indrik Spider has served fake updates via legitimate websites that have been compromised.
+Indrik Spider used wmic.exe to add a new user to the system.
+Indrik Spider has encrypted domain-controlled systems using BitPaymer.
+Indrik Spider has stored collected date in a .tmp file.
+Indrik Spider has developed malware for their operations, including ransomware such as BitPaymer and WastedLocker.
+Indrik Spider has used Group Policy Objects to deploy batch scripts.
+Indrik Spider has created email accounts to communicate with their ransomware victims, to include providing payment and decryption details.
+Indrik Spider used PsExec to leverage Windows Defender to disable scanning of all downloaded files and to restrict real-time monitoring.
+Indrik Spider has used Cobalt Strike to empty log files.
+Indrik Spider has downloaded additional scripts, malware, and tools onto a compromised host.
+Indrik Spider used fake updates for FlashPlayer plugin and Google Chrome as initial infection vectors.
+Indrik Spider used Cobalt Strike to carry out credential dumping using ProcDump.
+Indrik Spider has used PowerView to enumerate all Windows Server, Windows Server 2003, and Windows 7 instances in the Active Directory database.
+Indrik Spider has used PsExec to stop services prior to the execution of ransomware.
+Indrik Spider has used the win32_service WMI class to retrieve a list of services from the system.
+Indrik Spider has attempted to get users to click on a malicious zipped file.
+Indrik Spider has collected credentials from infected systems, including domain accounts.
+Indrik Spider has used WMIC to execute commands on remote computers.

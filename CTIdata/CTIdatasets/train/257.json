@@ -1,0 +1,29 @@
+{
+  "event_id": "257",
+  "claim": "CyberVanguard is a newly identified threat group believed to be operating from Eastern Europe, specifically targeting the healthcare and pharmaceutical sectors in North America and Asia.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "On July 14, 2023, cybersecurity firm SentinelOne detected a sophisticated cyber espionage campaign aimed at stealing proprietary research data from leading pharmaceutical companies in the United States and Japan. The attackers, tracked as CyberVanguard, employed a novel malware strain dubbed 'PharmaSpy' to infiltrate the networks of these organizations. The campaign involved meticulously crafted spear-phishing emails that impersonated regulatory bodies, such as the FDA in the U.S. and the PMDA in Japan, to lure victims into downloading attachments infected with PharmaSpy. Once inside the network, PharmaSpy facilitated the exfiltration of sensitive data related to COVID-19 vaccine research and development. SentinelOne's analysis revealed that PharmaSpy utilizes a complex encryption algorithm to evade detection and communicates with C&C servers through a series of proxy networks, making it challenging to trace the attackers' actual location. CyberVanguard's tactics, techniques, and procedures (TTPs) indicate a high level of sophistication and suggest that the group has significant resources at its disposal, likely backed by a nation-state or a well-funded private entity. The targeting of healthcare and pharmaceutical sectors during a global pandemic underscores the potential geopolitical motivations behind CyberVanguard's operations. SentinelOne has alerted the affected organizations and is collaborating with law enforcement agencies to mitigate the impact of this campaign. This incident highlights the critical importance of robust cybersecurity measures and the need for increased vigilance against sophisticated cyber threats targeting vital sectors.",
+  "reports": [
+    {
+      "link": "https://www.sentinelone.com/blog/cybervanguard-targets-pharmaceutical-sector/",
+      "content": "Cybersecurity experts at SentinelOne have uncovered a new threat actor, CyberVanguard, focusing on the theft of COVID-19 vaccine research by deploying a novel malware, PharmaSpy. The campaign targeted major pharmaceutical companies in the U.S. and Japan, using spear-phishing emails disguised as communications from health regulatory authorities. SentinelOne's investigation into PharmaSpy reveals advanced capabilities, including complex encryption and stealth communication methods with command and control servers, hinting at the involvement of a nation-state or a similarly resource-rich entity.",
+      "domain": "www.sentinelone.com",
+      "tokenized": [
+        {
+          "sent": "Cybersecurity experts at SentinelOne have uncovered a new threat actor, CyberVanguard, focusing on the theft of COVID-19 vaccine research by deploying a novel malware, PharmaSpy.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The campaign targeted major pharmaceutical companies in the U.S. and Japan, using spear-phishing emails disguised as communications from health regulatory authorities.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "SentinelOne's investigation into PharmaSpy reveals advanced capabilities, including complex encryption and stealth communication methods with command and control servers, hinting at the involvement of a nation-state or a similarly resource-rich entity.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

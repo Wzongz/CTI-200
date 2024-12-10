@@ -1,0 +1,52 @@
+[
+    "claim":"FIN8 APT Group Backdooring US firms via a new, undocumented malware, Sardonic, security researchers detected FIN8 switching from targeting point-of-sale (POS) devices to distributing a number of ransomware variants.",
+    "explain":"FIN8, an advanced persistent threat group, recently breached the networks and installed backdoors into the systems of a US financial firm with a modified, undocumented malware, Sardonic. Security researchers at Bitdefender initially detected the new strain of malware that has been active since at least January 2016 and has targeted restaurant, hospitality, healthcare, retail, and entertainment sectors to steal payment card details from POS systems. The operator behind the Sardonic malware is extremely capable of POS attacks via BadHatch, PoSlurp/PunchTrack, and PowerSniff/PunchBuggy/ShellTea, windows zero-day, and spear-phishing attacks. FIN8 has choreographed multiple large-scale, but occasional campaigns that impacted hundreds of organizations after its detection by the security firm, FireEye. Sardonic is a modern C++-based backdoor deployed by its operators to target victims via spear-phishing or social engineering. Even though the malware is relatively new and under development, it is capable of Command execution on jeopardized devices, System information accumulation, and plugin systems intended to load and execute further malware payloads distributed as DLLs. The backdoor was deployed as a component of a three-stage process using a PowerShell script, a .NET loader, and a downloader shellcode. Reports from the researchers at Bitdefender suggested that the PowerShell code is transcribed manually onto endangered systems, while the loaders are distributed via an automated process. Bitdefender urged all vulnerable organizations to be aware and monitor their networks for observed FIN8 indicators of compromise. Bitdefender's Cyber Threat Intelligence Lab researchers stated that "FIN8 continues to strengthen its capabilities and malware delivery infrastructure. The highly skilled financial threat actor is known to take long breaks to refine tools and tactics to avoid detection before it strikes viable targets." APT groups have been actively targeting major firms and the incidents involving backdoor attacks have seen an enormous spike. Recently, Security researchers from ESET detected a previously undocumented and modified backdoor dubbed SideWalk used by the infamous APT group SparklingGoblin. The attacks aimed at targeting computer retail businesses through modular backdoor attacks. Bitdefender also published a detailed report mentioning Sardonic's inner workings and indicators of compromise (IOCs), including infrastructure info and malware hashes to alert people.",
+    {
+        "report_id": "report_0",
+        "link":"https://www.zdnet.com/home-and-office/smart-home/wyze-camera-breach-let-13000-strangers-view-other-peoples-homes/",
+        "sentences": [
+            "\"In addition to this attack by FIN8, we've seen multiple attacks by FIN6, FIN7 and others,\" Gorelik said in a report that broke down FIN8's updated malware into the smallest details.",
+            "Ever since then, FIN8 activity has died down, with some sporadic detections of the group's malware on VirusTotal once every few months.",
+            "FIN8, as its \"FIN\" codename indicates, is a group of hackers focused on attacks for their own financial benefit, as opposed to APT (advanced persistent threat) groups that are focused on intelligence gathering and cyber-espionage.",
+            "His observations come to confirm previous remarks made by many other malware researchers who previously saw similar intersections between the activities of FIN6, FIN7, and FIN8 in the past.",
+            "The last time someone reported about FIN8 hacks was in 2016 and 2017, when FireEye and root9B published reports about a series of attacks aimed at PoS systems in the retail sector.",
+            "While some FIN groups are focused on breaching bank networks or stealing money via mass ATM cashouts, the FIN8 group has had a long history of targeting companies who run point-of-sale (POS) systems, which they infect with malware to steal payment card data to sell on online hacking forums for a profit."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://cyware.com/news/fin8-apt-delivers-blackcat-ransomware-using-sardonic-backdoor-variant-3b87552d",
+        "sentences": [
+            "According to the Symantec Threat Hunter Team, in December 2022, the attackers were observed delivering the BlackCat ransomware via a new version of their Sardonic backdoor.",
+            "Financially motivated threat actor FIN8 has revamped its malware arsenal to deliver another infamous ransomware to victims’ systems.",
+            "In January 2022, a malicious link to deploy White Rabbit ransomware attacks was linked to the FIN8 group.",
+            "In June 2021, FIN8 deployed the Ragnar Locker ransomware to compromise a financial services company in the US.",
+            "Researchers note that the FIN8 members continue to develop and improve their capabilities as well as malware delivery infrastructure.",
+            "While FIN8 is specialized in POS attacks, in the past few years, the group has been observed launching a number of ransomware attacks."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://securityaffairs.com/148569/cyber-crime/fin8-group-spotted-delivering-the-blackcat-ransomware.html",
+        "sentences": [
+            "In the attack analyzed by Symantec, the backdoor was embedded (indirectly) into a PowerShell script used to infect target machines.",
+            "Sardonic is a sophisticated backdoor that supports a wide range of features that was designed to evade detection.",
+            "The FIN8 group has been active since 2016, it leverages known malware such as PUNCHTRACK and BADHATCH to infect PoS systems and steal payment card data.",
+            "The cybercrime group FIN8 is using a revamped version of the Sardonic backdoor to deliver the BlackCat ransomware.",
+            "The financially motivated group FIN8 (aka Syssphinx) was spotted using a revamped version of a backdoor tracked as Sardonic to deliver the BlackCat ransomware (aka Noberus ransomware).",
+            "The revamped Sardonic backdoor analyzed in this blog shares a number of features with the C++-based Sardonic backdoor analyzed by Bitdefender."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/syssphinx-fin8-backdoor",
+        "sentences": [
+            "Active since at least January 2016, Syssphinx (aka FIN8) is a financially motivated cyber-crime group known for targeting organizations in the hospitality, retail, entertainment, insurance, technology, chemicals, and finance sectors.",
+            "For instance, since 2019, Syssphinx had used backdoor malware called Badhatch in attacks.",
+            "Symantec’s Threat Hunter Team, a part of Broadcom, recently observed the Syssphinx (aka FIN8) cyber-crime group deploying a variant of the Sardonic backdoor to deliver the Noberus ransomware.",
+            "The C++-based Sardonic backdoor has the ability to harvest system information and execute commands, and has a plugin system designed to load and execute additional malware payloads delivered as DLLs.",
+            "The revamped Sardonic backdoor analyzed in this blog shares a number of features with the C++-based Sardonic backdoor analyzed by Bitdefender.",
+            "Then in August 2021, Bitdefender researchers published details of a new backdoor dubbed Sardonic and linked it to the same group."
+        ]
+    }
+]

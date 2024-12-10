@@ -1,0 +1,141 @@
+{
+    "event_id": "050",
+    "claim": "The OceanLotus is always evolving and constantly updating its attack techniques and arsenal to achieve the goal of bypassing security software.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "OceanLotus (also known as apt-tocs, APT32) is considered to be an APT group from a country on Indo-China Peninsula. Since it was active in 2012, it has been carrying out attacks against sensitive targets in China and is one of the most active APT attack organizations targeting mainland China in recent years. Previously, Antiy and other security vendors have published a number of analysis reports on OceanLotus, focusing mainly on the PC side. The attack methods are mainly based on spear and phishing attacks, and mobile attacks are rare. However, with the development of the mobile Internet, on the one hand, people’s mobile phones gradually become dual-use. In addition to the personal privacy of users, they often have their social attributes. On the other hand, wireless communication of smartphones can bypass the internal safety regulation devices, so the attack on the mobile side has become an important part of the entire attack chain. Below, Antiy Mobile Security use the mobile-side attack incidents that occurred in China as a blueprint for specific analysis and explanation. These applications disguise as a normal application, and their icons will hide automatically after they are running. They will release malicious sub-packages in the background, receive the remote control command, steal the privacy information of users such as SMS messages, contacts, call records, geographic locations, and browser records. They also download apks secretly and record audios and videos, then upload users’ privacy information to server, causing users’ privacy leakage.The main package reflects the Execute method of the com.android.preferences.AndroidR class: Set up communication with mobile phone, send control instructions and upload some private information such as SMS, contact, call record, geographical location and browser record. In addition, the spy sub-package also established https communication for uploading large files such as recordings, screenshots, documents, photos, videos.https://jang.goongnam.com/resource/request.php, it has been inactivated at present, and the C2 belongs to the assets of the OceanLotus organization. As shown in the following figure: First, the signature Subject contains the words HackingTeam and Christian Pozz (the name of an administrator in the Hacking Team); secondly, the registration function in the code can be considered as commercial spyware for sale; finally, according to the late Hacking According to Team’s leaked information, the country OceanLotus affiliated with is also on the list of its customers. Different from the samples we analyzed before, the above samples have obvious functional improvements, and the privilege escalation has been added. Taking 45AE1CB1596E538220CA99B29816304F as an example, the file named dataOff.db in the assets directory is decrypted, and the file after decryption has the privilege escalation. The configuration file looks like this: It can be seen that after the code leakage, the CEO of the HackingTeam organization said that “the leaked code is only a small part” is based on the facts, which also reflects that the network arms merchants have lowered the threshold of APT attacks to a certain extent, making more uncertainties of cyber attacks. At the same time, we also noticed that the series of malicious code has been delivered through the domestic third-party application market and file sharing website. The OceanLotus is always evolving and constantly updating its attack techniques and arsenal to achieve the goal of bypassing security software. In addition to the constant updating of the arsenal, the organization is quite knowledgeable about China, including the policies and usage habits. This not only confuses the relevant personnel, increases the success rate of their attacks, but also brings immeasurable losses to the target victim groups. Therefore, for individuals, it is necessary to effectively raise the awareness of network security and not be blinded by phishing information. For security vendors, it is more necessary to deepen their understanding and continue to conduct targeted confrontation and improve security protection capabilities, truly escort for mobile security of the user side.\n\n\n",
+    "reports": [
+        {
+            "link": "https://1vx.ug/archive/APTs/2018/2018.01.30/APT-32.pdf/",
+            "content": "Blackberry Cylance threat researchers have analyzed the Ratsnif trojans, which offer a veritable swiss-army knife of network attack techniques. It also adds new features in the form of HTTP injection, protocol parsing, and SSL hijacking. Simply put, Ratsnif does not meet the usual high standards observed in OceanLotus malware. The OceanLotus Group (aka APT32, CobaltKitty | previous reports: The SpyRATs of OceanLotus; OceanLotus APT Group Leveraging Steganography) is using a suite of remote access trojans dubbed \"Ratsnif\" to leverage new network attack capabilities. The trojans, under active development since 2016, combine capabilities like packet sniffing, gateway/device ARP poisoning, DNS poisoning, HTTP injection, and MAC spoofing. This sample contains 2 hard-coded domains, although only one appears to have ever been active: The C2 server itself is expected to expose a fairly intuitively named web API, supporting the following endpoints:The malware contains support for the following commands issued via the cl_client_cmd.php HTTP response:Surfacing during the latter half of 2018 and wrapped in a bespoke OceanLotus shellcode loader, this sample was first reported in a blog from Macnica Networks.",
+            "domain": "1vx.ug",
+            "tokenized": [
+                {
+                    "sent": "Blackberry Cylance threat researchers have analyzed the Ratsnif trojans, which offer a veritable swiss-army knife of network attack techniques.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It also adds new features in the form of HTTP injection, protocol parsing, and SSL hijacking.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Simply put, Ratsnif does not meet the usual high standards observed in OceanLotus malware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The OceanLotus Group (aka APT32, CobaltKitty | previous reports: The SpyRATs of OceanLotus; OceanLotus APT Group Leveraging Steganography) is using a suite of remote access trojans dubbed \"Ratsnif\" to leverage new network attack capabilities.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The trojans, under active development since 2016, combine capabilities like packet sniffing, gateway/device ARP poisoning, DNS poisoning, HTTP injection, and MAC spoofing.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This sample contains 2 hard-coded domains, although only one appears to have ever been active: The C2 server itself is expected to expose a fairly intuitively named web API, supporting the following endpoints:The malware contains support for the following commands issued via the cl_client_cmd.php HTTP response:Surfacing during the latter half of 2018 and wrapped in a bespoke OceanLotus shellcode loader, this sample was first reported in a blog from Macnica Networks.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.eset.com/me/whitepapers/oceanlotus/",
+            "content": "Both create one\nthread, and each thread is responsible for either downloading and executing the file or running a\ncommand line program in the terminal:Malicious attacks targeting Mac devices are not as common as its counterparts, but the discovery\nof this new MacOS backdoor that is presumably distributed via phishing email calls for every user\nto adopt best practices for phishing attacks regardless of operating system.\n. End users can benefit from security solutions such as Trend Micro Home Security for Mac, which\nprovides comprehensive security and multi-device protection against cyberthreats. Enterprises\ncan benefit from Trend Micro’s Smart Protection Suites with XGen™ security, which infuses high\u0002fidelity machine learning into a blend of threat protection techniques to eliminate security gaps\nacross any user activity and any endpoint. OceanLotus was responsible for\nlaunching targeted attacks against human rights organizations,\nmedia organizations, research institutes, and maritime\nconstruction firms. The attackers behind OSX_OCEANLOTUS.D\ntarget MacOS computers which have the Perl programming\nlanguage installed.\n. We identified a MacOS backdoor (detected by Trend Micro as\nOSX_OCEANLOTUS.D) that we believe is the latest version of\na threat used by OceanLotus (a.k.a. APT 32, APT-C-00,\nSeaLotus, and Cobalt Kitty).",
+            "domain": "www.eset.com",
+            "tokenized": [
+                {
+                    "sent": "Both create one\nthread, and each thread is responsible for either downloading and executing the file or running a\ncommand line program in the terminal:Malicious attacks targeting Mac devices are not as common as its counterparts, but the discovery\nof this new MacOS backdoor that is presumably distributed via phishing email calls for every user\nto adopt best practices for phishing attacks regardless of operating system.\n",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "End users can benefit from security solutions such as Trend Micro Home Security for Mac, which\nprovides comprehensive security and multi-device protection against cyberthreats.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Enterprises\ncan benefit from Trend Micro’s Smart Protection Suites with XGen™ security, which infuses high\u0002fidelity machine learning into a blend of threat protection techniques to eliminate security gaps\nacross any user activity and any endpoint.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "OceanLotus was responsible for\nlaunching targeted attacks against human rights organizations,\nmedia organizations, research institutes, and maritime\nconstruction firms.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The attackers behind OSX_OCEANLOTUS.D\ntarget MacOS computers which have the Perl programming\nlanguage installed.\n",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "We identified a MacOS backdoor (detected by Trend Micro as\nOSX_OCEANLOTUS.D) that we believe is the latest version of\na threat used by OceanLotus (a.k.a. APT 32, APT-C-00,\nSeaLotus, and Cobalt Kitty).",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.trendmicro.com/en_us/research/18/d/new-macos-backdoor-linked-to-oceanlotus-found.html/",
+            "content": "OceanLotus continues its activity particularly targeting company and government networks in East-Asian countries. The OceanLotus group uses an old and publicly known technique on one of the Symantec product’s executable files. The OceanLotus group, also known as APT32 and APT-C-00, is infamous for its campaigns targeting the eastern part of Asia. The encryption of the payload, together with the side-loading technique – despite its age – is a good way to stay under the radar, since the malicious activities look like they come from the legitimate application. The packet is built in this fashion:Once again, OceanLotus shows that the team is active and continues to update its toolset. This also demonstrates its intention to remain hidden by picking its targets, limiting the distribution of their malware and using several different servers to avoid attracting attention to a single domain or IP address.",
+            "domain": "www.trendmicro.com",
+            "tokenized": [
+                {
+                    "sent": "OceanLotus continues its activity particularly targeting company and government networks in East-Asian countries.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The OceanLotus group uses an old and publicly known technique on one of the Symantec product’s executable files.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The OceanLotus group, also known as APT32 and APT-C-00, is infamous for its campaigns targeting the eastern part of Asia.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The encryption of the payload, together with the side-loading technique – despite its age – is a good way to stay under the radar, since the malicious activities look like they come from the legitimate application.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The packet is built in this fashion:Once again, OceanLotus shows that the team is active and continues to update its toolset.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This also demonstrates its intention to remain hidden by picking its targets, limiting the distribution of their malware and using several different servers to avoid attracting attention to a single domain or IP address.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://blogs.blackberry.com/en/2019/07/threat-spotlight-ratsnif-new-network-vermin-from-oceanlotus/",
+            "content": "As the infection process completes, we now observe Elise network activity (e.g., exfil of victim data and C2) through a conveniently hidden instance of Internet Explorer. In another apparent prong of attack, the new campaign delivers a malicious RTF document posing as an ASEAN Defence Minister's Meeting (ADMM) directory (decoy) that also carries an executable (payload) embedded as an OLE object, the Elise backdoor. Moving through the infection process, NetWitness Endpoint detects the initial exploit (CVE-2017-1182 ) in action as the Microsoft Equation Editor, 'EQNEDT32.exe', scores high for potentially malicious activity. The threat actors actually went to significant efforts to generate these seemingly random domains, likely in an attempt at obfuscating C2 traffic and avoiding domain-based detection/mitigation. This isn't terribly surprising considering the group's watering hole activity against ASEAN websites as observed in the Fall of 2017. This traffic was also observed in NetWitness Packets, as the malware verifies the host IP address prior to kicking off C2 out to 103.236.150[.]14 , which is likely compromised infrastructure.",
+            "domain": "blogs.blackberry.com",
+            "tokenized": [
+                {
+                    "sent": "As the infection process completes, we now observe Elise network activity (e.g., exfil of victim data and C2) through a conveniently hidden instance of Internet Explorer.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In another apparent prong of attack, the new campaign delivers a malicious RTF document posing as an ASEAN Defence Minister's Meeting (ADMM) directory (decoy) that also carries an executable (payload) embedded as an OLE object, the Elise backdoor.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Moving through the infection process, NetWitness Endpoint detects the initial exploit (CVE-2017-1182 ) in action as the Microsoft Equation Editor, 'EQNEDT32.exe', scores high for potentially malicious activity.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The threat actors actually went to significant efforts to generate these seemingly random domains, likely in an attempt at obfuscating C2 traffic and avoiding domain-based detection/mitigation.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This isn't terribly surprising considering the group's watering hole activity against ASEAN websites as observed in the Fall of 2017.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This traffic was also observed in NetWitness Packets, as the malware verifies the host IP address prior to kicking off C2 out to 103.236.150[.]14 , which is likely compromised infrastructure.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

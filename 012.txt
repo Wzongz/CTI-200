@@ -1,0 +1,142 @@
+{
+    "event_id": "012",
+    "claim": "TA505 is a cybercrime group known for ransomware attacks and evolving from phishing to exploiting vulnerabilities like SolarWinds Serv-U for initial access.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "NCC Group’s global Cyber Incident Response Team has observed an increase in Clop ransomware victims in the past weeks. The surge can be traced back to a vulnerability in SolarWinds Serv-U that is being abused by the TA505 threat actor. TA505 is a known cybercrime threat actor, who is known for extortion attacks using the Clop ransomware. We believe exploiting such vulnerabilities is a recent initial access technique for TA505, deviating from the actor’s usual phishing-based approach. NCC Group strongly advises updating systems running SolarWinds Serv-U software to the most recent version (at minimum version 15.2.3 HF2) and checking whether exploitation has happened as detailed below. We are sharing this information as a call to action for organisations using SolarWinds Serv-U software and incident responders currently dealing with Clop ransomware. During multiple incident response investigations, NCC Group found that a vulnerable version of SolarWinds Serv-U server appeared to be the initial access used by TA505 to breach its victims’ IT infrastructure. The vulnerability being exploited is known as CVE-2021-35211 [1]. SolarWinds published a security advisory [2] detailing the vulnerability in the Serv-U software on July 9, 2021. The advisory mentions that Serv-U Managed File Transfer and Serv-U Secure FTP are affected by the vulnerability. On July 13, 2021, Microsoft published an article [3] on CVE-2021-35211 being abused by a Chinese threat actor referred to as DEV-0322. Here we describe how TA505, a completely different threat actor, is exploiting that vulnerability. Successful exploitation of the vulnerability, as described by Microsoft [3], causes Serv-U to spawn a subprocess controlled by the adversary. That enables the adversary to run commands and deploy tools for further penetration into the victim’s network. Exploitation also causes Serv-U to log an exception, as described in the section below on checks for potential compromise. We observed that Base64 encoded PowerShell commands were logged shortly after the Serv-U exceptions indicating exploitation. The PowerShell commands ultimately led to deployment of a Cobalt Strike Beacon on the system running the vulnerable Serv-U software. The PowerShell command observed deploying Cobalt Strike was: On several occasions the threat actor tried to maintain its foothold by hijacking a scheduled task named RegIdleBackup and abusing the COM handler associated with it to execute malicious code, leading to FlawedGrace RAT. The RegIdleBackup task is a legitimate task that is stored in \\Microsoft\\Windows\\Registry. The task is normally used to regularly backup the registry hives. By default, the CLSID in the COM handler is set to: {CA767AA8-9157-4604-B64B40747123D5F2}. In all cases where we observed the threat actor abusing the task for persistence, the COM handler was altered to a different CLSID. CLSID objects are stored in registry in HKLM\\SOFTWARE\\Classes\\CLSID. In our investigations the task included a suspicious CLSID, which subsequently redirected to another CLSID. The second CLSID included three objects containing the FlawedGrace RAT loader. The objects contain Base64 encoded strings that ultimately lead to the executable. NCC Group recommends looking for potentially vulnerable Serv-U FTP-servers in your network and checking these logs for traces of similar exceptions as suggested by the SolarWinds security advisory. It is important to note that the publications by Microsoft and SolarWinds describe follow-up activity regarding a completely different threat actor than we observed in our investigations. Microsoft’s article [3] on CVE-2021-35211 provides guidance on the detection of the abuse of the vulnerability. The first indicator of compromise for the exploitation of this vulnerability are suspicious entries in a Serv-U log file named DebugSocketlog.txt. This log file is usually located in the Serv-U installation folder. Looking at this log file it contains exceptions at the time of exploitation of CVE-2021-35211. NCC Group’s analysts encountered the following exceptions during their investigations: However, as mentioned in Microsoft’s article, this exception is not by definition an indicator of successful exploitation and therefore further analysis should be carried out to determine potential compromise. Analysts should look for suspicious PowerShell commands being executed close to the date and time of the exceptions. The full content of PowerShell commands is usually recorded in Event ID 4104 in the Windows Event logs. Analysts should look for the RegIdleBackup task with an altered CLSID. Subsequently, the suspicious CLSID should be used to query the registry and check for objects containing Base64 encoded strings. The following PowerShell commands assist in checking for the existence of the hijacked task and suspicious CLSID content: The following steps should be taken to check whether exploitation led to a suspected compromise by TA505: There are currently still many vulnerable internet-accessible Serv-U servers online around the world. In July 2021 after Microsoft published about the exploitation of Serv-U FTP servers by DEV-0322, NCC Group mapped the internet for vulnerable servers to gauge the potential impact of this vulnerability. In July, 5945 (~94%) of all Serv-U (S)FTP services identified on port 22 were potentially vulnerable. In October, three months after SolarWinds released their patch, the number of potentially vulnerable servers is still significant at 2784 (66.5%). The top countries with potentially vulnerable Serv-U FTP services at the time of writing are:\n\n\n",
+    "reports": [
+        {
+            "link": "https://research.checkpoint.com/2021/stopping-serial-killer-catching-the-next-strike/",
+            "content": "The article focuses on the Dridex malware, detailing its origins, evolution, and current prevalence, especially its impact on banking systems. It highlights the history and development of Dridex, tracing back to the infamous ZeuS malware and its creator Evgeniy Bogachev. The authors explore Dridex's technical features, methods of spreading, and strategies for early-stage interception and mitigation. An overview of Dridex's infection chain is provided, revealing how it is spread via spambots and targets various entities. The article also discusses the botnet infrastructure of Dridex, including its C&C servers, and how it sends and receives encrypted data. Finally, it offers insights into detection and prevention strategies, emphasizing the importance of early intervention and broader applications of these methods against similar threats.",
+            "domain": "research.checkpoint.com",
+            "tokenized": [
+                {
+                    "sent": "The article focuses on the Dridex malware, detailing its origins, evolution, and current prevalence, especially its impact on banking systems.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It highlights the history and development of Dridex, tracing back to the infamous ZeuS malware and its creator Evgeniy Bogachev.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The authors explore Dridex's technical features, methods of spreading, and strategies for early-stage interception and mitigation.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "An overview of Dridex's infection chain is provided, revealing how it is spread via spambots and targets various entities.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The article also discusses the botnet infrastructure of Dridex, including its C&C servers, and how it sends and receives encrypted data.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Finally, it offers insights into detection and prevention strategies, emphasizing the importance of early intervention and broader applications of these methods against similar threats.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://research.nccgroup.com/2020/06/23/wastedlocker-a-new-ransomware-variant-developed-by-the-evil-corp-group/",
+            "content": "The article details WastedLocker, a ransomware used since May 2020 by Evil Corp, a group previously known for Dridex malware and BitPaymer ransomware, with changes in tactics due to legal actions in 2019. Evil Corp, active since 2014 with Dridex malware, shifted focus towards targeted ransomware campaigns using BitPaymer since 2017, mainly affecting North America and Western Europe, and briefly collaborated with TheTrick group. WastedLocker, distinct from BitPaymer, targets specific victims, naming ransomware files after them and focusing on file servers, database services, virtual machines, and cloud environments, with a business model that disrupts recovery systems. Evil Corp's distribution method for WastedLocker remains consistent, utilizing the SocGholish fake update framework to target larger network systems and deploying a custom CobaltStrike loader. The technical execution involves embedding CobaltStrike payloads in PowerShell scripts, with varying complexities and techniques to bypass detection, including attempts to evade CrowdStrike's endpoint solution. WastedLocker uses a custom crypter, CryptOne, for protection, which involves techniques like infinite loops and XOR-based decryption algorithms to hinder analysis and execute its payload effectively.",
+            "domain": "research.nccgroup.com",
+            "tokenized": [
+                {
+                    "sent": "The article details WastedLocker, a ransomware used since May 2020 by Evil Corp, a group previously known for Dridex malware and BitPaymer ransomware, with changes in tactics due to legal actions in 2019.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Evil Corp, active since 2014 with Dridex malware, shifted focus towards targeted ransomware campaigns using BitPaymer since 2017, mainly affecting North America and Western Europe, and briefly collaborated with TheTrick group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "WastedLocker, distinct from BitPaymer, targets specific victims, naming ransomware files after them and focusing on file servers, database services, virtual machines, and cloud environments, with a business model that disrupts recovery systems.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Evil Corp's distribution method for WastedLocker remains consistent, utilizing the SocGholish fake update framework to target larger network systems and deploying a custom CobaltStrike loader.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The technical execution involves embedding CobaltStrike payloads in PowerShell scripts, with varying complexities and techniques to bypass detection, including attempts to evade CrowdStrike's endpoint solution.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "WastedLocker uses a custom crypter, CryptOne, for protection, which involves techniques like infinite loops and XOR-based decryption algorithms to hinder analysis and execute its payload effectively.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/wastedlocker-ransomware-us/",
+            "content": "Symantec identified a series of attacks by perpetrators attempting to deploy WastedLocker ransomware on U.S. companies' networks to demand multimillion-dollar ransoms after crippling victims' IT infrastructure. WastedLocker, a new targeted ransomware linked to the notorious cybercrime group Evil Corp, evolved from the group's previous associations with the Dridex banking Trojan and BitPaymer ransomware. The attacks commence with a malicious JavaScript-based framework called SocGholish, found on over 150 compromised websites, and use Cobalt Strike malware along with other tools for network infiltration and ransomware deployment. Symantec's advanced machine learning system, Targeted Attack Cloud Analytics, proactively detected these attacks, correlating them with early-stage WastedLocker attack patterns. The attacks targeted 31 organizations, primarily major U.S. corporations, including 11 listed companies and eight Fortune 500 companies, with one U.S.-based subsidiary of an overseas multinational. WastedLocker's attack chain starts with SocGholish delivered through compromised websites, followed by execution of malicious JavaScript disguised as a browser update and PowerShell scripts for further network penetration and data discovery.",
+            "domain": "symantec-enterprise-blogs.security.com",
+            "tokenized": [
+                {
+                    "sent": "Symantec identified a series of attacks by perpetrators attempting to deploy WastedLocker ransomware on U.S. companies' networks to demand multimillion-dollar ransoms after crippling victims' IT infrastructure.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "WastedLocker, a new targeted ransomware linked to the notorious cybercrime group Evil Corp, evolved from the group's previous associations with the Dridex banking Trojan and BitPaymer ransomware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attacks commence with a malicious JavaScript-based framework called SocGholish, found on over 150 compromised websites, and use Cobalt Strike malware along with other tools for network infiltration and ransomware deployment.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Symantec's advanced machine learning system, Targeted Attack Cloud Analytics, proactively detected these attacks, correlating them with early-stage WastedLocker attack patterns.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attacks targeted 31 organizations, primarily major U.S. corporations, including 11 listed companies and eight Fortune 500 companies, with one U.S.-based subsidiary of an overseas multinational.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "WastedLocker's attack chain starts with SocGholish delivered through compromised websites, followed by execution of malicious JavaScript disguised as a browser update and PowerShell scripts for further network penetration and data discovery.",
+                    "is_evidence": 0
+                }
+            ]
+         },
+         {
+            "link": "https://www.proofpoint.com/us/blog/threat-insight/whatta-ta-ta505-ramps-activity-delivers-new-flawedgrace-variant/",
+            "content": "TA505, a notable cybercrime group, resumed distributing large volumes of malicious emails across various industries, using new tools like a KiXtart Loader, the MirrorBlast loader, an updated FlawedGrace variant, and malicious Excel attachments, with specific campaigns targeting German-speaking countries. Since early September 2021, TA505's malware campaigns have escalated from low-volume email waves to tens to hundreds of thousands of emails, resembling their historical activities from 2019 and 2020, including the use of FlawedGrace, a remote access trojan (RAT). Initially, TA505's campaigns in September 2021 involved sending thousands of emails with specific lures and malicious Excel attachments, primarily targeting North America, with a later expansion to German-speaking regions. These early campaigns used detailed lures like legal updates and health claims, with emails containing Excel attachments that led to the download and execution of an MSI file, executing the Rebol loader named MirrorBlast. Late September and October 2021 saw a return to familiar TA505 tactics, techniques, and procedures (TTPs), with the introduction of a KiXtart intermediary loader, evolving the attack chain to involve various email lures, attachments, and download stages leading to the deployment of FlawedGrace. sTA505's updated attack strategy includes multiple intermediate loaders coded in Rebol and KiXtart, serving similar purposes to their previous Get2 downloader, performing reconnaissance and downloading further payloads, ultimately leading to FlawedGrace.",
+            "domain": "www.proofpoint.com",
+            "tokenized": [
+                {
+                    "sent": "TA505, a notable cybercrime group, resumed distributing large volumes of malicious emails across various industries, using new tools like a KiXtart Loader, the MirrorBlast loader, an updated FlawedGrace variant, and malicious Excel attachments, with specific campaigns targeting German-speaking countries.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Since early September 2021, TA505's malware campaigns have escalated from low-volume email waves to tens to hundreds of thousands of emails, resembling their historical activities from 2019 and 2020, including the use of FlawedGrace, a remote access trojan (RAT).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Initially, TA505's campaigns in September 2021 involved sending thousands of emails with specific lures and malicious Excel attachments, primarily targeting North America, with a later expansion to German-speaking regions.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "These early campaigns used detailed lures like legal updates and health claims, with emails containing Excel attachments that led to the download and execution of an MSI file, executing the Rebol loader named MirrorBlast.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Late September and October 2021 saw a return to familiar TA505 tactics, techniques, and procedures (TTPs), with the introduction of a KiXtart intermediary loader, evolving the attack chain to involve various email lures, attachments, and download stages leading to the deployment of FlawedGrace.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "TA505's updated attack strategy includes multiple intermediate loaders coded in Rebol and KiXtart, serving similar purposes to their previous Get2 downloader, performing reconnaissance and downloading further payloads, ultimately leading to FlawedGrace",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

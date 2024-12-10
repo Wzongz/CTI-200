@@ -1,0 +1,16 @@
+Aquatic Panda is a suspected China-based threat group with a dual mission of intelligence collection and industrial espionage. Active since at least May 2020, Aquatic Panda has primarily targeted entities in the telecommunications, technology, and government sectors.
+Aquatic Panda has used publicly accessible DNS logging services to identify servers vulnerable to Log4j (CVE 2021-44228).
+Aquatic Panda has used WinRAR to compress memory dumps prior to exfiltration.
+Aquatic Panda has downloaded additional scripts and executed Base64 encoded commands in PowerShell.
+Aquatic Panda has attempted and failed to run Bash commands on a Windows host by passing them to cmd /C.
+Aquatic Panda has used DLL search-order hijacking to load exe, dll, and dat files into memory.
+Aquatic Panda has attempted to stop endpoint detection and response (EDR) tools on compromised systems.
+Aquatic Panda has deleted malicious executables from compromised machines.
+Aquatic Panda has downloaded additional malware onto compromised hosts.
+Aquatic Panda has encoded PowerShell commands in Base64.
+Aquatic Panda has acquired and used njRAT in its operations.
+Aquatic Panda has acquired and used Cobalt Strike in its operations.
+Aquatic Panda has attempted to harvest credentials through LSASS memory dumping.
+Aquatic Panda has attempted to discover third party endpoint detection and response (EDR) tools on compromised systems.
+Aquatic Panda has used native OS commands to understand privilege levels and system details.
+Aquatic Panda has attempted to discover services for third party EDR products.

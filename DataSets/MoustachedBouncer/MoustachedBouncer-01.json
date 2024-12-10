@@ -1,0 +1,52 @@
+[
+    "claim":"'MoustachedBouncer' APT Spies on Embassies, Likely via ISPs,Diplomats who didn't use VPNs may have lost sensitive state information to a Belarusian threat actor that wields the "Disco" and "Nightclub" malware.",
+    "explain":"A Belarus-linked APT spied on staff in at least four embassies operating in the country, likely by leveraging the country's local Internet service provider (ISP). In a Thursday presentation at Black Hat, ESET senior malware researcher Matthieu Faou will describe an espionage campaign by "MoustachedBouncer," a previously unknown yet nearly decade-old APT aligned with the interests of the government of Belarus. From 2017 to 2022, using bespoke infostealer malware, the group successfully compromised diplomats from one southeast Asian country, one African country, and two European countries. The exact method of intrusion isn't yet proven. MoustachedBouncer may have infected routers at the individual embassies, but ESET assessed that it more likely took advantage of lawful communications interception technology known to be used by the governments of Belarus and Russia at the ISP level. "In most Western countries there are privacy laws, but when you go to countries like Belarus, you should really be careful," Faou advises for organizations of all kinds, not only government agencies. "You should not let traffic go outside of your computer without a VPN." Five years ago, ESET described an espionage campaign in which the Russian APT Turla sewed its data-stealing malware inside of a trojanized Adobe Flash installer. The precise method of getting that malware to its targets wasn't entirely clear, but the researchers speculated that the group might have been manipulating HTTP requests at the ISP level. This, they believe, is the same level at which MoustachedBouncer is operating. Since 1995, the Russian government has been able to spy on Internet and phone networks through its System for Operative Investigative Activities (SORM). According to Amnesty International, all telecommunications providers in Belarus are SORM-compatible, as well. "The SORM system allows the authorities direct, remote-control access to all user communications and associated data without notifying the provider," the nonprofit explained in a 2021 report. Therefore, the researchers wrote, "while the compromise of routers in order to conduct AitM [attacks in the middle] on embassy networks cannot be fully discarded, the presence of lawful interception capabilities in Belarus suggests the traffic mangling is happening at the ISP level rather than on the targets' routers." Whether it used ISP or router compromise, MoustachedBouncer directed targeted computers to a fake Windows Update page. "It's quite efficient, because this fake Windows page comes up as soon as they start the computer. They have nothing to do except download the malware," Faou tells Dark Reading. The malware, "Disco," is a modular framework capable of taking screenshots, running PowerShell scripts, and exfiltrating data from the targeted machine. This method didn't work for targets that filtered their traffic through VPNs, however. In those cases, MoustachedBouncer deployed "Nightclub," another modular malware with the ability to monitor and exfiltrate files, as well as take screenshots, log keystrokes, and record audio. The entirety of its command-and-control communications occurs over email, via the SMTP and IMAP protocols. It's unclear how Nightclub was delivered to targets. Disco was created in accordance with the embassy attacks, but Nightclub was first built in 2014 (and iterated on three times since). Exactly how the group flew under the radar for nearly a decade comes down to a couple of factors, Faou says. "First, they're not compromising many victims — we only see a few targets per year," he points out. "And on a technical level," he adds, "I'd say it's a quite sophisticated campaign. It's not something that we're seeing very often."",
+    {
+        "report_id": "report_0",
+        "link":"https://www.welivesecurity.com/en/eset-research/moustachedbouncer-espionage-against-foreign-diplomats-in-belarus/",
+        "sentences": [
+            "According to ESET telemetry, the group targets foreign embassies in Belarus, and we have identified four different countries whose embassy staff have been targeted: two from Europe, one from South Asia, and one from Africa.",
+            "MoustachedBouncer is a skilled threat actor targeting foreign diplomats in Belarus.",
+            "MoustachedBouncer specializes in the espionage of foreign embassies in Belarus.",
+            "Since 2020, MoustachedBouncer has most likely been able to perform adversary-in-the-middle (AitM) attacks at the ISP level, within Belarus, in order to compromise its targets.",
+            "To compromise their targets, MoustachedBouncer operators tamper with their victims’ internet access, probably at the ISP level, to make Windows believe it’s behind a captive portal.",
+            "While the compromise of routers in order to conduct AitM on embassy networks cannot be fully discarded, the presence of lawful interception capabilities in Belarus suggests the traffic mangling is happening at the ISP level rather than on the targets’ routers."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://cybergeist.io/profile/moustachedbouncer",
+        "sentences": [
+            "ESET also assesses with medium confidence that MoustachedBouncer aligns with Belarus interests.",
+            "More intriguingly, the group is suspected of using a Russian-designed system for remote control access to all user communications known as SORM.",
+            "MoustachedBouncer is a threat actor group believed to be based in Belarus and first published about by ESET in August 2023.",
+            "MoustachedBouncer is known to exploit access to Belarusian internet service providers (ISPs) to conduct \"man in the middle\" attacks on these foreign entities.",
+            "Nevertheless, the potential association between these two groups adds an additional layer of complexity to the cybersecurity landscape and warrants further investigation.",
+            "The group has been noted for its sophisticated cyberespionage activities, particularly against foreign diplomats in Belarus."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.securityweek.com/moustachedbouncer-foreign-embassies-in-belarus-likely-targeted-via-isps/",
+        "sentences": [
+            "At least some of these malware families are believed to have been delivered using AitM attacks at the ISP level, with the traffic of targeted IP addresses being redirected to a fake Windows update site set up to distribute malware.",
+            "ESET is aware of attacks against the Belarusian embassies of four countries: two in Europe, one in Africa, and one in South Asia.",
+            "Foreign embassies in Belarus have been targeted by a cyberespionage group that appears to leverage adversary-in-the-middle (AitM) techniques through internet service providers (ISPs) in the country, according to a new report from ESET.",
+            "The company believes that Belarusian state-sponsored threat actors are using a lawful surveillance system named System of Operative-Investigative Measures (SORM) to conduct the attacks.",
+            "The cybersecurity firm has found evidence suggesting that MoustachedBouncer has been collaborating with a Russia-linked group named Winter Vivern, which has targeted government entities in Europe and Asia, including NATO members.",
+            "The malware and their plugins enable the attackers to monitor files and exfiltrate data from compromised systems, including files, screenshots and audio recordings."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://thehackernews.com/2023/08/researchers-uncover-decade-long-cyber.html",
+        "sentences": [
+            "\"For IP ranges targeted by MoustachedBouncer, the network traffic is tampered at the ISP level, and the latter URL redirects to a seemingly legitimate, but fake, Windows Update URL.\"\"While the compromise of routers in order to conduct AitM on embassy networks cannot be fully discarded, the presence of lawful interception capabilities in Belarus suggests the traffic mangling is happening at the ISP level rather than on the targets' routers,\" Fou said.",
+            "\"Since 2020, MoustachedBouncer has most likely been able to perform adversary-in-the-middle (AitM) attacks at the ISP level, within Belarus, in order to compromise its targets,\" ESET security researcher Matthieu Faou said, describing the group as skilled and advanced.",
+            "\"To compromise their targets, MoustachedBouncer operators tamper with their victims' internet access, probably at the ISP level, to make Windows believe it's behind a captive portal,\" Faou said.",
+            "A hitherto undocumented threat actor operating for nearly a decade and codenamed MoustachedBouncer has been attributed to cyber espionage attacks aimed at foreign embassies in Belarus.",
+            "MoustachedBouncer is also believed to work closely with another advanced persistent threat (APT) actor known as Winter Vivern (aka TA473 or UAC-0114), which has a track record of striking government officials in Europe and the U.S.",
+            "Two Belarusian internet service providers (ISPs), viz Unitary Enterprise A1 and Beltelecom, are suspected to be involved in the campaign, per the Slovak cybersecurity company."
+        ]
+    }
+]

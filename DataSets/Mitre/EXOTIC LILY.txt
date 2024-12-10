@@ -1,0 +1,16 @@
+EXOTIC LILY is a financially motivated group that has been closely linked with Wizard Spider and the deployment of ransomware including Conti and Diavol. EXOTIC LILY may be acting as an initial access broker for other malicious actors, and has targeted a wide range of industries including IT, cybersecurity, and healthcare since at least September 2021.
+EXOTIC LILY has registered domains to spoof targeted organizations by changing the top-level domain (TLD) to ".us", ".co" or ".biz".
+EXOTIC LILY has established social media profiles to mimic employees of targeted companies.
+EXOTIC LILY has created e-mail accounts to spoof targeted organizations.
+EXOTIC LILY has used malicious documents containing exploits for CVE-2021-40444 affecting Microsoft MSHTML.
+EXOTIC LILY has gathered targeted individuals' e-mail addresses through open source research and website contact forms.
+EXOTIC LILY conducted an e-mail thread-hijacking campaign with malicious ISO attachments.
+EXOTIC LILY has relied on victims to open malicious links in e-mails for execution.
+EXOTIC LILY has used the e-mail notification features of legitimate file sharing services for spearphishing.
+EXOTIC LILY has searched for information on targeted individuals on business databases including RocketReach and CrunchBase.
+EXOTIC LILY has copied data from social media sites to impersonate targeted individuals.
+EXOTIC LILY has used contact forms on victim websites to generate phishing e-mails.
+EXOTIC LILY  has uploaded malicious payloads to file-sharing services including TransferNow, TransferXL, WeTransfer, and OneDrive.
+EXOTIC LILY has used malicious links to lure users into executing malicious payloads.
+EXOTIC LILY has gained execution through victims clicking on malicious LNK files contained within ISO files, which can execute hidden DLLs within the ISO.
+EXOTIC LILY has used file-sharing services including WeTransfer, TransferNow, and OneDrive to deliver payloads.

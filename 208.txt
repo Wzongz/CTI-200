@@ -1,0 +1,140 @@
+{
+  "event_id": "208",
+  "claim": "Chinese cyberspies targeted two Russian defense institutes and possibly another research facility in Belarus, according to Check Point Research.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Chinese cyberspies targeted two Russian defense institutes and possibly another research facility in Belarus, according to Check Point Research. The new campaign, dubbed Twisted Panda, is part of a larger, state-sponsored espionage operation that has been ongoing for several months, if not nearly a year, according to the security shop. In a technical analysis, the researchers detail the various malicious stages and payloads of the campaign that used sanctions-related phishing emails to attack Russian entities, which are part of the state-owned defense conglomerate Rostec Corporation. Check Point Research also noted that around the same time that they observed the Twisted Panda attacks, another Chinese advanced persistent threat (APT) group Mustang Panda was observed exploiting the invasion of Ukraine to target Russian organizations.In fact, Twisted Panda may have connections to Mustang Panda or another Beijing-backed spy ring called Stone Panda, aka APT10, according to the security researchers. In addition to the timing of the attacks, other tools and techniques used in the new campaign overlap with China-based APT groups, they wrote. Because of this, the researchers attributed the new cyberspying operation \"with high confidence to a Chinese threat actor.\" During the the course of the research, the security shop also uncovered a similar loader that contained that looked like an easier variant of the same backdoor. And based on this, the researchers say they expect Twisted Panda has been active since June 2021.The new campaign started on March 23 with phishing emails sent to defense research institutes in Russia. All of them had the same subject: \"List of [target institute name] persons under US sanctions for invading Ukraine\", a malicious document attached, and contained a link to an attacker-controlled site designed to look like the Health Ministry of Russia. An email went out to an organization in Minsk, Belarus, on the same day with the subject: \"US Spread of Deadly Pathogens in Belarus\". Additionally, all of the attached documents looked like official Russian Ministry of Health documents with the official emblem and title.Downloading the malicious document drops a sophisticated loader that not only hides its functionality, but also avoids detection of suspicious API calls by dynamically resolving them with name hashing. By using DLL sideloading, which Check Point noted is \"a favorite evasion technique used by multiple Chinese actors,\" the malware evades anit-virus tools. The researchers cited PlugX malware, used by Mustang Panda, and a more recent APT10 global espionage campaign that used the VLC player for side-loading. In this case of the Twisted Panda campaign, \"the actual running process is valid and signed by Microsoft,\" according to the analysis. According to the security researchers, the loader contains two shellcodes. The first one runs the persistence and cleanup script. And the second is a multi-layer loader. \"The goal is to consecutively decrypt the other three fileless loader layers and eventually load the main payload in memory,\" Check Point Research explained.The main payload is a previously undocumented Spinner backdoor, which uses two types of obfuscations. And while the backdoor is new, the researchers noted that the obfuscation methods have been used together in earlier samples attributed to Stone Panda and Mustang Panda. These are control-flow flattening, which makes the code flow non-linear, and opaque predicates, which ultimately causes the binary to perform needless calculations. \"Both methods make it difficult to analyze the payload, but together, they make the analysis painful, time-consuming, and tedious,\" the security shop said. The Spinner backdoor's main purpose is to run additional payloads sent from a command-and-control server, although the researchers say they didn't intercept any of these other payloads. However, \"we believe that selected victims likely received the full backdoor with additional capabilities,\" they noted.The victims — research institutes that focus on developing electronic warfare systems, military-specialized onboard radio-electronic equipment, avionics systems for civil aviation, and medical equipment and control systems for energy, transportation, and engineering industries — also tie the Twisted Panda campaign to China's five-year plan, which aims to expand the country's scientific and technical capabilities. And, as the FBI has warned [PDF], the Chinese government isn't above using cyberespionage and IP theft to accomplish these goals. As Check Point Research concluded: \"Together with the previous reports of Chinese APT groups conducting their espionage operations against the Russian defense and governmental sector, the Twisted Panda campaign described in this research might serve as more evidence of the use of espionage in a systematic and long-term effort to achieve Chinese strategic objectives in technological superiority and military power.\"",
+  "reports": [
+    {
+      "link": "https://thehackernews.com/2022/05/chinese-twisted-panda-hackers-caught.html",
+      "content": "At least two research institutes located in Russia and a third likely target in Belarus have been at the receiving end of an espionage attack by a Chinese nation-state advanced persistent threat (APT).Israeli cybersecurity firm Check Point, which disclosed details of the latest intelligence-gathering operation, attributed it a Chinese threat actor, with connections to that of Stone Panda (aka APT 10, Cicada, or Potassium) and Mustang Panda (aka Bronze President, HoneyMyte, or RedDelta).Calling it a continuation of \"a long-running espionage operation against Russian-related entities that has been in operation since at least June 2021,\" most recent traces of the activity is said to have been observed as recently as April 2022.The attacks, codenamed \"Twisted Panda,\" come in the backdrop of Russia's military invasion of Ukraine, prompting a wide range of threat actors to swiftly adapt their campaigns on the ongoing conflict to distribute malware and stage opportunistic attacks.The injected payload, a previously undocumented backdoor named Spinner, makes use of sophisticated techniques such as control flow flattening to conceal the program flow, previously identified as put to use by both Stone Panda and Mustang Panda in their attacks.The phishing attacks commenced with emails that contain a link masquerading as the Health Ministry of Russia, but in reality is an attacker-controlled domain, as well as a decoy Microsoft Word document designed to trigger the infection and drop a loader.They have materialized in the form of social engineering schemes with topical war and sanctions-themed baits orchestrated to trick potential victims into clicking malicious links or opening weaponized documents.",
+      "domain": "thehackernews.com",
+      "tokenized": [
+        {
+          "sent": "At least two research institutes located in Russia and a third likely target in Belarus have been at the receiving end of an espionage attack by a Chinese nation-state advanced persistent threat (APT).",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Israeli cybersecurity firm Check Point, which disclosed details of the latest intelligence-gathering operation, attributed it a Chinese threat actor, with connections to that of Stone Panda (aka APT 10, Cicada, or Potassium) and Mustang Panda (aka Bronze President, HoneyMyte, or RedDelta).Calling it a continuation of \"a long-running espionage operation against Russian-related entities that has been in operation since at least June 2021,\" most recent traces of the activity is said to have been observed as recently as April 2022.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The attacks, codenamed \"Twisted Panda,\" come in the backdrop of Russia's military invasion of Ukraine, prompting a wide range of threat actors to swiftly adapt their campaigns on the ongoing conflict to distribute malware and stage opportunistic attacks.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The injected payload, a previously undocumented backdoor named Spinner, makes use of sophisticated techniques such as control flow flattening to conceal the program flow, previously identified as put to use by both Stone Panda and Mustang Panda in their attacks.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The phishing attacks commenced with emails that contain a link masquerading as the Health Ministry of Russia, but in reality is an attacker-controlled domain, as well as a decoy Microsoft Word document designed to trigger the infection and drop a loader.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "They have materialized in the form of social engineering schemes with topical war and sanctions-themed baits orchestrated to trick potential victims into clicking malicious links or opening weaponized documents.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://blog.checkpoint.com/security/twisted-panda-check-point-research-unveils-a-chinese-apt-espionage-campaign-against-russian-state-owned-defense-institutes/",
+      "content": "It comes as no surprise that Russian entities themselves became an attractive target for spear-phishing campaigns that are exploiting the sanctions imposed on Russia by western countries.On March 23, malicious emails targeted several defense research institutes based in Russia.The investigation showed that this campaign is part of a larger Chinese espionage operation that has been ongoing against Russian-related entities for several months.The purpose of the espionage operation is likely to collect information from targets inside the high-tech Russian defense industry to support China in its technological advancement and long-term plan.What is more, Twisted Panda campaign bears multiple overlaps with advanced and long-standing Chinese cyberespionage actors , like the control-flow obfuscations observed in SPINNER were previously used by the Chinese group APT10 and reappeared in a recent Mustang Panda espionage campaign.the tactics, techniques, and procedures (TTPs) of this operation, researchers feel confident this campaign to have been carried out by a Chinese APT threat actor.",
+      "domain": "blog.checkpoint.com",
+      "tokenized": [
+        {
+          "sent":"It comes as no surprise that Russian entities themselves became an attractive target for spear-phishing campaigns that are exploiting the sanctions imposed on Russia by western countries.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"On March 23, malicious emails targeted several defense research institutes based in Russia.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The investigation showed that this campaign is part of a larger Chinese espionage operation that has been ongoing against Russian-related entities for several months.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The purpose of the espionage operation is likely to collect information from targets inside the high-tech Russian defense industry to support China in its technological advancement and long-term plan.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "What is more, Twisted Panda campaign bears multiple overlaps with advanced and long-standing Chinese cyberespionage actors , like the control-flow obfuscations observed in SPINNER were previously used by the Chinese group APT10 and reappeared in a recent Mustang Panda espionage campaign.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"the tactics, techniques, and procedures (TTPs) of this operation, researchers feel confident this campaign to have been carried out by a Chinese APT threat actor.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": " https://research.checkpoint.com/2022/twisted-panda-chinese-apt-espionage-operation-against-russians-state-owned-defense-institutes/",
+      "content": "However, the Twisted Panda campaign bears multiple overlaps with advanced and long-standing Chinese cyberespionage actors: The defense research institutes that we identified as targets of this attack belong to a holding company within the Russian state-owned defense conglomerate Rostec Corporation.In addition, the Twisted Panda campaign shows once again how quickly Chinese espionage actors adapt and adjust to world events, using the most relevant and up-to-date lures to maximize their chances of success.In the past two months, we observed multiple APT groups attempting to leverage the Russia and Ukraine war as a lure for espionage operations.In this report, CPR researchers have described and exposed a Chinese espionage operation named Twisted Panda which targets defense research institutes in Russia and possibly also in Belarus.To help track and research the Twisted Panda campaign, see Appendix A for relevant Yara rules for all the major components of this attack.Together with the previous reports of Chinese APT groups conducting their espionage operations against the Russian defense and governmental sector, the Twisted Panda campaign described in this research might serve as more evidence of the use of espionage in a systematic and long-term effort to achieve Chinese strategic objectives in technological superiority and military power.",
+      "domain": "research.checkpoint.com",
+      "tokenized": [
+        {
+          "sent":"However, the Twisted Panda campaign bears multiple overlaps with advanced and long-standing Chinese cyberespionage actors: The defense research institutes that we identified as targets of this attack belong to a holding company within the Russian state-owned defense conglomerate Rostec Corporation.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In addition, the Twisted Panda campaign shows once again how quickly Chinese espionage actors adapt and adjust to world events, using the most relevant and up-to-date lures to maximize their chances of success.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In the past two months, we observed multiple APT groups attempting to leverage the Russia and Ukraine war as a lure for espionage operations.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In this report, CPR researchers have described and exposed a Chinese espionage operation named Twisted Panda which targets defense research institutes in Russia and possibly also in Belarus.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "To help track and research the Twisted Panda campaign, see Appendix A for relevant Yara rules for all the major components of this attack.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Together with the previous reports of Chinese APT groups conducting their espionage operations against the Russian defense and governmental sector, the Twisted Panda campaign described in this research might serve as more evidence of the use of espionage in a systematic and long-term effort to achieve Chinese strategic objectives in technological superiority and military power.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://gbhackers.com/twisted-panda-chinese-apt/",
+      "content": "As recently on March 23, several Russian research institutes affiliated with the defense industry received malicious emails.China’s five-year plan also identifies Twisted Panda as part of its effort to improve its scientific and technological capabilities.In an analysis published recently by specialists at Check Point Research, a new spy campaign was discovered, dubbed “Twisted Panda”.It is possible that Twisted Panda is a part of the same spy ring as Mustang Panda or Stone Panda, aka APT10, another Beijing-sponsored spy group.The invasion of Ukraine was exploited by another Chinese APT group, Mustang Panda, to target Russian organizations at the same time.This spy operation primarily targeted two Russian defense institutes and a research facility in Belarus.",
+      "domain": "gbhackers.com",
+      "tokenized": [
+        {
+          "sent":"As recently on March 23, several Russian research institutes affiliated with the defense industry received malicious emails.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"China’s five-year plan also identifies Twisted Panda as part of its effort to improve its scientific and technological capabilities.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In an analysis published recently by specialists at Check Point Research, a new spy campaign was discovered, dubbed “Twisted Panda”.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"It is possible that Twisted Panda is a part of the same spy ring as Mustang Panda or Stone Panda, aka APT10, another Beijing-sponsored spy group.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The invasion of Ukraine was exploited by another Chinese APT group, Mustang Panda, to target Russian organizations at the same time.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "This spy operation primarily targeted two Russian defense institutes and a research facility in Belarus.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

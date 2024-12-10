@@ -1,0 +1,45 @@
+Leviathan is a Chinese state-sponsored cyber espionage group that has been attributed to the Ministry of State Security's (MSS) Hainan State Security Department and an affiliated front company. Active since at least 2009, Leviathan has targeted the following sectors: academia, aerospace/aviation, biomedical, defense industrial base, government, healthcare, manufacturing, maritime, and transportation across the US, Canada, Europe, the Middle East, and Southeast Asia.
+Leviathan has established domains that impersonate legitimate entities to use for targeting efforts. 
+Leviathan has archived victim's data prior to exfiltration.
+Leviathan has used BITSAdmin to download additional tools.
+Leviathan has used JavaScript to create a shortcut file in the Startup folder that points to its main backdoor.
+Leviathan has used JavaScript to create a shortcut file in the Startup folder that points to its main backdoor.
+Leviathan has used PowerShell for execution.
+Leviathan has used VBScript.
+Leviathan has compromised social media accounts to conduct social engineering attacks.
+Leviathan has compromised email accounts to conduct social engineering attacks.
+Leviathan has used C:\Windows\Debug and C:\Perflogs as staging directories.
+Leviathan has staged data remotely prior to exfiltration.
+Leviathan has used a DLL known as SeDll to decrypt and execute other JavaScript backdoors.
+Leviathan has infected victims using watering holes.
+Leviathan has created new social media accounts for targeting efforts.
+Leviathan has created new email accounts for targeting efforts.
+Leviathan has used WMI for persistence.
+Leviathan has exfiltrated data over its C2 channel.
+Leviathan has used an uploader known as LUNCHMONEY that can exfiltrate files to Dropbox.
+Leviathan has exploited multiple Microsoft Office and .NET vulnerabilities for execution, including CVE-2017-0199, CVE-2017-8759, and CVE-2017-11882.
+Leviathan has used external remote services such as virtual private networks (VPN) to gain initial access.
+Leviathan has collected compromised credentials to use for targeting efforts.
+Leviathan has downloaded additional scripts and files from adversary-controlled servers.
+Leviathan has utilized OLE as a method to insert malicious content inside various phishing documents. 
+Leviathan has conducted internal spearphishing within the victim's environment for lateral movement.
+Leviathan has obfuscated code using base64 and gzip compression.
+Leviathan has inserted garbage characters into code, presumably to avoid anti-virus detection.
+Leviathan has used steganography to hide stolen data inside other files stored on Github.
+Leviathan has used publicly available tools to dump password hashes, including HOMEFRY.
+Leviathan has used publicly available tools to dump password hashes, including ProcDump and WCE.
+Leviathan has sent spearphishing emails with malicious attachments, including .rtf, .doc, and .xls files.
+Leviathan has sent spearphishing emails with links, often using a fraudulent lookalike domain and stolen branding.
+Leviathan has utilized techniques like reflective DLL loading to write a DLL into memory and load a shell that provides backdoor access to the victim.
+Leviathan has used protocol tunneling to further conceal C2 communications and infrastructure.
+Leviathan has used multi-hop proxies to disguise the source of their malicious traffic.
+Leviathan has targeted RDP credentials and used it to move through the victim environment.
+Leviathan used ssh for internal reconnaissance.
+Leviathan relies on web shells for an initial foothold as well as persistence into the victim's systems.
+Leviathan has used stolen code signing certificates to sign malware.
+Leviathan has used regsvr32 for execution.
+Leviathan has sent spearphishing email links attempting to get a user to click.
+Leviathan has sent spearphishing attachments attempting to get a user to click.
+Leviathan has obtained valid accounts to gain initial access.
+Leviathan has received C2 instructions from user profiles created on legitimate websites such as Github and TechNet.
+Leviathan has used WMI for execution.

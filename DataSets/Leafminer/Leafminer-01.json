@@ -1,0 +1,52 @@
+[
+    "claim":"Leafminer: New Espionage Campaigns Targeting Middle Eastern Regions",
+    "explain":"Researchers with Symantec have uncovered a malicious threat actor group called Leafminer, which is based in Iran and has been active since at least 2017. Since last year, the group has targeted hundreds of organizations, including government, finance and energy in the Middle East, according to the July 25 report. In their report, Symantec researchers found that the group will adapt publicly available techniques and tools for their attacks and experiments, as well as publishing proof-of-concept exploits. The group has attempted to infiltrate target networks by water holing websites, creating vulnerability scans of network services on the Internet and using brute-force and dictionary login attempts. The group seems to be looking for email data, files and database servers on the target systems, according to Symantec. Symantec detection telemetry showed malware, as well as the custom tools used by Leafminer, distributed through 44 different systems across Saudi Arabia, Kuwait, Israel and Lebanon.A list of 809 vulnerability scan targets was also found. The targets were in Saudi Arabia, United Arab Emirates, Qatar, Kuwait, Bahrain, Egypt, Israel and Afghanistan. Obfuscated JavaScript code was also seen on compromised servers that were affected by a watering hole attack conducted by the group, which used a Lebanese government site, a Saudi Arabian healthcare site and an Azerbaijan university as the platforms. The code was designed to steal Samba networking protocol (SMB) credential hashes that could subsequently be brute-forced offline. The threat actor is not afraid to mimic other successful techniques as well. The group uses the EternalBlue vulnerability, which was leaked by the Shadow Brokers, to laterally move within networks that they have breached. The group also uses a Python script to scan for Heartbleed, a well-known OpenSSL vulnerability, in an attempt to get at encrypted data. Leafminer does have their own custom tools, however. Symantec did identity two strains of custom malware that were used: Trojan.Imecab and Backdoor.Sorgu. Directly connected to this malware are several sets of reflective loader DLLs that are used as droppers or to execute specific commands on a compromised system. Interestingly, these custom tools required Leafminer to load the .NET framework onto a compromised machines in order to allow them to run. Backdoor.Sorgu provides remote access to the infected machine. It is installed as a service in a Windows system through a shell command script. Zero in on the most attractive 5G NR deployment strategies, and take a look ahead to later technology developments and service innovations. Join us for the Deployment Strategies for 5G NR breakfast workshop in LA at MWCA on September 12. Register now to learn from and network with industry experts – communications service providers get in free! Trojan.Imecab sets up a persistent remote access account on the victim machine that has a hardcoded password. It installs itself in the system as a Windows service to achieve persistence. File exfiltration borrows a technique that was revealed at Black Hat Europe 2017 during a presentation called "Lost in Transaction: Process Doppelgänging." It uses NTFS transactions to modify the executable of a seemingly benign process that is suspended right after creation. All this borrowing from other attackers has led Symantec researchers to conclude that group is likely still active, but the people running it are also inexperienced. "Leafminer's eagerness to learn from others suggests some inexperience on the part of the attackers, a conclusion that's supported by the group's poor operational security," according to Symantec's research. "It made a major blunder in leaving a staging server publicly accessible, exposing the group's entire arsenal of tools." This suggests Leafminer is not state-backed, but more a criminal operation with a Middle Eastern focus.",
+    {
+        "report_id": "report_0",
+        "link":"https://socprime.com/news/leafminer-apt-group-targets-middle-east/",
+        "sentences": [
+            "Attackers have been conducting cyber espionage campaigns since the beginning of 2017 using well-known techniques and malware.",
+            "Delaware, USA – July 27, 2018 – Researchers from Symantec exposed the activities of the Leafminer hacking group allegedly linked to the Iranian government.",
+            "In addition to the known malware and hacking tools, the group created its own backdoors and modify several tools.",
+            "Leafminer scans for vulnerabilities publicly accessible Web resources of targeted organizations or conduct brute force attacks to penetrate and install trojans and backdoors.",
+            "The experts managed to gain access to one of the servers used in the group’s operations and obtain a list of Leafminer targets and their tools.",
+            "The hacker group is very successful in cyber espionage operations in the Middle East, but the disclosure of their techniques and tools should help organizations better secure themselves against Leafminer attacks."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://securityaffairs.com/74812/apt/leafminer-iran-middle-east.html",
+        "sentences": [
+            "Hackers belonging an Iran-linked APT group tracked as ‘Leafminer’ have targeted government and various organizations in the Middle East.",
+            "Researchers discovered that hackers used three main techniques for initial intrusion of target networks: Compromised web servers used for watering hole attacks Scans/exploits for vulnerabilities of network services Dictionary attacks against logins of network services,While analyzing the attacks conducted by the group, the experts discovered a download URL for a malware payload used to compromise the victims.",
+            "Symantec discovered two custom malware used by the Leafminer group, tracked as Trojan.",
+            "The URL pointed out to a compromised web server on the domain e-qht[.]az that had been used to distribute Leafminer malware, payloads, and tools within the group and make them available for download from victim machines.",
+            "“On a broad level, it has followed the recent trend among targeted attack groups for “living off the land”—using a mixture of publicly available tools alongside its own custom malware.”",
+            "“Symantec has uncovered the operations of a threat actor named Leafminer that is targeting a broad list of government organizations and business verticals in various regions in the Middle East since at least early 2017. ”"
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://gbhackers.com/leafminer-apt-attack/",
+        "sentences": [
+            "Compromised web servers used for watering hole attacks Scans/exploits for vulnerabilities of network services Dictionary attacks against logins of network services Attackers employed the malicious email attachments and phishing emails for an initial stage of attacks.",
+            "In this case, Groups of attackers using publicly available tools and malicious techniques using an exploits using published proofs-of-concept.",
+            "Leafminer campaign actively developing with powerful toolkits that will be used for analyzing the group’s techniques and tools for vulnerability scans and exploitation.",
+            "Newly discovered APT Cyber Espionage Campaign called “Leafminer” from Iranian Hacker Group targeting the wide range of government organizations to steal the sensitive data such as Email Data, Files & Database servers Credentials.",
+            "This APT group using various types of attack tactics such as watering hole websites, vulnerability scans of network services on the internet, and brute-force/dictionary login attempts to infiltrate the target networks.",
+            "This type of attack was observed both via dedicated servers set up by Leafminer as well as staging servers compromised by the group, Symantec said."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.darkreading.com/cyber-risk/symantec-leafminer-group-is-a-dangerous-group-of-amateurs",
+        "sentences": [
+            "\"Leafminer's eagerness to learn from others suggests some inexperience on the part of the attackers, a conclusion that's supported by the group's poor operational security,\" according to Symantec's research.",
+            "In their report, Symantec researchers found that the group will adapt publicly available techniques and tools for their attacks and experiments, as well as publishing proof-of-concept exploits.",
+            "Researchers with Symantec have uncovered a malicious threat actor group called Leafminer, which is based in Iran and has been active since at least 2017.",
+            "Symantec detection telemetry showed malware, as well as the custom tools used by Leafminer, distributed through 44 different systems across Saudi Arabia, Kuwait, Israel and Lebanon.",
+            "The group has attempted to infiltrate target networks by water holing websites, creating vulnerability scans of network services on the Internet and using brute-force and dictionary login attempts.",
+            "The group seems to be looking for email data, files and database servers on the target systems, according to Symantec."
+        ]
+    }
+]

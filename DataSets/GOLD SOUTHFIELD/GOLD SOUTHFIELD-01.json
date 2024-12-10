@@ -1,0 +1,52 @@
+[
+    "claim":"GOLD SOUTHFIELD is a financially motivated cybercriminal threat group that authors and operates the REvil (aka Sodinokibi) ransomware on behalf of various affiliated threat groups.",
+    "explain":"GOLD SOUTHFIELD was a financially motivated cybercriminal threat group that authored and operated the REvil (aka Sodinokibi) ransomware on behalf of various affiliated threat groups. Operational from April 2019 to January 2023, the group obtained the GandCrab source code from GOLD GARDEN, the operators of GandCrab that voluntarily withdrew their ransomware from underground markets in May 2019. GOLD SOUTHFIELD was responsible for authoring REvil and operating the backend infrastructure used by affiliates (also called partners) to create malware builds and to collect ransom payments from victims. CTU researchers assess with high confidence that GOLD SOUTHFIELD is a former GandCrab affiliate and continues to work with other former GandCrab affiliates. REvil partners were recruited on semi-exclusive underground forums by the Russian-speaking operators of GOLD SOUTHFIELD, who refuse to work with English-speaking criminals. A limited number of partnerships were offered, with preference given to those able to perpetrate high-value deployments impacting entire organizations. GOLD SOUTHFIELD's affiliates distributed ransomware through a variety of means including exploit kits, scan-and-exploit attacks, publicly-accessible RDP and remote management and monitoring (RMM) servers, and backdoored software installers. In December 2019, GOLD SOUTHFIELD began operating a name-and-shame style website that uses stolen data from intrusions to generate additional leverage against victims. From 2019 through 2021 GOLD SOUTHFIELD operated one of the most active ransomware-as-a-service operations in the cybercriminal ecosystem. The operation ceased in October 2021 only to return in April 2022, likely at the direction of new principals. REvil never regained anything approaching the volume of attacks achieved during their peak years. In October 2022, GOLD SOUTHFIELD worked with an affiliate to publish data stolen from an Australian healthcare organization but ransomware was not used in the attack. GOLD SOUTHFIELD's infrastructure ceased operation in early January 2023. In June 2023, a coalition of Russia-aligned hacktivists groups, including KillNet and Anonymous Sudan, announced intentions to attack the European banking system. In their announcement they claimed a partnership with former REvil threat actors who intended to participate in the attacks. No evidence was provided to substantiate any link to past GOLD SOUTHFIELD principals or affiliates and is likely an attempt to capitalize on the well-known REvil brand.",
+    {
+        "report_id": "report_0",
+        "link":"https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Pinchy%20Spider%2C%20Gold%20Southfield&n=1",
+        "sentences": [
+            "CrowdStrike Intelligence has recently observed Pinchy Spider affiliates deploying GandCrab ransomware in enterprise environments, using lateral movement techniques and tooling commonly associated with nation-state adversary groups and penetration testing teams.",
+            "GandCrab and Sodinokibi have been observed to be distributed by DanaBot (operated by Scully Spider, TA547) and Taurus Loader (operated by Venom Spider, Golden Chickens).",
+            "Pinchy Spider sells access to use GandCrab ransomware under a partnership program with a limited number of accounts.",
+            "Spider is the criminal group behind the development of the ransomware most commonly known as GandCrab, which has been active since January 2018.",
+            "The program is operated with a 60-40 split in profits (60 percent to the customer), as is common among eCrime actors, but Pinchy Spider is also willing to negotiate up to a 70-30 split for “sophisticated” customers.",
+            "This change in tactics makes Pinchy Spider and its affiliates the latest eCrime adversaries to join the growing trend of targeted, low-volume/high-return ransomware deployments known as “big game hunting."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://teamt5.org/en/posts/introducing-the-most-profitable-ransomware-revil/",
+        "sentences": [
+            "In this model, Ransomware developers are responsible for development and maintenance of the ransomware, while the groups of cyber criminals, named affiliates in this model, are responsible for accessing victims' system to distribute the ransomware.",
+            "REvil was highly possible the successor of GandCrab, another notorious ransomware, because of code similarities and REvil's active operations right after GandCrab's retirement.[3] Numerous campaigns attacking multiple sectors were observed all over the world.",
+            "REvil, a.k.a Sodinokibi, is a Ransomware as a Service (RaaS) operation deployed by a Russian cybercrime group named GOLD SOUTHFIELD or Pinchy Spider.",
+            "The actors of REvil adopt the Ransomware as a Service business model.",
+            "The business model allows cyber criminals who are not capable of developing their own ransomware to buy the service on dark web and deploy ransomware attack.",
+            "The ransomware is now distributed primarily through compromised RDP sessions (65%), phishing (16%), and software vulnerabilities (8%).[5]"
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.csoonline.com/article/572249/whos-who-in-the-cybercriminal-underground.html",
+        "sentences": [
+            "Cybercriminal groups are specializing as malware developers, initial access brokers, ransomware-as-a-service providers, data brokers, and other roles.",
+            "More and more ransomware groups have emerged and existing ones continue to prosper in terms of repeatedly attaining success with breaching prominent organizations.",
+            "Ransomware affiliates can be seen as versatile “contractors” hired by ransomware groups to perform operational tasks: from buying initial access into networks from IABs or simply procuring stolen credentials and data dumps that could aid in reconnaissance, to executing the attack.",
+            "Similarly, a purported Babuk ransomware admin also leaked the group’s Visual Studio project files and source code that, with regards to their organization, reflect the structure followed by legitimate software companies.",
+            "To speed up their attacks, affiliates may rent RaaS platforms to encrypt files with “rented ransomware,” and intensively employ any and all existing tools, services and exploits at their discretion.",
+            "We are at a point in time when cybercriminals including ransomware gangs have established themselves as organized, illicit businesses rather than a one-person hacking operation."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://attack.mitre.org/groups/G0115/",
+        "sentences": [
+            "GOLD SOUTHFIELD has conducted malicious spam (malspam) campaigns to gain access to victim's machines.",
+            "GOLD SOUTHFIELD has distributed ransomware by backdooring software installers via a strategic web compromise of the site hosting Italian WinRAR.GOLD SOUTHFIELD has breached Managed Service Providers (MSP's) to deliver malware to MSP customers.",
+            "GOLD SOUTHFIELD has executed base64 encoded PowerShell scripts on compromised hosts.",
+            "GOLD SOUTHFIELD has staged and executed PowerShell scripts on compromised hosts.",
+            "GOLD SOUTHFIELD is a financially motivated threat group active since at least 2018 that operates the REvil Ransomware-as-a Service (RaaS).",
+            "GOLD SOUTHFIELD provides backend infrastructure for affiliates recruited on underground forums to perpetrate high value deployments."
+        ]
+    }
+]

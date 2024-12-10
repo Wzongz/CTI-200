@@ -1,0 +1,13 @@
+Sophisticated cyber actors backed by Iran known as OilRig have been linked to a spear-phishing campaign that infects victims with a new strain of malware called Menorah.
+
+"The malware was designed for cyberespionage, capable of identifying the machine, reading and uploading files from the machine, and downloading another file or malware," Trend Micro researchers Mohamed Fahmy and Mahmoud Zohdy said in a Friday report.
+
+The victimology of the attacks is not immediately known, although the use of decoys indicates at least one of the targets is an organization located in Saudi Arabia.Also tracked under the names APT34, Cobalt Gypsy, Hazel Sandstorm, and Helix Kitten, OilRig is an Iranian advanced persistent threat (APT) group that specializes in covert intelligence gathering operations to infiltrate and maintain access within targeted networks.
+
+The revelation builds on recent findings from NSFOCUS, which uncovered an OilRig phishing attack resulting in the deployment of a new variant of SideTwist malware, indicating that it's under continuous development.
+
+In the latest infection chain documented by Trend Micro, the lure document is used to create a scheduled task for persistence and drop an executable ("Menorah.exe") that, for its part, establishes contact with a remote server to await further instructions. The command-and-control server is currently inactive.The .NET malware, an improved version of the original C-based SideTwist implant discovered by Check Point in 2021, is armed with various features to fingerprint the targeted host, list directories and files, upload selected files from the compromised system, execute shell commands, and download files to the system.
+
+"The group consistently develops and enhances tools, aiming to reduce security solutions and researchers' detection," the researchers said.
+
+"Typical of APT groups, APT34 demonstrates their vast resources and varied skills, and will likely persist in customizing routines and social engineering techniques to use per targeted organization to ensure success in intrusions, stealth, and cyber espionage."

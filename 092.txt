@@ -1,0 +1,141 @@
+{
+  "event_id": "092",
+  "claim": "The Iranian advanced persistent threat actor and cyberespionage group, APT35, also known as Charming Kitten or Phosphorus, has been making headlines since 2014. ",
+  "original_label": "true",
+  "label": "true",
+  "explain": "The Iranian advanced persistent threat actor and cyberespionage group, APT35, also known as Charming Kitten or Phosphorus, has been making headlines since 2014. During that time, the group launched one of the most sophisticated internet based spying campaigns organized by Iranian threat actors – a campaign conducted via social media. Since then, the group has not slowed down and has been responsible for several other cyber attacks around the world. In 2019, APT35 was responsible for targeting several academic institutions in the U.S, France, and the Middle East region. In late 2020, the group targeted medical research organizations in Israel and in the U.S. By 2021, APT35 was abusing Microsoft Exchange Server vulnerabilities that were chained together (ProxyShell). As of 2022, APT35 has been observed using new tactics to attack a wide range of targets. Using a new strain of malware, the threat actors were able to use the malware for intelligence collection. The group has also been seen using a new tool called Hyperscrape to quietly extract emails from victim’s mailboxes. Let’s take a look at APT35, their tactics and techniques, and what a tool like Hyperscrape can do for an advanced persistent threat actor like APT35.As previously mentioned, Charming Kitten has been on the radar of the infosec community since 2014 despite being active since 2013. Over the past few months, the Cybereason Nocturnus Team has observed an uptick in activity from the Iranian APT. Charming Kitten was previously known for attacking medical research organizations in the U.S. and in Israel, using malicious PDFs to lure their victims and they have continued to include the medical sector in their attacks. In 2020, researchers discovered Charming Kitten targeting a small but specific group of people in the medical research field – particularly oncology, genetics, and neurology. The threat actors used a spear-phishing technique and sent emails to their victims with the subject line “Nuclear Weapons at a Glance: Israel.” The emails contained information about Israel’s nuclear capabilities and a link to a malicious website which was controlled by the threat actors. Once the victim clicked on the email, they were taken to a phishing page that asked them to enter their Microsoft OneDrive credentials. The campaign was known as “BadBlood” and was highly targeted – a typical campaign for APTs in general. It is not unusual for Charming Kitten’s phishing campaigns to target a select number of people, but it is unusual for Iranian APTs as a whole. It is suspected that Charming Kitten is associated with Iran’s Islamic Revolutionary Guard Corps due to the group’s targeting and collection aligning with the entity. In 2019, Microsoft’s Digital Crimes Unit took over the infrastructure of APT35. At the time, APT35 was responsible for spear-phishing campaigns against several individuals and organizations (activists, journalists, defense companies, etc.). The takedown included a court order for Microsoft to assume control of 99 domains that belonged to APT35 and that the group used during their phishing campaigns. Most of the domains looked as if they belonged to Microsoft or other legitimate technology companies. The emails associated with the campaigns contained links that eventually lead to the installation of malware and the domains were used as a part of the command-and-control infrastructure of the group. In addition to attacking journalists and medical professionals, APT35 has used their malware to gain entry into computer systems for businesses and government agencies to steal sensitive information. However, the group especially had an interest in activists and journalists involved in advocacy and reporting on issues in the Middle East. APT35 is still active despite the 2019 takedown, and in February 2022, the group was seen using a new toolset that included a novel backdoor, malware loaders, a browser info stealer, and a keylogger. They were also seen using open-source tools such as the DiskCryptor library, BitLocker, and Fast Reverse Proxy. APT35 was seen deploying a new PowerShell Backdoor called PowerLess Backdoor and they were using a stealthy technique to avoid detection. The PowerShell Backdoor was being run in a .NET context instead of spawning the PowerShell process. The PowerLess Backdoor supports the following capabilities:While analyzing, security experts from Cybereason noticed several grammatical mistakes in the backdoor’s code, suggesting that English was likely not the native language of the backdoor’s authors. Cybereason also found links between the APT35 and Momento Ransomware – a ransomware group that initially appeared in 2021. Momento exploited CVE-2021-21972 – a VMware vCenter Server vulnerability that could be exploited by remote attackers without user interaction. There were several similarities between the TTPs used by APT35 and Momento ransomware, such as shared URL directory patterns and similar file naming schemes. According to Sophos, Momento ransomware features a unique failsafe mechanism that locks files inside password-protected WinRAR archives. This is done in case the main file encryption operation fails. Iranian groups such as APT35, typically operate as contractors on behalf of the Iranian government and scan the web for popular servers that may be vulnerable due to undisclosed vulnerabilities. Once they find the vulnerable servers, they gain control over unpatched systems. If the compromised networks are of interest to the Iranian government, the threat actor will deploy malware and glean information from the compromised systems – ensuring that they maintain persistence for future collection efforts. If the target doesn’t have value, APT35 will sell access to the target’s systems on underground forums, or the target will be monetized for the threat actor.In January 2022, APT35 was seen exploited the Log4Shell/Log4j security vulnerability, seeing it as a new opportunity to strike before organizations patched their affected systems. When Log4Shell emerged, researchers observed the threat actor performing widespread scans just four days after the vulnerability was disclosed. At the tail end of December 2021, Log4Shell took cyberspace by surprise and had cybersecurity professionals panicking. Log4Shell is a zero-day critical vulnerability that was found in the Apache Log4j2 Java-based logging library. Although conversation regarding Log4Shell has diminished, the vulnerability is still an issue for organizations and remains a permanent threat. Since the vulnerability was publicized, over 80% of Log4Shell’s exploitation attempts originated within the U.S. Because many systems are still using older versions of Log4j, the problems continue to escalate. APT35 exploited Log4Shell via JNDI Exploit Kits – a publicly available open-source tool that has since been removed from GitHub due to its popularity following Log4Shell. Through analysis, Checkpoint observed that APT35 linked to their malware infection on their victim’s machines for as long as it took for them to achieve their goal. After their goal was achieved, they would disappear without a trace.As of August 2022, Charming Kitten was observed using a new tool called Hyperscrape to extract emails from their victims’ mailboxes. The tool allows the threat actors to extract emails from Yahoo!, Google, and Microsoft Outlook. Hyperscrape is written for Windows systems in .NET and is run on the threat actor’s computer. Once the thereat actor has possession of valid email credentials or a valid session cookie, Hyperscrape quietly extracts emails from the victim’s mailbox. Google’s initial analysis of Hyperscrape indicated that the tool was deployed against Iranian accounts, ostensibly to collect information of Iranian dissidents. Avertium’s Cyber Threat Intelligence Team (CTI) was able to analyze a sample of Hyperscrape. This tool set is not meant to be used on remote machines, and therefore does not attempt to obfuscate its strings. The fact that it is easily caught and quarantined by Windows Defender is not a deterrence. It is the harvested credentials that matter. Hyperscrape checks its connectivity to a particular command control server after it is executed from a folder with specific file dependencies. Hyperscrape then terminates if there is no connectivity. Next, it opens a form to specify parameters if everything is okay. Once the parameters are provided, data is sent to the command and control for confirmation. Following this action, a new form appears and APT35 provides a valid cookie file unless it was provided via command line. After starting an embedded web browser, Hyperscrape stores the cookies in a local cache used by the browser. The browser is configured to look like it is outdated. Next, the browser navigates to the targeted email server (Gmail, Outlook, etc.). When using Hyperscrape, all emails are saved locally in a Downloads folder with the filename corresponding to the email subject. After the emails are dumped, Hyperscrape sends status and system information to the command-and-control server before deleting any security emails from the targeted email server. Earlier versions of Hyperscrape, allowed APT35 to download data from Google TakeOut, which is a service for customers to download data from Good Documents, Google Calendar, Gmail, and more. After researchers analyzed the tool, they found that functionality may differ for Microsoft and Yahoo! accounts. In July 2022, researchers found that APT35 had an additional tool that they used to target Telegram accounts. The tool needed access to the victim’s email box to be successful, so it’s suspected that APT35 operates Hyperscrape before using the email data for compromising tools such as the Telegram account dump.\n\n\n",
+  "reports": [
+    {
+      "link": "https://blog.trendmicro.com/trendlabs-security-intelligence/more-than-a-dozen-obfuscated-apt33-botnets-used-for-extreme-narrow-targeting/",
+      "content": "APT33 has also been executing more aggressive attacks over the past few years. Another European oil company suffered from an APT33 related malware infection on one of their servers in India for at least 3 weeks in November and December 2018. As mentioned above, APT33 is known to use spear phishing emails to gain entry into a target’s network, and given their malicious activity the threat is definitively serious. Aside from the relatively noisy attacks of APT33 against oil product supply chains, we found that APT33 has been using several C&C domains for small botnets comprised of about a dozen bots each. The threat group regularly referred to as APT33 is known to target the oil and aviation industries aggressively. These compromises indicate a big risk to companies in the oil industry, as APT33 is known to use destructive malware.",
+      "domain": "blog.trendmicro.com",
+      "tokenized": [
+        {
+          "sent": "APT33 has also been executing more aggressive attacks over the past few years.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Another European oil company suffered from an APT33 related malware infection on one of their servers in India for at least 3 weeks in November and December 2018.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"As mentioned above, APT33 is known to use spear phishing emails to gain entry into a target’s network, and given their malicious activity the threat is definitively serious.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Aside from the relatively noisy attacks of APT33 against oil product supply chains, we found that APT33 has been using several C&C domains for small botnets comprised of about a dozen bots each.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The threat group is notable for its use of file and code-sharing sites, such as Dropbox and GitHub, for command and control of its malware.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "These compromises indicate a big risk to companies in the oil industry, as APT33 is known to use destructive malware.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.clearskysec.com/the-kittens-are-back-in-town-2/",
+      "content": "APT is associated with the Ministry of Intelligence of Iran. Charming Kitten, also known as APT35 or Ajax or Phosphorus, is an Iranian cyber-espionage group active since 20143 . Following a Maltego graph summarized the changes in the infrastructure: This IP address currently resolves two highly suspicious domains that are attributed to the group – ‘login-gov[.]info’, and broadcastnews[.]pro’. From a historical perspective, this type of cyber activities had been attributed mainly to the Russian APT groups such as APT28 (known as Fancy Bear). Microsoft’s October announcement exposes, for first time, that Charming Kitten, an Iranian APT group, plays a role in the domain of cyber-attacks for the purpose of interfering with democratic procedures. On 4th of October 20192 , Microsoft has announced that Phosphorus (known as Charming Kitten) attempted to attack email accounts that are associated with the following targets: U.S. presidential campaign, current and former U.S. government officials, journalists covering global politics, and prominent Iranians living outside Iran.",
+      "domain": "www.clearskysec.com",
+      "tokenized": [
+        {
+          "sent":"APT is associated with the Ministry of Intelligence of Iran.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Charming Kitten, also known as APT35 or Ajax or Phosphorus, is an Iranian cyber-espionage group active since 20143 .",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Following a Maltego graph summarized the changes in the infrastructure: This IP address currently resolves two highly suspicious domains that are attributed to the group – ‘login-gov[.]info’, and broadcastnews[.]pro’.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "From a historical perspective, this type of cyber activities had been attributed mainly to the Russian APT groups such as APT28 (known as Fancy Bear).",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Microsoft’s October announcement exposes, for first time, that Charming Kitten, an Iranian APT group, plays a role in the domain of cyber-attacks for the purpose of interfering with democratic procedures.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "On 4th of October 20192 , Microsoft has announced that Phosphorus (known as Charming Kitten) attempted to attack email accounts that are associated with the following targets: U.S. presidential campaign, current and former U.S. government officials, journalists covering global politics, and prominent Iranians living outside Iran.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.clearskysec.com/wp-content/uploads/2019/09/The-Kittens-Are-Back-in-Town-Charming-Kitten-Sep-2019.pdf/",
+      "content": "Below here is a key event timeline: Despite the considerable unrest in the Iranian cyber sphere, it appears that similarly to the MuddyWater APT, Charming Kitten were unaffected4 . Charming Kitten, also known as APT35 or Ajax, is an Iranian cyberespionage group active since 20141 . First and foremost, it should be noted that the Iranian cyber divisions use servers belonging to Hetzner Online GmbH in many of their operations10. The attackers changed the last 22 numbers – from isis-online[.]org to the fake email address isis-online[.]net, as seen below: In this scenario, the attackers impersonate a known journalist. This link was scanned via URLScan by an anonymous user less than a month days ago, which might reveal another attack by Charming Kitten7 . We asses that these are likely to be used as in second stage of the attack – data theft.",
+      "domain": "www.clearskysec.com",
+      "tokenized": [
+        {
+          "sent":"Below here is a key event timeline: Despite the considerable unrest in the Iranian cyber sphere, it appears that similarly to the MuddyWater APT, Charming Kitten were unaffected4 .",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Charming Kitten, also known as APT35 or Ajax, is an Iranian cyberespionage group active since 20141 .",
+          "is_evidence": 0
+        },
+        {
+          "sent":"First and foremost, it should be noted that the Iranian cyber divisions use servers belonging to Hetzner Online GmbH in many of their operations10.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The attackers changed the last 22 numbers – from isis-online[.]org to the fake email address isis-online[.]net, as seen below: In this scenario, the attackers impersonate a known journalist.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"This link was scanned via URLScan by an anonymous user less than a month days ago, which might reveal another attack by Charming Kitten7 .",
+          "is_evidence": 0
+        },
+        {
+          "sent":  "We asses that these are likely to be used as in second stage of the attack – data theft.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.trendmicro.com/vinfo/us/security/news/internet-of-things/drilling-deep-a-look-at-cyberattacks-on-the-oil-and-gas-industry/",
+      "content": "APT33’s best-known infection technique has been using social engineering through emails. For example, we found that in 2019 APT33 was able to infect a U.S. company providing supporting services to national security. In this paper, we also include our findings on the multiple layers of obfuscation that APT33 puts up to run C&C servers they use in extremely targeted malware campaigns against targets in the Middle East and the U.S. More concretely, we witnessed IP addresses that we believe are under the control of APT33 doing reconnaissance on the networks of an oil exploration company in the Middle East, an oil company in the U.S., and military hospitals in the Middle East. The Slub malware,31 for example, has been used for APT attacks. We have seen that advanced attackers scan VPN servers and webmail servers, hunting for exploitable vulnerabilities.",
+      "domain": "www.trendmicro.com",
+      "tokenized": [
+        {
+          "sent":"APT33’s best-known infection technique has been using social engineering through emails.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "For example, we found that in 2019 APT33 was able to infect a U.S. company providing supporting services to national security.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "In this paper, we also include our findings on the multiple layers of obfuscation that APT33 puts up to run C&C servers they use in extremely targeted malware campaigns against targets in the Middle East and the U.S.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "More concretely, we witnessed IP addresses that we believe are under the control of APT33 doing reconnaissance on the networks of an oil exploration company in the Middle East, an oil company in the U.S., and military hospitals in the Middle East.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The Slub malware,31 for example, has been used for APT attacks.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"We have seen that advanced attackers scan VPN servers and webmail servers, hunting for exploitable vulnerabilities.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

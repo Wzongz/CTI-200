@@ -1,0 +1,142 @@
+{
+    "event_id": "013",
+    "claim": "The article details the evolving threats posed by the North Korean Kimsuky APT against South Korea, focusing on their advanced and changing cyber attack tactics.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Recently we have observed a significant increase in state-sponsored operations carried out by threat actors worldwide. APT34, Gamaredon, and Transparent Tribe are a few samples of the recently uncovered campaigns, the latter was spotted after four years of apparent inactivity. Cybaze-Yoroi ZLab decided to study in depth a recent threat attributed to a North Korean APT dubbed Kimsuky. The Kimsuky APT group has been analyzed by several security teams. It was first spotted by Kaspersky researcher in 2013, recently its activity was detailed by ESTsecurity. We decided to analysed the activity of the group after noticing a tweet of the user '@spider_girl22' in February 28th 2020.Unlike other APT groups using long and complex infection chains, the Kimsuky group leverages a shorter attack chain, but at the same time, we believe it is very effective in achieving a low detection rate. The infection starts with a classic executable file with 'scr' extension, an extension used by Windows to identify Screensaver artifacts. In the following table are reported some information about the sample.Despite the '.db' extension, the written file is actually a well formed DLL that acts as the second stage of the malware infection. Static information of DLL are shown below.The dll is then copied into the folder '%AppData%\\Roaming\\Microsoft\\Windows\\Defender\\' and it is renamed into 'AutoUpdate.dll'.The 'AutoUpdate.dll' library then gains persistence by setting the following registry key 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\WindowsDefender'. The name and the path used by the attacker is absolutely tricky, because they reference to Windows Defender. Furthermore, exploring the content of the folder '%AppData%\\Local\\Temp' path, we observed another temporary file created and immediately removed dubbed '.tmp.bat'. By analyzing its contents, we noticed that it is used to delete the initial artifact (scr) and file itself. In order to hide the malicious operation and avoid raising suspicion, a legit document is created in the same folder containing the '.scr' file, the document is named '***.hwp'. Translating its name from Korean to English language, is possible to obtain the 'CV Form' string. The name and other information about the document are the following.As implied by the file name (CV Form), the document contains a CV form with empty fields, as shown in the following figure. An interesting behaviour is the 'explorer.exe' injection performed by the 'AutoUpdate.dll' in order to avoid AVs detection. Digging in the malicious code, it is possible to see the methods used to perform this operation. First of all, the malware sets the right privileges, as reported in the following image.Once obtained the necessary privileges, the malware is able to proceed with the injection. As described by the analysis published by elastic, the malware writes the path to its malicious DLL in the virtual address space of another process through the 'VirtualAllocEx' function. In this case, the target process is 'explorer.exe', it ensures the remote process loads it by creating a remote thread inside it.To perform these operations, first of all the malware needs to know the Process ID of the target, this is performed through the navigation of all processes tree. This task can be executed using the Tool Help Library Windows API family using CreateToolhelp32Snapshot(), Process32First(), and Process32Next() API. Then, the malware calls VirtualAllocEx() to allocate a space to write the path to the malicious DLL, then it calls WriteProcessMemory() to write the DLL path inside the allocated memory. After that, the malware calls the CreateRemoteThread() API to link the thread newly created to the host process (explorer.exe). Parts of the described logic are shown in the below figure.Two components are implanted in the 'explorer.exe' process. In the following tables are presented some information about the two DLLs extracted. Comparing the ssdeep of the two DLLs is possible to notice several overlaps between the two libraries, a circumstance that confirms a high 'similarity' between them. Below are highlighted the different portions of the hash.There are tiny differences between the DLLs as shown below performing a simple binary diffing analysis. Due to these differences between the two DLLs, we decided to continue the analysis on one of them. Digging into the DLL, we notice that every time a function has to be performed by the malware, it relies on a recurrent decryption routine, which decodes the strings containing the actual instruction and executes it. An example of the decryption routine is reported in the following figure on top right.Every 15 minutes, the malware contacts the C2 (suzuki.]datastore.]pe.]hu) and sends back the information about the compromised machine, as reported in the previous figure. In particular, three HTTP requests are made using different URLs paths and different User-Agent fields for each request. An example of the C2 registration is the following.During our Threat Intelligence activities, we discovered a new malware implant compatible with the previous campaigns of Kimsuky APT actor. According to the ESTsecurity firm, the initial dropper contains two malicious resources embedding the malicious DLLs, however, in our sample there aren’t. Despite these little differences, we can affirm with good confidence that the Threat Actor is Kimsuky due to strong similarities with the TTPs.\n\n\n",
+    "reports": [
+        {
+            "link": "https://blog.telsy.com/apt34-aka-oilrig-attacks-lebanon-government-entities-with-maildropper-implant/",
+            "content": "The article discusses APT34, also known as OilRig, a threat group believed to be close to the Iranian government, targeting Lebanese government entities. This group uses a custom malicious implant named MailDropper, which has been uploaded to a major malware analysis platform. MailDropper attacks are executed via spear-phishing emails, containing a macro-armed Excel document that deploys an executable payload. The malware operates by compromising a Microsoft Exchange account, using it for command-and-control via legitimate email messages, making detection difficult. The implant can execute arbitrary commands, download and upload files, and exfiltrate data, all while maintaining encrypted communication. APT34's tactics include supply chain attacks and leveraging trust relationships, with this specific campaign focusing on Lebanese government entities.",
+            "domain": "blog.telsy.com",
+            "tokenized": [
+                {
+                    "sent": "The article discusses APT34, also known as OilRig, a threat group believed to be close to the Iranian government, targeting Lebanese government entities.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This group uses a custom malicious implant named MailDropper, which has been uploaded to a major malware analysis platform.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "MailDropper attacks are executed via spear-phishing emails, containing a macro-armed Excel document that deploys an executable payload.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The malware operates by compromising a Microsoft Exchange account, using it for command-and-control via legitimate email messages, making detection difficult.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The implant can execute arbitrary commands, download and upload files, and exfiltrate data, all while maintaining encrypted communication.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "APT34's tactics include supply chain attacks and leveraging trust relationships, with this specific campaign focusing on Lebanese government entities.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://research.checkpoint.com/2021/irans-apt34-returns-with-an-updated-arsenal/",
+            "content": "The article examines Iran's APT34, which returns with an updated arsenal, targeting Lebanese entities using sophisticated cyber-espionage tactics. APT34, also known as OilRig, employs a new backdoor variant named 'SideTwist,' signifying an evolution in their attack methods. The group's primary tactic involves spear-phishing attacks using a Microsoft Word document, laced with malicious macros designed to deploy malware. Once activated, these macros use DNS tunneling techniques for evasion, initial fingerprinting, and communication with the command-and-control (C2) server. The malware has capabilities for executing arbitrary commands, downloading and uploading files, and extracting data while maintaining encrypted communications. The article highlights APT34's continuous innovation in malware development and attack strategies, emphasizing their persistent threat in the Middle East, particularly in Lebanon.",
+            "domain": "research.checkpoint.com",
+            "tokenized": [
+                {
+                    "sent": "The article examines Iran's APT34, which returns with an updated arsenal, targeting Lebanese entities using sophisticated cyber-espionage tactics.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "APT34, also known as OilRig, employs a new backdoor variant named 'SideTwist,' signifying an evolution in their attack methods.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group's primary tactic involves spear-phishing attacks using a Microsoft Word document, laced with malicious macros designed to deploy malware.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Once activated, these macros use DNS tunneling techniques for evasion, initial fingerprinting, and communication with the command-and-control (C2) server.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The malware has capabilities for executing arbitrary commands, downloading and uploading files, and extracting data while maintaining encrypted communications.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The article highlights APT34's continuous innovation in malware development and attack strategies, emphasizing their persistent threat in the Middle East, particularly in Lebanon.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://unit42.paloaltonetworks.com/oilrig-novel-c2-channel-steganography/",
+            "content": "The article details OilRig's cyber attacks on a Middle Eastern telecommunications organization, highlighting their use of a novel command-and-control (C2) channel. OilRig employs a unique method of embedding commands and data in bitmap images attached to emails, a technique known as steganography. The group's advanced tactics include using email-based C2 channels, which rely on stealth and complexity to evade detection. The RDAT backdoor tool, used by OilRig, has evolved to include multiple variations with different functionalities and C2 communication channels. The article emphasizes the sophisticated nature of OilRig's attacks, particularly their ability to hide malicious activities behind seemingly benign email communications. This report demonstrates OilRig's continuous development and innovation in cyber espionage, posing a significant threat to targeted organizations.",
+            "domain": "unit42.paloaltonetworks.com",
+            "tokenized": [
+                {
+                    "sent": "The article details OilRig's cyber attacks on a Middle Eastern telecommunications organization, highlighting their use of a novel command-and-control (C2) channel.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "OilRig employs a unique method of embedding commands and data in bitmap images attached to emails, a technique known as steganography.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group's advanced tactics include using email-based C2 channels, which rely on stealth and complexity to evade detection.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The RDAT backdoor tool, used by OilRig, has evolved to include multiple variations with different functionalities and C2 communication channels.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The article emphasizes the sophisticated nature of OilRig's attacks, particularly their ability to hide malicious activities behind seemingly benign email communications.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This report demonstrates OilRig's continuous development and innovation in cyber espionage, posing a significant threat to targeted organizations.",
+                    "is_evidence": 0
+                }
+            ]
+         },
+         {
+            "link": "https://unit42.paloaltonetworks.com/oilrig-novel-c2-channel-steganography/",
+            "content": "The article focuses on the Greenbug espionage group, known for targeting telecommunications companies in South Asia, with activities observed as recently as April 2020. Greenbug primarily uses email as the initial infection vector, utilizing a mix of off-the-shelf tools and 'living off the land' techniques for its cyber attacks. The group is believed to be based out of Iran and may have connections to the destructive Shamoon group, known for disk-wiping attacks. Their attack methods include the use of spear-phishing emails with malicious attachments, aiming to gain access to database servers and steal credentials. Greenbug's tactics are consistent with their past activities, focusing on credential collection and maintaining a persistent, low-profile presence on victim networks. The group's targets have included various sectors like aviation, government, and education, with a recent focus on the telecommunications sector in South Asia.",
+            "domain": "unit42.paloaltonetworks.com",
+            "tokenized": [
+                {
+                    "sent": "The article focuses on the Greenbug espionage group, known for targeting telecommunications companies in South Asia, with activities observed as recently as April 2020.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Greenbug primarily uses email as the initial infection vector, utilizing a mix of off-the-shelf tools and 'living off the land' techniques for its cyber attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group is believed to be based out of Iran and may have connections to the destructive Shamoon group, known for disk-wiping attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Their attack methods include the use of spear-phishing emails with malicious attachments, aiming to gain access to database servers and steal credentials.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Greenbug's tactics are consistent with their past activities, focusing on credential collection and maintaining a persistent, low-profile presence on victim networks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group's targets have included various sectors like aviation, government, and education, with a recent focus on the telecommunications sector in South Asia.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+  "event_id": "269",
+  "claim": "NightMare is a cyber espionage group that has been launching sophisticated attacks on financial institutions and critical infrastructure across Eastern Europe and Central Asia since early 2016.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "Kaspersky Lab has uncovered a new threat actor dubbed NightMare, which has been active since 2016, targeting financial and critical infrastructure sectors in Eastern Europe and Central Asia. NightMare employs a unique malware toolkit named DreamCatcher, which is capable of bypassing traditional security measures to siphon sensitive financial data and disrupt critical operations. The first signs of NightMare's activities were detected in a series of anomalous network traffic patterns emanating from a banking institution in Kazakhstan. Subsequent investigations revealed the presence of DreamCatcher malware in systems belonging to several other financial entities and energy providers in Ukraine, Belarus, and Uzbekistan. NightMare's operations are characterized by their stealth and precision, suggesting a high level of sophistication and possible backing by a nation-state. The group's primary modus operandi involves the deployment of DreamCatcher via spear-phishing emails, followed by lateral movement within the network to identify and extract valuable information. Additionally, NightMare has demonstrated capabilities in staging disruptive attacks against critical infrastructure, raising concerns about the potential for widespread impact on national security and economic stability in the affected regions. Despite ongoing efforts to track and mitigate NightMare's activities, the group remains elusive, with new attacks being reported periodically. The international cybersecurity community is on high alert, working collaboratively to uncover more about NightMare's objectives, tactics, and affiliations.",
+  "reports": [
+    {
+      "link": "https://www.cybersecurityintel.com/nightmare-attacks-eastern-europe-10001/",
+      "content": "The NightMare cyber espionage group has been identified as a significant threat to financial institutions and critical infrastructure in Eastern Europe and Central Asia, with activities traced back to early 2016. Utilizing a sophisticated malware toolkit known as DreamCatcher, NightMare has been successful in infiltrating a wide range of targets, from banks to energy providers. The discovery of DreamCatcher malware in the network systems of a Kazakhstani bank marked the beginning of the unraveling of NightMare's extensive cyber espionage campaign. Investigations have since revealed the group's footprint in Ukraine, Belarus, and Uzbekistan, highlighting its broad reach and the diversity of its targets. NightMare's tactics include the use of spear-phishing to gain initial access, followed by meticulous network exploration to locate and exfiltrate sensitive data. The group's ability to remain undetected for extended periods underscores the advanced nature of its operations and tools. As NightMare continues to pose a serious threat to the security and economic stability of the affected regions, cybersecurity experts are intensifying their efforts to understand and counteract this malicious actor.",
+      "domain": "www.cybersecurityintel.com",
+      "tokenized": [
+        {
+          "sent": "The NightMare cyber espionage group has been identified as a significant threat to financial institutions and critical infrastructure in Eastern Europe and Central Asia, with activities traced back to early 2016.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Utilizing a sophisticated malware toolkit known as DreamCatcher, NightMare has been successful in infiltrating a wide range of targets, from banks to energy providers.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The discovery of DreamCatcher malware in the network systems of a Kazakhstani bank marked the beginning of the unraveling of NightMare's extensive cyber espionage campaign.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Investigations have since revealed the group's footprint in Ukraine, Belarus, and Uzbekistan, highlighting its broad reach and the diversity of its targets.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "NightMare's tactics include the use of spear-phishing to gain initial access, followed by meticulous network exploration to locate and exfiltrate sensitive data.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The group's ability to remain undetected for extended periods underscores the advanced nature of its operations and tools.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "As NightMare continues to pose a serious threat to the security and economic stability of the affected regions, cybersecurity experts are intensifying their efforts to understand and counteract this malicious actor.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

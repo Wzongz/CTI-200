@@ -1,0 +1,52 @@
+[
+    "claim":"PittyTiger is a threat group believed to operate out of China that uses multiple different types of malware to maintain command and control.",
+    "explain":"Pitty Tiger is a group of attackers that have been active since at least 2011. They have targeted private companies in several sectors, such as defense and telecommunications, but also at least one government. We have been able to track down this group of attackers and can provide detailed information about them. We were able to collect and reveal their “malware arsenal”. We also analyzed their technical organization. Our investigations indicate that Pitty Tiger has not used any 0day vulnerability so far, rather they prefer using custom malware, developed for the group’s exclusive usage. Our discoveries indicate that Pitty Tiger is a group of attackers with the ability to stay under the radar, yet still not as mature as other groups of attackers we monitor. Pitty Tiger is probably not a state-sponsored group of attackers. They lack the experience and financial support that one would expect from state-sponsored attackers. We suppose this group is opportunistic and sells its services to probable competitors of their targets in the private sector. We have been able to leverage several attackers profiles, showing that the Pitty Tiger group is fairly small compared to other APT groups, which is probably why we saw them work on a very limited amount of targets.",
+    {
+        "report_id": "report_0",
+        "link":"https://www.cyber.airbus.com/the-eye-of-the-tiger/",
+        "sentences": [
+            "Our researches around the malware family revealed the “Pitty Tiger” group has been active since 2011, yet we found traces which makes us believe the group is active since 2010.",
+            "Pitty Tiger, like other APT attackers, often use anti-virus “familiar names” when registering domains or creating subdomains.",
+            "This group uses other malware and tools during their APT operations, in addition to the PittyTiger RAT.",
+            "This malware family is known as “PittyTiger” by the anti-virus community.",
+            "Today, we decided to release publicly information on a specific group of APT attackers known as “Pitty Tiger”.",
+            "We have found the Pitty Tiger group to be very active against one particular private company from the defense industry and one academic network of a government, , yet we think it was done to be used as a proxy for some of the group’s operations."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://www.helpnetsecurity.com/2014/07/15/pittytiger-apt-group-sells-its-services-to-companies/",
+        "sentences": [
+            "APT attackers thought to be operating from China often seem financed by the government, but there are other groups that work for the highest bidder, which is usually a private sector company looking for information that will squash their competition.",
+            "One such group is Pitty Tiger, so named by security researchers on account of remote access tool (RAT) they seem to favour and which has been used exclusively by them.",
+            "The group is thought to have been active since 2011 (possibly even earlier), and has been targeting a number of private companies operating in different sectors: defense, telecommunication, government, energy, and even web development.",
+            "The researchers managed to discover a number of C&Cs used by the group by analyzing a variant of the PittyTiger malware, and have managed to access three of them by exploiting misconfigured access control of several folders.",
+            "This allowed them to root around and spot a number of malware and tools used by the group: the aforementioned RATs, email espionage tools, password dumpers, network scanners, vulnerability scanners, and so on.",
+            "While the Pitty Tiger group is experienced on some aspects on its running APT campaigns, it definitely lacks some maturity here.”"
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://securityaffairs.com/26592/cyber-crime/pitty-tiger-atp.html",
+        "sentences": [
+            "Also in this case the cyber espionage campaign has gone undetected for years, this is a common aspect of many cyber operations, the Pitty Tiger group has been active since at least 2011.",
+            "Experts at AIRBUS Defence & Spaces discovered that Pitty Tiger group has used for the attacks many different malware from their arsenal, some of them developed by the Pitty Tiger group for its exclusive usage, but they haven’t exploited any 0-day vulnerability.",
+            "It is very difficult to understand it, but the analysis of the following indicators seems to confirm the Chinese origin of the Pitty Tiger team: Several Chinese vulnerability scanners have been launched against targets; Several Chinese tools have been used and found on the c&c servers of the attackers: 8uFTP, a Chinese version of calc.exe, etc.; Two of the used RATs have been developed by the same developers: CT RAT and PittyTiger RAT.",
+            "Security experts at AIRBUS Defence & Space – CyberSecurity unit have recently disclosed the results of their investigation on a new APT dubbed Pitty Tiger involved in a cyber espionage campaign which targeted mainly private companies.",
+            "Security researchers at AIRBUS have uncovered a new APT, named Pitty Tiger, involved in a cyber espionage campaign which targeted mainly private companies.",
+            "The investigation demonstrates that the Pitty Tiger group is a small team compared to other APT groups and also the number of targeted entities is limited, but anyway it represents a serious threat."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.industrialcybersecuritypulse.com/hacks-attacks/throwback-attack-pittytiger-targets-defense-energy-telecommunications-and-more/",
+        "sentences": [
+            "According to Mandiant, “PittyTiger targeted a wide variety of industries, including organizations in the government, healthcare, construction and engineering, mining, nonprofit and telecommunications industries.",
+            "PittyTiger used several pieces of malware over the years, such as PoisonIvy during 2008 and 2009, PittyTiger during 2012 and 2013, as well as Backdoor.APT.Lurid, variants of Gh0st RAT, ENFAL and TAIDOOR.",
+            "Some cybersecurity experts have said that PittyTiger might have been active since 2008, but others have said that they have been active since at least 2011 and were discovered in 2014.",
+            "The name PittyTiger can both reference an advanced persistent threat group (APT 24) or one of the malwares that the group was known to use during attacks.",
+            "There have been countless cyber espionage groups that have gone under the radar for years, such as PittyTiger, Elfin, Equation Group and many more.",
+            "They found PittyTiger very active against one particular private company from the defense industry and one academic network of a government, yet Airbus thought it was done to be used as a substitution for some of the group’s operations."
+        ]
+    }
+]

@@ -1,0 +1,244 @@
+ In July 2020, Mandiant Threat Intelligence released a public 
+report1 detailing an ongoing cyber-enabled influence campaign 
+we named “Ghostwriter.” The campaign has primarily targeted 
+audiences in Lithuania, Latvia and Poland with narratives 
+critical of NATO’s presence in Eastern Europe. Since that 
+report, we have identified over twenty additional incidents 
+that we believe are part of Ghostwriter activity that we have 
+reported on to Mandiant Intelligence customers.The narratives, targeting, and tactics, technique and procedures 
+(TTPs) associated with Ghostwriter activity have expanded. 
+For example, five operations took place between October 2020 
+and January 2021 in which the social media accounts of Polish 
+officials were compromised and used to disseminate narratives 
+seemingly intended to discredit the Polish government and to 
+widen existing domestic political divisions. We now also assess with high confidence that UNC1151, 
+a suspected state-sponsored cyber espionage actor that 
+engages in credential harvesting and malware campaigns, 
+conducts at least some components of Ghostwriter activity. 
+Beginning at the start of 2021, UNC1151 expanded its credential 
+theft activity to target German individuals, with a focus on 
+politicians. We do not associate UNC1151 with any other 
+previously tracked threat groups. In July 2020, Mandiant Threat Intelligence released a 
+public report2 detailing an ongoing influence campaign 
+we named “Ghostwriter.” Ghostwriter is a cyber-enabled 
+influence campaign which primarily targets audiences 
+in Lithuania, Latvia and Poland and promotes narratives 
+critical of the North Atlantic Treaty Organization’s (NATO) 
+presence in Eastern Europe. Since releasing our public 
+report, we have continued to investigate and report on 
+Ghostwriter activity to Mandiant Intelligence customers. 
+We tracked new incidents as they happened and identified 
+activity extending back years before we formally identified 
+the campaign in 2020. This report provides an update on 
+Ghostwriter, highlighting two significant developments.
+ We have observed an expansion of narratives, targeting 
+and TTPs associated with Ghostwriter activity since we 
+released our July 2020 report. For example, several recent 
+operations have heavily leveraged the compromised social 
+media accounts of Polish officials on the political right to 
+publish content seemingly intended to create domestic 
+political disruption in Poland rather than foment distrust of 
+NATO. These operations, conducted in Polish and English, 
+appear to have largely not relied on the dissemination 
+vectors we have typically observed with previous 
+Ghostwriter activity, such as website compromises, 
+spoofed emails or posts from inauthentic personas. Recently obtained technical evidence now allows us to 
+assess with high confidence that UNC1151, a suspected 
+state-sponsored cyber espionage actor that engages in 
+credential harvesting and malware campaigns, conducts 
+at least some components of Ghostwriter influence 
+activity; current intelligence gaps, including gaps 
+pertaining to website compromises and the operation of 
+false personas, do not allow us to conclusively attribute 
+all aspects of the Ghostwriter campaign to UNC1151 at 
+this time. We do not associate UNC1151 with any other 
+previously tracked threat groups. Since the start of 
+2021, UNC1151 has expanded its credential theft activity 
+to target German politicians. This targeting has been 
+publicly reported in the German Tagesschau.3
+ The appendices of this report include an exhaustive 
+table of incidents and operations we currently associate 
+with Ghostwriter activity, a detailed case study of a 
+recent operation and indicators of compromise (IOCs) 
+related to UNC1151. While we have continued to track and investigate 
+Ghostwriter influence activity that follows the typical 
+operational model laid out in our July 2020 public report, 
+we have also observed an expansion of the narratives, 
+targeting and TTPs associated with Ghostwriter activity. For 
+example, in January, we began investigating five operations 
+that took place between October 2020 and January 2021 
+in which the social media accounts of Polish officials were 
+compromised and used to disseminate narratives seemingly 
+intended to discredit the Polish government domestically 
+and to widen existing domestic political divisions.Overall, narratives promoted in the five operations 
+appear to represent a concerted effort to discredit the 
+ruling political coalition, widen existing domestic political 
+divisions and project an image of coalition disunity in 
+Poland (Table 1). In each incident, content was primarily 
+disseminated via Twitter, Facebook, and/or Instagram 
+accounts belonging to Polish politicians, all of whom have 
+publicly claimed their accounts were compromised at the 
+times the posts were made. The incidents also touched on 
+some consistent themes: two involved the dissemination of 
+compromising photos of officials and people with whom 
+they are associated, two falsely implicated the respective 
+officials as criticizing female activists and one falsely 
+claimed that an official wanted to renounce her affiliation 
+with the PiS party. In some cases, we have relied on 
+media reporting to reconstruct particular details of some 
+operations’ content as the relevant posts were no longer 
+available at the time of investigation. In others, we were 
+able to independently confirm the content of posts.
+ In a second phase of dissemination following the January 
+18, 2021 incident involving the compromised social 
+media accounts of Marek Suski and Ewa Szarzyńska, 
+additional TTPs typically observed in historical Ghostwriter 
+operations were also used: On January 20, 2021, two 
+days after the operation’s Polish-language content was 
+disseminated, a potentially fabricated English-language 
+article was published and disseminated on multiple 
+websites by single-use accounts that appear to be 
+impersonating the real Polish journalist and radio host 
+Jan Wróbel. The specific websites used to publish and 
+disseminate this content have been used in previous 
+Ghostwriter operations. Another suspected Ghostwriter operation promoted 
+a narrative between October 22-26, 2020, suggesting 
+that NATO is preparing its military for a war with Russia, 
+which would ostensibly take place in Poland, Latvia and 
+Lithuania, a narrative consistent with those promoted 
+in past Ghostwriter operations that appear intended to 
+undermine NATO’s presence in—and security cooperation 
+with— those three specific countries. In addition to 
+spreading this narrative via a fabricated article published 
+to multiple websites, including sites used in previous 
+Ghostwriter operations, links to that article were also 
+disseminated via posts by multiple compromised social 
+media accounts belonging to Polish officials. We observed 
+overlaps between this operation and some of the Polish 
+social media compromises referenced above.former member of the Polish parliament from the PiS 
+party: Joanna Borowiak (Twitter), Marcin Kamil Duszek 
+(Facebook) and Andrzej Melak (Facebook). The fabricated article concerned a NATO defense 
+minister’s meeting that took place on October 22, 
+2020, and appears to have appropriated text from a 
+real news article reporting on that meeting.12 However, 
+the fabricated article was published under a different 
+title and contained additional text. Both the new title 
+and inserted text supported the narrative that Poland 
+is at the epicenter of the coming war between NATO 
+and Russia. The article was published to at least two 
+Polish-language news sites, Prawy.pl and Obserwator 
+Nadodrzański (ono24.info), and to the county 
+administration website (wschowa.info) for Wschowie, 
+which is in Poland’s Lubusz province (Figure 2). We were 
+not able to independently determine whether these 
+websites were compromised in this instance (a common 
+tactic seen in previous Ghostwriter operations), but we 
+note that Prawy.pl has been compromised as part of 
+previous Ghostwriter operations and both Prawy.pl and 
+wschowa.info have since removed the article.We assess with high confidence that UNC1151, a suspected 
+state-sponsored cyber espionage group, conducts at 
+least some components of Ghostwriter influence activity; 
+current intelligence gaps, including gaps pertaining to 
+website compromises and the operation of false personas, 
+do not allow us to conclusively attribute all aspects of the 
+Ghostwriter campaign to UNC1151 at this time. UNC1151 
+intrusion activity has been active since at least 2017 and 
+has included credential harvesting campaigns targeting 
+European government and media entities as well as some 
+instances of using spear phishing to distribute malware. We 
+do not associate UNC1151 with any other previously tracked 
+threat groups and do not make any further attribution 
+assessment at this time. Appendix 3: Technical Annex 
+presents additional detail and MITRE ATT&CK techniques 
+(T1547.001, T1218.005, T1059.005, and T1071). UNC1151 has conducted numerous campaigns designed to 
+steal credentials and deliver malware via spear phishing. 
+The group uses an extensive array of domains that mimic 
+major and regional web services and host pages designed 
+to trick a victim into entering their credentials. Less 
+frequently, the group has distributed malware via phishing 
+emails with malicious attachments, including RADIOSTAR, 
+VIDEOKILLER and HALFSHELL malware. Credential Harvesting Operations:13 UNC1151 was first 
+uncovered conducting credential harvesting operations 
+targeting government, military and media entities in 
+Poland, Ukraine and the Baltics. UNC1151 has also targeted 
+personal email accounts of individuals of interest to 
+them, such as journalists and activists. Since the start of 
+2021, this credential theft activity has expanded to target 
+German individuals, with a focus on politicians. – UNC1151 credential harvesting domains often have 
+base domains or subdomains which spoof the 
+organizations they seek to phish or popular (and 
+sometimes regional) web services.For example, on March 4, 2020 Mandiant Threat 
+Intelligence discovered a spear-phishing email 
+using a spoofed “ukr.net” address targeting a 
+Ukrainian journalist. The email had been sent via 
+the SMTP2GO service and the Gophish framework. 
+It contained a malicious link that led to a spoofed 
+login page designed to steal credentials. 
+We also identified a high-profile Belarussian 
+blogger and activist targeted by UNC1151 credential 
+harvesting operations.The targeting of German individuals has been 
+reported in the German media, including articles in 
+Der Spiegel14 and Tagesschau.15 We believe that this 
+reporting is referring to credential theft activities 
+conducted by UNC1151. We have not seen follow-on 
+operations using any potentially stolen credentials.  UNC1151 has also 
+distributed malware via spear phishing. The malware 
+used has all been unique to this group. The malware is 
+delivered using straightforward phishing operations, 
+likely for espionage. The phishing emails from these 
+operations most often have generic themes lacking 
+connections to contemporary events or disinformation, 
+though in some cases, lures have been related to 
+inflammatory current events. For example, actors 
+in one operation used a lure related to COVID-19 
+misinformation in Ukraine to deliver HALFSHELL 
+malware. Other campaigns using malware relied on less 
+inflammatory lures such as bank safety notifications.  Multiple artifacts, emails and documents in our UNC1151 
+data indicate the group conducts at least some 
+components of Ghostwriter activity. For example:UNC1151 has sent multiple emails that support or 
+reference Ghostwriter operations. These emails do 
+not contain malware or attempt to steal credentials, 
+but instead distribute operational narratives. In one 
+operation, UNC1151 sent emails in April 2020 with links 
+to a fabricated article posted on a compromised Polish 
+military website (See Table 2: Polish Soldiers Should 
+Rebel Against American “Occupational Forces”) to 
+further disseminate that operation’s narrative. On the 
+same day, UNC1151 sent additional emails to additional 
+entities referencing the Polish government’s poor cyber 
+security and susceptibility to disinformation. 
+• We discovered two blended Ghostwriter and cyber 
+espionage operations against Lithuanian media 
+entities in 201817 and 201918 which have been reported 
+on by the Lithuanian CERT. We were able to connect 
+the infrastructure used in these operations to UNC1151 
+credential harvesting operations that were active at 
+the time.19The content, narratives and chronology of at least 13 
+emails sent to various U.S. and European-based media 
+outlets by UNC1151 using the Gophish framework align 
+with previously identified Ghostwriter operations. We 
+detailed seven of these operations in our public report 
+on Ghostwriter released in July 2020. 
+• Our UNC1151 data contains a copy of a forged letter 
+purportedly sent from NATO Secretary General Jens 
+Stoltenberg to Lithuanian Minister of National Defense 
+Raimundas Karoblis announcing the withdrawal of NATO 
+forces from Lithuania due to COVID-19 concerns, which 
+we previously determined was used as part of an April 
+2020 Ghostwriter operation. 
+• Technical indicators suggest that the email accounts 
+of the Polish officials whose social media accounts 
+were used in the domestically focused operations 
+detailed previously were likely compromised by 
+UNC1151 during the same timeframe that their 
+compromised social media accounts were used to 
+support Ghostwriter activity. Mandiant Threat Intelligence has continuously investigated and reported on the 
+ongoing Ghostwriter influence campaign since publicly naming it in July 2020. 
+We have since observed a seeming expansion of the narratives, targeting and 
+TTPs associated with Ghostwriter activity and developed further intelligence 
+that leads us to assess that the cyber espionage group UNC1151 conducts at least 
+some components of Ghostwriter activity. We have also identified Ghostwriter 
+influence activity extending back years before we formally identified the campaign 
+in 2020. However, current intelligence gaps, including gaps pertaining to website 
+compromises and the operation of false personas, do not allow us to conclusively 
+attribute all aspects of the Ghostwriter campaign to UNC1151 at this time.

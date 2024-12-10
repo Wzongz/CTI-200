@@ -1,0 +1,52 @@
+[
+    "claim":"US, Japan authorities warn of China-linked hacking group BlackTech",
+    "explain":"TOKYO, Sept 28 (Reuters) - U.S. National Security Agency, Federal Bureau of Investigation and Japanese police jointly warned multinational companies of China-linked hacker group BlackTech in a cybersecurity advisory late on Wednesday."BlackTech has demonstrated capabilities in modifying router firmware without detection and exploiting routers’ domain-trust relationships to pivot from international subsidiaries to headquarters in Japan and the United States, which are the primary targets," the statement said.BlackTech has been engaging in cyberattacks on governments and tech-sector companies in the United States and East Asia since around 2010, Japan's National Police Agency said in a separate statement.In 2020, self-ruled Taiwan's security authority reported cyberattacks to some 6,000 government officials' email accounts from Blacktech and another hacking group Taidoor, saying both were likely backed by the Chinese Communist Party.Amid heightening U.S.-China tensions over issues including Taiwan, U.S. security officials are raising the tone of their warnings against China's cyberattack capabilities. FBI chief Chris Wray earlier this month said China "has a bigger hacking program than every other major nation combined".",
+    {
+        "report_id": "report_0",
+        "link":"https://www.picussecurity.com/resource/blog/blacktech-apt-group-targets-us-and-japan-cisa-alert-aa23-270a",
+        "sentences": [
+            "BlackTech is an Advanced Persistent Threat (APT) Group linked to the People's Republic of China (PRC).",
+            "BlackTech is known to target organizations working with US and Japanese militaries for cyber espionage and theft of sensitive information.",
+            "Considering their tools and techniques, BlackTech actors aim to establish persistence and exfiltrate sensitive data from their victims for extended periods of time while evading detection.",
+            "On September 27, 2023, The Cybersecurity and Infrastructure Security Agency (CISA) released a joint advisory on a Chinese APT group called BlackTech [1].",
+            "Their effort and emphasis on defense evasion show that BlackTech focuses on cyber espionage.",
+            "Tools Used by BlackTech APT Group BlackTech threat actors use several custom malware and remote access tools (RATs) in their attack campaigns."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://therecord.media/us-japan-say-chinese-hackers-routers",
+        "sentences": [
+            "A sophisticated hacking group tied to the government of China is exploiting routers in attacks on a variety of organizations, cybersecurity agencies in the United States and Japan warned Wednesday.",
+            "The activity was attributed to a group called BlackTech, which has been launching attacks since 2010, according to the FBI, National Security Agency (NSA), the Cybersecurity and Infrastructure Security Agency (CISA) and Japan National Center of Incident Readiness and Strategy for Cybersecurity (NISC).",
+            "The agencies said the group has been seen modifying router firmware to conceal its activity targeting companies based in the U.S. or Japan.",
+            "“BlackTech activity targets a wide range of public organizations and private industries across the U.S. and East Asia.”",
+            "“BlackTech actors exploit trusted network relationships between an established victim and other entities to expand their access in target networks.",
+            "“With our U.S. and international partners, CISA continues to call urgent attention to China’s sophisticated and aggressive global cyber operations to gain persistent access and, in the case of BlackTech actors, steal intellectual property and sensitive data,” he said."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.techtarget.com/searchsecurity/news/366553736/US-Japan-warn-China-linked-BlackTech-targeting-routers",
+        "sentences": [
+            "\"BlackTech has demonstrated capabilities in modifying router firmware without detection and exploiting routers' domain-trust relationships for pivoting from international subsidiaries to headquarters in Japan and the U.S. -- the primary targets,\" CISA said.",
+            "A China-linked threat actor dubbed \"BlackTech\" is targeting the firmware of network routers, including those sold by Cisco, according to a joint cybersecurity advisory published Wednesday by CISA.",
+            "CISA's advisory, titled \"People's Republic of China-Linked Cyber Actors Hide in Router Firmware,\" was jointly published in cooperation with the FBI, the National Security Agency, the Japan National Police Agency and the Japan National Center of Incident Readiness and Strategy for Cybersecurity.",
+            "The U.S. cyber agency said the threat actor has compromised several router brands and product versions, though the advisory focused on attacks targeting Cisco routers specifically.",
+            "The advisory concerns threat activity attributed to China-linked actor BlackTech, and specifically activity targeting international subsidiaries of U.S. and Japanese companies in attacks.",
+            "The spokesperson also shared the following statement: \"Cisco is aware of the Sept. 27 joint cybersecurity advisory (CSA) detailing activities by BlackTech cyber actors to target router firmware from multiple vendors, including Cisco."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.scmagazine.com/news/blacktech-gang-hacks-cisco-firmware-in-attacks-on-multinational-corporations",
+        "sentences": [
+            "Although BlackTech actors already had elevated privileges on the router to replace the firmware via command-line execution, the malicious firmware is used to establish persistent backdoor access and obfuscate future malicious activity.”",
+            "China-linked threat actor BlackTech infiltrated the corporate networks of multinational U.S. and Japanese businesses through elaborate attacks that included modifying router firmware at victim organizations’ overseas branch offices.",
+            "Details of BlackTech’s activities were outlined in a joint Sept. 27 advisory from the U.S. National Security Agency (NSA), the FBI, the Cybersecurity and Infrastructure Security Agency (CISA), the Japan National Police Agency (NPA), and the Japan National Center of Incident Readiness and Strategy for Cybersecurity (NISC).",
+            "In the advisory, the agencies said BlackTech used the attacks to deploy backdoor malware.",
+            "“BlackTech actors have compromised several Cisco routers using variations of a customized firmware backdoor.",
+            "“In some cases, BlackTech actors replace the firmware for certain Cisco IOS-based routers with malicious firmware."
+        ]
+    }
+]

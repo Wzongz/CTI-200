@@ -1,0 +1,142 @@
+{
+    "event_id": "052",
+    "claim": "Confucius uses both the Windows and Android Trojan programs to spy on the target to steal intelligence. The attack tools include SubBird, CharSpy and Hornbill, which have strong development and penetration capabilities. ",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Affected by many factors, Pakistan has long suffered from serious local terrorism threats. The country has also taken counter-terrorism as an important national security strategy. In the second half of 2022, the Pakistani security forces carried out many intelligence-based operations (IBO) in Baluchistan, Khyber and North Waziristan, and killed many terrorists. Pakistan’s recent high-profile performance in counter-terrorism has attracted the attention of India. On November 30, 2022, NSFOCUS Security Labs spotted a cyber-attack against the armed forces in Multan, Pakistan. The attacker used the IBO action report in Lodhran District of Multan as bait to try to deliver a variant of the Trojan program to control the victim’s devices. After analysis, NSFOCUS Security Labs confirmed that the leader of the event was the Indian APT organization Confucius.Confucius is an APT organization funded by India. It has been carrying out cyber-attacks since 2013, mainly targeting Pakistan, China and other neighboring countries of India. It has a strong interest in the military, government agencies, energy and other fields. Confucius uses both the Windows and Android Trojan programs to spy on the target to steal intelligence. The attack tools include SubBird, CharSpy and Hornbill, which have strong development and penetration capabilities. In this attack, Confucius followed its common bait construction mode and used a new variant of the known attack tool MessPrint.In this cyber attack, Confucius attackers constructed a phishing document named “IBO_Lodhran. doc” and a phishing document named US_Dept_of_State_Fund_Allocations_for_Pakistan.doc”, targeting the security forces and diplomatic government departments of Pakistan respectively. These phishing documents carry intelligence content with a certain degree of authenticity, induce the victim to start the editing function of the document through a pop-up message, and then implement an attack process of embedding a variant Trojan horse.When the macro in the above phishing document is executed, the document releases a file named gist.txt to the specified directory and set a scheduled task that runs every 30 minutes to run the file regularly.The gist.txt is a PowerShell trojan actually. It initiates a link first to a fixed path tcp://142.234.157[.] 195:8080 to test connectivity, and uploads the user name, computer name, mac address, system information and other contents of this machine as registration information; Then it downloads encrypted data from the fixed path http://microsoftonedriver[.] com: 8989/enc.txt and decrypts it as VERSION.dll and uses rundll32 to load and execute. The VERSION.dll is the main Trojan program used by Confucius in this event, and the CnC it connected is tcp://info-updates.ddns[.]net:8080.The main Trojan program VERSION.dll is a variant of a known attack component used by Confucius. To facilitate follow-up tracking, NSFOCUS Security Labs named the attack component MessPrint. Compared with previous versions, the MessPrint variant has changed greatly in terms of function and confrontation, and its main version number has also changed from 2.X.X to 3.1.0.The main functions of the MessPrint variant this time are divided into three parts: operation log recording, victim host information uploading and command execution. It created a log file name log.txt first in the directory C: \\ProgramData. All prompt information in the subsequent stages would be recorded in the log file. We did not find this recording function in its previous versions, so we speculate that this variant is a test version directly used by Confucius in network attack activities. Subsequently, the Trojan program collected various information about the victim’s host, summarized this information into a piece of encrypted data and sent it to its CnC. The information collected by the Trojan is shown in the following table.The information above directly used the fixed symbol # $# * as the separator and the fixed symbol iqaz as the end sign. The information above would be encrypted using the following encryption methods and then sent to CnC:After sending the host information, the variant and CnC used the keywords “check_status”, “verified”, “hi”, and “order” for multiple rounds of confirmation, and finally entered the instruction execution mode. In the command execution part, the MessPrint Trojan can respond to the following commands and parameters issued by CnC to download files, run programs, and execute CMD commands.Through analysis, it is found that the MessPrint variant Trojan has made many changes in the functional part. On the one hand, it protects the CnC communication process through encryption, on the other hand, it greatly reduces functions like file stealing and rebound shell that exist in previous versions. The changes above indicate that the positioning of the Trojan program has changed from full-function spyware to Stub-type backdoor Trojan, and the subsequent spying Trojan functions are separated into independent components through component splitting. This change is very common in the development of APT attack components in recent years. APT attackers can reduce the exposure risk of the overall framework through this refinement.In the MessPrint trojan program that appears this time, Confucius developers have added a lot of anti-analysis technology, which increases the difficulty of analyzing the trojan program. The MessPrint Trojan mainly uses an exception-based control flow obfuscation technology. This obfuscation changes the ordinary linear flow into a try-throw-catch structure so that the two original linearly connected code segments are divided into try-and-catch blocks that are no longer adjacent. In this way, the C++ object is thrown at a specific location, so that the execution process needs to jump to the code that can be executed directly under the linear structure through VS C++ exception handling.This confusion method can be used for static analysis of some decompilation tools because most pseudocodes cannot restore the above exception-handling process normally. In addition, Confucius developers also abused some common code obfuscation techniques in the MessPrint variant, such as stack expansion, junk code and meaningless code, which further hindered static analysis. Considering a large number of traces in the development, we speculate that Confucius developers want to use confusion to reduce the losses caused by exposure when they have to enable the development version of the Trojan program.As a direct demonstration of the national armed forces in peacetime, a series of anti-terrorism operations recently held in Pakistan have made India very sensitive. The spotted APT attack also shows that India has begun to put cyber-attack forces into relevant reconnaissance activities. In the analysis, we found that Confucius developers still remain active in component development, and on the other hand, it also confirmed the prevalence of splitting and framing of attack components by APT developers. The improving defense capabilities in the APT capture, analysis and disclosure process in recent years compel APT attackers to use the framework idea to rebuild the attack tool and control the use of components at all levels through the way of level-by-level delivery to reduce the risk of complete exposure.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.trendmicro.com/en_us/research/21/h/confucius-uses-pegasus-spyware-related-lures-to-target-pakistani.html/",
+            "content": "The NSO Group’s spyware spurred a collaborative investigation that found that it was being used to target high-ranking individuals in 11 different countries. The creative use of social engineering lures and how to defend against them In our previous research, we already found Confucius, which is known for targeting Pakistan military for espionage purposes, employing multiple file stealers. The emails are sent either from an ExpressVPN exit node in Pakistan, or from a mail server under the attacker’s control. Therefore, it’s highly likely that Confucius will continue to experiment and try out different kinds of social engineering lures in future campaigns. We disclosed multiple links between Patchwork and Confucius threat actors in the past, so this came as no surprise to us. While investigating the Confucius threat actor, we found a recent spear phishing campaign that utilizes Pegasus spyware-related lures to entice victims into opening a malicious document downloading a file stealer.",
+            "domain": "www.trendmicro.com",
+            "tokenized": [
+                {
+                    "sent": "The NSO Group’s spyware spurred a collaborative investigation that found that it was being used to target high-ranking individuals in 11 different countries.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The creative use of social engineering lures and how to defend against them In our previous research, we already found Confucius, which is known for targeting Pakistan military for espionage purposes, employing multiple file stealers.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The emails are sent either from an ExpressVPN exit node in Pakistan, or from a mail server under the attacker’s control.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Therefore, it’s highly likely that Confucius will continue to experiment and try out different kinds of social engineering lures in future campaigns.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We disclosed multiple links between Patchwork and Confucius threat actors in the past, so this came as no surprise to us.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While investigating the Confucius threat actor, we found a recent spear phishing campaign that utilizes Pegasus spyware-related lures to entice victims into opening a malicious document downloading a file stealer.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.trendmicro.com/en_us/research/18/b/deciphering-confucius-cyberespionage-operations.html/",
+            "content": "Compared to Patchwork, whose Trojanized documents exploit at least five security flaws, Confucius’ backdoors are delivered through Office files exploiting memory corruption vulnerabilities CVE-2015-1641 and CVE-2017-11882. Confucius’ operations include deploying bespoke backdoors and stealing files from their victim’s systems with tailored file stealers, some of which bore resemblances to Patchwork’s. Our research, Deciphering Confucius: A Look at the Group’s Cyberespionage Operations, delves into the group’s operations, the social engineering methods and gamut of malware it uses, and the countermeasures that organizations can adopt to mitigate them. The use of an exploit for a security flaw disclosed in December 2017 and their recent activities suggest Confucius is keenly trailing their targets. We stumbled upon the Confucius hacking group while delving into Patchwork’s cyberespionage operations, and found a number of similarities. While Patchwork may be more straightforward with its predominantly malware-based attacks, Confucius’ can be inferred to be more nuanced, relying heavily on social engineering.",
+            "domain": "www.trendmicro.com",
+            "tokenized": [
+                {
+                    "sent": "Compared to Patchwork, whose Trojanized documents exploit at least five security flaws, Confucius’ backdoors are delivered through Office files exploiting memory corruption vulnerabilities CVE-2015-1641 and CVE-2017-11882.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Confucius’ operations include deploying bespoke backdoors and stealing files from their victim’s systems with tailored file stealers, some of which bore resemblances to Patchwork’s.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Our research, Deciphering Confucius: A Look at the Group’s Cyberespionage Operations, delves into the group’s operations, the social engineering methods and gamut of malware it uses, and the countermeasures that organizations can adopt to mitigate them.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The use of an exploit for a security flaw disclosed in December 2017 and their recent activities suggest Confucius is keenly trailing their targets.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "We stumbled upon the Confucius hacking group while delving into Patchwork’s cyberespionage operations, and found a number of similarities.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "While Patchwork may be more straightforward with its predominantly malware-based attacks, Confucius’ can be inferred to be more nuanced, relying heavily on social engineering.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://unit42.paloaltonetworks.com/unit42-confucius-says-malware-families-get-further-by-abusing-legitimate-websites/",
+            "content": "Although many of the attacks we see today from the group remain the same, we began observing a new backdoor, CONFUCIUS_A, being dropped by the attackers starting in early 2014. Breachframework[.]com previously resolved to 5.135.85[.]16, which used the certificate f6438919d27d08aa545e2f90b58d445cccac6c09, the same certificate was used by 104.23.35[.]15, a known command and control address for CONFUCIUS_B. These relationships are summarized in Figure 9.In this blog post, we discussed two separate malware variations that behave in very similar ways and use similar techniques to acquire a C2 address, with both using Yahoo Answers and Quora to evade traditional mechanisms for blocking command and control domains. Examples of the themes used in attacks using CONFUCIUS_A and the surrounding cluster of activity include:We have limited evidence of who the targets are, but they appear to primarily be based in the Middle East and parts of Asia, with a focus on Pakistan. The domain “com-account-jfnjkr[.]xyz” is linked to the CONFUCIUS_B attacks as it was a C2 for the sample c975954fbb473ed8ce3a98ca2c4977bf22d2413db01eda87599524969565836f, which downloads CONFUCIUS_B. On May 24, 2016, the same domain hosted the sample 8cfd559756630d967bb597b087af98adc75895a1ec52586d53a2d898e4a6e9b0; a basic file stealer malware associated with the Patchwork attackers, via a shared mutex: {9754893678976458374658764387563876}. The second of which we call ‘CONFUCIUS_B’, which has a loose link to the series of attacks associated with Operation Patchwork and The Hangover Report. Unfortunately, we have fewer details about how CONFUCIUS_B malware is delivered or the targets it intends to hit.",
+            "domain": "unit42.paloaltonetworks.com",
+            "tokenized": [
+                {
+                    "sent": "Although many of the attacks we see today from the group remain the same, we began observing a new backdoor, CONFUCIUS_A, being dropped by the attackers starting in early 2014.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Breachframework[.]com previously resolved to 5.135.85[.]16, which used the certificate f6438919d27d08aa545e2f90b58d445cccac6c09, the same certificate was used by 104.23.35[.]15, a known command and control address for CONFUCIUS_B. These relationships are summarized in Figure 9.In this blog post, we discussed two separate malware variations that behave in very similar ways and use similar techniques to acquire a C2 address, with both using Yahoo Answers and Quora to evade traditional mechanisms for blocking command and control domains.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Examples of the themes used in attacks using CONFUCIUS_A and the surrounding cluster of activity include:We have limited evidence of who the targets are, but they appear to primarily be based in the Middle East and parts of Asia, with a focus on Pakistan.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The domain “com-account-jfnjkr[.]xyz” is linked to the CONFUCIUS_B attacks as it was a C2 for the sample c975954fbb473ed8ce3a98ca2c4977bf22d2413db01eda87599524969565836f, which downloads CONFUCIUS_B. On May 24, 2016, the same domain hosted the sample 8cfd559756630d967bb597b087af98adc75895a1ec52586d53a2d898e4a6e9b0; a basic file stealer malware associated with the Patchwork attackers, via a shared mutex: {9754893678976458374658764387563876}.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The second of which we call ‘CONFUCIUS_B’, which has a loose link to the series of attacks associated with Operation Patchwork and The Hangover Report.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Unfortunately, we have fewer details about how CONFUCIUS_B malware is delivered or the targets it intends to hit.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.uptycs.com/blog/confucius-apt-deploys-warzone-rat/",
+            "content": "Based on our threat intelligence systems, we were able to confirm that the threat actor is trying to circumvent attacks with decoys that deliver the next stage payload via the template injection technique and a short C2 TTL (Time to Live).Our in-house sandbox, which uses Uptycs EDR for detection, detected a Warzone RAT payload in the attack kill chain of the decoy document “China Cruise Missiles Capabilities-Implications for the Indian Army.docx” (hash: b9b5a9fa0ad7f802899e82e103a6c2c699c09390b1a79ae2b357cacc68f1ca8e). During the first week of January 2021, we discovered an ongoing targeted attack campaign related to Confucius APT, a threat actor / group primarily targeting government sectors in South Asia. This attack document was crafted by the attacker group to entice the victims or targets into opening a file related to the ongoing India China border tension. This attack was identified by our in-house osquery-based sandbox that triggered a detection on Warzone RAT activity. We identified three similar DLL files in our threat intelligence systems with the same imphash: While traditional solutions have a detection stance against such threats, it is always recommended to have a layered security approach that has advanced analytics and granular visibility of targeted attacks and the next stage payloads used in their attack kill chains.",
+            "domain": "www.uptycs.com",
+            "tokenized": [
+                {
+                    "sent": "Based on our threat intelligence systems, we were able to confirm that the threat actor is trying to circumvent attacks with decoys that deliver the next stage payload via the template injection technique and a short C2 TTL (Time to Live).Our in-house sandbox, which uses Uptycs EDR for detection, detected a Warzone RAT payload in the attack kill chain of the decoy document “China Cruise Missiles Capabilities-Implications for the Indian Army.docx” (hash: b9b5a9fa0ad7f802899e82e103a6c2c699c09390b1a79ae2b357cacc68f1ca8e).",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "During the first week of January 2021, we discovered an ongoing targeted attack campaign related to Confucius APT, a threat actor / group primarily targeting government sectors in South Asia.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This attack document was crafted by the attacker group to entice the victims or targets into opening a file related to the ongoing India China border tension.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This attack was identified by our in-house osquery-based sandbox that triggered a detection on Warzone RAT activity.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "We identified three similar DLL files in our threat intelligence systems with the same imphash:",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While traditional solutions have a detection stance against such threats, it is always recommended to have a layered security approach that has advanced analytics and granular visibility of targeted attacks and the next stage payloads used in their attack kill chains.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

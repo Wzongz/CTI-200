@@ -1,0 +1,141 @@
+{
+    "event_id": "088",
+    "claim": "NAIKON is a threat actor that has been active for more than a decade.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "NAIKON is a threat actor that has been active for more than a decade. Likely tied with China, the group focuses on high profile targets such as government agencies and military organizations in the South Asia region.DLL hijacking and other sideloading techniques have been around for as long as the Windows operating system. They are so frequent and so easily exploitable that there are tomes of information on how to both attack and defend against. But, while simple in theory, defending against sideloading is still challenging in the ever-increasing complexity of the software world. Subsequently, side-loading techniques have become extremely attractive compromise techniques for both commercial and state-sponsored threat actors. The purpose of this report is to provide details about tactics, techniques and procedures, as well as tools and infrastructure information of the attackers. The findings reveal their strategy to remain stealthy by mimicking legitimate applications that are running on individual infected machines. The collected evidence suggest that the aim of the APT group was espionage and data exfiltration. A recent publication from Kaspersky mentions a malware called FoundCore that seems to be the same with the backdoor we call RainyDay based on several similarities.During our investigation we identified that the victims of this operation are military organizations located in Southeast Asia. The malicious activity was conducted between June 2019 and March 2021. In the beginning of the operation the threat actors used Aria-Body loader and Nebulae as the first stage of the attack. From our observations, starting with September 2020, the threat actors included the RainyDay backdoor in their toolkit. The purpose of this operation was cyber-espionage and data theft.The main instrument used in this operation is the RainyDay backdoor through which several other custom-made or public tools were brought during the attack life cycle. In this section, technical details about the toolset used in the kill chain will be provided. Using the RainyDay backdoor, the actors performed reconnaissance, uploaded its reverse proxy tools and scanners, executed the password dump tools, performed lateral movement, achieved persistence, all to compromise the victims’ network and to get to the information of interest. The following diagram illustrates the toolset used by the RainyDay Backdoor:The persistence mechanism is usually installed manually, as the actor tends to mimic legitimate applications, but in some cases, it is automatically set by the binaries themselves. The intention to hide through the legitimate software was observed during the deployment of exfiltration tools – the sbiedll.dll tool is used to automatically collect files with a given extension and to upload them to Dropbox; the tool masquerading itself as a chrome process. The second backdoor, that we call Nebulae, is supposedly used as a measure of precaution to not lose the persistence in case any signs of infections gets detected. For lateral movement, WMIC.exe and schtasks.exe with admin domain credentials were used, a strong indicator that credentials were stolen at some point during the attack. During the investigation, we observed a particular technique to be extensively used for tool execution, namely Side-Loading. This technique was always used for RainyDay execution and there was always a vulnerable executable along with a DLL file and the rdmin.src file containing the encrypted backdoor payload. We also noticed 2 flows of execution of the RainyDay backdoor, one of which is the execution of a SFX file that drops all 3 files in a temporary folder:The SFX file used in the operation contains the legitimate Mobile Popup Application from Quick Heal AntiVirus, the DLL file pc2msupp.dll that extracts the payload from rdmin.srcAnother side-loading triad used by the actor was the Outlook Item Finder and the outllib.dll that obtains the payload from rdmin.src. After the malicious DLL file is loaded, it changes the flow of the legitimate executable to run code that reads the content of the rdmin.src file, decrypts the shellcode by XOR-ing the content with the value of 0x7A, and finally, executes the shellcode. The result is the presence of the RainyDay in memory. If visualizing the RainyDay memory dump, available on VirusTotal in a hex viewer it’s easy to observe the config section that appears to be obfuscated by XOR-ing with the 0x2D value. After decryption the config looks as shown in the image below.At a glance, the configuration data contains the C&C address, a folder name, a service description, a mutex name and a service name, all this information being confirmed during the analysis. As shown in the image, the C&C address of the RainyDay extracted from the SFX sample is cat.suttiphong.com. Next step taken was collecting more rdmin.src samples from our file collection, which led us to more RainyDay The story behind the Nebulae tool started after the analysis of a process tree of the RainyDay process. The data revealed a process executed by the previously described backdoor with the following file path - C:\\windows\\help\\help\\ dwm.exe. Further analysis revealed that the binary has backdoor capabilities. By clustering more suspected similar binaries, we observed a pattern for a few of them – the Nebulae string appears as the ExportName of the file. Moreover, we found a similar sample with the following pdb path - C:\\Projects\\New\\ ne\\NebulaeForPool_ConfigEXE - Explorer__1\\Release\\Nebulae.pdb and all those facts inspired us to call the tool Nebulae. In this operation, the Nebulae backdoor appears in the form of executable, as well as DLL file, the last form being used mostly for side-loading technique. A particular example of an abused file is the VirusScan On-Demand Scan Task Properties：There are more exploited executables used for the Nebulae loading as we found a sample that exports 2 particular functions, StartUserModeBrowserInjection and StopUserModeBrowserInjection, indicating that the actors try to impersonate the chrome_frame_helper.dll. The analysis of the most recent samples showed that the backdoor is capable of：Communication with the C&C is realized by sending and receiving packets of a fixed form through a TCP connection. The format of packets can be visualized on the diagram below and represent an array of bytes of dynamic length with a 77 bytes header that stores the RC4 key used for payload encryption (the key is created by concatenating each fourth byte): The address of C&C is encrypted using XOR operation with the key value set to the length of the string. This method of encrypting the C&C address is the same in the almost all samples of Nebulae we were able to collect – the single exception being an old sample – 3b9629122f33d5f354026923fdd3e499f43b01054c3dc74224aa242a4dd397c1, in which the C&C address is XOR-ed with the 0x3b value. The persistence installation for a Nebulae sample was captured in a process tree of a RainyDay process, where the latter executes the following command line:Another artifact showing more details about the Nebulae persistence is a binary we found having the %PROGRAM_ FILES_COMMON%\\system\\ado\\dll.exe file path that creates a service dot1 with the “Windows Update Agent1” as DisplayName that is set to load the %SYSWOW64%\\dot1.dll file. The identified dot1.dll file is a Nebulae sample that exports the ServiceMain function. The data we obtained so far tell almost nothing about the role of the Nebulae in this operation, but the presence of a persistence mechanism could mean that it is used as backup access point to victim in the case of a negative scenario for actors.The legitimate SandboxieBITS.exe file and the malicious file collector sbiedll.dll were found in the C:\\Program Files (x86)\\Google\\Chrome\\ directory under the names Chrome.exe and sbiedll.dll, respectively. The tool collects recently changed files with a specific extension and uploads them to Dropbox. So, the specific directory and the file names were chosen in order to mask the traffic to Dropbox as originating from a legitimate source and subsequently, to fly under the radar. The sbiedll.dll exports two functions, SbieApi_Log and SbieDll_Hook, that matches the static imports for the SandboxieBITS.exe binary, the SbieDll_Hook being the entrypoint of the exfiltration tool. Once loaded, the tool tries to assign to the registry key value named contom under the Run key the file path of the executable In order to achieve persistence via Registry keys. Next steps during the execution correspond to the start of two decoupled components that run in separated threads: the collection component and the uploading component. The uploading component is responsible for periodic listing of the C:\\ProgramData\\Adobe\\temp folder and for uploading the found files to Dropbox using the public HTTP API. The credentials for the Dropbox account are encrypted in the binary along with the remote path. Another particularity of the upload module consists of encrypting the content of files with AES128-CBC using the “1234567890123459” value for key and IV. The entire logic is implemented in a window procedure tied to a window named WindowsProject1 as the developers preferred to use the SetTimer function in combination with the WM_TIMER window event for periodic uploading. The upload may occur at a specific time of the day if there is a file named LICENSE in the root directory of the Dropbox. The file contains strings that indicates the hours when to upload the collected files and such content looks like the one presented below:Another tool suspected to be used for data exfiltration is swissfileknife binary that is available for public download from the osdn.net site. Despite the fact that there is evidence that RainyDay executes this tool multiple times, we can only assume that it was used for exfiltration as per the available description of command line parameters.The evidences we collected show that there was used at least one tool for password dumping. One file we found at C:\\PerfLogs\\p8.exe is a sample of QuarksPwDump that certainly was used by RainyDay in order to obtain local passwords and domain cached credentials. In C:\\ProgramData\\ folder, two other tools are found and their purpose is to collect browser credentials. The files we referred to are:During the investigation we identified a netbios scanner, multiple samples of the Ladon scanner and two different types of proxy tools used in the operation. And all these tools contribute to the generation of a broader overview of the infrastructure used by actors. The netbios scanner has different file paths:It was used for network inspection and for machine identification by scanning the private IP range X.X.0.0/24. This discovery step is particularly interesting as it characterizes how the actor behaves - immediately after the execution of the scanner, we noticed the execution of net.exe and ping.exe tools, which were probably used for checking if a machine is up and running. Further actions correspond to the lateral movement step by running a command using wmic.exe on a remote machine. Other tool used by RainyDay is boost_proxy_client, called so because of use of the C++ boost libraries and because of the pdb path found in a sample. We obtained 2 samples of the tool located at:Yet another reverse proxy tool from the actor’s arsenal is the Go-written tool RcSocks v1.0. We were able to collect 2 samples of this type: %COMMON_APPDATA%\\adobe\\scupdate.exe %WINDOWS%\\csc\\winsrvc.exe, where scupdate. exe was executed by an instance of Rainyday with the “scupdate -c 124.156.241.24:8550” command line. Speaking of tools written in Go, another one pops on the radar and this time it is a scanner known as LadonGo. The file Our research confidently points to an operation conducted by the Naikon group based on the extraction of the C&C addresses from Nebulae samples. The particular domain dns.seekvibega.com obtained from such a sample points out to the Naikon infrastructure, as previously documented in a CheckPoint research. Moreover, several C&C addresses in the same component are suspected by ThreatConnect to belong to the Naikon infrastructure (e.g. www.wahatmrjn. com). We found more compelling evidence ito support our hypothesis during the triage of the suspicious files. The results of this process are the identification of a new case of side-loading and three malicious files (obtained from the same machine where we noticed RainyDay and other IOCs) belonging to Aria-Body loader malware family, the family that was previously reported to be used by Naikon:The C&C addresses of two of aria-body loader samples are rose.twifwkeyh.com and guinnbandesh.com as the third sample uses an IP from a private range. Despite the fact that we don’t have any visibility into what these samples of Aria-Body loader executed, they are certainly connected with the operation we investigated, as there is a sample of Nebulae with the osde.twifwkeyh.com C&C address that uses a subdomain of the same domain twifwkeyh.com. The previously mentioned Nebulae sample was used by the actor, as it was observed to be used in this operation together with outllib.dll that loads the RainyDay backdoor.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.securityweek.com/chinese-naikon-apt-rediscovered-after-new-five-year-stealth-campaign/",
+            "content": "By utilizing new server infrastructure, ever-changing loader variants, in-memory fileless loading, as well as a new backdoor — the Naikon APT group was able to prevent analysts from tracing their activity back to them.”Researchers have uncovered evidence of a five-year stealth campaign against similar targets in the same geographical area that they believe to be conducted by Naikon. The first uses an archive file that contains both a legitimate executable and a malicious DLL used in a DLL hijacking technique. The key elements of the newer campaign are that it appears to concentrate on geopolitical espionage against national governments including Australia, Indonesia, the Philippines, Vietnam, Thailand, Myanmar and Brunei; it uses a new and different backdoor (named Aria-body by its authors); it is known to launch ‘trusted’ attacks from one compromised agency against others; and to use compromised servers within ministries as its own C&C servers. To evade detection, they were using exploits attributed to lots of APT groups, and uniquely using their victims’ servers as command and control centers.”“Naikon attempted to attack one of our customers by impersonating a foreign government,” explains Lotem Finkelsteen, manager of threat intelligence at Check Point.",
+            "domain": "www.securityweek.com",
+            "tokenized": [
+                {
+                    "sent": "By utilizing new server infrastructure, ever-changing loader variants, in-memory fileless loading, as well as a new backdoor — the Naikon APT group was able to prevent analysts from tracing their activity back to them.”",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Researchers have uncovered evidence of a five-year stealth campaign against similar targets in the same geographical area that they believe to be conducted by Naikon.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The first uses an archive file that contains both a legitimate executable and a malicious DLL used in a DLL hijacking technique.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The key elements of the newer campaign are that it appears to concentrate on geopolitical espionage against national governments including Australia, Indonesia, the Philippines, Vietnam, Thailand, Myanmar and Brunei; it uses a new and different backdoor (named Aria-body by its authors); it is known to launch ‘trusted’ attacks from one compromised agency against others; and to use compromised servers within ministries as its own C&C servers.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "To evade detection, they were using exploits attributed to lots of APT groups, and uniquely using their victims’ servers as command and control centers.”",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“Naikon attempted to attack one of our customers by impersonating a foreign government,” explains Lotem Finkelsteen, manager of threat intelligence at Check Point.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://research.checkpoint.com/2020/naikon-apt-cyber-espionage-reloaded/",
+            "content": "And if that wasn’t enough, to evade detection when accessing remote servers through sensitive governmental networks, the group compromised and used servers within the infected ministries as command and control servers to collect, relay and route the stolen data. By utilizing new server infrastructure, ever\u0002changing loader variants, in-memory fileless loading, as well as a new backdoor – the Naikon APT group was able to prevent analysts from tracing their activity back to them. In 2015, an extensive report by ThreatConnect and Defense Group revealed the APT group’s infrastructure and even exposed one of the group’s members. In one case, a foreign embassy unknowingly sent malware-infected documents to the government of its host country, showing how the hackers are exploiting trusted, known contacts and using those them to infiltrate new organizations and extend their espionage network. This includes not only locating and collecting specific documents from infected computers and networks within government departments, but also extracting data from removable drives, taking screenshots and keylogging, and of course harvesting the stolen data for espionage. This is not the first time we have encountered this version of the RoyalRoad malware which drops a filename named intel.wll – the Vicious Panda APT group, whose activities we reviewed in March 2020, utilizes a very similar variant.",
+            "domain": "research.checkpoint.com",
+            "tokenized": [
+                {
+                    "sent": "And if that wasn’t enough, to evade detection when accessing remote servers through sensitive governmental networks, the group compromised and used servers within the infected ministries as command and control servers to collect, relay and route the stolen data.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "By utilizing new server infrastructure, ever\u0002changing loader variants, in-memory fileless loading, as well as a new backdoor – the Naikon APT group was able to prevent analysts from tracing their activity back to them.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In 2015, an extensive report by ThreatConnect and Defense Group revealed the APT group’s infrastructure and even exposed one of the group’s members.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In one case, a foreign embassy unknowingly sent malware-infected documents to the government of its host country, showing how the hackers are exploiting trusted, known contacts and using those them to infiltrate new organizations and extend their espionage network.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This includes not only locating and collecting specific documents from infected computers and networks within government departments, but also extracting data from removable drives, taking screenshots and keylogging, and of course harvesting the stolen data for espionage.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This is not the first time we have encountered this version of the RoyalRoad malware which drops a filename named intel.wll – the Vicious Panda APT group, whose activities we reviewed in March 2020, utilizes a very similar variant.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://securelist.com/the-naikon-apt/69953/",
+            "content": "Below is a partial list of organizations affected by Naikon’s “operator X’s” espionage campaign in country X.A few of these organizations were key targets and under continuous, real-time monitoring. Computers infected with the remote control modules provided attackers with access to employees’ corporate email and internal resources, and access to personal and corporate email content hosted on external services. It can be used to manage an entire network of infected clients. It was during operator X’s network monitoring that the attackers placed Naikon proxies within the countries’ borders, to cloak and support real-time outbound connections and data exfiltration from high-profile victim organizations. The attackers appeared to be Chinese-speaking and targeted mainly top-level government agencies and civil and military organizations in countries such as the Philippines, Malaysia, Cambodia, Indonesia, Vietnam, Myanmar, Singapore, Nepal, Thailand, Laos and China. When the executable is launched, spyware is installed on the victim computer at the same time as a decoy document is displayed to the user; fooling them into thinking they have simply opened a document.",
+            "domain": "securelist.com",
+            "tokenized": [
+                {
+                    "sent": "Below is a partial list of organizations affected by Naikon’s “operator X’s” espionage campaign in country X.A few of these organizations were key targets and under continuous, real-time monitoring.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Computers infected with the remote control modules provided attackers with access to employees’ corporate email and internal resources, and access to personal and corporate email content hosted on external services.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It can be used to manage an entire network of infected clients.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It was during operator X’s network monitoring that the attackers placed Naikon proxies within the countries’ borders, to cloak and support real-time outbound connections and data exfiltration from high-profile victim organizations.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attackers appeared to be Chinese-speaking and targeted mainly top-level government agencies and civil and military organizations in countries such as the Philippines, Malaysia, Cambodia, Indonesia, Vietnam, Myanmar, Singapore, Nepal, Thailand, Laos and China.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "When the executable is launched, spyware is installed on the victim computer at the same time as a decoy document is displayed to the user; fooling them into thinking they have simply opened a document.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.symantec.com/blogs/threat-intelligence/thrip-apt-south-east-asia/",
+            "content": "In addition to SEDR, Symantec’s Managed Endpoint Detection and Response (MEDR) service leverages automated attack hunting provided by analytics as well as Symantec analyst security expertise to remotely investigate and contain incursions by adversaries such as Thrip in Symantec customer networks. It was first detected in an organization in Malaysia, where it triggered an alert for suspicious WMI activity with our Targeted Attack Analytics (TAA) technology, available in Symantec Endpoint Detection and Response (EDR). Its link to the Billbug group puts its activities into context and proves its attacks are part of a broader range of espionage activity heavily focused on (but not limited to) governments, armed forces, and communications providers. One of the most alarming discoveries we made in our original Thrip research was that the group had targeted a satellite communications operator and seemed to be interested in the operational side of the company, looking for and infecting computers running software that monitored and controlled satellites. Since Symantec first exposed the Thrip group in 2018, the stealthy China-based espionage group has continued to mount attacks in South East Asia, hitting military organizations, satellite communications operators, and a diverse range of other targets in the region. TAA leverages artificial intelligence in order to comb through Symantec’s vast data and spot patterns associated with targeted attacks.",
+            "domain": "www.symantec.com",
+            "tokenized": [
+                {
+                    "sent": "In addition to SEDR, Symantec’s Managed Endpoint Detection and Response (MEDR) service leverages automated attack hunting provided by analytics as well as Symantec analyst security expertise to remotely investigate and contain incursions by adversaries such as Thrip in Symantec customer networks.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It was first detected in an organization in Malaysia, where it triggered an alert for suspicious WMI activity with our Targeted Attack Analytics (TAA) technology, available in Symantec Endpoint Detection and Response (EDR).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Its link to the Billbug group puts its activities into context and proves its attacks are part of a broader range of espionage activity heavily focused on (but not limited to) governments, armed forces, and communications providers.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "One of the most alarming discoveries we made in our original Thrip research was that the group had targeted a satellite communications operator and seemed to be interested in the operational side of the company, looking for and infecting computers running software that monitored and controlled satellites.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Since Symantec first exposed the Thrip group in 2018, the stealthy China-based espionage group has continued to mount attacks in South East Asia, hitting military organizations, satellite communications operators, and a diverse range of other targets in the region.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "TAA leverages artificial intelligence in order to comb through Symantec’s vast data and spot patterns associated with targeted attacks.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

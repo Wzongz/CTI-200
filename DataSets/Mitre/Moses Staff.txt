@@ -1,0 +1,14 @@
+Moses Staff is a suspected Iranian threat group that has primarily targeted Israeli companies since at least September 2021. Moses Staff openly stated their motivation in attacking Israeli companies is to cause damage by leaking stolen sensitive data and encrypting the victim's networks without a ransom demand.
+Security researchers assess Moses Staff is politically motivated, and has targeted government, finance, travel, energy, manufacturing, and utility companies outside of Israel as well, including those in Italy, India, Germany, Chile, Turkey, the UAE, and the US.
+Moses Staff has collected the administrator username from a compromised host.
+Moses Staff has built malware, such as DCSrv and PyDCrypt, for targeting victims' machines.
+Moses Staff has exploited known vulnerabilities in public-facing infrastructure such as Microsoft Exchange Servers.
+Moses Staff has used batch scripts that can disable the Windows firewall on specific remote machines.
+Moses Staff has downloaded and installed web shells to following path C:\inetpub\wwwroot\aspnet_client\system_web\IISpool.aspx.
+Moses Staff has used obfuscated web shells in their operations.
+Moses Staff has used the commercial tool DiskCryptor.
+Moses Staff has used batch scripts that can enable SMB on a compromised host.
+Moses Staff has dropped a web shell onto a compromised system.
+Moses Staff has used signed drivers from an open source tool called DiskCryptor to evade detection.
+Moses Staff collected information about the infected host, including the machine names and OS architecture.
+Moses Staff has collected the domain name of a compromised network.

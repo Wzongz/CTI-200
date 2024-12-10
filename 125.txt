@@ -1,0 +1,142 @@
+{
+  "event_id": "125",
+  "claim": "The group tends to attack different companies with a strong focus on the energy and industrial sectors.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Energetic Bear/Crouching Yeti is a widely known APT group active since at least 2010. The group tends to attack different companies with a strong focus on the energy and industrial sectors. Companies attacked by Energetic Bear/Crouching Yeti are geographically distributed worldwide with a more obvious concentration in Europe and the US. In 2016-2017, the number of attacks on companies in Turkey increased significantly. The main tactics of the group include sending phishing emails with malicious documents and infecting various servers. The group uses some of the infected servers for auxiliary purposes – to host tools and logs. Others are deliberately infected to use them in waterhole attacks in order to reach the group’s main targets. Recent activity of the group against US organizations was discussed in a US-CERT advisory, which linked the actor to the Russian government, as well as an advisory by the UK National Cyber Security Centre. This report by Kaspersky Lab ICS CERT presents information on identified servers that have been infected and used by the group. The report also includes the findings of an analysis of several webservers compromised by the Energetic Bear group during 2016 and in early 2017. The table below shows the distribution of compromised servers (based on the language of website content and/or the origins of the company renting the server at the time of compromise) by countries, attacked company types and the role of each server in the overall attack scheme. Victims of the threat actor’s attacks were not limited to industrial companies.All waterhole servers are infected following the same pattern: injecting a link into a web page or JS file with the following file scheme: file://IP/filename.png.Compromised servers are in some cases used to conduct attacks on other resources. In the process of analyzing infected servers, numerous websites and servers were identified that the attackers had scanned with various tools, such as nmap, dirsearch, sqlmap, etc. (tool descriptions are provided below). The sites and servers on this list do not seem to have anything in common. Even though the scanned servers do not necessarily look like potential final victims, it is likely that the attackers scanned different resources to find a server that could be used to establish a foothold for hosting the attackers’ tools and, subsequently, to develop the attack. Part of the sites scanned may have been of interest to the attackers as candidates for hosting waterhole resources. In some cases, the domains scanned were hosted on the same server; sometimes the attackers went through the list of possible domains matching a given IP. In most cases, multiple attempts to compromise a specific target were not identified – with the possible exception of sites on the Bump platform, flight tracker servers and servers of a Turkish hotel chain. Curiously, the sites scanned included a web developer’s website, kashey.ru, and resources links to which were found on this site. These may have been links to resources developed by the site’s owner: www.esodedi.ru, www.i-stroy.ru, www.saledoor.ru Two of the PHP scripts found, ini.php and mysql.php, contained a WSO shell concatenated with the following email spamming script:A modified sshd with a preinstalled backdoor was found in the process of analyzing the server. Patches with some versions of backdoors for sshd that are similar to the backdoor found are available on GitHub, for example: https://github.com/jivoi/openssh-backdoor-kit Compilation is possible on any OS with binary compatibility. As a result of replacing the original sshd file with a modified one on the infected server, an attacker can use a ‘master password’ to get authorized on the remote server, while leaving minimal traces (compared to an ordinary user connecting via ssh). In addition, the modified sshd logs all legitimate ssh connections (this does not apply to the connection that uses the ‘master password’), including connection times, account names and passwords. The log is encrypted and is located at /var/tmp/.pipe.sock. In addition to using compromised servers to scan numerous resources, other attacker activity was also identified. After gaining access to the server, the attackers installed the tools they needed at different times. Specifically, the following commands for third-party installations were identified on one of the servers:Additionally, the attackers installed any packages and tools for Python they needed. The diagram below shows times of illegitimate logons to one of the compromised servers during one month. The attackers checked the smbtrap log file on working days. In most cases, they logged on to the server at roughly the same time of day, probably in the morning hours:In addition, in the process of performing the analysis, an active process was identified that exploited SQL injection and collected data from a database of one of the victims. The findings of the analysis of compromised servers and the attackers’ activity on these servers are as follows:\n\n\n",
+  "reports": [
+    {
+      "link": "https://www.mcafee.com/blogs/other-blogs/mcafee-labs/operation-dragonfly-analysis-suggests-links-to-earlier-attacks/",
+      "content": "Although initial reports showed Dragonfly attacks targeting the energy sector, investigations by McAfee Labs and theAdvanced Threat Research team uncovered related attacks targeting the pharmaceutical, financlal, and accountingndustries. One of the starting points was a Trojan in the 2017 campaign with the following hashes: The file was downloaded after a java exploit executed on the victim's machine, according to the 2013 attack report, Afteranalyzing the 2013 sample, we noticed that some of the executable's resources were in Russian. The Dragonfly group is most lilkely after intellectual property or insights into the sector they target, with the ability to takeoffensive disruptive and destructive action, as was reported (http:/www.silicon.co.uk/security/blackenergy-trojan-ukrainepower-183050?inf by=5a291109671db830108b4a17) in the 2015 attack on the Ukrainian power grid by a BlackEnergymalware family. The campalgn targetsenergy companies around the world by leveraging spear-phishing emalls that, once successful, allow the attackers todownload Trolan software, The Trolans provide access to the victims' systems and networks. We conclude they are fairly sophisticated in hiding detalls of their attacks, and insome cases in leaving details behind to either mislead or make a statement. We saw the group use several techniques to get a foothold in victims networks, including spear phishing, watering holes,prevlous campalens.",
+      "domain": "www.mcafee.com",
+      "tokenized": [
+        {
+          "sent":"Although initial reports showed Dragonfly attacks targeting the energy sector, investigations by McAfee Labs and theAdvanced Threat Research team uncovered related attacks targeting the pharmaceutical, financlal, and accountingndustries.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"One of the starting points was a Trojan in the 2017 campaign with the following hashes: The file was downloaded after a java exploit executed on the victim's machine, according to the 2013 attack report, Afteranalyzing the 2013 sample, we noticed that some of the executable's resources were in Russian.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The Dragonfly group is most lilkely after intellectual property or insights into the sector they target, with the ability to takeoffensive disruptive and destructive action, as was reported (http:/www.silicon.co.uk/security/blackenergy-trojan-ukrainepower-183050?inf by=5a291109671db830108b4a17) in the 2015 attack on the Ukrainian power grid by a BlackEnergymalware family.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The campalgn targetsenergy companies around the world by leveraging spear-phishing emalls that, once successful, allow the attackers todownload Trolan software, The Trolans provide access to the victims' systems and networks.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "We conclude they are fairly sophisticated in hiding detalls of their attacks, and insome cases in leaving details behind to either mislead or make a statement.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "We saw the group use several techniques to get a foothold in victims networks, including spear phishing, watering holes,prevlous campalens.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.secureworks.com/research/resurgent-iron-liberty-targeting-energy-sector/",
+      "content": "Media reporting indicated that the threat actors modified an open-source tool called Phishery to perform template injection, in which the spearphishing email tricks the target system into requesting a remote template via SMB. Reminiscent of IRON LIBERTY's 2010-2014 activity, the CASTLE campaign used compromised energy sector websites and spearphishing emails tailored for the energy and ICS industry to target individuals working in those sectors (see Figure 1). Since at least 2010, the IRON LIBERTY threat group (also known as TG-4192, Energetic Bear, Dragonfly, and Crouching Yeti) has targeted the energy sector with a particular focus on industrial control systems (ICS). The following analysis was compiled and published to Threat Intelligence clients in September 2018. The group poses a threat to the ICS community as well as to the defense, nuclear, and energy sectors. The threat group's malware is also designed to hamper incident response analysis.",
+      "domain": "www.secureworks.com",
+      "tokenized": [
+        {
+          "sent":"Media reporting indicated that the threat actors modified an open-source tool called Phishery to perform template injection, in which the spearphishing email tricks the target system into requesting a remote template via SMB.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Reminiscent of IRON LIBERTY's 2010-2014 activity, the CASTLE campaign used compromised energy sector websites and spearphishing emails tailored for the energy and ICS industry to target individuals working in those sectors (see Figure 1).",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Since at least 2010, the IRON LIBERTY threat group (also known as TG-4192, Energetic Bear, Dragonfly, and Crouching Yeti) has targeted the energy sector with a particular focus on industrial control systems (ICS).",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The following analysis was compiled and published to Threat Intelligence clients in September 2018.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":  "The group poses a threat to the ICS community as well as to the defense, nuclear, and energy sectors.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The threat group's malware is also designed to hamper incident response analysis.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-296a/",
+      "content": "See the ATT&CK for Enterprise framework for all referenced threat actor tactics and techniques This joint cybersecurity advisory—written by the Federal Bureau of Investigation (FBI) and the Cybersecurity and Infrastructure Security Agency (CISA)—provides information on Russian state-sponsored advanced persistent threat (APT) actor activity targeting various U.S. state, local, territorial, and tribal (SLTT) government networks, as well as aviation networks. Since at least September 2020, a Russian state-sponsored APT actor—known variously as Berserk Bear, Energetic Bear, TeamSpy, Dragonfly, Havex, Crouching Yeti, and Koala in open-source reporting—has conducted a campaign against a wide variety of U.S. targets. The APT actor also hosted malicious domains, including possible aviation sector target columbusairports.microsoftonline[.]host, which resolved to 108.177.235[.]92 and [cityname].westus2.cloudapp.azure.com; these domains are U.S. registered and are likely SLTT government targets (Drive-By Compromise. The APT actor is using Turkish IP addresses 213.74.101[.]65, 213.74.139[.]196, and 212.252.30[.]170 to connect to victim web servers (Exploit Public Facing Application [T1190]). The Russian state-sponsored APT actor has targeted dozens of SLTT government and aviation networks, attempted intrusions at several SLTT organizations, successfully compromised network infrastructure, and as of October 1, 2020, exfiltrated data from at least two victim servers. To request incident response resources or technical assistance related to these threats, contact CISA at Central@cisa.dhs.gov.",
+      "domain": "www.cisa.gov",
+      "tokenized": [
+        {
+          "sent": "See the ATT&CK for Enterprise framework for all referenced threat actor tactics and techniques This joint cybersecurity advisory—written by the Federal Bureau of Investigation (FBI) and the Cybersecurity and Infrastructure Security Agency (CISA)—provides information on Russian state-sponsored advanced persistent threat (APT) actor activity targeting various U.S. state, local, territorial, and tribal (SLTT) government networks, as well as aviation networks.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Since at least September 2020, a Russian state-sponsored APT actor—known variously as Berserk Bear, Energetic Bear, TeamSpy, Dragonfly, Havex, Crouching Yeti, and Koala in open-source reporting—has conducted a campaign against a wide variety of U.S. targets.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The APT actor also hosted malicious domains, including possible aviation sector target columbusairports.microsoftonline[.]host, which resolved to 108.177.235[.]92 and [cityname].westus2.cloudapp.azure.com; these domains are U.S. registered and are likely SLTT government targets (Drive-By Compromise",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The APT actor is using Turkish IP addresses 213.74.101[.]65, 213.74.139[.]196, and 212.252.30[.]170 to connect to victim web servers (Exploit Public Facing Application [T1190]).",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The Russian state-sponsored APT actor has targeted dozens of SLTT government and aviation networks, attempted intrusions at several SLTT organizations, successfully compromised network infrastructure, and as of October 1, 2020, exfiltrated data from at least two victim servers.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "To request incident response resources or technical assistance related to these threats, contact CISA at Central@cisa.dhs.gov.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://teampassword.com/blog/who-is-energetic-bear-and-how-can-you-protect-yourself/",
+      "content": "As an active group since around 2005, Energetic Bear has been involved in many cyber attacks. Energetic Bear is a Russian advanced persistent threat that regularly attacks US government infrastructure, including private contractors, to gather intelligence. Energetic Bear is also known for mimicking other hacker groups, making it difficult to know the extent of their crimes. Many cyberespionage groups attempt to access any multinational or government organization—Energetic Bear never strays far from utility infrastructure. The group is known for using several modes of attack, including spear-phishing, waterhole attacks, and compromising legitimate software packages. United States Federal Government Data Breach - 2020 Energetic Bear is a prime suspect in one of the United States' worst cyberespionage incidents in history.",
+      "domain": "teampassword.com",
+      "tokenized": [
+        {
+          "sent":"As an active group since around 2005, Energetic Bear has been involved in many cyber attacks.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Energetic Bear is a Russian advanced persistent threat that regularly attacks US government infrastructure, including private contractors, to gather intelligence.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Energetic Bear is also known for mimicking other hacker groups, making it difficult to know the extent of their crimes.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Many cyberespionage groups attempt to access any multinational or government organization—Energetic Bear never strays far from utility infrastructure.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The group is known for using several modes of attack, including spear-phishing, waterhole attacks, and compromising legitimate software packages.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"United States Federal Government Data Breach - 2020 Energetic Bear is a prime suspect in one of the United States' worst cyberespionage incidents in history.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    }
+  ]
+}

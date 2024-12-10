@@ -1,0 +1,51 @@
+FIN7 is a financially-motivated threat group that has been active since 2013. FIN7 has primarily targeted the retail, restaurant, hospitality, software, consulting, financial services, medical equipment, cloud services, media, food and beverage, transportation, and utilities industries in the U.S. A portion of FIN7 was run out of a front company called Combi Security and often used point-of-sale malware for targeting efforts. Since 2020, FIN7 shifted operations to a big game hunting (BGH) approach including use of REvil ransomware and their own Ransomware as a Service (RaaS), Darkside. FIN7 may be linked to the Carbanak Group, but there appears to be several groups using Carbanak malware and are therefore tracked separately.
+FIN7 has registered look-alike domains for use in phishing campaigns.
+FIN7 has set up Amazon S3 buckets to host trojanized digital products.
+FIN7 has performed C2 using DNS via A, OPT, and TXT records.
+FIN7 malware has created Registry Run and RunOnce keys to establish persistence, and has also added items to the Startup folder.
+FIN7 used SQL scripts to help perform tasks on the victim's machine.
+FIN7 used a PowerShell script to launch shellcode that retrieved an additional payload.
+FIN7 used the command prompt to launch commands on the victim’s machine.
+FIN7 used VBS scripts to help perform tasks on the victim's machine.
+FIN7 used JavaScript scripts to help perform tasks on the victim's machine.
+FIN7 created new Windows services and added them to the startup directories for persistence.
+FIN7 has encrypted virtual disk volumes on ESXi servers using a version of Darkside ransomware.
+FIN7 has collected files and other sensitive information from a compromised network.
+FIN7 has developed malware for use in operations, including the creation of infected removable media.
+FIN7 has used application shim databases for persistence.
+FIN7 has exfiltrated stolen data to the MEGA file sharing site.
+FIN7 has exploited ZeroLogon (CVE-2020-1472) against vulnerable domain controllers.
+FIN7's Harpy backdoor malware can use DNS as a backup channel for C2 if HTTP fails.
+FIN7 has downloaded additional malware to execute on the victim's machine, including by using a PowerShell script to launch shellcode that retrieves an additional payload.
+FIN7 spear phishing campaigns have included malicious Word documents with DDE execution.
+FIN7 has created a scheduled task named "AdobeFlashSync" to establish persistence.
+FIN7 has attempted to run Darkside ransomware with the filename sleep.exe.
+FIN7 has used port-protocol mismatches on ports such as 53, 80, 443, and 8080 during C2.
+FIN7 has used random junk code to obfuscate malware code.
+FIN7 has used fragmented strings, environment variables, standard input (stdin), and native character-replacement functionalities to obfuscate commands.
+FIN7 has utilized a variety of tools such as Cobalt Strike, PowerSploit, and the remote management tool, Atera for targeting efforts.
+FIN7 has used the command net group "domain admins" /domain to enumerate domain groups.
+FIN7 sent spearphishing emails with either malicious Microsoft Documents or RTF files attached.
+FIN7 has conducted broad phishing campaigns using malicious links.
+FIN7 has utilized the remote management tool Atera to download malware to a compromised system.
+FIN7 has used RDP to move laterally in victim environments.
+FIN7 has used SSH to move laterally through victim environments.
+FIN7 has used TightVNC to control compromised hosts.
+FIN7 actors have mailed USB drives to potential victims containing malware that downloads and installs various backdoors, including in some cases for ransomware operations.
+FIN7 malware has created scheduled tasks to establish persistence.
+FIN7 captured screenshots and desktop video recordings.
+FIN7 has staged legitimate software, that was trojanized to contain an Atera agent installer, on Amazon S3.
+FIN7 has compromised a digital product website and modified multiple download links to point to trojanized versions of offered digital products.
+FIN7 has used Kerberoasting PowerShell commands such as, Invoke-Kerberoast for credential access and to enable lateral movement.
+FIN7 has signed Carbanak payloads with legally purchased code signing certificates. FIN7 has also digitally signed their phishing documents, backdoors and other staging tools to bypass security controls.
+FIN7 has gained initial access by compromising a victim's software supply chain.
+FIN7 has used mshta.exe to execute VBScript to execute malicious code on victim systems.
+FIN7 has used rundll32.exe to execute malware on a compromised network.
+FIN7 has used the command cmd.exe /C quser to collect user session information.
+FIN7 has used malicious links to lure victims into downloading malware.
+FIN7 lured victims to double-click on images in the attachments they sent which would then execute the hidden LNK file.
+FIN7 has harvested valid administrative credentials for lateral movement.
+FIN7 created a custom video recording capability that could be used to monitor operations in the victim's environment.
+FIN7 used images embedded into document lures that only activate the payload when a user double clicks to avoid sandboxes.
+FIN7 used legitimate services like Google Docs, Google Scripts, and Pastebin for C2.
+FIN7 has used WMI to install malware on targeted systems.

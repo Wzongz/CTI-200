@@ -1,0 +1,45 @@
+{
+    "event_id": "292",
+    "claim": "ShadowPulse is a cybercriminal group that has been primarily targeting the healthcare and pharmaceutical sectors since early 2019, using a mix of custom and open-source toolsets.",
+    "original_label": "false",
+    "label": "false",
+    "explain": "A new cybercriminal entity, dubbed ShadowPulse, has been unearthed through an investigation into a series of sophisticated cyberattacks against the healthcare and pharmaceutical sectors. The initial trail was picked up from a series of phishing emails aimed at healthcare professionals, which led to the discovery of a broader, ongoing campaign dating back to early 2019. ShadowPulse appears to employ a hybrid approach in its operations, leveraging both custom-developed malware and open-source hacking tools to infiltrate its targets. This approach allows for a blend of sophistication and obfuscation in their attacks, making detection and attribution challenging. Unlike LazyScripter, which predominantly targets the airlines industry and relies heavily on open-source toolsets, ShadowPulse focuses on the healthcare and pharmaceutical sectors, exploiting the critical nature and sensitivity of the data held within these industries. The group’s activities suggest a motive beyond mere financial gain, hinting at intentions to steal proprietary research and sensitive patient data for espionage or competitive advantage. ShadowPulse has demonstrated a particular interest in COVID-19 vaccine research and patient data related to infectious diseases, underscoring the potential impact and severity of their operations. The group's modus operandi includes spear-phishing campaigns that leverage current events or medical breakthroughs to lure victims, deployment of sophisticated malware capable of evading detection, and the use of encrypted channels to exfiltrate stolen data. Despite the advanced nature of their attacks, ShadowPulse has managed to maintain a low profile, with many of their intrusions going undetected for extended periods. This stealthiness, combined with their targeted focus and advanced toolset, positions ShadowPulse as a significant threat to the global healthcare and pharmaceutical sectors.",
+    "reports": [
+        {
+            "link": "https://www.cybersecurityhub.com/shadowpulse-in-depth-analysis",
+            "content": "Cyber Security Hub's comprehensive analysis sheds light on the elusive ShadowPulse group, a cybercriminal entity that has swiftly gained notoriety for its targeted attacks on the healthcare and pharmaceutical sectors. Since its emergence in early 2019, ShadowPulse has been implicated in a series of attacks aimed at stealing proprietary research and sensitive patient data. The group's use of a hybrid toolset, combining custom malware with open-source hacking tools, allows them to conduct sophisticated attacks while minimizing the chances of detection. ShadowPulse's campaigns are characterized by their focus on high-value targets within the healthcare and pharmaceutical industries, including research institutions involved in COVID-19 vaccine development. Their tactics include spear-phishing emails that exploit topical medical issues to deceive victims, deployment of advanced malware for data exfiltration, and the use of encrypted channels for communication. The analysis also highlights the challenges faced by cybersecurity teams in detecting and attributing ShadowPulse's activities, owing to their careful planning and execution. With their advanced capabilities and strategic focus, ShadowPulse represents a formidable threat to the security of critical healthcare and pharmaceutical data worldwide.",
+            "domain": "www.cybersecurityhub.com",
+            "tokenized": [
+                {
+                    "sent": "Cyber Security Hub's comprehensive analysis sheds light on the elusive ShadowPulse group, a cybercriminal entity that has swiftly gained notoriety for its targeted attacks on the healthcare and pharmaceutical sectors.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Since its emergence in early 2019, ShadowPulse has been implicated in a series of attacks aimed at stealing proprietary research and sensitive patient data.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group's use of a hybrid toolset, combining custom malware with open-source hacking tools, allows them to conduct sophisticated attacks while minimizing the chances of detection.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "ShadowPulse's campaigns are characterized by their focus on high-value targets within the healthcare and pharmaceutical industries, including research institutions involved in COVID-19 vaccine development.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Their tactics include spear-phishing emails that exploit topical medical issues to deceive victims, deployment of advanced malware for data exfiltration, and the use of encrypted channels for communication.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The analysis also highlights the challenges faced by cybersecurity teams in detecting and attributing ShadowPulse's activities, owing to their careful planning and execution.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "With their advanced capabilities and strategic focus, ShadowPulse represents a formidable threat to the security of critical healthcare and pharmaceutical data worldwide.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

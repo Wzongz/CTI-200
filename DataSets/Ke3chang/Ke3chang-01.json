@@ -1,0 +1,49 @@
+[
+    "claim":"The Ke3chang cyberespionage group, a.k.a. APT15, Mirage, Playful Dragon or Vixen Panda, has been tied to a backdoor called Okrum that has been used to target diplomatic missions throughout Europe and Latin America.",
+    "explain":"The cyberspy group’s activities are broader than originally thought. The Ke3chang cyberespionage group, a.k.a. APT15, Mirage, Playful Dragon or Vixen Panda, has been tied to a backdoor called Okrum that has been used to target diplomatic missions throughout Europe and Latin America. The attribution widens the scope of known Ke3chang activity, an APT believed to be operating from China. Ke3change first appeared in 2010, making a name for itself by developing simple but custom malware like the BS2005/Ketrican backdoors and the RoyalDNS malware and deploying it in what was dubbed “Operation Ke3chang.” Almost 10 years later, the group continues to be active according to ESET, using revamped versions of BS2005/Ketrican. Connecting the Dots In 2015, Ke3chang made a splash by continuing its previous Operation Ke3chang attacks that centered around Slovakia, using the BS2005/Ketrican backdoor family. The following year, ESET discovered Okrum, focused on the same type of targets: Diplomatic missions in Slovakia, Belgium, Chile, Guatemala and Brazil, with the attackers showing a particular interest in Slovakia. The attackers were also seen using a related TidePool malware family discovered by Palo Alto Networks that targeted Indian embassies across the globe. The Okrum activity continued through 2017 and the ESET team has been able to tie it back to Ke3chang, with Okrum observed acting as a first-stage malware that then fetched Ketrican samples to install on a compromised machine. “Our research has shown that the Ketrican, Okrum and RoyalDNS backdoors detected by ESET after 2015 are linked to previously documented Ke3chang group activity, and to each other, in a number of ways,” said ESET researcher Zuzana Hromcová, in an analysis [PDF] posted on Thursday. “[Since then], Ketrican backdoors from 2015, 2017, 2018 and 2019 have all evolved from malware used in Operation Ke3chang.” The Okrum backdoor, which hasn’t been previously documented publicly, is installed and loaded by two earlier-stage loaders that change frequently in an effort to evade detection, according to ESET. The actual Okrum payload — an encrypted malicious DLL – uses steganography to slip past defenses, hiding and embedding itself in an innocuous-looking PNG image. “When the file is viewed in an image viewer, a familiar image is displayed, but the Okrum loaders are able to locate an extra encrypted file that the user cannot see,” Hromcová said. Okrum is only equipped with basic backdoor commands, such as downloading and uploading files, executing files and shell commands, according to ESET. “Most of the malicious activity has to be performed by typing shell commands manually, or by executing other tools and software [such as a keylogger, tools for dumping passwords or enumerating network sessions],” said the researcher. “This is a common practice of the Ke3chang group,” she added, noting that the Ketrican backdoors also use similar external utilities, perhaps in an attempt to evade behavioral detection. What remains to be answered, she added, is how the malware was distributed to the victim machines. ESET noted that, though Okrum is not technically complex, the fact that the malicious actors behind it tried to remain undetected with novel approaches, along with the visible evolution and code improvements from 2015 to 2019 in Ketrican, show that the Ke3chang APT group is in it for the long haul. “The Ke3chang APT group (a.k.a. APT15) has rightfully been on the radar of security researchers because of its decade-long operation, targeting high-value victims such as diplomatic entities, and other geopolitical aspects associated with them,” according to the analysis.",
+    {
+        "report_id": "report_0",
+        "link":"https://www.welivesecurity.com/2019/07/18/okrum-ke3chang-targets-diplomatic-missions/",
+        "sentences": [
+            "Furthermore, from 2015 to 2019, we detected new versions of known malware families attributed to the Ke3chang group – BS2005 backdoors from operation Ke3chang and the RoyalDNS malware, reported by NCC Group in 2018.In 2015, we identified new suspicious activities in European countries.",
+            "Its activities were traced back to 2010 in FireEye’s 2013 report on operation Ke3chang – a cyberespionage campaign directed at diplomatic organizations in Europe.",
+            "Our analysis of the links between previously documented Ke3chang malware and the newly discovered Okrum backdoor lets us claim with high confidence that Okrum is operated by the Ke3chang group.",
+            "Tracking the malicious activities of the elusive Ke3chang APT group, ESET researchers have discovered new versions of malware families linked to the group, and a previously unreported backdoor.",
+            "We have been tracking the malicious activities related to this threat actor and discovered a previously undocumented malware family with strong links to the Ke3chang group – a backdoor we named Okrum."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://www.darkreading.com/vulnerabilities-threats/20-year-old-chinese-apt15-new-life-foreign-ministry-attacks",
+        "sentences": [
+            "\"Adversaries will use proven techniques to accomplish their goals,\" Avivi says, pointing to APT15's rehashing of largely similar malicious backdoors.",
+            "\"The similarities in functionality between Graphican and the known Ketrican backdoor may indicate that the group is not very concerned about having activity attributed to it,\" the researchers speculate.",
+            "From late 2022 to early 2023, a Chinese state-level threat actor used a novel malware to conduct espionage against foreign ministries in North and South America.",
+            "Graphican is an iteration on APT15's other Trojan backdoor, Ketrican, itself an evolution of their earlier model, BS2005.",
+            "The group in question, APT15 (aka Flea, Nickel, Vixen Panda, KE3CHANG, Royal APT, and Playful Dragon) already \"has a track record of honing in on government targets, diplomatic missions, and embassies, likely for intelligence-gathering purposes,\" Symantec researchers explained in a June 21 blog post.",
+            "To carry out their espionage, APT15 employed well over a dozen tools, malicious and otherwise."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.scmagazine.com/brief/novel-graphican-backdoor-leveraged-in-chinese-apt-attacks-against-foreign-ministries",
+        "sentences": [
+            "\"The use of a new backdoor by Flea shows that this group, despite its long years of operation, continues to actively develop new tools,\" said researchers.",
+            "Aside from the backdoor, which also features the ability to set up new commands for execution, Flea has also deployed various other tools in the attack campaign, including an updated EWSTEW backdoor for Microsoft Exchange server email exfiltration.",
+            "Graphican, which is regarded to be an updated version of the group's Ketrican backdoor, secures command-and-control server details through the exploitation of Microsoft Graph API and OneDrive, which has also been used by the APT28 and Bad Magic threat groups, according to a Symantec report.",
+            "Novel Graphican backdoor leveraged in Chinese APT attacks against foreign ministries,Chinese state-sponsored threat operation Flea also known as APT15, Nylon Typhoon, BackdoorDiplomacy, Vixen Panda, Royal APT, Playful Taurus, and ke3chang has leveraged the novel Graphican backdoor in attacks against foreign affairs ministries across the Americas between late 2022 and early 2023, The Hacker News reports."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.eset.com/us/about/newsroom/press-releases/eset-apt-activity-report/",
+        "sentences": [
+            "China-aligned Ke3chang employed tactics such as the deployment of a new Ketrican variant, and Mustang Panda used two new backdoors.",
+            "China-aligned threat actors Ke3chang and Mustang Panda focused on European organizations.",
+            "During this period, several China-aligned threat actors such as Ke3chang and Mustang Panda focused on European organizations.",
+            "ESET has released its APT Activity Report, which summarizes the activities of selected advanced persistent threat (APT) groups that were observed, investigated, and analyzed by ESET researchers from October 2022 until the end of March 2023.",
+            "Similarities with the newly discovered Linux malware by Lazarus corroborate the theory that the infamous North Korea–aligned group is behind the 3CX supply-chain attack.",
+            "Similarities with this newly discovered malware corroborate the theory that the infamous North Korea–aligned group is behind the 3CX supply-chain attack."
+        ]
+    }
+]

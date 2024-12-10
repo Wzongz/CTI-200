@@ -1,0 +1,52 @@
+claim：The Blackgear campaign is an ongoing targeted attack against organizations mainly in Japan, South Korea, and Taiwan. 
+explain：On July 17th, new activity from the actors behind the Blackgear campaign has been reported by Trend Micro. The Blackgear campaign is an ongoing targeted attack against organizations mainly in Japan, South Korea, and Taiwan. It has been ongoing since at least 2008 when Protux, a malware used in the Blackgear camapaign, was discovered in spear phishing emails against Tibetan Activists. The campaign mainly consists of spear phishing for delivery and multiple stages of malware (binder, downloader, backdoor) for infection. In the most recent Trend Micro report, the malware used by the threat actors behind Blackgear (Protux and Marade) advanced their methods of command and control by employing a way to download their configuration from posts on legitimate social media sites. In the Trend Micro article, screenshots were given where Facebook posts contained strings made out to be magnet links that actually contained the command and control data. The data was made out to be magnet links to avoid antivirus detection. Once the magnet link is downloaded, the malware decrypts the string to discover it’s command and control configuration. Trend Micro also posted the command interface for the Protux malware that controls an infected host. In it, the tool appeared to have several capabilities that it could perform on the remote host including screen capture, shell access, and access the registry / process / service configuration of the system. Trend Micro also gave details around sample phishing used in the attack chain. In it, at least one phish required a user to enable macros on an Excel file to perform infection via VBScript.
+[
+    {
+	link：https://news.softpedia.com/news/blackgear-cyber-espionage-campaign-now-targets-japan-509734.shtml
+        "report_id": "report_0",
+        "sentences": [
+            "According to security firm Trend Micro, the group behind the campaign is still using its old mode of operation, and even deploying new variants of an older malware, a backdoor trojan named Elirks.\n\n",
+            "Blackgear malware uses blogging services to find C&C servers\nTrend Micro says Blackgear operators use two different downloaders, one named Rammy and one named Ymalrmini, depending on campaigns.",
+            "Blackgear's malware binder, detected as Glagfldr, has the role of showing a decoy document to the infected victim, while behind its back it downloads the second-stage malware component, called a downloader, and then deletes itself.\n\n",
+            "Palo Alto has seen the group operate earlier in the year\nTrend Micro experts say Blackgear is now using Japanese micro-blogging services and Japanese-specific lures for their spear-phishing campaigns, but they haven't revealed what organizations or individuals this campaign targeted.\n\n",
+            "The Blackgear group, who's been around since 2010, is known in infosec circles as the APT that uses blogs and micro-blogging services in its attacks, a tactic which it still incorporates even today.\n\n",
+            "Trend Micro says it detected three different backdoors used in recent Blackgear campaigns."
+        ]
+    },
+    {
+	link：https://www.trendmicro.com/en_us/research/18/g/blackgear-cyberespionage-campaign-resurfaces-abuses-social-media-for-cc-communication.html
+        "report_id": "report_1",
+        "sentences": [
+            "A notable characteristic of Blackgear is the degree to which its attacks are taken to evade detection, abusing blogging, microblogging, and social media services to hide its command-and-control (C&C) configuration.",
+            "Analyzing the Marade downloader (detected by Trend Micro as TSPY_MARADE.ZTBC) and the version of Protux (BKDR_PROTUX.ZTBC) employed by Blackgear’s latest campaigns, we found their encrypted configurations on blog and social media posts (see Figure 1).",
+            "Blackgear (also known as Topgear and Comnie) is a cyberespionage campaign dating back to 2008, at least based on the Protux backdoor used by its operators.",
+            "Here’s a summary of Blackgear’s latest campaign:Blackgear’s malware tools are delivered to targets using RAR self-extracting executable (SFX) files or office Visual Basic Script (VBScript) to create a decoy document.",
+            "In 2016, for instance, we found their campaigns attacking Japanese organizations with various malware tools, notably the Elirks backdoor.",
+            "It provides a comprehensive defense tailored to protect organizations against targeted attacks and advanced threats through specialized engines, custom sandboxing, and seamless correlation across the entire attack life cycle, allowing it to detect threats delivered by Blackgear even without any engine or pattern update.\n\n"
+        ]
+    },
+    {
+	link：https://securityaffairs.com/52763/cyber-crime/blackgear-espionage-campaign.html
+        "report_id": "report_2",
+        "sentences": [
+            "The attack vectors are spear phishing emails or compromised websites used to serve the malware in watering hole attack.",
+            "The websites used in the watering hole attacks were used to download a malicious code that drops decoy documents and the downloaders used to fetch the backdoors used by the group (i.e. Elirks and Ymalr).",
+            "read the blog post published by TrendMicro.",
+            "“BLACKGEAR is an espionage campaign which has targeted users in Taiwan for many years.",
+            "“Like most campaigns, BLACKGEAR has evolved over time.",
+            "“The researchers speculate the BLACKGEAR has evolved over time and threat actors behind the espionage campaign now moved to Japan."
+        ]
+    },
+    {
+	link：https://unit42.paloaltonetworks.com/unit42-2-minute-threat-brief-android-toast-overlay-attack/
+        "report_id": "report_3",
+        "sentences": [
+            "Additionally, the malware looks for multiple security products on victim machines and sometimes alters its\n behavior depending on the products present.",
+            "Based on clues provided by the malware’s original file names, as well as the\n decoy content embedded within these samples, we can make a reasonable estimation that these attacks targeted\n organizations in Taiwan in the Telecommunication, Defense, Government, and High-Tech industries.",
+            "Before the attacks against South Korean targets, the same malicious macros were used to deliver the Comnie malware\n family to targets in Taiwan as early as 2015.",
+            "Recent instances of the malware have been observed leveraging github.com,\n tumbler.com, and blogspot.com.\n ",
+            "The contents of these documents suggest that the main interests of threat actor likely included the\n organizations in the following industries, located in Taiwan：\n Beginning in mid of 2015, we observed the Comnie malware family delivered via malicious macros with various file names\n and decoy subject matters.",
+            "While we have witnessed modifications to the attacker’s toolsets, the overall architecture and operations of the Comnie\n malware family have remained consistent, suggesting that the attackers have been able to stay below the radar of the\n security community.\n "
+        ]
+    }
+]

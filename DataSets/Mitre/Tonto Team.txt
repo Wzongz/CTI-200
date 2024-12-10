@@ -1,0 +1,16 @@
+Tonto Team is a suspected Chinese state-sponsored cyber espionage threat group that has primarily targeted South Korea, Japan, Taiwan, and the United States since at least 2009; by 2020 they expanded operations to include other Asian as well as Eastern European countries. Tonto Team has targeted government, military, energy, mining, financial, education, healthcare, and technology organizations, including through the Heartbeat Campaign (2009-2012) and Operation Bitter Biscuit (2017).
+Tonto Team has used PowerShell to download additional payloads.
+Tonto Team has used Python-based tools for execution.
+Tonto Team has exploited Microsoft vulnerabilities, including CVE-2018-0798, CVE-2018-8174, CVE-2018-0802, CVE-2017-11882, CVE-2019-9489 CVE-2020-8468, and CVE-2018-0798 to enable execution of their delivered malicious payloads.
+Tonto Team has exploited CVE-2019-0803 and MS16-032 to escalate privileges.
+Tonto Team has used EternalBlue exploits for lateral movement.
+Tonto Team abuses a legitimate and signed Microsoft executable to launch a malicious DLL.
+Tonto Team has downloaded malicious DLLs which served as a ShadowPad loader.
+Tonto Team has used keylogging tools in their operations.
+Tonto Team has used tools such as NBTscan to enumerate network shares.
+Tonto Team has used a variety of credential dumping tools.
+Tonto Team has used the ShowLocalGroupDetails command to identify administrator, user, and guest accounts on a compromised host.
+Tonto Team has delivered payloads via spearphishing attachments.
+Tonto Team has routed their traffic through an external server in order to obfuscate their location.
+Tonto Team has used a first stage web shell after compromising a vulnerable Exchange server.
+Tonto Team has relied on user interaction to open their malicious RTF documents.

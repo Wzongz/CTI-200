@@ -1,0 +1,49 @@
+claim：The threat actor known as Blind Eagle has been linked to a new campaign targeting various key industries in Colombia.
+explain：The threat actor known as Blind Eagle has been linked to a new campaign targeting various key industries in Colombia. The activity, which was detected by the BlackBerry Research and Intelligence Team on February 20, 2023, is also said to encompass Ecuador, Chile, and Spain, suggesting a slow expansion of the hacking group's victimology footprint. Targeted entities include health, financial, law enforcement, immigration, and an agency in charge of peace negotiation in Colombia, the Canadian cybersecurity company said. Blind Eagle, also known as APT-C-36, was recently covered by Check Point Research, detailing the adversary's advanced toolset comprising Meterpreter payloads that are delivered via spear-phishing emails. The latest set of attacks involves the group impersonating the Colombian government tax agency, the National Directorate of Taxes and Customs (DIAN), to phish its targets using lures that urge recipients to settle "outstanding obligations." The craftily designed email messages come with a link pointing to a PDF file that's purportedly hosted on DIAN's website, but actually deploys malware on the targeted system, effectively launching the infection chain. "The fake DIAN website page contains a button that encourages the victim to download a PDF to view what the site claims to be pending tax invoices," BlackBerry researchers said. The latest set of attacks involves the group impersonating the Colombian government tax agency, the National Directorate of Taxes and Customs (DIAN), to phish its targets using lures that urge recipients to settle "outstanding obligations." The craftily designed email messages come with a link pointing to a PDF file that's purportedly hosted on DIAN's website, but actually deploys malware on the targeted system, effectively launching the infection chain. "The fake DIAN website page contains a button that encourages the victim to download a PDF to view what the site claims to be pending tax invoices," BlackBerry researchers said.Also of note is the threat actor's use of dynamic DNS services like DuckDNS to remotely commandeer the compromised hosts. Blind Eagle is suspected to be a Spanish-speaking group owing to the use of the language in its spear-phishing emails. However, it's currently unclear where the threat actor is based and whether their attacks are motivated by espionage or financial gain. "The modus operandi used has mostly stayed the same as the group's previous efforts – it is very simple, which may mean that this group is comfortable with its way of launching campaigns via phishing emails, and feels confident in using them because they continue to work," BlackBerry said. Found this article interesting? Follow us on Twitter  and LinkedIn to read more exclusive content we post.
+[
+    {
+	link：https://www.trendmicro.com/en_us/research/21/i/apt-c-36-updates-its-long-term-spam-campaign-against-south-ameri.html
+        "report_id": "report_0",
+        "sentences": [
+            "APT-C-36 utilizes different ruses for their targets: Many of the fraudulent emails impersonate Colombia’s national directorate of taxes and customs, Dirección de Impuestos y Aduanas Nacionales (DIAN), a lure that the threat actor has used before.",
+            "In English, the attachment means “seizure order.pdf” and the email body translates to the following: APT-C-36 utilizes different ruses for their targets: Many of the fraudulent emails impersonate Colombia’s national directorate of taxes and customs, Dirección de Impuestos y Aduanas Nacionales (DIAN), a lure that the threat actor has used before.",
+            "We have continued tracking APT-C-36, also known as Blind Eagle, since our research on this threat actor in 2019.",
+            "We share new findings of APT-C-36’s ongoing spam campaign targeting South American entities."
+        ]
+    },
+    {
+	link： https://ti.360.net/blog/articles/apt-c-36-continuous-attacks-targeting-colombian-government-institutions-and-corporations-en/
+        "report_id": "report_1",
+        "sentences": [
+            "After monitoring and correlating the APT attack, 360 Threat Intelligence Center discovered multiple related emails to attack Colombian government agencies, financial institutions and large enterprises.",
+            "After performing investigations on the classified victims, we find the attacker targets big companies and government agencies in Colombia.",
+            "For example, by masquerading the National Civil Registry to attack the Institute for the Blind, pretending to be the Tax and Customs Administration to attack companies with international trade, disguising as the judiciary and immigration authorities against banks and multinational corporation branches located in Colombia.",
+            "Since April 2018, an APT group (Blind Eagle, APT-C-36) suspected coming from South America carried out continuous targeted attacks against Colombian government institutions as well as important corporations in financial sector, petroleum industry, professional manufacturing, etc.",
+            "Some malicious domains used by the attacker also masquerade as Colombian government websites.",
+            "The mail was disguised from the Colombian National Civil Registry and attacked the Colombian National Institute for the Blind."
+        ]
+    },
+    {
+	link：https://research.checkpoint.com/2023/blindeagle-targeting-ecuador-with-sharpened-tools/
+        "report_id": "report_2",
+        "sentences": [
+            "Artificial Intelligence (AI) and Indicators of Compromise (IoCs) used in the past train the Harmony Email & Office platform for what to look for in complex zero-day phishing attacks.",
+            "Check Point’s anti-phishing solutions for office 365 & G suite analyzes all historical emails in order to determine prior trust relations between the sender and receiver, increasing the likelihood of identifying user impersonation or fraudulent messages.",
+            "For the last few months, we have been observing the ongoing campaigns orchestrated by Blind Eagle, which have mostly adhered to the TTPs described above — phishing emails pretending to be from the Colombian government.",
+            "Judging by its toolset and usual operations, it is clearly more interested in cybercrime and monetary gain than in espionage; however, unlike most such groups that just attack the entire world indiscriminately, Blind Eagle has a very narrow geographical focus, most of the time limited to a single country.",
+            "This code just adds a new stage in the infection chain:Usually campaigns by Blind Eagle abuse legitimate file sharing services such as Mediafire or free dynamic domains like “*.linkpc.net”; this case is different, and the next stage is hosted at the malicious domain upxsystems[.]com.",
+            "This latest campaign targeting Ecuador highlights how, over the last few years, Blind Eagle has matured as a threat — refining their tools, adding features to leaked code bases, and experimenting with elaborate infection chains and “Living off the Land” as seen with the clever abuse of mshta."
+        ]
+    },
+    {
+	link：https://blogs.blackberry.com/en/2023/03/news-bite-apt-c-36-targets-colombia-new-campaign
+        "report_id": "report_3",
+        "sentences": [
+            "Blind Eagle carefully crafted this fake webpage to deceive the victim into believing they are interacting with the real DIAN.APT-C-36 continues to concentrate its operations within a Hispanic geographic region, with its main targets being government institutions and other organizations primarily based in Colombia.",
+            "Blind Eagle carefully crafted this fake webpage to deceive the victim into believing they are interacting with the real DIAN.In the campaign uncovered by BlackBerry, Blind Eagle sent targeted phishing emails to the official email address listed on the “Contact Us” page of the Bogotá Chamber of Commerce website.",
+            "Blind Eagle is a South American espionage group that has been actively targeting Latin America-based entities since at least 2019.",
+            "In the campaign uncovered by BlackBerry, Blind Eagle sent targeted phishing emails to the official email address listed on the “Contact Us” page of the Bogotá Chamber of Commerce website.",
+            "On Feb. 20, the BlackBerry Research & Intelligence team witnessed a new spear-phishing campaign where the threat group APT-C-36, also known as Blind Eagle, impersonated a Colombian government tax agency to gain access to the target’s machines."
+        ]
+    }
+]

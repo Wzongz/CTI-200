@@ -1,0 +1,2 @@
+Scarlet Mimic is a threat group that has targeted minority rights activists. This group has not been directly linked to a government source, but the group's motivations appear to overlap with those of the Chinese government. While there is some overlap between IP addresses used by Scarlet Mimic and Putter Panda, it has not been concluded that the groups are the same. 
+Scarlet Mimic has used the left-to-right override character in self-extracting RAR archive spearphishing attachment file names.

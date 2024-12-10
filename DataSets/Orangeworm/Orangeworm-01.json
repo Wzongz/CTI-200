@@ -1,0 +1,52 @@
+[
+    "claim":"Orangeworm is a group that has targeted organizations in the healthcare sector in the United States, Europe, and Asia since at least 2015, likely for the purpose of corporate espionage.",
+    "explain":"Symantec has identified a previously unknown group called Orangeworm that has been observed installing a custom backdoor called Trojan.Kwampirs within large international corporations that operate within the healthcare sector in the United States, Europe, and Asia. First identified in January 2015, Orangeworm has also conducted targeted attacks against organizations in related industries as part of a larger supply-chain attack in order to reach their intended victims. Known victims include healthcare providers, pharmaceuticals, IT solution providers for healthcare and equipment manufacturers that serve the healthcare industry, likely for the purpose of corporate espionage.",
+    {
+        "report_id": "report_0",
+        "link":"https://www.hipaajournal.com/kwampirs-apt-group-continues-to-attack-healthcare-organizations-via-the-supply-chain/",
+        "sentences": [
+            "\"Orangeworm installs the Kwampirs custom backdoor in large firms in the healthcare sector in the U.S., Europe & Asia.",
+            "First identified in January 2015, Orangeworm has also conducted targeted attacks against organizations in related industries as part of a larger supply-chain attack in order to reach their intended victims.",
+            "Once Orangeworm determines that a potential victim is of interest, it proceeds to aggressively copy the backdoor across open network shares to infect other computers.",
+            "Symantec has identified a new attack group dubbed Orangeworm deploying the Kwampirs backdoor in a targeted attack campaign against the healthcare sector and related industries.",
+            "Symantec has identified a previously unknown group called Orangeworm that has been observed installing a custom backdoor called Trojan.",
+            "We believe that these industries have also been targeted as part of a larger supply-chain attack in order for Orangeworm to get access to their intended victims related to healthcare."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://gbhackers.com/orangeworm-apt/",
+        "sentences": [
+            "According to Symantec telemetry, almost 40 percent of Orangeworm’s confirmed victim organizations operate within the healthcare industry.",
+            "Based on the list of known victims, Orangeworm does not select its targets randomly or conduct opportunistic hacking.",
+            "First identified in January 2015, Orangeworm has also conducted targeted attacks against organizations in related industries as part of a larger supply-chain attack in order to reach their intended victims.",
+            "Known victims include healthcare providers, pharmaceuticals, IT solution providers for healthcare and equipment manufacturers that serve the healthcare industry, likely for the purpose of corporate espionage.",
+            "Symantec has identified a previously unknown group called Orangeworm that has been observed installing a custom backdoor called Trojan.",
+            "The Kwampirs malware was found on machines which had software installed for the use and control of high-tech imaging devices such as X-Ray and MRI machines."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Orangeworm",
+        "sentences": [
+            "Apart From Healthcare industries, Orangeworm APT also targeting the related industries such as healthcare providers, pharmaceuticals, IT solution providers for healthcare and equipment manufacturers that serve the healthcare industry.",
+            "Kwampirs backdoor discovered within the software that used to control the medical equipment such as X-Ray and MRI machines and also Orangeworm was recognized to have an interest in machines used to assist patients.",
+            "Kwampirs backdoor initially discovered in 2016 that can able to open a potential backdoor in compromised computers to steal the sensitive information and also download malicious files.",
+            "New APT Cyber espionage group Orangeworm targeting healthcare sectors and other medical related industries to deploy the powerful Kwampirs backdoor to compromise the medical devices such as X-Ray & MRI Scan Machines.",
+            "Orangeworm high amount of attack registered against Healthcare industries and other related industries also infected followed by Healthcare.",
+            "The orangeworm APT cyber group mainly targeting healthcare sector in the U.S., Europe, Asia and they are active since 2015."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/orangeworm-targets-healthcare-us-europe-asia",
+        "sentences": [
+            "An Advanced Persistent Threat (APT) group known as Kwampirs, aka OrangeWorm, is continuing to attack healthcare organizations and infect their networks with the Kwampirs Remote Access Trojan (RAT) and other malware payloads.",
+            "Symantec was first to report attacks on healthcare organizations via the supply chain in a report published in April 2019.",
+            "The APT group first gains access to victim companies’ devices and establishes a broad and persistent presence using the Kwampirs RAT in order to conduct computer network exploitation (CNE) activities.",
+            "The attacks on the healthcare sector are believed to have occurred through vendor software supply chain and hardware products.",
+            "The campaigns have included locally infected machines and enterprise malware infections.",
+            "The first phase involves the use of the Kwampirs RAT to gain broad and persistent access to hospital networks which often includes delivery of several secondary malware payloads."
+        ]
+    }
+]

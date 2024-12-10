@@ -1,0 +1,51 @@
+[
+    "claim":"Group5 is a threat group with a suspected Iranian nexus, though this attribution is not definite. The group has targeted individuals connected to the Syrian opposition via spearphishing and watering holes, normally using Syrian and Iranian themes. ",
+    "explain":"A threat actor using Iranian-language tools, Iranian hosting companies, operating from the Iranian IP space at times was observed targeting the Syrian opposition in an elaborately staged malware operation, Citizen Lab researchers reveal.The operation was first noticed in late 2015, when a member of the Syrian opposition flagged a suspicious email containing a PowerPoint slideshow, which led researchers to a watering hole website with malicious programs, malicious PowerPoint files, and Android malware.The threat actor was targeting Windows and Android devices of well-connected individuals in the Syrian opposition, researchers discovered. They called the actor Group5, because it targets Syrian opposition after regime-linked malware groups, the Syrian Electronic Army (SEA), Deadeye Jackal, ISIS (also known as the Islamic State or ISIL), and a group linked to Lebanon did the same in the past.",
+    {
+        "report_id": "report_0",
+        "link":"https://www.securityweek.com/iranian-actor-group5-targeting-syrian-opposition/",
+        "sentences": [
+            "A threat actor using Iranian-language tools, Iranian hosting companies, operating from the Iranian IP space at times was observed targeting the Syrian opposition in an elaborately staged malware operation, Citizen Lab researchers reveal.",
+            "However, Citizen Lab researchers reveal that Group5 is likely a new entrant in Syria, and that there is “only circumstantial evidence pointing to an Iranian nexus.”",
+            "The investigation was triggered by a suspicious email received in early October 2015 by Noura Al-Ameer, a well-connected Syrian opposition political figure, which was sent from the same IP address that hosted the command and control (C&C) server the malware inside it was connecting to.",
+            "The operation was first noticed in late 2015, when a member of the Syrian opposition flagged a suspicious email containing a PowerPoint slideshow, which led researchers to a watering hole website with malicious programs, malicious PowerPoint files, and Android malware.",
+            "The threat actor was targeting Windows and Android devices of well-connected individuals in the Syrian opposition, researchers discovered.",
+            "They called the actor Group5, because it targets Syrian opposition after regime-linked malware groups, the Syrian Electronic Army, ISIS (also known as the Islamic State or ISIL), and a group linked to Lebanon did the same in the past."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://www.securityweek.com/iranian-actor-group5-targeting-syrian-opposition/",
+        "sentences": [
+            "\"Citizen Lab said that it first spotted Group5 after former VP of the opposition of the SNC (Syrian National Council), Noura Al-Ameer received a suspicious email, which was later found to be part of a spear-phising campaign delivering malware.",
+            "Citizen Lab researchers dubbed the APT (Advanced Persistent Threat) team as Group5, as this was the fifth cyberespionage group uncovered that was targeting Syrian dissidents.",
+            "DUBBED GROUP5, THE APT GROUP IS THE LATEST TO EMERGE AMONG A HOST OF CYBERESPIONAGE GROUPS TO TARGET SYRIA.Based on the analysis of Group5's activities and techniques, Citizen Lab noted that there were several similarities with another Iran-linked cyberespionage group called \"Infy\".",
+            "Researchers have uncovered the activities of a new cyberespionage group which has launched an advanced malware operation that targets Syrian dissidents.",
+            "The hackers associated with the group are likely to be state-sponsored and have been linked with Iran.",
+            "The others identified so far include the Syrian Electronic Army, ISIS-linked hackers, the Assad regime-linked hacker groups and a Lebanon linked group."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.malwarebytes.com/blog/news/2019/10/the-forgotten-domain-exploring-a-link-between-magecart-group-5-and-the-carbanak-apt",
+        "sentences": [
+            "Attacks consist of compromising a third-party supplier and affecting hundreds or even thousands of websites downstream.",
+            "During our incident response in 2016, we could identify Dridex to be the initial infection vector, which had arrived in the victim’s mailbox by malicious Office Word documents, and uncovered the installation of a sophisticated malware called Carbanak, used by the attacker for lateral movement and conducting the actual fraud.",
+            "However, they may have forgotten to apply the same to informaer.info,Connection with Dridex malware and Carbanak Group",
+            "In a 2017 blog post, the Swiss CERT posted about phishing campaigns where Dridex was used to deliver the Carbanak malware.",
+            "The threat actors registered the domain informaer under eight different top-level domains (TLDs) using privacy protection services (see IOCs for full list).",
+            "With some exceptions, such as the Ticketmaster breach, Group 5 has a different modus operandi; it targets the supply chain used by e-commerce merchants to load various libraries, analytics, or security seals."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://cyware.com/news/magecart-group-5-linked-to-carbanak-apt-group-researchers-say-665e1334",
+        "sentences": [
+            "By analyzing the domains and email addresses used by the Magecart Group 5, researchers were able to identify several domains that are connected to the Dridex campaigns.",
+            "Especially, the guotang323@yahoo[.]com email address was found to be used to register domains for various Dridex phishing campaigns, including corporatefaxsolutions[.]com domain used in Corporate efax campaign targeting Germans onenewpost[.]com domain used in OnePosting Dridex campaign xeronet[.]org domain used in Xero phish Dridex campaign Furthermore, Dridex loader was found delivering Carbanak malware for companies and high-value targets.",
+            "Researchers from Malwarebytes have analyzed the domains and activities of Magecart Group 5 and have determined connections to the Carbanak group and Dridex phishing campaigns.",
+            "The group’s attack vector is a highly obfuscated skimmer script that exfiltrates payment card data such as credit card number, expiry date, and CVV from customers who purchase from one of the compromised stores.",
+            "The group’s attacks are primarily aimed at compromising a third-party supplier in order to impact hundreds of thousands of websites."
+        ]
+    }
+]

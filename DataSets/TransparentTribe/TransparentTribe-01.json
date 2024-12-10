@@ -1,0 +1,52 @@
+[
+    "claim":"Transparent Tribe (APT36) | Pakistan-Aligned Threat Actor Expands Interest in Indian Education Sector",
+    "explain":"APT Transparent Tribe (APT36) is luring the Indian Army into opening the malicious file themed ‘Revision of Officers posting policy.’ Quick Heal’s APT Team has been constantly tracking this persistent threat group and has encountered a new attack campaign targeting India. At the same time, we have also observed increased targeting of the education sector by the same threat actor. This is in continuation of targeting IITs since last year. Furthermore, the sub-division of this group, SideCopy, has been observed recently targeting an Indian Defense Organization where the domain hosting malicious files was probably being tested to act as a phishing page.APT36 is targeting Indian Army with malicious PPAM files with ‘Officers posting policy reviseed final’ as the theme. These macro-enabled PowerPoint add-on files (PPAM) are utilized to wrap malicious payloads by embedding archive files as OLE objects. The infection chain leads to the execution of a .NET-based Crimson RAT payload that can receive and execute 22 commands along with the persistence mechanism.C2 used by APT36 uses the same Common Name, which is usually found in this threat group’s C2 infrastructure. From targeting IITs to NITs and Business schools now, we have observed an increased targeting in the first quarter of 2023, peaking in February.Transparent Tribe is a Pakistani threat group, active since 2013. It is a persistent threat actor targeting the Indian government and military entities. The group continuously uses payloads such as Crimson RAT and Capra RAT in its campaigns, constantly upgrading them. Since May 2022 last year, Transparent Tribe has begun targeting the education sector, which surged in 2023. An in-depth analysis of the latest infection chain targeting the Indian Army and details of the education sector targeting can be found in our whitepaper.",
+    {
+        "report_id": "report_0",
+        "link":"https://securelist.com/transparent-tribe-part-1/98127/",
+        "sentences": [
+            "Interestingly, Transparent Tribe tries to circumvent certain vendors’ security tools by configuring the Server to prevent installation of some of the malware components, specifically the “USB Driver” and the “Pass Logger”, on systems protected with Kaspersky products.",
+            "The tool is composed of various components, which are used by the attacker for performing multiple activities on infected machines: In the course of our analysis, we spotted a .NET file, identified by our products as Crimson RAT, but a closer look revealed that it was something different: a server-side implant used by the attackers to manage the client components.",
+            "Their favorite infection vector is malicious documents with an embedded macro, which seem to be generated with a custom builder.",
+            "Their main malware is a custom .NET",
+            "This first publication will cover the following key points: We discovered the Crimson Server component, the C2 used by Transparent Tribe for managing infected machines and conducting espionage.",
+            "Transparent Tribe continues to spread Crimson RAT, infecting a large number of victims in multiple countries, mainly India and Afghanistan."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://www.sentinelone.com/labs/transparent-tribe-apt36-pakistan-aligned-threat-actor-expands-interest-in-indian-education-sector/",
+        "sentences": [
+            "Our analysis further demonstrates this characteristic of the group by spotlighting the adoption of OLE embedding as a technique for staging malware from lure documents and the Eazfuscator obfuscator to protect Crimson RAT implementations.",
+            "SentinelLabs has been tracking a cluster of malicious documents that stage Crimson RAT, distributed by APT36 (Transparent Tribe).",
+            "SentinelLabs has been tracking a recently disclosed cluster of malicious Office documents that distribute Crimson RAT, used by the APT36 group (also known as Transparent Tribe) targeting the education sector.",
+            "Transparent Tribe is a highly motivated and persistent threat actor that regularly updates its malware arsenal, operational playbook, and targets.",
+            "Transparent Tribe is known to experiment with different malware staging techniques, which include distributing executables with embedded documents or documents that execute designated Crimson RAT loaders.",
+            "We observed APT36 introducing OLE embedding to its typically used techniques for staging malware from lure documents and versioned changes to the implementation of Crimson RAT, indicating the ongoing evolution of APT36’s tactics and malware arsenal."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.zdnet.com/article/transparent-tribe-apt-returns-to-strike-indias-government-and-military/",
+        "sentences": [
+            "Active since at least 2013, the advanced persistent threat (APT) group operates in at least 30 countries.",
+            "However, Talos notes that Transparent Tribe continues to \"incorporate new bespoke malware, indicating the actors are actively diversifying their portfolio to compromise even more victims.\"",
+            "Malicious payloads, including the Remote Access Trojan (RAT) CrimsonRAT are downloaded and executed.",
+            "Since 2020, the .NET RAT is considered the APT's \"malware of choice\" and is capable of extensive data theft and surveillance.",
+            "The Transparent Tribe hacking group is back with a new malware arsenal and victim list including India's government and military.",
+            "Transparent Tribe uses phishing to deliver maldocs and malicious web domains to push its malware, which is primarily Windows-based."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://blog.talosintelligence.com/transparent-tribe-infra-and-targeting/",
+        "sentences": [
+            "In another instance, we observed a malicious ZIP archive targeting the British High Commission in Islamabad with CrimsonRAT.Transparent Tribe consistently uses alluring documents and file names, commonly referred to as honeytraps, to trick victims into executing malicious content on their endpoints.",
+            "Our latest Transparent Tribe research confirms that the group continues to create malicious domains mimicking defense-related entities as a core component of their operations.",
+            "The infection chain involving these domains is similar to the one described above in which the threat actors use social engineering to convince the victim to download and open the malware hosted on these sites.",
+            "Transparent Tribe uses a two-pronged approach for registering malicious domains: Fake domains masquerading as legitimate sites belonging to government, defense, or research entities, and malicious domains that resemble file-sharing websites.",
+            "Transparent Tribe uses generically themed content-hosting domains as well as malicious domains masquerading as legitimate defense-related websites.",
+            "Transparent Tribe, also known as APT36 and Mythic Leopard, continues to create fake domains mimicking legitimate military and defense organizations as a core component of their operations."
+        ]
+    }
+]

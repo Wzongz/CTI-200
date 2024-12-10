@@ -1,0 +1,142 @@
+{
+  "event_id": "136",
+  "claim": "Collecting In the Dark: Tropic Trooper Targets Transportation and Government.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Earth Centaur, previously known as Tropic Trooper, is a long-running cyberespionage threat group that has been active since 2011. In July 2020, we noticed interesting activity coming from the group, and we have been closely monitoring it since. The actors seem to be targeting organizations in the transportation industry and government agencies related to transport. We observed that the group tried to access some internal documents (such as flight schedules and documents for financial plans) and personal information on the compromised hosts (such as search histories). Currently, we have not discovered substantial damage to these victims as caused by the threat group. However, we believe that it will continue collecting internal information from the compromised victims and that it is simply waiting for an opportunity to use this data. Through long-term monitoring, we learned that this threat group is proficient at red teamwork. The group knows how to bypass security settings and keep its operation unobstructive. Depending on the target, it uses backdoors with different protocols, and it can also use the reverse proxy to bypass the monitoring of network security systems. The usage of the open-source frameworks also allows the group to develop new backdoor variants efficiently. We expand on these techniques and other capabilities in the following sections. More importantly, we believe the activities we observed are just the tip of the iceberg and their targets might be expanded to other industries that are related to transportation. It is our aim, through this article, to encourage enterprises to review their own security setting and protect themselves from damage and compromise. Overview of Earth Centaur’s infection chain Based on our investigation, we found that the intrusion process used by Earth Centaur can be separated into several stages, which are shown in Figure 1. We found that the threat actors used vulnerable Internet Information Services (IIS) server and Exchange server vulnerabilities as entry points, and then installed web shells. Afterward, the .NET loader (detected as Nerapack) and the first stage backdoor (Quasar remote administration tool aka Quasar RAT) were deployed on the compromised machine. Then, depending on the victims, the threat actors dropped different types of second-stage backdoors, such as ChiserClient and SmileSvr. After exploiting the victim's environments successfully, the threat actors start Active Directory (AD) discovery and spread their tools via Server Message Block (SMB). Then, they use intranet penetration tools to build the connection between the victim’s intranet and their command-and-control (C&C) servers. We go into further detail about these stages in our analysis. Technical Analysis of Earth Centaur’s Tools and Techniques,After the threat actors get access to the vulnerable hosts by using ProxyLogon exploits and web shells, they use bitsadmin to download the next-stage loader (loaders are detected as Nerapack) as well as its payload file (.bin).After our long-term monitoring, we observed that there are two different decryption algorithms (DES or AES) used in Nerapack to decrypt the payload. Moreover, in its newer version, it uses a technique called “Timestomping.” Timestomping is when the timestamp of the payload file (.bin) is altered to make it harder for incident response analysts to find it.The decryption key is used as an argument of Nerapack and various keys are used on different victims. It is a simple but effective technique that makes security analysis more difficult and also ensures that only their operators can use the tools.Fortunately, we were still able to collect the decryption key in some cases and we decrypted the payload successfAfter further analysis, we found that the threat group developed multiple backdoors capable of communication via common network protocols. We think this indicates that it has the capability to bypass network security systems by using these common protocols to transfer data. We also found that the group tries to launch various backdoors per victim. Furthermore, it also tends to use existing frameworks to make customized backdoors. By using existing frameworks, examples of which are detailed in the following, it builds new backdoor variants more efficiently.ully. Based on our current cases, the decrypted payload is Quasar RAT. After the payload is deployed, the actors can continue further malicious actions through Quasar RAT.After the backdoor is launched, it will decrypt the embedded C&C configuration via AES (CTR mode) algorithm for the following connection. In the configuration, there are three C&C addresses and corresponding port numbers.In the first connection, ChiserClient will append the host name of the compromised host for check-in purposes. Then, it will keep running on the hosts and wait for further commands from the C&C server. ChiserClient is installed as a system service to allow the threat actors access to higher privileges and keep persistence on the compromised host.HTShell is a simple backdoor that is developed using the Mongoose framework (version 6.15). Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.Js. It is used to translate between objects in code and objects representation in MongoDB. We saw in our cases that the HTShell client will be launched as a system service on the compromised machine and that it will connect to a C&C server. HTShell supports importing additional config files. We found that the additional config file is located in %PUBLIC%\\Documents\\sdcsvc.dat, and that the content should be encoded by base64. If no config file is imported, it will connect to the predefined C&C address.HTShell encodes a hard-coded string, “tp===” with custom base64 and embeds the encoded string in the request cookies. If the C&C server receives the request with the special cookie value, it can verify that the request comes from its client applications.The response handler of HTShell will use “`” as delimiter to split the command code and argument for the received command.HTShell currently supports three different backdoor functions,During our investigation into Earth Centaurs activities, we found that it also uses another backdoor called Lilith RAT. We think that this Lilith RAT is a highly modified version of the open-source Lilith RAT. The actors reused part of the codes for command execution, while the C&C protocol is changed to Dropbox HTTPS APIs.In order to launch this RAT, the threat actors use a technique called “Phantom DLL hijacking.” In this technique, the RAT will be disguised as the normal wlbsctrl.dll. While the Windows service “IKEEXT” is starting, the fake wlbsctrl.dll is loaded and executed with high privilege. Furthermore, when Lilith RAT is terminated, it will try to clean itself to prevent being found by investigators.For the C&C connections, the customized Lilith RAT will first check in to the attacker’s Dropbox and see if the victim host exists. If not, the hostname and IP address will be collected and appended to the existing compromised hosts’ information. All data will then be encrypted and sent back.After the check-in request, the backdoor will start to wait for more commands to come in. All the request data are formatted to JSON, and they are encrypted by AES and encoded by base64.We found that there are two types of SmileSvr. The difference between the two variants is the protocol used for communication: ICMP and SSL. The threat actors will use an installer to install SmileSvr as a system service and drop a DAT file that contains encoded C&C information. In the configuration file, the memory size used for storing C&C address and C&C address will be defined.The ICMP version of SmileSvr will create an ICMP socket to connect to the specified C&C address, which is defined in a configuration file. In each SmileSvr, there is an embedded number (e.g., 10601 in Figure 10.) and this value will be used as sequence number in the sent ICMP packet. We think attackers use this value to verify if the incoming packet belongs to their backdoor and filter out the noise.Without knowing the real traffic from the C&C server, we can only speculate on the content of the response based on the receiving function. As shown in Figure 11, the content of the response should contain the sequence number used to verify if the received data comes from the correct source and two blocks of encrypted data.First, the encrypted data is decrypted with a one-byte XOR key (0xFF). The first of the decrypted content contains a magic number used to check data in the second block, a command code, and the XOR key to decrypt the second set of encrypted content. The second set of encrypted content is decrypted with an XOR key (0x99) from the previous decrypted content, and within the decrypted data are instructions for the following procedures.While analyzing samples, we found that the C&C server was already inactive. Without knowing the traffic between SmileSvr and C&C server, we could not fully understand all functions. As for the SSL version of SmileSvr, the capability of SSL communication is built by using wolfSSL, which is a lightweight, C-language based SSL/TLS library. The backdoor functions of SSL version SmileSvr are similar to the ICMP ones. The threat actors just use it to develop new ways to support data transfer via an encrypted channel.In our investigation, we also found a suspicious executable named telegram.exe. After analyzing the file, we found that it was a customized version of Gh0st RAT. Compared to the original Gh0st RAT (Gh0st beta 3.6), the difference is that the customized version supports a new function to discover information from active sessions on the host.After successfully exploiting the vulnerable system, the threat actor will use multiple hacking tools to discover and compromise machines on the victim’s intranet. In this stage, we also observed attempts to deploy tools to exfiltrate stolen information. During our investigation, we found evidence of specific tools, which we listed in Table 1. With these tools, the attackers accomplish their goals (network discovery, access to the intranet, and exfiltration) step by step.We also observed that the group used multiple legitimate tools to dump credentials on compromised machines. It made good use of these tools to achieve its goal and keep its operation hidden and unobstructive. For example, the group uses ProcDump.exe (a tool from Windows Sysinternals Suite that creates dumps of the processes in any scenario), which it renamed bootsys.exe.The group dumps credentials stored in registries by using reg.exe.The group would also dump memory from the specified process by using comsvcs.dll.To avoid exposing their footprints to investigators, the threat actors made their own tool to wipe out the event logs on the victimized machine. By using this tool, they could clean specified event logs and make it hard for investigators to track their operations.After successfully exploiting the vulnerable system, threat actors also drop following tools: FRP and Chisel. FRP is a fast reverse proxy used to expose a local server behind an NAT or a firewall to the internet. It can read predefined configurations and make the host in the intranet available to users from the internet.Chisel is a fast TCP/UDP tunnel, which is mainly used for passing through firewalls. It provides the capability to transport data over HTTP (secured via Secure Shell, aka SSH) and allows threat actors to pass through a firewall and get access to the machine behind the firewall.This is used to download reverse proxy Chisel via PowerShell,This is used to build a connection between inter/intranet via Chisel.In the previous phase, we observed that the actors use several tools to get the whole picture of the network infrastructure and bypass the firewall. Afterward, we observed a PowerShell command used to download an effective tool, Rclone, which is used for exfiltration. It also provides an easy and effective way of copying data to several cloud storage providers.Based on previous experience, Rclone has frequently been used in ransomware attacks to exfiltrate stolen data. However, it seems that currently, it is not only used in ransomware attacks but also in APT attacks.After long-term observation and analysis of the attack campaigns, there was compelling evidence that they were operated by Earth Centaur. We found several identifying features of the threat actors within the techniques and tools described in the preceding sections, and we break down the factors in the following.We found some special mutexes that are encoded by the layout of the Chinese Zhuyin keyboard in ChiserClient. The decoded string is shown in Table 2. Based on these special mutex strings, we believe the threat actors come from a Chinese-speaking region.After analyzing the ChiserClient, we found that it shares a similar style of network configuration to the TClient mentioned in our previous research on Earth Centaur.After checking the backdoor SmileSvr, we found that there was a code similarity between it and Troj_YAHAMAM, which was used by Earth Centaur in an earlier operation. Both share similar codes in configuration decoding, which is shown in Figure 14. Furthermore, the delimiter that was used in SmileSvr to split different values in configuration files is the same as the one used in YAHAMAM.These threat actors are notably sophisticated and well-equipped. Looking deeper into the new methods the group uses, we found that it has an arsenal of tools capable of assessing and then compromising its targets while remaining under the radar. For example, the group can map their target’s network infrastructure and bypass firewalls. It uses backdoors with different protocols, which are deployed depending on the victim. It also has the capability to develop customized tools to evade security monitoring in different environments, and it exploits vulnerable websites and uses them as C&C servers. In this blog, we outlined our new findings related to these threat actors to help possible targets in the transportation and other industries. Information on how a threat enters and operates within a victim’s network is invaluable to security teams and can help them create more effective protection for vulnerable organizations. Organizations can also find capable security solutions that can help interpret and respond to malicious activities, techniques, and movements before the threat can culminate and affect an enterprise. Trend Micro Vision One™️ with Managed XDR gives security teams a consolidated view into valuable insights so they can organize a more solid line of defense ahead of attacks.\n\n\n",
+  "reports": [
+    {
+      "link": "https://thehackernews.com/2021/12/tropic-trooper-cyber-espionage-hackers.html/",
+      "content": "The group tried to access some internal documents (such as flight schedules and documents for financial plans) and personal information on the compromised hosts (such as search histories),\" Trend Micro researchers Nick Dai, Ted Lee, and Vickie Su said in a report published last week. After successful exploitation of the system, Tropic Trooper also attempts to breach the intranet, dump credentials, and wipe out event logs from the infected machines using a specific set of tools. Earth Centaur, also known by the monikers Pirate Panda and Tropic Trooper, is a long-running threat group focused on information theft and espionage that has led targeted campaigns against government, healthcare, transportation, and high-tech industries in Taiwan, the Philippines, and Hong Kong dating all the way back to 2011.The hostile agents, believed to be a Chinese-speaking actor, are known for their use of spear-phishing emails with weaponized attachments to exploit known vulnerabilities, while simultaneously advancing their malicious tools with obfuscation, stealthiness, and striking power. The findings are noteworthy because of the steps the advanced persistent threat (APT) takes to avoid detection and the critical nature of the targeted entities, not to mention the new capabilities developed for their malicious software to linger on infected hosts and avoid detection. The transportation industry and government agencies related to the sector are the victims of an ongoing campaign since July 2020 by a sophisticated and well-equipped cyberespionage group in what appears to be yet another uptick in malicious activities that are \"just the tip of the iceberg.\" The usage of the open-source frameworks also allows the group to develop new backdoor variants efficiently.",
+      "domain": "thehackernews.com",
+      "tokenized": [
+        {
+          "sent": "The group tried to access some internal documents (such as flight schedules and documents for financial plans) and personal information on the compromised hosts (such as search histories),\" Trend Micro researchers Nick Dai, Ted Lee, and Vickie Su said in a report published last week.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"After successful exploitation of the system, Tropic Trooper also attempts to breach the intranet, dump credentials, and wipe out event logs from the infected machines using a specific set of tools.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Earth Centaur, also known by the monikers Pirate Panda and Tropic Trooper, is a long-running threat group focused on information theft and espionage that has led targeted campaigns against government, healthcare, transportation, and high-tech industries in Taiwan, the Philippines, and Hong Kong dating all the way back to 2011.The hostile agents, believed to be a Chinese-speaking actor, are known for their use of spear-phishing emails with weaponized attachments to exploit known vulnerabilities, while simultaneously advancing their malicious tools with obfuscation, stealthiness, and striking power.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The findings are noteworthy because of the steps the advanced persistent threat (APT) takes to avoid detection and the critical nature of the targeted entities, not to mention the new capabilities developed for their malicious software to linger on infected hosts and avoid detection.",
+          "is_evidence": 0
+        },
+        {
+          "sent":  "The transportation industry and government agencies related to the sector are the victims of an ongoing campaign since July 2020 by a sophisticated and well-equipped cyberespionage group in what appears to be yet another uptick in malicious activities that are \"just the tip of the iceberg.\"",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The usage of the open-source frameworks also allows the group to develop new backdoor variants efficiently.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://blogs.cisco.com/security/scope-of-keyboy-targeted-malware-attacks/",
+      "content": "Additionally, blacklisting the domains offered by changeip.com using local RPZs, firewalls, Cisco IronPort Web Security Appliance (WSA), or Cloud Web Security (CWS) are additional options that can help add an extra level of security. As we have seen in some previous targeted malware attacks, the attackers in this incident are taking advantage of services like changeip.com to establish free subdomains in their infrastructure. Blending in with legitimate traffic is a common tactic used by attackers to help fly under the radar. Subdomains at phmail.us have been linked to malicious activity dating back as far as December 2011. The indicators of compromise (IoCs) listed by Rapid7 match some of the indicators of compromise listed previously by malwaretracker.com. While TRAC is sure that many subdomains used at changeip.com have no malicious purpose, there is no denying the fact that attackers mounting targeted attacks are also attracted to these ‘free’ services.",
+      "domain": "blogs.cisco.com",
+      "tokenized": [
+        {
+          "sent": "Additionally, blacklisting the domains offered by changeip.com using local RPZs, firewalls, Cisco IronPort Web Security Appliance (WSA), or Cloud Web Security (CWS) are additional options that can help add an extra level of security.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"As we have seen in some previous targeted malware attacks, the attackers in this incident are taking advantage of services like changeip.com to establish free subdomains in their infrastructure.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Blending in with legitimate traffic is a common tactic used by attackers to help fly under the radar.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Subdomains at phmail.us have been linked to malicious activity dating back as far as December 2011.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The indicators of compromise (IoCs) listed by Rapid7 match some of the indicators of compromise listed previously by malwaretracker.com.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "While TRAC is sure that many subdomains used at changeip.com have no malicious purpose, there is no denying the fact that attackers mounting targeted attacks are also attracted to these ‘free’ services.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://securityaffairs.com/132545/hacking/tropic-trooper-apt-new-campaign.html/",
+      "content": "According to SecurityScorecard, the China-linked advanced persistent threat (APT) actor Volt Typhoon likely compromised one-third of the vulnerable devices observed by the company. Further analysis of the traffic between known Volt Typhoon infrastructure and likely compromised devices led SecurityScorecard to the conclusion that the APT may operate a much more extensive botnet than previously believed. Given that this compromised device is in New Caledonia, the cybersecurity firm believes that it serves as a transit point for Volt Typhoon-related traffic. Specifically, over a 37-day period, 325 out of 1,116 devices were seen connecting to two IP addresses used as proxy routers for command-and-control (C&C) communication, suggesting that they might be part of the same Volt Typhoon-linked botnet of compromised devices. “The available analysis of Volt Typhoon has highlighted its targeting of communications between APAC and the Americas – its intrusions into the networks of telecommunications providers and other critical infrastructure in Guam attracted particular attention in previous reporting–so its exploitation of telecommunications infrastructure on another Pacific island may be in keeping with this previous behavior,” the cybersecurity firm says. “While public reporting on Volt Typhoon has not previously noted its targeting of Australian or UK government assets in addition to US ones, such activity would be in keeping with PRC nation-state cyber activity more generally, as these countries’ roles in the Western alliance system (including their Five Eyes and AUKUS membership) have contributed to their frequent targeting by China-linked APT group,” SecurityScorecard says.",
+      "domain": "securityaffairs.com",
+      "tokenized": [
+        {
+          "sent": "And, finally, the addition of network scanning functionality to Yahoyah shows us that the tools at the disposal of threat actors will be honed and improved as time passes, one way or the other.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Check Point identified dozens of hosts used for this campaign, experts pointed out that Chinese hosting providers have hosted most of the infrastructure used by the threat actor: Tropic Trooper “The observed activity cluster paints a picture of a focused, determined actor with a clear goal in mind.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"China-linked APT group Tropic Trooper has been spotted previously undocumented malware written in Nim language.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Experts pointed out that the attack is targeted in nature due to the spreading of a trojanized version of the SMS Bomber tool, which is a software of interest for specific audiences.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The Tropic Trooper APT has been active at least since 2012, it was first spotted by security experts at Trend Micro in 2015, when the threat actors targeted government ministries and heavy industries in Taiwan and the military in the Philippines.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The threat actors also used a new variant of the ‘Yahoyah’ Trojan to gather information about local wireless networks.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://medium.com/@josephalan17201972/tropic-trooper-tryhackme-write-up-ac961f520ce3",
+      "content": "A multinational technology company has been the target of several cyber attacks in the past few months. A threat advisory report about similar attacks has been shared, and as a CTI analyst, your task is to identify the Tactics, Techniques, and Procedures (TTPs) being used by the Threat group and gather as much information as possible about their identity and motive. Give it about 7 minutes to fully load and use the credentials below to access the platforms via the AttackBox or VPN to conduct your investigations.the Philippines, and Hong Kong, has been active since 2011. The attackers have been successful in stealing sensitive intellectual property and causing disruptions to the company’s operations. The group was reportedly using spear-phishing emails. We found that APT X’s latest activities center on targeting Taiwanese and the Philippine military’s physically isolated networks through a USBferry.",
+      "domain": "medium.com",
+      "tokenized": [
+        {
+          "sent": "A multinational technology company has been the target of several cyber attacks in the past few months.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"A threat advisory report about similar attacks has been shared, and as a CTI analyst, your task is to identify the Tactics, Techniques, and Procedures (TTPs) being used by the Threat group and gather as much information as possible about their identity and motive.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Give it about 7 minutes to fully load and use the credentials below to access the platforms via the AttackBox or VPN to conduct your investigations.the Philippines, and Hong Kong, has been active since 2011.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The attackers have been successful in stealing sensitive intellectual property and causing disruptions to the company’s operations.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The group was reportedly using spear-phishing emails.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "We found that APT X’s latest activities center on targeting Taiwanese and the Philippine military’s physically isolated networks through a USBferry.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    }
+  ]
+}

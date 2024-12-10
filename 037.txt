@@ -1,0 +1,141 @@
+{
+    "event_id": "037",
+    "claim": "“In March 2023, we uncovered a previously unknown APT campaign in the region of the Russo-Ukrainian conflict that involved the use of PowerMagic and CommonMagic implants. However, at the time it was not clear which threat actor was behind the attack.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "New findings about a hacker group called ‘Bad Magic,’ which is linked to cyber attacks targeting companies in the Russia-Ukrainian conflict area, reveal that it may have been around for much longer than previously thought, according to leading cyber security firm Kaspersky.“In March 2023, we uncovered a previously unknown APT campaign in the region of the Russo-Ukrainian conflict that involved the use of PowerMagic and CommonMagic implants. However, at the time it was not clear which threat actor was behind the attack.“Since the release of our report about CommonMagic, we have been looking for additional clues that would allow us to learn more about this actor. As we expected, we have been able to gain a deeper insight into the Bad Magic story,” says Kaspersky. “While looking for implants bearing similarities with PowerMagic and CommonMagic, we identified a cluster of even more sophisticated malicious activities originating from the same threat actor.“What was most interesting about it is that its victims were located not only in the Donetsk, Lugansk and Crimea regions, but also in central and western Ukraine. Targets included individuals, as well as diplomatic and research organisations.”The campaign is characterised by the use of a novel modular framework codenamed CloudWizard, which features capabilities to take screenshots, record microphone, log keystrokes, grab passwords, and harvest Gmail inboxes.Bad Magic was first report in March 2023, detailing the group's use of a backdoor called PowerMagic (aka DBoxShell or GraphShell) and a modular framework dubbed CommonMagic in attacks targeting Russian-occupied territories of Ukraine.\n\n\n",
+    "reports": [
+        {
+            "link": "https://thehackernews.com/2023/05/bad-magics-extended-reign-in-cyber.html/",
+            "content": "At the beginning of 2018, researchers discovered that the Patchwork APT group was also operating spear phishing campaigns targeting think tank groups from the US. In recent attacks, the Patchwork group has been using a payload that is a modified or custom-built RAT instead of using readily available remote admin tools. The Patchwork APT group has expanded its wings with enhanced malware toolsets and has been targeting China and other regions through spear phishing attacks. The image below showcases Chinese and Pakistani fighter war games with a CVE\u00022019-0808 exploit code that drops and executes Patchwork APT payloads on victim machines. This group is suspected to be run by an Indian-speaking threat actor targeting foreign embassies and diplomatic offices in Pakistan, Sri-Lanka, Uruguay, Bangladesh, Taiwan, Australia, and the USA. We suspect that the attack is executed in the form of spear phishing emails with malicious attachments.",
+            "domain": "thehackernews.com",
+            "tokenized": [
+                {
+                    "sent":  "\"The threat actor responsible for these operations has demonstrated a persistent and ongoing commitment to cyber espionage, continuously enhancing their toolset and targeting organizations of interest for over 15 years,\" Kaspersky researcher Georgy Kucherin said.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "\"While the previous targets were primarily located in the Donetsk, Luhansk, and Crimea regions, the scope has now widened to include individuals, diplomatic entities, and research organizations in Western and Central Ukraine,\" Russian cybersecurity firm Kaspersky said in a technical report published last week.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Bad Magic was first documented by the company in March 2023, detailing the group's use of a backdoor called PowerMagic (aka DBoxShell or GraphShell) and a modular framework dubbed CommonMagic in attacks targeting Russian-occupied territories of Ukraine.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Commonalities have also been unearthed between CloudWizard and CommonMagic, including identical source code and victimology patterns, indicating that the threat actor has been repeatedly tweaking its malware arsenal and infecting targets for about 15 years.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Kaspersky said it identified source code overlaps between an older version of CloudWizard and another malware known as Prikormka, which was discovered by Slovak cybersecurity company ESET in 2016.The espionage campaign, monitored by ESET under the moniker Operation Groundbait, primarily singled out anti-government separatists in Donetsk and Luhansk and Ukrainian government officials, politicians, and journalists.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "New findings about a hacker group linked to cyber attacks targeting companies in the Russo-Ukrainian conflict area reveal that it may have been around for much longer than previously thought.",
+                     "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.scmagazine.com/news/newly-identified-apt-groups-motives-in-ukraine-baffle-researchers/",
+            "content":  "It said Red Stinger was the same group Kaspersky recently revealed as being behind attacks last year on government, agriculture, and transportation organizations in Donetsk, Lugansk, and Crimea. Kaspersky calls the group Bad Magic. Malwarebytes’ research found Red Stinger/Bad Magic’s attacks stretched back to 2020, and occurred in centers other than just Donetsk, Lugansk, and Crimea (which was annexed by Russia in 2014). Several advanced persistent threat attacks carried out across Ukraine between 2020 and 2022 have been linked to the same group of actors: a mystery entity whose allegiances are unclear. The group targeted several election officials involved in the Russian referendums, but during the same operation it also targeted a Ukrainian library in the city of Vinnytsia. “Military, transportation and critical infrastructure were some of the entities being targeted, as well as some involved in the September [2022] East Ukraine referendums,” the post said.",
+            "domain": "www.scmagazine.com",
+            "tokenized": [
+                {
+                    "sent":  "It said Red Stinger was the same group Kaspersky recently revealed as being behind attacks last year on government, agriculture, and transportation organizations in Donetsk, Lugansk, and Crimea.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "Kaspersky calls the group Bad Magic.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Malwarebytes’ research found Red Stinger/Bad Magic’s attacks stretched back to 2020, and occurred in centers other than just Donetsk, Lugansk, and Crimea (which was annexed by Russia in 2014).",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Several advanced persistent threat attacks carried out across Ukraine between 2020 and 2022 have been linked to the same group of actors: a mystery entity whose allegiances are unclear.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The group targeted several election officials involved in the Russian referendums, but during the same operation it also targeted a Ukrainian library in the city of Vinnytsia.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "“Military, transportation and critical infrastructure were some of the entities being targeted, as well as some involved in the September [2022] East Ukraine referendums,” the post said.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://securelist.com/it-threat-evolution-q1-2023/109838/",
+            "content":  "BadMagic: new APT related to the Russo-Ukrainian conflict Since the start of the Russo-Ukrainian conflict, we have identified a significant number of geo-political cyber-attacks, as outlined in our overview of the cyber-attacks related to the conflict. During our initial analysis, we were unable to find anything to connect the samples we found and the data used in the campaign to any previously known threat actor. However, our continuing investigations revealed more information about this threat, including links to other APT campaigns. In several cases, the contents of the decoy document were directly related to the name of the malicious LNK, to trick the user into activating it The LNK file downloads and installs a PowerShell backdoor called “PowerMagic”, which in turn deploys a sophisticated modular framework called “CommonMagic”. Last October, we identified an active infection of government, agriculture and transportation organizations located in Donetsk, Lugansk and Crimea. We discovered CommonMagic plugins capable of stealing files from USB devices as well as taking screenshots and sending them to the threat actor.",
+            "domain": "securelist.com",
+            "tokenized": [
+                {
+                    "sent": "BadMagic: new APT related to the Russo-Ukrainian conflict Since the start of the Russo-Ukrainian conflict, we have identified a significant number of geo-political cyber-attacks, as outlined in our overview of the cyber-attacks related to the conflict.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "During our initial analysis, we were unable to find anything to connect the samples we found and the data used in the campaign to any previously known threat actor.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "However, our continuing investigations revealed more information about this threat, including links to other APT campaigns.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "In several cases, the contents of the decoy document were directly related to the name of the malicious LNK, to trick the user into activating it The LNK file downloads and installs a PowerShell backdoor called “PowerMagic”, which in turn deploys a sophisticated modular framework called “CommonMagic”.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Last October, we identified an active infection of government, agriculture and transportation organizations located in Donetsk, Lugansk and Crimea.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We discovered CommonMagic plugins capable of stealing files from USB devices as well as taking screenshots and sending them to the threat actor.",
+                    "is_evidence": 0
+                }
+            ]
+         },
+         {
+            "link": "https://thehackernews.com/2023/03/new-bad-magic-cyber-threat-disrupt.html/",
+            "content":  "\"Although the initial vector of compromise is unclear, the details of the next stage imply the use of spear phishing or similar methods,\" Kaspersky said in a new report.\n\n. \"Geopolitics always affect the cyberthreat landscape and lead to the emergence of new threats,\" Kaspersky's Leonid Besverzhenko said. Amid the ongoing war between Russia and Ukraine, government, agriculture, and transportation organizations located in Donetsk, Lugansk, and Crimea have been attacked as part of an active campaign that drops a previously unseen, modular framework dubbed CommonMagic.\n\n. New 'Bad Magic' Cyber Threat Disrupts Ukraine's Key Sectors Amid War. The Russian cybersecurity company, which detected the attacks in October 2022, is tracking the activity cluster under the name \"Bad Magic.\". The file, when opened, contains a decoy document and a malicious LNK file that culminates in the deployment of a backdoor named PowerMagic.\n\n",
+            "domain": "thehackernews.com",
+            "tokenized": [
+                {
+                    "sent": "\"Although the initial vector of compromise is unclear, the details of the next stage imply the use of spear phishing or similar methods,\" Kaspersky said in a new report.\n\n",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "\"Geopolitics always affect the cyberthreat landscape and lead to the emergence of new threats,\" Kaspersky's Leonid Besverzhenko said.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Amid the ongoing war between Russia and Ukraine, government, agriculture, and transportation organizations located in Donetsk, Lugansk, and Crimea have been attacked as part of an active campaign that drops a previously unseen, modular framework dubbed CommonMagic.\n\n",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "New 'Bad Magic' Cyber Threat Disrupts Ukraine's Key Sectors Amid War.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "The Russian cybersecurity company, which detected the attacks in October 2022, is tracking the activity cluster under the name \"Bad Magic.\".",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "The file, when opened, contains a decoy document and a malicious LNK file that culminates in the deployment of a backdoor named PowerMagic.\n\n",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

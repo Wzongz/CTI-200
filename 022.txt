@@ -1,0 +1,141 @@
+{
+    "event_id": "022",
+    "claim": "Russia’s APT29 Targets Embassies With Ngrok and WinRAR Exploit.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Ukrainian security researchers have revealed a major new Russian cyber-espionage campaign which they claim may have been designed to harvest information on Azerbaijan’s military strategy.APT29 (aka Cozy Bear, Nobelium and many other monikers) was behind the attacks, according to a new report from the Ukrainian National Security and Defense Council (NDSC).It targeted embassies in Azerbaijan, Greece, Romania and Italy, as well as international institutions such as the World Bank, European Commission, Council of Europe, WHO, UN and others.“The geopolitical implications are profound. Among the several conceivable motives, one of the most apparent aims of the SVR might be to gather intelligence concerning Azerbaijan’s strategic activities, especially in the lead-up to the Azerbaijani invasion of Nagorno-Karabakh,” said the NDSC.“It’s noteworthy that the countries targeted – Azerbaijan, Greece, Romania, and Italy – maintain significant political and economic ties with Azerbaijan.”Read more on APT29: Diplomats in Ukraine Targeted by “Staggering” BMW Phishing CampaignThe campaign itself began as a spear-phishing email, using the lure of a diplomatic car for sale. The RAR attachment featured CVE-2023-3883, a bug which enables threat actors to insert malicious folders with the same name as benign files in a .zip archive.“In the course of the user’s effort to open the harmless file, the system unwittingly processes the concealed malicious content within the folder with a matching name, thus enabling the execution of arbitrary code,” the NDSC explained.In this attack, when a user clicks on the RAR archive contained in the phishing email it will execute a script to display a PDF of the car ‘for sale,’ whilst simultaneously downloading and executing a PowerShell script. The threat actors apparently use a Ngrok free static domain to access their malicious payload server hosted on a Ngrok instance.“By exploiting Ngrok’s capabilities in this manner, threat actors can further complicate cybersecurity efforts and remain under the radar, making defense and attribution more challenging,” noted the report.This isn’t the first time hackers have exploited CVE-2023-3883. It was observed being exploited by the Russian Sednit APT group (APT28) in August, shortly after Group-IB first notified about what was then a zero-day vulnerability.\n\n\n",
+    "reports": [
+        {
+            "link": "https://socradar.io/apt-profile-cozy-bear-apt29/",
+            "content":   "Advanced Persistent Threat (APT) groups are widely classified as organizations that lead “attacks on a country’s information assets of national security or strategic economic importance through either cyber espionage or cyber sabotage.”Based on the group’s latest campaign details, APT29 used the Polish Foreign Minister‘s recent visit to the US as a lure to conduct a spear phishing campaign targeting Western Countries, particularly Western Europe. The campaign, which started in September 2023, targeted diplomatic entities in Azerbaijan, Greece, Romania, and Italy. The report underscores the geopolitical implications of the campaign, suggesting that Russia’s Foreign Intelligence Service (SVR) aims to gather intelligence on Azerbaijan’s strategic activities, particularly in the context of the Azerbaijani invasion of Nagorno-Karabakh. The targeted countries – Azerbaijan, Greece, Romania, and Italy – have significant political and economic ties with Azerbaijan, while the report also reminds of a recent arms deal with Italy for military aircraft. Using these programs shows that the group targets state organizations within the EU.You can follow the updates about the latest campaigns of APT29 from the Messy Adventures of Cozy Bear campaign page in SOCRadar LABS.",
+            "domain": "socradar.io",
+            "tokenized": [
+                {
+                    "sent":  "Advanced Persistent Threat (APT) groups are widely classified as organizations that lead “attacks on a country’s information assets of national security or strategic economic importance through either cyber espionage or cyber sabotage.”",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "Based on the group’s latest campaign details, APT29 used the Polish Foreign Minister‘s recent visit to the US as a lure to conduct a spear phishing campaign targeting Western Countries, particularly Western Europe.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "The campaign, which started in September 2023, targeted diplomatic entities in Azerbaijan, Greece, Romania, and Italy.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The report underscores the geopolitical implications of the campaign, suggesting that Russia’s Foreign Intelligence Service (SVR) aims to gather intelligence on Azerbaijan’s strategic activities, particularly in the context of the Azerbaijani invasion of Nagorno-Karabakh.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "The targeted countries – Azerbaijan, Greece, Romania, and Italy – have significant political and economic ties with Azerbaijan, while the report also reminds of a recent arms deal with Italy for military aircraft.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":   "Using these programs shows that the group targets state organizations within the EU.You can follow the updates about the latest campaigns of APT29 from the Messy Adventures of Cozy Bear campaign page in SOCRadar LABS.",
+                     "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://therecord.media/cyber-espionage-campaign-embassies-apt29-cozy-bear/",
+            "content": "Analysts previously have linked it to Russia's Foreign Intelligence Service (SVR), which gathers political and economic information from other countries. During the war in Ukraine, APT29 has carried out cyberattacks against the Ukrainian military and its political parties, as well as diplomatic agencies, think tanks and nonprofit organizations. One possible reason is that Russian intelligence was attempting to gather information regarding Azerbaijan's strategic activities, especially leading up to the Azerbaijani invasion of the Nagorno-Karabakh region. Russian state-sponsored hackers have targeted embassies and international organizations in a recent cyber-espionage campaign, Ukrainian government cybersecurity researchers have found. The campaign, analyzed by Ukraine’s National Cyber Security Coordination Center (NCSCC), occurred in September of this year. The most recent operation had “the primary goal of infiltrating embassy entities,” the NCSCC said, including targets in Azerbaijan, Greece, Romania and Italy.",
+            "domain": "therecord.media",
+            "tokenized": [
+                {
+                    "sent":   "Analysts previously have linked it to Russia's Foreign Intelligence Service (SVR), which gathers political and economic information from other countries.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "During the war in Ukraine, APT29 has carried out cyberattacks against the Ukrainian military and its political parties, as well as diplomatic agencies, think tanks and nonprofit organizations.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "One possible reason is that Russian intelligence was attempting to gather information regarding Azerbaijan's strategic activities, especially leading up to the Azerbaijani invasion of the Nagorno-Karabakh region.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":   "Russian state-sponsored hackers have targeted embassies and international organizations in a recent cyber-espionage campaign, Ukrainian government cybersecurity researchers have found.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "The campaign, analyzed by Ukraine’s National Cyber Security Coordination Center (NCSCC), occurred in September of this year.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":   "The most recent operation had “the primary goal of infiltrating embassy entities,” the NCSCC said, including targets in Azerbaijan, Greece, Romania and Italy.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.scmagazine.com/news/russias-apt29-intensifies-espionage-operations/",
+            "content":  "APT29 — also known as Cozy Bear — increased its phishing attacks on foreign embassies in Ukraine, including targeting those of Russia’s partners, Mandiant researchers Luke Jenkins, Josh Atkins and Dan Black said in the post. APT29, the threat group linked to the Russia’s Foreign Intelligence Service (SVR) and responsible for the SolarWinds supply chain hack, has ramped up the scope and frequency of its espionage attacks this year as the Kremlin sought more intel to assist Russia’s war on Ukraine. At the same time, APT29 has also increased its “more routine espionage operations” against diplomatic entities in other parts of the world, they said. It was the first time Mandiant had observed the threat group pursuing governments strategically aligned with Moscow, the researchers said. Mandiant said while the diplomatic and Microsoft campaigns are very different, there is evidence to suggest that once APT29’s initial access teams penetrated a victim’s environment, they handed off follow-on operations to a separate, centralized exploitation team responsible for data exfiltration. “Across these malware delivery operations, APT29 continues to prioritize European Ministries of Foreign Affairs and embassies, but it has also sustained operations that are global in scope and illustrative of Russia’s far-reaching ambitions and interests in other regions.”",
+            "domain": "www.scmagazine.com",
+            "tokenized": [
+                {
+                    "sent": "APT29 — also known as Cozy Bear — increased its phishing attacks on foreign embassies in Ukraine, including targeting those of Russia’s partners, Mandiant researchers Luke Jenkins, Josh Atkins and Dan Black said in the post.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "APT29, the threat group linked to the Russia’s Foreign Intelligence Service (SVR) and responsible for the SolarWinds supply chain hack, has ramped up the scope and frequency of its espionage attacks this year as the Kremlin sought more intel to assist Russia’s war on Ukraine.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "At the same time, APT29 has also increased its “more routine espionage operations” against diplomatic entities in other parts of the world, they said.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It was the first time Mandiant had observed the threat group pursuing governments strategically aligned with Moscow, the researchers said.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "Mandiant said while the diplomatic and Microsoft campaigns are very different, there is evidence to suggest that once APT29’s initial access teams penetrated a victim’s environment, they handed off follow-on operations to a separate, centralized exploitation team responsible for data exfiltration.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "“Across these malware delivery operations, APT29 continues to prioritize European Ministries of Foreign Affairs and embassies, but it has also sustained operations that are global in scope and illustrative of Russia’s far-reaching ambitions and interests in other regions.”",
+                    "is_evidence": 0
+                }
+            ]
+         },
+         {
+            "link": "https://teampassword.com/blog/who-is-cozy-bear-and-how-can-you-protect-yourself/",
+            "content":  "Indicators of Compromise The Cannon Trojan is written in C# and functions primarily as a downloader that relies on emails to communicate between the Trojan and the C2 server. Like other Zebrocy samples, this Trojan collects system specific information it will send to the C2 server by running the command SYSTEMINFO & TASKLIST on the command line and by enumerating information about connected storage devices. Specific to this technique, if the C2 server is not available at the time of execution, the malicious code cannot be retrieved, rendering the delivery document largely benign. The C2 server will then provide a secondary payload to the beacon in ASCII hexadecimal representation, which the Trojan will decode and write to the following location: During our analysis, the C2 server provided a secondary payload that functionally appeared similar to the initial Zebrocy sample. The tool is written in C# whose malicious code exists in a namespace called cannon, which is the basis of the Trojan’s name. Traps blocks the macro-ladened remote templates as Suspicious macro detected, as well as Zebrocy and Cannon payloads as Suspicious executable detected.",
+            "domain": "teampassword.com",
+            "tokenized": [
+                {
+                    "sent":  "APT29's targets are primarily NATO allies; however, the group also spies on Russia's neighbors, including China, Ukraine, Uzbekistan, and other Transcaucasian nations.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":   "Cozy Bear dismantles or disrupts networks and infrastructure occasionally, but most of its operations appear to be gathering intelligence for Russia.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "Cozy Bear is a highly sophisticated Russian cyberespionage group focused on attacking US and NATO government institutions and multinational organizations.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "In some instances, US intelligence agencies also don't want to point fingers at Cozy Bear or Russia, as they don't want to reveal their \"sources\" or investigation methods.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "NATO intelligence agencies, including the US, have evidence to believe Cozy Bear is a branch of the Russian Federal Security Service (FSB - formally the KGB) and possibly the SVR, another Russian intelligence agency. ‏‏‎",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "Russian intelligence agencies have invested heavily in cyber espionage exploits over the past decade.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

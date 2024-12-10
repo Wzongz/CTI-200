@@ -1,0 +1,46 @@
+[
+    {
+        "report_id": "report_0",
+        "sentences": [
+            "Circumstantial evidence suggests a link between Stealth Falcon and the UAE government.",
+            "Donaghy, a UK-based journalist and founder of the Emirates Center for Human Rights, received a spyware-laden email in November 2015, purporting to offer him a position on a human rights panel.",
+            "Of the 27 targets, 24 were obviously linked to the UAE, based on their profile information (e.g., photos, “UAE” in account name, location), and at least six targets appeared to be operated by people who were arrested, sought for arrest, or convicted in absentia by the UAE government, in relation to their Twitter activity.",
+            "This report describes a campaign of targeted spyware attacks carried out by a sophisticated operator, which we call Stealth Falcon.",
+            "We also identified other bait content employed by this threat actor.",
+            "We found 31 public tweets sent by Stealth Falcon, 30 of which were directly targeted at one of 27 victims."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "sentences": [
+            "ESET also discovered a shellcode downloader that could be used to install the malware.",
+            "For instance, the Deadglyph malware does not receive traditional backdoor commands from the backdoor binary but instead receives its functions dynamically from a command-and-control (C2) server in the form of modules.",
+            "In a routine monitoring of suspicious activities for some of its Middle East high-profile customers, ESET gleaned details on a custom attack that uses homoglyphs, mimicking the name of technology giant Microsoft inside unicode strings.",
+            "Researchers have recently discovered a sophisticated backdoor with unusual architecture, dubbed \"Deadglyph,\" used in a cyber-espionage attack in the Middle East against a government agency.",
+            "The malware is attributed to the Stealth Falcon advanced persistent threat (APT), a United Arab Emirates (UAE) state-sponsored group.",
+            "Three out of nine modules have been uncovered — process creator, file reader, and an info collector — indicating that researchers still don't know the full breadth of Deadglyph's capabilities."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "sentences": [
+            "Deadglyph’s .NET component establishes command-and-control (C&C) communication and executes commands.",
+            "Once executed, the DLL loads, decrypts, and executes encrypted shellcode stored in the Windows registry, which leads to decrypting and running the executor component of Deadglyph.",
+            "The advanced persistent threat (APT) actor Stealth Falcon has been observed deploying a new backdoor on the systems of a governmental entity in the Middle East, for espionage purposes, ESET reports.",
+            "The malware is delivered on the system in the form of a DLL that abuses Windows Management Instrumentation (WMI) event subscription for persistence, and which functions as a registry shellcode loader.",
+            "The new backdoor, which ESET has named Deadglyph, consists of a native x64 binary that functions as an executor, and a .NET assembly that functions as an orchestrator.",
+            "While investigating Deadglyph, ESET discovered a CPL file signed with an expired certificate that was uploaded to VirusTotal from Qatar, which functioned as a multistage shellcode downloader, and which shared code similarities with Stealth Falcon’s backdoor."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "sentences": [
+            "\"This report describes a campaign of targeted spyware attacks carried out by a sophisticated operator, which we call Stealth Falcon.",
+            "Circumstantial evidence suggests a link between Stealth Falcon and the UAE government,\" said Citizen Lab researchers Bill Marczak and John Scott-Railton.",
+            "The advanced persistent threat (APT) group is believed to be circumstantially linked to the UAE government and uses email and social media sites to deploy phishing attacks and infect victims' systems.",
+            "The report also indicated that the UAE government, which was once one of the most loyal and high profile clients of Hacking Team – the Milan-based intrusive surveillance merchandising firm – may now be making use of Stealth Falcon to target dissidents.",
+            "UAE journalists, activists and dissidents are being targeted with custom-made spyware by a cyberespionage group called Stealth Falcon.",
+            "University of Toronto's Citizen Lab published a report that detailed that Stealth Falcon has been involved in attacks against those who have been actively critical of the UAE government."
+        ]
+    }
+]

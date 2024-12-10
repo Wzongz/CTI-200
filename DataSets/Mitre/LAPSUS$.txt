@@ -1,0 +1,44 @@
+LAPSUS$ is cyber criminal threat group that has been active since at least mid-2021. LAPSUS$ specializes in large-scale social engineering and extortion operations, including destructive attacks without the use of ransomware. The group has targeted organizations globally, including in the government, manufacturing, higher education, energy, healthcare, technology, telecommunications, and media sectors.
+LAPSUS$ has removed a targeted organization's global admin accounts to lock the organization out of all access.
+LAPSUS$ has used the AD Explorer tool to enumerate users on a victim's network.
+LAPSUS$ has added the global admin role to accounts they have created in the targeted organization's cloud instances.
+LAPSUS$ has used VPS hosting providers for infrastructure.
+LAPSUS$ has payed employees, suppliers, and business partners of target organizations for credentials.
+LAPSUS$ has reconfigured a victim's DNS records to actor-controlled domains and websites.
+LAPSUS$ has created global admin accounts in the targeted organization's cloud instances to gain persistence.
+LAPSUS$ has obtained passwords and session tokens with the use of the Redline password stealer.
+LAPSUS$ has accessed local password managers and databases to obtain further credentials from a compromised network.
+LAPSUS$ has deleted the target's systems and resources both on-premises and in the cloud.
+LAPSUS$ has searched a victim's network for organization collaboration channels like MS Teams or Slack to discover further high-privilege account credentials.
+LAPSUS$ has searched a victim's network for collaboration platforms like Confluence and JIRA to discover further high-privilege account credentials.
+LAPSUS$ has searched a victim's network for collaboration platforms like SharePoint to discover further high-privilege account credentials.
+LAPSUS$ has searched a victim's network for code repositories like GitLab and GitHub to discover further high-privilege account credentials.
+LAPSUS$ uploaded sensitive files, information, and credentials from a targeted organization for extortion or public release.
+LAPSUS$ has set an Office 365 tenant level mail transport rule to send all mail in and out of the targeted organization to the newly created account.
+LAPSUS$ has exploited unpatched vulnerabilities on internally accessible servers including JIRA, GitLab, and Confluence for privilege escalation.
+LAPSUS$ has gained access to internet-facing systems and applications, including virtual private network (VPN), remote desktop protocol (RDP), and virtual desktop infrastructure (VDI) including Citrix. 
+LAPSUS$ has gathered detailed information of target employees to enhance their social engineering lures.
+LAPSUS$ has gathered user identities and credentials to gain initial access to a victim's organization; the group has also called an organization's help desk to reset a target's credentials.
+LAPSUS$ has gathered employee email addresses, including personal accounts, for social engineering and initial access efforts.
+LAPSUS$ has gathered detailed knowledge of an organization's supply chain relationships.
+LAPSUS$ has gathered detailed knowledge of team structures within a target organization.
+LAPSUS$ has called victims' help desk and impersonated legitimate users with previously gathered information in order to gain access to privileged accounts.
+LAPSUS$ has created new virtual machines within the target's cloud environment after leveraging credential access to cloud assets.
+LAPSUS$ has deleted the target's systems and resources in the cloud to trigger the organization's incident and crisis response process.
+LAPSUS$ has replayed stolen session token and passwords to trigger simple-approval MFA prompts in hope of the legitimate user will grant necessary approval.
+LAPSUS$ has spammed target users with MFA prompts in the hope that the legitimate user will grant necessary approval.
+LAPSUS$ acquired and used the Redline password stealer in their operations.
+LAPSUS$ has obtained tools such as RVTools and AD Explorer for their operations.
+LAPSUS$ has used Windows built-in tool ntdsutil to extract the Active Directory (AD) database.
+LAPSUS$ has used DCSync attacks to gather credentials for privilege escalation routines.
+LAPSUS$ has used the AD Explorer tool to enumerate groups on a victim's network.
+LAPSUS$ has called victims' help desk to convince the support personnel to reset a privileged account’s credentials.
+LAPSUS$ has leverage NordVPN for its egress points when targeting intended victims.
+LAPSUS$ has purchased credentials and session tokens from criminal underground forums.
+LAPSUS$ has searched public code repositories for exposed credentials.
+LAPSUS$ has shut down virtual machines from within a victim's on-premise VMware ESXi infrastructure.
+LAPSUS$ has accessed internet-facing identity providers such as Azure Active Directory and Okta to target specific organizations.
+LAPSUS$ has targeted various collaboration tools like Slack, Teams, JIRA, Confluence, and others to hunt for exposed credentials to support privilege escalation and lateral movement.
+LAPSUS$ has recruited target organization employees or contractors who provide credentials and approve an associated MFA prompt, or install remote management software onto a corporate workstation, allowing LAPSUS$ to take control of an authenticated system.
+LAPSUS$ has used compromised credentials and/or session tokens to gain access into a victim's VPN, VDI, RDP, and IAMs.
+LAPSUS$ has used compromised credentials to access cloud assets within a target organization.

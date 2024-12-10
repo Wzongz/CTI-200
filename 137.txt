@@ -1,0 +1,142 @@
+{
+  "event_id": "137",
+  "claim": "Volatile Cedar is a Lebanese threat group that has targeted individuals, companies, and institutions worldwide.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "In early 2020, suspicious network activities and hacking tools were found in a range of companies. Comprehensive forensic research of the infected systems revealed a strong connection to a threat actor we call ‘Lebanese Cedar’, ‘Lebanese Cedar’ APT has been operating since 2012. These operations were first discovered by Check-Point researchers and Kaspersky labs in 2015. Since 2015 Lebanese Cedar APT – also referred to as “Volatile Cedar” – maintained a low profile and operated under the radar. Read the full report: “Lebanese Cedar” APT – Global Lebanese Espionage Campaign Leveraging Web Servers In the comprehensive forensic research, a new version of the “Explosive” V4 RAT (Remote Access Tool) or “Caterpillar” V2 WebShell was found within the victim’s networks.Based on a modified JSP file browser with a unique string that the adversary used to deploy ‘Explosive RAT’ into the victims’ network, we found some 250 servers that were apparently breached by Lebanese Cedar. This file was installed in vulnerable Atlassian (JIRA) and Oracle 10g servers. In order to install the JSP in the vulnerable server, Lebanese Cedar exploit 1-day publicly known vulnerabilities such as CVE-2012-3152. Our report reveals a partial list of the companies that the group has attacked. The target companies are from many countries including: The United States, the United Kingdom, Egypt, Jordan, Lebanon, Israel, and the Palestinian Authority. We assess that there are many more companies that have been hacked and that valuable information was stolen from these companies over periods of months and years.According to Check-Point’s report, the group is motivated by political and Ideological interests, targeting individuals, companies, and institutions worldwide. We endorse Check Point’s strong case attributing Lebanese Cedar APT to the Lebanese government or a political group in Lebanon. Moreover, there are several indications that link Lebanese Cedar APT to the Hezbollah Cyber Unit. “Caterpillar WebShell” was found in most of the victims we investigated, in many of the systems we also found traces of “Explosive” RAT. We identified the specific open-source JSP file browser that was modified for the hackers’ purposes. We found that Lebanese Cedar deployed the payload of Explosive RAT into the victims’ network. Lebanese Cedar is the only known threat actor that uses this code.\n\n\n",
+  "reports": [
+    {
+      "link": "https://threatpost.com/hezbollah-lebanese-cedar-apt-servers/163555/",
+      "content": "Advanced persistent threat (APT) group Lebanese Cedar has compromised at least 250 public-facing servers since early 2020, researchers said, with its latest malware. Lebanese Cedar’s most recent malware toolkit also uses a second version of the Caterpillar web shell, for the widespread collection of network data and the installation of files on targeted systems. Lebanese Cedar’s use of its signature Explosive RAT is being overtaken by the use of web shells, ClearSky observed. The group has added new features to its custom “Caterpillar” webshell and the “Explosive RAT” remote access trojan (RAT), both of which researchers at ClearSky Security said they linked to the compromise of the public servers [PDF], which allowed widespread espionage. The latest, fourth version of Explosive RAT has been used against unpatched Oracle (CVE-2012-3152) and Atlassian servers (CVE-2019-3396 and CVE-2019-11581) web servers, ClearSky said. Victims have in the past primarily been in the telecom and IT sectors across the globe, including Egypt, Israel, Jordan, the Palestinian Authority, the U.K. and the U.S. “Lebanese Cedar APT’s arsenal consists of a fully fledged web shell, a custom-developed RAT and a set of carefully selected complementary tools, including URI brute-force tools,” CheckPoint reported.",
+      "domain": "threatpost.com",
+      "tokenized": [
+        {
+          "sent": "Advanced persistent threat (APT) group Lebanese Cedar has compromised at least 250 public-facing servers since early 2020, researchers said, with its latest malware.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Lebanese Cedar’s most recent malware toolkit also uses a second version of the Caterpillar web shell, for the widespread collection of network data and the installation of files on targeted systems.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Lebanese Cedar’s use of its signature Explosive RAT is being overtaken by the use of web shells, ClearSky observed.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The group has added new features to its custom “Caterpillar” webshell and the “Explosive RAT” remote access trojan (RAT), both of which researchers at ClearSky Security said they linked to the compromise of the public servers [PDF], which allowed widespread espionage.",
+          "is_evidence": 0
+        },
+        {
+          "sent":  "The latest, fourth version of Explosive RAT has been used against unpatched Oracle (CVE-2012-3152) and Atlassian servers (CVE-2019-3396 and CVE-2019-11581) web servers, ClearSky said.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Victims have in the past primarily been in the telecom and IT sectors across the globe, including Egypt, Israel, Jordan, the Palestinian Authority, the U.K. and the U.S. “Lebanese Cedar APT’s arsenal consists of a fully fledged web shell, a custom-developed RAT and a set of carefully selected complementary tools, including URI brute-force tools,” CheckPoint reported.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://docs.rapid7.com/insightidr/lebanese-cedar/",
+      "content": "According to the researchers, this APT targeted the telecommunication sector and internet service providers in the US, the UK, Israel, Egypt, Saudi Arabia, Lebanon, Jordan, UAE as well as in the Palestinian Authority. In order to attack the internet-facing servers, the hackers used these vulnerabilities: CVE-2019-3396 in Atlassian Confluence CVE-2019-11581in Atlassian Jira CVE-2012-3152 in Oracle Fusion Once they gained access to these systems, the attackers deployed web shells in order to gain access to their victim's internal networks. In this campaign, Lebanese Cedar operators used open-source hacking tools to scan the internet for unpatched Atlassian and Oracle servers. Lebanese Cedar, aka Volatile Cedar, is a Lebanese APT that was linked to the Hezbollah, was first discovered by Check Point researchers and Kaspersky labs in 2015. On the internal networks, the attackers deployed a more powerful tool named the Explosive remote access trojan (RAT), a tool that specializes in data exfiltration and which they also used in 2015: https://news.softpedia.com/news/Explosive-Malware-Used-by-Cyber-Espionage-Group-Working-from-Lebanon-477220.shtml. They deployed exploits to gain access to these servers and installed a web shell for future access.",
+      "domain": "docs.rapid7.com",
+      "tokenized": [
+        {
+          "sent":"According to the researchers, this APT targeted the telecommunication sector and internet service providers in the US, the UK, Israel, Egypt, Saudi Arabia, Lebanon, Jordan, UAE as well as in the Palestinian Authority.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In order to attack the internet-facing servers, the hackers used these vulnerabilities: CVE-2019-3396 in Atlassian Confluence CVE-2019-11581in Atlassian Jira CVE-2012-3152 in Oracle Fusion Once they gained access to these systems, the attackers deployed web shells in order to gain access to their victim's internal networks.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "In this campaign, Lebanese Cedar operators used open-source hacking tools to scan the internet for unpatched Atlassian and Oracle servers.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Lebanese Cedar, aka Volatile Cedar, is a Lebanese APT that was linked to the Hezbollah, was first discovered by Check Point researchers and Kaspersky labs in 2015.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"On the internal networks, the attackers deployed a more powerful tool named the Explosive remote access trojan (RAT), a tool that specializes in data exfiltration and which they also used in 2015: https://news.softpedia.com/news/Explosive-Malware-Used-by-Cyber-Espionage-Group-Working-from-Lebanon-477220.shtml.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "They deployed exploits to gain access to these servers and installed a web shell for future access.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://me-en.kaspersky.com/about/press-releases/2022_kaspersky-uncovers-new-tactics-used-by-the-middle-eastern-apt-group-defttorero/",
+      "content": "Almost all of the backdoors communicating with sinkholed domains are the main “explosion” backdoor. But, some of the victim systems in Lebanon communicating with our sinkhole are running the very rare “micro” backdoor written up by our colleagues from Checkpoint in their paper: “Micro is a rare Explosive version. Clearly, the bulk of the victims we observe are all communicating from ip ranges maintained by ISPs in Lebanon. It can best be described as a completely different version of the Trojan, with similarities to the rest of Explosive “family” (such as configuration and code base). There is currently some buzz about the Volatile Cedar APT activity in the Middle East, a group that deploys not only custom built RATs, but USB propagation components, as reported by Check Point. Volatile Cedar certainly does not have a high level of technological prowess, it appears that they have been effective at spreading their malware, much like the Madi APT we reported on mid-2012.",
+      "domain": "me-en.kaspersky.com",
+      "tokenized": [
+        {
+          "sent": "Almost all of the backdoors communicating with sinkholed domains are the main “explosion” backdoor.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"But, some of the victim systems in Lebanon communicating with our sinkhole are running the very rare “micro” backdoor written up by our colleagues from Checkpoint in their paper: “Micro is a rare Explosive version.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Clearly, the bulk of the victims we observe are all communicating from ip ranges maintained by ISPs in Lebanon.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "It can best be described as a completely different version of the Trojan, with similarities to the rest of Explosive “family” (such as configuration and code base).",
+          "is_evidence": 0
+        },
+        {
+          "sent": "There is currently some buzz about the Volatile Cedar APT activity in the Middle East, a group that deploys not only custom built RATs, but USB propagation components, as reported by Check Point",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Volatile Cedar certainly does not have a high level of technological prowess, it appears that they have been effective at spreading their malware, much like the Madi APT we reported on mid-2012.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://securityaffairs.com/35550/cyber-crime/volatile-cedar-apt.html",
+      "content": "Once compromised the system the hacker served a Web shells backdoor on the Web servers. Other features implemented by the Explosive malware used by hackers behind the Volatile Cedar campaign there are: Monitoring antivirus detection results. The Volatile Cedar attackers used at least three different versions of malware over the time, each of them implements new features to avoid detection. The hackers are likely to operate from Lebanon and hacked into systems of defense contractors, telecommunications operators, educational organizations and media groups. Volatile Cedar APT group is a new hacking team, apparently from Lebanon, that compromised systems worldwide, most of those in Israel Security experts from Check Point Software Technologies have uncovered a new cyber espionage campaign, dubbed Volatile Cedar, that targeted hundreds of entities from at least ten countries (Lebanon, Israel, Turkey, the UK, Japan, the US, etc.). “Residues of custom-built port scanners and several other attack tools have been found on the victim servers, leading us to believe the attackers use the initially infected servers as a pivot to manually spread to the entire network,” continues the report.",
+      "domain": "securityaffairs.com",
+      "tokenized": [
+        {
+          "sent": "Once compromised the system the hacker served a Web shells backdoor on the Web servers.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Other features implemented by the Explosive malware used by hackers behind the Volatile Cedar campaign there are: Monitoring antivirus detection results.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The Volatile Cedar attackers used at least three different versions of malware over the time, each of them implements new features to avoid detection.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The hackers are likely to operate from Lebanon and hacked into systems of defense contractors, telecommunications operators, educational organizations and media groups.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Volatile Cedar APT group is a new hacking team, apparently from Lebanon, that compromised systems worldwide, most of those in Israel Security experts from Check Point Software Technologies have uncovered a new cyber espionage campaign, dubbed Volatile Cedar, that targeted hundreds of entities from at least ten countries (Lebanon, Israel, Turkey, the UK, Japan, the US, etc.).",
+          "is_evidence": 0
+        },
+        {
+          "sent": "“Residues of custom-built port scanners and several other attack tools have been found on the victim servers, leading us to believe the attackers use the initially infected servers as a pivot to manually spread to the entire network,” continues the report.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    }
+  ]
+}

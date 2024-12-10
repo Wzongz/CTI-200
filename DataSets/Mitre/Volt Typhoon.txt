@@ -1,0 +1,38 @@
+Volt Typhoon is a People's Republic of China (PRC) state-sponsored actor that has been active since at least 2021. Volt Typhoon typically focuses on espionage and information gathering and has targeted critical infrastructure organizations in the US including Guam. Volt Typhoon has emphasized stealth in operations using web shells, living-off-the-land (LOTL) binaries, hands on keyboard activities, and stolen credentials.
+Volt Typhoon has run net group /dom and net group "Domain Admins" /dom in compromised environments for account discovery.
+Volt Typhoon has archived the ntds.dit database as a multi-volume password-protected archive with 7-Zip.
+Volt Typhoon has used PowerShell including for remote system discovery.
+Volt Typhoon has used the Windows command line to perform hands-on-keyboard activities in targeted environments including for discovery.
+Volt Typhoon has used compromised PRTG servers from other organizations for C2.
+Volt Typhoon has routed traffic through compromised small office and home office (SOHO) network equipment, many of which were located in the same geographic area as the victim.
+Volt Typhoon has attempted to obtain credentials from OpenSSH, realvnc, and PuTTY.
+Volt Typhoon has stolen the Active Directory database from targeted environments and used Wevtutil to extract event log information.
+Volt Typhoon has staged collected data in password-protected archives.
+Volt Typhoon has saved stolen files including the ntds.dit database and the SYSTEM and SECURITY Registry hives locally to the C:\Windows\Temp\ directory.
+Volt Typhoon has used a version of the Awen web shell that employed AES encryption and decryption for C2 communications.
+Volt Typhoon gained initial access through exploitation of CVE-2021-40539 in internet-facing ManageEngine ADSelfService Plus servers.
+Volt Typhoon has run rd /S to delete their working directories and files.
+Volt Typhoon have inspected server logs to remove their IPs.
+Volt Typhoon has copied web shells between servers in targeted environments.
+Volt Typhoon has used wevtutil.exe and the PowerShell command Get-EventLog security to enumerate Windows logs to search for successful logons.
+Volt Typhoon has used legitimate looking filenames for compressed copies of the ntds.dit database and used names including cisco_up.exe, cl64.exe, vm3dservice.exe, watchdogd.exe, Win.exe, WmiPreSV.exe, and WmiPrvSE.exe for the Earthworm and Fast Reverse Proxy tools.
+Volt Typhoon has appended copies of the ntds.dit database with a .gif file extension.
+Volt Typhoon has used customized versions of open-source tools for C2.
+Volt Typhoon has attempted to access hashed credentials from the LSASS process memory space.
+Volt Typhoon has used ntds.util to create domain controller installation media containing usernames and password hashes.
+Volt Typhoon has run net localgroup administrators in compromised environments to enumerate accounts.
+Volt Typhoon has run net group in compromised environments to discover domain groups.
+Volt Typhoon has enumerated running processes on targeted systems.
+Volt Typhoon has used compromised devices and customized versions of open source tools  such as Fast Reverse Proxy (FRP), Earthworm, and Impacket to proxy network traffic.
+Volt Typhoon has used the built-in netsh port proxy command to create proxies on compromised systems to facilitate access.
+Volt Typhoon has queried the Registry on compromised systems, reg query hklm\software\, for information on installed software.
+Volt Typhoon has used multiple methods, including Ping, to enumerate systems on compromised networks.
+Volt Typhoon has used webshells, including ones named AuditReport.jspx and iisstart.aspx, in compromised environments.
+Volt Typhoon has queried the Registry on compromised systems for information on installed software.
+Volt Typhoon has discovered file system types, drive names, size, and free space on compromised systems.
+Volt Typhoon has executed multiple commands to enumerate network topology and settings including  ipconfig, netsh interface firewall show all, and netsh interface portproxy show all.
+Volt Typhoon has used netstat -ano on compromised hosts to enumerate network connections.
+Volt Typhoon has executed the PowerShell command Get-EventLog security -instanceid 4624 to identify associated user and computer account names.
+Volt Typhoon has used compromised domain accounts to authenticate to devices on compromised networks.
+Volt Typhoon has run system checks to determine if they were operating in a virtualized environment.
+Volt Typhoon has leveraged WMIC including for execution and remote system discovery.

@@ -1,0 +1,60 @@
+Unit 42 has been tracking a series of attacks using a remote backdoor malware family named Comnie, which have been
+ observed targeting organizations in the East Asia region. Comnie, first named by Sophos seemingly after the Windows LNK
+ f
+ ile name it created, is a custom malware family that is used in targeted attacks, and has been observed in the wild since at
+ least April 2013. The Comnie malware family is notable in that it leverages online blogs and third-party services to obtain
+ command and control (C2) information. Recent instances of the malware have been observed leveraging github.com,
+ tumbler.com, and blogspot.com.
+ Attackers using Comnie are leveraging malicious macros that initially hide decoy documents and shows them when the
+ victim enables macros. These decoys documents pertain to various subject matters that the targets would be likely to be
+ interested in. The contents of these documents suggest that the main interests of threat actor likely included the
+ organizations in the following industries, located in Taiwan：
+ Beginning in mid of 2015, we observed the Comnie malware family delivered via malicious macros with various file names
+ and decoy subject matters. Original file names, as well as information revealed within the decoy documents used by these
+ samples provide clues as to who the targets may be. In the most recent attacks in November 2017, the information
+ suggests that these attacks have most likely taken place against Aerospace and Defense industry targets in South Korea.
+Before the attacks against South Korean targets, the same malicious macros were used to deliver the Comnie malware
+ family to targets in Taiwan as early as 2015. Again, based on the original file names and the decoy contents, the most
+ commonly witnessed targets in attacks that occurred in 2017 included those involving the Telecommunication, Defense, and
+ High-Tech industries in Taiwan. It is worth noting that in the attack that made use of the decoy document in Figure 4, the attacker also included related
+ f
+ irewall logs and appears to have originated from a compromised an IT service vendor.
+ Looking at earlier attacks between 2013 and 2016, we believe Comnie was also used in targeted attacks against the
+ following individuals or organizations:The malicious macro documents used to deliver Comnie initially hide the content inside and requests that the user enables
+ macros prior to viewing the document. Once the user enables macros, the macro will perform the following actions: An interesting discovery was made when examining the macros used to deliver Comnie. Based on evidence gleaned from
+ both the macro and other data collected from the samples, it appears that the threat actor did not generate these
+ documents from scratch. Instead, they appear to have been created based on an existing sample available via public
+ sample repositories. The existing sample in question was created by a red team penetration tester at a financial institution
+ for internal testing. The following image shows a comparison of macro code extracted from Comnie dropper and financial
+ institution’s penetration test sample.
+Comnie uses the RC4 algorithm in multiple locations both to obfuscate strings used by the malware, as well as for network
+ communication. Additionally, the malware looks for multiple security products on victim machines and sometimes alters its
+ behavior depending on the products present. More information about how Comnie handles identified security products may
+be found in the technical analysis in the Appendix. These security products included those that are known to be most widely
+ used within South Korea and Taiwan.
+ Comnie is able to achieve persistence via a .lnk file that is stored within the victim’s startup path. When originally run,
+ Comnie will convert itself from an executable file to a DLL and will write this newly created DLL to the host machine’s
+ %APPDATA% directory. The built-in Windows utility rundll32.exe is then used to load this DLL by the original .lnk file.
+ Unit 42 has observed a total of two variants of Comnie. One of the ways the variants differ is in how they obtain their
+ command and control (C2) information. Both variants make use of third-party online services in an attempt to prevent DNS
+ based blocking of their first stage communications. However, the obfuscation mechanism varies slightly. In older variants,
+ Comnie was found to look for the ‘++a++’ markers. The example C2s used by older variants of Comnie demonstrates this:
+After Comnie collects the remote C2 information, it will communicate with these remote servers using HTTP requests. These
+ requests are encrypted using the RC4 algorithm. Comnie will upload information about the victim. It also allows the attacker
+ to provide and subsequently execute a batch script (BAT), executable file (EXE), or dynamic-link library (DLL).
+ More detailed information about how C2 information is decoded and additional technical analysis of Comnie may be found
+ in the Appendix.
+Comnie is far from a new threat, however, it continues to remain active. In the past year, we have observed multiple low
+ volume attacks in various regions of East Asia. Based on clues provided by the malware’s original file names, as well as the
+ decoy content embedded within these samples, we can make a reasonable estimation that these attacks targeted
+ organizations in Taiwan in the Telecommunication, Defense, Government, and High-Tech industries. Additionally, those same
+ estimations may be made for attacks in South Korea targeting the Aerospace and Defense industries.
+ While we have witnessed modifications to the attacker’s toolsets, the overall architecture and operations of the Comnie
+ malware family have remained consistent, suggesting that the attackers have been able to stay below the radar of the
+ security community.
+ The Comnie malware family is notable in that it leverages third-party online services to download and parse C2 information.
+ Because these third-party online services are legitimate, it allows Comnie to circumvent a number of security preventions
+ that may be present in the environment. This overall technique has previously been referred to as using a “Dead Drop
+ Resolver” or DDR. (https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?
+ Name=Trojan:Win32/Barlaiy.A!dha)
+ Palo Alto Networks customers are protected from this threat in the following ways:

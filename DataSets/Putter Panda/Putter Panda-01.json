@@ -1,0 +1,52 @@
+[
+    "claim":"Putter Panda is a Chinese threat group that has been attributed to Unit 61486 of the 12th Bureau of the PLA’s 3rd General Staff Department (GSD).",
+    "explain":"Putter Panda is the name of bad actor responsible for a series of cyberespionage operations originating in Shanghai, security experts linked its operation to the activity of the People’s Liberation Army 3rd General Staff Department 12th Bureau Unit 61486.A fake yoga brochure was one of different emails used for a spear-phishing campaign conducted by the stealth Chinese cyber unit according an investigation conducted by researchers at the CrowdStrike security firm. Also in this case the experts believe that we are facing with a large scale cyberespionage campaign targeting government entities, contractors and research companies in Europe, USA and Japan.The group has been operating since at least 2007 and appears very interested in research companies in the space and satellite industry, experts at CrowdStrike have collected evidence of a numerous attacks against these industries.",
+    {
+        "report_id": "report_0",
+        "link":"https://infosecwriteups.com/the-apt-files-2-putter-panda-e24f3559a08b",
+        "sentences": [
+            "According to the Council on Foreign Relations, the group is known to target tech, research, defence and government sectors, particularly in satellite and aerospace sectors of the United States.",
+            "Chen seemed like just another civilian with an odd fascination for cybersecurity and programming except for one slight problem: his photos.",
+            "On June 9, 2014, Crowdstrike released a report exposing the operations of the group.",
+            "Putter Panda is a threat group suspected to be under the military cover of Unit 61486 of the Chinese People’s Liberation Army (PLA).",
+            "They carry out their malicious activities by utilizing customized malware, which they distribute through targeted email attacks.",
+            "Using Open Source Intelligence (OSINT), Crowdstrike were able to link the hacker to many operations carried out by the threat group, along with links to Comment Panda and Vixen Panda, two other threat groups."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://miguelbigueur.com/2016/12/18/putter-panda-cyber-threat-intelligence-card/",
+        "sentences": [
+            "A primary indicator of attack (IOA) or behavior of Putter Panda included phishing scams to the target.",
+            "Crowdstrike, a security technology and services provider, conducted in-depth analysis on Putter Panda’s objectives and motivations concluding that China may be embarking on a strategic information gathering campaign that will be used for intelligence and military advancement along with information sharing within the corporate arena.",
+            "Due to the aggressive nature of Putter Panda and ease of execution for the phishing campaign, the importance of deploying the most up-to-date machine patches is demonstrated.",
+            "Putter Panda is a criminal hacker organization based out of China that has been linked to numerous cyber espionage events against American and European governments and corporations.",
+            "Putter Panda is accused of launching Advanced Persistent Threat (APT) style espionage campaigns against American and European based space and defense companies.",
+            "Through various techniques, tactics and procedures, Putter Panda was able to install Remote Access Trojans (RATs) and other malware to establish command and control connections in order to steal unquantifiable amounts of intellectual property from the aerospace industry."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.crowdstrike.com/blog/hat-tribution-pla-unit-61486/",
+        "sentences": [
+            "Aggressive acquisition of intellectual property and trade secrets from these sectors using cyber espionage techniques is consistent with the operations of Chinese state sponsored organizations, such as Unit 61486.",
+            "Observations from social engineering topics used by PUTTER PANDA has shown a heavy interest in: Space, satellite, and remote sensing technology (particularly within Europe); Aerospace, especially European aerospace companies; Japanese and European telecommunications.",
+            "PUTTER PANDA has been observed conducting operations with a nexus to Shanghai, China, likely on behalf of the Chinese PLA 3rd Department 12th Bureau Unit 61486.",
+            "PUTTER PANDA is sometimes referred to as “MSUpdater” by the security research community, this group has been operating since at least 2007 and has heavily targeted the US defense and European satellite/aerospace industries.",
+            "Some weeks ago, the US Government filed a criminal indictment against hackers affiliated with the Chinese People’s Liberation Army (PLA), today CrowdStrike released a report on an adversary we call PUTTER PANDA.",
+            "This attribution began with the analysis of known PUTTER PANDA malware samples, Investigation of the domain siseau.com showed that the PUTTER PANDA operators deliberately changed registration information for it and several other domains such as vssigma.com in the late summer or fall of 2009."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.vice.com/en/article/78xxxe/chinas-putter-panda-cyber-spies-have-been-hacking-the-us-aerospace-industry",
+        "sentences": [
+            "A possible photo of Chen Ping, aka \"cpyy\", believed responsible for Putter Panda's malware command and control domain.",
+            "As to how CrowdStrike obtained the information on Putter Panda, Unit 61486 (the 12th Bureau of the PLA's 3rd General Staff Department [GSD]), the group noted it engaged in \"tenacious reverse engineering, intelligence analysis, and cultural/linguistic specialists.\"",
+            "CrowdStrike claimed that the public disclosure of Putter Panda's activities will \"keep the pressure on\" following the recent US indictments of five Chinese military hackers associated with the PLA.",
+            "Disguising themselves as average workers, Putter Panda is sponsored by the Chinese People's Liberation Army (PLA), according to the report.",
+            "The name may sound like a particularly adorable breed of Panda bear, but according to a new report, the Chinese cyberespionage group codenamed \"Putter Panda\" is responsible for a range of \"intelligence-gathering operations\"—cyberattacks—against the technology, research, defense, and government sectors in the US, UK, and Japan.",
+            "The report is based on months of wide-ranging analysis, from domain name registries and connections to the Comment Panda and Vixen Panda groups to the now possibly defunct 711 Network Security Team, which ran an email service and forum where Chinese hackers read security-based articles."
+        ]
+    }
+]

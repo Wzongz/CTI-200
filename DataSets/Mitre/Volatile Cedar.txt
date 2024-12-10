@@ -1,0 +1,6 @@
+Volatile Cedar is a Lebanese threat group that has targeted individuals, companies, and institutions worldwide. Volatile Cedar has been operating since 2012 and is motivated by political and ideological interests.
+Volatile Cedar has performed vulnerability scans of the target server.
+Volatile Cedar has used DirBuster and GoBuster to brute force web directories and DNS subdomains.
+Volatile Cedar has targeted publicly facing web servers, with both automatic and manual vulnerability discovery. 
+Volatile Cedar can deploy additional tools.
+Volatile Cedar can inject web shell code into a server.

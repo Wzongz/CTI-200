@@ -1,0 +1,141 @@
+{
+    "event_id": "085",
+    "claim": "The Ocean Lotus APT group is a hacker group operating against both private and government organizations and their opponents since 2014. The primary motivation behind the attacks carried out by the Ocean Lotus group is information theft and espionage – given the private information sought to be obtained in the attacks and the high-profile individuals targeted.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "The Ocean Lotus APT group is a hacker group operating against both private and government organizations and their opponents since 2014. The primary motivation behind the attacks carried out by the Ocean Lotus group is information theft and espionage – given the private information sought to be obtained in the attacks and the high-profile individuals targeted. The targets of the Ocean Lotus group are generally foreign companies with sure success and interests in Vietnam’s hospitality, manufacturing, and consumer goods sectors. As well as the private sector, the Ocean Lotus group targets politicians and journalists opposed to the Vietnamese government.In 2016, Ocean Lotus was observed targeting a number of Vietnamese organizations with a watering hole attack. The group used a website that masqueraded as a site for Vietnamese students studying abroad. When visitors to the site attempted to register for an account, they were redirected to a malicious website that served malware. This malware allowed Ocean Lotus to gain control of the victim’s computer. In 2017, Ocean Lotus carried out a campaign against Vietnam’s National Assembly. The group sent spear phishing emails containing a link to a fake website that mimicked the National Assembly’s intranet login page. Victims who attempted to log in had their credentials stolen by Ocean Lotus. In 2018, Ocean Lotus launched a successful campaign against Vietnam’s Ministry of Foreign Affairs. The group sent spear phishing emails containing a link to a fake website that mimicked the Ministry of Foreign Affairs intranet login page. Victims who attempted to log in had their credentials stolen by Ocean Lotus. In 2019, Ocean Lotus was observed targeting a number of Vietnamese organizations with watering hole attacks. The group used websites that masqueraded as sites for Vietnamese students studying abroad. When visitors to the sites attempted to register for an account, they were redirected to malicious websites that served malware. This malware allowed Ocean Lotus to gain control of the victim’s computer. Ocean Lotus’ operations have continued into 2020. In February 2020, the group was observed targeting Vietnamese organizations with a phishing campaign. The group sent emails containing a link to a fake website that mimicked the login page for Google’s Gmail service. Victims who attempted to log in had their credentials stolen by Ocean Lotus. Ocean Lotus has been active for over eight years and shows no signs of slowing down. The group is skilled in carrying out sophisticated attacks and is considered a serious threat to organizations in Vietnam and other Southeast Asian countries.The techniques, tactics, and procedures used by the Ocean Lotus group to violate the security of the target system in their attacks help define the threat group’s characteristics and determine the countermeasures that can be taken. In addition, the information below will be helpful for an overview of how a typical attack lifecycle is performed with the software used by Ocean Lotus and for what purposes the tools are used.We have listed the steps to be taken in order to be protected from the threat and/or to minimize the possible damage according to the identified techniques, tactics, and procedures of the Ocean Lotus APT group. Recommendations for Ocean Lotus APT Group Use strong passwords and multi-factor authentication Keep your software up to date Install a reputable security suite Be cautious when opening email attachments Don’t click on links in emails from unknown senders Avoid downloading pirated software or visiting illegal websites Mitigations for Ocean Lotus APT Group Use strong passwords and multi-factor authentication: This will help to protect your accounts from being compromised by password guessing or brute force attacks. Multi-factor authentication adds an extra layer of security by requiring another form of verification, such as a code sent to your mobile phone, in addition to your password. Keep your software up to date: Outdated software can contain security vulnerabilities that can be exploited by attackers. By ensuring that your software is up to date, you can help to close these potential entry points. Install a reputable security suite: A good security suite can provide protection against a wide range of threats, including viruses, malware, and phishing attacks. Be cautious when opening email attachments: Email attachments may contain malicious code that can infect your computer. Before opening an attachment, make sure that you trust the sender and that you have scanned the attachment for viruses using reliable antivirus software. Don’t click on links in emails from unknown senders: Emails from unknown or untrustworthy sources may contain malicious code/attachments.Ocean Lotus is well-resourced and executes its attacks with precision and care. The group uses a variety of custom tools, which suggests a high level of technical capability. Additionally, the group appears to have significant financial resources, as evidenced by its use of 0-day exploits and ability to mount long-term operations. Search Search... Search Categories ATP Groups Blog Dark Web DRPS Fraud Ransomware Sector Analysis Security News VIP Security We In The Press Weekly Newsletter Latest News Top 5 Deep Web Black Markets Top 10 Deep Web Browsers and Search Engines How to Access Dark Web? Top Open Source Intelligence (OSINT) Tools for Dark Web Using Bettercap in Penetration Testing Follow Us on Social Media!\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.welivesecurity.com/2019/03/20/fake-or-fake-keeping-up-with-oceanlotus-decoys/",
+            "content": "Among the documents we analysed since early-2018, we saw different document names suggesting country-related targeting:Since the discovery of the {A96B020F-0000-466F-A96D-A91BBF8EAC96}.dll backdoor and its public analysis by multiple researchers, we observed some changes in the malware’s configuration data. In mid-2018, OceanLotus carried out a campaign using documents abusing the weakness exposed by the CVE-2017-11882 vulnerability. OceanLotus is making the extra effort to continue carrying out their campaigns, but don’t hold your breath… One of the malicious documents used by OceanLotus was analysed by 360 Threat Intelligence Center (in Chinese) and includes details about the exploit. This article will first describe how the OceanLotus group (also known as APT32 and APT-C-00) recently used one of the publicly available exploits for CVE-2017-11882, a memory corruption vulnerability present in Microsoft Office software, and how OceanLotus malware achieves persistence on compromised systems without leaving any traces. This group is known to lure victims by forging appealing documents to entice potential victims into executing the group’s backdoor, and keeps coming up with new ideas to diversify its toolset.",
+            "domain": "www.welivesecurity.com",
+            "tokenized": [
+                {
+                    "sent": "Among the documents we analysed since early-2018, we saw different document names suggesting country-related targeting:Since the discovery of the {A96B020F-0000-466F-A96D-A91BBF8EAC96}.dll backdoor and its public analysis by multiple researchers, we observed some changes in the malware’s configuration data.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In mid-2018, OceanLotus carried out a campaign using documents abusing the weakness exposed by the CVE-2017-11882 vulnerability.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "OceanLotus is making the extra effort to continue carrying out their campaigns, but don’t hold your breath…",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "One of the malicious documents used by OceanLotus was analysed by 360 Threat Intelligence Center (in Chinese) and includes details about the exploit.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This article will first describe how the OceanLotus group (also known as APT32 and APT-C-00) recently used one of the publicly available exploits for CVE-2017-11882, a memory corruption vulnerability present in Microsoft Office software, and how OceanLotus malware achieves persistence on compromised systems without leaving any traces.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This group is known to lure victims by forging appealing documents to entice potential victims into executing the group’s backdoor, and keeps coming up with new ideas to diversify its toolset.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.cybereason.com/blog/operation-cobalt-kitty-apt/",
+            "content": "CONCLUSION Operation Cobalt Kitty was a major cyber espionage APT that targeted a global corporation in Asia and was carried out by the OceanLotus Group. Carefully selected group of employees received spear-phishing emails, containing either links to malicious sites or weaponized Word documents. During the investigation of Operation Cobalt Kitty, Cybereason uncovered and analyzed new tools in the OceanLotus Group’s attack arsenal, such as: New backdoor (“Goopy”) using HTTP and DNS Tunneling for C2 communication. Over 80 payloads and numerous domains were observed in this operation - all of which were undetected by traditional security products deployed in the company’s environment at the time of the attack. The attackers specifically used it to obtain Outlook passwords. While the are many rumours and speculations circulating in the InfoSec community, at the time of writing, there was no publicly available evidence that can confirm that the OceanLotus Group is a nation-state threat actor.",
+            "domain": "www.cybereason.com",
+            "tokenized": [
+                {
+                    "sent": "CONCLUSION Operation Cobalt Kitty was a major cyber espionage APT that targeted a global corporation in Asia and was carried out by the OceanLotus Group.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Carefully selected group of employees received spear-phishing emails, containing either links to malicious sites or weaponized Word documents.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "During the investigation of Operation Cobalt Kitty, Cybereason uncovered and analyzed new tools in the OceanLotus Group’s attack arsenal, such as: New backdoor (“Goopy”) using HTTP and DNS Tunneling for C2 communication.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Over 80 payloads and numerous domains were observed in this operation - all of which were undetected by traditional security products deployed in the company’s environment at the time of the attack.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The attackers specifically used it to obtain Outlook passwords.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While the are many rumours and speculations circulating in the InfoSec community, at the time of writing, there was no publicly available evidence that can confirm that the OceanLotus Group is a nation-state threat actor.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.welivesecurity.com/2018/03/13/oceanlotus-ships-new-backdoor/",
+            "content": "A prolific purveyor of malware, OceanLotus has its sights set on high-profile corporate and government targets in Southeast Asia, particularly in Vietnam, the Philippines, Laos, and Cambodia. ESET researchers have dissected some of the latest additions to the malicious toolkit of the Advanced Persistent Threat (APT) group known as OceanLotus, also dubbed APT32 and APT-C-00. In addition, OceanLotus is also known to use ‘watering hole attacks’, which involve the compromise of a website that the victim is likely to visit. OceanLotus certainly isn’t resting on its laurels while pursuing its goals that include cyberespionage, reconnaissance and intellectual property theft. One of the group’s latest backdoors is a fully-fledged malicious tool that gives its operators remote access to a compromised machine. Our deep dive (see the link below) into OceanLotus’s latest marauding campaigns shows that the group isn’t letting up in its efforts and combines legitimate code and publicly available tools with its own harmful creations.",
+            "domain": "www.welivesecurity.com",
+            "tokenized": [
+                {
+                    "sent": "A prolific purveyor of malware, OceanLotus has its sights set on high-profile corporate and government targets in Southeast Asia, particularly in Vietnam, the Philippines, Laos, and Cambodia.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "ESET researchers have dissected some of the latest additions to the malicious toolkit of the Advanced Persistent Threat (APT) group known as OceanLotus, also dubbed APT32 and APT-C-00.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In addition, OceanLotus is also known to use ‘watering hole attacks’, which involve the compromise of a website that the victim is likely to visit.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "OceanLotus certainly isn’t resting on its laurels while pursuing its goals that include cyberespionage, reconnaissance and intellectual property theft.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "One of the group’s latest backdoors is a fully-fledged malicious tool that gives its operators remote access to a compromised machine.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Our deep dive (see the link below) into OceanLotus’s latest marauding campaigns shows that the group isn’t letting up in its efforts and combines legitimate code and publicly available tools with its own harmful creations.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.mandiant.com/resources/blog/cyber-espionage-apt32/",
+            "content": "Cyber espionage actors, now designated by FireEye as APT32 (OceanLotus Group), are carrying out intrusions into private sector companies across multiple industries and have also targeted foreign governments, dissidents, and journalists. In 2014, APT32 leveraged a spear-phishing attachment titled “Plans to crackdown on protesters at the Embassy of Vietnam.exe,\" which targeted dissident activity among the Vietnamese diaspora in Southeast Asia. In 2015, SkyEye Labs, the security research division of the Chinese firm Qihoo 360, released a report detailing threat actors that were targeting Chinese public and private entities including government agencies, research institutes, maritime agencies, sea construction, and shipping enterprises. In 2016, Vietnamese and foreign-owned corporations working in network security, technology infrastructure, banking, and media industries were targeted. In the course of investigations into intrusions at several corporations with business interests in Vietnam, FireEye’s Mandiant incident response consultants uncovered activity and attacker-controlled infrastructure indicative of a significant intrusion campaign. This focused intelligence and detection effort led to new external victim identifications as well as providing sufficient technical evidence to link twelve prior intrusions, consolidating four previously unrelated clusters of threat actor activity into FireEye’s newest named advanced persistent threat group: APT32.Since at least 2014, FireEye has observed APT32 targeting foreign corporations with a vested interest in Vietnam’s manufacturing, consumer products, and hospitality sectors.",
+            "domain": "www.mandiant.com",
+            "tokenized": [
+                {
+                    "sent": "Cyber espionage actors, now designated by FireEye as APT32 (OceanLotus Group), are carrying out intrusions into private sector companies across multiple industries and have also targeted foreign governments, dissidents, and journalists.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In 2014, APT32 leveraged a spear-phishing attachment titled “Plans to crackdown on protesters at the Embassy of Vietnam.exe,\" which targeted dissident activity among the Vietnamese diaspora in Southeast Asia.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In 2015, SkyEye Labs, the security research division of the Chinese firm Qihoo 360, released a report detailing threat actors that were targeting Chinese public and private entities including government agencies, research institutes, maritime agencies, sea construction, and shipping enterprises.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In 2016, Vietnamese and foreign-owned corporations working in network security, technology infrastructure, banking, and media industries were targeted.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In the course of investigations into intrusions at several corporations with business interests in Vietnam, FireEye’s Mandiant incident response consultants uncovered activity and attacker-controlled infrastructure indicative of a significant intrusion campaign.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This focused intelligence and detection effort led to new external victim identifications as well as providing sufficient technical evidence to link twelve prior intrusions, consolidating four previously unrelated clusters of threat actor activity into FireEye’s newest named advanced persistent threat group: APT32.Since at least 2014, FireEye has observed APT32 targeting foreign corporations with a vested interest in Vietnam’s manufacturing, consumer products, and hospitality sectors.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

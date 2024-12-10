@@ -1,0 +1,12 @@
+WIRTE is a threat group that has been active since at least August 2018. WIRTE has targeted government, diplomatic, financial, military, legal, and technology organizations in the Middle East and Europe.
+WIRTE has used HTTP for network communication.
+WIRTE has used PowerShell for script execution.
+WIRTE has used VBScript  in its operations.
+WIRTE has used Base64 to decode malicious VBS script.
+WIRTE has downloaded PowerShell code from the C2 server to be executed.
+WIRTE has named a first stage dropper Kaspersky Update Agent in order to appear legitimate.
+WIRTE has used HTTPS over ports 2083 and 2087 for C2.
+WIRTE has obtained and used Empire for post-exploitation activities.
+WIRTE has sent emails to intended victims with malicious MS Word and Excel attachments.
+WIRTE has used regsvr32.exe to trigger the execution of a malicious script.
+WIRTE has attempted to lure users into opening malicious MS Word and Excel files to execute malicious payloads.

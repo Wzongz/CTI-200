@@ -1,0 +1,52 @@
+claim：APT28 utilized a Microsoft Office Dynamic Data Exchange technique in a Word document to execute arbitrary code without requiring macros, exploiting a New York City terrorist attack theme for distributing the first-stage malware Seduploader onto victims' systems.
+
+explain：APT28 is a resourceful threat actor that not only capitalizes on recent events to trick potential victims into
+infections, but can also rapidly incorporate new exploitation techniques to increase its success. Given the publicity
+the Cy Con U.S campaign received in the press, it is possible APT28 actors moved away from using the VBA script
+employed in past actions and chose to incorporate the DDE technique to bypass network defenses. Finally, the use
+of recent domestic events and a prominent US military exercise focused on deterring Russian aggression highlight
+APT28’s ability and interest in exploiting geopolitical events for their operations.
+
+
+1
+link：https://www.sentinelone.com/labs/a-deep-dive-into-zebrocys-dropper-docs/
+content：
+The report details the Zebrocy APT group's use of Delphocy, a Delphi-based malware, targeting entities in Kazakhstan.
+Six Word documents were identified, containing VBA scripts to deploy the malware, with two appearing as legitimate files from Kazakhstani victims.
+Techniques for reverse-engineering the Delphocy dropper documents are explored, including bypassing macro password protection and utilizing tools like IDR and Ghidra.
+This investigation uncovered additional clusters of Zebrocy activity, leading to the development of IOCs and YARA rules for threat detection.
+The article elaborates on methods to bypass VBA macro password protection and analyze the structure of the malicious Word documents.
+The report emphasizes the need for organizations to improve their detection and defense mechanisms against sophisticated threats like Zebrocy.
+
+
+2
+link：https://cybergeeks.tech/skinnyboy-apt28/
+content：
+The report provides a step-by-step analysis of APT28/Sofacy's new malware, SkinnyBoy, focusing on its technical aspects and behavior.
+SkinnyBoy gathers system configuration information using the systeminfo command and lists processes with tasklist, sending data to a C2 server.
+The malware uses a "Opera" user agent for network communication and constructs specific POST requests for data exfiltration and downloading additional payloads.
+Detailed reverse engineering of SkinnyBoy is performed, including analysis of its DLL components and their functionalities.
+SkinnyBoy's operation includes creating unnamed event objects, initiating new threads, and using GetMessage routines for message handling.
+The malware employs various APIs and techniques for inter-process communication, data encryption, and executing downloaded DLL files.
+
+
+3
+link：https://www.trellix.com/about/newsroom/stories/research/prime-ministers-office-compromised/
+content：
+The attack targeted high-ranking government and defense industry officials in Western Asia.
+It began with an Excel downloader exploiting a vulnerability (CVE-2021-40444), leading to a malicious executable.
+A novel malware, Graphite, was used, leveraging Microsoft's Graph API and OneDrive for command and control.
+The attack was meticulously structured in multiple stages to remain concealed.
+Indicators and objectives suggested links to the threat actor APT28, though attribution remained moderate in confidence.
+The overall operation demonstrated high skill levels in infrastructure, malware coding, and execution, pointing towards espionage as the primary motive.
+
+4
+link：https://documents.trendmicro.com/assets/white_papers/wp-pawn-storm-in-2019.pdf
+content：
+Pawn Storm, known for traditional cyber weapons since 2004, employed spear-phishing, phishing sites, and malicious iframes, targeting diverse entities including defense, media, and politics.
+In 2019, they shifted to attacking web and cloud services directly, avoiding spear-phishing as the initial infection vector.
+The group used compromised high-profile email addresses for sending spam and credential phishing messages, mainly targeting defense companies in the Middle East.
+Pawn Storm performed extensive scanning activities, targeting webmail and Microsoft Exchange Autodiscover servers to find vulnerabilities and exfiltrate data.
+The report highlights Pawn Storm's techniques, such as daily email server probes and port scanning for vulnerable systems.
+Despite their sophisticated methods, Pawn Storm's activities are well-documented, allowing for some tracking and understanding of their evolving tactics and strategies.
+

@@ -1,0 +1,52 @@
+[
+    "claim":"Microsoft Pins Outlook Zero-Day Attacks on Russian Actor, Offers Detection Script.",
+    "explain":"Microsoft’s threat intelligence team is blaming a “Russian-based threat actor” for newly disclosed in-the-wild attacks targeting a critical vulnerability in its flagship Microsoft Outlook software. One day after sounding an alarm for live exploitation of the Outlook security flaw, Microsoft said it traced the exploit to a Russian APT targeting a limited number of organizations in government, transportation, energy, and military sectors in Europe. Redmond did not identify the actor or provide indicators of compromise (IOCs) to help defenders hunt for signs of compromise. However, in a nod to the severity of the issue, the Microsoft Security Response Center (MSRC) published mitigation guidance and offered a CVE-2023-23397 script to help with audit and cleanup. “We strongly recommend all customers update Microsoft Outlook for Windows to remain secure,” Microsoft said. From the MSRC’s new documentation: “To determine if your organization was targeted by actors attempting to use this vulnerability, Microsoft is providing documentation and a script at https://aka.ms/CVE-2023-23397ScriptDoc.Organizations should review the output of this script to determine risk. Tasks, email messages and calendar items that are detected and point to an unrecognized share should be reviewed to determine if they are malicious. If objects are detected, they should be removed or clear the parameter. If no objects are detected, it is unlikely the organization was targeted via CVE-2023-23397. The new documentation describes the CVE-2023-23397 bug as a critical privilege escalation issue in Microsoft Outlook that is triggered when an attacker sends a message with an extended MAPI property with a UNC path to an SMB (TCP 445) share on a threat actor-controlled server. “No user interaction is required,” Microsoft warned. Because this flaw could lead to exploitation BEFORE the email is viewed in the Preview Pane, enterprise security teams are urged to prioritize the deployment of this update. “The connection to the remote SMB server sends the user’s NTLM negotiation message, which the attacker can then relay for authentication against other systems that support NTLM authentication. Online services such as Microsoft 365 do not support NTLM authentication and are not vulnerable to being attacked by these messages,” Redmond added. The Microsoft Outlook zero-day headlined a busy Patch Tuesday that saw the rollout of patches for 80 vulnerabilities in a wide range of Windows operating system and software products. Microsoft also flagged a second vulnerability — CVE-2023-24880 — for urgent attention and warned attackers are continuing to actively bypass its SmartScreen security feature. The company has struggled to contain attackers bypassing the SmartScreen technology that has been fitted into Microsoft Edge and the Windows operating system to help protect users from phishing and social engineering malware downloads. The notorious Magniber ransomware operation has been observed exploiting the SmartScreen bypass technique, prompting multiple attempts by Microsoft to mitigate the issue.",
+    {
+        "report_id": "report_0",
+        "link":"https://www.securityweek.com/microsoft-outs-new-russian-apt-linked-to-wiper-attacks-in-ukraine/",
+        "sentences": [
+            "A new report from Redmond’s threat intelligence team tagged the group as ‘Cadet Blizzard’ and documented signs and evidence that adds clarity to the scope and usage of malware in a wartime environment.",
+            "Microsoft described some of Cadet Blizzard’s work as “haphazard” and said it discovered evidence that at least one Russian private sector organization has materially supported the hackers by providing operational support during the WhisperGate destructive attack.",
+            "Microsoft is also, for the first time, linking the Russian APT group to defacements on multiple Ukrainian organization websites and the hack-and-leak Telegram channel known as “Free Civilian”.",
+            "Security researchers at Microsoft are publicly outing a new APT group linked to Russia’s General Staff Main Intelligence Directorate (GRU), warning that the threat actor has worked on destructive wiper malware attacks that hit organizations in Ukraine.",
+            "“Operationally consistent with the remit and assessed objectives of GRU-led operations throughout Russia’s invasion of Ukraine, Cadet Blizzard has engaged in focused destructive attacks, espionage, and information operations in regionally significant areas,” Microsoft said.",
+            "“[The] emergence of a novel GRU affiliated actor, particularly one which has conducted destructive cyber operations likely supporting broader military objectives in Ukraine, is a notable development in the Russian cyber threat landscape,” Microsoft said, noting that Cadet Blizzard produced the infamous WhisperGate wiper malware that wiped the Master Boot Record (MBR) of computers in Ukraine."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://therecord.media/charming-kitten-targeted-israel-cyberattacks",
+        "sentences": [
+            "Further, the data shows that, in the case of a ransomware attack, Iranian actors’ claims of impact and precision targeting were almost certainly fabricated.”",
+            "In at least one attack in October, Imperial Kitten used malicious Microsoft Excel documents to deploy malware as part of a phishing operation.",
+            "Researchers at the cybersecurity company CrowdStrike’s Counter Adversary Operations attributed the activity to Imperial Kitten, an Iranian advanced persistent threat (APT) group, in a report published Thursday.",
+            "The CrowdStrike report came as Microsoft researchers cautioned that Iran’s information operations might be inflating the efficacy of a few publicly reported cybersecurity incidents in Israel since the war began October 7.",
+            "While the activity of Iranian hacker groups targeting Israel has been in headlines over the last month, their cyber operations in response to the war may not be as coordinated or impactful as they claim, researchers at Microsoft said Thursday.",
+            "“Observations from Microsoft telemetry suggest that, at least in the cyber domain, Iranian operators have largely been reactive since the war began, exploiting opportunities to try and take advantage of events on the ground as they unfold​,” they said."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://securityboulevard.com/2023/06/the-week-in-security-ukraine-apt-attacks-tied-to-russia-critical-eye-placed-on-ai-generated-software/",
+        "sentences": [
+            "All tested Office versions are vulnerable.",
+            "Every Signature Is Broken: On the Insecurity of Microsoft Office’s OOXML Signatures (Usenix Security Symposium) “We tested the attacks against different Microsoft Office versions on Windows and macOS, as well as against OnlyOffice Desktop on Windows, macOS and Linux.",
+            "Microsoft researchers also believe that Cadet Blizzard and, by extension, the Russian government are going after software supply chains by targeting software developers, using a “compromise one, compromise many” technique.",
+            "Not only has Cadet Blizzard been linked to this malware wiper campaign targeting Ukraine, but the APT group has also been linked by Microsoft to other malicious efforts, such as “destructive attacks, espionage, and information operations” in Ukraine, greater Europe, and Latin America that target government organizations and information technology providers.",
+            "These findings from Microsoft demonstrate that the Russian government has been prioritizing offensive attacks in both the cyber and kinetic fronts of the war and has been willing to work with skilled cybercriminals to make these attacks happen.",
+            "This sets a precedent for how cyberwarfare is conducted, which in the Russo-Ukrainian War has consisted of Russian government officials allowing and enabling APT groups to conduct malicious campaigns pointed at the nation-state’s adversaries."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://medium.com/@CipherStructor/apt-groups-leading-players-of-cyber-threats-672b5ca4fcd8",
+        "sentences": [
+            "5. Motivations of APT Groups Advanced Persistent Threats (APTs) have emerged as the leading players in today’s complex cyber threat landscape.",
+            "6. Goals of APT Groups Advanced Persistent Threats (APTs) emerge as the leading actors in cyber attacks.",
+            "Advanced Persistent Threats (APTs) are a constantly evolving threat in cybersecurity.",
+            "Advanced Persistent Threats (APTs) are the leading actors in today’s complex cyber threats.",
+            "In today’s complex cyber threat landscape, groups called Advanced Persistent Threats (APTs) have emerged as the leading players in cyber attacks.",
+            "It is expected that future APT groups will resort to more sophisticated and automated attack methods."
+        ]
+    }
+]

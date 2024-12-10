@@ -1,0 +1,52 @@
+[
+    "claim":"Sea Turtle cyber espionage group targeted telco, media, ISPs, IT service providers, and Kurdish websites in the Netherlands.",
+    "explain":"Researchers from Dutch security firm Hunt & Hackett observed Sea Turtle cyber espionage group (aka Teal Kurma, Marbled Dust, SILICON and Cosmic Wolf) targeting telco, media, ISPs, IT service providers, and Kurdish websites in the Netherlands. The researchers believe that the Turkey-linked APT Sea Turtle has been active since at least 2017. The Sea Turtle APT group focuses primarily on targeting organizations in Europe and the Middle East. Between 2017 and 2019, the APT group mainly used DNS hijacking in its campaigns. The group targets government entities, Kurdish (political) groups like PKK, telecommunication, ISPs, IT-service providers (including security companies), NGO, and Media & Entertainment sectors; Over the years, the group enhanced its evasion capabilities. In October 2021, Microsoft observed the group conducting intelligence gathering aligned with strategic Turkish interests. In recent attacks, the researchers targeted the infrastructure of the targets with supply chain and island-hopping attacks. The threat actors gathered personal information on minority groups and potential political dissents. “The stolen information is likely to be exploited for surveillance or intelligence gathering on specific groups and or individuals.” reads the report published by Hunt & Hackett. “This appears to be consistent with claims from US officials in 2020 about hacker groups acting in Turkey’s interest, focusing on the identities and locations of the victims, which included governments of countries that are geopolitically significant to Turkey” The modus operandi of the group includes intercepting internet traffic to victim websites, and potentially granting unauthorized access to government networks and other organizations. During one of the most recent campaigns in 2023, the APT group employed a reverse TCP shell named SnappyTCP to target Linux/Unix systems. Sea Turtle also used code from a publicly accessible GitHub account, which is likely under the control of the threat actor. The researchers also observed the cyber spies compromising cPanel accounts and using SSH to achieve initial access to the environment of a target’s organization. Hunt & Hackett also observed the threat actor collecting at least one e-mail archive, of one of the multiple victim organizations.",
+    {
+        "report_id": "report_0",
+        "link":"https://www.huntandhackett.com/blog/turkish-espionage-campaigns",
+        "sentences": [
+            "Hunt & Hackett believes that Sea Turtle is a Turkey based Advanced Persistent Threat (APT) actor that is motivated by espionage by means of information theft that targets public and private entities.",
+            "Our investigation into one of their attacks indicated that this group exhibits characteristics of a state-supported cyber espionage group, primarily focused on acquiring economic and political intelligence through espionage with the aim of advancing Turkey’s interests.",
+            "Sea Turtle is also known under the aliases; Teal Kurma, Marbled Dust, SILICON and Cosmic Wolf; Motivation: primarily focused on acquiring economic and political intelligence through espionage and information theft that targets public and private entities; Targeted Sectors: Government entities, Kurdish (political) groups like PKK, telecommunication, ISPs, IT-service providers (including security companies), NGO and Media & Entertainment sectors; Geographical Focus: focuses primarily on targeting organizations in Europe, Middle East and North Africa; Modus Operandi: is based on redirecting user traffic, obtaining valid encryption certificates, performing man-in-the-middle attacks to harvest credentials and achieve initial access in to targeted organization’s network; Sophistication: although some techniques are more technical in nature, the threat actor is considered moderate in sophistication.",
+            "The modus operandi of Sea Turtle involves intercepting internet traffic directed at victimized websites, potentially allowing unauthorized access to government networks and other organizational systems.",
+            "These cyberattacks are believed to be orchestrated by Sea Turtle operating in alignment with Turkish interests, signalling an escalation in Turkey's pursuit of objectives within the Netherlands.",
+            "This appears to be consistent with claims from US officials in 2020 about hacker groups acting in Turkey’s interest, focusing on the identities and locations of the victims, which included governments of countries that are geopolitically significant to Turkey[7]."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://cybersecuritynews.com/sea-turtle-apt-group/",
+        "sentences": [
+            "Cybersecurity security researchers at Hunt & Hackett recently discovered that the Turkish espionage APT group Sea Turtle has been actively exploiting the known vulnerabilities to attack IT service providers.",
+            "For sensitive data, Sea Turtle targets the following areas:Europe,Middle East,North Africa, Here below, we have mentioned all the sectors and entities targeted:Gov’t bodies,Kurdish groups,NGOs,Telecom,ISPs,IT,Media, Successful attacks aid surveillance and intelligence gathering.",
+            "In early 2023, Hunt & Hackett identified Sea Turtle’s latest campaigns targeting multiple organizations.",
+            "Researchers tracked the Sea Turtle’s campaigns also in the Netherlands and discovered that they are primarily focused on the following two key things for Turkish interests:-,Economic espionage,Political espionage,Recent campaigns in the Netherlands target the following:,Telecom,Media,ISPs,Kurdish websites, Sea Turtle employs supply chain attacks to collect politically motivated information.",
+            "Sea Turtle APT group has been active since 2017 and is known for DNS hijacking; it adapts to evade detection.",
+            "Sea Turtle intercepts internet traffic using reverse shell for data extraction."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.darkreading.com/threat-intelligence/turkish-apt-sea-turtle-spy-kurdish-opposition",
+        "sentences": [
+            "\"You can imagine that an attacker aligning with Turkish political interests has significant interest in where the dissident Kurds are in Europe,\" warns one member of the Hunt & Hackett research team, who chose to remain anonymous for this story.",
+            "A group aligned with the interests of the government of Turkey has been turning up its politically motivated cyber espionage lately, targeting Kurdish opposition groups through high-value supply chain targets in Europe, the Middle East, and North Africa.",
+            "Exactly how Sea Turtle obtains the credentials necessary to carry out its Web traffic interception is unclear, the Hunt & Hackett researcher admits, but the options available to them are myriad.",
+            "Following some years out of the limelight, Sea Turtle (aka Teal Kurma, Marbled Dust, Silicon, or Cosmic Wolf) is now back under scrutiny, most recently thanks to multiple campaigns targeting organizations in the Netherlands, tracked by the research group Hunt & Hackett.",
+            "For instance, in a typical campaign from early 2023, Hunt & Hackett researchers observed the group accessing an organization's cPanel Web hosting environment via a VPN connection, then using it to drop an information-gathering Linux reverse shell called \"SnappyTCP.\"",
+            "Since 2021, victims of these campaigns have spanned targets in media, telecommunications, internet service providers, and IT service providers, with a specific focus on reaching websites associated with Kurds and the Kurdistan Workers' Party (PKK)."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://thehackernews.com/2024/01/sea-turtle-cyber-espionage-campaign.html",
+        "sentences": [
+            "\"The Sea Turtle campaign almost certainly poses a more severe threat than DNSpionage given the actor's methodology in targeting various DNS registrars and registries,\" Talos said at the time.",
+            "\"The infrastructure of the targets was susceptible to supply chain and island-hopping attacks, which the attack group used to collect politically motivated information such as personal information on minority groups and potential political dissents,\" Dutch security firm Hunt & Hackett said in a Friday analysis.",
+            "In late 2021, Microsoft noted that the adversary carries out intelligence collection to meet strategic Turkish interests from countries like Armenia, Cyprus, Greece, Iraq, and Syria, striking telecom and IT companies with an aim to \"establish a foothold upstream of their desired target\" via exploitation of known vulnerabilities.",
+            "Sea Turtle, also known by the names Cosmic Wolf, Marbled Dust (formerly Silicon), Teal Kurma, and UNC1326, was first documented by Cisco Talos in April 2019, detailing state-sponsored attacks targeting public and private entities in the Middle East and North Africa.",
+            "Telecommunication, media, internet service providers (ISPs), information technology (IT)-service providers, and Kurdish websites in the Netherlands have been targeted as part of a new cyber espionage campaign undertaken by a Türkiye-nexus threat actor known as Sea Turtle.",
+            "The latest findings from Hunt & Hackett show that Sea Turtle continues to be a stealthy espionage-focused group, performing defense evasion techniques to fly under the radar and harvest email archives."
+        ]
+    }
+]

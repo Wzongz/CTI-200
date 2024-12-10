@@ -1,0 +1,140 @@
+{
+  "event_id": "204",
+  "claim": "LazyScripter is threat group that has mainly targeted the airlines industry since at least 2018, primarily using open-source toolsets.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "A new threat group, nicknamed LazyScripter, has been identified. An analysis of several malicious emails targeting individuals looking for work in Canada lead to its discovery. Further investigation uncovered a targeted spam campaign dating back to 2018, which mainly targeted the airline industry. The new threat group was discovered by Malwarebytes researchers while analyzing phishing emails targeting individuals looking for work in Canada. Further investigation led researchers to discover that the group had been active since 2018 but had remained unidentified. Initially researchers tried to attribute the group’s activities to known APT groups but found this was not possible. “In terms of attribution. It’s hard to really attribute this group to any known groups,” said Hossein Jazi, senior threat intelligence analyst at Malwarebytes. “Even though some similarities between this actor and documented APT actors such as APT28 and OilRig exist, these indicators are not enough to attribute to any of these groups,” Malwarebytes states in its report on LazyScripter. Consequently, the researchers decided they had discovered a new APT group, which they nicknamed LazyScripter. APT groups are usually tracked according to their targets and the type of tools and methods they use. Researchers found that LazyScripter resembled the threat actors OilRig, APT28 (aka Fancy Bear) and MuddyWater, but not closely enough. LayzScripter is like the Iranian group OilRig and the Russian group APT28 in as much as it uses similar malware. Of the three threat actors, however, LazyScripter was found to be most like the Iranian APT group MuddyWater. Nevertheless, unlike MuddyWater, LazyScripter does not conduct targeted campaigns, relying on spam to reach its victims instead. Furthermore, the malware used by LazyScripter has not been used by MuddyWater in the past. LazyScripter uses widely available toolsets whereas MuddyWater uses custom malware tools in its operations. Nonetheless, due to its similarities to the two Middle Eastern actors, Jazi stated that “there is a high chance that the actor is based in the Middle East.” LazyScripter’s targeted spam campaign is believed to date back to at least 2018. Its targets are mainly the International Air Transport Association, airlines and individuals looking to move to Canada for work. The group’s motive appears to be stealing private information and business intelligence for use in future targeted attacks. The group uses phishing emails to attack its victims, which typically contain malicious documents and ZIP archives. Usually the attached documents are pdf, Microsoft Word or Excel files that contain one or two embedded objects. These objects link to GitHub from which two open-source multistage RATs, Octopus and Koadic, are downloaded and deployed onto victims’ systems. Koadic is a publicly available Windows post-exploitation and penetration testing tool. Octopus is a Windows Trojan that, among other things, enables data theft. As well as phishing emails targeting the airline industry, the group has sent other themed emails. These have included emails related to BSPLink, a financial settlement service many airlines use, Covid-19 and Microsoft updates. Also sent out were tourism and visa related phishing emails. In one phishing campaign, LazyScript used a legitimate Canadian immigration website to lure its victims in. According to Jazi, Malwarebytes’ study of LazyScripter has revealed that it is not as sophisticated as other threat groups. Unlike more sophisticated APT groups like Lazarus and Palmerworm, LazyScripter does not develop its own custom malware. Instead, it relies on already available software. “What was interesting about this actor is how much it is really relying on open source and commercially available toolsets to operate,” Jazi, stated. Malwarebytes researchers also found that LazyScripter has changed its main toolset over the years. Up until 2020 the group used the commercially available Powershell Empire to break into its victims’ systems. This was installed using the loader Malwarebytes calls Empoder. However, recently LazyScripter switched to the double RAT toolset comprising of Octopus and Koadic. This toolset is being installed with a new loader Malwarebytes has called Koctopus.",
+  "reports": [
+    {
+      "link": "https://www.malwarebytes.com/blog/news/2021/02/lazyscripter-from-empire-to-double-rat",
+      "content": "Digging deeper we uncovered a targeted spam campaign dating back as far as 2018 using phishing lures with themes aimed not only at those seeking immigration to Canada for employment, but also at airlines.For this reason, we continue to track this new group LazyScripter as the threat evolves.In this case, we initially discovered a number of malicious emails specifically targeting individuals seeking employment, which prompted a deeper investigation.In this paper, we introduce a new APT group we have named LazyScripter, presenting in-depth analysis of the tactics, techniques, procedures, and infrastructure employed by this actor group.Malwarebytes’ Threat Intelligence analysts are continually researching and monitoring active malware campaigns and actor groups as the prevalence and sophistication of targeted attacks rapidly evolves.Many actor groups use spam campaigns, attaching weaponized documents to phishing emails themed to target the industry or demographic of interest.",
+      "domain": "www.malwarebytes.com",
+      "tokenized": [
+        {
+          "sent": "Digging deeper we uncovered a targeted spam campaign dating back as far as 2018 using phishing lures with themes aimed not only at those seeking immigration to Canada for employment, but also at airlines.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "For this reason, we continue to track this new group LazyScripter as the threat evolves.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "In this case, we initially discovered a number of malicious emails specifically targeting individuals seeking employment, which prompted a deeper investigation.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "In this paper, we introduce a new APT group we have named LazyScripter, presenting in-depth analysis of the tactics, techniques, procedures, and infrastructure employed by this actor group.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Malwarebytes’ Threat Intelligence analysts are continually researching and monitoring active malware campaigns and actor groups as the prevalence and sophistication of targeted attacks rapidly evolves.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Many actor groups use spam campaigns, attaching weaponized documents to phishing emails themed to target the industry or demographic of interest.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.bleepingcomputer.com/news/security/lazyscripter-hackers-target-airlines-with-remote-access-trojans/",
+      "content": "By using open-source post-exploitation tools and malware that is widely used in hacking activities by multiple actors, LazyScripter leaves few clues regarding attribution.LazyScripter’s latest activity involves the use of the freely available Octopus and Koadic malware.Malwarebytes found three accounts linked to LazyScripter.Security researchers analyzing multiple sets of malicious emails believe they uncovered activity belonging to a previously unidentified actor that fits the description of an advanced persistent threat (APT).The actor received the name LazyScripter and has been active since 2018, using phishing to target individuals seeking immigration to Canada for a job, airlines, and the International Air Transport Association (IATA).There are some aspects, though, that do not permit high-confidence attribution and prompted Malwarebytes to label LazyScripter as a new APT group: MuddyWater’s campaigns are targeted while LazyScripter’s relies on spam to reach victims none of the malware used in the LazyScripter campaigns have been associated with MuddyWater in the past the use of embedded documents is not specific to MuddyWater, which typically uses the malicious macros only widely-available tools have been used, while MuddyWater also employs custom tools in its operations",
+      "domain": "www.bleepingcomputer.com",
+      "tokenized": [
+        {
+          "sent":"By using open-source post-exploitation tools and malware that is widely used in hacking activities by multiple actors, LazyScripter leaves few clues regarding attribution.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"LazyScripter’s latest activity involves the use of the freely available Octopus and Koadic malware.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Malwarebytes found three accounts linked to LazyScripter.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Security researchers analyzing multiple sets of malicious emails believe they uncovered activity belonging to a previously unidentified actor that fits the description of an advanced persistent threat (APT).",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The actor received the name LazyScripter and has been active since 2018, using phishing to target individuals seeking immigration to Canada for a job, airlines, and the International Air Transport Association (IATA).",
+          "is_evidence": 0
+        },
+        {
+          "sent":"There are some aspects, though, that do not permit high-confidence attribution and prompted Malwarebytes to label LazyScripter as a new APT group: MuddyWater’s campaigns are targeted while LazyScripter’s relies on spam to reach victims none of the malware used in the LazyScripter campaigns have been associated with MuddyWater in the past the use of embedded documents is not specific to MuddyWater, which typically uses the malicious macros only widely-available tools have been used, while MuddyWater also employs custom tools in its operations",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.enigmasoftware.com/lazyscripterapt-removal/",
+      "content": "For example, both LazyScript and MuddyWater have been observed as using the Empire and Koadic malware tools, PowerShell and GitHub as payload repositories.Infosec researchers believe that they have managed to isolate the activity of a new APT (Advanced Persistent Threat) group that they have named LazyScript.LazyScript's attacks begin with the dissemination of spam emails containing phishing lures to individuals of interest.So far LazyScript has been relying on the following malware threats: Octopus - open-source Windows RAT that can harvest and exfiltrate data, establish reconnaissance routines and conduct system profiling.The Russian-based group known as APT28 (aka FancyBear) also has used the Koadic malware in the past.The hackers also have used baits linked to a financial settlement service named BSPLink, COVID-19, Microsoft updates, tourism, or Canadian worker-related programs.",
+      "domain": "www.enigmasoftware.com",
+      "tokenized": [
+        {
+          "sent":"For example, both LazyScript and MuddyWater have been observed as using the Empire and Koadic malware tools, PowerShell and GitHub as payload repositories.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Infosec researchers believe that they have managed to isolate the activity of a new APT (Advanced Persistent Threat) group that they have named LazyScript.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"LazyScript's attacks begin with the dissemination of spam emails containing phishing lures to individuals of interest.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"So far LazyScript has been relying on the following malware threats: Octopus - open-source Windows RAT that can harvest and exfiltrate data, establish reconnaissance routines and conduct system profiling.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The Russian-based group known as APT28 (aka FancyBear) also has used the Koadic malware in the past.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The hackers also have used baits linked to a financial settlement service named BSPLink, COVID-19, Microsoft updates, tourism, or Canadian worker-related programs.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://vblocalhost.com/presentations/lazyscripter-from-empire-to-double-rat/",
+      "content": "Credential Harvesting and privileged escalation are key components of the LAPSUS$ breaches we have seen, with rapid escalation in privileges the LAPSUS$ group have been seen to elevate from a standard user account to an administrative user within a couple of days.In our incident response cases, we saw the threat actor leveraging compromised employee email accounts to email helpdesk systems requesting access credentials or support to get In one incident LAPSUS$ were observed to sporadically move through the victim environment via RDP in an attempt to access resources deeper in the victim environment.LAPSUS$’s action on objectives appears to focus on data exfiltration of sensitive information as well as destruction or disruption.NCC Group has observed disruption and destruction to client environments by LAPSUS$ such as shutting down virtual machines from within on-premises VMware ESXi infrastructure, to the extreme of mass deletion of virtual machines, storage, and configurations in cloud environments making it harder for the victim to recover and for the investigation team to conduct their analysis activities.Notifications or responsibility of victims by LAPSUS$ are commonly reported via their telegram channel and in one case a victim’s DNS records were reconfigured to LAPSUS$ controlled domains/websites.Over the last 5 months, LAPSUS$ has gained large notoriety with some successful breaches of some large enterprises including, Microsoft, Nvidia, Okta Samsung.",
+      "domain": "vblocalhost.com",
+      "tokenized": [
+        {
+          "sent":"Beside those primary targets, we also have observed that LazyScripter has used other lures to target other victims around the world.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"For example, we have observed Canadian immigration, Microsoft updates, tourism (UNWTO) and bank transfer confirmations being used as spam lures.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In February 2021 we identified a new APT group we named LazyScripter, which has been active since at least 2018.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"KOCTOPUS has usually been embedded in Zip or document files to weaponize the spam emails and is in one of the following formats: batch, VBScript, Reg file or executable.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Like most of the APTs that have taken advantage of Covid-19 to target victims during the pandemic, this actor also has spoofed a World Health Organization (WHO) email and operated several spam campaigns pretending to provide recommendations to the victim.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "This actor has mainly used small-scale spam campaigns to distribute a variant of its loader we named KOCTOPUS, to infect its victims.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

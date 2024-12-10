@@ -1,0 +1,141 @@
+{
+  "event_id": "118",
+  "claim": "Konni Group Attack Detection: North Korean Hackers Leverage russian-Language Weaponized Word Document to Spread RAT Malware.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Defenders observe a new phishing attack, in which adversaries weaponize a russian-language Microsoft Word document to distribute malware that can extract sensitive data from targeted Windows instances. Hackers behind this offensive campaign belong to a North Korean group dubbed Konni, which shares similarities with a cyber-espionage cluster tracked as Kimsuky APT. The long-run offensive campaign by the North Korean Konni APT group aimed at RAT malware distribution and data exfiltration reminds defenders of the escalating risks of phishing attacks that are continuously causing a stir in the cyber threat arena. SOC Prime Platform provides a set of new Sigma rules developed by Threat Bounty author, Zaw Min Htun, to detect the latest Konni campaign. All detection algorithms are compatible with dozens of SIEM, EDR, XDR, and Data Lake technologies to be used across multiple technologies and are mapped to the MITRE ATT&CK® framework: Possible Evasion of Konni Campaign Activity through Detection of Registry Settings (via registry_event) Possible Konni’s Campaing Malware Execution Flow via Registry Key (via process_creation) These Sigma rules address the Defense Evasion tactic with the Modify Registry technique (T1112). Suspicious Konni’s C2 Connection Attempt Detected through the Identification of Associated URL (via proxy) This detection addresses the Command and Control tactic with the corresponding Application Layer Protocol (T1071) technique and Web Protocols (T1071.001) sub-technique. Detection Engineers and Threat Hunters striving to accelerate their cyber defense skill set while sharing their expertise with peers are welcome to join the ranks of SOC Prime’s Threat Bounty Program. To help your organization stay ahead of attacks linked to the Konni APT group, rely on the entire collection of relevant Sigma rules augmented with CTI and actionable metadata. Click Explore Detections to drill down to the list of SOC content for Konni-related attacks. North Korean Konni APT Group Attack Analysis FortiGuard Labs uncovered a novel phishing campaign attributed to a North Korean threat actor Konni that takes advantage of a harmful russian-language Word document to spread malware on the impacted systems. Konni APT group is notorious for its sophisticated cyber-espionage campaigns aimed at data exfiltration. Adversaries leverage multiple malware samples and tools, continuously evolving their tactics to for detection evasion, which poses growing challenges to defenders. Konni group has been observed exploiting the WinRAR vulnerability (CVE-2023-38831) and obfuscating Visual Basic scripts to spread Konni RAT and a Windows Batch script aimed to steal sensitive data from the compromised machines. The ongoing campaign, which has been active for an extended period, takes advantage of RAT malware capable of extracting sensitive data and executing commands on impacted devices. Hackers apply multiple approaches for gaining initial access, delivering payloads, and establishing persistence within the networks of targeted victims. In the latest campaign, Konni leverages an advanced toolset embedded in a harmful Word document through batch scripts and DLL files. The payload includes a User Account Control (UAC) bypass and encrypted communication with a C2 server, giving attackers the green light to run privileged commands. With the increasing number of attacks attributed to North Korean APT groups, global organizations fuel the need for vigilant cybersecurity practices and proactive threat detection measures. By leveraging Uncoder AI, the industry-first IDE for detection engineering, security engineers can write highly resilient detection code faster and smarter, as well as translate it to 65 security language formats at sub-second performance.\n\n\n",
+  "reports": [
+    {
+      "link": "https://securityaffairs.com/154695/apt/konni-apt-russian-language-bait-doc.html/",
+      "content": "FortiGuard Labs researchers observed the North Korea-linked Konni APT group using a weaponized Russian-language Word document in an ongoing phishing campaign. In the ongoing campaign, threat actors used a remote access trojan (RAT) to extract information and execute commands on targets’ devices. North Korea-linked Konni APT group used Russian-language Microsoft Word documents to deliver malware. The KONNI RAT was first spotted by Cisco Talos researchers in 2017, it has been undetected since 2014 and was employed in highly targeted attacks.“As this malware continues to evolve, users are advised to exercise caution with suspicious documents.”“FortiGuard Labs recently identified the use of a Russian-language Word document equipped with a malicious macro in the ongoing Konni campaign.”",
+      "domain": "securityaffairs.com",
+      "tokenized": [
+        {
+          "sent":"FortiGuard Labs researchers observed the North Korea-linked Konni APT group using a weaponized Russian-language Word document in an ongoing phishing campaign.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In the ongoing campaign, threat actors used a remote access trojan (RAT) to extract information and execute commands on targets’ devices.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "North Korea-linked Konni APT group used Russian-language Microsoft Word documents to deliver malware.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The KONNI RAT was first spotted by Cisco Talos researchers in 2017, it has been undetected since 2014 and was employed in highly targeted attacks.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"“As this malware continues to evolve, users are advised to exercise caution with suspicious documents.”",
+          "is_evidence": 0
+        },
+        {
+          "sent":  "“FortiGuard Labs recently identified the use of a Russian-language Word document equipped with a malicious macro in the ongoing Konni campaign.”",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://threatmon.io/the-konni-apt-chronicle-tracing-their-intelligence-driven-attack-chain/",
+      "content": "Among these, the Konni APT Group has emerged as a notable adversary, known for its ingenuity and tenacity in conducting cyber-espionage campaigns. The knowledge and insights offered in this report are intended to empower organizations to fortify their cybersecurity posture, better anticipate emerging threats, and respond decisively in the face of determined adversaries like the Konni APT Group. This attack chain is a testament to the Konni APT Group's advanced tactics and highlights the need for vigilant cybersecurity practices and innovative threat detection and mitigation strategies. This in-depth investigation enables organizations to develop proactive security measures and improve their resilience against such sophisticated adversaries. This technical analysis report delves into the intricate details of the Konni APT Group's most recent attack, dissecting their attack chain and conducting an in-depth analysis of the malware involved. Tracing Their Intelligence-Driven Attack Chain In the ever-evolving landscape of cybersecurity, the persistent and sophisticated activities of Advanced Persistent Threat (APT) groups continue to pose significant challenges to organizations worldwide.",
+      "domain": "threatmon.io",
+      "tokenized": [
+        {
+          "sent":"Among these, the Konni APT Group has emerged as a notable adversary, known for its ingenuity and tenacity in conducting cyber-espionage campaigns.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The knowledge and insights offered in this report are intended to empower organizations to fortify their cybersecurity posture, better anticipate emerging threats, and respond decisively in the face of determined adversaries like the Konni APT Group.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"This attack chain is a testament to the Konni APT Group's advanced tactics and highlights the need for vigilant cybersecurity practices and innovative threat detection and mitigation strategies.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"This in-depth investigation enables organizations to develop proactive security measures and improve their resilience against such sophisticated adversaries.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"This technical analysis report delves into the intricate details of the Konni APT Group's most recent attack, dissecting their attack chain and conducting an in-depth analysis of the malware involved.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Tracing Their Intelligence-Driven Attack Chain In the ever-evolving landscape of cybersecurity, the persistent and sophisticated activities of Advanced Persistent Threat (APT) groups continue to pose significant challenges to organizations worldwide.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://cybersecuritynews.com/konni-apt-exploits-winrar-vulnerability/",
+      "content": "Hence, Konni’s introduction into this industry suggests that North Korean hackers have a larger plan to attack financial institution’s networks and cryptocurrency exchanges. It is speculated that the Konni organization may be opening up a new attack direction”, Chuangyu 404 Advanced Threat Intelligence Team. Konni has shown the evolvability of APT attacks by taking advantage of a novel vulnerability and a change in the sectors it targets. Konni, a North Korean APT group, launched the first attack against the cryptocurrency industry, exploiting a recently found WinRAR vulnerability tagged as CVE-2023-38831. The Konni hack acts as an awakening for the cryptocurrency and cybersecurity community. The sample analyzed executes malicious payloads using the recently discovered Winrar vulnerability (CVE-2023-38831).",
+      "domain": "cybersecuritynews.com",
+      "tokenized": [
+        {
+          "sent":"Hence, Konni’s introduction into this industry suggests that North Korean hackers have a larger plan to attack financial institution’s networks and cryptocurrency exchanges.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"It is speculated that the Konni organization may be opening up a new attack direction”, Chuangyu 404 Advanced Threat Intelligence Team.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Konni has shown the evolvability of APT attacks by taking advantage of a novel vulnerability and a change in the sectors it targets.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Konni, a North Korean APT group, launched the first attack against the cryptocurrency industry, exploiting a recently found WinRAR vulnerability tagged as CVE-2023-38831.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The Konni hack acts as an awakening for the cryptocurrency and cybersecurity community.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The sample analyzed executes malicious payloads using the recently discovered Winrar vulnerability (CVE-2023-38831).",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.infosecurity-magazine.com/news/konni-deploys-advanced-rat-with/",
+      "content": "As this malware continues to evolve, users are advised to exercise caution with suspicious documents,” Lin wrote. More information on the Konni campaign’s techniques and strategies for initial access, payload delivery and persistence within victim networks is available in the Fortinet advisory. Security researchers have detected a Russian-language Word document carrying a malicious macro in the ongoing Konni campaign. This long-running campaign utilizes a remote access Trojan (RAT) capable of extracting information and executing commands on compromised devices, employing diverse strategies for initial access, payload delivery and persistence within victim networks. This module is designed to help end users learn how to identify and protect themselves from phishing attacks.”“We also suggest that organizations go through Fortinet’s free NSE training module: NSE 1 – Information Security Awareness.",
+      "domain": "www.infosecurity-magazine.com",
+      "tokenized": [
+        {
+          "sent":"As this malware continues to evolve, users are advised to exercise caution with suspicious documents,” Lin wrote.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"More information on the Konni campaign’s techniques and strategies for initial access, payload delivery and persistence within victim networks is available in the Fortinet advisory.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Security researchers have detected a Russian-language Word document carrying a malicious macro in the ongoing Konni campaign.",
+          "is_evidence": 0
+        },
+        {
+          "sent":  "This long-running campaign utilizes a remote access Trojan (RAT) capable of extracting information and executing commands on compromised devices, employing diverse strategies for initial access, payload delivery and persistence within victim networks.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"This module is designed to help end users learn how to identify and protect themselves from phishing attacks.”",
+          "is_evidence": 0
+        },
+        {
+          "sent": "“We also suggest that organizations go through Fortinet’s free NSE training module: NSE 1 – Information Security Awareness.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

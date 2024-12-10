@@ -1,0 +1,46 @@
+Earth Lusca is a suspected China-based cyber espionage group that has been active since at least April 2019. Earth Lusca has targeted organizations in Australia, China, Hong Kong, Mongolia, Nepal, the Philippines, Taiwan, Thailand, Vietnam, the United Arab Emirates, Nigeria, Germany, France, and the United States. Targets included government institutions, news media outlets, gambling companies, educational institutions, COVID-19 research organizations, telecommunications companies, religious movements banned in China, and cryptocurrency trading platforms; security researchers assess some Earth Lusca operations may be financially motivated.
+Earth Lusca has used malware commonly used by other Chinese threat groups, including APT41 and the Winnti Group cluster, however security researchers assess Earth Lusca's techniques and infrastructure are separate.
+Earth Lusca has used the Fodhelper UAC bypass technique to gain elevated privileges.
+Earth Lusca has dropped an SSH-authorized key in the /root/.ssh folder in order to access a compromised server with SSH.
+Earth Lusca has registered domains, intended to look like legitimate target domains, that have been used in watering hole attacks.
+Earth Lusca has acquired multiple servers for some of their operations, using each server for a different role.
+Earth Lusca has established GitHub accounts to host their malware.
+Earth Lusca has scanned for vulnerabilities in the public-facing servers of their targets.
+Earth Lusca has used WinRAR to compress stolen files into an archive prior to exfiltration.
+Earth Lusca has added the Registry key HKLM\SYSTEM\ControlSet001\Control\Print\Environments\Windows x64\Print Processors\UDPrint" /v Driver /d "spool.dll /f to load malware as a Print Processor.
+Earth Lusca has used PowerShell to execute commands.
+Earth Lusca used VBA scripts.
+Earth Lusca used Python scripts for port scanning or building reverse shells.
+Earth Lusca has manipulated legitimate websites to inject malicious JavaScript code as part of their watering hole operations.
+Earth Lusca has used compromised web servers as part of their operational infrastructure.
+Earth Lusca has compromised Google Drive repositories.
+Earth Lusca created a service using the command sc create "SysUpdate" binpath= "cmd /c start """&&sc config "SysUpdate" start= auto&&netstart SysUpdate for persistence.
+Earth Lusca has used certutil to decode a string into a cabinet file.
+Earth Lusca has used Nltest to obtain information about domain controllers.
+Earth Lusca has performed watering hole attacks.
+Earth Lusca has used the megacmd tool to upload stolen files from a victim network to MEGA.
+Earth Lusca has compromised victims by directly exploiting vulnerabilities of public-facing servers, including those associated with Microsoft Exchange and Oracle GlassFish.
+Earth Lusca has used Mimikatz to exploit a domain controller via the ZeroLogon exploit (CVE-2020-1472).
+Earth Lusca has placed a malicious payload in %WINDIR%\SYSTEM32\oci.dll so it would be sideloaded by the MSDTC service.
+Earth Lusca used the command move  c:\windows\system32\spool\prtprocs\x64\spool.dll to move and register a malicious DLL name as a Windows print processor, which eventually was loaded by the Print Spooler service.
+Earth Lusca modified the registry using the command reg add "HKEY_CURRENT_USER\Environment" /v UserInitMprLogonScript /t REG_SZ /d "" for persistence.
+Earth Lusca used Base64 to encode strings.
+Earth Lusca has used steganography to hide shellcode in a BMP image file.
+Earth Lusca has acquired and used a variety of malware, including Cobalt Strike.
+Earth Lusca has acquired and used a variety of open source tools.
+Earth Lusca has used ProcDump to obtain the hashes of credentials by dumping the memory of the LSASS process.
+Earth Lusca has used a DCSync command with Mimikatz to retrieve credentials from an exploited controller.
+Earth Lusca has sent spearphishing emails to potential targets that contained a malicious link.
+Earth Lusca has used Tasklist to obtain information from a compromised host.
+Earth Lusca adopted Cloudflare as a proxy for compromised servers.
+Earth Lusca used the command powershell "Get-EventLog -LogName security -Newest 500 | where {$_.EventID -eq 4624} | format-list -property * | findstr "Address"" to find the network information of successfully logged-in accounts to discovery addresses of other machines. Earth Lusca has also used multiple scanning tools to discover other machines within the same compromised network.
+Earth Lusca used the command schtasks /Create /SC ONLOgon /TN WindowsUpdateCheck /TR "" /ru system for persistence.
+Earth Lusca has staged malware and malicious files on compromised web servers, GitHub, and Google Drive.
+Earth Lusca has used mshta.exe to load an HTA script within a malicious .LNK file.
+Earth Lusca used the command ipconfig to obtain information about network configurations.
+Earth Lusca employed a PowerShell script called RDPConnectionParser to read and filter the Windows event log "Microsoft-Windows-TerminalServices-RDPClient/Operational"(Event ID 1024) to obtain network information from RDP connections. Earth Lusca has also used netstat from a compromised system to obtain network connection information.
+Earth Lusca collected information on user accounts via the whoami command.
+Earth Lusca has used Tasklist to obtain information from a compromised host.
+Earth Lusca  has sent spearphishing emails that required the user to click on a malicious link and subsequently open a decoy document with a malicious loader.
+Earth Lusca required users to click on a malicious file for the loader to activate.
+Earth Lusca used a VBA script to execute WMI.

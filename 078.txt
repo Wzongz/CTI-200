@@ -1,0 +1,141 @@
+{
+  "event_id": "078",
+  "claim": "APT19, also known as C0d0so or Deep Panda, is allegedly a Chinese-based threat group that targeted a lot of industries in the past. ",
+  "original_label": "true",
+  "label": "true",
+  "explain": "In this blog post we’re presenting a full analysis of a DLL backdoor also reported publicly as Derusbi. This particular piece of malware is associated with the actor known as APT19 (Codoso, C0d0so, Sunshop Group). APT19, also known as C0d0so or Deep Panda, is allegedly a Chinese-based threat group that targeted a lot of industries in the past. FireEye reported that APT19 was active in 2017 when they used 3 different methods to compromise targets: CVE-2017-0199 vulnerability, macro-enabled Microsoft Excel (XLSM) documents and an application whitelisting bypass to the XLSM documents. The malware registers itself as a service if it has run with administrator privileges, otherwise, it establishes persistence via the “Run” registry key. The main purpose of the malicious DLL is to gather information about the victim’s environment such as username, hostname, IP address of the host, the CPU architecture, the default language for the local system, the amount of physical memory, the amount of physical memory currently available, the processor name, the width and the height of the screen of the primary display monitor. The exfiltrated data is encrypted using a XOR operation (the 1-byte key seems to be randomly-chosen), and then encoded using the Base64 algorithm. There is a lot of network communication performed by the malware, however, due to the fact that the C2 server seems to be sinkholed now, we were not able to retrieve the file that was intended to be downloaded by the process.DebugCreate and DebugConnect entries have the same address and represent the starting point of the malicious activity. The process computes a random string of 3 characters using GetTickCount API calls and the algorithm shown in figure 2:It tries to delete a file/directory called <3 random chars generated earlier>.dll from System32 directory as shown below:Because the file doesn’t exist at this time, it’s created using CreateFileA API and then deleted using DeleteFileA API. This technique is used to confirm that it has enough rights to write files in the System32 directory: The malicious process retrieves process privilege details by calling GetTokenInformation with parameter type 0x14 (TokenElevation): Malware running with admin privileges Now it queries the “HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Svchost\\netsvcs” registry value using RegQueryValueExA function:The list of services retrieved earlier is shown in the next figure:There is another service called WinHelpSrv that is added to this list. The “netsvcs” value is modified to reflect the change by calling RegSetValueExA API:The file creates a new service named WinHelpSrv (Windows Helper Service) as follows:The description of the service is set to “This is windows helper service. Include windows update and windows error”:The malicious DLL is registered as a service by adding the “ServiceDll” value that points to its location to the newly created service registry keys:The confirmation that the operation was successful:The process creates a batch file called <10 random chars>.bat (the same algorithm utilized before to generate the random letters is used):The content of the .bat file is presented below: The malicious file sets the priority class 0x100 (REALTIME_PRIORITY_CLASS) for the current process (this means that the current process has the highest possible priority):After this operation, there is a call to SetThreadPriority that sets the priority 15 (THREAD_PRIORITY_TIME_CRITICAL) for the current thread:Now there are 2 SHChangeNotify API calls with the following parameters: 0x4 (SHCNE_DELETE), 0x5 (SHCNF_PATH), the 3rd parameter is the path to rundll32.exe (because the dll was run using rundll32) and the name of the batch file, respectively, and the 4th parameter is 0. These calls have the purpose of notifying the system if rundll32.exe or the batch file is deleted:The batch file is executed using the WinExec function. Basically, it starts the WinHelpSrv service, and then the batch file is deleted:Now we’ll talk a bit about the ServiceMain export function that is called when the new service starts. The process registers a function to handle service control requests by calling the RegisterServiceCtrlHandlerA function:There is a call to SetServiceStatus function using the following SERVICE_STATUS structure: 0x10 (SERVICE_WIN32_OWN_PROCESS), 0x2 (SERVICE_START_PENDING), 0 (no controls are accepted), 0 (dwWin32ExitCode), 0 (dwServiceSpecificExitCode), 0x1 (dwCheckPoint) and 0xbb8 (3000 ms, the amount of time that the service expects an operation to take before the next status update):The malicious process creates an unnamed event object by calling the CreateEvent function:Now it follows another SetServiceStatus call by using the following SERVICE_STATUS structure: 0x10 (SERVICE_WIN32_OWN_PROCESS), 0x4 (SERVICE_RUNNING), 0x1 (SERVICE_ACCEPT_STOP), 0 (dwWin32ExitCode), 0 (dwServiceSpecificExitCode), 0 (dwCheckPoint) and 0 (dwWaitHint):The final operation of this section is to create a new thread using the CreateThread function. The same action will be performed even if the process hasn’t run with admin privileges, as we’ll see later on:The malware uses an anti-analysis technique by comparing the image path of the executable with rundll32.exe. It is done to ensure that the file is not executed by a sandbox/analyst (it exits if that’s the case):The malware is made persistent by adding a new value called WinHelpSrv under the “Run” registry key. In our case, this value points to the location of rundll32.exe because the DLL was run using this executable:The confirmation that the persistence was successfully established:As written before, a new thread is created to execute the same function mentioned when the malware has run with administrator privileges. CreateThread API call is displayed in the next picture：There is a call to GetMessage API to retrieve messages from the thread’s message queue. If the message is 0x10 (WM_CLOSE), 0x11 (WM_QUERYENDSESSION) or 0x16 (WM_ENDSESSION) the current function terminates its execution:During the entire execution, the internet is emulated using Fakenet. We’ve observed multiple MultiByteToWideChar function calls used to convert character strings to UTF-16 (wide character) strings. One such call is shown below:The malware uses the WinHttpOpen function to initialize the use of WinHTTP functions. The user agent is hardcoded in the DLL file:There is a call to WinHttpSetTimeouts function in order to set time-outs involved in HTTP transactions. nResolveTimeout, nConnectTimeout, nSendTimeout and nReceiveTimeout are set to 0x1D4C0 (120.000ms = 120 seconds):The initial target server of an HTTP request is set to 106.185.43.96 on port 0x50 (80). The WinHttpConnect API call is displayed in figure 31.The process performs a GET request to the server mentioned above, with the target resource being /user/atv.html. The pwszReferrer parameter is set to “http://www.google.com” and dwFlags is set to 0x100 (WINHTTP_FLAG_BYPASS_PROXY_CACHE):After the WinHttpOpenRequest call there is a WinHttpSendRequest function call. The HTTP request is intercepted by Fakenet, and it replies with a fake response:Now the process is awaiting a response to the HTTP request by calling the WinHttpReceiveResponse function:Afterward, the malicious file retrieves header information using WinHttpQueryHeaders API with 0x16 (WINHTTP_QUERY_RAW_HEADERS_CRLF) parameter – receives all the headers returned by the HTTP server:There is a second WinHttpQueryHeaders API call with 0x20000013 (WINHTTP_QUERY_FLAG_NUMBER|WINHTTP_QUERY_STATUS_CODE) parameter – the status code returned by the HTTP server. It expects a status code of 200 (OK):The process uses the WinHttpQueryDataAvailable function to see how many bytes are available to be read with WinHttpReadData:Next, there is a call to the WinHttpReadData function that is used to read data returned by the server:The malicious process uses the WSAStartup function with 0x202 parameter (wVersionRequired) in order to use the Winsock DLL. The current directory for the process is changed to the location of the current executable (rundll32.exe):GetAdaptersInfo API is utilized to find adapter information for the local machine. The function call is presented in the next figure.The malware opens the “Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings” registry key by calling the RegCreateKeyExA function:Now the user agent is extracted from the local host by calling the RegQueryValueExA function, as follows:The GetNetworkParams function is utilized to obtain network parameters for the local machine. This information will be exfiltrated as we’ll see later on:GetComputerNameW and GetUserNameW APIs are used to retrieve the NetBIOS name of the local computer and the name of the user associated with the thread, respectively:gethostname and gethostbyname functions are used to get the standard host name for the local machine and host information corresponding to the local host, respectively:The process verifies the operating system version by calling GetVersionExA function and then it checks if the process is running on a 64-bit machine by calling GetCurrentProcess and IsWow64Process APIs (this information is stored in the buffer along with the hostname and username). The malware retrieves the default locale for the OS by calling GetLocaleInfoA function with the following parameters: 0x800 (LOCALE_SYSTEM_DEFAULT), 0xb (LOCALE_IDEFAULTCODEPAGE). The result is OEMCP 437 for English ( United States ) that is converted to hex and copied in the buffer that will be exfiltrated:There is a call to the GlobalMemoryStatusEx function in order to retrieve information about the physical and virtual memory. The amount of physical memory and the amount of physical memory currently available are saved as 32-bits values to the buffer which will be exfiltrated. Also, the processor name is retrieved using a few cpuid instructions (“AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx”) and then copied to the same buffer. The malicious process extracts the width and the height of the screen of the primary monitor (in pixels) via 2 GetSystemMetrics calls, as follows (these are copied to the same buffer as before):Again 12 random chars are generated via the same algorithm as presented before, and then the following URI is constructed (data=12 random chars): “/money/ofcom-fines-nuisance-calls?0023528461146965&data=qgvuclxxlgip”. The function WinHttpOpen is called using the user agent extracted earlier from registry, “Mozilla/4.0 (compatible; MSIE 8.0; Win32)”:As before, the file calls the WinHttpSetTimeouts function using the parameters set as 120 seconds, and then it tries to connect to the C2 server (www.microsoft-cache[.]com) on port 443: The process performs a GET request using WinHttpOpenRequest and WinHttpSendRequest APIs: If the request is not successful, the process sleeps for 180 seconds, and then it tries again. The process retrieves header information by calling WinHttpQueryHeaders with 0x16 (WINHTTP_QUERY_RAW_HEADERS_CRLF) parameter:As before, the malware extracts the status code and checks if it’s equal to 200 by calling WinHttpQueryHeaders API with 0x20000013 (WINHTTP_QUERY_FLAG_NUMBER|WINHTTP_QUERY_STATUS_CODE) parameter:Now there is a call to the WinHttpQueryDataAvailable function, and then it reads the data returned by the C2 server using WinHttpReadData API:The buffer containing the information that will be exfiltrated is XORed byte-by-byte with a one-byte key. The following information belongs to the buffer: the C2 server address, hostname, username, IP address represented as hex values, 01 constant because the process is running on a 64-bit environment, the result of GetLocaleInfoA call (0x1b5 = 437 in our case), the amount of physical memory represented as a 32-bit value, the amount of physical memory currently available represented as a 32-bit value, the processor name, the width of the screen of the primary display monitor represented as a 32-bit value (0x780 = 1920 in our case) and the height of the screen of the primary display monitor represented as a 32-bit value (0x438 = 1080 in our case):After the operation is complete, the buffer looks like in the following picture:The malware developers have written their implementation of the Base64 algorithm rather than relying on Windows APIs. The following picture presents a part of the assembly code corresponding to it:The encrypted buffer is encoded with the Base64 algorithm：As before, there is a WinHttpOpen API call (same user agent as the last time) followed by a WinHttpSetTimeouts function call, and then it tries to connect to www.microsoft-cache[.]com on port 443 using WinHttpConnect API. The malware performs a POST request by calling the WinHttpOpenRequest function (as before, the data parameter contains randomly-generated characters):The encrypted + encoded buffer is exfiltrated to the C2 server via a WinHttpWriteData function call, as shown below:The malicious process performs 2 WinHttpQueryHeaders function calls: 1st one has 0x16 (WINHTTP_QUERY_RAW_HEADERS_CRLF) parameter and the 2nd one has 0x20000013 (WINHTTP_QUERY_FLAG_NUMBER|WINHTTP_QUERY_STATUS_CODE) parameter. It checks out the status code and ensures that it’s 200. The thread continues by calling WinHttpQueryDataAvailable and WinHttpReadData APIs to retrieve the server’s response. The malware performs another GET request to the C2 server:The same steps as before are repeated one more time: 2 WinHttpQueryHeaders calls followed by WinHttpQueryDataAvailable and then WinHttpReadData in order to read the data sent by the server. As mentioned in the Unit42 article at https://unit42.paloaltonetworks.com/new-attacks-linked-to-c0d0s0-group/, the server’s response should contain a “background-color” parameter followed by “#” and an offset. The offset is read, converted to an integer using the atoi function, and then divided by 100, as shown in figure 61:The idea is that the malware reads the data found at the position equal to offset/100. In our case, we’ve modified the response to contain “#28300” which translates to an offset of 28300 (the position will be 28300/100 = 283). The following picture reveals the fact that the process reads the data found at that specific position (0x11b = 283):According to the same article, the first 4 bytes represent the total length, and the remaining data would be Base64-encoded. Indeed we were able to identify the function where the server’s response is Base64-decoded:At the time of analysis, no live response has been provided by the C2 server. According to the Unit42 article, the server would respond with a DLL file with 4 exports: StartWorker, StopWorker, WorkerRun and DllEntryPoint. Even if we didn’t receive a valid response from the server, we were able to find out that the malicious process allocates a new memory area in order to write the DLL code inside: The new area of memory has to be executable because the potential DLL has to run, and that’s why the malware uses VirtualProtect in order to change the protection of the area:After the malicious code would be written in the new memory location, the process would pass the execution flow to the new DLL file, as shown in the figure below:\n\n\n",
+  "reports": [
+    {
+      "link": "https://github.com/StrangerealIntel/CyberThreatIntel/blob/master/China/APT/Chimera/Analysis.md#on-seeing-the-assembly-code-of-the-header-we-can-see-the-multiples-operation-for-parse-by-the-stack-pointer-for-load-the-export-section-which-content-the-meterpreter-shellcode/",
+      "content": "As the first look, we can see the anomaly on the PE header based on redirection to a part of malware. At the beginning I studied a suspicious DLL uploaded on Anyrun, this one have been tagged as \"Malformatted PE header\". By the fact that some Threat Actor let theirs DLL with an invalid header for avoiding to correctly run in sandbox or in AV sandbox and modify it for run by a loader (side-loading with multiples files [Header + DLL], script for rebuilding the header...). Few times after the report of APT19, the group have deleted the export reference in using ordinal way used for allow to use the beacon of Cobalt Strike with a custom DLL. The most recent samples on the same family of APT 19 hide theirs references to the ReflectiveLoader reference in going to the Ordinal way for the custom DLL few time after have been reported by Threat Intelligences companies on theirs reports. We must not forget that if now this technique can be trival and should be notified to fight against distraction measures towards the detection of the tool, in 2016 - 2017, it isn't so well known and was very effective during the pentests so for APT, I'll let you guess.",
+      "domain": "github.com",
+      "tokenized": [
+        {
+          "sent":"As the first look, we can see the anomaly on the PE header based on redirection to a part of malware.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"At the beginning I studied a suspicious DLL uploaded on Anyrun, this one have been tagged as \"Malformatted PE header\".",
+          "is_evidence": 0
+        },
+        {
+          "sent": "By the fact that some Threat Actor let theirs DLL with an invalid header for avoiding to correctly run in sandbox or in AV sandbox and modify it for run by a loader (side-loading with multiples files [Header + DLL], script for rebuilding the header...).",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Few times after the report of APT19, the group have deleted the export reference in using ordinal way used for allow to use the beacon of Cobalt Strike with a custom DLL.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The most recent samples on the same family of APT 19 hide theirs references to the ReflectiveLoader reference in going to the Ordinal way for the custom DLL few time after have been reported by Threat Intelligences companies on theirs reports.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"We must not forget that if now this technique can be trival and should be notified to fight against distraction measures towards the detection of the tool, in 2016 - 2017, it isn't so well known and was very effective during the pentests so for APT, I'll let you guess.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.fortinet.com/blog/threat-research/deep-panda-log4shell-fire-chili-rootkits/",
+      "content": "Following exploitation, Deep Panda deployed a backdoor on the infected machines. In this blog, we share our analysis of the flow of infection, the backdoor, and new rootkit, along with our attribution of this campaign to these Chinese nation-state threat actors. It does this using its post-execution prevention engine to identify malicious activities:Figure 13: FortiEDR blocking the backdoor from communicating with the C2 post-infection All network IOCs have been added to the FortiGuard WebFiltering blocklist. Searching for more files signed with one of the certificates led to a malicious DLL uploaded to VirusTotal with the name winmm.dll. The backdoor copies itself to %APPDATA%\\newdev.dll and creates a service named msupdate2 by creating the service entry directly in the registry. Two of the newdev.dll loaders are configured with the server gnisoft[.]com, which was attributed to Winnti in 2020.In this blog, we have attributed a series of opportunistic Log4Shell infections from the past month to Deep Panda.",
+      "domain": "www.fortinet.com",
+      "tokenized": [
+        {
+          "sent":"Following exploitation, Deep Panda deployed a backdoor on the infected machines.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "In this blog, we share our analysis of the flow of infection, the backdoor, and new rootkit, along with our attribution of this campaign to these Chinese nation-state threat actors.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"It does this using its post-execution prevention engine to identify malicious activities:Figure 13: FortiEDR blocking the backdoor from communicating with the C2 post-infection All network IOCs have been added to the FortiGuard WebFiltering blocklist.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Searching for more files signed with one of the certificates led to a malicious DLL uploaded to VirusTotal with the name winmm.dll.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The backdoor copies itself to %APPDATA%\\newdev.dll and creates a service named msupdate2 by creating the service entry directly in the registry.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Two of the newdev.dll loaders are configured with the server gnisoft[.]com, which was attributed to Winnti in 2020.In this blog, we have attributed a series of opportunistic Log4Shell infections from the past month to Deep Panda.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.mandiant.com/resources/blog/phished-at-the-request-of-counsel/",
+      "content": "APT19 leveraged Rich Text Format (RTF) and macro-enabled Microsoft Excel (XLSM) files to deliver their initial exploits. APT19 phishing emails from this campaign originated from sender email accounts from the \"@cloudsend[.]net\" domain and used a variety of subjects and attachment names. APT19 used three different techniques to attempt to compromise targets. In early May, the phishing lures leveraged RTF attachments that exploited the Microsoft Windows vulnerability described in CVE 2017-0199. In the most recent versions, APT19 added an application whitelisting bypass to the XLSM documents. Toward the end of May, APT19 switched to using macro-enabled Microsoft Excel (XLSM) documents.",
+      "domain": "www.mandiant.com",
+      "tokenized": [
+        {
+          "sent":"APT19 leveraged Rich Text Format (RTF) and macro-enabled Microsoft Excel (XLSM) files to deliver their initial exploits.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"APT19 phishing emails from this campaign originated from sender email accounts from the \"@cloudsend[.]net\" domain and used a variety of subjects and attachment names.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"APT19 used three different techniques to attempt to compromise targets.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "In early May, the phishing lures leveraged RTF attachments that exploited the Microsoft Windows vulnerability described in CVE 2017-0199.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "In the most recent versions, APT19 added an application whitelisting bypass to the XLSM documents.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Toward the end of May, APT19 switched to using macro-enabled Microsoft Excel (XLSM) documents.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://research.checkpoint.com/2021/chinese-apt-group-targets-southeast-asian-government-with-previously-unknown-backdoor/",
+      "content": "As we discussed before, at the final stage of the infection chain the malicious loader is supposed to download, decrypt and load a DLL file into memory. Despite the fact that these vulnerabilities are few years old, they are still used by multiple attack groups, and especially popular with Chinese APT groups. In theory, this plug-in architecture might be used to download and install any other module in addition to the backdoor we received. In this campaign, the attackers utilized the set of Microsoft Office exploits and loaders with anti-analysis and anti\u0002debugging techniques to install a previously unknown backdoor. The attackers use spear\u0002phishing to gain initial access and leverage old Microsoft Office vulnerabilities together with the chain of in-memory loaders to attempt and install a previously unknown backdoor on victim’s machines. The backdoor module appears to be a custom and unique malware with the internal name VictoryDll_x86.dll .Searching for files similar to the final backdoor in the wild, we encountered a set of files that were submitted to VirusTotal in 2018.",
+      "domain": "research.checkpoint.com",
+      "tokenized": [
+        {
+          "sent":"As we discussed before, at the final stage of the infection chain the malicious loader is supposed to download, decrypt and load a DLL file into memory.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Despite the fact that these vulnerabilities are few years old, they are still used by multiple attack groups, and especially popular with Chinese APT groups.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In theory, this plug-in architecture might be used to download and install any other module in addition to the backdoor we received.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In this campaign, the attackers utilized the set of Microsoft Office exploits and loaders with anti-analysis and anti\u0002debugging techniques to install a previously unknown backdoor.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The attackers use spear\u0002phishing to gain initial access and leverage old Microsoft Office vulnerabilities together with the chain of in-memory loaders to attempt and install a previously unknown backdoor on victim’s machines.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The backdoor module appears to be a custom and unique malware with the internal name VictoryDll_x86.dll .Searching for files similar to the final backdoor in the wild, we encountered a set of files that were submitted to VirusTotal in 2018.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

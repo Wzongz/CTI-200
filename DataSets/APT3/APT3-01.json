@@ -1,0 +1,46 @@
+[
+    {
+        "report_id": "report_0",
+        "sentences": [
+            "APT3 (aka Gothic Panda, Pirpi, Buckeye) is a China-based threat group that was first discovered in 2010.",
+            "In 2016, three individuals responsible for purchasing APT3 domains for cyber-espionage campaigns were identified, named as Wu Yingzhuo, Dong Hao and Xia Lei.",
+            "The Pentagon intelligence officials identified Boyusec as being a contractor for the Chinese Ministry of State Security (MSS).",
+            "The group is linked to the Chinese Ministry of State Security (China's Intelligence Services) and held responsible for several popular cyber espionage campaigns, including Operation Clandestine Wolf (2015), Clandestine Fox (2014), and Double Tap (2014).",
+            "The numerous code fragments used in that cyber attack were uniquely linked to threat actor groups tracked as APT3, APT10, and APT12.The group is known to steal critical information from private organizations or government entities, to fulfill the larger Chinese political economic or military goals.",
+            "Wu Yingzhuo and Dong were the major shareholders of a Chinese InfoSec company called the Guangzhou Boyu Information Technology Company, Ltd. (Boyusec)."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "sentences": [
+            "APT3’s command and control (CnC) infrastructure is difficult to track, as there is little overlap across campaigns.",
+            "Additionally, this group uses zero-day exploits, continually updated custom backdoors, and throwaway CnC infrastructure, making it difficult to track them across campaigns.",
+            "In the last several weeks, APT3 actors launched a large-scale phishing campaign against organizations in the following industries:Upon clicking the URLs provided in the phishing emails, targets were redirected to a compromised server hosting JavaScript profiling scripts.",
+            "The China-based threat group FireEye tracks as APT3, aka UPS, is responsible for this exploit and the activity identified in our previous blog post, Operation Clandestine Fox.",
+            "The phishing emails used by APT3 during this campaign were extremely generic in nature, almost appearing to be spam.",
+            "This group is one of the more sophisticated threat groups that FireEye Threat Intelligence tracks, and they have a history of introducing new browser-based zero-day exploits (e.g., Internet Explorer, Firefox, and Adobe Flash Player)."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "sentences": [
+            "APT3 is not just another cyber threat group engaging in malicious cyber activity; research indicates that Boyusec is an asset of the MSS and their activities support China’s political, economic, diplomatic, and military goals.",
+            "According to the Pentagon’s report, the two companies were working together to produce security products, likely containing a backdoor, that would allow Chinese intelligence “to capture data and control computer and telecommunications equipment.”",
+            "Boyusec has a documented history of producing malicious technology and working with the Chinese intelligence services.",
+            "Recorded Future’s research leads us to attribute APT3 to the Chinese Ministry of State Security and Boyusec with a high degree of confidence.",
+            "Victims of APT3 intrusions include companies in the defense, telecommunications, transportation, and advanced technology sectors — as well as government departments and bureaus in Hong Kong, the U.S., and several other countries.",
+            "“Intrusiontruth” documented historic connections between domains used by an APT3 tool called Pirpi and two shareholders in a Chinese information security company named Guangzhou Boyu Information Technology Company, Ltd (also known as Boyusec).Registration information for a domain linked to the malware Pirpi."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "sentences": [
+            "APT3 members then captured traffic related to those attacks—including information on how the NSA was moving laterally on the compromised networks—and then used that as a reference to reverse-engineer the NSA's exploit.",
+            "But it ruled out the possibility that the Chinese threat actor had obtained the weapons from the large trove of NSA cyber weapons that hacking outfit Shadow Brokers publicly leaked in 2017.",
+            "Chinese threat actor APT3 quietly monitored the US National Security Agency's use of a highly sophisticated cyber attack tool and then reverse engineered the code to build an advanced Trojan of its own called Bemstour.",
+            "During the analysis of Bemstour, Check Point researchers found evidence suggesting the Chinese group had closely monitored systems under its control that the NSA had managed to compromise.",
+            "Instead of purchasing from a third party or investing in its own in-house team, APT3 built its malware by collecting and using the NSA's own attack data.",
+            "That conclusion, by Check Point Software, is based on the security vendor's analysis of Bemstour after Symantec in May reported on APT3 using it in attacks on targets in multiple countries, including Belgium, Hong Kong and the Philippines."
+        ]
+    }
+]

@@ -1,0 +1,2 @@
+Bouncing Golf is a cyberespionage campaign targeting Middle Eastern countries.
+Bouncing Golf distributed malware as repackaged legitimate applications, with the malicious code in the com.golf package.

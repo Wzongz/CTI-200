@@ -1,0 +1,36 @@
+HEXANE is a cyber espionage threat group that has targeted oil & gas, telecommunications, aviation, and internet service provider organizations since at least 2017. Targeted companies have been located in the Middle East and Africa, including Israel, Saudi Arabia, Kuwait, Morocco, and Tunisia. HEXANE's TTPs appear similar to APT33 and OilRig but due to differences in victims and tools it is tracked as a separate entity.
+HEXANE has registered and operated domains for campaigns, often using a security or web technology theme or impersonating the targeted organization.
+HEXANE has set up custom DNS servers to send commands to compromised hosts via TXT records.
+HEXANE has used a PowerShell-based keylogging tool to capture the window title.
+HEXANE has used brute force attacks to compromise valid credentials.
+HEXANE has used password spraying attacks to obtain valid credentials.
+HEXANE has used PowerShell-based tools and scripts for discovery and collection on compromised hosts.
+HEXANE has used a VisualBasic script named MicrosoftUpdator.vbs for execution of a PowerShell keylogger.
+HEXANE has used compromised accounts to send spearphishing emails.
+HEXANE has run cmdkey on victim machines to identify stored credentials.
+HEXANE has used a Mimikatz-based tool and a PowerShell script to steal passwords from Google Chrome.
+HEXANE has established fraudulent LinkedIn accounts impersonating HR department employees to target potential victims with fake job offers.
+HEXANE has established email accounts for use in domain registration including for ProtonMail addresses.
+HEXANE has used cloud services, including OneDrive, for data exfiltration.
+HEXANE has identified specific potential victims at targeted organizations.
+HEXANE has targeted executives, human resources staff, and IT personnel for spearphishing.
+HEXANE has identified executives, HR, and IT staff at victim organizations for further targeting.
+HEXANE has downloaded additional payloads and malicious scripts onto a compromised host.
+HEXANE has used a PowerShell-based keylogger named kl.ps1.
+HEXANE has conducted internal spearphishing attacks against executives, HR, and IT personnel to gain information and access.
+HEXANE has used Base64-encoded scripts.
+HEXANE has acquired, and sometimes customized, open source tools such as Mimikatz, Empire, VNC remote access software, and DIG.net.
+HEXANE has run net localgroup to enumerate local groups.
+HEXANE has enumerated processes on targeted systems.
+HEXANE has used remote desktop sessions for lateral movement.
+HEXANE has used net view to enumerate domain machines.
+HEXANE has used a scheduled task to establish persistence for a keylogger.
+HEXANE has enumerated programs installed on an infected machine.
+HEXANE has staged malware on fraudulent websites set up to impersonate targeted organizations.
+HEXANE has collected the hostname of a compromised machine.
+HEXANE has used Ping and tracert for network discovery.
+HEXANE has used tools including BITSAdmin to test internet connectivity from compromised hosts.
+HEXANE has used netstat to monitor connections to specific ports.
+HEXANE has run whoami on compromised machines to identify the current user.
+HEXANE has relied on victim's executing malicious file attachments delivered via email or embedded within actor-controlled websites to deliver malware.
+HEXANE has used cloud services, including OneDrive, for C2.

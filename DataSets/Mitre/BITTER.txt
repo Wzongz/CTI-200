@@ -1,0 +1,17 @@
+BITTER is a suspected South Asian cyber espionage threat group that has been active since at least 2013. BITTER has primarily targeted government, energy, and engineering organizations in Pakistan, China, Bangladesh, and Saudi Arabia.
+BITTER has registered a variety of domains to host malicious payloads and for C2.
+BITTER has used HTTP POST requests for C2.
+BITTER has used DDNS for C2 communications.
+BITTER has encrypted their C2 communications.
+BITTER has exploited Microsoft Office vulnerabilities CVE-2012-0158, CVE-2017-11882, CVE-2018-0798, and CVE-2018-0802.
+BITTER has exploited CVE-2021-1732 for privilege escalation.
+BITTER has downloaded additional malware and tools onto a compromised host.
+BITTER has executed OLE objects using Microsoft Equation Editor to download and run malicious payloads.
+BITTER has disguised malware as a Windows Security update service.
+BITTER has used TCP for C2 communications.
+BITTER has used a RAR SFX dropper to deliver malware.
+BITTER has obtained tools such as PuTTY for use in their operations.
+BITTER has sent spearphishing emails with a malicious RTF document or Excel spreadsheet.
+BITTER has used scheduled tasks for persistence and execution.
+BITTER has registered domains to stage payloads.
+BITTER has attempted to lure victims into opening malicious attachments delivered via spearphishing.

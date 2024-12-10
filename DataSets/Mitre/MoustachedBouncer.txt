@@ -1,0 +1,10 @@
+MoustachedBouncer is a cyberespionage group that has been active since at least 2014 targeting foreign embassies in Belarus.
+MoustachedBouncer has used plugins to execute PowerShell scripts.
+MoustachedBouncer has used JavaScript to deliver malware hosted on HTML pages.
+MoustachedBouncer has injected content into DNS, HTTP, and SMB replies to redirect specifically-targeted victims to a fake Windows Update page to download malware.
+MoustachedBouncer has used plugins to save captured screenshots to .\AActdata\ on an SMB share.
+MoustachedBouncer has exploited CVE-2021-1732 to execute malware components with elevated rights.
+MoustachedBouncer has used malware plugins packed with Themida.
+MoustachedBouncer has used a reverse proxy tool similar to the GitHub repository revsocks.
+MoustachedBouncer has used plugins to take screenshots on targeted systems.
+MoustachedBouncer has used legitimate looking filenames for malicious executables including MicrosoftUpdate845255.exe.

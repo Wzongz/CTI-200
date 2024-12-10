@@ -1,0 +1,52 @@
+[
+    "claim":"The Buhtrap hacking group has switched its targets from Rusian financial businesses and institutions since December 2015 when it moved into cyber-espionage operations, culminating with the use of a recently patched Windows zero-day during June 2019.",
+    "explain":"The Buhtrap hacking group has switched its targets from Rusian financial businesses and institutions since December 2015 when it moved into cyber-espionage operations, culminating with the use of a recently patched Windows zero-day during June 2019. The Windows local privilege escalation 0-day vulnerability tracked as CVE-2019-1132 and abused by Buhtrap as part of its attacks was fixed by Microsoft during this month's Patch Tuesday and it allowed the cyber-crime group to run arbitrary code in kernel mode after successful exploitation. Even though actively targeting banking clients since 2014, Buhtrap's attacks were only detected one year later, in 2015, when it started going after more high-profile victims like financial institutions according to Group-IB and ESET researchers."From August 2015 to February 2016 Buhtrap managed to conduct 13 successful attacks against Russian banks for a total amount of 1.8 billion rubles ($25.7 mln)," says a Group-IB report.ESET researchers were able to observe how the hacker group's "toolset has been expanded with malware used to conduct espionage in Eastern Europe and Central Asia" in multiple targeted campaigns. Buhtrap​​​​​​'s zero-day vulnerability exploit was used during June 2019 in an attack against a governmental institution and it is designed to abuse "a NULL pointer dereference in the win32k.sys component" on computers running older Windows versions. The CVE-2019-1132 exploit Buhtrap employed to compromise governmental computing systems during June impacts the following Windows versions:This vulnerability was only exploitable only on older Windows versions because user processes are no longer allowed to map the NULL page since Windows 8.While Buhtrap has always been known for its stealthy operations, in February 2016 their backdoor's source code which was used in previous attacks leaked online, leading to wide distribution among threat actors and subsequent adoption by various other groups and actors. However, as discovered by the ESET research team, the cyber-crime group moved on and added new tools to its toolkit and, as mentioned in the beginning, it also moved into cyber-espionage."It is always difficult to attribute a campaign to a particular actor when their tools’ source code is freely available on the web," says ESET. "However, as the shift in targets occurred before the source code leak, we assess with high confidence that the same people behind the first Buhtrap malware attacks against businesses and banks are also involved in targeting governmental institutions." Also, "Although new tools have been added to their arsenal and updates applied to older ones, the tactics, techniques and procedures (TTPs) used in the different Buhtrap campaigns have not changed dramatically over all these years." Even though the exact reason behind Buhtrap's decision to expand its operations into cyber-espionage is unknown, it is the perfect "example of the increasingly blurred lines between pure espionage groups and those primarily involved in crimeware activities." A full list of indicators of compromise (IOCs) is available at the end of ESET's report on the Buhtrap group's move into cyber-espionage, including domains of C2 servers, malware sample hashes, codesigning certificate fingerprints, as well as a table of MITRE ATT&CK Techniques.",
+    {
+        "report_id": "report_0",
+        "link":"https://malpedia.caad.fkie.fraunhofer.de/actor/buhtrap",
+        "sentences": [
+            "At the moment, the group is known to target Russian and Ukrainian banks.",
+            "Buhtrap has been active since 2014, however their first attacks against financial institutions were only detected in August 2015.",
+            "Buhtrap is the first hacker group using a network worm to infect the overall bank infrastructure that significantly increases the difficulty of removing all malicious functions from the network.",
+            "From August 2015 to February 2016 Buhtrap managed to conduct 13 successful attacks against Russian banks for a total amount of 1.8 billion rubles ($25.7 mln).",
+            "Malicious programs intentionally scan for machines with an automated Bank-Customer system of the Central Bank of Russia (further referred to as BCS CBR).",
+            "We have not identified incidents of attacks involving online money transfer systems, ATM machines or payment gates which are known to be of interest for other criminal groups."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Buhtrap%2C%20Ratopak%20Spider&n=1",
+        "sentences": [
+            "At the moment, the group is known to target Russian and Ukrainian banks.",
+            "Buhtrap has been active since 2014, however their first attacks against financial institutions were only detected in August 2015.",
+            "Buhtrap is the first hacker group using a network worm to infect the overall bank infrastructure that significantly increases the difficulty of removing all malicious functions from the network.",
+            "From August 2015 to February 2016 Buhtrap managed to conduct 13 successful attacks against Russian banks for a total amount of 1.8 billion rubles ($25.7 mln).",
+            "Malicious programs intentionally scan for machines with an automated Bank-Customer system of the Central Bank of Russia (further referred to as BCS CBR).",
+            "We have not identified incidents of attacks involving online money transfer systems, ATM machines or payment gates which are known to be of interest for other criminal groups.\n"
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.zdnet.com/article/recent-windows-zero-day-used-by-buhtrap-gang-for-cyber-espionage/",
+        "sentences": [
+            "A report from Group-IB claims the group was incredibly successful during this stage of their evolution, managing to steal over $25 million from at least 13 Russian banks, between August 2015 and February 2016.But success didn't last for long, and the group's operations were seriously crippled in February 2016, when the source code of their eponymously named Buhtrap backdoor was leaked online.",
+            "An obscure hacker group known as Buhtrap is actually behind a recent Windows OS zero-day vulnerability that was exploited in the wild.",
+            "However, Buhtrap had previously been involved in cyber-espionage operations against the governments of countries located in Eastern Europe and Central Asia -- the classic hunting grounds of Russian state-sponsored hackers.",
+            "However, as the shift in targets occurred before the source code leak, we assess with high confidence that the same people behind the first Buhtrap malware attacks against businesses and banks are also involved in targeting governmental institutions,\" ESET said.",
+            "Since Buhtrap is believed to be operating out of Russia, it's easy to come up with all sorts of unsubstantiated theories like \"the Russian intelligence service recruited Buhtrap to spy for them to turn a blind eye to their past hacks of Russian banks.\"",
+            "Such theories about Buhtrap are currently not supported by any evidence, but the Russian intelligence apparatus has recruited hackers to do their dirty work before -- see 2014 Yahoo hack or this CBS 60 Minutes episode from April 2019."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.trendmicro.com/vinfo/pl/security/news/cybercrime-and-digital-threats/cybercriminal-gang-used-spear-phishing-to-steal-25m-russian-banks",
+        "sentences": [
+            "As such, the group explored several methods to spread the malware, which allowed them to penetrate the systems of bank clients and corporate networks.",
+            "During the period between May to August of 2015, compromised websites from accounting portals, legal entities, and even construction websites were used to bring banking officials and personnel to a poisoned server that hosted an exploit kit that installs the malware.",
+            "Group-IB notes, “from August 2015 to February 2016 Buhtrap managed to conduct 13 successful attacks against Russian banks for a total amount of 1.8 billion rubles ($25.7 million).”",
+            "In a report published on Thursday, Russia-based security researchers divulged information about a series of attacks by a cybercrime group called Buhtrap that stole from banking institutions in Russia.",
+            "The report furthers, “Buhtrap is the first hacker group using a network worm to infect the overall bank infrastructure that significantly increases the difficulty of removing all malicious functions from the network.”",
+            "Through these methods, Buhtrap managed to amass 1.8 billion rubles (US$25 million) in a period of six months—the highest amount stolen from a Russian bank was recorded at nearly 600 million rubles ($9 million), while the lowest was marked at 25 million rubles ($370,000)."
+        ]
+    }
+]

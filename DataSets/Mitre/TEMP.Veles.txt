@@ -1,0 +1,22 @@
+TEMP.Veles is a Russia-based threat group that has targeted critical infrastructure. The group has been observed utilizing TRITON, a malware framework designed to manipulate industrial safety systems.
+TEMP.Veles has used Virtual Private Server (VPS) infrastructure.
+TEMP.Veles has used a publicly-available PowerShell-based tool, WMImplant. The group has also used PowerShell to perform Timestomping.
+TEMP.Veles has created staging folders in directories that were infrequently used by legitimate users or processes.
+TEMP.Veles has modified and added entries within HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options to maintain persistence.
+TEMP.Veles has used a VPN to persist in the victim environment.
+TEMP.Veles routinely deleted tools, logs, and other files after they were finished with them.
+TEMP.Veles used timestomping to modify the $STANDARD_INFORMATION attribute on tools.
+TEMP.Veles has renamed files to look like legitimate files, such as Windows update files or Schneider Electric application files.
+TEMP.Veles has used port-protocol mismatches on ports such as 443, 4444, 8531, and 50501 during C2.
+TEMP.Veles has modified files based on the open-source project cryptcat in an apparent attempt to decrease AV detection rates.
+TEMP.Veles has obtained and used tools such as Mimikatz and PsExec.
+TEMP.Veles has used Mimikatz and a custom tool, SecHack, to harvest credentials. 
+TEMP.Veles utilized RDP throughout an operation.
+TEMP.Veles has relied on encrypted SSH-based tunnels to transfer tools and for remote command/program execution.
+TEMP.Veles has used scheduled task XML triggers.
+TEMP.Veles has planted Web shells on Outlook Exchange servers.
+TEMP.Veles has used compromised VPN accounts.
+TEMP.Veles utilizes watering hole websites to target industrial employees. 
+TEMP.Veles utilized remote desktop protocol (RDP) jump boxes to move into the ICS environment. 
+TEMP.Veles targeted several ICS vendors and manufacturers. 
+TEMP.Veles used valid credentials when laterally moving through RDP jump boxes into the ICS environment. 

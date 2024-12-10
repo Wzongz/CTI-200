@@ -1,0 +1,53 @@
+claim：The file contains an embedded macro that uses a VBA self decoding technique to decode itself within the memory spaces of Microsoft Office without writing to the disk, and then embeds a variant of the RokRat into Notepad.
+explain：On December 7 2020 we identified a malicious document uploaded to Virus Total which was purporting to be a meeting request likely used to target the government of South Korea. The meeting date mentioned in the document was 23 Jan 2020, which aligns with the document compilation time of 27 Jan 2020, indicating that this attack took place almost a year ago. The file contains an embedded macro that uses a VBA self decoding technique to decode itself within the memory spaces of Microsoft Office without writing to the disk. It then embeds a variant of the RokRat into Notepad. Based on the injected payload, we believe that this sample is associated with APT37. This North Korean group is also known as ScarCruft, Reaper and Group123 and has been active since at least 2012, primarily targeting victims in South Korea. In the past, this APT has relied on Hangul Office documents (hwp files) to target victims, as it’s software that’s commonly used in South Korea. However, in this blog we describe an interesting alternative method, delivered via self-decoding VBA Office files. To the best of our knowledge, this is a first for this APT group. The actor used the VBA self-decoding concept in its macro that was first introduced in 2016. A malicious macro is encoded within another that is then decoded and executed dynamically. We can consider this technique an unpacker stub, which is executed upon opening the document. This unpacker stub unpacks the malicious macro and writes it into the memory of Microsoft Office without being written to disk. This can easily bypass several security mechanisms. Microsoft by default disables the dynamic execution of the macro, and if an attacker needs to execute one dynamically—which is the case here—the threat actor needs to bypass the VB object model (VBOM) by modifying its registry value. To check if it can bypass the VBOM, it looks to see if the VBOM can be accessed or not. The “ljojijbjs” function is used for this purpose and checks read access to the VBProject.VBComponent. If it triggers an exception, it means the VBOM needs to be bypassed (IF clause). If there is no exception, it means the VBOM is already bypassed and VBA can extract its macro dynamically (Else clause). After bypassing VBOM, it calls another function which creates a Mutex in the victims’s machine by calling CreateMutexA API call and names it “mutexname”. This could be used by the actor to make sure it infects its victim only once but in this document we didn’t observe any evidence of checking the mutex.Finally, in order to perform the self-decoding process, it needs to open itself by creating a new Application object and load the current document in it in invisible mode.If VBOM is already bypassed, The function Init is called and generates the malicious macro content in obfuscated format. A loop has been defined to de-obfuscate the macro. For each iteration it takes a character in the obfuscated macro and looks for its index in StringEncoded. When it finds its index, it looks for its equivalent index in StringOriginal, takes that character from it and adds it to the new macro. As an example “gm* bf” as encoded macro will be decoded to “Option”.Following this process gives us the final macro that will be executed in the memory space of Microsoft Office. In order to execute this decoded macro, it creates a module and writes into it before calling its main function to execute the macro. The main function defines a shellcode in hex format, and a target process which is Notepad.exe. Then, based on the OS version, it creates a Notepad.exe process and allocates memory within its address space using VirtualAlloc. It then writes the shellcode into the allocated memory using WriteProcessMemory. At the end it calls CreateRemoteThread to execute the shellcode within the address space of Notepad.exe. Downloaded payload is a variant of a cloud-based RAT known as RokRat which has been used by this group since 2017. This sample compilation date is 29 Oct 2019. This RAT is known to steal data from a victim’s machine and send them to cloud services (Pcloud, Dropbox, Box, Yandex).Similar to its previous variants, it uses several anti-analysis techniques to make sure it is not running in an analysis environment. Here are some of the checks：The primary initial infection vector used by APT37 is spear phishing, in which the actor sends an email to a target that is weaponized with a malicious document. The case we analyzed is one of the few where they did not use Hwp files (Hangul Office) as their phish documents and instead used Microsoft Office documents weaponized with a self decode macro. That technique is a clever choice that can bypass several static detection mechanisms and hide the main intent of a malicious document. The final payload used by this threat actor is a known custom RAT (RokRat) that the group has used in previous campaigns. In the past, RokRat has been injected into cmd.exe, whereas here they chose Notepad.exe.
+
+[
+    {
+	link：https://blog.google/threat-analysis-group/internet-explorer-0-day-exploited-by-north-korean-actor-apt37/
+        "report_id": "report_0",
+        "sentences": [
+            "Because Office renders this HTML content using Internet Explorer (IE), this technique has been widely used to distribute IE exploits via Office files since 2017 (e.g. CVE-2017-0199).",
+            "On October 31, 2022, multiple submitters from South Korea reported new malware to us by uploading a Microsoft Office document to VirusTotal.",
+            "These malicious documents exploited an Internet Explorer 0-day vulnerability in the JScript engine, CVE-2022-41128.",
+            "This blog will describe a 0-day vulnerability, discovered by TAG in late October 2022, embedded in malicious documents and used to target users in South Korea.",
+            "This likely detects direct HTML exploit code fetches which are not part of a real infection.",
+            "We attribute this activity to a group of North Korean government-backed actors known as APT37."
+        ]
+    },
+    {
+	link:https://vxug.fakedoma.in/archive/APTs/2020/2020.03.30/Operation%20Spy%20Cloud.pdf
+        "report_id": "report_1",
+        "sentences": [
+            "'Geumseong121', a North Korean threat group has been conducting the state-sponsored espionage activities in the cyberspace of South Korea for years, mainly targeting those who are engaged in unification, foreign affairs, or national security, the leaders of the organizations specializing in North Korean issues, and North Korean refugees.",
+            "Based on the samples we collected, the campaign's decoy documents used the file formats DOC, XLS, and HWP, the Korean government standard word processor format, targeting the users in South Korea.",
+            "The analysis result of the malicious DOC Word file used for the attack reveals that the shellcode is combined with the obfuscated malicious VBA macro.",
+            "The following VBA macro functions are included in the DOC document, and the malicious function is activated when the [Enable Content] button is executed.",
+            "The report titled “The stealthy mobile APT attack carried out by Geumseong121 APT hacking group” published in November last year, reveals that the group has attempted to perform cyber-attacks targeting a wide range of devices including computers as well as mobile devices.",
+            "The same technique has been used for most PostScripts of the HWP malicious document file."
+        ]
+    },
+    {
+	link：https://securelist.com/scarcruft-continues-to-evolve-introduces-bluetooth-harvester/90729/
+        "report_id": "report_2",
+        "sentences": [
+            "In addition, this victim was also attacked by the Konni malware on 03 April 2018.",
+            "It used a multi-stage binary infection to update each module effectively and evade detection.",
+            "The Konni malware was disguised as a North Korean news item in a weaponized documents (the name of the document was “Why North Korea slams South Korea’s recent defense talks with U.S-Japan.zip”)",
+            "This malware uses the public privilege escalation exploit code CVE-2018-8120 or UACME which is normally used by legitimate red teams.",
+            "We also discovered an interesting piece of rare malware created by this threat actor – a Bluetooth device harvester.",
+            "We discovered one victim from Russia that also triggered a malware detection while staying in North Korea in the past."
+        ]
+    },
+    {
+	link：https://www.volexity.com/blog/2021/08/17/north-korean-apt-inkysquid-infects-victims-using-browser-exploits/
+        "report_id": "report_3",
+        "sentences": [
+            "It was likely a direct implementation of the PoC code posted here by Korean security company Enki.",
+            "Malicious code on the Daily NK website was observed from at least late March 2021 until early June 2021.",
+            "The attacker added a single line of code to the following legitimate file on Daily NK: The effect of this is that if a user visited Daily NK using Internet Explorer, then a page would load an additional JavaScript file from the following URL: When requested, with the correct Internet Explorer User-Agent, this host would serve additional obfuscated JavaScript code.",
+            "The attacker-included code was only added for short periods of time and was swiftly removed, making identification of this activity difficult as the malicious content was not always available.",
+            "The file was hosted at the following location:The \"history\" file was an XOR-encoded (0xCF) copy of a custom malware family that both the malware developer and Volexity refer to as BLUELIGHT.",
+            "The moniker is derived from the PDB string observed in the malware:It is likely that BLUELIGHT is used as a secondary payload following successful delivery of Cobalt Strike, which was used as an initial payload in both exploitation cases highlighted earlier in this report."
+        ]
+    }
+]

@@ -1,0 +1,142 @@
+{
+    "event_id": "132",
+    "claim": "ZIRCONIUM is a threat group operating out of China, active since at least 2017, that has targeted individuals associated with the 2020 US presidential election and prominent leaders in the international affairs community.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "A Chinese cyber-espionage group known as APT31 (or Zirconium) has been seen hijacking home routers to form a proxy mesh around its server infrastructure in order to relay and disguise the origins of their attacks. In a security alert published today, the French National Cybersecurity Agency, also known as ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information), published a list of 161 IP addresses that have been hijacked by APT31 in recent attacks against French organizations. The agency said the APT31 attacks started at the beginning of 2021 and are still ongoing. French officials said that APT31's proxy botnet was used to perform both reconnaissance operations against their targets, but also to carry out the attacks themselves. In a series of tweets today, Ben Koehl, a security researcher for the Microsoft Threat Intelligence Center, said APT31 was using this proxy network to make it appear that attacks are coming from the target organization's national IP address space. One of the reasons for this tactic is that some organizations might be blocking incoming traffic from international IP addresses as a security measure. ANSSI officials are now urging companies, both in France and in other countries, to take the 161 IP addresses and see if connections have been detected in network logs this year, which would suggest that an organization might have been the target of an APT31 operation. “Finding one of the IOCs in logs does not mean the entire system has been compromised and further analysis will be required,” the agency said. According to William Thomas, a security researcher at security firm Cyjax, the IP addresses were located all over the world, and not all were located in France. A copy of the APT31 malware implant installed on the hacked routers was also identified on VirusTotal. The operational tactic of using home routers to create proxy meshes to disguise the origin of web attacks is a common tactic these days. In most cases, hacked routers and IoT devices are assembled into botnets, which are then rented to cybercrime groups. These groups use the botnets as giant proxy meshes to relay a wide variety of malicious activity, such as brute-force attacks, vulnerability exploitation, port scanning operations, and traffic carrying stolen data. But while the tactic has been widely used by financially motivated cybercrime groups, it has also been seen as part of the arsenal of nation-state hacking groups since at least April 2018, when Akamai mentioned APT abuse in a report [PDF] on the UPnProxy technique. On another note, APT31 was also one of the two Chinese hacking groups, together with APT40, that the US and its allies accused on Monday of orchestrating a hacking campaign against Microsoft Exchange servers earlier this year. The Record understands that APT31 used proxy meshes made of home routers as a way to scan the internet and then launch and disguise its attacks against Exchange email servers earlier this year; however, the technique was also used for other operations as well.\n\n\n",
+    "reports": [
+        {
+            "link": "https://techcrunch.com/2022/07/14/china-hackers-capitol-riot-january-6/",
+            "content": "However, the researchers noted a “very abrupt shift in targeting of reconnaissance phishing” in the days leading up to the January 6 attack on the U.S. Capitol, with the hackers focusing on Washington, D.C. and White House correspondents. Proofpoint observed another China-backed threat group, known as TA459, targeting journalists and media personnel in late April 2022 with malware that, if opened, gave the attackers a backdoor to a victim’s machine. Researchers at cybersecurity company Proofpoint said they have observed the China-backed advanced persistent threat group, TA412, also known as Zirconium, engaging in several reconnaissance phishing campaigns since early last year. The researchers also report that TA453, another hacking group that is believed to support Iran’s Islamic Revolutionary Guard Corps intelligence collection efforts, is masquerading as journalists before deploying credential harvesting malware. The researchers said it has seen a “sustained effort” by advanced threat groups around the world targeting or leveraging journalists, and found similar cyber-operations launched by state-sponsored hackers in North Korea, Turkey and Iran. Then, months later in August 2021, Zirconium turned its attention to journalists working on cybersecurity, surveillance and privacy issues with a focus on China.",
+            "domain": "techcrunch.com",
+            "tokenized": [
+                {
+                    "sent": "However, the researchers noted a “very abrupt shift in targeting of reconnaissance phishing” in the days leading up to the January 6 attack on the U.S. Capitol, with the hackers focusing on Washington, D.C. and White House correspondents.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Proofpoint observed another China-backed threat group, known as TA459, targeting journalists and media personnel in late April 2022 with malware that, if opened, gave the attackers a backdoor to a victim’s machine.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Researchers at cybersecurity company Proofpoint said they have observed the China-backed advanced persistent threat group, TA412, also known as Zirconium, engaging in several reconnaissance phishing campaigns since early last year.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The researchers also report that TA453, another hacking group that is believed to support Iran’s Islamic Revolutionary Guard Corps intelligence collection efforts, is masquerading as journalists before deploying credential harvesting malware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The researchers said it has seen a “sustained effort” by advanced threat groups around the world targeting or leveraging journalists, and found similar cyber-operations launched by state-sponsored hackers in North Korea, Turkey and Iran.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Then, months later in August 2021, Zirconium turned its attention to journalists working on cybersecurity, surveillance and privacy issues with a focus on China.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://research.checkpoint.com/2021/the-story-of-jian/",
+            "content": "Adding this conclusion to the contextual information we have, Microsoft’s independent attribution of CVE-2017-0005 to a Chinese APT, and NSA’s attribution of CVE-2019-0803 to “Chinese State-Sponsored Actors”, make us believe that the exploit of CVE-2017-0005 was indeed used by attackers that are part of a Chinese group. During this investigation, we managed to unravel the hidden story behind “Jian”, a 0-Day exploit that was previously attributed to APT31 (Zirconium), and show its true origins. Having dated APT31’s samples to 3 years prior to the Shadow Broker’s “Lost in Translation” leak, our estimate is that these Equation Group exploit samples could have been acquired by the Chinese APT in one of these ways: Captured during an Equation Group network operation on a Chinese target. In our review of Microsoft’s report on the vulnerability that was caught exploited in the wild and was attributed to Zirconium (APT31), we found a few interesting details: The exploit was caught and reported to Microsoft by Lockheed Martin’s Computer Incident Response Team. The APT31 exploit was reported to Microsoft by Lockheed Martin’s Computer Incident Response Team, hinting at a possible attack against an American target. We began with analyzing “Jian”, the Chinese (APT31 / Zirconium) exploit for CVE-2017-0005, which was reported by Lockheed Martin’s Computer Incident Response Team.",
+            "domain": "research.checkpoint.com",
+            "tokenized": [
+                {
+                    "sent": "Adding this conclusion to the contextual information we have, Microsoft’s independent attribution of CVE-2017-0005 to a Chinese APT, and NSA’s attribution of CVE-2019-0803 to “Chinese State-Sponsored Actors”, make us believe that the exploit of CVE-2017-0005 was indeed used by attackers that are part of a Chinese group.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "During this investigation, we managed to unravel the hidden story behind “Jian”, a 0-Day exploit that was previously attributed to APT31 (Zirconium), and show its true origins.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Having dated APT31’s samples to 3 years prior to the Shadow Broker’s “Lost in Translation” leak, our estimate is that these Equation Group exploit samples could have been acquired by the Chinese APT in one of these ways: Captured during an Equation Group network operation on a Chinese target.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In our review of Microsoft’s report on the vulnerability that was caught exploited in the wild and was attributed to Zirconium (APT31), we found a few interesting details: The exploit was caught and reported to Microsoft by Lockheed Martin’s Computer Incident Response Team.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The APT31 exploit was reported to Microsoft by Lockheed Martin’s Computer Incident Response Team, hinting at a possible attack against an American target.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We began with analyzing “Jian”, the Chinese (APT31 / Zirconium) exploit for CVE-2017-0005, which was reported by Lockheed Martin’s Computer Incident Response Team.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://blogs.microsoft.com/on-the-issues/2020/09/10/cyberattacks-us-elections-trump-biden/",
+            "content": "For nation-state actors, this is a simple way to perform reconnaissance on targeted accounts to determine if the account is valid or the user is active.ec.push_back();We disclose attacks like these because we believe it’s important the world knows about threats to democratic processes. In recent months, it has engaged in brute force attacks and password spray, two tactics that have likely allowed them to automate aspects of their operations. More broadly, these attacks underscore the continued importance of work underway at the United Nations to protect cyberspace and initiatives like the Paris Call for Trust and Security in Cyberspace. Strontium also disguised these credential harvesting attacks in new ways, running them through more than 1,000 constantly rotating IP addresses, many associated with the Tor anonymizing service. We also report here on attacks against other institutions and enterprises worldwide that reflect similar adversary activity. We’ve detected thousands of attacks from Zirconium between March 2020 and September 2020 resulting in nearly 150 compromises.",
+            "domain": "blogs.microsoft.com",
+            "tokenized": [
+                {
+                    "sent": "For nation-state actors, this is a simple way to perform reconnaissance on targeted accounts to determine if the account is valid or the user is active.ec.push_back();We disclose attacks like these because we believe it’s important the world knows about threats to democratic processes.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In recent months, it has engaged in brute force attacks and password spray, two tactics that have likely allowed them to automate aspects of their operations.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "More broadly, these attacks underscore the continued importance of work underway at the United Nations to protect cyberspace and initiatives like the Paris Call for Trust and Security in Cyberspace.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Strontium also disguised these credential harvesting attacks in new ways, running them through more than 1,000 constantly rotating IP addresses, many associated with the Tor anonymizing service.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We also report here on attacks against other institutions and enterprises worldwide that reflect similar adversary activity.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We’ve detected thousands of attacks from Zirconium between March 2020 and September 2020 resulting in nearly 150 compromises.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.zscaler.com/blogs/security-research/apt-31-leverages-covid-19-vaccine-theme-and-abuses-legitimate-online/",
+            "content": "By abusing legitimate services such as GitHub, Google Drive, and Dropbox in the infection chain, end-to-end, this threat actor manages to evade network security solutions.\n\nIn October 2020, Google’s Threat Analysis Group (TAG) attributed an attack using a similar payload to APT-31 in its report here. The threat actor in this case leverages legitimate online services end-to-end in the infection chain in order to blend in with benign traffic and evade network security controls.\n\n. The threat actor, APT-31, quickly leverages current themes, such as COVID-19, or political themes of interest to the victim as a social engineering technique to infect their machines. Therefore, we can confidently attribute the attack discussed in this blog to APT-31.In this section, we share details of the decoy documents that were displayed to the user as a social engineering technique as the malicious payload executed in the background.\n\n. We will conclude our analysis by sharing indicators of compromise (IOCs), useful metadata, and the complete decompiled Python script, which was the main payload involved in these attacks.",
+            "domain": "www.zscaler.com",
+            "tokenized": [
+                {
+                    "sent": "By abusing legitimate services such as GitHub, Google Drive, and Dropbox in the infection chain, end-to-end, this threat actor manages to evade network security solutions.\n\n",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In October 2020, Google’s Threat Analysis Group (TAG) attributed an attack using a similar payload to APT-31 in its report here.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The threat actor in this case leverages legitimate online services end-to-end in the infection chain in order to blend in with benign traffic and evade network security controls.\n\n",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The threat actor, APT-31, quickly leverages current themes, such as COVID-19, or political themes of interest to the victim as a social engineering technique to infect their machines.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Therefore, we can confidently attribute the attack discussed in this blog to APT-31.In this section, we share details of the decoy documents that were displayed to the user as a social engineering technique as the malicious payload executed in the background.\n\n",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We will conclude our analysis by sharing indicators of compromise (IOCs), useful metadata, and the complete decompiled Python script, which was the main payload involved in these attacks.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        }
+    ]
+}

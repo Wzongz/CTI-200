@@ -1,0 +1,52 @@
+[
+    "claim":"Promethium, the threat group also known as StrongPity, has been tracked in a new wave of attacks deploying an expanded list of Trojanized installers that abuse the popularity of legitimate applications. ",
+    "explain":"Promethium, the threat group also known as StrongPity, has been tracked in a new wave of attacks deploying an expanded list of Trojanized installers that abuse the popularity of legitimate applications. Active since roughly 2002, the Promethium advanced persistent threat (APT) group has been exposed time and time again by security researchers and civil rights outfits for prolific surveillance and intelligence-gathering related to political targets. Typically, Promethium has focused on targets across Turkey and Syria, although the group has also dipped its toe into Italy and Belgium in the past. In new, separate reports, researchers from Cisco Talos and BitDefender (.PDF) have revealed not only new countries on the hit-list, but also an upgraded arsenal designed to compromise victim machines. Talos has tracked roughly 30 new command-and-control (C2) servers belonging to Promethium tied to an evolved form of the group's surveillance malware, StrongPity3, that is also believed to be linked to state-sponsorship. To hide the spyware's activities, BitDefender says that the C2 network the team traced has three infrastructure layers, including the use of proxy servers, VPNs, and IP addresses that receive forwarded data. In total, the team mapped 47 servers with different functionalities. According to Talos, the target country list now includes Colombia, India, Canada, and Vietnam. BitDefender's report notes targets located near the border between Turkey and Syria, as well as Istanbul, which the team says "enforces the idea that this threat might be involved in the geopolitical conflict between Turkey and the Kurdish community."In order to infect more victims, the APT has bolstered its toolkit via the use of new Trojanized setup files designed to deploy the StrongPity3 spyware. These include a Turkish language version of the Firefox browser, VPN PRO, DriverPack, and 5kPlayer malicious files, but there may be others. The Trojanized files will install the legitimate application on a compromised machine, alongside the malware, in a bid to avoid detection and to prevent triggering suspicion in the victim when their expected software does not materialize. While examining installers linked to the threat actors, BitDefender noted that the malware droppers have compile times that indicate normal work weeks and 9 - 6 schedules, which could suggest that the campaign involves paid developer teams. The main differences between StrongPity3 and the previous version, StrongPity2, are a switch from libcurl to winhttp when performing C2 requests and a persistence mechanism turned from a registry key into a service. The APT's latest attack patterns follow the surveillance trend, together with the exfiltration of any Microsoft Office files detected on a compromised machine. While the Talos team was unable to track the initial attack vector, the researchers say the files could land via a watering hole attack or in-path request interception -- with an ISP performing an HTTP redirect -- as described by CitizenLab in a 2018 report on Promethium's activities. CitizenLab's report documents the use of Sandvine/Procera Networks Deep Packet Inspection (DPI) devices to intercept traffic and deliver malware in Turkey and Syria, as well as to conduct malvertising and to covertly mine cryptocurrency across Egypt. "Promethium has been resilient over the years," Talos says. "Its campaigns have been exposed several times, but that was not enough to make the actors behind it to make them stop. The fact that the group does not refrain from launching new campaigns even after being exposed shows their resolve to accomplish their mission.",
+    {
+        "report_id": "report_0",
+        "link":"https://blog.talosintelligence.com/promethium-extends-with-strongpity3/",
+        "sentences": [
+            "Previous research even linked PROMETHIUM to state-sponsored threats.",
+            "Talos telemetry shows that PROMETHIUM is expanding its reach and attempts to infect new targets across several countries.",
+            "The PROMETHIUM threat actor is dedicated and resilient, exposing them hasn't refrained them from moving forward with their agenda.",
+            "The PROMETHIUM threat actor — active since 2012 — has been exposed multiple times over the past several years..",
+            "The group has at least four new trojanized setup files we observed: Firefox (a browser), VPNpro (a VPN client), DriverPack (a pack of drivers) and 5kPlayer (a media player).Talos could not pinpoint the initial attack vector, however, the use of trojanized installation files to well-known applications is consistent with the previously documented campaigns.",
+            "We can conclude that the PROMETHIUM threat actor is interested in new countries or the malicious framework developed by this threat actor is exported in more countries than previously thought."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://www.anomali.com/blog/anomali-cyber-watch-fortios-zero-day-has-been-exploited-by-an-apt-two-rats-spread-by-four-types-of-jar-polyglot-files-promethium-apt-continued-android-targeting",
+        "sentences": [
+            "A pro-Russian DDoS group called NoName057(16) has been targeting Poland, Latvia, Lithuania, and Ukraine (in the order of intensity).",
+            "After it was taken down, NoName057(16) started building a volunteer hacktivist DDoS collective.",
+            "An installation leads to modular, fully-functional spyware, similar to the Android spyware used by Promethium in a previous campaign targeting Syria.",
+            "ESET researchers identified a new campaign attributed to the Turkey-sponsored Promethium (StrongPity) APT.",
+            "Russian-based hosting provider DDoS-Guard hosts these domains together with other threats including Bitcoin mixers, carding and crimeware sites, fake e-commerce shops, and malware distribution sites.",
+            "The various threat intelligence stories in this iteration of the Anomali Cyber Watch discuss the following topics: APT, DDoS, Polyglot, RATs, Russia, Skimmers, Trojanized apps, and Ukraine."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://cyware.com/news/promethium-apt-working-its-way-up-with-new-targeted-countries-and-malware-5585cd09",
+        "sentences": [
+            "Around 30 C2 servers have been associated with the threat actor’s highly sophisticated malware - StrongPity3.",
+            "Based on the characteristics of the group revealed so far, some experts believe it to be a nation state-backed operation.",
+            "Moreover, four trojanized setup files have been spotted, including Firefox, 5kPlayer, DriverPack, and VPNpro.",
+            "The activities of the hacking group can be traced back to 2012 and are associated with political cyber-espionage.",
+            "The bottom line is that Promethium APT is a resilient threat actor since it has not been subdued even after repeated exposure.",
+            "The group targets a higher number of victims by bolstering its toolkit via the use of new trojanized setup files that deploy the StrongPity3 malware."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://attack.mitre.org/groups/G0056/",
+        "sentences": [
+            "PROMETHIUM has attempted to get users to execute compromised installation files for legitimate software including compression applications, security software, browsers, file recovery applications, and other tools and utilities.",
+            "PROMETHIUM has created admin accounts on a compromised host.",
+            "PROMETHIUM has demonstrated similarity to another activity group called NEODYMIUM due to overlapping victim and campaign characteristics.",
+            "PROMETHIUM has disguised malicious installer files by bundling them with legitimate software installers.",
+            "PROMETHIUM has used watering hole attacks to deliver malicious versions of legitimate installers.",
+            "PROMETHIUM is an activity group focused on espionage that has been active since at least 2012."
+        ]
+    }
+]

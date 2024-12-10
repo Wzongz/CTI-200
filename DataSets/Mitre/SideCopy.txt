@@ -1,0 +1,17 @@
+SideCopy is a Pakistani threat group that has primarily targeted South Asian countries, including Indian and Afghani government personnel, since at least 2019. SideCopy's name comes from its infection chain that tries to mimic that of Sidewinder, a suspected Indian threat group.
+SideCopy has sent Microsoft Office Publisher documents to victims that have embedded malicious macros that execute an hta file via calling mshta.exe.
+SideCopy has compromised domains for some of their infrastructure, including for C2 and staging malware.
+SideCopy has used a malicious loader DLL file to execute the credwiz.exe process and side-load the malicious payload Duser.dll.
+SideCopy has delivered trojanized executables via spearphishing emails that contacts actor-controlled servers to download malicious payloads.
+SideCopy has used a legitimate DLL file name, Duser.dll to disguise a malicious remote access tool.
+SideCopy has executed malware by calling the API function CreateProcessW.
+SideCopy has sent spearphishing emails with malicious hta file attachments.
+SideCopy has crafted generic lures for spam campaigns to collect emails and credentials for targeting efforts.
+SideCopy has collected browser information from a compromised host.
+SideCopy uses a loader DLL file to collect AV product names from an infected host.
+SideCopy has used compromised domains to host its malicious payloads.
+SideCopy has utilized mshta.exe to execute a malicious hta file.
+SideCopy has identified the OS version of a compromised host.
+SideCopy has identified the country location of a compromised host.
+SideCopy has identified the IP address of a compromised host.
+SideCopy has attempted to lure victims into clicking on malicious embedded archive files sent via spearphishing campaigns.

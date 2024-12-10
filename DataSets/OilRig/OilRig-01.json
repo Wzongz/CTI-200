@@ -1,0 +1,52 @@
+[
+    "claim":"OilRig is a suspected Iranian threat group that has targeted Middle Eastern and international victims since at least 2014,which has targeted a variety of sectors, including financial, government, energy, chemical, and telecommunications.",
+    "explain":"OilRig is an Iranian threat group operating primarily in the Middle East by targeting organizations in this region that are in a variety of different industries; however, this group has occasionally targeted organizations outside of the Middle East as well. It also appears OilRig carries out supply chain attacks, where the threat group leverages the trust relationship between organizations to attack their primary targets. OilRig is an active and organized threat group, which is evident based on their systematic targeting of specific organizations that appear to be carefully chosen for strategic purposes. Attacks attributed to this group primarily rely on social engineering to exploit the human rather than software vulnerabilities; however, on occasion this group has used recently patched vulnerabilities in the delivery phase of their attacks. The lack of software vulnerability exploitation does not necessarily suggest a lack of sophistication, as OilRig has shown maturity in other aspects of their operations. Such maturities involve: -Organized evasion testing used the during development of their tools. -Use of custom DNS Tunneling protocols for command and control (C2) and data exfiltration. -Custom web-shells and backdoors used to persistently access servers. OilRig relies on stolen account credentials for lateral movement. After OilRig gains access to a system, they use credential dumping tools, such as Mimikatz, to steal credentials to accounts logged into the compromised system. The group uses these credentials to access and to move laterally to other systems on the network. After obtaining credentials from a system, operators in this group prefer to use tools other than their backdoors to access the compromised systems, such as remote desktop and putty. OilRig also uses phishing sites to harvest credentials to individuals at targeted organizations to gain access to internet accessible resources, such as Outlook Web Access. Since at least 2014, an Iranian threat group tracked by FireEye as APT34 has conducted reconnaissance aligned with the strategic interests of Iran. The group conducts operations primarily in the Middle East, targeting financial, government, energy, chemical, telecommunications and other industries. Repeated targeting of Middle Eastern financial, energy and government organizations leads FireEye to assess that those sectors are a primary concern of APT34. The use of infrastructure tied to Iranian operations, timing and alignment with the national interests of Iran also lead FireEye to assess that APT34 acts on behalf of the Iranian government.",
+    {
+        "report_id": "report_0",
+        "link":"https://intsights.com/blog/apt-group-oilrig-who-they-are-and-what-you-need-to-know",
+        "sentences": [
+            "At first, the group was perceived as immature and not highly sophisticated, but it has rapidly evolved and is now recognized as a sophisticated and dangerous Iranian Cyber APT.OilRig’s first attack surfaced in 2015, primarily targeted at financial and technology organizations in Saudi Arabia.",
+            "For their attacks, OilRig has predominantly relied on social engineering as their primary attack vector, showing that they tend to leverage “social” vulnerabilities over software or technical vulnerabilities.",
+            "OilRig is an Iranian-linked Advanced Persistent Threat (APT) group, which also goes by the names of Cobalt Gypsy, Twisted Kitten and Crambus.",
+            "Over the past three years, OilRig has continued to increase both the scope and complexity of their attacks quite significantly.",
+            "Whereas other Iranian groups have typically targeted foreign government agencies and Iranian dissidents, OilRig is highly focused on private industry outside of Iran.",
+            "With their latest campaigns, it’s clear that OilRig has significantly advanced its capabilities and creativity in developing new TTPs (Tactics, Techniques and Procedures), which is why the group is getting much more attention globally."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://www.darkreading.com/ics-ot-security/iran-oilrig-cyberattackers-target-israel-critical-infrastructure",
+        "sentences": [
+            "\"OilRig is persistent in targeting the same organizations, and determined to keep its foothold in compromised networks,\" the researchers warned.",
+            "\"The continuous development and testing of new variants, experimentation with various cloud services and different programming languages, and the dedication to re-compromise the same targets over and over again, make OilRig a group to watch out for,\" Hromcová said in a press statement.",
+            "ESET identified the APT as the perpetrator of the repeated attacks on Israeli organizations via the similarity between the downloaders and other OilRig tools that use email-based C2 protocols — namely, the MrPerfectionManager and PowerExchange backdoors.",
+            "In fact, last year, OilRig's various activities spurred the sanctioning of Iran's intelligence arm — which is believed to sponsor OilRig — by the US government.",
+            "Prolific Iranian advanced persistent threat group (APT) OilRig has repeatedly targeted several Israeli organizations throughout 2022 in cyberattacks that were notable for leveraging a series of custom downloaders that use legitimate Microsoft cloud services to conduct attacker communications and exfiltrate data.",
+            "The use of downloaders leveraging cloud services is an evasive tactic that allows the malware to blend more easily into the regular stream of network traffic — likely the reason that the APT uses them against repeat victims, according to ESET.OilRig is known to have been active since 2014, and primarily operates in the Middle East, targeting organizations in the region spanning a variety of industries, including but not limited to chemical, energy, financial, and telecommunications."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.securityweek.com/iran-linked-oilrig-apt-caught-using-new-backdoor/",
+        "sentences": [
+            "Active since at least 2014, OilRig is also tracked as APT34, Helix Kitten, and Cobalt Gypsy, and is believed linked to the objectives of the Iranian government.",
+            "At the end of April 2022, security researchers with Fortinet and Malwarebytes identified a malicious Excel document that the hacking group sent to the Jordanian diplomat, and which was designed to drop a new backdoor called Saitama.",
+            "Given that some of the supported commands include internal IPs and internal domain names, Malwarebytes researchers believe the backdoor is highly targeted, and that the threat actor has some previous knowledge about the internal infrastructure of the victim.",
+            "The Iran-linked hacking group OilRig was observed using a new backdoor in an attack against a government official within Jordan’s foreign ministry, according to new research published this week.",
+            "The attack was identified after the recipient forwarded the message to the real IT employee, likely in an attempt to verify its authenticity.",
+            "To date, the group was seen targeting entities in the chemical, energy, financial, governmental, and telecommunication industries."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://thehackernews.com/2023/09/iranian-apt-group-oilrig-using-new.html",
+        "sentences": [
+            "\"The group consistently develops and enhances tools, aiming to reduce security solutions and researchers' detection,\" the researchers said.\n\n",
+            "\"Typical of APT groups, APT34 demonstrates their vast resources and varied skills, and will likely persist in customizing routines and social engineering techniques to use per targeted organization to ensure success in intrusions, stealth, and cyber espionage.\"",
+            "Also tracked under the names APT34, Cobalt Gypsy, Hazel Sandstorm, and Helix Kitten, OilRig is an Iranian advanced persistent threat (APT) group that specializes in covert intelligence gathering operations to infiltrate and maintain access within targeted networks.\n\n",
+            "Sophisticated cyber actors backed by Iran known as OilRig have been linked to a spear-phishing campaign that infects victims with a new strain of malware called Menorah.\n\n",
+            "The revelation builds on recent findings from NSFOCUS, which uncovered an OilRig phishing attack resulting in the deployment of a new variant of SideTwist malware, indicating that it's under continuous development.\n\n",
+            "The victimology of the attacks is not immediately known, although the use of decoys indicates at least one of the targets is an organization located in Saudi Arabia."
+        ]
+    }
+]

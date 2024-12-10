@@ -1,0 +1,40 @@
+Tropic Trooper is an unaffiliated threat group that has led targeted campaigns against targets in Taiwan, the Philippines, and Hong Kong. Tropic Trooper focuses on targeting government, healthcare, transportation, and high-tech industries and has been active since 2011.
+Tropic Trooper has used HTTP in communication with the C2.
+Tropic Trooper's backdoor has communicated to the C2 over the DNS protocol.
+Tropic Trooper has collected information automatically using the adversary's USBferry attack.
+Tropic Trooper has used a copy function to automatically exfiltrate sensitive data from air-gapped systems using USB storage.
+Tropic Trooper has created shortcuts in the Startup folder to establish persistence.
+Tropic Trooper has created the Registry key HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell and sets the value to establish persistence.
+Tropic Trooper has used Windows command scripts.
+Tropic Trooper has installed a service pointing to a malicious DLL dropped to disk.
+Tropic Trooper has used base64 encoding to hide command strings delivered from the C2.
+Tropic Trooper used shellcode with an XOR algorithm to decrypt a payload. Tropic Trooper also decrypted image files which contained a payload.
+Tropic Trooper has encrypted traffic with the C2 to prevent network detection.
+Tropic Trooper has used SSL to connect to C2 servers.
+Tropic Trooper has exfiltrated data using USB storage devices.
+Tropic Trooper has executed commands through Microsoft security vulnerabilities, including CVE-2017-11882, CVE-2018-0802, and CVE-2012-0158.
+Tropic Trooper has monitored files' modified time.
+Tropic Trooper has created a hidden directory under C:\ProgramData\Apple\Updates\ and C:\Users\Public\Documents\Flash\.
+Tropic Trooper has been known to side-load DLLs using a valid version of a Windows Address Book and Windows Defender executable with one of their tools.
+Tropic Trooper has deleted dropper files on an infected system using command scripts.
+Tropic Trooper has used a delivered trojan to download additional files.
+Tropic Trooper has hidden payloads in Flash directories and fake installer files.
+Tropic Trooper has used multiple Windows APIs including HttpInitialize, HttpCreateHttpHandle, and HttpAddUrl.
+Tropic Trooper used pr and an openly available tool to scan for open ports on target systems.
+Tropic Trooper used netview to scan target systems for shared resources.
+Tropic Trooper has encrypted configuration files.
+Tropic Trooper has used JPG files with encrypted payloads to mask their backdoor routines and evade detection.
+Tropic Trooper sent spearphishing emails that contained malicious Microsoft Office and fake installer file attachments.
+Tropic Trooper is capable of enumerating the running processes on the system using pslist.
+Tropic Trooper has injected a DLL backdoor into dllhost.exe and svchost.exe.
+Tropic Trooper has attempted to transfer USBferry from an infected USB device by copying an Autorun function to the target machine.
+Tropic Trooper has started a web service in the target host and wait for the adversary to connect, acting as a web shell.
+Tropic Trooper's backdoor could list the infected system's installed software.
+Tropic Trooper can search for anti-virus software running on the system.
+Tropic Trooper has detected a target system’s OS version and system volume information.
+Tropic Trooper has used scripts to collect the host's network topology.
+Tropic Trooper has tested if the localhost network is available and other connection capability on an infected system using command scripts.
+Tropic Trooper used letmein to scan for saved usernames on the target system.
+Tropic Trooper delivered malicious documents with the XLSX extension, typically used by OpenXML documents, but the file itself was actually an OLE (XLS) document.
+Tropic Trooper has lured victims into executing malware via malicious e-mail attachments.
+Tropic Trooper has used known administrator account credentials to execute the backdoor directly.

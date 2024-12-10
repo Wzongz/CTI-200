@@ -1,0 +1,52 @@
+[
+    "claim":"Nazar: Old Iran-Linked APT Operation Monitored by NSA",
+    "explain":"A security researcher says he has uncovered an advanced persistent threat (APT) operation that started over a decade ago and which is referenced in the collection of National Security Agency (NSA) hacking tools that the Shadow Brokers made public in 2017. The campaign, which was previously attributed to Chinese threat actor Emissary Panda, which is also referred to as APT27, LuckyMouse, BRONZE UNION, and Threat Group 3390, is referenced in one of the files from the Shadow Brokers dump as SIG37. According to Juan Andres Guerrero-Saade, a security researcher who previously worked for Kaspersky and Google, SIG37 in fact points to a previously unidentified cluster of activity that might be going back as far as 2008. He has not been able to link this activity to any known threat group. The researcher, who refers to the operation as ‘Nazar’, based on “debug paths left alongside Farsi resources in some of the malware droppers,” believes that the activity was centered around the 2010-2013 timeframe, based on submission times in VirusTotal. While the scope of the operation is unclear — given the lack of access to victimology or command and control (C&C) sinkholing — three malware samples were exclusively encountered on Iranian machines, and Nazar subcomponents were submitted to VirusTotal from Iran, Guerrero-Saade says. The researcher revealed in a presentation at the OPCDE cybersecurity conference that based on the available evidence this could be an operation conducted by Iran-based hackers against entities in Iran. “Somehow, this operation found its way onto the NSA’s radar pre-2013,” Guerrero-Saade wrote in a blog post on Nazar. “As far as I can tell, it’s eluded specific coverage from the security industry. A possible scenario to account for the disparate visibility between the NSA and Western researchers when it comes to this cluster of activity is that these samples were exclusively encountered on Iranian boxes overlapping with EQGRP implants.” Nazar uses a modular toolkit, with a main dropper designed to silently register multiple DLLs as OLE controls in the Windows registry via ‘regsvr32.exe’. An orchestrator is registered as a service for persistence, disguised as ‘svchost.exe’. The droppers are built with the defunct Chilkat software, and ‘Zip2Secure’ is used to create self-extracting executables. Subcomponent DLLs feature both commonly-used resources and seemingly custom libraries. The malware leverages libraries to implement screen grabbing, microphone recording, and keylogging features, while two custom resources, which are treated as type libraries and registered as OLE controls, can enumerate attached drives, traverse folder structures, and handle some C&C functionality. A kernel driver is used to sniff packets from the victim machine’s interfaces and parse them for specific strings, but the researcher says he could not identify what it is parsing. “SIG37 has proven a rewarding mystery, unearthing a previously undiscovered subset of activity worthy of our attention. Apart from several places where more skilled reverse engineers can contribute to better understanding the samples already discovered, there’s an opportunity for threat hunters with access to diverse data sets and systems to figure out just how big this iceberg really is,” Guerrero-Saade concludes.",
+    {
+        "report_id": "report_0",
+        "link":"https://securityaffairs.com/102138/apt/nazar-apt-shadow-brokers-leak.html",
+        "sentences": [
+            "A security expert uncovered an old APT operation, tracked Nazar, by analyzing the NSA hacking tools included in the dump leaked by Shadow Brokers in 2017.",
+            "Guerrero-Saade discovered that the SIG37 campaign references hacking activities dated back as far as 2008 that was carried out by an unknown threat actor, the expert tracked it as Nazar.",
+            "Juan Andres Guerrero-Saade, a former Kaspersky and Google researcher, uncovered an old APT operation, tracked Nazar, by analyzing the NSA hacking tools included in the dump leaked by Shadow Brokers in 2017.",
+            "The campaign was previously attributed to China-linked APT Emissary Panda (aka APT27, TG-3390, Bronze Union, and Lucky Mouse), it is referenced as SIG37 in one of the documents included in the Shadow Brokers dump.",
+            "The name ‘Nazar’ comes from the debug paths he found in the dump alongside Farsi resources in some of the malware droppers.",
+            "“Somehow, this operation found its way onto the NSA’s radar pre-2013, as far as I can tell, it’s eluded specific coverage from the security industry."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://malpedia.caad.fkie.fraunhofer.de/actor/nazar",
+        "sentences": [
+            "Earliest known sighting potentially dates back to as far as 2008 with a confirmed center of activity around 2010-2013.",
+            "Functionality includes keylogging, sound and screen grabbing, as well as traffic capture using the MicroOlap Packet Sniffer library.",
+            "Nazar employs a modular toolkit where a main dropper silently registers multiple DLLs as OLE controls in the Windows registry.",
+            "The actor name is derived from a PDB debug string fragment: 'khzer'.",
+            "This actor was identified by Juan Andres Guerrero-Saade from the SIG37 cluster as published in the ShadowBrokers' 'Lost in Translation' leak.",
+            "Victimology indicates targeting of Iran, assessed with low confidence based on VT file submission locations."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.wilderssecurity.com/threads/nazar-old-iran-linked-apt-operation-monitored-by-nsa.428602/",
+        "sentences": [
+            "For those blissfully unaware of TeDi, among the ShadowBrokers leaks we find two files far more noteworthy for threat intelligencers than the exploits and tools.",
+            "In this case, CrySyS lab tentatively identifies SIG37 as ‘IronTiger_ASPXSpy’ –a presumably Chinese APT group better known as ‘Emissary Panda’ among other names.",
+            "The name is derived from debug paths left alongside Farsi resources in some of the malware droppers described below.",
+            "Upon closer inspection, the file above is a 15mb memory dump of a McAfee installer, perhaps by someone interested in their malware signatures.",
+            "With that understanding, we can discard the commented detection and return to the abject mystery of identifying SIG37.",
+            "lab points to a file in VirusTotal whose community comments suggest the aforementioned detection."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.epicturla.com/blog/the-lost-nazar",
+        "sentences": [
+            "According to Juan Andres Guerrero-Saade, a security researcher who previously worked for Kaspersky and Google, SIG37 in fact points to a previously unidentified cluster of activity that might be going back as far as 2008.",
+            "He has not been able to link this activity to any known threat group.",
+            "The campaign, which was previously attributed to Chinese threat actor Emissary Panda, which is also referred to as APT27, LuckyMouse, BRONZE UNION, and Threat Group 3390, is referenced in one of the files from the Shadow Brokers dump as SIG37.",
+            "The researcher, who refers to the operation as ‘Nazar’, based on “debug paths left alongside Farsi resources in some of the malware droppers,” believes that the activity was centered around the 2010-2013 timeframe, based on submission times in VirusTotal.",
+            "“As far as I can tell, it’s eluded specific coverage from the security industry.​The malware leverages libraries to implement screen grabbing, microphone recording, and keylogging features, while two custom resources, which are treated as type libraries and registered as OLE controls, can enumerate attached drives, traverse folder structures, and handle some C&C functionality.",
+            "“Somehow, this operation found its way onto the NSA’s radar pre-2013,” Guerrero-Saade wrote in a blog post on Nazar."
+        ]
+    }
+]

@@ -1,0 +1,111 @@
+{
+    "event_id": "007",
+    "claim": "The document describes the Vyveva backdoor attack by the Lazarus Group, targeting a freight logistics company in South Africa, featuring capabilities like file exfiltration and computer surveillance, and using the Tor network for communication.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "ESET researchers have discovered a previously undocumented Lazarus backdoor, which they have dubbed Vyveva, being used to attack a freight logistics company in South Africa. The backdoor consists of multiple components and communicates with its C&C server via the Tor network. So far, we have been able to find its installer, loader and main payload – a backdoor with a TorSocket DLL. The previously unknown attack was discovered in June 2020. Although Vyveva has been used since at least December 2018, its initial compromise vector is still unknown. Our telemetry data suggests targeted deployment as we found only two victim machines, both of which are servers owned by a freight logistics company located in South Africa. The backdoor features capabilities for file exfiltration, timestomping, gathering information about the victim computer and its drives, and other common backdoor functionality such as running arbitrary code specified by the malware’s operators. This indicates that the intent of the operation is most likely espionage. This blogpost provides the first public, technical analysis of Vyveva’s components. Vyveva shares multiple code similarities with older Lazarus samples that are detected by ESET products as the NukeSped malware family. However, the similarities do not end there: the use of fake TLS in network communication, command line execution chains, and the way of using encryption and Tor services all point towards Lazarus; hence we can attribute Vyveva to this APT group with high confidence. An example of the numerous code similarities can be seen in Figure 1 – resolving uniquely named Tor library exports. Up until now, we have managed to find three of the multiple components comprising Vyveva – its installer, loader and backdoor. The installer is the earliest chronological stage found and since it expects other components to be already present on the machine, it suggests the existence of an earlier, unknown stage – a dropper. The loader serves to decrypt the backdoor using a simple XOR decryption algorithm. Figure 2 provides a closer look at the functionality of the installer, the backdoor, and the Tor library. The main purposes of the installer are twofold: it creates a service that ensures persistence of the backdoor loader, and it stores the embedded, default backdoor configuration in the registry. To create a legitimate-looking service, its attributes, such as service name and display name, are formed using a combination of words from the attributes of existing services, which are randomly selected. It is also possible to specify these attributes to the installer via command line parameters - dll, -svc, -disp, -desc, and -group. We observed the following in the wild, with these parameters: As for the latter task, the installer first sets the configuration infection ID, which uniquely identifies each victim, to a randomly generated value, and then stores it in the registry, as shown in Figure 3. One of the entries in the configuration is a list of encrypted C&C servers: for example, the installer sample we analyzed is configured with the following C&Cs: The backdoor, Vyveva’s main component, connects to C&C servers and executes commands issued by the threat actors. It features 23 commands, some of which are asynchronous and executed in their own threads. Most of them are ordinary commands for file and process operations or information gathering, but there is also a less common command for file timestomping. It can copy creation/write/access time metadata from a “donor” file to a destination file or use a random date in the years 2000—2004. Other noteworthy commands are Vyveva’s file upload command, and command 0x26. The file upload command is capable of exfiltrating directories recursively and supports file extension filtering – for example, Office documents only. As for command 0x26, it indicates the existence of another, unknown component that we have not yet observed at the time of writing. The full list of commands is shown in Table 1. Of particular interest are the backdoor’s watchdogs, which can be optionally enabled or disabled. There is a drive watchdog used to monitor newly connected and disconnected drives, and a session watchdog monitoring the number of active sessions (i.e. logged-on users). These components can trigger a connection to the C&C server outside the regular, preconfigured three-minute interval, and on new drive and session events. The configuration of the backdoor, which is initially set by the installer, is read from the registry value (shown in Figure 3). When the configuration is modified by a C&C command, the value stored in the registry is updated. An example configuration and its structure are shown in Figure 4. The wait_minutes field specifies the time to wait before next connection to the C&C after a failed connection attempt. If the execution of the backdoor needs to be delayed until a particular time and date, it can be specified in the delay_until_time field. The encrypted_cncs field is an encrypted string, which contains semicolon-separated C&Cs. Vyveva uses the Tor library, which is based on the official Tor source code, to communicate with a C&C server selected at random from the configuration. It contacts the C&C at three-minute intervals, sending information about the victim computer and its drives before receiving commands. The backdoor’s export directory contains the TorSocket.dll with self-explanatory exports close_ch, connect_ch, open_ch, read_ch, write_ch.Vyveva constitutes yet another addition to Lazarus’s extensive malware arsenal. Attacking a company in South Africa also illustrates the broad geographical targeting of this APT group. For any inquiries, or to make sample submissions related to the subject, contact us at threatintel@eset.com.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.malwarebytes.com/blog/threat-intelligence/2021/04/lazarus-apt-conceals-malicious-code-within-bmp-file-to-drop-its-rat/",
+            "content": "This document details a sophisticated spear-phishing attack attributed to the Lazarus APT group, targeting South Korea. Lazarus employed a novel technique, embedding malicious HTA files within BMP images to deliver its RAT (Remote Access Trojan). The attack began with phishing emails containing a weaponized document, which, upon opening and enabling macros, initiated a complex process to drop the malicious payload. This payload was a loader that decoded and decrypted a second-stage payload into memory, capable of executing commands and communicating with a command and control server. The Lazarus group's use of clever methods to bypass security mechanisms highlights their evolving tactics in cyber espionage.",
+            "domain": "www.malwarebytes.com",
+            "tokenized": [
+                {
+                    "sent": "This document details a sophisticated spear-phishing attack attributed to the Lazarus APT group, targeting South Korea.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Lazarus employed a novel technique, embedding malicious HTA files within BMP images to deliver its RAT (Remote Access Trojan).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attack began with phishing emails containing a weaponized document, which, upon opening and enabling macros, initiated a complex process to drop the malicious payload.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This payload was a loader that decoded and decrypted a second-stage payload into memory, capable of executing commands and communicating with a command and control server. ",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Lazarus group's use of clever methods to bypass security mechanisms highlights their evolving tactics in cyber espionage.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://blogs.jpcert.or.jp/en/2021/01/Lazarus_tools.html/",
+            "content": "The document from the JPCERT Coordination Center outlines tools utilized by the Lazarus APT group. It discusses how Lazarus, also known as Hidden Cobra, employs commonly known Windows commands and tools for information collection and malware spread. The document categorizes these tools based on their functions: lateral movement (AdFind, SMBMap, Responder-Windows), stealing sensitive data (tools for extracting account information from browsers and email clients, archiving collected files using WinRAR), and other purposes (creating backdoors using applications like RDP, TeamViewer, VNC, and Microsoft's ProcDump). The article emphasizes Lazarus's tendency to supplement its malware with widely available tools, often undetected by antivirus software.",
+            "domain": "blogs.jpcert.or.jp",
+            "tokenized": [
+                {
+                    "sent": "The document from the JPCERT Coordination Center outlines tools utilized by the Lazarus APT group.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It discusses how Lazarus, also known as Hidden Cobra, employs commonly known Windows commands and tools for information collection and malware spread.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The document categorizes these tools based on their functions: lateral movement (AdFind, SMBMap, Responder-Windows), stealing sensitive data (tools for extracting account information from browsers and email clients, archiving collected files using WinRAR), and other purposes (creating backdoors using applications like RDP, TeamViewer, VNC, and Microsoft's ProcDump). ",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The article emphasizes Lazarus's tendency to supplement its malware with widely available tools, often undetected by antivirus software.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://ics-cert.kaspersky.com/publications/reports/2021/02/25/lazarus-targets-defense-industry-with-threatneedle/",
+            "content": "The document details the Lazarus group's advanced cyberespionage campaign against the defense industry. The group employed spear-phishing with COVID-19 themed emails and used a multistage malware, ThreatNeedle, to infiltrate networks. This malware facilitated credential harvesting, lateral movement, and data exfiltration, even overcoming network segmentation by compromising an internal router. The campaign's sophistication and use of tailored techniques, including a custom tunneling tool and Trojanized applications, highlight Lazarus's adaptability and focus on intellectual property theft.",
+            "domain": "ics-cert.kaspersky.com",
+            "tokenized": [
+                {
+                    "sent": "The document details the Lazarus group's advanced cyberespionage campaign against the defense industry.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The group employed spear-phishing with COVID-19 themed emails and used a multistage malware, ThreatNeedle, to infiltrate networks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This malware facilitated credential harvesting, lateral movement, and data exfiltration, even overcoming network segmentation by compromising an internal router.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The campaign's sophistication and use of tailored techniques, including a custom tunneling tool and Trojanized applications, highlight Lazarus's adaptability and focus on intellectual property theft.",
+                    "is_evidence": 0
+                }
+            ]
+         },
+         {
+            "link": "https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/lazarus-recruitment/",
+            "content": "The document details a sophisticated cyber espionage campaign by the Lazarus Group, targeting individuals with job offers. The attack involved spear-phishing through LinkedIn and other platforms, using decoy documents with malicious macros. The Lazarus Group exploited these techniques to gain access to corporate networks, using a variety of tools for data exfiltration and surveillance. The document emphasizes the group's advanced tactics and persistent efforts in targeting specific individuals for network infiltration.",
+            "domain": "www.ptsecurity.com",
+            "tokenized": [
+                {
+                    "sent": "The document details a sophisticated cyber espionage campaign by the Lazarus Group, targeting individuals with job offers.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The attack involved spear-phishing through LinkedIn and other platforms, using decoy documents with malicious macros.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Lazarus Group exploited these techniques to gain access to corporate networks, using a variety of tools for data exfiltration and surveillance.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The document emphasizes the group's advanced tactics and persistent efforts in targeting specific individuals for network infiltration.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

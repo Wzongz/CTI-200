@@ -1,0 +1,140 @@
+{
+  "event_id": "155",
+  "claim": "The Andariel Group is one of the most active threat groups in South Korea. In the early days, most attacks were designed to steal military information. ",
+  "original_label": "true",
+  "label": "true",
+  "explain": "The Andariel group is a subgroup of the Lazarus group that has been active since 2015. Andariel has a connection to the cyber-attack named Operation Black Mine that occurred in 2014 and 2015. However, Operation Black Mine is also associated with the attacks on the South Korean Military Agency in 2008 and the attacks against South Korean banks and broadcastersin 2013 (a.k.a DarkSeoul). The major targets of the Andariel Group include not only military agencies, defense industries, political organizations, security companies, ICT companies, and energy research institutes, but also financial targets, such as ATMs, banks, travel agencies, cryptocurrency exchanges, and online gambling users. Their main methods of attacks are spear phishing using macros, watering hole attacks exploiting Active-X vulnerabilities, vulnerability exploits on security and IT asset management systems, and supply chain attacks. The group makes use of well-known backdoors, such as Aryan and Gh0st RAT, but also uses self-developed backdoors, such as Andarat, Andaratm, Rifdoor, and Phandoor. Furthermore, this group appears to know Korean language and its IT environment. This report examines the attacks by Andariel Threat Group, including key methods, and changes in their purpose and targets. The Andariel group uses a variety of attack techniques, and, in particular, they take advantage of vulnerabilities of local software in South Korea.The Andariel group uses the spear phishing method by understanding their target and sending emails with an attachment that appears to be from a relevant, seemingly trustworthy source. The attachments contain macro and trick the targeted recipient into activating the macro. However, this method of inducing macro activation has become more devious after 2015. [Figure 2] below shows the contents of attachments used in the 2015 attacks with the original method of inducing macro activation. The user can enable macro, but there is not a significant need to do so because the content is visible. However, malicious attachments found since 2017 show a new method. The contents of documents are blurred, as shown in [Figure 3], as if there is a problem with the display, increasing the likelihood of the recipients enabling the macros. The Andariel group also uses the watering hole technique, which compromise and inject exploit codes into a website. The targeted systems are infected with malware upon accessing the compromised website using a vulnerable web browser. These attacks also limit infection to specific IP address ranges, making it much more difficult to identify the attack targets. For the watering hole attack, the group usually embeds an Active-X vulnerability exploit codes in the target website. When the target accesses the website via an Internet Explorer browser with a specific Active-X installed the attack proceeds. After successful exploitation of the vulnerability, a JavaScript or VBScript file is created on the user system and this file downloads the malware from a specified address. Here, the “MZ” ASCII string, which represents a Windows executable file, does not exist within the file. The malware adds this text string starting with MZ from the local system to create an executable file. This method seems to be used to avoid detection by behavior-based security solutions when the executable file is downloaded. Institutions and companies of a certain size often manage multiple systems in their organizations, such as PCs, by connecting them to a central management solution. This central management solution is mainly responsible for Network Access Control (NAC); anti-virus management, software and hardware assets control; and patch management, and it usually provides features such as IT asset management, report generation, software distribution, and remote control. The attacker identifies and analyzes the central management solution used by the target institution or company to find and exploit the vulnerability. The attacks on the central management software can be categorized into two types: management server account attacks and vulnerability attacks on agents installed in the client. Most central management solutions consist of a management server and a client on which the agent is installed. The management server sends batch files to the connected systems or applies policies, and remotely controls the systems. The client processes files and commands sent from the management server. In the event of an attack using the management server, the attacker steals the targeted administrator account and distributes malware in the place of a normal file. This is the reason for the emphasis on management of administrator accounts. Another role of the management server is to receive the security updates for commercial software from external sources (software providers) and distributes them throughout the organization. However, if a file from the external update server tampers (e.g., by hacking); an update file containing malware will be distributed throughout the company or institution via the central management server. The client agent of the central management solution is responsible for receiving and executing the file transmitted from the management server. Generally, the agent has a feature to check whether the delivered command or file is verified. To bypass this process, the attacker pretends to be the management server and sends a command to the agent. The Andariel group is responsible for carrying out many attacks on central management solutions that are widely used in South Korea. The following are the cases of the group transferring malicious files exploiting the vulnerabilities of the client agent in three types of central management solution. The first case is malware that exploits vulnerabilities in central management solution A, which was first discovered in 2015. When the malware is executed, the executable file, v3pscan.exe, containing malware is transmitted to the agent of central management solution A through a specified IP address and executed. Attacks on the central management solution B were made between 2015 and 2017. Various types of malware were used, such as nc.exe, nt.exe, n5lic.exe, nc5rt2.exe, and Bin.exe, to exploit the management system. Also, the attacker used a method of generating a VBScript file, such as vs1.vbs and winrm.vbs, to download malicious files. Variants of this malware were discovered between 2015 and 2017, which used the server IP, target system IP, download address, remote executable path, and other items as arguments to exploit systems and generate script files that downloaded malware. The generated script downloads a file from the address entered as an argument and restores 5 bytes. The malware that exploited the vulnerabilities in central management solution C was first found in September 2016. This attack performs malicious transferring and executing of files. The Andariel group is also known for their attacks on supply chain vulnerabilities. The primary attack method includes incorporating the malware in the software installer edition to infect the target via distribution from the official website and software updates. However, in some cases, the attack was not designed to infect all software users but only the specified target IP address. The group also used the supply chain attack to exploit vulnerabilities of software used in specific industries. The initial targets of the Andariel group were military agencies and the defense industry in South Korea. In 2015, there was an attack on exhibitors in the Seoul International Aerospace & Defense Exhibition (ADEX). ADEX is an international defense industry exhibition that has been hosted bi-annually since 1996. The attacker sent an email with an Excel or Word document containing macros, pretending to be the organizer of the event. The attached document was disguised as a legitimate content, and malware was downloaded when the recipient opened the file and clicked “Use Content” to activate the macro. The downloaded file was a Rifdoor variant. From the document file found later, it seems that the attack group focused on its attacks mainly on the defense industry. [Table 1] below summarizes significant attacks made by the Andariel group. In February 2016, a Korean security company was hacked, and an electronic certificate was leaked. Recently in August 2018, an additional malware was discovered to be distributed as a legitimate DRM program. In April 2016, defense industry, marine service providers, and ICT companies were infected with Gh0st RAT, a malware that exploits vulnerabilities in central management solution B. In June 2016, the Korean police agency unveiled operation Gh0st RAT, a large-scale hacking incident on mega companies in the defense industry that exploited the vulnerabilities in centralized management solutions. Gh0st RAT is a malware that attempts to infect the target through the file distribution function using the vulnerabilities of central management solution A, and about 40,000 documents were leaked by the Gh0st RAT malware. Ever since August 2016, the Andariel group has exploited the vulnerabilities in anti-virus management programs to attack military agencies and leak information. From the end of 2016, the purpose of the attack changed from information leakage to monetary gain. In October 2016, the attacker hacked the website of a software provider and replaced the installation file with a file containing malware to release malicious codes that served as cheats in online gambling games. In 2017, to maximize the chances of a successful attack, malware was distributed to multiple computers using an internet cafe management program. In March 2017, a case was discovered where credit card information was leaked due to the hacking of an ATM in Korea. It seems attempts were made from November 2016, and the malware used in the attack was similar to those used in the leaking of a military agency’s data in 2016. From May to July 2017, there were concentrated attacks on the financial industry. The malware was distributed through the website of monetary unions, and the attacks attempted to exploit the vulnerability of their systems. In October 2017, the largest travel agency in Korea was hacked, resulting in the leakage of personal information. Moreover, travel agency was hacked in December of the same year. In December 2017, the Andariel group modified the ERP solution update file of a company A and added malware to the file. At that time, malware was downloaded only to attack a specific target company, and not all companies using the ERP solution.In December 2017, the Andariel group launched attacks on virtual currency exchange users. In January 2018, it distributed a remote support program containing malware. In February 2018, the group employed various types of attacks, including the email attack where it impersonated the office of a National Assembly member. Malware used in the email attack was a variant of the malware used in the ATM hacking in 2017, and another variant was used in the attacks on the financial industry in June. The Andariel group uses in-house advanced malware, such as Andarat, Andaratm, Phandoor, and Rifdoor, as well as other well-known malware, such as Aryan and Gh0st RAT.Gh0st RAT is a backdoor made in China, and its source codes are publicly available. The Andariel group used this malware for attacks from 2015 to 2016. It created and used a Korean version in some cases. Packagers, such as Themida packaged some variants. Rifdoor was first discovered in November 2015, and it remained active until early 2016. A Rifdoor variant was used to attack SEOUL ADEX exhibitors in 2015 and was found in the hacking incidents of security companies in early 2016. Rifdoor is characterized by the string included in the PDB information: E:\\Data\\My Projects\\Troy Source Code\\tcp1st\\rifle\\Release\\rifle.pdb. When it enters the system, Rifdoor generates a file by adding garbage data to the 4 bytes of the last part of the file. Therefore, since the hash value changes each time the system is infected, the malware cannot be found in the system with a simple hash value. Phandoor was used from January 2016 to the summer of 2017. It is characterized by having the string “S^%” before the main character strings. (E.g. S^%s\\cmd.exe, S^nehomegpa.dll) However, some variants found in 2017 did not contain its character string, “Anonymous?” The Andariel group has launched many attacks using a variety of malware. In addition to the similarity of their codes, factors are indicating the association between these attacks. Results from the detailed analysis of AhnLab shows that the Andariel group and Operation Black Mine take the similar attack methods, and in particular, they both used the file, zcon.exe. This suggests that Operation Black Mine is associated with the Andariel group. The similar malware was used to attack various targets, and some of them used the same C2.The Andariel Group is one of the most active threat groups in South Korea. In the early days, most attacks were designed to steal military information. Since the end of 2016, however, attacks have also been made for monetary gain. In addition, based on their frequent attacks using vulnerabilities of software used by the target, it can be seen that the group is well aware of Korea IT environment. As evident in the attack cases of the group, central management solutions of companies and institutions can become a route of an attack at any time. Attacks exploiting a central management solution may cause enormous damage throughout the organization. Thus, more strengthened security management is required. In particular, a security policy for the management server of a central management solution is critical. Suitable management is required to ensure that necessary security policies are observed, such as frequently changing administrator’s login password of the management server and not saving it in the system, as well as limiting the access to the management server. In addition, logs must be checked periodically to make sure that abnormal files have not been distributed via the management server. There was a case where the attacker exploited the vulnerability in an agent installed in the client without going through the management server, so it is necessary to monitor whether or not scanning of the port number used by the central management solution occurs. Attackers use a variety of methods in their attempts to infiltrate companies and institutions. Most organizations focus on strengthening security on endpoints, but it is just as much essential to monitor events that occur in the internal infrastructure, just like the central management solution.\n\n\n",
+  "reports": [
+    {
+      "link": "http://www.issuemakerslab.com/research3/",
+      "content": "In particular, the March 20 attack in 2013, which was found to have been committed by North Korea, was infiltrated by the vulnerability of ActiveX financial security module, which is widely used in South Korea. In the current situation where it is difficult to penetrate directly as major organizations and companies have increased security due to frequent cyberattack from North Korea, the agency and its employees are infected through associations and associations. The C&C server address used in the incident targeting The National Council on Public Relations (hxxp://ampcc[.]go[.]kr) that distributed malwares during this Operation GoldenAxe corresponds to that of code found in the ATM hacking incident in Korea. The malware at the top of the picture below is malware that was announced by the S. Korean Prosecutor’s Office as the act of North Korea. The malwares were similar to those that were distributed to South Korean security agencies and large South Korean companies, which police and prosecutors concluded in 2016 were respectively responsible for North Korea. There is also a connection with malwares used in the South's ATM hacking scandal, which is suspected of being committed by North Korea but has yet to be closed",
+      "domain": "www.issuemakerslab.com",
+      "tokenized": [
+        {
+          "sent":"In particular, the March 20 attack in 2013, which was found to have been committed by North Korea, was infiltrated by the vulnerability of ActiveX financial security module, which is widely used in South Korea.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In the current situation where it is difficult to penetrate directly as major organizations and companies have increased security due to frequent cyberattack from North Korea, the agency and its employees are infected through associations and associations.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The C&C server address used in the incident targeting The National Council on Public Relations (hxxp://ampcc[.]go[.]kr) that distributed malwares during this Operation GoldenAxe corresponds to that of code found in the ATM hacking incident in Korea.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The malware at the top of the picture below is malware that was announced by the S. Korean Prosecutor’s Office as the act of North Korea.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The malwares were similar to those that were distributed to South Korean security agencies and large South Korean companies, which police and prosecutors concluded in 2016 were respectively responsible for North Korea.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"There is also a connection with malwares used in the South's ATM hacking scandal, which is suspected of being committed by North Korea but has yet to be closed.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.malwarebytes.com/blog/threat-intelligence/2021/04/lazarus-apt-conceals-malicious-code-within-bmp-file-to-drop-its-rat/",
+      "content": "Here is the list of the different user agents used by this RAT.The Lazarus threat actor is one of the most active and sophisticated North Korean threat actors that has targeted several countries including South Korea, the U.S. and Japan in the past couple of years. In one of their most recent campaigns Lazarus used a complex targeted phishing attack against security researchers. In this blog we documented a spear phishing attack operated by this APT group that has targeted South Korea. Lazarus APT is one of the most sophisticated North Korean Threat Actors that has been active since at least 2009. On April 13, we identified a document used by this actor to target South Korea. This attack likely started by distributing phishing emails that were weaponized with a malicious document.",
+      "domain": "www.malwarebytes.com",
+      "tokenized": [
+        {
+          "sent":"Here is the list of the different user agents used by this RAT.The Lazarus threat actor is one of the most active and sophisticated North Korean threat actors that has targeted several countries including South Korea, the U.S. and Japan in the past couple of years.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In one of their most recent campaigns Lazarus used a complex targeted phishing attack against security researchers.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In this blog we documented a spear phishing attack operated by this APT group that has targeted South Korea.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Lazarus APT is one of the most sophisticated North Korean Threat Actors that has been active since at least 2009.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":  "On April 13, we identified a document used by this actor to target South Korea.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"This attack likely started by distributing phishing emails that were weaponized with a malicious document.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.trendmicro.com/en_us/research/18/g/new-andariel-reconnaissance-tactics-hint-at-next-targets.html/",
+      "content": "According to South Korean security researchers IssueMakersLab, the group used an ActiveX zero-day exploit for watering hole attacks on South Korean websites last May—they called this “Operation GoldenAxe”. But more recently on June 21, we noticed that Andariel injected their script into four other compromised South Korean websites for reconnaissance purposes. IssueMakersLab also listed the ActiveX objects that the Andariel group attacked. Last month we tracked new scouting techniques coming from Andariel, which were used mainly against South Korean targets. Our colleagues from the IssueMakersLab team shared insights and information about the Andariel group, including that they attacked ActiveX vulnerabilities as far back as 2007. The team monitoring Andariel found that the cybercriminal group injected a malicious script on a South Korean think tank website for reconnaissance in January 2017 and then switched to inject an ActiveX zero-day exploit in mid-April.",
+      "domain": "www.trendmicro.com",
+      "tokenized": [
+        {
+          "sent":"According to South Korean security researchers IssueMakersLab, the group used an ActiveX zero-day exploit for watering hole attacks on South Korean websites last May—they called this “Operation GoldenAxe”.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"But more recently on June 21, we noticed that Andariel injected their script into four other compromised South Korean websites for reconnaissance purposes.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"IssueMakersLab also listed the ActiveX objects that the Andariel group attacked.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Last month we tracked new scouting techniques coming from Andariel, which were used mainly against South Korean targets.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Our colleagues from the IssueMakersLab team shared insights and information about the Andariel group, including that they attacked ActiveX vulnerabilities as far back as 2007.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The team monitoring Andariel found that the cybercriminal group injected a malicious script on a South Korean think tank website for reconnaissance in January 2017 and then switched to inject an ActiveX zero-day exploit in mid-April.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://home.treasury.gov/news/press-releases/sm774/",
+      "content": "According to industry and press reporting, beyond its criminal efforts, Andariel continues to conduct malicious cyber activity against South Korea government personnel and the South Korean military in an effort to gather intelligence. Andariel is also responsible for developing and creating unique malware to hack into online poker and gambling sites to steal cash. Cybersecurity firms first noticed Andariel around 2015, and reported that Andariel consistently executes cybercrime to generate revenue and targets South Korea’s government and infrastructure in order to collect information and to create disorder. Specifically, Andariel was observed by cyber security firms attempting to steal bank card information by hacking into ATMs to withdraw cash or steal customer information to later sell on the black market. Today’s actions identify North Korean hacking groups commonly known within the global cyber security private industry as “Lazarus Group,” “Bluenoroff,” and “Andariel” as agencies, instrumentalities, or controlled entities of the Government of North Korea pursuant to Executive Order (E.O.) 13722, based on their relationship to the Reconnaissance General Bureau (RGB). “Treasury is taking action against North Korean hacking groups that have been perpetrating cyber attacks to support illicit weapon and missile programs,” said Sigal Mandelker, Treasury Under Secretary for Terrorism and Financial Intelligence.",
+      "domain": "home.treasury.gov",
+      "tokenized": [
+        {
+          "sent":"According to industry and press reporting, beyond its criminal efforts, Andariel continues to conduct malicious cyber activity against South Korea government personnel and the South Korean military in an effort to gather intelligence.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Andariel is also responsible for developing and creating unique malware to hack into online poker and gambling sites to steal cash.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Cybersecurity firms first noticed Andariel around 2015, and reported that Andariel consistently executes cybercrime to generate revenue and targets South Korea’s government and infrastructure in order to collect information and to create disorder.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Specifically, Andariel was observed by cyber security firms attempting to steal bank card information by hacking into ATMs to withdraw cash or steal customer information to later sell on the black market.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Today’s actions identify North Korean hacking groups commonly known within the global cyber security private industry as “Lazarus Group,” “Bluenoroff,” and “Andariel” as agencies, instrumentalities, or controlled entities of the Government of North Korea pursuant to Executive Order (E.O.) 13722, based on their relationship to the Reconnaissance General Bureau (RGB).",
+          "is_evidence": 0
+        },
+        {
+          "sent": "“Treasury is taking action against North Korean hacking groups that have been perpetrating cyber attacks to support illicit weapon and missile programs,” said Sigal Mandelker, Treasury Under Secretary for Terrorism and Financial Intelligence.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

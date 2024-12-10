@@ -1,0 +1,52 @@
+[
+    "claim":"GALLIUM Expands Targeting Across Telecommunications, Government and Finance Sectors With New PingPull Tool.",
+    "explain":"Unit 42 recently identified a new, difficult-to-detect remote access trojan named PingPull being used by GALLIUM, an advanced persistent threat (APT) group. Unit 42 actively monitors infrastructure associated with several APT groups. One group in particular, GALLIUM (also known as Softcell), established its reputation by targeting telecommunications companies operating in Southeast Asia, Europe and Africa. The group’s geographic targeting, sector-specific focus and technical proficiency, combined with their use of known Chinese threat actor malware and tactics, techniques and procedures (TTPs), has resulted in industry assessments that GALLIUM is likely a Chinese state-sponsored group.Over the past year, this group has extended its targeting beyond telecommunication companies to also include financial institutions and government entities. During this period, we have identified several connections between GALLIUM infrastructure and targeted entities across Afghanistan, Australia, Belgium, Cambodia, Malaysia, Mozambique, the Philippines, Russia and Vietnam. Most importantly, we have also identified the group’s use of a new remote access trojan named PingPull. PingPull has the capability to leverage three protocols (ICMP, HTTP(S) and raw TCP) for command and control (C2). While the use of ICMP tunneling is not a new technique, PingPull uses ICMP to make it more difficult to detect its C2 communications, as few organizations implement inspection of ICMP traffic on their networks. This blog provides a detailed breakdown of this new tool as well as the GALLIUM group's recent infrastructure. Palo Alto Networks customers receive protections from the threats described in this blog through Threat Prevention, Advanced URL Filtering, DNS Security, Cortex XDR and WildFire malware analysis.",
+    {
+        "report_id": "report_0",
+        "link":"https://www.sentinelone.com/labs/operation-tainted-love-chinese-apts-target-telcos-in-new-attacks/",
+        "sentences": [
+            "Active since at least 2012, Gallium is likely a Chinese state-sponsored group that is targeting telecommunication, financial, and government entities in Southeast Asia, Europe, Africa, and the Middle East.",
+            "In collaboration with QGroup GmbH, SentinelLabs recently observed initial threat activities targeting the telecommunication sector.",
+            "The recent activities targeting the telecommunication sector this post discusses are some of the latest such attacks.",
+            "We assess it is highly likely that these attacks were conducted by a Chinese cyberespionage actor related to the Operation Soft Cell campaign.",
+            "We refer to this sample as mim220.Previous research indicates possible connections between the Soft Cell actors and APT41, which is known to conduct Chinese state-sponsored espionage activity as well as financially motivated activity targeting multiple sectors with a broad geographical coverage, including telecommunication providers.",
+            "While it is highly likely that the threat actor is a Chinese cyberespionage group in the nexus of Gallium and APT41, the exact grouping remains unclear."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://securityaffairs.com/132217/apt/gallium-apt-pingpull-trojan.html",
+        "sentences": [
+            "China-linked Gallium APT (aka Softcell) used a previously undocumented remote access Trojan dubbed PingPull in recent attacks aimed at organizations in Southeast Asia, Europe, and Africa.",
+            "Researchers from Palo Alto Networks defined the PingPull RAT as a “difficult-to-detect” backdoor that leverages the Internet Control Message Protocol (ICMP) for C2 communications.",
+            "Since 2021, the cyberespionage group has started targeting financial institutions and government entities in Afghanistan, Australia, Belgium, Cambodia, Malaysia, Mozambique, the Philippines, Russia and Vietnam.",
+            "The PingPull Trojan is written in Visual C++, it was used by threat actors to access a reverse shell and run arbitrary commands on compromised systems.",
+            "The activity of the APT group was first reported by Microsoft in December 2019, when the Microsoft Threat Intelligence Center (MSTIC) warned of the GALLIUM threat group targeting global telecommunication providers worldwide.",
+            "“ The researchers pointed out that GALLIUM is an active threat to telecommunications, finance and government organizations across Southeast Asia, Europe and Africa."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.cybersecurity-help.cz/blog/2699.html",
+        "sentences": [
+            "As of now, Gallium is an active global threat to telecommunication, finance and government sectors, warn the researchers.",
+            "Last month, cybersecurity firm Cybereason warned about a worldwide malicious campaign against telecommunications providers conducted by Chinese state-sponsored hacking group Gallium.",
+            "Now, Palo Alto’s Unit 42 is warning about a previously undocumented remote access trojan observed in Gallium's attacks.",
+            "Regardless of the variant, PingPull is able to install itself as a service on a compromised machine.",
+            "Since 2012, Gallium APT attacked telecommunication providers primarily in Southeast Asia, Europe, and Africa.",
+            "Using ICMP makes it more difficult to detect trojan’s command-and-control communications because many organizations usually don't implement ICMP inspection in their networks."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://cymulate.com/threats/gallium-apt-group/",
+        "sentences": [
+            "Another variant of PingPull uses HTTPS requests to communicate with its C2 server instead of ICMP.",
+            "In each of the variants, PingPull will create a custom string with the following structure that it will send to the C2 in all interactions, which analysts believe the C2 server will use to uniquely identify the compromised system: PROJECT_[uppercase executable name]_[uppercase computer name]_[uppercase hexadecimal IP address]",
+            "Much like the other C2 channels, the data sent in this beacon includes the unique identifier string generated by PingPull that begins with PROJECT.",
+            "PingPull was written in Visual C++ and provides a threat actor the ability to run commands and access a reverse shell on a compromised host.",
+            "Regardless of the variant, PingPull is capable of installing itself as a service with the following description: Provides tunnel connectivity using IPv6 transition technologies (6to4, ISATAP, Port Proxy, and Teredo), and IP-HTTPS.",
+            "The PingPull Trojan is written in Visual C++, it was used by threat actors to access a reverse shell and run arbitrary commands on compromised systems."
+        ]
+    }
+]

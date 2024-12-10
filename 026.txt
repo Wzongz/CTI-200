@@ -1,0 +1,141 @@
+{
+    "event_id": "026",
+    "claim": "Recently at the SAS conference I talked about 'Funky malware formats'—atypical executable formats used by malware that are only loaded by proprietary loaders.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Recently, at the SAS conference I talked about “Funky malware formats”—atypical executable formats used by malware that are only loaded by proprietary loaders. Malware authors use them in order to make static detection more difficult, because custom formats are not recognized as executable by AV scanners. Using atypical formats may also slow down the analysis process because the file can’t be parsed out of the box by typical tools. Instead, we need to write custom loaders in order to analyze them freely. Last year, we described one such format in a post about Hidden Bee. This time, we want to introduce you to another case that we discussed at the SAS Conference. It is a sample of Ocean Lotus, also known as APT 32, a threat group associated with Vietnam. The sample comes with two elements—BLOB and CAB—that are both executables in the same unknown format. The custom format is achieved by conversion from PE format (we can guess it by observing some artifacts typical for PE files, i.e. the manifest) However, the header is fully custom, and the way of loading it has no resemblance with PE. Some of the information from a typical PE (for example, the layout of the sections) is not preserved: sections are shuffled.Content of the phishing email, along with its attachment The title “Sổ tay vấn đề pháp lý cho các nhà hoạt động nhân quyền” translates to: “Handbook of legal issues for human rights activists.” It’s a subject line for a spear phishing campaign targeting Vietnamese activists. The malicious sample was delivered as an attachment to the email: a zipped executable. The icon tried to imitate a PDF (FoxitPDF reader). An executable with FoxitFDF icon The main executable and the decoy copied to the Temp folder While the user is busy reading the launched document, the dropper unpacks the real payload. It is dropped into C:\\ProgramData\\Microsoft Help: All the elements of the malware unpacked The dropper executable is deleted afterwards. The malware manages to bypass UAC at default level. We can see the application sporder.exe running with elevated privileges. Persistence is provided by a simple Run key, leading to the dropped script: Import table of SPORDER.exe (view from PE-bear) SPORDER.dll imports another of the dropped DLLs, hp6000.dll:Import table of SPORDER.exe (view from PE-bear) The key malware functionality is, however, not provided by any of the dropped PE files. They are just used as loaders. As it turns out, the core is hidden in two unknown files: BLOB and CAB.The files with extensions BLOB and CAB are obfuscated with XOR. After decoding them, we notice some readable strings of code. However, none of them are valid PE files, and we cannot find any of the typical headers.The BLOB file looks like a processed PE file, however, its sections appear to be in swapped order. The first section seems to be .data, instead of .text. We can see visible artifacts from the BZIP library and C++ standard library.This sample also has a custom header, which does not resemble the PE header. However, we found sections inside that are typical for PE files, for example, a manifest.As it turned out, both files are loaded by hp6000.dll: 67b8d21e79018f1ab1b31e1aba16d201 The loading function is executed in an obfuscated way: when the DllMain is executed, it patches the main executable that loaded the DLL.First, the file name of the current module is retrieved. Then, the file is read and the address of the entry point is fetched. Then, the analogical module that is loaded in the memory is set as an executable:Using VirtualProtect to make the main module writable Finally, the bytes are patched so that the entry point will redirect back to the appropriate function in the loading DLL:Patching the entry point of the main module, byte by byte This is how the entry point of the main module looks after the patch is applied:The Entry Point of the main module (sporder.exe) after patching We see that the Virtual Address (RVA 0x1210 + DLL loading base) of the function within the DLL is moved to EAX, and then the EAX is used as a jump target. The function that starts at RVA 0x1210 is a loader for BLOB and CAB： This redirection works, thanks to the fact that when the executable is loaded into the memory, before the Entry Point of the main module is hit, all the DLLs that are in its Import Table are loaded, and the DllMain of each is called. Just after the DLLs are loaded, the execution of the main executable starts. And in our case, the patched entry point redirects back to the DLL. As you can see, the CAB file is loaded first: Executing the function loading CAB file (unconditional) Further, we see this function retrieving some environmental variable. This variable is used to store the state of the application, and is shared between consecutive executions. Depending on this state, one of multiple execution paths can be taken. The name of the variable is created by concatenating:The content variable may be one of the following: ‘@’, ‘*’,’:’. If it is empty, the first value ‘@’ is set. Those variables are translated to particular states that control the flow. The main process is restarted on each state change. Finally, the state 3 creates mutex and loads the file with the BLOB extension.By comparing the format that is loaded in the memory with the format that is stored on the disk, we can see that the beginning and the end of the BLOB is skipped in the loading process. So, we can guess that those parts are some headers that contains the information necessary for loading, but not for execution. The header at the beginning of the file will be referenced as Header1, and the one at the end (footer) will be referenced as Header2.Comparing the memory dump with the raw file We also found that some of the addresses were relocated (the new Image Base was added). View from IFL (Interactive Functions List) The core of the loader is in the following function: This is the function that we need to analyze in order to make sense out of the custom format. Let’s take a look at the loading process itself. First, DWORD of the Header1 is skipped. Then, we have two DWORDs that are used as an XOR key. Once they are fetched, the rest of the header is decoded.After applying the key, we get the content of the file in its clear form. The next value from the headers is used in the formula calculating the size for loading the executable part of the module. In the currently analyzed case (the CAB file), it is 0x17000: Then, 0x17000 bytes of the payload is copied, but the beginning containing the Header1 is skipped (the first 16 bytes). After the module content is copied, Header2 is used to continue loading. Looking at Header2, we can see some similarities with Header1. Again, the initial DWORD is skipped, and then we have a value that is used in a formula calculating the size of the memory to be allocated. The new memory region that is being allocated this time is used for the imports that are going to be loaded (the full process will be explained further). Conceptually, we can divide Header 2 into two parts. First comes a prolog that contains two DWORD values. Example from the currently-analyzed CAB file:Then there is a list of records of a custom type. Each record represents a different piece of information that is necessary for loading the module. They are identified by the type ID that is represented by a DWORD at the beginning of the record. Type 2 stands for entry point or an exported function. The pointed address is stored on the list in order to be called later, after the loading finished. This record has three DWORD parameters.By observing the execution flow, we can confirm that indeed the stored entry point of the module is being called later:In contrast to PE format, the address of the imported function is not loaded into the main module. Instead, it is written into the separate executable area (in the given example it is written at VA: 0x00240001):And then, the address where the import was filled is filled back in the main module. The address in the main module that needs to be filled is specified by the last parameter of this record. In the given example, chunk[3] = 0x0000E014 is being filled by 0x00240001:The functions from the embedded list are for a loader, however, as mentioned earlier, the addresses are not filled in a normal IAT, typical for PE format. Rather, all are filled as a list of jumps stored in a newly-allocated memory page. Address of the imported function is retrieved and written into the emitted jump Meaning of the type field The import record has a field type, that can have one of the following values: 1,2,3,4. The 1 and 2 are the most important: They are used for loading the imports. 1 stands for loading by ordinals, 2 for loading by name. The remaining 3 and 4 are used for cleanup of the fields that are no longer needed. 3 erases import name, 4 erases DLL name.The CAB file is loaded first, just to install the malware, and then deleted. All the espionage-related features are performed by the BLOB that is loaded later and kept persistent in the memory of the loader. In addition to being in a custom format, BLOB is also heavily obfuscated. We can observe its attempts to connect to one of the CnCs: Some of those domains are known from previous reports on Ocean Lotus, i.e. [the Cyclance white paper].Ocean Lotus often surprises researchers with its creative obfuscation techniques. Recently, a different sample of Ocean Lotus was found using steganography to hide their executables (you can read more about it in the report of ThreatVector). The format that we described is just one of many unusual forms that their implants can take.\n\n\n",
+    "reports": [
+        {
+            "link": "https://ti.qianxin.com/blog/articles/oceanlotus-attacks-to-indochinese-peninsula-evolution-of-targets-techniques-and-procedure/",
+            "content":  "DLL malicious code in the FMain export function, winword. Exe (this is the exe file name of the white utility program used by OceanLotus) through the CMD. The PE included in the file is found in a hacker's toolkit. The upload place of this sample is VN, the upload time is July 31, and the file name is msvchr.exe, we can know that this sample should be aimed at Vietnam attack: Through the analysis and comparison of these samples, we can know that these samples should be used to specifically execute exe file in memory, and pass command line parameters of the Loader program, is the last six months to use the new malicious code framework, specifically used to develop against static kill. We also found that OceanLotus used the \"Eternal blue\" series of vulnerabilities to target companies in Vietnam that provided software to the government. https://ti.qianxin.com/blog/articles/oceanlotus-targets-chinese-university/In addition to traditional malicious payloads that take advantage of black and white mechanisms, malicious payloads that infiltrate tweets and websites, OceanLotus also takes advantage of the latest Winrar vulnerability to launch attacks against Vietnam.",
+            "domain": "ti.qianxin.com",
+            "tokenized": [
+                {
+                    "sent":   "DLL malicious code in the FMain export function, winword.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "Exe (this is the exe file name of the white utility program used by OceanLotus) through the CMD",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The PE included in the file is found in a hacker's toolkit.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "The upload place of this sample is VN, the upload time is July 31, and the file name is msvchr.exe, we can know that this sample should be aimed at Vietnam attack: Through the analysis and comparison of these samples, we can know that these samples should be used to specifically execute exe file in memory, and pass command line parameters of the Loader program, is the last six months to use the new malicious code framework, specifically used to develop against static kill.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "We also found that OceanLotus used the \"Eternal blue\" series of vulnerabilities to target companies in Vietnam that provided software to the government.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":   "https://ti.qianxin.com/blog/articles/oceanlotus-targets-chinese-university/In addition to traditional malicious payloads that take advantage of black and white mechanisms, malicious payloads that infiltrate tweets and websites, OceanLotus also takes advantage of the latest Winrar vulnerability to launch attacks against Vietnam.",
+                     "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://ti.qianxin.com/blog/articles/english-version-of-new-approaches-utilized-by-oceanLotus-to-target-vietnamese-environmentalist/",
+            "content": "Another obfuscation, control flow flattening, was applied to APT10 ANEL and Dharma ransomware packer. Currently malware with the obfuscations is limited, however TAU expects not only APT10 but also other threat actors will start to use them. Data-flow tracking code was added to detect these use-cases. The Carbon Black Threat Analysis Unit (TAU) recently analyzed a series of malware samples that utilized compiler-level obfuscations. The modified tool was tested with an ANEL 5.4.1 payload dropped from a malicious document with the following hash (previously reported by FireEye): 3d2b3c9f50ed36bef90139e6dd250f140c373664984b97a97a5a70333387d18d The code is able to deobfuscate 34 of 38 functions (89%). This provides researchers and analyst broad tool to attack this type of obfuscation, and if it adopted in other families.",
+            "domain": "ti.qianxin.com",
+            "tokenized": [
+                {
+                    "sent":   "Although 4 dlls have the opportunity to execute dllmain, the only dll that loads the next stage payload is CoolType.dll because the attacker designed a flag variable to control whether the next stage payload needs to be loaded:The code at the entrance of AGM.dll indicates the two if judgments will not enter, because the value of flag is 0x8f, which is greater than the first two judgments, so the subsequent payload will not be loaded:The code of the CoolType.dll code is 0x27, which is less than 0x46, so it will enter the first if condition and execute fun_LoadExportFun: The function of fun_LoadExportFun is mainly to cover large code at the entrance of exe, loop into the garbage code appearing in the configuration, the size is 0x20610 bytes, then add the code 0xff, 0x15 at the end, and finally connect the address of the export function of AGM_5, only In order to finally execute the code that loads the shellcode: When the program returns to the exe process space, it will jump back to the code range covered by fun_LoadExportFun to continue running, and finally execute the AGM_5 function, mainly to avoid being traced back to the execution flow:When AGM_5 is executed, it first hides all the child windows of the process, then reads the file with the suffix of db3 (here rasman.db3) with the same file name in the same directory, and finally performs execution：The OceanLotus reflects a very strong confrontational ability and willing to attack by keep evolving their techniques, including approaches to deliver bait documents, changes of the payloads, measures in circumvention, as well as domain assets, no matter the target is domestic or overseas. At the same time, an empty docx file will be created under temp folder and then opened, so that the victim thinks that it is a docx file: Thong tin chi tiet nhung san pham can dat hang qua shop zero waste_Bao gia chi tiet san pham.docx English translation of the file name: The details information about products need order shop zero waste details price listRasman.exe will load dlls in the same directory by default, including AGM.dll, BIB.dll, CoolType.dll and ACE.dll, which could lead to DLL Side-Loading: The code of the 4 dlls is the same, is the hijacked dll, will be loaded by rasman.exe program by default. Currently we capture another attack incident targeting a Vietnamese environmentalist with new malware payload and hope the revealed details could lead to more findings in the future. It can be seen that both the bait name from the compressed package and the bait name as the attack sample are consistent with the scene of attacking the person in charge of the environmental protection organization. The function of the shellcode executed by Loader is mainly to release the file and achieve persistence. The obtained resource data is as follows, including the file name, file size, and compressed data:Then get the exe and dll file names in system32, Program File and Windows directory, insert them into the array, then randomly generate a random number, randomly select a file in the array, get the file name and file description of the file as the name of the dropped exe file and related folder name respectively: If rasman.dll is randomly selected, it will get the file description as the name of the folder where the malicious code was released.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "At the same time, an empty docx file will be created under temp folder and then opened, so that the victim thinks that it is a docx file: Thong tin chi tiet nhung san pham can dat hang qua shop zero waste_Bao gia chi tiet san pham.docx English translation of the file name: The details information about products need order shop zero waste details price listRasman.exe will load dlls in the same directory by default, including AGM.dll, BIB.dll, CoolType.dll and ACE.dll, which could lead to DLL Side-Loading: The code of the 4 dlls is the same, is the hijacked dll, will be loaded by rasman.exe program by default.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "Currently we capture another attack incident targeting a Vietnamese environmentalist with new malware payload and hope the revealed details could lead to more findings in the future.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "It can be seen that both the bait name from the compressed package and the bait name as the attack sample are consistent with the scene of attacking the person in charge of the environmental protection organization.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":"The function of the shellcode executed by Loader is mainly to release the file and achieve persistence.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":      "The obtained resource data is as follows, including the file name, file size, and compressed data:Then get the exe and dll file names in system32, Program File and Windows directory, insert them into the array, then randomly generate a random number, randomly select a file in the array, get the file name and file description of the file as the name of the dropped exe file and related folder name respectively: If rasman.dll is randomly selected, it will get the file description as the name of the folder where the malicious code was released.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.blackberry.com/content/dam/bbcomv4/blackberry-com/en/company/research-and-intelligence/OceanLotus-Steganography-Malware-Analysis-White-Paper.pdf/",
+            "content":  "After obtaining the size, the malware will allocate an appropriate memory buffer and proceed to decode the remaining payload byte by byte：The payload is encoded in the same way as the size – each byte of the payload is computed from the ARGB color codes of each subsequent pixel in the image:In case the payload is bigger than the image used to store it, the remaining payload bytes are simply attached to the image after its IEND marker, and read directly from the file:The pixel encoding algorithm is fairly straightforward and aims to minimize visual differences when compared to the original image by only modifying the least significant bits of the red, green, and blue color byte values. Some of these names include processes related to security software:The final payload comes in a form of a launcher DLL that contains an encrypted backdoor in its .rdata section and a plain-text configuration in its resources. The backdoor DLL and the C2 communication DLLs are heavily obfuscated using high quantities of junk code, which significantly inflates their size and makes both static analysis and debugging more difficult. This particular OceanLotus malware loader attempts to imitate McAfee’s McVsoCfg DLL and expects to be side-loaded by the legitimate “On Demand Scanner” executable. This white paper describes the steganography algorithm used in two distinct loader variants and looks at the launcher of the backdoor that was encoded in one of the .png. While continuing to monitor activity of the OceanLotus APT Group, BlackBerry Cylance researchers uncovered a novel payload loader that utilizes steganography to read an encrypted payload concealed within a .png image file.",
+            "domain": "www.blackberry.com",
+            "tokenized": [
+                {
+                    "sent":"After obtaining the size, the malware will allocate an appropriate memory buffer and proceed to decode the remaining payload byte by byte：The payload is encoded in the same way as the size – each byte of the payload is computed from the ARGB color codes of each subsequent pixel in the image:In case the payload is bigger than the image used to store it, the remaining payload bytes are simply attached to the image after its IEND marker, and read directly from the file:The pixel encoding algorithm is fairly straightforward and aims to minimize visual differences when compared to the original image by only modifying the least significant bits of the red, green, and blue color byte values.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Some of these names include processes related to security software:The final payload comes in a form of a launcher DLL that contains an encrypted backdoor in its .rdata section and a plain-text configuration in its resources.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The backdoor DLL and the C2 communication DLLs are heavily obfuscated using high quantities of junk code, which significantly inflates their size and makes both static analysis and debugging more difficult.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":   "This particular OceanLotus malware loader attempts to imitate McAfee’s McVsoCfg DLL and expects to be side-loaded by the legitimate “On Demand Scanner” executable.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "This white paper describes the steganography algorithm used in two distinct loader variants and looks at the launcher of the backdoor that was encoded in one of the .png",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "While continuing to monitor activity of the OceanLotus APT Group, BlackBerry Cylance researchers uncovered a novel payload loader that utilizes steganography to read an encrypted payload concealed within a .png image file.",
+                    "is_evidence": 0
+                }
+            ]
+         },
+         {
+            "link": "https://www.malwarebytes.com/blog/news/2020/10/kraken-attack-abuses-wer-service/",
+            "content":  "Inside, we see a malicious macro that uses a modified version of CactusTorch VBA module to execute its shellcode. The import calls used in this part are obfuscated and resolved dynamically by invoking the “Resolve_Imports” function. The threat actors compromised a website to host its payload and then used the CactusTorch framework to perform a fileless attack followed by several anti-analysis techniques. This DLL is a loader that injects an embedded shellcode into WerFault.exe. This DLL performs its malicious activities in multiple threads to make its analysis harder. Using HollowHunter we dumped the shell code injected into WerFault.exe for further analysis.",
+            "domain": "www.malwarebytes.com",
+            "tokenized": [
+                {
+                    "sent":  "Inside, we see a malicious macro that uses a modified version of CactusTorch VBA module to execute its shellcode.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent":  "The import calls used in this part are obfuscated and resolved dynamically by invoking the “Resolve_Imports” function.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "The threat actors compromised a website to host its payload and then used the CactusTorch framework to perform a fileless attack followed by several anti-analysis techniques.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "This DLL is a loader that injects an embedded shellcode into WerFault.exe.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":    "This DLL performs its malicious activities in multiple threads to make its analysis harder.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent":  "Using HollowHunter we dumped the shell code injected into WerFault.exe for further analysis.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

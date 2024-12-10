@@ -1,0 +1,141 @@
+{
+  "event_id": "087",
+  "claim": "Patchwork is a cyber espionage group that was first observed in December 2015. While the group has not been definitively attributed, circumstantial evidence suggests the group may be a pro-Indian or Indian entity. Patchwork has been seen targeting industries related to diplomatic and government agencies.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Patchwork is an Indian threat actor that has been active since December 2015 and usually targets Pakistan via spear phishing attacks. In its most recent campaign from late November to early December 2021, Patchwork has used malicious RTF files to drop a variant of the BADNEWS (Ragnatela) Remote Administration Trojan (RAT). What is interesting among victims of this latest campaign, is that the actor has for the first time targeted several faculty members whose research focus is on molecular medicine and biological science. Instead of focusing entirely on victimology, we decided to shade some light on this APT. Ironically, all the information we gathered was possible thanks to the threat actor infecting themselves with their own RAT, resulting in captured keystrokes and screenshots of their own computer and virtual machines.We identified what we believe is a new variant of the BADNEWS RAT called Ragnatela being distributed via spear phishing emails to targets of interest in Pakistan. Ragnatela, which means spider web in Italian, is also the project name and panel used by Patchwork APT.Ragnatela RAT was built sometime in late November as seen in its Program Database (PDB) path “E:new_opsjlitest __change_ops -29no – CopyReleasejlitest.pdb”. It features the following capabilities: Executing commands via cmd Capturing screenshots Logging Keystrokes Collecting list of all the files in victim’s machine Collecting list of the running applications in the victim’s machine at a specific time periods Downing addition payloads Uploading files In order to distribute the RAT onto victims, Patchwork lures them with documents impersonating Pakistani authorities. For example, a document called EOIForm.rtf was uploaded by the threat actor onto their own server at karachidha[.]org/docs/. That file contains an exploit (Microsoft Equation Editor) which is meant to compromise the victim’s computer and execute the final payload (RAT). That payload is stored within the RTF document as an OLE object. We can deduce the file was created on December 9 2021 based on the source path information. Ragnatela RAT communicates with the attacker’s infrastructure via a server located at bgre.kozow[.]com. Prior to launching this campaign (in late November), the threat actor tested that their server was up and running properly. The RAT (jli.dll) was also tested in late November before its final compilation on 2021-12-09, along with MicroScMgmt.exe used to side-load it. Also in late November, we can see the threat actor testing the side-loading in a typical victim machine. We were able to gain visibility on the victims that were successfully compromised: Ministry of Defense- Government of Pakistan National Defense University of Islam Abad Faculty of Bio-Science, UVAS University, Lahore, Pakistan International center for chemical and biological sciences HEJ Research institute of chemistry, International center for chemical and biological sciences, univeristy of Karachi SHU University, Molecular medicine Another – unintentional – victim is the threat actor himself which appears to have infected is own development machine with the RAT. We can see them running both VirtualBox and VMware to do web development and testing. Their main host has dual keyboard layouts (English and Indian). Other information that can be obtained is that the weather at the time was cloudy with 19 degrees and that they haven’t updated their Java yet. On a more serious note, the threat actor uses VPN Secure and CyberGhost to mask their IP address. Under the VPN they log into their victim’s email and other accounts stolen by the RAT. This blog gave an overview of the latest campaign from the Patchwork APT. While they continue to use the same lures and RAT, the group has shown interest in a new kind of target. Indeed this is the first time we have observed Patchwork targeting molecular medicine and biological science researchers. Thanks to data captured by the threat actor’s own malware, we were able to get a better understanding about who sits behind the keyboard. The group makes use of virtual machines and VPNs to both develop, push updates and check on their victims. Patchwork, like some other East Asian APTs is not as sophisticated as their Russian and North Korean counterparts.\n\n\n",
+  "reports": [
+    {
+      "link": "https://cyble.com/blog/a-deep-dive-into-patchwork-apt-group/",
+      "content": "At the beginning of 2018, researchers discovered that the Patchwork APT group was also operating spear phishing campaigns targeting think tank groups from the U.S. Recently, in January 2021, the research team at Cyble observed the Patchwork APT cyber espionage group targeting China with a malformed document named “Chinese_Pakistani_fighter_planes_play_war_games.docx”. In recent attacks, the Patchwork group has been using a payload that is a modified or custom-built RAT instead of using readily available remote admin tools. The Patchwork APT group has expanded its wings with enhanced malware toolsets and has been targeting China and other regions through spear phishing attacks. The image below showcases Chinese and Pakistani fighter war games with a CVE-2017-0261 exploit code that drops and executes Patchwork APT payloads on victim machines. This group is suspected to be run by an India based threat actor targeting foreign embassies and diplomatic offices in Pakistan, Sri-Lanka, Uruguay, Bangladesh, Taiwan, Australia, and. We suspect that the attack is executed in the form of spear phishing emails with malicious attachments.",
+      "domain": "cyble.com",
+      "tokenized": [
+        {
+          "sent":"At the beginning of 2018, researchers discovered that the Patchwork APT group was also operating spear phishing campaigns targeting think tank groups from the U.S. Recently, in January 2021, the research team at Cyble observed the Patchwork APT cyber espionage group targeting China with a malformed document named “Chinese_Pakistani_fighter_planes_play_war_games.docx”.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "In recent attacks, the Patchwork group has been using a payload that is a modified or custom-built RAT instead of using readily available remote admin tools.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The Patchwork APT group has expanded its wings with enhanced malware toolsets and has been targeting China and other regions through spear phishing attacks.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The image below showcases Chinese and Pakistani fighter war games with a CVE-2017-0261 exploit code that drops and executes Patchwork APT payloads on victim machines.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"This group is suspected to be run by an India based threat actor targeting foreign embassies and diplomatic offices in Pakistan, Sri-Lanka, Uruguay, Bangladesh, Taiwan, Australia, and",
+          "is_evidence": 0
+        },
+        {
+          "sent":"We suspect that the attack is executed in the form of spear phishing emails with malicious attachments.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.rewterz.com/rewterz-news/rewterz-threat-alert-patchwork-apt-threat-actor-group-active-iocs-2/",
+      "content": "Additionally, Patchwork has been known to employ social engineering techniques to track down and exfiltrate data from compromised systems. Overall, Patchwork is a sophisticated and persistent threat actor that poses a significant risk to targeted organizations. Patchwork has used a range of tactics, techniques, and procedures (TTPs) in its attacks. Patchwork is an Advanced Persistent Threat (APT) group that has been active since at least 2014. Patchwork primarily targets government, defense, and diplomatic organizations, as well as academic institutions, in South and Southeast Asia, including India, Pakistan, and Bangladesh. The group is believed to be of Indian origin and has been linked to several cyber espionage campaigns.",
+      "domain": "www.rewterz.com",
+      "tokenized": [
+        {
+          "sent":"Additionally, Patchwork has been known to employ social engineering techniques to track down and exfiltrate data from compromised systems.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Overall, Patchwork is a sophisticated and persistent threat actor that poses a significant risk to targeted organizations.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Patchwork has used a range of tactics, techniques, and procedures (TTPs) in its attacks.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Patchwork is an Advanced Persistent Threat (APT) group that has been active since at least 2014.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Patchwork primarily targets government, defense, and diplomatic organizations, as well as academic institutions, in South and Southeast Asia, including India, Pakistan, and Bangladesh.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The group is believed to be of Indian origin and has been linked to several cyber espionage campaigns.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://ti.qianxin.com/blog/articles/Patchwork-Group-Utilizing-WarHawk-Backdoor-Variant-Spyder-for-Espionage-against-Multiple-Countries-EN/",
+      "content": "Based on the digital signatures used in early Spyder samples and their association with Remcos RAT samples, we are inclined to believe that the Patchwork group is behind these attacks. Coincidentally, foreign security researchers also discovered a few of these samples [1] and named the backdoor \"Spyder\" based on information found in the command-and-control (C2) server login interface. Considering the sample names, the location of VirusTotal uploads, and configuration information within the samples, the targets of the Spyder backdoor include China, Pakistan, Nepal Police Department, and the Bangladesh Air Force. Patchwork, also known as Patchwork, White Elephant, Hangover, Dropping Elephant, and internally tracked as APT-Q-36 by QiAnXin, is an group widely believed to have a South Asian origin. Recently, during routine sample tracking and analysis, the Threat Intelligence Center at QiAnXin identified a batch of malicious samples linked to Patchwork. There are intricate connections among several APT groups in the South Asia region, and the Spyder backdoor, which targeted multiple countries in this attack, is an example.",
+      "domain": "ti.qianxin.com",
+      "tokenized": [
+        {
+          "sent":"Based on the digital signatures used in early Spyder samples and their association with Remcos RAT samples, we are inclined to believe that the Patchwork group is behind these attacks.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Coincidentally, foreign security researchers also discovered a few of these samples [1] and named the backdoor \"Spyder\" based on information found in the command-and-control (C2) server login interface.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Considering the sample names, the location of VirusTotal uploads, and configuration information within the samples, the targets of the Spyder backdoor include China, Pakistan, Nepal Police Department, and the Bangladesh Air Force.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Patchwork, also known as Patchwork, White Elephant, Hangover, Dropping Elephant, and internally tracked as APT-Q-36 by QiAnXin, is an group widely believed to have a South Asian origin.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Recently, during routine sample tracking and analysis, the Threat Intelligence Center at QiAnXin identified a batch of malicious samples linked to Patchwork.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "There are intricate connections among several APT groups in the South Asia region, and the Spyder backdoor, which targeted multiple countries in this attack, is an example.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://cyware.com/news/patchwork-apt-infects-itself-with-its-own-malware-b3f9ffcc/",
+      "content": "During its latest campaign, from November to December 2021, the group used malicious RTF documents, pretending to be from Pakistani officials, to deploy a new strain of the BADNEWS RAT, also known as Ragnatela. However, Malwarebytes Labs discovered that the threat actor infected itself with the malware, leading to captured keystrokes and screenshots of their own systems and virtual machines. One such mistake was most recently made by an Indian APT group that infected itself with its own malware, providing researchers the opportunity to glean details of the group’s operations. Patchwork APT has been active since December 2015 and primarily targets Pakistan via spear-phishing attacks. Ragnatela means spider web in Italian and was first developed and tested in November 2021. These observations revealed that Patchwork infected Pakistan’s Ministry of Defense and faculty members from biological science and molecular medicine departments from various universities.",
+      "domain": "cyware.com",
+      "tokenized": [
+        {
+          "sent":"During its latest campaign, from November to December 2021, the group used malicious RTF documents, pretending to be from Pakistani officials, to deploy a new strain of the BADNEWS RAT, also known as Ragnatela.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "However, Malwarebytes Labs discovered that the threat actor infected itself with the malware, leading to captured keystrokes and screenshots of their own systems and virtual machines.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "One such mistake was most recently made by an Indian APT group that infected itself with its own malware, providing researchers the opportunity to glean details of the group’s operations.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Patchwork APT has been active since December 2015 and primarily targets Pakistan via spear-phishing attacks.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Ragnatela means spider web in Italian and was first developed and tested in November 2021.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "These observations revealed that Patchwork infected Pakistan’s Ministry of Defense and faculty members from biological science and molecular medicine departments from various universities.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

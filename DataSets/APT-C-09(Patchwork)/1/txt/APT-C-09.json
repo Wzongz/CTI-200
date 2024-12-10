@@ -1,0 +1,51 @@
+claim：This blog gave an overview of the latest campaign from the Patchwork APT， while they continue to use the same lures and RAT, the group has shown interest in a new kind of target. Indeed, this is the first time we have observed Patchwork targeting molecular medicine and biological science researchers
+explain：Patchwork is an Indian threat actor that has been active since December 2015 and usually targets Pakistan via spear phishing attacks. In its most recent campaign from late November to early December 2021, Patchwork has used malicious RTF files to drop a variant of the BADNEWS (Ragnatela)Remote Administration Trojan (RAT). What is interesting among victims of this latest campaign, is that the actor has for the first time targeted several faculty members whose research focus is on molecular medicine and biological science. Instead of focusing entirely on victimology, we decided to shade some light on this APT. Ironically, all the information we gathered was possible thanks to the threat actor infecting themselves with their own RAT, resulting in captured keystrokes and screenshots of their own computer and virtual machines.We identified what we believe is a new variant of the BADNEWS RAT called Ragnatela being distributed via spear phishing emails to targets of interest in Pakistan. Ragnatela, which means spider web in Italian, is also the project name and panel used by Patchwork APT. Ragnatela RATwas built sometime in late November as seen in its Program Database (PDB) path “E:\new_ops\jlitest __change_ops -29no – Copy\Release\jlitest.pdb”. It features the following capabilities: In order to distribute the RAT onto victims, Patchwork lures them with documents impersonating Pakistani authorities. For example, a document called EOIForm.rtf was uploaded by the threat actor onto their own server at karachidha[.]org/docs/. That file contains an exploit (Microsoft Equation Editor) which is meant to compromise the victim’s computer and execute the final payload (RAT).That payload is stored within the RTF document as an OLE object. We can deduce the file was created on December 9 2021 based on the source path information.Ragnatela RAT communicates with the attacker’s infrastructure via a server located at bgre.kozow[.]com. Prior to launching this campaign (in late November), the threat actor tested that their server was up and running properly. The RAT (jli.dll) was also tested in late November before its final compilation on 2021-12-09, along with MicroScMgmt.exe used to side-load it.Another – unintentional – victim is the threat actor himself which appears to have infected is own development machine with the RAT. We can see them running both VirtualBox and VMware to do web development and testing. Their main host has dual keyboard layouts (English and Indian). Other information that can be obtained is that the weather at the time was cloudy with 19 degrees and that they haven’t updated their Java yet. On a more serious note, the threat actor uses VPN Secure and CyberGhost to mask their IPaddress. Under the VPN they log into their victim’s email and other accounts stolen by the RAT.This blog gave an overview of the latest campaign from the Patchwork APT. While they continue to use the same lures and RAT, the group has shown interest in a new kind of target. Indeed this is the first time we have observed Patchwork targeting molecular medicine and biological science researchers. Thanks to data captured by the threat actor’s own malware, we were able to get a better understanding about who sits behind the keyboard. The group makes use of virtual machines and VPNs to both develop, push updates and check on their victims. Patchwork, like some other East Asian APTs is not as sophisticated as their Russian and North Korean counterparts.
+[
+    {
+	link：https://cybleinc.com/2021/01/20/a-deep-dive-into-patchwork-apt-group/
+        "report_id": "report_0",
+        "sentences": [
+            "At the beginning of 2018, researchers discovered that the Patchwork APT group was also operating spear phishing campaigns targeting think tank groups from the US.",
+            "In recent attacks, the Patchwork group has been using a payload that is a modified or custom-built RAT instead of using readily available remote admin tools.",
+            "The Patchwork APT group has expanded its wings with enhanced malware toolsets and has been targeting China and other regions through spear phishing attacks.",
+            "The image below showcases Chinese and Pakistani fighter war games with a CVE\u00022019-0808 exploit code that drops and executes Patchwork APT payloads on victim machines.",
+            "This group is suspected to be run by an Indian-speaking threat actor targeting foreign embassies and diplomatic offices in Pakistan, Sri-Lanka, Uruguay, Bangladesh, Taiwan, Australia, and the USA.",
+            "We suspect that the attack is executed in the form of spear phishing emails with malicious attachments."
+        ]
+    },
+    {
+	link:https://ti.qianxin.com/blog/articles/apt-c-09-reappeared-as-conflict-intensified-between-india-and-pakistan/
+        "report_id": "report_1",
+        "sentences": [
+            "Considering APT-C-09, Bitter and Donot have carried out targeted attacks against China, we must take actions in advance and keep a close eye on their recent activities.",
+            "Decryption algorithm for configurations retrieved from Github will be described in detail and the portrait of the attacker is partially based on statistics of the decrypted data.",
+            "For example, Donot and Bitter disguised as Kashmiri Voice to attack Pakistan, Transparent Tribe attacked India with decoy document regarding terrorist attacks in Kashmir.",
+            "From the time of file creation, the attacker started working at least as early as July 2018.",
+            "The hard coded address is encrypted, each byte need to be subtracted by one to obtain the decrypted URL: The Github account used by the attacker is created on August 7th, 2019, which matches the compilation time of the sample: After performing correlation analysis, we discovered 44 configuration files hosted on Github and utilized by this APT group.",
+            "The related attack vector is an XLSM file, created on August 8 and uploaded to VT on August 13, that leverages CVE-2017-11882 vulnerability to release MSBuild.exe to the %AppData% directory and then add registry Run key to stay persistent."
+        ]
+    },
+    {
+	link:https://www.trendmicro.com/en_us/research/21/h/confucius-uses-pegasus-spyware-related-lures-to-target-pakistani.html
+        "report_id": "report_2",
+        "sentences": [
+            "In this blog entry, we take a look at the lures used by the malicious actor and provide a short analysis of the file stealer used in the campaign, which was launched in early August.",
+            "It should be noted that in some occasions, the threat actor sent spear-phishing emails from the domain name mailerservice[.]directory which we attributed to the Patchwork threat actor in previous research.",
+            "Two days later, a second email — purportedly a warning from a Pakistani military about the Pegasus spyware — containing a cutt.ly link to a malicious encrypted Word document and the password for decryption will be sent to the target.",
+            "While investigating the Confucius threat actor, we found a recent spear phishing campaign that utilizes Pegasus spyware-related lures to entice victims into opening a malicious document downloading a file stealer.",
+            "While the code quality of its payloads is not of the highest standard, this threat actor uses innovative techniques when crafting its malicious documents, such as hiding malicious code in the comments section, or using encrypted documents to prevent automatic analysis."
+        ]
+    },
+    {
+	link:https://www.lookout.com/threat-intelligence/article/lookout-discovers-novel-confucius-apt-android-spyware-linked-to-india-pakistan-conflict
+        "report_id": "report_3",
+        "sentences": [
+            "Lookout first observed SunBird in January 2017, but unlike the other two malware families, the packaging dates appear legitimate, indicating the malware was likely in development between December 2016 and early 2019.To better understand who SunBird may have been deployed against, we analyzed over 18GB of exfiltrated data that was publicly exposed from at least six insecurely configured C2 servers.",
+            "The latest samples of Hornbill show that this malware threat may still be under development.",
+            "This information, combined with the data content, gave us extensive insight into who was being targeted by this malware family and the kind of information the attackers were after.",
+            "We believe with high confidence that these surveillance tools are used by the advanced persistent threat group (APT) Confucius, which first appeared in 2013 as a state-sponsored, pro-India actor primarily pursuing Pakistani and other South Asian targets.1 2 While primarily known for desktop malware, the Confucius group was previously reported to have started leveraging mobile malware in 2017, with the Android surveillanceware ChatSpy.3",
+            "We found a publicly-accessible 2018 Pakistani government advisory warning of a desktop malware campaign targeting officers and government staff.",
+            "While SunBird features remote access trojan (RAT) functionality – a malware that can execute commands on an infected device as directed by an attacker – Hornbill is a discreet surveillance tool used to extract a selected set of data of interest to its operator."
+        ]
+    }
+]

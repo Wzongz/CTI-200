@@ -1,0 +1,140 @@
+{
+  "event_id": "211",
+  "claim": "Through Mandiant investigation of intrusions, the FLARE Advanced Practices team observed a group we track as UNC1945 compromise managed service providers and operate against a tailored set of targets within the financial and professional consulting industries by leveraging access to third-party networks",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Through Mandiant investigation of intrusions, the FLARE Advanced Practices team observed a group we track as UNC1945 compromise managed service providers and operate against a tailored set of targets within the financial and professional consulting industries by leveraging access to third-party networks (see this blog post for an in-depth description of “UNC” groups). UNC1945 targeted Oracle Solaris operating systems, utilized several tools and utilities against Windows and Linux operating systems, loaded and operated custom virtual machines, and employed techniques to evade detection. UNC1945 demonstrated access to exploits, tools and malware for multiple operating systems, a disciplined interest in covering or manipulating their activity, and displayed advanced technical abilities during interactive operations. Mandiant discovered and reported to Oracle Oracle's CVE-2020-14871, which was addressed in October 2020 Critical Patch Update. Mandiant recommends staying current on all current patch updates to ensure a high security posture. We will discuss this vulnerability in greater detail in a follow up blog post.The threat actor demonstrated experience and comfort by utilizing unique tactics, techniques and procedures (TTPs) within Unix environments, demonstrating a high level of acumen in conjunction with ease of operability in Microsoft Windows operating systems. They were successful navigating multiple segmented networks and leveraging third-party access to extend operations well beyond the initial victim. Furthermore, UNC1945 operated from several virtual machines pre-configured with post-exploitation tools in addition to their custom toolset to evade detection and forensics. In late 2018, UNC1945 gained access to a Solaris server and installed a backdoor we track as SLAPSTICK in order to capture connection details and credentials to facilitate further compromise. The SSH service of this server was exposed to the internet at the time, the same time we observed first evidence of threat activity. Unfortunately, due to insufficient available evidence, the next indication of activity was in mid-2020 at which time a different Solaris server was observed connecting to the threat actor infrastructure. This indicates a dwell time of approximately 519 days based on recovered artifacts. The threat actor used a Solaris Pluggable Authentication Module backdoor we refer to as SLAPSTICK to establish a foothold on a Solaris 9 server. This facilitated user access to the system with a secret hard-coded password and allowed the threat actors to escalate privileges and maintain persistence (see Figure 1). At the initial victim, UNC1945 placed a copy of a legitimate pam_unix.so file and SLAPSTICK in the /lib64/security folder. A day later, the threat actor positioned a custom Linux backdoor, which Mandiant named LEMONSTICK, on the same workstation. LEMONSTICK capabilities include command execution, file transfer and execution, and the ability to establish tunnel connections. (see Figure 2).UNC1945 obtained and maintained access to their external infrastructure using an SSH Port Forwarding mechanism despite the host lacking accessibility to the internet directly. SSH Port Forwarding is a mechanism implemented in SSH protocol for transporting arbitrary networking data over an encrypted SSH connection (tunneling). This feature can be used for adding encryption to legacy applications traversing firewalls or with malicious intent to access internal networks from the the internet. The UNC1945 configurations we observed are similarly structured with respect to the host alias, specified options, and option order (see Figure 3). As part of this multi-stage operation, UNC1945 dropped a custom QEMU Virtual Machine (VM) on multiple hosts, which was executed inside of any Linux system by launching a ‘start.sh’ script. The script contained TCP forwarding settings that could be used by the threat actor in conjunction with the SSH tunnels to give direct access from the threat actor VM to the command and control server to obfuscate interaction with customer infrastructure. The VM was running a version of the Tiny Core Linux OS with pre-loaded scripts and tools. Also, we analyzed the Virtual Machine file system timestamps, which coincided with UNC1945's overall operational timeline. The VM contained numerous tools such as network scanners, exploits and reconnaissance tools. Tiny Core Linux pre-loaded tools included Mimikatz, Powersploit, Responder, Procdump, CrackMapExec, PoshC2, Medusa, JBoss Vulnerability Scanner and more. Efforts to decrease operational visibility included placing tool and output files within temporary file system mount points that were stored in volatile memory. Additionally, UNC1945 used built-in utilities and public tools to modify timestamps and selectively manipulate Unix log files. UNC1945 employed anti-forensics techniques with the use of a custom ELF utility named LOGBLEACH. The actor used built-in Linux commands to alter the timestamps of files and directories and used LOGBLEACH to clean logs to thwart forensic analysis, as seen in Figure 4. To further obfuscate activity, a Linux ELF packer named STEELCORGI was executed in memory on the Solaris system. The malware contains various anti-analysis techniques, including anti-debugging, anti-tracing, and string obfuscation. It uses environment variables as a key to unpack the final payload.After successfully establishing a foothold, UNC1945 collected credentials, escalated privileges, and successfully moved laterally through multiple networks. UNC1945 obtained credentials via SLAPSTICK and open source tools such as Mimikatz, which enabled easy lateral movement throughout networks to obtain immediate access to other segments of the network and third-party environments. Stolen credentials collected by SLAPSTICK were used to traverse the customer network via SSH and deploy SLAPSTICK to additional hosts. After successfully authenticating, SLAPSTICK displays a welcome message, as seen in Figure 5. UNC1945 used ProxyChains to download PUPYRAT, an open source, cross-platform multi-functional remote administration and post-exploitation tool mainly written in Python. At one target, the threat actor used a virtual machine to initiate a brute-force of SSH targeting Linux and HP-UX endpoints. Beginning with seemingly random usernames and shifting to legitimate Linux and Windows accounts, the threat actor successfully established SSH connections on a Linux endpoint. After successfully escalating privileges on an HP-UX endpoint and a Linux endpoint, UNC1945 installed three backdoors: SLAPSTICK, TINYSHELL, and OKSOLO. We observed UNC1945 use IMPACKET with SMBEXEC in a Microsoft Windows environment to execute commands remotely without the need to upload a payload to the target. SMBEXEC allows the threat actor to operate like PsExec, but without using RemComSvc. There are two main modes of using this tool that benefits attackers. Share mode allows the specification of a share that everything will be executed through. Server mode permits the output of the executed commands to be sent back by the target machine into a locally shared folder.At one victim, we observed UNC1945 moving laterally via Remote Desktop Protocol (RDP) to a Windows server before viewing the Server Manager Panel, viewing and modifying RDP-related system firewall rules and checking the application settings of two endpoint security services.Mandiant investigations found that the threat actor maintains various tools to interact with victim networks. In addition to custom tools, the UNC1945 VMs contained various tools (e.g. network scanners, exploits and reconnaissance; see Associated Tools and Malware section). In some intrusions, UNC1945 employed a SPARC executable identified as a reconnaissance tool. Based on publicly available information, this executable could be referred to as Luckscan or BlueKeep, the latter of which is part of the BKScan toolkit (see Figure 6).According to open sources, BlueKeep, aka “bkscan” scanner, works both unauthenticated and authenticated (i.e. when Network Level Authentication is enabled). BlueKeep (CVE 2019-0708) is a security vulnerability that was discovered in Microsoft's Remote Desktop Protocol (RDP) implementation, which allows for the possibility of remote code execution. Despite this multi-staged operation, Mandiant did not observe evidence of data exfiltration and was unable to determine UNC1945's mission for most of the intrusions we investigated. In at least one case, we observed ROLLCOAST ransomware deployment in the final phase of the threat actor activity, but Mandiant didn’t attribute this activity to UNC1945. At this time, it is likely that access to the victim environment was sold to another group. The ease and breadth of exploitation in which UNC1945 conducted this campaign suggests a sophisticated, persistent actor comfortable exploiting various operating systems, and access to resources and numerous toolsets. Given the aforementioned factors, use of zero-day exploits and virtual machines, and ability to traverse multiple third-party networks, Mandiant expects this motivated threat actor to continue targeted operations against key industries while taking advantage of operating systems that likely have inadequate security visibility. EVILSUN is a remote exploitation tool that gains access to Solaris 10 and 11 systems of SPARC or i386 architecture using a vulnerability (CVE-2020-14871) exposed by SSH keyboard-interactive authentication. The remote exploitation tool makes SSH connections to hosts passed on the command line. The default port is the normal SSH port (22), but this may be overridden. EVILSUN passes the banner string SSH-2.0-Sun_SSH_1.1.3 over the connection in clear text as part of handshaking. LEMONSTICK is a Linux executable command line utility with backdoor capabilities. The backdoor can execute files, transfer files, and tunnel connections. LEMONSTICK can be started in two different ways: passing the `-c` command line argument (with an optional file) and setting the ‘OCB’ environment variable. When started with the `-c` command line argument, LEMONSTICK spawns an interactive shell. When started in OCB mode, LEMONSTICK expects to read from STDIN. The STDIN data is expected to be encrypted with the blowfish algorithm. After decrypting, it dispatches commands based on the name —for example: ‘executes terminal command’, ‘connect to remote system’, ‘send & retrieve file’, ‘create socket connection’.LOGBLEACH is an ELF utility that has a primary functionality of deleting log entries from a specified log file(s) based on a filter provided via command line. The following log files are hard coded in the malware, but additional log paths may be specified: OKSOLO is a publicly available backdoor that binds a shell to a specified port. It can be compiled to support password authentication or dropped into a root shell. OPENSHACKLE is a reconnaissance tool that collects information about logged-on users and saves it to a file. OPENSHACKLE registers Windows Event Manager callback to achieve persistence. ProxyChains allows the use of SSH, TELNET, VNC, FTP and any other internet application from behind HTTP (HTTPS) and SOCKS (4/5) proxy servers. This \"proxifier\" provides proxy server support to any application. PUPYRAT (aka Pupy) is an open source, multi-platform (Windows, Linux, OSX, Android), multi-function RAT (Remote Administration Tool) and post-exploitation tool mainly written in Python. It features an all-in-memory execution guideline and leaves very low footprint. It can communicate using various transports, migrate into processes (reflective injection), and load remote Python code, Python packages and Python C extensions from memory. STEELCORGI is a packer for Linux ELF programs that uses key material from the executing environment to decrypt the payload. When first starting up, the malware expects to find up to four environment variables that contain numeric values. The malware uses the environment variable values as a key to decrypt additional data to be executed. SLAPSTICK is a Solaris PAM backdoor that grants a user access to the system with a secret, hard-coded password. TINYSHELL is a lightweight client/server clone of the standard remote shell tools (rlogin, telnet, ssh, etc.), which can act as a backdoor and provide remote shell execution as well as file transfers. For more information, check out our Bring Your Own Land blog post. Additionally, Mandiant experts from the FLARE team will present an in-depth view into UNC1945 on Thursday, Nov. 12. Register today to reserve your spot for this discussion, where the presenters from FLARE and Mandiant Managed Defense will also answer questions from the audience. Finally, for more intelligence on these types of threats, please register for Mandiant Advantage Free, a no-cost version of our threat intelligence platform.",
+  "reports": [
+    {
+      "link": "https://www.crowdstrike.com/blog/an-analysis-of-lightbasin-telecommunications-attacks/",
+      "content": "Active since at least 2016, LightBasin employs significant operational security (OPSEC) measures, primarily establishing implants across Linux and Solaris servers, with a particular focus on specific telecommunications systems, and only i nteracting with Windows systems as needed.CrowdStrike Services, CrowdStrike Intelligence and Falcon OverWatch™ have i nvestigated multiple intrusions within the telecommunications sector from a sophisticated actor tracked as the LightBasin activity cluster, also publicly known as UNC1945.LightBasin’s focus on Linux and Solaris systems is likely due to the combination of critical telecommunications i nfrastructure running on those operating systems, in addition to the comparatively l ax security measures and monitoring solutions on Linux/Solaris systems that are typically in place on Windows operating systems within an organization.The tools and TTPs cataloged in this blog post were observed in congruence with the the usage of SLAPSTICK on select eDNS servers at the start of the intrusion, as well as during periods of strong time correlation, when SSH access from multiple compromised telecommunications company and artifacts i ndicative of LightBasin tool usage overlapped.This intelligence should also provide insights into the TTPs of adversaries that telecommunications companies are likely to encounter, across both the corporate network and critical telecommunications infrastructure, so that these i nsights can then be used to further augment detection mechanisms and inform on decisions regarding existing security controls.While the deployment of security tooling to real-time operating systems is generally l imited, other Unix-based operating systems that support the core telecommunications network services are typically targeted by LightBasin and should have some basic security controls and logging in place (e.g., SSH logging forwarded to a SIEM, endpoint detection and response (EDR) for process execution, file integrity monitoring (FIM) for recording file changes of key configuration files).",
+      "domain": "www.crowdstrike.com",
+      "tokenized": [
+        {
+          "sent": "Active since at least 2016, LightBasin employs significant operational security (OPSEC) measures, primarily establishing implants across Linux and Solaris servers, with a particular focus on specific telecommunications systems, and only i nteracting with Windows systems as needed.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "CrowdStrike Services, CrowdStrike Intelligence and Falcon OverWatch™ have i nvestigated multiple intrusions within the telecommunications sector from a sophisticated actor tracked as the LightBasin activity cluster, also publicly known as UNC1945.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "LightBasin’s focus on Linux and Solaris systems is likely due to the combination of critical telecommunications i nfrastructure running on those operating systems, in addition to the comparatively l ax security measures and monitoring solutions on Linux/Solaris systems that are typically in place on Windows operating systems within an organization.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The tools and TTPs cataloged in this blog post were observed in congruence with the the usage of SLAPSTICK on select eDNS servers at the start of the intrusion, as well as during periods of strong time correlation, when SSH access from multiple compromised telecommunications company and artifacts i ndicative of LightBasin tool usage overlapped.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"This intelligence should also provide insights into the TTPs of adversaries that telecommunications companies are likely to encounter, across both the corporate network and critical telecommunications infrastructure, so that these i nsights can then be used to further augment detection mechanisms and inform on decisions regarding existing security controls.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "While the deployment of security tooling to real-time operating systems is generally l imited, other Unix-based operating systems that support the core telecommunications network services are typically targeted by LightBasin and should have some basic security controls and logging in place (e.g., SSH logging forwarded to a SIEM, endpoint detection and response (EDR) for process execution, file integrity monitoring (FIM) for recording file changes of key configuration files).",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://securityaffairs.com/110370/apt/unc1945-oracle-solaris-zero-day.html",
+      "content": "In April 2020, researchers from Mandiant also discovered the availability of an ‘Oracle Solaris SSHD Remote Root Exploit’ on an underground marketplace.In this case, the attackers deployed a remote exploitation tool dubbed EVILSUN designed to exploit the zero-day vulnerability CVE-2020-14871 in Solaris 9 server.Researchers from FireEye reported that a sophisticated threat actor, tracked as UNC1945, has been observed targeting Oracle Solaris operating systems for over two years.The ease and breadth of exploitation in which UNC1945 conducted this campaign suggests a sophisticated, persistent actor comfortable exploiting various operating systems, and access to resources and numerous toolsets.”“UNC1945 demonstrated access to exploits, tools and malware for multiple operating systems, a disciplined interest in covering or manipulating their activity, and displayed advanced technical abilities during interactive operations.”“UNC1945 targeted Oracle Solaris operating systems, utilized several tools and utilities against Windows and Linux operating systems, loaded and operated custom virtual machines, and employed techniques to evade detection.”",
+      "domain": "securityaffairs.com",
+      "tokenized": [
+        {
+          "sent":"In April 2020, researchers from Mandiant also discovered the availability of an ‘Oracle Solaris SSHD Remote Root Exploit’ on an underground marketplace.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In this case, the attackers deployed a remote exploitation tool dubbed EVILSUN designed to exploit the zero-day vulnerability CVE-2020-14871 in Solaris 9 server.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The ease and breadth of exploitation in which UNC1945 conducted this campaign suggests a sophisticated, persistent actor comfortable exploiting various operating systems, and access to resources and numerous toolsets.”",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"“UNC1945 demonstrated access to exploits, tools and malware for multiple operating systems, a disciplined interest in covering or manipulating their activity, and displayed advanced technical abilities during interactive operations.”",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "“UNC1945 targeted Oracle Solaris operating systems, utilized several tools and utilities against Windows and Linux operating systems, loaded and operated custom virtual machines, and employed techniques to evade detection.”",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Researchers from FireEye reported that a sophisticated threat actor, tracked as UNC1945, has been observed targeting Oracle Solaris operating systems for over two years.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://yoroi.company/en/research/opening-steelcorgi-a-sophisticated-apt-swiss-army-knife/",
+      "content": "Also, this sort of “swiss army knife” was also heavily protected in a way that could be activated only during an actual intrusion, because the activation key is inoculated into the compromises system directly by the malicious operators, at run time.In addition, this packed ELF is matching some suspicious functions usually found in backdoors using the runtime linking techniques.In particular the threat group we track as TH-239, also mentioned as UNC1945 by FireEye security researchers, has been one of the sneakiest.This tool was heavily protected using a novel technique able to make things really difficult to any DFIR Team tackling with TH-239 intrusion, but it’s contents reveal huge surprises and unattended capabilities.To sum up, we noticed at least four categories of tools embedded in this single ELF binary: There are tools for enumeration such as arp, dns, active directory, whois, ip enumeration and so on, some network tools and utilities for supporting exploiting and enumerations operations, also some exploitation and decryption tools specifically for CISCO, VNC, CVS and Mikrotik systems.We discussed some of the new techniques and modus operandi used by this actor in our previous post, revealing how it leverages modern post exploitation tools even in legacy environments such as old Linux-based machines: with the help of a portable virtual machine, TH-239 is able to move part of its arsenal directly into the victim's internal network.",
+      "domain": "yoroi.company",
+      "tokenized": [
+        {
+          "sent":"Also, this sort of “swiss army knife” was also heavily protected in a way that could be activated only during an actual intrusion, because the activation key is inoculated into the compromises system directly by the malicious operators, at run time.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In addition, this packed ELF is matching some suspicious functions usually found in backdoors using the runtime linking techniques.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In particular the threat group we track as TH-239, also mentioned as UNC1945 by FireEye security researchers, has been one of the sneakiest.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"This tool was heavily protected using a novel technique able to make things really difficult to any DFIR Team tackling with TH-239 intrusion, but it’s contents reveal huge surprises and unattended capabilities.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "To sum up, we noticed at least four categories of tools embedded in this single ELF binary: There are tools for enumeration such as arp, dns, active directory, whois, ip enumeration and so on, some network tools and utilities for supporting exploiting and enumerations operations, also some exploitation and decryption tools specifically for CISCO, VNC, CVS and Mikrotik systems.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"We discussed some of the new techniques and modus operandi used by this actor in our previous post, revealing how it leverages modern post exploitation tools even in legacy environments such as old Linux-based machines: with the help of a portable virtual machine, TH-239 is able to move part of its arsenal directly into the victim's internal network.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": " https://yoroi.company/en/research/shadows-from-the-past-threaten-italian-enterprises/",
+      "content": "In our experience, the actor behind TH-239 was historically financially motivated and well prepared in conducting intrusions in Enterprise grade - some time legacy environments such as old Red Hat, Solaris OS and other Linux systems as well.In this analysis, we want to deepen one of the post exploitation TTP used by the UNC1945 group to solve the huge problem of running modern attack tools on legacy systems.Navigating all the filesystem and dissecting every malicious capability have been a challenging activity because we had to explore an entire modular VM with such many interesting artifacts.Navigating the filesystem, we discovered a huge amount of tools for exploitation, privilege escalation, lateral movement and exfiltration.They are also able to leverage 0Day exploits - such as the CVE-2020-14871 described in Early Warning bulletin N031120 - and to leverage completely custom implants and tools to get in and move laterally even in the most segregated network.",
+      "domain": "yoroi.company",
+      "tokenized": [
+        {
+          "sent":"In our experience, the actor behind TH-239 was historically financially motivated and well prepared in conducting intrusions in Enterprise grade - some time legacy environments such as old Red Hat, Solaris OS and other Linux systems as well.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In this analysis, we want to deepen one of the post exploitation TTP used by the UNC1945 group to solve the huge problem of running modern attack tools on legacy systems.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Navigating all the filesystem and dissecting every malicious capability have been a challenging activity because we had to explore an entire modular VM with such many interesting artifacts.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Navigating the filesystem, we discovered a huge amount of tools for exploitation, privilege escalation, lateral movement and exfiltration.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"They are also able to leverage 0Day exploits - such as the CVE-2020-14871 described in Early Warning bulletin N031120 - and to leverage completely custom implants and tools to get in and move laterally even in the most segregated network.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "They are also able to leverage 0Day exploits - such as the CVE-2020-14871 described in Early Warning bulletin N031120 - and to leverage completely custom implants and tools to get in and move laterally even in the most segregated network.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

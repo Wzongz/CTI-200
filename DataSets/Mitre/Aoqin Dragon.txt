@@ -1,0 +1,10 @@
+Aoqin Dragon is a suspected Chinese cyber espionage threat group that has been active since at least 2013. Aoqin Dragon has primarily targeted government, education, and telecommunication organizations in Australia, Cambodia, Hong Kong, Singapore, and Vietnam. Security researchers noted a potential association between Aoqin Dragon and UNC94, based on malware, infrastructure, and targets.
+Aoqin Dragon has used custom malware, including Mongall and Heyoka Backdoor, in their operations.
+Aoqin Dragon has exploited CVE-2012-0158 and CVE-2010-3333 for execution against targeted systems.
+Aoqin Dragon has run scripts to identify file formats including Microsoft Word.
+Aoqin Dragon has spread malware in target networks by copying modules to folders masquerading as removable devices.
+Aoqin Dragon has used fake icons including antivirus and external drives to disguise malicious payloads.
+Aoqin Dragon has used the Themida packer to obfuscate malicious payloads.
+Aoqin Dragon obtained the Heyoka open source exfiltration tool and subsequently modified it for their operations.
+Aoqin Dragon has used a dropper that employs a worm infection strategy using a removable device to breach a secure network environment.
+Aoqin Dragon has lured victims into opening weaponized documents, fake external drives, and fake antivirus to execute malicious payloads.

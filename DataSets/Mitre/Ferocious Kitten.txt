@@ -1,0 +1,7 @@
+Ferocious Kitten is a threat group that has primarily targeted Persian-speaking individuals in Iran since at least 2015.
+Ferocious Kitten has acquired domains imitating legitimate sites.
+Ferocious Kitten has used right-to-left override to reverse executables’ names to make them appear to have different file extensions, rather than their real ones.
+Ferocious Kitten has named malicious files update.exe and loaded them into the compromise host's "Public" folder.
+Ferocious Kitten has obtained open source tools for its operations, including JsonCPP and Psiphon.
+Ferocious Kitten has conducted spearphishing campaigns containing malicious documents to lure victims to open the attachments.
+Ferocious Kitten has attempted to convince victims to enable malicious content within a spearphishing email by including an odd decoy message.

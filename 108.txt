@@ -1,0 +1,141 @@
+{
+  "event_id": "108",
+  "claim": "ZooPark malware targets Android users though Telegram, watering holes.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "ZooPark is a cyberespionage operation that has been focusing on Middle Eastern targets since at least June 2015. The threat actors behind the operation infect Android devices using several generations of malware, with the attackers including new features in each iteration. We label them from v1-v4, with v4 being the most recent version deployed in 2017. From the technical point of view, the evolution of ZooPark has shown notable progress: from the very basic first and second versions, the commercial spyware fork in its third version and then to the complex spyware that is version 4. This last step is especially interesting, showing a big leap from straightforward code functionality to highly sophisticated malware.We have observed two main distribution vectors for ZooPark – Telegram channels and watering holes. The second one was the preferred vector: we found several news websites that have been hacked by the attackers to redirect visitors to a downloading site that serves malicious APKs. Some of the themes observed in campaign include “Kurdistan referendum”, “TelegramGroups” and “Alnaharegypt news”, among others.Target profile has evolved during the last years of campaign, focusing on victims in Egypt, Jordan, Morocco, Lebanon and Iran.\n\n\n",
+  "reports": [
+    {
+      "link": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=ZooPark&n=1/",
+      "content": "(Kaspersky) ZooPark is a cyberespionage operation that has been focusing on Middle Eastern targets since at least June 2015. Some of the themes observed in campaign include “Kurdistan referendum”, “TelegramGroups” and “Alnaharegypt news”, among others. Target profile has evolved during the last years of campaign, focusing on victims in Egypt, Jordan, Morocco, Lebanon and Iran. The preferred infection vector for ZooPark is waterhole attacks. The threat actors behind ZooPark infect Android devices using several generations of malware we label from v1-v4, with v4 being the most recent version deployed in 2017. We found several news websites that have been hacked by the attackers to redirect visitors to a downloading site that serves malicious APKs.",
+      "domain": "apt.etda.or.th",
+      "tokenized": [
+        {
+          "sent": "(Kaspersky) ZooPark is a cyberespionage operation that has been focusing on Middle Eastern targets since at least June 2015.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Some of the themes observed in campaign include “Kurdistan referendum”, “TelegramGroups” and “Alnaharegypt news”, among others.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Target profile has evolved during the last years of campaign, focusing on victims in Egypt, Jordan, Morocco, Lebanon and Iran.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The preferred infection vector for ZooPark is waterhole attacks.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The threat actors behind ZooPark infect Android devices using several generations of malware we label from v1-v4, with v4 being the most recent version deployed in 2017.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"We found several news websites that have been hacked by the attackers to redirect visitors to a downloading site that serves malicious APKs.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://cyberscoop.com/zoopark-kaspersky-telegram-watering-holes/",
+      "content": "A newly uncovered cyber-espionage campaign targets Android users in the Middle East and North Africa through the chat app Telegram and compromised websites, according to a report published Thursday by Kaspersky Lab. Advertisement One of the vectors by which the ZooPark malware is spread is the secure chat app Telegram. Kaspersky says it identified four different iterations of “ZooPark,” malware apparently developed between 2015 and 2017, each one expanding on the previous. The campaign spreads spyware focusing on victims in Iran, Morocco, Egypt, Jordan and Lebanon, the report says. The report presents examples of several popular Arabic news websites that had been co-opted as watering holes for the ZooPark hackers. “The ZooPark APT, actively spying on targets in Middle Eastern countries, is one such example, but it is certainly not the only one.”",
+      "domain": "cyberscoop.com",
+      "tokenized": [
+        {
+          "sent":"A newly uncovered cyber-espionage campaign targets Android users in the Middle East and North Africa through the chat app Telegram and compromised websites, according to a report published Thursday by Kaspersky Lab.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Advertisement One of the vectors by which the ZooPark malware is spread is the secure chat app Telegram.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Kaspersky says it identified four different iterations of “ZooPark,” malware apparently developed between 2015 and 2017, each one expanding on the previous.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The campaign spreads spyware focusing on victims in Iran, Morocco, Egypt, Jordan and Lebanon, the report says.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The report presents examples of several popular Arabic news websites that had been co-opted as watering holes for the ZooPark hackers.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"“The ZooPark APT, actively spying on targets in Middle Eastern countries, is one such example, but it is certainly not the only one.”",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://securityaffairs.com/72168/apt/zoopark-apt-malware.html/",
+      "content": "Experts identified 4 different phases in the activity of the group: ZooPark hackers distributed a very simple variant of the Android malware that was only able to steal accounts details registered on the victim device and contacts from the address book. Security researchers from Kaspersky Lab have uncovered a new cyber-espionage APT group tracked ZooPark that targeted entities in the Middle East during the past three years. The threat actors behind ZooPark infect Android devices using several generations of malware we label from v1-v4, with v4 being the most recent version deployed in 2017.”ZooPark implemented new features for its malware focused on cyber espionage.“Some of the malicious ZooPark apps are being distributed from news and political websites popular in specific parts of the Middle East. “ZooPark is a cyberespionage operation that has been focusing on Middle Eastern targets since at least June 2015.",
+      "domain": "securityaffairs.com",
+      "tokenized": [
+        {
+          "sent":"Experts identified 4 different phases in the activity of the group: ZooPark hackers distributed a very simple variant of the Android malware that was only able to steal accounts details registered on the victim device and contacts from the address book.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Security researchers from Kaspersky Lab have uncovered a new cyber-espionage APT group tracked ZooPark that targeted entities in the Middle East during the past three years.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The threat actors behind ZooPark infect Android devices using several generations of malware we label from v1-v4, with v4 being the most recent version deployed in 2017.”",
+          "is_evidence": 0
+        },
+        {
+          "sent":"ZooPark implemented new features for its malware focused on cyber espionage.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"“Some of the malicious ZooPark apps are being distributed from news and political websites popular in specific parts of the Middle East.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "“ZooPark is a cyberespionage operation that has been focusing on Middle Eastern targets since at least June 2015.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.bleepingcomputer.com/news/security/kaspersky-details-new-zoopark-apt-targeting-android-users/",
+      "content": "Attackers deployed a very simplistic malware, only capable of two operations —stealing accounts details registered on the victim device, and stealing contacts from the address book. Codenamed ZooPark, this advanced persistent threat (APT) has started operating in 2015 and has slowly evolved over the years, growing in sophistication. The group appears to realize that despite their best efforts, the malware is still under-developed, so they fork a version of the Spymaster Pro commercial spyware app and try to blend the two together. They would either create Telegram channels where they'd share links to the malicious apps, or they'd compromise legitimate sites where they'd redirect incoming visitors to pages offering the tainted apps for download. ZooPark operators improve their malware's capabilities. ZooPark's malware receives a major facelift.",
+      "domain": "www.bleepingcomputer.com",
+      "tokenized": [
+        {
+          "sent":"Attackers deployed a very simplistic malware, only capable of two operations —stealing accounts details registered on the victim device, and stealing contacts from the address book.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Codenamed ZooPark, this advanced persistent threat (APT) has started operating in 2015 and has slowly evolved over the years, growing in sophistication.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The group appears to realize that despite their best efforts, the malware is still under-developed, so they fork a version of the Spymaster Pro commercial spyware app and try to blend the two together.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"They would either create Telegram channels where they'd share links to the malicious apps, or they'd compromise legitimate sites where they'd redirect incoming visitors to pages offering the tainted apps for download.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"ZooPark operators improve their malware's capabilities.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"ZooPark's malware receives a major facelift.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

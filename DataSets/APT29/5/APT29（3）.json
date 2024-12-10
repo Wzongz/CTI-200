@@ -1,0 +1,52 @@
+claim：IRON RITUAL was responsible for a highly targeted espionage campaign in 2020 targeting organizations in the government, political and research verticals, and their supply chain organizations including cybersecurity vendors and technology providers.
+explain：IRON RITUAL was responsible for a highly targeted espionage campaign in 2020 targeting organizations in the government, political and research verticals, and their supply chain organizations including cybersecurity vendors and technology providers. CTU researchers assess with moderate confidence that IRON RITUAL operates on behalf of the Russian intelligence services, and specifically the SVR, Russia's foreign intelligence service. CTU researchers assess that there are potential overlaps with IRON HEMLOCK, but the high levels of operations security and the customized nature of IRON RITUAL intrusions mean that CTU researchers are unable to confirm this overlap. Given their capability and sophistication, it is unlikely that IRON RITUAL's intrusions will leave sufficient artifacts to allow researchers to associate their activities with previous or future Russian cyber espionage operations. IRON RITUAL has used a wide range of tactics for initial access and persistence, including compromise of on-premises environments; the sophisticated attack against the IT management software vendor SolarWinds, to distribute trojanized SolarWinds Orion Platform updates; and the compromise of cloud applications to establish 'backdoor' access into cloud tenants. Unconfirmed reporting has also linked IRON RITUAL to remote exploitation of software vulnerabilities against technology vendor VMWare. The group has used malware including the SUNBURST (also known as Solorigate) backdoor and in-memory Cobalt Strike delivered using the TEARDROP and RAINDROP loaders. Having gained initial access, IRON RITUAL has employed a variety of techniques to bypass authentication controls, including the compromise of global administrator account credentials, stealing SAML token-signing certificates or other secret key material, adding new credentials and modified permissions to cloud applications, and targeting identity provider and multi-factor authentication providers, for example through enrolling additional devices. CTU researchers assess with high confidence that IRON RITUAL's intent is long term, covert access to networks of interest for the purposes of espionage and data theft.
+[
+    {
+	link：https://www.microsoft.com/en-us/security/blog/2021/05/27/new-sophisticated-email-based-attack-from-nobelium/
+        "report_id": "report_0",
+        "sentences": [
+            "Microsoft Threat Intelligence Center (MSTIC) has uncovered a wide-scale malicious email campaign operated by NOBELIUM, the threat actor behind the attacks against SolarWinds, the SUNBURST backdoor, TEARDROP malware, GoldMax malware, and other related components.",
+            "Microsoft is issuing this alert and new security research regarding this sophisticated email-based campaign that NOBELIUM has been operating to help the industry understand and protect from this latest activity.",
+            "Microsoft security researchers assess that the NOBELIUM’s spear-phishing operations are recurring and have increased in frequency and scope.",
+            "The successful deployment of these payloads enables NOBELIUM to achieve persistent access to compromised systems.",
+            "Then, the successful execution of these malicious payloads could enable NOBELIUM to conduct action-on objectives, such as lateral movement, data exfiltration, and delivery of additional malware.",
+            "We continue to see an increase in sophisticated and nation-state-sponsored attacks and, as part of our ongoing threat research and efforts to protect customers, we will continue to provide guidance to the security community on how to secure against and respond to these multi-dimensional attacks."
+        ]
+    },
+    {
+	link：https://www.sentinelone.com/labs/noblebaron-new-poisoned-installers-could-be-used-in-supply-chain-attacks/
+        "report_id": "report_1",
+        "sentences": [
+            "A similar technique was employed by HackingTeam’s Remote Control System (RCS) where initial infections used their ‘Scout’ malware for initial recon and could then be selectively upgraded to the full ‘Elite’ payload.",
+            "After the extensive revelations of Russian state-sponsored cyberespionage activities over the past five years, teams like APT28 (aka FancyBear, STRONTIUM) and APT29 (aka CozyBear, The Dukes) have retooled and reorganized extensively to avoid easy tracking by Western governments and security vendors alike.",
+            "Alternatively, the attackers may have found a way of abusing an internal resource to distribute their malicious ‘update’.",
+            "Most notably, one of these NativeZone downloaders is being used as part of a clever poisoned installer targeting Ukrainian government security applications.",
+            "The malicious KM.Filesystem.dll was crafted to impersonate a legitimate component of the Ukrainian Institute of Technology’s cryptographic keys of the same name.",
+            "These particular electronic keys are referenced in Ukrainian government tenders and make for a cunning regional-specific lure to distribute malware."
+        ]
+    },
+    {
+	link：https://unit42.paloaltonetworks.com/solarstorm-supply-chain-attack-timeline/
+        "report_id": "report_2",
+        "sentences": [
+            "In each case, including the recent SolarStorm activities, rather than targeting an organization directly through phishing or exploitation of vulnerabilities, the attackers chose to compromise software developers directly and use the trust we place in them to access other networks.",
+            "Microsoft has published multiple reports on activity related to this attack campaign, including a summary of the backdoor implanted into SolarWinds OrionⓇ (referred to by Microsoft as Solorigate), as well as guidance for their customers on protecting themselves.",
+            "Specifically, we are investigating incidents in which activity indicating abuse of Security Assertion Markup Language (SAML) tokens consistent with this adversary’s behavior is present, yet where impacted SolarWinds instances have not been identified.",
+            "The event was a supply chain attack on SolarWinds OrionⓇ software conducted by suspected nation-state operators that we are tracking as SolarStorm.",
+            "This incident involved malicious code identified within the legitimate IT performance and statistics monitoring software, OrionⓇ, developed by SolarWinds.",
+            "We believe this will be invaluable to cybersecurity professionals in the industry responding to this attack, as well as to other researchers piecing together the event details."
+        ]
+    },
+    {
+	link：https://www.crowdstrike.com/blog/observations-from-the-stellarparticle-campaign/
+        "report_id": "report_3",
+        "sentences": [
+            "It is likely GoldMax has been used as a long-term persistence backdoor during StellarParticle-related compromises, which would be consistent with the few changes made to the malware to modify existing functions or support additional functionality.",
+            "The StellarParticle campaign, associated with the COZY BEAR adversary group, demonstrates this threat actor’s extensive knowledge of Windows and Linux operating systems, Microsoft Azure, O365, and Active Directory, and their patience and covert skill set to stay undetected for months — and in some cases, years.",
+            "These techniques include:The majority of StellarParticle-related investigations conducted by CrowdStrike have started with the identification of adversary actions within a victim’s O365 environment.",
+            "Throughout 2020, an operation attributed to the Foreign Intelligence Service of the Russian Federation (SVR) by the U.S. government was conducted to gain access to the update mechanism of the SolarWinds IT management software and use it to broaden their intelligence collection capabilities.",
+            "Throughout StellarParticle-related investigations, CrowdStrike has identified two sophisticated malware families that were placed on victim systems in the mid-2019 timeframe: a Linux variant of GoldMax and a completely new family CrowdStrike refers to as TrailBlazer.",
+            "TrailBlazer persists on a compromised host using WMI event subscriptions4 — a technique also used by SeaDuke — although this persistence mechanism is not exclusive to COZY BEAR.GoldMax was first observed during post-exploitation activity in the campaign leveraging the SolarWinds supply chain attacks."
+        ]
+    }
+]

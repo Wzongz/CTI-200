@@ -1,0 +1,141 @@
+{
+    "event_id": "084",
+    "claim": "A suspicious windows executable hidden inside the apk - Inspecting the Apk file we found an anomalous file in the path “/res/raw” called “hmzvbs”. Conducting a deep analysis of the suspicious file we have noticed that this is an executable windows file written in C# .NET language as reported in following figure.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "A few days ago, the security researcher Lukas Stefanko from Eset discovered an open repository containing some Android applications. This website is written in Arabic language and translating its content it seems to offer a secure messaging app. The homepage shows how the application works and includes some slides about it. The content on the website says that most common messaging applications are vulnerable and attackers can compromise them to spy on the users. The author claims to have developed an app called “ChatSecure” to mitigate security vulnerabilities that have been reported in popular messaging apps, including WhatsApp and Telegram. ChatSecure is the name of a legitimate free and open source iOS messaging app that features OMEMO encryption and OTR encryption over XMPP. The content of the bogus website explains that also Office applications are vulnerable to cyber attacks and offers patches to address the vulnerabilities exploited by the hackers. Threat actors exploited the interest in the ChatSecure, currently available only for Apple iOS device, to trick Android users into believe that the Android version of the app is not available.Actually, the above apk files contain the same malicious code, they differ the used icons of the application and the variable package name in which is written the code. The malware shows a classical RAT behavior, it includes a series of hard-coded commands that the C2 can send to the bot. The list of accepted commands, with the relative opcodes is the following:After installation and according to the list of commands, the first opcode captured during the analysis is “Connect to Server”, associated with the 17 opcode, in order to register the new bot on the Command and Control (Figure 6). As we can see in the Figure, the new bot sends to the Command and Control other information about the compromised device, such as: Subsequently, the malware starts to ping periodically the C2C using the opcode 30. The hardcoded port used in the malware is 1740, but during the analysis, it was changed by the command and control in 11950 with another opcode provided in the list, the opcode 39. This command is able to change the IP and the port of the Command and Control. In our case:Inspecting the Apk file, we found an anomalous file in the path “/res/raw” called “hmzvbs”. Conducting a deep analysis of the suspicious file, we have noticed that this is an executable windows file written in C# .NET language, as reported in following figure: The reason why this executable file is hidden inside of the apk is still unknown, we have found no track of any exploit code that could be used by the malware to perform lateral movements to deliver the executable to a Windows machine.This file is a dropper file for an embedded DLL, that is encrypted with a custom routine and that it is decoded at runtime. So, inserting a breakpoint after the routine it was simple to retrieve the real payload of the malware.After totally decrypting the DLL, the “hmzvbs” file copies itself in the path “\\%APPDATA%\\Local\\Temp” with the name “cebto_task_64.exe” and executes this new file. The behavior of the DLL payload contained in “cebto_task_64.exe” file is similar to the Android malware, but in this case, the communication is based At this moment, the computer victim is a bot and it can communicate with C2C throw a series of hardcoded commands, that are very similar to the list previously showed for Android malware. In particular, the list of commands is here reported”: To ensure persistence after rebooting the system, “cebto_task_64.exe” file execute a scheduling command as follow: An unusual characteristic of this malware attacks is the use of the Command and Control server. The C2 it is located in the same area under attack while usually threat actors hide and locate their servers in places different to those attacked, in order to make hard the investigations. Another characteristic of the malware is that the C2 has an impressive number of open, the complete list is reported in the following table:\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.intrinsec.com/apt27-analysis/?cn-reloaded=1/",
+            "content": "As explained previously, adversaries can take advantage of a vulnerable exposed server to enter the corporate’s network. CERT Intrinsec also discovered a second application used to expose the targeted organisation’s internal network to adversaries. In order to stealth authentication materials on compromised hosts, adversaries relied on the mimikatz tool. Known targeted application were MySQL, Microsoft SharePoint (CVE-2019-0604 RCE), Apache Zookeeper and more recently Microsoft Exchange servers. Our in-depth analysis led us to conclude that an advanced persistent threat dubbed APT27 (a.k.a LuckyMouse, EmissaryPanda) actually compromised the company’s internal network by exploiting a public facing application. The group is also well known for exploiting internet facing applications to get access within the victim’s networks.",
+            "domain": "www.intrinsec.com",
+            "tokenized": [
+                {
+                    "sent": "As explained previously, adversaries can take advantage of a vulnerable exposed server to enter the corporate’s network.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "CERT Intrinsec also discovered a second application used to expose the targeted organisation’s internal network to adversaries.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In order to stealth authentication materials on compromised hosts, adversaries relied on the mimikatz tool.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Known targeted application were MySQL, Microsoft SharePoint (CVE-2019-0604 RCE), Apache Zookeeper and more recently Microsoft Exchange servers.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Our in-depth analysis led us to conclude that an advanced persistent threat dubbed APT27 (a.k.a LuckyMouse, EmissaryPanda) actually compromised the company’s internal network by exploiting a public facing application.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group is also well known for exploiting internet facing applications to get access within the victim’s networks.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://cyware.com/resources/research-and-analysis/apt27-an-in-depth-analysis-of-a-decade-old-active-chinese-threat-group-e4cc/",
+            "content": "In April 2020, it had carried out cross-platform attacks on back-end servers to steal business data. In September, researchers alleged that APT27 was behind an attack campaign exploiting the vulnerability CVE-2021-40539 in Zoho’s ManageEngine product, ADSelfService Plus. It used Windows and Android spyware to exfiltrate sensitive information from their devices. Later in December, a chat software Able Desktop, used by 430 government agencies in Mongolia, was abused to spread the HyperBro backdoor, Korplug RAT, and Tmanger. The threat actor tried its hand at cryptomining attacks using ZombieBoy malware, which abused multiple vulnerabilities to compromise targeted networks, such as CVE-2017-9073, CVE-2017-0143, and CVE-2017-0146. The threat group, which has been active for over a decade, uses multiple malware and exploits numerous vulnerabilities to meet its espionage goals.",
+            "domain": "cyware.com",
+            "tokenized": [
+                {
+                    "sent": "In April 2020, it had carried out cross-platform attacks on back-end servers to steal business data.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In September, researchers alleged that APT27 was behind an attack campaign exploiting the vulnerability CVE-2021-40539 in Zoho’s ManageEngine product, ADSelfService Plus.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It used Windows and Android spyware to exfiltrate sensitive information from their devices.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Later in December, a chat software Able Desktop, used by 430 government agencies in Mongolia, was abused to spread the HyperBro backdoor, Korplug RAT, and Tmanger.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The threat actor tried its hand at cryptomining attacks using ZombieBoy malware, which abused multiple vulnerabilities to compromise targeted networks, such as CVE-2017-9073, CVE-2017-0143, and CVE-2017-0146.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The threat group, which has been active for over a decade, uses multiple malware and exploits numerous vulnerabilities to meet its espionage goals.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://cyberscoop.com/apt27-mongolia-kaspersky/",
+            "content": "According to Kaspersky’s latest research, a known Chinese hacking group used watering hole-style attacks and spear phishing emails to breach specific employees of the Mongolian data center. In some cases, compromised machines also received a remote access trojan (RAT) known as “HyperBro,” which provided customized controls to further manipulate or steal secrets from systems. It’s not yet clear how the hackers owned the Mikrotik router. Multiple critical vulnerabilities in Mikrotik systems have been reported in recent months. Shortly after that different users in the country started being redirected to the malicious domain update.iaacstudio[.]com as a result of the waterholing of government websites,” a Kaspersky blog post reads. The hackers likely leveraged this Ukrainian machine in order to obfuscate their activities.",
+            "domain": "cyberscoop.com",
+            "tokenized": [
+                {
+                    "sent": "According to Kaspersky’s latest research, a known Chinese hacking group used watering hole-style attacks and spear phishing emails to breach specific employees of the Mongolian data center.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In some cases, compromised machines also received a remote access trojan (RAT) known as “HyperBro,” which provided customized controls to further manipulate or steal secrets from systems.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It’s not yet clear how the hackers owned the Mikrotik router.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Multiple critical vulnerabilities in Mikrotik systems have been reported in recent months.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Shortly after that different users in the country started being redirected to the malicious domain update.iaacstudio[.]com as a result of the waterholing of government websites,” a Kaspersky blog post reads.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The hackers likely leveraged this Ukrainian machine in order to obfuscate their activities.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://securelist.com/luckymouse-ndisproxy-driver/87914/",
+            "content": "The Trojan uses HTTP Server API to filter HTTPS packets at port 443 and parse commands. The set of well-known port numbers (HTTP, HTTPS, SMB, POP3S, MSSQL, PPTP and RDP) in the configuration is not used, which along with the “[test]” strings in messages suggests this malware is still under development. These modules allow attackers to silently move laterally in the infected infrastructure, but don’t allow them to communicate with an external C2 if the new infected host only has a LAN IP. This Trojan is a full-featured RAT capable of executing common tasks such as command execution and downloading/uploading files. This Trojan is used by attackers to gather a target’s data, make lateral movements and create SOCKS tunnels to their C2 using the Earthworm tunneler. We have observed a gradual shift in several Chinese-speaking campaigns towards a combination of publicly available tools (such as Metasploit or CobaltStrike) and custom malware (like the C++ last stage RAT described in this report).",
+            "domain": "securelist.com",
+            "tokenized": [
+                {
+                    "sent": "The Trojan uses HTTP Server API to filter HTTPS packets at port 443 and parse commands.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The set of well-known port numbers (HTTP, HTTPS, SMB, POP3S, MSSQL, PPTP and RDP) in the configuration is not used, which along with the “[test]” strings in messages suggests this malware is still under development.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "These modules allow attackers to silently move laterally in the infected infrastructure, but don’t allow them to communicate with an external C2 if the new infected host only has a LAN IP.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This Trojan is a full-featured RAT capable of executing common tasks such as command execution and downloading/uploading files.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This Trojan is used by attackers to gather a target’s data, make lateral movements and create SOCKS tunnels to their C2 using the Earthworm tunneler.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We have observed a gradual shift in several Chinese-speaking campaigns towards a combination of publicly available tools (such as Metasploit or CobaltStrike) and custom malware (like the C++ last stage RAT described in this report).",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

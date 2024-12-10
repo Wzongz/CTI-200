@@ -1,0 +1,52 @@
+[
+    "claim":"New iLOBleed Rootkit Targeting HP Enterprise Servers with Data Wiping Attacks",
+    "explain":"A previously unknown rootkit has been found setting its sights on Hewlett-Packard Enterprise's Integrated Lights-Out (iLO) server management technology to carry out in-the-wild attacks that tamper with the firmware modules and completely wipe data off the infected systems. The discovery, which is the first instance of real-world malware in iLO firmware, was documented by Iranian cybersecurity firm Amnpardaz this week. "There are numerous aspects of iLO that make it an ideal utopia for malware and APT groups: Extremely high privileges (above any level of access in the operating system), very low-level access to the hardware, being totally out of the sight of the admins, and security tools, the general lack of knowledge and tools for inspecting iLO and/or protecting it, the persistence it provides for the malware to remain even after changing the operating system, and in particular being always running and never shutting down," the researchers said.Besides managing the servers, the fact that iLO modules have broad access to all the firmware, hardware, software, and operating system (OS) installed on the servers make them an ideal candidate to breach organizations using HP servers, while also enabling the malware to maintain persistence after reboots and survive OS reinstallations. However, the exact modus operandi used to infiltrate the network infrastructure and deploy the wiper remains unknown as yet.Dubbed iLOBleed, the rootkit has been put to use in attacks since 2020 with the goal of manipulating a number of original firmware modules in order to stealthily obstruct updates to the firmware. Specifically, the modifications made to the firmware routine simulates the firmware upgrade process — by purportedly displaying the right firmware version and adding relevant logs — when in reality no updates are performed. "This alone shows that the purpose of this malware is to be a rootkit with maximum stealth and to hide from all security inspections," the researchers said. "A malware that, by hiding in one of the most powerful processing resources (which is always on), is able to execute any commands received from an attacker, without ever being detected."Although the adversary remains unidentified, Amnpardaz described the rootkit as likely the work of an advanced persistent threat (APT), a designation a nation-state or state-sponsored group that employs continuous, clandestine, and sophisticated hacking techniques to gain unauthorized access to a system and remain inside for a prolonged period of time without attracting attention.HPE, in a statement shared with The Hacker News said that the vulnerability being exploited is not new and that it was disclosed and patched by the company in 2017. Given that versions iLO 4 and prior are at more risk of being modified and infected by the malware, the enterprise IT firm pointed out that customers who followed the recommended corrective actions or have upgraded to iLO 5 are not susceptible to exploitation. If anything, the development once again brings firmware security into sharp focus, necessitating that firmware updates shipped by the manufacturer are promptly applied to mitigate potential risks, iLO networks are segmented from the operating networks, and that the firmware is periodically monitored for signs of infection. "Another important point is that there are methods to access and infect iLO both through the network and through the host operating system," the researchers noted. "This means that even if the iLO network cable is completely disconnected, there is still the possibility of infection with the malware. Interestingly, there is no way to turn off or disable iLO completely in case it is not needed."",
+    {
+        "report_id": "report_0",
+        "link":"https://www.securityweek.com/sophisticated-ilobleed-rootkit-targets-hp-servers/",
+        "sentences": [
+            "According to Amnpardaz, iLOBleed is an implant that targets HPE’s Integrated Lights-Out (iLO) embedded server management technology, which enables users to remotely monitor, configure and update their servers.",
+            "An Iranian cybersecurity firm claims to have discovered a sophisticated rootkit that is designed to target HP servers.",
+            "Once it has been deployed on a device — the rootkit adds a malicious module to the iLO firmware — iLOBleed gives the attackers full control over the compromised machine.",
+            "Such rootkits are highly persistent and stealthy, and they can be delivered to targeted devices through the dedicated iLO network port, as well as through the server’s operating system by a user with administrator or root privileges.",
+            "The rootkit, first spotted in 2020, appears to leverage iLO firmware vulnerabilities discovered and disclosed publicly in the past years.",
+            "iLO is embedded on the motherboard of HP servers."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://securityaffairs.com/126157/malware/ilobleed-wiper-hp-servers.html",
+        "sentences": [
+            "As far as we know, this is the first report of the discovery of real-world malware in iLO firmware in the world.”",
+            "One of the most outstanding capabilities of iLOBleed is the manipulation of the iLO firmware upgrade routine, when the system administrator tries to upgrade the iLO firmware, the malware simulates the version change while preventing the upgrade routine.",
+            "The experts explained that malware targeting iLO could be very insidious because it runs with high privileges (above any level of access in the operating system), very low-level access to the hardware, and it cannot be detected by admins and security software that doesn’t inspect iLO.",
+            "The rootkit was employed in attacks since 2020, threat actors could use the iLOBleed rootkit to compromise organizations using HP servers.",
+            "iLOBleed, is a previously undetected rootkit that was spotted targeting the HP Enterprise’s Integrated Lights-Out (iLO) server management technology to tamper with the firmware modules and wipe data off the infected systems.",
+            "“we analyze a rootkit discovered in-the-wild that hides inside the iLO, cannot be removed by firmware upgrades and can be hidden from the sight for a long time."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://cyware.com/news/ilobleed-rootkit-hides-inside-hp-devices-to-wipe-off-iranian-data-0dbbcd81",
+        "sentences": [
+            "A cybersecurity firm has spotted a first-of-its-kind rootkit that stays hidden inside the firmware of HP Integrated Lights-Out (iLO) devices.",
+            "For initial deployment, the attacker appears to have entered inside the targeted network and deployed iLOBleed as a backdoor by exploiting vulnerabilities or obtained access from a host using an HP iLO card.iLOBleed is a sophisticated rootkit believed to be created by a very advanced threat actor.",
+            "It targets HP iLO firmware that is usually added as an add-on board on servers or workstations.",
+            "Since 2020, multiple incidents have been investigated where an unknown attacker stayed hidden inside HP iLO to survive the OS reinstalls and persists inside the victim’s network.",
+            "The rootkit could create a fake UI update process and display it as upgraded versions in the web UI of the HP iLO wherever system administrators attempted to update it.",
+            "To avoid detection, the attacker hid the rootkit as a module for the HP iLO firmware itself."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.secplicity.org/2021/12/29/hp-ilo-and-the-newly-discovered-ilobleed-rootkit/",
+        "sentences": [
+            "Except for…..the latest iLO version can be downgraded and therefore are vulnerable too.",
+            "Iranian researchers at Amnpardaz security firm have discovered rootkits in HPs iLO (Integrated Lights-Out) management modules.",
+            "Protection Considerations (provided by Amnpardaz) Do not connect the iLO network interface to the operating network and improvise a completely separate network Periodically update the iLO firmware version to the latest official release from HP Perform iLO security settings on HP servers, and disable downgrade for G10 servers Use defense-in-depth strategies to reduce risk and detect intrusions before reaching the iLO Periodically use the iLO Scanner tool* to detect potential vulnerabilities, malware, and backdoors in the current version of the iLO Server firmware",
+            "The firm is also working on a tool that can verify the integrity of the iLO firmware, so keep an eye out for that!",
+            "The reach of this malware against worldwide deployments of HP servers with iLO installed is unknown.",
+            "This is the first known discovery of an iLO rootkit."
+        ]
+    }
+]

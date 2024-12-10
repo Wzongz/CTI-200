@@ -1,0 +1,52 @@
+[
+    "claim":"‘Suckfly’ in the ointment: Chinese APT group steals code-signing certificates,Suckfly Hackers Target Organizations in India",
+    "explain":"An advanced persistent threat (APT) group based in China, code-named Suckfly, has been concealing its nefarious activity over the past two years by stealing code-signing certificates and applying them to malware and hack tools to make them look like legitimate software when downloaded. According to a security blog post by Symantec, Suckfly stole the certificates from legitimate businesses in Seoul, Korea and used them to hide attacks against worldwide government and commercial entities beginning in early 2014. Symantec became aware of this plot in 2015 after discovering a hacking tool used against one of its clients was signed with a certificate. Suckfly's cyber arsenal includes keyloggers, credential dumpers, port scanners and back doors, including one custom back door named Nidiran specifically developed for cyberespionage campaigns. Symantec traced the APT's activity to three IP addresses in Chengdu, China.",
+    {
+        "report_id": "report_0",
+        "link":"https://community.broadcom.com/symantecenterprise/communities/community-home/librarydocuments/viewdocument?DocumentKey=62e325ae-f551-4855-b9cf-28a7d52d1534&CommunityKey=1ecf5f55-9545-44d6-b0f4-4e4a7f5f5e68&tab=librarydocuments",
+        "sentences": [
+            "As noted earlier, the stolen certificates Symantec identified in this investigation were used to sign both hacking tools and malware.",
+            "Suckfly has a number of hacktools and malware varieties at its disposal.",
+            "Suckfly isn’t the only attack group to use certificates to sign malware but they may be the most prolific collectors of them.",
+            "Symantec tracks the group behind this activity as Blackfly and detects the malware they use as Backdoor.",
+            "We believe Suckfly specifically developed the back door for use in cyberespionage campaigns.",
+            "We discovered Suckfly, an advanced threat group, conducting targeted attacks using multiple stolen certificates, as well as hacktools and custom malware."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://news.softpedia.com/news/suckfly-cyber-espionage-group-targets-indian-government-and-private-companies-504183.shtml",
+        "sentences": [
+            "\"There is no evidence that Suckfly gained any benefits from attacking the government organizations, but someone else may have benefited from these attacks,\" Symantec's Joe DiMaggio reported.",
+            "A cyber-espionage group called Suckfly is targeting governments and big enterprises, mainly located in India, using a backdoor named Nidiran, a credential dumping tool dubbed Hacktool, Windows OLE exploit CVE-2014-6332, and stolen digital certificates.",
+            "A few months later, while investigating clues left behind by the group, Symantec experts claimed to have discovered Suckfly activity going back as early as April 2014.",
+            "Suckfly attacks start with phishing emails that deliver boobytrapped documents.",
+            "Symantec's analysis of Suckfly's mode of operation reveals cyber-warfare tactics employed by many APT and economic espionage groups.",
+            "The group first came to Symantec's attention when, in March, it was caught stealing digital certificates from various South Korean companies."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.securityweek.com/suckfly-hackers-target-organizations-india/",
+        "sentences": [
+            "By investigating a multi-stage attack that the group conducted in the Spring of 2015 against an e-commerce organization in India, Symantec researchers discovered that the group used the Nidiran backdoor and other various hacking tools (all signed with stolen certificates) to infect the victim’s internal machines.",
+            "In a new report on the Suckfly group, Symantec’s Jon DiMaggio explains that many of the group’s targets in 2015 were well known commercial organizations located in India.",
+            "Named the “Suckfly group” by Symantec, the threat actors have launched attacks against government and commercial organizations in numerous countries, but the primary targets appear to be individuals and organizations located in India.",
+            "Suckfly designed their malware to be difficult to analyze, but researchers managed to analyze the communication between Nidiran and the command and control (C&C) server.",
+            "Symantec researchers this week detailed what they say is a China-based advanced persistent threat (APT) group that has been launching numerous attacks against high-profile entities since April 2014.",
+            "“Suckfly has the resources to develop malware, purchase infrastructure, and conduct targeted attacks for years while staying off the radar of security organizations."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.theregister.com/2016/05/18/suckfly_hacking_group_targeting_india/",
+        "sentences": [
+            "A professional hacking group called Suckfly is targeting India's infrastructure and economic base by zeroing in on individuals and installing tools to access their work networks.",
+            "Symantec also managed to uncover the group's attack method: they found an employee at each organization that had a significant online footprint and installed their malware on their system – Symantec reckons a phishing attack was the most likely approach.",
+            "Symantec doesn't even attempt to guess but it notes its targets have been South Korea – for certificates – Saudi Arabia, and India, with India by far the greatest target.",
+            "Symantec first spotted the group it has called Suckfly targeting South Korean organizations in March this year in an effort to steal digital certificates.",
+            "That's according to a blog post by Symantec that has analyzed and dug into the group's activities and methods.",
+            "The group is sufficiently organized and patient for Symantec to conclude that it is a professional hacking group with a specific mandate."
+        ]
+    }
+]

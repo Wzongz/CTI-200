@@ -1,0 +1,52 @@
+[
+    "claim":"Gamaredon Group is a suspected Russian cyber espionage threat group that has targeted military, NGO, judiciary, law enforcement, and non-profit organizations in Ukraine since at least 2013.",
+    "explain":"The Lookingglass Cyber Threat Intelligence Group (CTIG) has been tracking an ongoing cyber espionage campaign named “Operation Armageddon”. The name was derived from multiple Microsoft Word documents used in the attacks. “Armagedon” (spelled incorrectly) was found in the “Last Saved By” and “Author” fields in multiple Microsoft Word documents. Although continuously developed, the campaign has been intermittently active at a small scale, and uses unsophisticated techniques. The attack timing suggests the campaign initially started due to Ukraine’s decision to accept the Ukraine-­‐European Union Association Agreement (AA). The agreement was designed to improve economic integrations between Ukraine and the European Union. Russian leaders publicly stated that they believed this move by Ukraine directly threatened Russia’s national security. Although initial steps to join the Association occurred in March 2012, the campaign didn’t start until much later (mid‐2013), as Ukraine and the EU started to more actively move towards the agreement.Russian actors began preparing for attacks in case Ukraine finalized the AA. The earliest identified modification timestamp of malware used in this campaign is June 26, 2013. A group of files with modification timestamps between August 12 and September 16, 2013 were used in the first wave of spear-phishing attacks, targeting government officials prior to the 10th Yalta Annual Meeting: “Changing Ukraine in a Changing World: Factors of Success.”",
+    {
+        "report_id": "report_0",
+        "link":"https://mrtiepolo.medium.com/russian-apt-gamaredon-exploits-hoaxshell-to-target-ukrainian-organizations-173427d4339b",
+        "sentences": [
+            "In January 2023, the Russia-linked group is continuing to conduct offensive attacks against targets in Ukraine, as documented by Symantec, BlackBerry Research and Trellix.",
+            "Over the years, Gamaredon’s main target has always been Ukrainian government organizations In January 2023, the BlackBerry Research and Intelligence Team outlined a campaign which relied on Telegram for malicious network structure purposes This analysis uncovers Gamaredon’s latest campaign, which targeted Ukrainian organizations by deploying Hoaxshell, a heavily obfuscated backdoor written in PowerShell.",
+            "The Security Service of Ukraine classifies the group as an APT (Advanced Persistent Threat), and unambiguously identifies it as a specially created structural unit of the Federal Security Service (FSB) of the Russian Federation, whose tasks are intelligence and subversive activities against Ukraine in cyberspace.",
+            "The group is believed to be responsible for a number of cyber attacks against Ukrainian targets, including military, government, and critical infrastructure organizations.",
+            "This is probably the reason why Gamaredon group abused the project in this campaign; in fact, the Word document with the malicious payload based on Hoaxshell (with a few tweaks added by Gamaredon) was able to completely bypass some of the most popular AV solutions, including Microsoft Defender, Kaspersky, McAfee and SentinelOne.",
+            "Ukrainian Military Intrusions: According to SentinelLabs’ research and telemetry from victims of the APT group Gamaredon, the group has impacted a significant number of victims across the Ukrainian separatist line, affecting over 5,000 unique entities in Ukraine in 2020 alone."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://socradar.io/russia-linked-apt-group-gamaredon-starting-extortion-30-50-minutes-after-first-initial-access/",
+        "sentences": [
+            "Gamaredon, also known by various aliases such as Aqua Blizzard, Armageddon, Shuckworm, or UAC-0010, is believed to be a state-sponsored actor with affiliations to the SBU Main Office in the Autonomous Republic of Crimea.",
+            "Since the beginning of the Russo-Ukrainian war in February 2022, Gamaredon has been among the numerous Russian hacking groups that have continued to operate actively.",
+            "The Computer Emergency Response Team of Ukraine (CERT-UA) recently released an analysis of the group, stating that emails and messages in popular messengers like Telegram, WhatsApp, and Signal are the primary means of initial compromise.",
+            "The group’s operations have led to the infection of thousands of government computers.",
+            "The threat group, Gamaredon, linked to Russia, has been observed engaging in data exfiltration activities shortly after gaining initial access to targeted systems.",
+            "Utilizing phishing campaigns, the group delivers PowerShell backdoors like GammaSteel to perform reconnaissance and execute further commands."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.securityweek.com/russian-apt-gamaredon-changes-tactics-attacks-targeting-ukraine/",
+        "sentences": [
+            "Also known as Armageddon, Primitive Bear, Shuckworm, and Trident Ursa, Gamaredon has been active since at least 2013, mainly focused on targets in Ukraine.",
+            "Despite having its operations publicly detailed several times, Gamaredon continues to use the same simple techniques, mainly relying on heavy obfuscation and publicly available tools, and even reuses code in new attacks, often registering success in its operations and remaining a major cyberthreat to Ukraine, Unit 42 concludes.",
+            "Gamaredon continues to rely on .html files and Word documents for malware delivery and has been observed using two different droppers over the past three months, namely a 7-Zip self-extracting (SFX) archive and a loader that relies on wscript to execute two dropped files.",
+            "Russia-linked Gamaredon, a hacking group known for providing services to other advanced persistent threat (APT) actors, is one of the most intrusive, continuously active APTs targeting Ukraine, Palo Alto Networks’ Unit 42 warns.",
+            "Traditionally, the hacking group was seen using phishing lures in the Ukrainian language, but it also employed English language lures in some cases, likely to boost network access and intelligence collection against both Ukraine and NATO members, Unit 42 notes.",
+            "Unit 42’s security researchers also discovered that, on February 24, the same day that Russia invaded Ukraine, an individual named Anton, who appears to have ties to Gamaredon, threatened a group of cybersecurity researchers who published tweets highlighting the group’s indicators of compromise (IoCs)."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.threatstop.com/blog/gamaredon-group-understanding-the-russian-apt",
+        "sentences": [
+            "Different Gamaredon attacks have used different malware variants over time.",
+            "For many years now, the threat actor has been using their own custom-created malware variants.",
+            "January 14, 2022 marked the first Russian cyber-war move, when a series of reports were published claiming Russian cyber attacks on the Ukrainian government - numerous government websites taken down or defaced, various targeted attacks using WhisperGate on Ukrainian organizations, and more.",
+            "Last year, the Security Service of Ukraine (SSU) publicly attributed the adversary to five Russian Federal Security Service (FSB) officers posted in Crimea.",
+            "Over the years, speculations about their primary motives have been confirmed, with security researchers seeing multiple attacks targeting Ukrainian government organizations and officials.",
+            "Since then, Russia has been playing hard in the cyber battlefield - and Gamaredon is a lead player."
+        ]
+    }
+]

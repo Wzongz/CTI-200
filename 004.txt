@@ -1,0 +1,115 @@
+{
+    "event_id": "004",
+    "claim": "The MuddyWater campaign is a sophisticated and evolving cyber espionage operation targeting entities in the Middle East.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "This blog discusses targeted attacks against the Middle East taking place between February and October 2017 by a group Unit 42 is naming “MuddyWater”. This blog links this recent activity with previous isolated public reporting on similar attacks we believe are related. We refer to these attacks as MuddyWater due to the confusion in attributing these attacks. Although the activity was previously linked by others to the FIN7 threat actor group, our research suggests the activity is in fact espionage related and unlikely to be FIN7 related. The MuddyWater attacks are primarily against Middle Eastern nations. However, we have also observed attacks against surrounding nations and beyond, including targets in India and the USA. MuddyWater attacks are characterized by the use of a slowly evolving PowerShell-based first stage backdoor we callThe Palo Alto Networks Unit 42 research team recently came across a series of malicious files whichThe malicious documents were adjusted according to the target regions, often using the logos of branches of local government, prompting the users to bypass security controls and enable macros. An overview of the technical changes seen in the past year is given in the graphic below, note that raw IOCs present in this graphic can be found as text in the Appendix at the end of this article. The attackers behind MuddyWater have been active throughout 2017, with targets across the Middle East and surrounding areas, examples of the decoy documents observed is given in Table 1. Of course, being named in a decoy document doesn’t mean any of these organizations have been attacked themselves or are involved in the attacks: the MuddyWater actors are abusing the trust these organizations’ names and/or logos command for their malicious purposes. All of these documents we observed and outlined above are related via:All of these documents we observed and outlined above are related via:The tools used by the MuddyWater attackers have been well documented by the previously cited research and a common theme of previous reporting was the open source nature of much of the toolset used by MuddyWater: Meterpreter, Mimikatz, Lazagne, Invoke-Obfuscation etc.. In some of their recent attack documents, the attackers also used GitHub as a hosting site for their custom backdoor, POWERSTATS. Specifically, the following GitHub repositories appear to be controlled by the MuddyWater threat actor(s).Interestingly, both profiles were populated with forked repositories to give them an air of legitimacy as shown in figure 2. The POWERSTATS malware was compiled as an exe using P.However, this was a minor anomaly, as it was only seen in this case: raw scripts being used in all other cases. In some of the instances we observed what appeared to be compromised accounts at third party organizations sending the malware. In one case, the attackers sent a malicious document which was nearly identical to a legitimate attachment which we observed later being sent to the same recipient. This indicates that the attackers stole and modified a legitimate document from the compromised user account, crafted a malicious decoy Word macro document using this stolen document and sent it to the target recipient who might be expecting the email from the original account user before the real sender had time to send it. This targeting of third party organizations to attack further targets is a risky move on the attackers’ part, as it potentially reveals their activity within the compromised third party organizations to the new target (those receiving the malicious documents When we looked at the cluster of activity which consisted of what appeared to be espionage-focused attacks in the Middle East, we were somewhat confused as the previous public reporting had attributed these attacks to FIN7. FIN7 is a threat actor group that is financially motivated with targets in the restaurant, services and financial sectors. Following the trail of existing public reporting, the tie to FIN7 is essentially made based on a download observed from a MuddyWater C2, of a non-public tool “DNSMessenger”. For example, Morphisec wrote: “Later in our investigation, the same command server also delivered a variant of the DNS messenger similar to that described by Talos. The domain names differed but the script adheres to the same logic (including the logic function).” The DNSMessenger malware is an obfuscated and customized version of the popular DNS_TXT_PWNAGE.ps1 script available on GitHub and is also referred to by FireEye as POWERSOURCE. The use of the DNSMessenger tool appears primarily linked to FIN7, with no other samples being attributable to MuddyWater. This led us to query the relationship between the newer attacks we were looking at and the alleged FIN7 link. As part of this research, we came up with the following hypotheses along with their likelihoods, and a rationale for each one. Whilst this may seem an attractive hypothesis to some, there are aspects on the technical side that simply don’t add up. Primarily, there are significant disparities between FIN7 and MuddyWater.When these points are considered together in conjunction with the significant difference in targeting they make a strong case for classifying this activity as distinct from FIN7 activity. We have attempted to find examples of code available in public data sources that would generate thevariation of the DNSMessenger malware and had little luck in doing so. Even though the code for DNSMessenger is publicly available following research into attackers published by 3 parties, attackers would have to write the corresponding server side to use it, and as such they may well choose to use the public DNS_TXT_Pwnage.ps1 script instead. Despite this, based on the chain of analysis above we cannot discount the notion that DNSMessenger is shared by multiple attackers, including FIN7 and MuddyWater.Little detail is given on the nature of how the connection between DNSMessenger and MuddyWater was discovered it isn’t possible for us to verify this link. The attackers realized they were under investigation and planted a false flag on their C2 server,uploading a copy of the FIN7 DNSMessenger code which had been previously mentioned (and was since publicly available) by FireEye and delivering it to researchers to trick them into mis-attributing the campaign. Indeed, the sample shared by Morphisec on PasteBin is identical to the one dropped bythe sample discussed in the FireEye FIN7 SEC campaign blog except for the final line.Whilst we could conclude with confidence that the attacks discussed in this article are not FIN7 related,we were not able to answer many of our questions about the MuddyWater attacks. We are currently unable to make a firm conclusion about the origin of the attackers, or the specific types of information they seek out once on a network. In any case we will continue to track their activities to provide protections for our customers.We hope the analysis presented shows the importance of drawing your own conclusions based on the data available to you, not just taking the conclusions given in the public domain at face value. This is especially true when actors who rely on slightly modified (and publicly available) open source tools are in play. Copycat threat actors can easily mimic attackers who use open source tools which can confuse attribution efforts meaning more than one aspect of the attacks observed must be considered when clustering.On top of this, whilst the vast majority of threat analysis in the public domain is repeatable and correct, in some cases it can be difficult to verify the analysis available. When it is hard to reproduce the analysis the confidence in any conclusions drawn must be lower than it would otherwise be, since you cannot know for sure that what is stated is true. Palo Alto Networks customers are protected from this threat in the following ways:AutoFocus customers can monitor ongoing activity from the threats discussed in this report by looking at the following tags:\n\n\n",
+    "reports": [
+        {
+            "link": "https://marcoramilli.com/2021/05/07/muddywater-binder-project-part-2/",
+            "content": "The report delves into the technical aspects of MuddyWater's Binder project, a malware tool. It analyzes the code structure, revealing insights into the malware's functionality and the threat actor's capabilities. The report discusses the network communication methods used by the malware, providing a glimpse into its operational mechanics. It also highlights the malware's ability to manipulate APK files, underscoring its focus on Android devices. The analysis suggests the presence of multiple developers and a structured development environment, indicating a sophisticated and organized threat group.",
+            "domain": "marcoramilli.com",
+            "tokenized": [
+                {
+                    "sent": "The report delves into the technical aspects of MuddyWater's Binder project, a malware tool.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It analyzes the code structure, revealing insights into the malware's functionality and the threat actor's capabilities.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The report discusses the network communication methods used by the malware, providing a glimpse into its operational mechanics. ",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It also highlights the malware's ability to manipulate APK files, underscoring its focus on Android devices.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The analysis suggests the presence of multiple developers and a structured development environment, indicating a sophisticated and organized threat group.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://marcoramilli.com/2021/05/01/muddywater-binder-project-part-1/",
+            "content": "The article  discusses a sophisticated cyberattack targeting UEFI firmware, attributed to APT41, a Chinese-speaking threat actor. It reveals the discovery of the MoonBounce implant in UEFI firmware, capable of persistent, stealthy operations and facilitating user-mode malware deployment. The attack method showcases advanced technical competence and poses significant security concerns due to its ability to resist traditional detection and remediation methods. The article underscores the evolving threat landscape and the challenges in protecting firmware against state-sponsored cyber threats.",
+            "domain": "marcoramilli.com",
+            "tokenized": [
+                {
+                    "sent": "The article  discusses a sophisticated cyberattack targeting UEFI firmware, attributed to APT41, a Chinese-speaking threat actor.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It reveals the discovery of the MoonBounce implant in UEFI firmware, capable of persistent, stealthy operations and facilitating user-mode malware deployment.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attack method showcases advanced technical competence and poses significant security concerns due to its ability to resist traditional detection and remediation methods.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The article underscores the evolving threat landscape and the challenges in protecting firmware against state-sponsored cyber threats.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://blog.talosintelligence.com/iranian-apt-muddywater-targets-turkey/",
+            "content": "The report by Cisco Talos Intelligence Group outlines a sophisticated campaign by the Iranian APT group MuddyWater. It focuses on their targeted attacks against Turkish private organizations and government institutions, using malicious PDFs, XLS files, and Windows executables. The report discusses MuddyWater's use of script-based components, such as obfuscated PowerShell downloaders, and highlights their use of canary tokens for tracking successful infections. The campaign showcases MuddyWater's diverse tactics and their adaptation to evade detection systems, while also emphasizing their ability to conduct espionage, intellectual property theft, and deploy ransomware.",
+            "domain": "blog.talosintelligence.com",
+            "tokenized": [
+                {
+                    "sent": "The report by Cisco Talos Intelligence Group outlines a sophisticated campaign by the Iranian APT group MuddyWater.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It focuses on their targeted attacks against Turkish private organizations and government institutions, using malicious PDFs, XLS files, and Windows executables.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The report discusses MuddyWater's use of script-based components, such as obfuscated PowerShell downloaders, and highlights their use of canary tokens for tracking successful infections.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The campaign showcases MuddyWater's diverse tactics and their adaptation to evade detection systems, while also emphasizing their ability to conduct espionage, intellectual property theft, and deploy ransomware.",
+                    "is_evidence": 0
+                }
+            ]
+         },
+         {
+            "link": "https://vxug.fakedoma.in/archive/APTs/2017/2017.11.22/MuddyWater%20APT.pdf/",
+            "content": "The report provides a detailed analysis of the MuddyWater cyber espionage campaign. It focuses on their extensive use of “Living off the Land” attacks and PowerShell-based techniques for stealth. The report reconstructs the evolution of MuddyWater's tactics, revealing their adaptability and operational sophistication. It also discusses the group's targeted regions, mainly in the Middle East, and the types of entities they focus on, including governments, telecoms, and oil companies. The report concludes with insights into the group's origins, likely Iran, and their operational patterns.",
+            "domain": "vxug.fakedoma.in",
+            "tokenized": [
+                {
+                    "sent": "The report provides a detailed analysis of the MuddyWater cyber espionage campaign.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It focuses on their extensive use of “Living off the Land” attacks and PowerShell-based techniques for stealth.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The report reconstructs the evolution of MuddyWater's tactics, revealing their adaptability and operational sophistication.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It also discusses the group's targeted regions, mainly in the Middle East, and the types of entities they focus on, including governments, telecoms, and oil companies.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The report concludes with insights into the group's origins, likely Iran, and their operational patterns.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

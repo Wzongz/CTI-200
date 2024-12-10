@@ -1,0 +1,141 @@
+{
+  "event_id": "072",
+  "claim": "HOGFISH (APT10) targets Japan with RedLeaves  implants in “new battle”.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "iDefense analysts have identified recent campaigns attributed to APT10, also known as HOGFISH and Stone Panda. This report provides a technical overview of the bespoke RedLeaves implants leveraged by the actor in their “new battle” campaign. iDefense is providing information about this reported campaign to the general iDefense customer base so that customers are aware of the modus operandi of a highly active threat group that is targeting institutions for espionage purposes, especially in Japan. More specifically, this threat analysis is intended for security operations center (SOC) analysts and engineers. Intelligence analysts may also want to read this report. Additionally, management and executive leadership may want to use this information. SOC analysts and engineers can use this threat analysis detailed information pertaining to the workings of a malware family and indicators of compromise (IoCs) to contain or mitigate the discussed threat through monitoring or blocking. SOC analysts can use the information provided in the Analysis and Mitigation sections of this IA to conduct hunting activities on systems that may have already been compromised. Analysts and security engineers can use the IoCs by adding them to hunting lists on Endpoint Detection and Response (EDR) solutions as well as network- and host-based blacklists to detect and deny malware implantation and command-and-control (C2) communication. Intelligence analysts may want to use the information provided in this IA to better inform their own analyses. The provided information can also help inform ongoing intelligence analyses and forensic investigations, particularly for compromise discovery, damage assessment, and attribution. Management and executive leadership may use this information to assess the risks associated with the threat described herein to make operational and policy decisions accordingly. Knowledge of the tactics, techniques, and procedures (TTPs) used by the operators behind this campaign helps to better inform detection and response to attacks by this threat group. The sample that iDefense analyzed for this report is a Word document with Japanese filename, 2018年度（平成30年度）税制改正について.doc, which translates to English as “About the 2018 fiscal year (Heisei 30) tax system revision.doc”. This document has the following propertiesAfter the document is opened, the victim is presented with a message from Office 365 to asking the victim to “Enable content” (see Exhibit 1). On the next page, however, iDefense identified what appears to be a base64-encoded string.As mentioned earlier, this malware creates two new binaries: AYRUNSC.exe and PTL.AYM. AYRUNSC.exe is a legitimate and digitally signed binary created by ESTsoft Corp. and pertains to ALYac, Korean anti-virus software. PTL.AYM is in fact another binary file; specifically, it is a DLL file with the following properties: The compiled time stamp, assuming it is not altered, suggests the actor developed the implant 2 days before launching the described campaign. This DLL is a clone of a legitimate DLL, also by ALYac, and corresponds to the anti-virus software’s Utility Module. However, rather than the original DLL, it only has two imports as the authors have implemented a simple, single-byte XOR obfuscation (using key 0x40) to obfuscate other imports and strings. For example, XOR decoding the binary reveals the following two interesting strings:Three exported functions clearly stood out: Initialize_IjDEJK, NbhgHUxiGf, and rGBKikBeJObSwSjY. These are, however, all dummy exports to throw off analysts or perhaps even taunt researchers, and more specifically perhaps to taunt the Japan Computer Emergency Response Team Coordination Center (JPCERT/CC). For example, when executing the DLL file by calling the NbhgHUxiGf export function, the victim would be prompted with a Windows message box with “jpcert-1”, as can be shown in Exhibit 3 and 4.All other functions are either empty or also filled with calls to MessageBoxA(), which is unusual for DLL loading implants. However, one export function, GetFolderPathNew2, is responsible for loading the RedLeaves DLL implant by performing process hollowing in iexplore.exe, Microsoft Corp.’s default browser. The initial process, AYRUNSC.exe, is unable to work correctly and will therefore exit. For persistence, RedLeaves will add a shortcut “.lnk” file in the user’s Startup folder, which points to `AYRUNSC.exe’, as shown in Exhibit 5.Once running, the RedLeaves implant will then attempt to communicate with the following C2 domains, using HTTP, but connects to the C2 server on port 443:The configuration settings for the RedLeaves implant can be extracted from memory and contains the following information: The string “2018-1-8-NewBattle” refers to the campaign ID set up by the actor and may allude the actor starting a “new battle” (campaigns). The malware will create a unique version of the aforementioned mutex on the victim machine in order to avoid running the implant twice. As mentioned before, RedLeaves will attempt to communicate over HTTP, using POST requests with a hardcoded User-Agent:Further analysis also reveals that the RedLeaves implant described corresponds to the actor’s “Lavender” version of the malware family. For example, the strings “LAVENDERX” and “LAVENDERengin” (which are dynamically built on the stack) are used to determine the implant’s version.\n\n\n",
+  "reports": [
+    {
+      "link": "https://www.mandiant.com/resources/blog/apt10-targeting-japanese-corporations-using-updated-ttps/",
+      "content": "APT10 is a Chinese cyber espionage group that FireEye has tracked since 2009, and they have a history of targeting Japanese entities. In July 2018, FireEye devices detected and blocked what appears to be APT10 (Menupass) activity targeting the Japanese media sector. Several threat actors leverage the technique of using Windows certutil.exe for payload decoding, and APT10 continues to employ this technique. These are sent via POST request, as shown in Figure 9.While APT10 consistently targets the same geolocation and industry, the malware they use is actively evolving. This backdoor is well-known in the security community as ANEL, and it used to come in beta or RC (release candidate) until recently. This shows that APT10 is very capable of maintaining and updating their malware.",
+      "domain": "www.mandiant.com",
+      "tokenized": [
+        {
+          "sent":"APT10 is a Chinese cyber espionage group that FireEye has tracked since 2009, and they have a history of targeting Japanese entities.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In July 2018, FireEye devices detected and blocked what appears to be APT10 (Menupass) activity targeting the Japanese media sector.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Several threat actors leverage the technique of using Windows certutil.exe for payload decoding, and APT10 continues to employ this technique.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"These are sent via POST request, as shown in Figure 9.While APT10 consistently targets the same geolocation and industry, the malware they use is actively evolving.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"This backdoor is well-known in the security community as ANEL, and it used to come in beta or RC (release candidate) until recently.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "This shows that APT10 is very capable of maintaining and updating their malware.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.scmp.com/news/china/diplomacy/article/2179107/apt10-what-do-we-know-about-alleged-chinese-hacking-group/",
+      "content": "Among the government targets of the hacking campaign were the NASA Goddard Space Centre and Jet Propulsion Laboratory and the US Department of Energy’s Lawrence Berkeley National Laboratory, the indictment said. Beijing responded to the charges by accusing Washington of cyber hacking, but what do we actually know about the case?APT10 – or Advanced Persistent Threat 10 – is the name given to a group of Chinese hackers first identified by US cybersecurity firm FireEye. Cybersecurity analysts have been following the activities of the alleged hackers for many years, but the first public reference to APT10 was made by FireEye in a 2013 report. In 2017, PwC’s cybersecurity practice and British multinational defence company BAE Systems published a report, in cooperation with Britain’s National Cyber Security Centre, that claimed to have uncovered a hacking campaign – “Operation Cloud Hopper” – led by APT10. More recently, beginning in or about 2014, APT10 engaged in an intrusion campaign to obtain unauthorised access to the computer networks of managed service providers (MSPs) for businesses and governments around the world. Widely known within the cybersecurity community, the group is one of several that share the “APT” tag, indicating their willingness to pursue targets over long periods of time.",
+      "domain": "www.scmp.com",
+      "tokenized": [
+        {
+          "sent":"Among the government targets of the hacking campaign were the NASA Goddard Space Centre and Jet Propulsion Laboratory and the US Department of Energy’s Lawrence Berkeley National Laboratory, the indictment said.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Beijing responded to the charges by accusing Washington of cyber hacking, but what do we actually know about the case?APT10 – or Advanced Persistent Threat 10 – is the name given to a group of Chinese hackers first identified by US cybersecurity firm FireEye.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Cybersecurity analysts have been following the activities of the alleged hackers for many years, but the first public reference to APT10 was made by FireEye in a 2013 report.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In 2017, PwC’s cybersecurity practice and British multinational defence company BAE Systems published a report, in cooperation with Britain’s National Cyber Security Centre, that claimed to have uncovered a hacking campaign – “Operation Cloud Hopper” – led by APT10.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "More recently, beginning in or about 2014, APT10 engaged in an intrusion campaign to obtain unauthorised access to the computer networks of managed service providers (MSPs) for businesses and governments around the world.",
+          "is_evidence": 0
+        },
+        {
+          "sent":  "Widely known within the cybersecurity community, the group is one of several that share the “APT” tag, indicating their willingness to pursue targets over long periods of time.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.scmp.com/news/china/diplomacy/article/2179107/apt10-what-do-we-know-about-alleged-chinese-hacking-group/",
+      "content": "Although the group’s exact motives remain unclear, its initial tranche of information exposed individuals connected to long-running GOTHIC PANDA (APT3) operations, culminating in a connection to the Chinese firm Boyusec (博御信息) and, ultimately, Chinese Ministry of State Security (MSS) entities in Guangzhou. Falcon Intelligence recently independently conducted detailed analysis of the RedLeaves malware used to target numerous Japanese defense groups and found it was directly sourced from Trochilus code, but it has undergone several evolutions and contains prefixes suggesting it could also be used to target Russia and the DPRK. For more information on how to incorporate intelligence on threat actors like STONE PANDA into your security strategy, please visit theFalcon Intelligence product page. However, it is important to note that such public revelations often force these actors to cease operations, improve their operational security (OPSEC), and then return stronger than before. Recently, in July and August 2018, IntrusionTruth has returned with new reporting regarding actors with ties to historic STONE PANDA (APT10) activity and has ultimately associated them with the MSS Tianjin Bureau (天津市国家安全局). While the APT1, PUTTER PANDA, and Operation CameraShy reports all exposed PLA units at a time when Chinese military hacking against western firms was rampant, the attention has now swung toward identifying MSS contractors.",
+      "domain": "www.scmp.com",
+      "tokenized": [
+        {
+          "sent":"Although the group’s exact motives remain unclear, its initial tranche of information exposed individuals connected to long-running GOTHIC PANDA (APT3) operations, culminating in a connection to the Chinese firm Boyusec (博御信息) and, ultimately, Chinese Ministry of State Security (MSS) entities in Guangzhou.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Falcon Intelligence recently independently conducted detailed analysis of the RedLeaves malware used to target numerous Japanese defense groups and found it was directly sourced from Trochilus code, but it has undergone several evolutions and contains prefixes suggesting it could also be used to target Russia and the DPRK.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"For more information on how to incorporate intelligence on threat actors like STONE PANDA into your security strategy, please visit theFalcon Intelligence product page.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "However, it is important to note that such public revelations often force these actors to cease operations, improve their operational security (OPSEC), and then return stronger than before.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Recently, in July and August 2018, IntrusionTruth has returned with new reporting regarding actors with ties to historic STONE PANDA (APT10) activity and has ultimately associated them with the MSS Tianjin Bureau (天津市国家安全局).",
+          "is_evidence": 0
+        },
+        {
+          "sent":"While the APT1, PUTTER PANDA, and Operation CameraShy reports all exposed PLA units at a time when Chinese military hacking against western firms was rampant, the attention has now swung toward identifying MSS contractors.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://blog.ensilo.com/uncovering-new-activity-by-apt10/",
+      "content": "Both of the loader’s variants and their various payloads that we analyzed share similar Tactics, Techniques, and Procedures (TTPs) and code associated with APT10.Although they deliver different payloads to the victim's machine, both variants drop the following files beforehand:jjs.exe is a JVM-based implementation of a javascript engine as part of the Java platform developed by Oracle, but in this case it served as a loader for the malware. Either way, it’s safe to say that the threat actor behind APT10 is still active and we have yet to see the last of the group. In April 2019, enSilo detected what it believes to be new activity by Chinese cyber espionage group APT10. The variants discovered by enSilo are previously unknown and deploy malware that is unique to the threat actor. These malware families have a rich history of being used in many targeted attacks against government and private organizations. Towards the end of April 2019, we tracked down what we believe to be new activity by APT10, a Chinese cyber espionage group.",
+      "domain": "blog.ensilo.com",
+      "tokenized": [
+        {
+          "sent":"Both of the loader’s variants and their various payloads that we analyzed share similar Tactics, Techniques, and Procedures (TTPs) and code associated with APT10.Although they deliver different payloads to the victim's machine, both variants drop the following files beforehand:jjs.exe is a JVM-based implementation of a javascript engine as part of the Java platform developed by Oracle, but in this case it served as a loader for the malware.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Either way, it’s safe to say that the threat actor behind APT10 is still active and we have yet to see the last of the group.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In April 2019, enSilo detected what it believes to be new activity by Chinese cyber espionage group APT10.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The variants discovered by enSilo are previously unknown and deploy malware that is unique to the threat actor.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"These malware families have a rich history of being used in many targeted attacks against government and private organizations.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Towards the end of April 2019, we tracked down what we believe to be new activity by APT10, a Chinese cyber espionage group.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

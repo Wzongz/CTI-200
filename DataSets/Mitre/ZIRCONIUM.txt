@@ -1,0 +1,27 @@
+ZIRCONIUM is a threat group operating out of China, active since at least 2017, that has targeted individuals associated with the 2020 US presidential election and prominent leaders in the international affairs community.
+ZIRCONIUM has purchased domains for use in targeted campaigns.
+ZIRCONIUM has used GitHub to host malware linked in spearphishing e-mails.
+ZIRCONIUM has created a Registry Run key named Dropbox Update Setup to establish persistence for a malicious Python binary.
+ZIRCONIUM has used a tool to open a Windows Command Shell on a remote host.
+ZIRCONIUM has used Python-based implants to interact with compromised hosts.
+ZIRCONIUM has used a tool to steal credentials from installed web browsers including Microsoft Internet Explorer and Google Chrome.
+ZIRCONIUM has used the AES256 algorithm with a SHA1 derived key to decrypt exploit code.
+ZIRCONIUM has used AES encrypted communications in C2.
+ZIRCONIUM has exfiltrated files via the Dropbox API C2.
+ZIRCONIUM has exfiltrated stolen data to Dropbox.
+ZIRCONIUM has exploited CVE-2017-0005 for local privilege escalation.
+ZIRCONIUM has used tools to download malicious files to compromised hosts.
+ZIRCONIUM has spoofed legitimate applications in phishing lures and changed file extensions to conceal  installation of malware.
+ZIRCONIUM has created a run key named Dropbox Update Setup to mask a persistence mechanism for a malicious binary.
+ZIRCONIUM has used multi-stage packers for exploit code.
+ZIRCONIUM has used malicious links in e-mails to deliver malware.
+ZIRCONIUM targeted presidential campaign staffers with credential phishing e-mails.
+ZIRCONIUM has used web beacons in e-mails to track hits to attacker-controlled URL's.
+ZIRCONIUM has used a tool to query the Registry for proxy settings.
+ZIRCONIUM has used the msiexec.exe command-line utility to download and execute malicious MSI files.
+ZIRCONIUM has used a tool to capture the processor architecture of a compromised host in order to register it with C2.
+ZIRCONIUM has used a tool to enumerate proxy settings in the target environment.
+ZIRCONIUM has used a tool to capture the username on a compromised host in order to register it with C2.
+ZIRCONIUM has used a tool to capture the time on a compromised host in order to register it with C2.
+ZIRCONIUM has used malicious links in e-mails to lure victims into downloading malware.
+ZIRCONIUM has used Dropbox for C2 allowing upload and download of files as well as execution of arbitrary commands.

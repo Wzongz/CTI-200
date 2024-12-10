@@ -1,0 +1,9 @@
+Poseidon Group is a Portuguese-speaking threat group that has been active since at least 2005. The group has a history of using information exfiltrated from victims to blackmail victim companies into contracting the Poseidon Group as a security firm. 
+Poseidon Group searches for administrator accounts on both the local victim machine and the network.
+Poseidon Group searches for administrator accounts on both the local victim machine and the network.
+The Poseidon Group's Information Gathering Tool (IGT) includes PowerShell components.
+Poseidon Group tools attempt to spoof anti-virus processes as a means of self-defense.
+Poseidon Group conducts credential dumping on victims, with a focus on obtaining credentials belonging to domain and database servers.
+After compromising a victim, Poseidon Group lists all running processes.
+Poseidon Group obtains and saves information about victim network interfaces and addresses.
+After compromising a victim, Poseidon Group discovers all running services.

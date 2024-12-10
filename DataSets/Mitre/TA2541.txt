@@ -1,0 +1,28 @@
+TA2541 is a cybercriminal group that has been targeting the aviation, aerospace, transportation, manufacturing, and defense industries since at least 2017. TA2541 campaigns are typically high volume and involve the use of commodity remote access tools obfuscated by crypters and themes related to aviation, transportation, and travel.
+TA2541 has registered domains often containing the keywords "kimjoy," "h0pe," and "grace," using domain registrars including Netdorm and No-IP DDNS, and hosting providers including xTom GmbH and Danilenko, Artyom.
+TA2541 has hosted malicious files on various platforms including Google Drive, OneDrive, Discord, PasteText, ShareText, and GitHub.
+TA2541 has placed VBS files in the Startup folder and used Registry run keys to establish persistence for malicious payloads.
+TA2541 has used PowerShell to download files and to inject into various Windows processes.
+TA2541 has used VBS files to execute or establish persistence for additional payloads, often using file names consistent with email themes or mimicking system functionality.
+TA2541 has used dynamic DNS services for C2 infrastructure.
+TA2541 has used TLS encrypted C2 communications including for campaigns using AsyncRAT.
+TA2541  has attempted to disable built-in security protections such as Windows AMSI. 
+TA2541 has used malicious scripts and macros with the ability to download additional payloads.
+TA2541 has used file names to mimic legitimate Windows files or system functionality.
+TA2541 has used compressed and char-encoded scripts in operations.
+TA2541 has used a .NET packer to obfuscate malicious files.
+TA2541 has used multiple strains of malware available for purchase on criminal forums or in open-source repositories.
+TA2541 has used commodity remote access tools.
+TA2541 has sent phishing emails with malicious attachments for initial access including MS Word documents.
+TA2541 has used spearphishing e-mails with malicious links to deliver malware.  
+TA2541 has injected malicious code into legitimate .NET related processes including  regsvcs.exe, msbuild.exe, and installutil.exe.
+TA2541 has used process hollowing to execute CyberGate malware.
+TA2541 has used scheduled tasks to establish persistence for installed tools.
+TA2541 has used tools to search victim systems for security products such as antivirus and firewall software.
+TA2541 has uploaded malware to various platforms including Google Drive, Pastetext, Sharetext, and GitHub.
+TA2541 has used mshta to execute scripts including VBS.
+TA2541 has collected system information prior to downloading malware on the targeted host.
+TA2541 has run scripts to check internet connectivity from compromised hosts. 
+TA2541 has used malicious links to cloud and web services to gain execution on victim machines.
+TA2541 has used macro-enabled MS Word documents to lure victims into executing malicious payloads.
+TA2541 has used WMI to query targeted systems for security products.

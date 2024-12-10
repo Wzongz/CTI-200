@@ -1,0 +1,134 @@
+{
+  "event_id": "130",
+  "claim": "Threat actors like FIN7 are among a long list of groups that MITRE tracks.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Morphisec Labs has been tracking FIN7 (Carbanak Group) activity for the past several years. Morphisec’s ability to collect rich forensic data from memory has provided unique visibility into multiple FIN7 campaigns that our researchers were proud to share with MITRE and the InfoSec community at large. FIN7 is a well-funded, financially motivated cybercrime group. Their advanced techniques and tactics were even emulated in the third round of the MITRE ATT&CK evaluations. This report presents an attack chain that was intercepted and prevented within a customer’s network in December 2020, then will focus on a component from a typical FIN7 attack chain – JSSLoader. Though JSSLoader is well known as a minimized .NET RAT, not many details have been publicly available with respect to various capabilities such as exfiltration, persistence, auto-update, malware downloading, and more. Furthermore, in the many occasions where JSSLoader is mentioned, there are few details on the complete attack chain. The following provides a never-before-seen technical analysis of this infamous group’s JSSLoader as part of an end-to-end attack. Below is an example of a typical phishing campaign that may lead to a FIN7 JSSLoader compromise as well as to other malwares such as Qbot; the traffic is then redirected through BlackTDS traffic distribution system. In this example, an email is sent from “Natural Health Sherpa” with an invoice to pay from Quickbooks. This VBScript downloads and executes the next stage’s VBScript in memory. This second stage was recently introduced. The in-memory script downloads and writes a .NET module (JSSLoader) on disk, then executes the module through a scheduled task with a newly introduced timeout delay to bypass attack chain monitoring. It is worth mentioning that the early versions of the VB scripts have a strong resemblance to the ongoing QBOT campaign that may lead to an Egregor compromise. The JSSLoader is a RAT (Remote Access Trojan) with multiple capabilities that were introduced over time. These various capabilities are documented throughout this report. In the specific attack chain that was recently intercepted, the RAT typically executes a Takeout which is responsible for the reflective loading and execution of a Carbanak. Not surprisingly, the C2 hosting provider is a company named FranTech Solutions, which has been used before by the FIN7 group. As mentioned in the introduction, the early VBScripts had a resemblance to the QBOT attacks seen earlier this year – QBOT-VBS. The VBScript decodes a list of commands and a URL. This URL is used to download the next stage, the JSSLoader. After downloading and saving the JSSLoader into the %temp% directory, it will create a scheduled task that executes the file. In the QBOT campaigns, a QBOT executable is the next stage instead of the JSSLoader. Newer VBScripts are divided into two stages. The first one just downloads and executes the second VBScript from /margaritaThe downloaded VBScript decodes and executes the in-memory VBScript that then downloads and executes the next stage JSSloader through a scheduled task, possibly to avoid sequential monitoring of the attack chain. URLs to the JSSLoader have a similar pattern – /.eml.From late October 2020, the adversaries moved to a WSF (Windows Script File) as the first stage script. Basically, they wrapped the VBScript from the older version into a WSF. JSSLoader is a highly maintained minimized .NET RAT backdoor, mostly used by the FIN7 group. It includes the following functionality:The following will begin with the most recent sample of the JSSLoader together with its followup stages, then it will track its evolution over the past year, skipping over any minor changes.As with many other downloaders, the first exfiltrated information is a precondition for the next execution stage. The RAT collects the following:The next stage execution went through a significant evolution over the past year. Immediately following a persistence stage, the RAT will wait for a base64 encoded command string to be delivered via a ‘Get’ command from the same domain the data had been sent to. As with previous communication attempts, SSL certificate errors will be ignored and the unique victim ID will be sent as part of the request.The delivered command is parsed into an array of lines (using new line delimiter), then the real command is extracted from between the quotes of the longest line in the array. This string is then written into a file on disk, which is later parsed by a pre-built PowerShell command described below. In most cases the string is a compressed stream.The executed PowerShell script is known as a Takeout script. Multiple variations of the Takeout script mainly differ on how they extract the next stage of in-memory execution through the use of the “$body” parameter, a simple retrohunt in VirusTotal shows Takeouts with a full embedded “$body”. In this case, the PowerShell script reads the content of a previously written command file as described above, decompresses it in memory, and executes the second layer PowerShell. The second layer PowerShell reflectively maps a Carbanak to memory.If there is one thing this analysis shows us, it’s that these threats are a moving target. Thwarting them can only be achieved by outpacing their advancements, and knowledge sharing is one of the best ways to do this. MITRE ATT&CK is the first place that comes to mind when it comes to knowledge sharing and collaboration around adversarial techniques and tactics. Threat actors like FIN7 are among a long list of groups that MITRE tracks. This list shows that FIN7’s JSSLoader is no exception when it comes to evolving threats. Threat actors constantly change their techniques, continuously evade detection, and achieve their adversarial goals despite the security controls that are in place. It takes a new approach to end this cycle. Morphisec’s R&D team is dedicated to developing technology that does not rely on detecting techniques because those are always subject to change. Instead, Morphisec prevents the non-negotiable tactics that the adversaries rely on to achieve their goals no matter how many times they evolve their malware. As these new and unknown threats like this one are prevented, rich forensic data is collected, analyzed, and shared with the community via our Moving Target Defense Blog.\n\n\n",
+  "reports": [
+    {
+      "link": "https://www.truesec.com/hub/blog/",
+      "content": "It’s possible that the FIN7 group are now more focused on just gaining access and then let a team from the RYUK group take over and deploy ransomware. The first two stages of the attack, when the attacker took over the network, clearly bears the mark of the criminal threat actor known as FIN7. This attack marks the first instance Truesec has observed of the combination of FIN7 tools and the RYUK ransomware, indicating a change in pattern for FIN7 attacks. This summer Truesec observed an attacker that used the tools and techniques of FIN7, including the CARBANAK RAT, to take over the network of an enterprise.",
+      "domain": "www.truesec.com",
+      "tokenized": [
+        {
+          "sent":"It’s possible that the FIN7 group are now more focused on just gaining access and then let a team from the RYUK group take over and deploy ransomware.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The first two stages of the attack, when the attacker took over the network, clearly bears the mark of the criminal threat actor known as FIN7.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "This attack marks the first instance Truesec has observed of the combination of FIN7 tools and the RYUK ransomware, indicating a change in pattern for FIN7 attacks.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"This summer Truesec observed an attacker that used the tools and techniques of FIN7, including the CARBANAK RAT, to take over the network of an enterprise.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://web.archive.org/web/20180808125108/https:/www.fireeye.com/blog/threat-research/2017/03/fin7_spear_phishing.html/",
+      "content": "CARBANAK malware has been used heavily by FIN7 in previous operations. FIN7 is a financially motivated intrusion set that selectively targets victims and uses spear phishing to distribute its malware. Previous FIN7 operations deployed multiple point-of-sale malware families for the purpose of collecting and exfiltrating sensitive financial data. The use of the CARBANAK malware in FIN7 operations also provides limited evidence that these campaigns are linked to previously observed CARBANAK operations leading to fraudulent banking transactions, ATM compromise, and other monetization schemes. We have not yet identified FIN7’s ultimate goal in this campaign, as we have either blocked the delivery of the malicious emails or our FaaS team detected and contained the attack early enough in the lifecycle before we observed any data targeting or theft. We have observed FIN7 attempt to compromise diverse organizations for malicious operations – usually involving the deployment of point-of-sale malware – primarily against the retail and hospitality industries.",
+      "domain": "web.archive.org",
+      "tokenized": [
+        {
+          "sent": "CARBANAK malware has been used heavily by FIN7 in previous operations.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"FIN7 is a financially motivated intrusion set that selectively targets victims and uses spear phishing to distribute its malware.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Previous FIN7 operations deployed multiple point-of-sale malware families for the purpose of collecting and exfiltrating sensitive financial data.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The use of the CARBANAK malware in FIN7 operations also provides limited evidence that these campaigns are linked to previously observed CARBANAK operations leading to fraudulent banking transactions, ATM compromise, and other monetization schemes.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"We have not yet identified FIN7’s ultimate goal in this campaign, as we have either blocked the delivery of the malicious emails or our FaaS team detected and contained the attack early enough in the lifecycle before we observed any data targeting or theft.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"We have observed FIN7 attempt to compromise diverse organizations for malicious operations – usually involving the deployment of point-of-sale malware – primarily against the retail and hospitality industries.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://securelist.com/fin7-5-the-infamous-cybercrime-rig-fin7-continues-its-activities/90703/",
+      "content": "FIN7 operations are linked to numerous intrusion attempts having targeted hundreds of companies since at least as early as 2015. In addition, during the investigation, we discovered certain similarities to other attacker groups that seemed to share or copy the FIN7 TTPs in their own operations. On August 1, 2018, the US Department of Justice announced that it had arrested several individuals suspected of having ties to the FIN7 cybercrime rig. The FIN7 intrusion set continued its tailored spear phishing campaigns throughout last year. The first of them is the well-known FIN7, which specializes in attacking various companies to get access to financial data or PoS infrastructure. While tracking numerous threat actors on a daily basis during the final days of 2018 and at the beginning of 2019, we discovered various activity clusters sharing certain TTPs associated with the FIN7 intrusion set.",
+      "domain": "securelist.com",
+      "tokenized": [
+        {
+          "sent": "FIN7 operations are linked to numerous intrusion attempts having targeted hundreds of companies since at least as early as 2015.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In addition, during the investigation, we discovered certain similarities to other attacker groups that seemed to share or copy the FIN7 TTPs in their own operations.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"On August 1, 2018, the US Department of Justice announced that it had arrested several individuals suspected of having ties to the FIN7 cybercrime rig.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The FIN7 intrusion set continued its tailored spear phishing campaigns throughout last year.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The first of them is the well-known FIN7, which specializes in attacking various companies to get access to financial data or PoS infrastructure.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"While tracking numerous threat actors on a daily basis during the final days of 2018 and at the beginning of 2019, we discovered various activity clusters sharing certain TTPs associated with the FIN7 intrusion set.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.fireeye.com/blog/threat-research/2019/10/mahalo-fin7-responding-to-new-tools-and-techniques.html/",
+      "content": "By exploiting the trust inherently provided by code certificates, FIN7 increases their chances of bypassing various security controls and successfully compromising victims. During several recent incident response engagements, FireEye Mandiant investigators uncovered new tools in FIN7’s malware arsenal and kept pace as the global criminal operators attempted new evasion techniques. FIN7 has been observed making small changes to this malware family using multiple methods to avoid traditional antivirus detection, including a BOOSTWRITE sample where the dropper was signed by a valid Certificate Authority. The first of FIN7's new tools is BOOSTWRITE – an in-memory-only dropper that decrypts embedded payloads using an encryption key retrieved from a remote server at runtime. While CARBANAK has been thoroughly analyzed and has been used maliciously by several financial attackers including FIN7, RDFSNIFFER is a newly-identified tool recovered by Mandiant investigators. While these incidents have also included FIN7’s typical and long-used toolsets, such as CARBANAK and BABYMETAL, the introduction of new tools and techniques provides further evidence FIN7 is continuing to evolve in response to security enhancements.",
+      "domain": "www.fireeye.com",
+      "tokenized": [
+        {
+          "sent":"By exploiting the trust inherently provided by code certificates, FIN7 increases their chances of bypassing various security controls and successfully compromising victims.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "During several recent incident response engagements, FireEye Mandiant investigators uncovered new tools in FIN7’s malware arsenal and kept pace as the global criminal operators attempted new evasion techniques.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "FIN7 has been observed making small changes to this malware family using multiple methods to avoid traditional antivirus detection, including a BOOSTWRITE sample where the dropper was signed by a valid Certificate Authority.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The first of FIN7's new tools is BOOSTWRITE – an in-memory-only dropper that decrypts embedded payloads using an encryption key retrieved from a remote server at runtime.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"While CARBANAK has been thoroughly analyzed and has been used maliciously by several financial attackers including FIN7, RDFSNIFFER is a newly-identified tool recovered by Mandiant investigators.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"While these incidents have also included FIN7’s typical and long-used toolsets, such as CARBANAK and BABYMETAL, the introduction of new tools and techniques provides further evidence FIN7 is continuing to evolve in response to security enhancements.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    }
+  ]
+}

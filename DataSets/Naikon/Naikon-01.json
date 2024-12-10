@@ -1,0 +1,52 @@
+[
+    "claim":"Naikon is assessed to be a state-sponsored cyber espionage group attributed to the Chinese People’s Liberation Army’s (PLA) Chengdu Military Region Second Technical Reconnaissance Bureau (Military Unit Cover Designator 78020).",
+    "explain":"Naikon is a threat actor that appears to be Chinese-speaking. Its primary targets are top-level government agencies and civil and military organizations. Naikon is one of the most active APTs in Asia, especially around the South China Sea, and has been spying on entities in the area for around five years, since at least 2010.Kaspersky Lab has detected Naikon malware in the Philippines, Malaysia, Cambodia, Indonesia, Vietnam, Myanmar, Singapore, Nepal, Thailand, Laos and China.Naikon’s targets are hit using traditional spear-phishing techniques, with emails carrying attachments designed to be of interest to the potential victim. This attachment might look like a Word document, but is in fact an executable file with a double extension. You might be a target of Naikon if the following risk factors are familiar to you:Risk factors: If you work for/with governments/military in APAC, You possess valuable information, If you receive and read hundreds of emails, open attachments.We haven’t seen the Naikon group attacking ordinary consumers, however the malware used by the group could easily be turned against anyone running Windows and using email.. Basically, if someone is connected with an individual of interest to the Naikon APT, they could be targeted.",
+    {
+        "report_id": "report_0",
+        "link":"https://research.checkpoint.com/2020/naikon-apt-cyber-espionage-reloaded/",
+        "sentences": [
+            "By comparing with previously reported activity, we can conclude that the Naikon APT group has been persistently targeting the same region in the last decade.",
+            "By utilizing new server infrastructure, ever-changing loader variants, in-memory fileless loading, as well as a new backdoor – the Naikon APT group was able to prevent analysts from tracing their activity back to them.",
+            "In one case, a foreign embassy unknowingly sent malware-infected documents to the government of its host country, showing how the hackers are exploiting trusted, known contacts and using those them to infiltrate new organizations and extend their espionage network.",
+            "In the following report, we will describe the tactics, techniques, procedures and infrastructure that have been used by the Naikon APT group over the 5 years since the last report, and offer some insight into how they were able to remain under the radar.",
+            "In this original operation, the Naikon APT group utilized a backdoor against different government institutions in APAC.",
+            "We were able to attribute our campaign to the Naikon APT group using several similarities we observed to the previously disclosed information about Naikon’s activity by Kaspersky in 2015: 1, 2."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://securelist.com/the-naikon-apt/69953/",
+        "sentences": [
+            "A Naikon proxy server is a dedicated server that accepts incoming connections from victim computers and redirects them to the operator’s C&C.",
+            "It was during operator X’s network monitoring that the attackers placed Naikon proxies within the countries’ borders, to cloak and support real-time outbound connections and data exfiltration from high-profile victim organizations.",
+            "Our recent report, “The Chronicles of the Hellsing APT: the Empire Strikes Back” began with an introduction to the Naikon APT, describing it as “One of the most active APTs in Asia, especially around the South China Sea”.",
+            "So it was not difficult for the Naikon APT to register similar-looking email addresses and to spear-phish targets with attachments, links to sites serving malware, and links to google drive.",
+            "The Naikon tool of choice generates a special, small, encrypted file which is 8,000 bytes in size, containing code to be injected into the browser along with configuration data.",
+            "This Naikon report will be complemented by a follow-on report that will examine the Naikon TTP and the incredible volume of attack activity around the South China Sea that has been going on since at least 2010."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://cisomag.com/cyber-espionage-campaign-naikon-apt-targets-government-entities-in-apac-region/",
+        "sentences": [
+            "A Chinese hacker group is behind an ongoing cyber espionage campaign targeting government entities in the Asia-Pacific (APAC) region, according to a new report from Check Point Research.",
+            "The group codenamed “Naikon APT” is reportedly undiscovered for five years of spying organizations in the Philippines, Australia, Thailand, Indonesia, Vietnam, Myanmar, and Brunei.",
+            "The researchers also stated that they found this version of the RoyalRoad malware in the Vicious Panda APT group activities reviewed in March 2020.",
+            "The researchers stated that the Naikon APT group is active since 2015 carrying out a series of cyberattacks on government entities, including ministries of foreign affairs, science and technology ministries, as well as government-owned companies using a new backdoor dubbed “Aria-body” to operate secretly.",
+            "These include: An RTF file utilizing the RoyalRoad weaponizer Archive files that contain a legitimate executable and a malicious DLL, to be used in a DLL hijacking technique, taking advantage of legitimate executables such as Outlook and Avast proxy, to load a malicious DLL Directly via an executable file, which serves as a loader “Given the characteristics of the victims and capabilities presented by the group, it is evident that the group’s purpose is to gather intelligence and spy on the countries whose Governments it has targeted.",
+            "“We observed a malicious email sent from a government embassy in APAC to an Australian state government, named The Indians Way.doc."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://westoahu.hawaii.edu/cyber/global-weekly-exec-summary/advanced-persistent-threat-naikon-deploys-new-malware/",
+        "sentences": [
+            "At this point, it is unknown just how deeply Naikon has been able to penetrate these government agencies, but it is likely that the spies have been able to dig themselves in at a level that is beyond what is currently known, leading cybersecurity experts to scramble to find ways to detect and disrupt the criminal activity.",
+            "Naikon, an alias of the Chinese People’s Liberation Army’s Chengdu Military Region Second Technical Reconnaissance Bureau (Military Unit Cover Designator 78020) has been an active threat for at least ten years focusing their activities on the Southeast Asia region .",
+            "Naikon’s success must be worth the investment that the Chinese government has designated for the hacker group.",
+            "Research has shown that this newly discovered backdoor may have been actively used for at least two years, with initial investigations pointing to origins in 2019.Naikon is known for maintaining a stealthy presence within networks and systems for long periods of time.",
+            "The indications are clear that whomever Naikon and the Chinese government are targeting, the intent is to burrow deep, remain incognito, and sustain an ongoing campaign intent on leveling the cyberwarfare battlefield, and ultimately, the traditional battlefield as well.",
+            "Well known Advanced Persistent Threat (APT) group “Naikon” has made headlines again recently for an attack that has been in the wild unnoticed for two years."
+        ]
+    }
+]

@@ -1,0 +1,142 @@
+{
+  "event_id": "066",
+  "claim": "RUSSIA-LINKED APT GROUP DUSTSQUAD TARGETS DIPLOMATIC ENTITIES IN CENTRAL ASIA.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Earlier October, security experts from ESET shared details about the operations of a cyber espionage group tracked as Nomadic Octopus, a threat actor focused on diplomatic entities in Central Asia. The group has been active since at least 2015, ESET researchers presented their findings at the Virus Bulletin conference. “ESET researchers recently discovered an interesting cyber espionage campaign active in several countries of Central Asia. We attribute these attacks to a previously undocumented APT group that we have named Nomadic Octopus.” states the blog post published by Virus Bulletin. “Our findings suggest that this APT group has been active since at least 2015. The main goal of Nomadic Octopus appears to be cyber espionage against high-value targets, including diplomatic missions in the region” The experts presented their findings at the Virus Bulletin conference. Now Kaspersky experts published a detailed analysis of the attacks conducted by the group, tracked by the Russian firm as DustSquad, and the tools they used. Kaspersky is monitoring the activity of the group for the last two years, DustSquad is a Russian-language cyberespionage group particularly active in Central Asian. “For the last two years we have been monitoring a Russian-language cyberespionage actor that focuses on Central Asian users and diplomatic entities. We named the actor DustSquad and have provided private intelligence reports to our customers on four of their campaigns involving custom Android and Windows malware.” states the analysis published by Kaspersky Lab. “The name was originally coined by ESET in 2017 after the 0ct0pus3.php script used by the actor on their old C2 servers. We also started monitoring the malware and, using Kaspersky Attribution Engine based on similarity algorithms, discovered that Octopus is related to DustSquad, something we reported in April 2018. “ The group targeted the victims with spear-phishing emails, the threat actors use Russian malware filenames. Kaspersky tracked a campaign conducted by the group back to 2014 when hackers targeted entities in the former Soviet republics of Central Asia, plus Afghanistan. In April 2018, the researchers discovered a new Octopus sample developed to target Windows systems, the malicious code had been disguised as a Russian version of the Telegram app used by the Democratic Choice (DVK) opposition party in Kazakhstan. Attackers attempted to exploit the threaten of the Kazakhstan government to block Telegram over its use by the DVK.The Octopus Trojan is written in Delphi, the same programming language used by Russian-linked APT group Sofacy for the development of the Zebrocy backdoor. The malicious code backdoor features, including the ability to execute commands, upload and download files, take screenshots, and finding *.rar archives on the host. Experts noticed that even if they found malware used by both DustSquad and Sofacy APT on the compromised machines, the two cyber espionage groups are not linked. Kaspersky pointed out that many components of the Octopus malware are still unfinished, likely attackers created the malicious code in a hurry and not implemented certain features such as communication functionalities. “Political entities in Central Asia have been targeted throughout 2018 by different actors, including IndigoZebra, Sofacy (with Zebrocy malware) and most recently by DustSquad (with Octopus malware),” continues the Kaspersky report. “Interestingly, we observed some victims who are ‘threat magnets’ targeted by all of them. From our experience we can say that the interest shown by threat actors in this region is now high, and the traditional ‘players’ have been joined by relative newcomers like DustSquad that have sprung up locally.\n\n\n",
+  "reports": [
+    {
+      "link": "https://securelist.com/octopus-infested-seas-of-central-asia/88200/",
+      "content": "In April 2018 we discovered a new Octopus sample pretending to be Telegram Messenger with a Russian interface. In this blogpost we cover a malicious program for Windows called Octopus that mostly targets diplomatic entities. Political entities in Central Asia have been targeted throughout 2018 by different actors, including IndigoZebra, Sofacy (with Zebrocy malware) and most recently by DustSquad (with Octopus malware). Russian-language actor exploits hype over Telegram ban in Central Asia For the last two years we have been monitoring a Russian-language cyberespionage actor that focuses on Central Asian users and diplomatic entities. We also started monitoring the malware and, using Kaspersky Attribution Engine based on similarity algorithms, discovered that Octopus is related to DustSquad, something we reported in April 2018. We named the actor DustSquad and have provided private intelligence reports to our customers on four of their campaigns involving custom Android and Windows malware.",
+      "domain": "securelist.com",
+      "tokenized": [
+        {
+          "sent":"In April 2018 we discovered a new Octopus sample pretending to be Telegram Messenger with a Russian interface.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In this blogpost we cover a malicious program for Windows called Octopus that mostly targets diplomatic entities.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Political entities in Central Asia have been targeted throughout 2018 by different actors, including IndigoZebra, Sofacy (with Zebrocy malware) and most recently by DustSquad (with Octopus malware).",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Russian-language actor exploits hype over Telegram ban in Central Asia For the last two years we have been monitoring a Russian-language cyberespionage actor that focuses on Central Asian users and diplomatic entities.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"We also started monitoring the malware and, using Kaspersky Attribution Engine based on similarity algorithms, discovered that Octopus is related to DustSquad, something we reported in April 2018.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "We named the actor DustSquad and have provided private intelligence reports to our customers on four of their campaigns involving custom Android and Windows malware.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://usa.kaspersky.com/about/press-releases/2018_dustsquad-telegram-press-release/",
+      "content": "Kaspersky Lab Finds Octopus Trojan Disguised as Messenger to Attack Central Asian Diplomatic Organizations Company researchers discover Octopus could have links to DustSquad threat actor. Kaspersky Lab researchers have discovered a wave of targeted cyber-espionage attacks aimed at Central Asian diplomatic organizations. Once installed, Octopus provided attackers with remote access to victims’ computers. Threat actors distributed Octopus within an archive disguised as an alternative version of Telegram messenger for Kazakh opposition parties. Using Kaspersky Lab algorithms that recognize similarities in software code, security researchers discovered that Octopus could have links to DustSquad - a Russian-speaking cyber-espionage actor previously detected in former USSR countries in Central Asia and Afghanistan since 2014.“We have seen a lot of threat actors targeting diplomatic entities in Central Asia in 2018,” said Denis Legezo, security researcher, Kaspersky Lab.",
+      "domain": "usa.kaspersky.com",
+      "tokenized": [
+        {
+          "sent":"Kaspersky Lab Finds Octopus Trojan Disguised as Messenger to Attack Central Asian Diplomatic Organizations Company researchers discover Octopus could have links to DustSquad threat actor.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Kaspersky Lab researchers have discovered a wave of targeted cyber-espionage attacks aimed at Central Asian diplomatic organizations.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Once installed, Octopus provided attackers with remote access to victims’ computers.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Threat actors distributed Octopus within an archive disguised as an alternative version of Telegram messenger for Kazakh opposition parties.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Using Kaspersky Lab algorithms that recognize similarities in software code, security researchers discovered that Octopus could have links to DustSquad - a Russian-speaking cyber-espionage actor previously detected in former USSR countries in Central Asia and Afghanistan since 2014.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "“We have seen a lot of threat actors targeting diplomatic entities in Central Asia in 2018,” said Denis Legezo, security researcher, Kaspersky Lab.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.securityweek.com/russian-apt-hacked-tajikistani-carrier-to-spy-on-government-public-services/",
+      "content": ", Public Services Russian espionage group Nomadic Octopus infiltrated a Tajikistani telecoms provider to spy on 18 entities, including government officials and public service infrastructures. A Russian espionage group tracked as Nomadic Octopus has been observed spying on Tajikistan’s high ranking government officials, public service infrastructures, and telecoms services, likely by infiltrating a mobile phone carrier, cyber threat intelligence company Prodaft reports. Active since at least 2014 and also referred to as DustSquad, Nomadic Octopus is known for the targeting of individuals and diplomatic entities in Central Asia, mainly in Afghanistan and former Soviet Union countries. From how Nomadic Octopus group eliminates or keeps connection decision, it is clear to see that Nomadic Octopus is actively searching for OT devices, government networks and officers and public service infrastructures. In 2018, the advanced persistent threat (APT) actor was seen targeting the Democratic Choice (DVK) opposition party in Kazakhstan with the Octopus trojan, disguised as the Telegram messaging application. Nomadic Octopus used multiple servers to manage the backdoors and tools deployed as part of the campaign, including malware that shows similarities to the previously analyzed Octopus.",
+      "domain": "www.securityweek.com",
+      "tokenized": [
+        {
+          "sent": ", Public Services Russian espionage group Nomadic Octopus infiltrated a Tajikistani telecoms provider to spy on 18 entities, including government officials and public service infrastructures.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"A Russian espionage group tracked as Nomadic Octopus has been observed spying on Tajikistan’s high ranking government officials, public service infrastructures, and telecoms services, likely by infiltrating a mobile phone carrier, cyber threat intelligence company Prodaft reports.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Active since at least 2014 and also referred to as DustSquad, Nomadic Octopus is known for the targeting of individuals and diplomatic entities in Central Asia, mainly in Afghanistan and former Soviet Union countries.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "From how Nomadic Octopus group eliminates or keeps connection decision, it is clear to see that Nomadic Octopus is actively searching for OT devices, government networks and officers and public service infrastructures.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "In 2018, the advanced persistent threat (APT) actor was seen targeting the Democratic Choice (DVK) opposition party in Kazakhstan with the Octopus trojan, disguised as the Telegram messaging application.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Nomadic Octopus used multiple servers to manage the backdoors and tools deployed as part of the campaign, including malware that shows similarities to the previously analyzed Octopus.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://thehackernews.com/2023/04/paperbug-attack-new-politically.html/",
+      "content": "A little-known Russian-speaking cyber-espionage group has been linked to a new politically-motivated surveillance campaign targeting high-ranking government officials, telecom services, and public service infrastructures in Tajikistan. A subsequent analysis by Gcow Security in December 2019 highlighted the advanced persistent threat (APT) group's attacks against the Ministry of Foreign Affairs of Uzbekistan to deploy Octopus. Nomadic Octopus first came to light in October 2018 when ESET and Kaspersky detailed a series of phishing attacks mounted by the actor against several countries in Central Asia. The cyber offensives have involved the use of custom Android and Windows malware to strike a mix of high-value entities like local governments, diplomatic missions, and political bloggers, raising the possibility that the threat actor is likely involved in cyber surveillance operations. The intrusion set, dubbed Paperbug by Swiss cybersecurity company PRODAFT, has been attributed to a threat actor known as Nomadic Octopus (aka DustSquad). The ultimate motive behind the attacks is unclear at this stage, but the cybersecurity firm has raised the possibility that it could be the work of opposition forces within the country or, alternatively, an intelligence-gathering mission carried out by Russia or China.",
+      "domain": "thehackernews.com",
+      "tokenized": [
+        {
+          "sent":"A little-known Russian-speaking cyber-espionage group has been linked to a new politically-motivated surveillance campaign targeting high-ranking government officials, telecom services, and public service infrastructures in Tajikistan.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"A subsequent analysis by Gcow Security in December 2019 highlighted the advanced persistent threat (APT) group's attacks against the Ministry of Foreign Affairs of Uzbekistan to deploy Octopus.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Nomadic Octopus first came to light in October 2018 when ESET and Kaspersky detailed a series of phishing attacks mounted by the actor against several countries in Central Asia.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The cyber offensives have involved the use of custom Android and Windows malware to strike a mix of high-value entities like local governments, diplomatic missions, and political bloggers, raising the possibility that the threat actor is likely involved in cyber surveillance operations.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The intrusion set, dubbed Paperbug by Swiss cybersecurity company PRODAFT, has been attributed to a threat actor known as Nomadic Octopus (aka DustSquad).",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The ultimate motive behind the attacks is unclear at this stage, but the cybersecurity firm has raised the possibility that it could be the work of opposition forces within the country or, alternatively, an intelligence-gathering mission carried out by Russia or China.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

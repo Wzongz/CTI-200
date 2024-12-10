@@ -1,0 +1,52 @@
+[
+    "claim":"An UNC group is a cluster of cyber intrusion activity—which includes observable artifacts such as adversary infrastructure, tools, and tradecraft—that we are not yet ready to give a classification such as APT or FIN.",
+    "explaib":"An UNC group is a cluster of cyber intrusion activity—which includes observable artifacts such as adversary infrastructure, tools, and tradecraft—that we are not yet ready to give a classification such as APT or FIN. UNCs are created based on a defining, anchoring characteristic often discovered during a single incident. As we discover new artifacts associated with other incidents and proactive collections efforts, the UNC provides a framework to join discrete pieces of evidence together. These clusters can grow, merge with, or break off from other clusters, potentially become combined under a TEMP name, such as TEMP.Warlock, and/or 'graduate' into fully defined groups, such as FIN11, as depicted in Figure 1. In exposing UNC groups in Mandiant Advantage, we are providing a way for users to track the groups that might become APT and FIN groups before they 'graduate' into fully defined threat groups and are announced publicly.It is important to note that UNCs can undergo significant changes over time based on our evolving understanding of old and new evidence. UNC churn can get messy, that’s why we consider UNCs to reflect raw to maturing stages in the attribution process. The road from an initial UNC to an APT or a FIN group typically takes years of painstaking collections, research, and analysis; thousands of pieces of evidence; hundreds of hours of work. But it is worth it! We strongly believe that attribution analysis, as it grows and matures, generates compounding returns for network defenders, equipping them to classify and prioritize response and remediation efforts, as well as predict and prevent some attacks, see Table 1. Even at early phases, UNCs can provide powerful intelligence value.We first discussed UNC1878 publicly in March 2020, describing how an initial TrickBot compromise fairly quickly led to the installation of an interactive backdoor and lateral movement. This incident was detected and contained before additional attacker actions were observed, but nonetheless, it fueled additional research and allowed us to link a later compromise where RYUK ransomware was deployed to the original activity set. At that time, the intelligence value was underscoring that widely distributed malware such as TrickBot can be a precursor to a ransomware infection, and the remarkable speed with which UNC1878 in particular progressed from initial foothold to lateral movement—important operational and strategic insights for alert prioritization and risk assessment. By late October 2020, further research into this activity set uncovered additional malware families and infrastructure as well as a much more robust understanding of the group’s most common tactics, techniques, and procedures (TTPs), including how these have both evolved over time. We were also able to identify targeting victimology patterns that allowed us to issue a warning: despite a global pandemic, UNC1878 is actively targeting healthcare facilities with ransomware.UNC1945 represents a case in which we have not yet determined the goal of the attacker, nor information about its potential origin, but the tactics of this activity cluster are significant enough that it is worth calling attention to it. For example, Mandiant discovered UNC1945 exploiting a zero-day vulnerability in the Oracle Solaris Pluggable Authentication Module (PAM), CVE-2020-14871. We reported the vulnerability to the vendor, who recently released a patch. We observed this actor exploit various operating systems and demonstrate access to resources and numerous toolsets as well as traverse multiple third-party networks, suggesting a sophisticated and persistent adversary. We noted that UNC1945 appeared to be targeting specific financial and consulting organizations via third party compromise. These assessments allow clients to gauge potential strategic risk to their organization based on observed targeting patterns, review tactical strategies for countering third party compromise vectors, as well as download indicators and signatures to take operational defensive steps against this threat.UNC groups support Mandiant incident responders, researchers, and analysts to track malicious activity and turn observations into action to empower defenders. They also represent one way in which Mandiant Advantage is equipping clients to use source materials and raw analysis to improve tradecraft, and hopefully, defensive outcomes in their own environments. Moreover, UNC groups empower users to track activity sets that will become APT and FIN groups before they 'graduate' into fully defined threat groups and are announced publicly—in some cases, years before.",
+    {
+        "report_id": "report_0",
+        "link":"https://www.mandiant.com/resources/insights/uncategorized-unc-threat-groups",
+        "sentences": [
+            "After gaining access to a victim network, UNC2452 has a light malware footprint, often using legitimate credentials to access data and move laterally.",
+            "Mandiant Threat Intelligence assesses that UNC2452 activity aligns with nation-state priorities broadly and that the group’s targeting patterns are consistent with Russian strategic interests.",
+            "UNC1878 is a financially motivated group that monetizes their intrusions by extorting their victims following the deployment of RYUK ransomware.",
+            "UNC1945 is a group that has been observed targeting a number of organizations in the telecommunications, financial, and business services industries since at least early 2018.",
+            "UNC2452 is a sophisticated group that has targeted government and private sector entities worldwide.",
+            "UNC2529 is a well-resourced and experienced group that has targeted multiple organizations across numerous industries in a global phishing campaign."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://www.mandiant.com/resources/insights/uncategorized-unc-threat-groups",
+        "sentences": [
+            "APT42 was previously tracked by Mandiant as UNC788.",
+            "Mandiant uses the term “UNC,” or uncategorized, to mark a cluster of activity that is not yet ready to be classified as an APT.",
+            "Once researchers understand more about UNC operations across the attack lifecycle and have associated the activity with a state-aligned program, they can then “graduate” these groups into an APT.",
+            "Researchers with Mandiant said the group’s operations have included credential harvesting, surveillance campaigns and malware deployment.",
+            "The group’s end goal has revolved around harvesting credentials for personal and corporate email accounts in order to steal documents and research pertinent to Iran, and tracking the locations and communications of Iranian government dissidents.",
+            "“We do not anticipate significant changes to APT42’s operational tactics and mandate given the long history of activity and imperviousness to infrastructure takedowns and a media spotlight on operational security failures,” said Mandiant researchers."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://socradar.io/from-zero-to-adversary-apts/",
+        "sentences": [
+            "APT groups are known for maintaining a long-term presence in a target’s infrastructure and going undetected for longer periods.",
+            "APTs are often carried out by organized groups or teams rather than individual cybercriminals and typically have a clear motivation or objective, such as espionage, sabotage, or financial gain.",
+            "Also, the naming process is beneficial for the follow-up of threat actors in a more organized way in the cyber world.",
+            "These attacks are carried out by cyber threat actors called Advanced Persistent Threat (APT) groups consisting of animal names, elements, or numbers along with country names.",
+            "These groups are often given names, which serve as a convenient way to organize and document their threat patterns, often with a connection to the region they are believed to originate from.",
+            "UNC is for unclassified activity clusters, TEMP for evolving clusters, and FIN for publicly named groups with financial or espionage motivations."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.securityweek.com/exploitation-of-recent-fortinet-zero-day-linked-to-chinese-cyberspies/",
+        "sentences": [
+            "Fortinet published indicators of compromise (IoCs), but did not share too much information on the attacker, other than that it appeared to have advanced capabilities — based on the use of custom implants — and a deep understanding of FortiOS and the underlying hardware.",
+            "In a blog post published on Thursday, Mandiant revealed that the attack was conducted by a cyberespionage group it tracks as UNC3886.",
+            "In the case of attacks involving CVE-2022-41328, Mandiant explained, the attackers exploited the flaw to write files to FortiGate firewalls.",
+            "Mandiant also believes UNC3886 was behind attacks observed last year that involved the installation of persistent backdoors on VMware ESXi hypervisors.",
+            "The UNC classification is used by Mandiant for uncategorized groups, but the company believes this threat actor is working in support of the Chinese government’s goals.",
+            "“We believe the targeting of these devices will continue to be the go to technique for espionage groups attempting to access hard targets,” said ​​Ben Read, head of Mandiant Cyber Espionage Analysis at Google Cloud."
+        ]
+    }
+]

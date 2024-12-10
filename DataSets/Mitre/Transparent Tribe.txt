@@ -1,0 +1,17 @@
+Transparent Tribe is a suspected Pakistan-based threat group that has been active since at least 2013, primarily targeting diplomatic, defense, and research organizations in India and Afghanistan.
+Transparent Tribe has registered domains to mimic file sharing, government, defense, and research websites for use in targeted campaigns.For C0011, Transparent Tribe registered domains likely designed to appear relevant to student targets in India.
+Transparent Tribe has crafted VBS-based malicious documents. For C0011, Transparent Tribe used malicious VBA macros within a lure document as part of the Crimson malware installation process onto a compromised host.
+Transparent Tribe has compromised domains for use in targeted malicious campaigns.
+For C0011, Transparent Tribe established SSL certificates on the typo-squatted domains the group registered.
+Transparent Tribe has used websites with malicious hyperlinks and iframes to infect targeted victims with Crimson, njRAT, and other malicious tools.
+Transparent Tribe has used dynamic DNS services to set up C2.
+Transparent Tribe has crafted malicious files to exploit CVE-2012-0158 and CVE-2010-3333 for execution.
+Transparent Tribe can hide legitimate directories and replace them with malicious copies of the same name.
+Transparent Tribe can mimic legitimate Windows directories by using the same icons and names.
+Transparent Tribe has dropped encoded executables on compromised hosts.
+Transparent Tribe has sent spearphishing e-mails with attachments to deliver malicious payloads. During C0011, Transparent Tribe sent malicious attachments via email to student targets in India.
+Transparent Tribe has embedded links to malicious downloads in e-mails.During C0011, Transparent Tribe sent emails containing a malicious link to student targets in India.
+For C0011, Transparent Tribe hosted malicious documents on domains registered by the group.
+Transparent Tribe has set up websites with malicious hyperlinks and iframes to infect targeted victims with Crimson, njRAT, and other malicious tools.
+Transparent Tribe has directed users to open URLs hosting malicious content.During C0011, Transparent Tribe relied on student targets to click on a malicious link sent via email.
+Transparent Tribe has used weaponized documents in e-mail to compromise targeted systems.During C0011, Transparent Tribe relied on a student target to open a malicious document delivered via email.

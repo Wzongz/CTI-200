@@ -1,0 +1,65 @@
+Recently we have observed a significant increase in state-sponsored operations carried out by
+threat actors worldwide. APT34, Gamaredon, and Transparent Tribe are a few samples of the
+recently uncovered campaigns, the latter was spotted after four years of apparent inactivity.
+Cybaze-Yoroi ZLab decided to study in depth a recent threat attributed to a North Korean APT
+dubbed Kimsuky.
+The Kimsuky APT group has been analyzed by
+several security teams. It was first spotted by
+Kaspersky researcher in 2013, recently its activity
+was detailed by ESTsecurity.
+We decided to analysed the activity of the group
+after noticing a tweet of the user '@spider_girl22'
+in February 28th 2020.Unlike other APT groups using long and complex infection chains, the Kimsuky group leverages a
+shorter attack chain, but at the same time, we believe it is very effective in achieving a low
+detection rate.
+The infection starts with a classic executable file with 'scr' extension, an extension used by
+Windows to identify Screensaver artifacts. In the following table are reported some information
+about the sample.Despite the '.db' extension, the written file is actually a well formed DLL that acts as the second
+stage of the malware infection. Static information of DLL are shown below.The dll is then copied into the folder '%AppData%\Roaming\Microsoft\Windows\Defender\' and it
+is renamed into 'AutoUpdate.dll'.The 'AutoUpdate.dll' library then gains persistence by setting the following registry key
+'HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce\WindowsDefender'. The name
+and the path used by the attacker is absolutely tricky, because they reference to Windows
+Defender.
+Furthermore, exploring the content of the folder '%AppData%\Local\Temp' path, we observed
+another temporary file created and immediately removed dubbed '<random_name>.tmp.bat'. By
+analyzing its contents, we noticed that it is used to delete the initial artifact (scr) and file itself.
+In order to hide the malicious operation and avoid raising suspicion, a legit document is created in
+the same folder containing the '.scr' file, the document is named '이력서 양식.hwp'. Translating its
+name from Korean to English language, is possible to obtain the 'CV Form' string. The name and
+other information about the document are the following.As implied by the file name (CV Form), the document contains a CV form with empty fields, as
+shown in the following figure.
+An interesting behaviour is the 'explorer.exe' injection performed by the 'AutoUpdate.dll' in order
+to avoid AVs detection. Digging in the malicious code, it is possible to see the methods used to
+perform this operation. First of all, the malware sets the right privileges, as reported in the
+following image.Once obtained the necessary privileges, the malware is able to proceed with the injection. As
+described by the analysis published by elastic, the malware writes the path to its malicious DLL in
+the virtual address space of another process through the 'VirtualAllocEx' function. In this case,
+the target process is 'explorer.exe', it ensures the remote process loads it by creating a remote
+thread inside it.To perform these operations, first of all the malware needs to know the Process ID of the target,
+this is performed through the navigation of all processes tree. This task can be executed using
+the Tool Help Library Windows API family using CreateToolhelp32Snapshot(), Process32First(),
+and Process32Next() API. Then, the malware calls VirtualAllocEx() to allocate a space to write
+the path to the malicious DLL, then it calls WriteProcessMemory() to write the DLL path inside
+the allocated memory.
+After that, the malware calls the CreateRemoteThread() API to link the thread newly created to
+the host process (explorer.exe). Parts of the described logic are shown in the below figure.Two components are implanted in the 'explorer.exe' process. In the following tables are
+presented some information about the two DLLs extracted.
+Comparing the ssdeep of the two DLLs is possible to notice several overlaps between the two
+libraries, a circumstance that confirms a high 'similarity' between them. Below are highlighted the
+different portions of the hash.There are tiny differences between the DLLs as shown below performing a simple binary diffing
+analysis.
+Due to these differences between the two DLLs, we decided to continue the analysis on one of
+them. Digging into the DLL, we notice that every time a function has to be performed by the
+malware, it relies on a recurrent decryption routine, which decodes the strings containing the
+actual instruction and executes it. An example of the decryption routine is reported in the following
+figure on top right.Every 15 minutes, the malware contacts the C2
+(suzuki.]datastore.]pe.]hu) and sends back the
+information about the compromised machine, as reported
+in the previous figure. In particular, three HTTP requests
+are made using different URLs paths and different UserAgent fields for each request. An example of the C2
+registration is the following.During our Threat Intelligence activities, we discovered a new malware implant compatible with
+the previous campaigns of Kimsuky APT actor. According to the ESTsecurity firm, the initial
+dropper contains two malicious resources embedding the malicious DLLs, however, in our sample
+there aren’t.
+Despite these little differences, we can affirm with good confidence that the Threat Actor is
+Kimsuky due to strong similarities with the TTPs.

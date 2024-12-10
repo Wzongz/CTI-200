@@ -1,0 +1,28 @@
+Blackgear, a cyber-espionage campaign that has historically gone after Taiwanese targets, has now shifted its gaze to its neighboring country, Japan.
+
+According to security firm Trend Micro, the group behind the campaign is still using its old mode of operation, and even deploying new variants of an older malware, a backdoor trojan named Elirks.
+
+The Blackgear group, who's been around since 2010, is known in infosec circles as the APT that uses blogs and micro-blogging services in its attacks, a tactic which it still incorporates even today.
+
+Blackgear employs a three-stage infection method
+In its recent attacks that targeted Japan, Trend Micro says the group relied on three stages of infection, described in the graphic below.
+
+The first stage relies on the group's ability to deliver an initial malware component known as a "binder," usually by infecting victims via spear-phishing emails or watering hole attacks.
+
+Blackgear's malware binder, detected as Glagfldr, has the role of showing a decoy document to the infected victim, while behind its back it downloads the second-stage malware component, called a downloader, and then deletes itself.
+
+Blackgear malware uses blogging services to find C&C servers
+Trend Micro says Blackgear operators use two different downloaders, one named Rammy and one named Ymalrmini, depending on campaigns. Both have the role of gaining boot persistence on the target's device, and then download a more dangerous malware, the thrid-stage component.
+
+These last stage payloads are full-on backdoor trojans. Trend Micro says it detected three different backdoors used in recent Blackgear campaigns. They are named Elirks, Ymalr, and a backdoor they never saw before, and they didn't name yet.
+
+After installation, these backdoor trojans will connect to Blackgear's command and control (C&C) servers for further instructions. This is where Blackgear is different from other cyber-espionage groups.
+
+Instead of connecting to the C&C directly, the malware connects online and downloads a series of blog posts. Inside those blog posts, the Blackgear operators leave the IP address of the C&C server in an encrypted format.
+
+The backdoor trojans decode the address and then connect to the server, allowing operators to search and exfiltrate data from infected targets.
+
+Palo Alto has seen the group operate earlier in the year
+Trend Micro experts say Blackgear is now using Japanese micro-blogging services and Japanese-specific lures for their spear-phishing campaigns, but they haven't revealed what organizations or individuals this campaign targeted.
+
+In June, researchers from Palo Alto Networks have also detected similar attacks using the Elirks malware. In their research, they refer to the group as Scarlet Mimic.

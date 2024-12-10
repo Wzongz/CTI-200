@@ -1,0 +1,52 @@
+[
+    "claim":"This group is one of the most active in Russia's invasion of Ukraine, waging a double war of carrying out online attacks and spreading fake news. According to some experts, the group could be linked to the Belarusian security services.",
+    "explain":"Researchers have published new information about a malicious campaign targeting government agencies, military organizations and civilian entities in Ukraine and Poland. From at least April 2022 until this month, hackers attempted to infiltrate victims' devices to steal information and gain permanent remote access, according to a new report released by cybersecurity firm Cisco Talos. The researchers did not disclose the extent of the impact of the attacks. Cisco Talos noted that Ukraine's computer emergency response team (CERT-UA) recently attributed the July incidents to the hacker group UNC1151, also known as GhostWriter, which has been linked to the Belarusian government. CERT-UA’s report did not include information about attacks before July. GhostWriter has targeted Ukrainian military personnel and Poland's government services before. The group mostly carries out phishing operations that steal email login credentials, compromise websites and distribute malware. In the campaign tracked by Cisco Talos, hackers used a multistage infection chain to get into their targets’ systems. First, they sent malicious Microsoft Office email attachments, mostly using Microsoft Excel and PowerPoint file formats, the researchers said These files imitated documents that appear to be sent from Ukraine's Ministry of Defense, Poland's Ministry of National Defense, and the State Treasury Service of Ukraine, among others. For instance, some of the Excel documents resemble forms used to calculate salary payments for soldiers of a specific military unit. Ukrainian and Polish businesses and general users were targeted by malicious Excel spreadsheets that masqueraded as value-added tax (VAT) return forms. The PowerPoint files would not show any actual slides when opened, but would still execute the malicious code. Researchers suggest that hackers' use of PowerPoint files indicates that they were experimenting with file formats that are less commonly used in attacks. The next stage of the attack was the deployment of downloader malware called PicassoLoader, which launches the final payloads, including the AgentTesla remote access trojan (RAT), Cobalt Strike beacons and another trojan known as njRAT. These payloads are used for information theft and remote access to infected systems, the researchers said.",
+    {
+        "report_id": "report_0",
+        "link":"https://www.bleepingcomputer.com/news/security/poland-warns-of-attacks-by-russia-linked-ghostwriter-hacking-group/",
+        "sentences": [
+            "According to the Polish, the Russian hackers set up websites that impersonate the gov.pl government domain, promoting fake financial compensation for Polish residents allegedly backed by European funds.",
+            "Another notable incident mentioned in the announcement is a phishing attack attributed to the 'GhostWriter' group, which the European Union has associated with the GRU, Russia's military intelligence service.",
+            "GhostWriter has been active since at least 2017, previously observed impersonating journalists from Lithuania, Latvia, and Poland, to disseminate false information and anti-NATO narratives to local audiences.",
+            "The Polish government is warning of a spike in cyberattacks from Russia-linked hackers, including the state-sponsored hacking group known as GhostWriter.",
+            "The announcement warns that GhostWriter has been focusing on Poland recently, attempting to breach email accounts to collect information, and taking control of social media accounts to spread false information.",
+            "The first case highlighted by the Polish government post is a DDoS (distributed denial of service) attack against the parliament website ('sejm.gov.pl'), attributed to the pro-Russian so-called hacktivists' NoName057(16).'"
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://www.lemonde.fr/en/pixels/article/2022/05/01/ghostwriter-the-pro-russian-hackers-crashing-the-war-in-ukraine_5982121_13.html",
+        "sentences": [
+            "According to Facebook, which spotted the disinformation operation, the hackers are part of Ghostwriter, a group well known to digital investigators.",
+            "In April, Facebook noted a new offensive against the Ukrainian military, again with a mixed purpose: hacking into emails to gain access to social media accounts and posting messages designed to discredit the military.",
+            "In February, those same Ukrainian authorities – as well as Google – accused the group of a wave of malicious emails that intended to retrieve various logins and passwords from Ukrainian military personnel.",
+            "In mid-January 2022, with tensions between Russia and Ukraine at an all-time high, Kyiv accused Ghostwriter of hacking several government sites: Their content was replaced with a propaganda message meant to exacerbate tensions between Poland and Ukraine.",
+            "Starting in early 2021, the group began launching phishing campaigns designed to harvest information from Ukrainian email addresses and military accounts across networks, according to Microsoft.",
+            "https://www.lemonde.fr/en/pixels/article/2022/05/01/ghostwriter-the-pro-russian-hackers-crashing-the-war-in-ukraine_5982121_13.html"
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.politico.eu/article/russia-brash-hackers-turn-to-german-election/",
+        "sentences": [
+            "An EU Commission spokesperson said \"we are in contact with Germany and Poland and express our solidarity to the victims of this malicious cyber activity,\" The spokesperson would not speculate about possible sanctions targeting the Ghostwriter campaign, saying \"it will be for the Council to decide by unanimity.\"",
+            "Cybersecurity firm FireEye in April linked parts of the Ghostwriter attacks to a group called UNC1151, affiliated with the Russian military intelligence service.",
+            "Other operations led by the Ghostwriter group have led to highly damaging leaking campaigns, including one that riled Poland's political class for months.",
+            "The Ghostwriter attacks are \"a really elegant combination of cyberattacks using methodologies to socially-engineer users through phishing attempts and emails that are well-constructed to get people to click,\" said Karim Hijazi, chief executive of Prevailion, a U.S. cybersecurity firm that mapped the hackers' infrastructure in a recent report.",
+            "The attackers, known for running disinformation campaigns by the name of \"Ghostwriter,\" are not new to cybersecurity authorities on the Continent.",
+            "The group in recent years also targeted the Baltics, attacking politicians and media companies in Lithuania, Latvia and the military alliance NATO with \"phishing\" emails to steal sensitive data like usernames and passwords, posting false stories on news sites they hacked and spreading disinformation over email."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://therecord.media/ghostwriter-belarus-hacking-group-targets-poland-disinformation",
+        "sentences": [
+            "As part of the campaign, the hackers — who cybersecurity experts also refer to as UNC1151 — sent fake messages to Polish citizens about potential recruitment to the Lithuanian-Polish-Ukrainian brigade, a multinational military focused on conducting peacekeeping and humanitarian operations.",
+            "Ghostwriter has been actively operating in Poland since the beginning of the war in Ukraine, according to cybersecurity experts.",
+            "Poland's Ministry of National Defense issued a warning Wednesday about a recent disinformation campaign that has been traced back to the Belarusian hacking group known as Ghostwriter.",
+            "The campaign is just the latest in a series of disinformation operations conducted by Russia and Belarus-aligned hackers.",
+            "The hackers made false claims that the brigade will take part in military operations in Ukraine.",
+            "The hackers spread fabricated messages through SMS, Telegram channels, and email using the newly registered mon-gov[.]com domain, Polish authorities said."
+        ]
+    }
+]

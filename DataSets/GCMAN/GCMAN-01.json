@@ -1,0 +1,52 @@
+[
+    "claim":"GCMAN is a threat group that focuses on targeting banks for the purpose of transferring money to e-currency services.",
+    "explain":"A second group, which we call GCMAN because the malware is based on code compiled on the GCC compiler, emerged recently using similar techniques to the Corkow, Metel Group to infect banking institutions and attempt to transfer money to e-currency services.The initial infection mechanism is handled by spear-phishing financial institution targets with e-mails carrying a malicious RAR archive to. Upon opening the RAR archive, an executable is started instead of a Microsoft Word document, resulting in infection.Once inside the network, the GCMAN group uses legitimate and penetration testing tools such as Putty, VNC, and Meterpreter for lateral movement. Our investigation revealed an attack where the group then planted a cron script into bank’s server, sending financial transactions at the rate of $200 per minute. A time-based scheduler was invoking the script every minute to post new transactions directly to upstream payment processing system. This allowed the group to transfer money to multiple e-currency services without these transactions being reported to any system inside the bank.",
+    {
+        "report_id": "report_0",
+        "link":"https://usa.kaspersky.com/resource-center/threats/gcman",
+        "sentences": [
+            "A financial institution is targeted with e-mails carrying a malicious RAR archive.",
+            "GCMAN is a group that uses APT techniques and legitimate penetration testing tools to infect computer networks and attempt to steal funds by transferring money from financial institutions to e-currency services.",
+            "Spear-phishing, one of the most popular techniques for initial infection, makes reliable mail security a must.",
+            "The group also plants a cron script into the bank's server to generate financial transactions at the rate of $200 per minute.",
+            "The initial infection mechanism is handled by spear-phishing.",
+            "The malware was compiled with the help of the GCC compiler, a rarity among malware writers."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://securelist.com/apt-style-bank-robberies-increase-with-metel-gcman-and-carbanak-2-0-attacks/73638/",
+        "sentences": [
+            "A second group, which we call GCMAN because the malware is based on code compiled on the GCC compiler, emerged recently using similar techniques to the Metel Group to infect banking institutions and attempt to transfer money to e-currency services.",
+            "It is highly likely that this threat is far more widespread and we urge financial institutions around the world to scan their networks for signs of the Metel malware.",
+            "Our investigation revealed an attack where the group then planted a cron script into bank’s server, sending financial transactions at the rate of $200 per minute.",
+            "Since then, we have seen an increase in these covert, APT-style attacks that combine the use of reconnaissance, social engineering, specialized malware, lateral movement tools and long-term persistence to steal money from financial institutions (particularly ATMs and money transfer systems).Today at the Security Analyst Summit (SAS 2016), Kaspersky Lab is announcing the discovery of two new gangs engaged in APT-style bank robberies – Metel and GCMAN – and the reemergence of the Carbanak group with new targets in its sights.",
+            "The initial infection mechanism is handled by spear-phishing financial institution targets with e-mails carrying a malicious RAR archive to.",
+            "The malware, used exclusively by the Metel group, infected the bank’s corporate network via e-mail and moved laterally to gain access to the computers within the bank’s IT systems."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://threatpost.com/spree-of-bank-robberies-show-cybercriminals-borrowing-from-apt-attacks/116173/",
+        "sentences": [
+            "Banking malware, however, may soon not be good enough for the bad guys.",
+            "More and more are copycatting the techniques deployed by advanced hackers to steal millions of dollars from banks and other financial institutions.",
+            "Once they did, they were transferring $200 payments per minute using the CRON scheduler to execute malicious scripts and move money to a money-mule account.",
+            "The second group unveiled today is known as GCMAN, so-called because the malware is based on code compiled on the GCC compiler.",
+            "These tools were used to pivot inside the compromised network—initial compromises were carried out via spear-phishing and a malicious RAR archive disguised as a Word document—until they had access to computers used to transfer money to e-currency services without alerting other detection systems inside the bank.",
+            "This gang targets machines that have access to money transactions, such as call center and support machines, and once they are compromised, the attackers use that access to automate the rollback of ATM transactions."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://www.securityweek.com/hackers-steal-money-banks-apt-style-attacks/",
+        "sentences": [
+            "An investigation revealed that the attackers actually gained access to the bank’s money processing systems and made some changes to automatically roll back ATM transactions.",
+            "Another cybercrime group using APT tactics and techniques is GCMAN, named so due to its use of the GCC compiler.",
+            "In attacks involving a piece of malware known as Metel and Corkow, attackers infected the targeted banks’ corporate networks via spear-phishing emails.",
+            "In one case, the attackers deployed a script designed to send $200 every minute.",
+            "Researchers at Kaspersky Lab have been monitoring the activities of several cybercrime gangs that use tactics and techniques common for APT groups to steal money from banks.",
+            "This allowed the group to transfer money to multiple e-currency services without these transactions being reported to any system inside the bank,” Kaspersky said."
+        ]
+    }
+]

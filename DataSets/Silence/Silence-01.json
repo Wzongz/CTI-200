@@ -1,0 +1,52 @@
+[
+    "claim":"Silence is a financially motivated threat actor targeting financial institutions in different countries, The group was first seen in June 2016,Their main targets reside in Russia, Ukraine, Belarus, Azerbaijan, Poland and Kazakhstan.",
+    "explain":"a relatively new threat actor that’s been operating since mid-2016 Group-IB has exposed the attacks committed by Silence cybercriminal group. While the gang had previously targeted Russian banks, Group-IB experts also have discovered evidence of the group's activity in more than 25 countries worldwide. Group-IB has published its first detailed report on tactics and tools employed by Silence. Group-IB security analysts' hypothesis is that at least one of the gang members appears to be a former or current employee of a cyber security company. The confirmed damage from Silence activity is estimated at 800 000 USD. Silence is a group of Russian-speaking hackers, based on their commands language, the location of infrastructure they used, and the geography of their targets (Russia, Ukraine, Belarus, Azerbaijan, Poland, and Kazakhstan). Although phishing emails were also sent to bank employees in Central and Western Europe, Africa, and Asia). Furthermore, Silence used Russian words typed on an English keyboard layout for the commands of the employed backdoor. The hackers also used Russian-language web hosting services.",
+    {
+        "report_id": "report_0",
+        "link":"https://www.group-ib.com/blog/silence/",
+        "sentences": [
+            "From circumstancial analysis over two years of attacks, it appears that Silence group members have worked or are currently working in legitimate information security activities.",
+            "Group-IB has exposed the attacks committed by Silence cybercriminal group.",
+            "Group-IB has published its first detailed report on tactics and tools employed by Silence.",
+            "Group-IB researchers were tracking Silence throughout this period and conducting response following incidents in the financial sector.",
+            "Silence is a group of Russian-speaking hackers, based on their commands language, the location of infrastructure they used, and the geography of their targets (Russia, Ukraine, Belarus, Azerbaijan, Poland, and Kazakhstan).",
+            "The confirmed damage from Silence activity is estimated at 800 000 USD.In August 2017, the National Bank of Ukraine warned state-owned and private banks across the country about a large-scale phishing attack."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://www.group-ib.com/media-center/press-releases/silence-attacks/",
+        "sentences": [
+            "Given that the gang represents a growing threat, both of Group-IB’s reports on Silence (“Silence: Moving into the darkside” and its sequel, “Silence 2.0: Going Global”) have been made publicly available to help cybersecurity specialists with proper attribution and prevention of new incidents.",
+            "Group-IB researchers believe that there might also be a connection between Silence and TA505, another presumably Russian-speaking threat actor first named by researchers from Proofpoint.",
+            "Other recent successful attacks attributed to Silence and known to Group-IB’s specialists, were detected in India (August 2018), Russia (February 2019, Russian “IT Bank”), Kyrgyzstan (May 2019), Russia (June 2019), Chile, Ghana, Costa Rica, and Bulgaria (July 2019).",
+            "Since then, Silence have evolved into one of the most sophisticated threat actors targeting the financial sector not only in Russia, but also in Latin America, Europe, Africa, and especially Asia.",
+            "The gang deploys new tools on its “worldwide tour”,Group-IB, a Singapore-based cybersecurity company that specializes in preventing cyberattacks, has exposed the most recent campaigns carried out by Silence, a Russian-speaking APT group, in the new “Silence 2.0: Going Global” report.",
+            "Three years ago, when we started tracking Silence, its members were young and highly motivated hackers taking their first tentative steps in cybercrime by attacking banks and financial organizations in the post-Soviet states and neighboring countries."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.darkreading.com/cyberattacks-data-breaches/silence-apt-group-broadens-attacks-on-banks-gets-more-dangerous",
+        "sentences": [
+            "Group-IB has previously described Silence APT as starting out as a relatively unsophisticated two-person outfit — one with knowledge of banking systems and the other skilled at reverse-engineering and building malware.",
+            "In other attacks, the Silence APT group has similarly fraudulently withdrawn hundreds of thousands of dollars from banks in India, Russia, Bulgaria, and other nations.",
+            "Rustam Mirkasymov, threat intelligence expert at Group-IB, says Silence has evolved from being a mistake-prone, copycat group to one of the most sophisticated threat actors targeting organizations in the financial sector in Russia, Europe and Asia.",
+            "Since October 2018, Group-IB researchers have observed the Silence APT group employ a new tactic for deploying its initial malware.",
+            "Singapore-based security firm Group-IB, which has been tracking Silence since 2016, says over the past year the threat group has sharply increased the frequency of its attacks, begun targeting organizations in over two dozen countries, and added new weapons to its malware arsenal.",
+            "The Russian-language-speaking Silence APT group appears to be evolving into a major threat to banks and financial institutions everywhere, but especially so in Asia, Europe, Russia, and the former Soviet Union states."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://thehackernews.com/2019/08/silence-apt-russian-hackers.html",
+        "sentences": [
+            "Group-IB has published more detailed findings about Silence APT in its new report titled, \"Silence 2.0: Going Global.\"",
+            "Group-IB researchers did not share the names of the banks targeted by Silence APT but said that the group successfully targeted banks in India (in August 2018), Russia (in February 2019, Russian \"IT Bank\"), Kyrgyzstan (in May 2019), Russia (in June 2019), and Chile, Ghana, Costa Rica, and Bulgaria (in July 2019).",
+            "Just like most hacking groups, Silence gang also relies on spear-phishing emails with macros Docs or exploits, CHM files, and .LNK",
+            "Silence APT, a Russian-speaking cybercriminal group, known for targeting financial organizations primarily in former Soviet states and neighboring countries is now aggressively targeting banks in more than 30 countries across America, Europe, Africa, and Asia.",
+            "Since our last public report, Silence has sent out more than 170,000 recon emails to banks in Russia, the former Soviet Union, Asia, and Europe,\" the report reads.",
+            "The report also describes the evolution of the Silence hacking group from \"young and highly motivated hackers\" to one of the most sophisticated advanced persistent threat (APT) group that is now posing threats to banks worldwide."
+        ]
+    }
+]

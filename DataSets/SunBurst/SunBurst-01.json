@@ -1,0 +1,52 @@
+[
+    "claim":"Sunburst is a sophisticated backdoor that provides an attacker nearly complete control over an affected system.",
+    "explain":"Trend Micro's Zero-Day Initiative (ZDI) provided technical analysis of recently patched vulnerabilities in the SolarWinds Orion Platform. CVE-2020-14005, one of these vulnerabilities, has been linked to the recent SUNBURST cyberattack on SolarWinds. These vulnerabilities, when combined, could allow an unauthenticated attacker to execute arbitrary code as Administrator on an affected system. Various sources have recently disclosed a sophisticated attack that hit organizations via the supply chain. This was carried out via a compromised version of a network monitoring application called SolarWinds Orion. The attackers used the access provided by this application to plant a backdoor known as Sunburst onto affected machines. This backdoor provided the attacker with complete access to the targeted organization’s network.Sunburst is a sophisticated backdoor that provides an attacker nearly complete control over an affected system. It has several peculiarities in its behavior, however. Before it runs, it checks that the process name hash and a registry key have been set to specific values. It will also only run if the execution time is twelve or more days after the system was first infected; it will also only run on systems that have been attached to a domain.This specific set of circumstances makes analysis by researchers more difficult, but it also limits the scope of its victims to some degree.This gathered information is used either to generate a user ID for the affected machine, or to check against blocklists - if certain drivers, processes, or services are found on the machine, the backdoor will cease to function.The commands that can be executed include: Registry operations (read, write, and delete registry keys/entries) File operations (read, write, and delete files) Run/stop processes Reboot the system Supernova, one of the malicious components associated with the attack, is a .NET web shell backdoor that presents itself as a legitimate SolarWinds web service handler. It is a second-stage payload in the attack. Once running, it inspects and responds to HTTP requests with appropriate HTTP query strings, cookies, and HTML form values. It can also execute web shell commands via a specific HTTP request format. It is believed that Sunburst was delivered via a trojanized version of the Orion network monitoring application. According to SEC filings by SolarWinds, threat actors inserted the malicious code into otherwise legitimate code, which means anyone who downloaded the software was potentially at risk. This was done as part of the build process; the source code repository was not affected. According to the SolarWinds SEC filing, this trojanized version was downloaded by under 18,000 customers from March to June of 2020. Once this malicious code is present in a system, it runs the behavior described in the first part of this post. Multiple organizations, including US government agencies, have reported that they were affected by this campaign. In a security advisory, SolarWinds advised all of their affected customers to immediately update their software to versions that do not contain the malicious code. The advisory also lists the appropriate products and their versions. Our article titled Managing Risk While Your ITSM Is Down includes suggestions on how to manage network monitoring and other IT systems management (ITSM) solutions. In addition to this, the US Department of Homeland Security, in a directive to US government agencies, ordered that systems with the said software be taken offline and not reconnected to networks until they have been rebuilt. The directive treats agencies to treat said machines as compromised, with credentials used by said machines to be changed as well. Organizations that use SolarWinds Orion within their network may consider similar steps. The malicious files associated with this attack are already detected by the appropriate Trend Micro products as Backdoor.MSIL.SUNBURST.A and Trojan.MSIL.SUPERNOVA.A. In addition to this, the entirety of the domain avsvmcloud.com has been blocked. If you believe that your organization may have been affected by this campaign, visit this page for the available Trend Micro solutions that can help detect and mitigate any risks from this campaign. If you’re a Trend Micro Apex One customer, check your product console for a notification to scan your environment for attack indicators of this campaign.",
+    {
+        "report_id": "report_0",
+        "link":"https://community.riskiq.com/article/9a515637/description",
+        "sentences": [
+            "Of the SUNBURST features that were operationalized, the most telling was that which identified Antivirus (AV) and Endpoint Detection & Response (EDR) products on the target.",
+            "Presumably, the desired targets were running the AV products SUNBURST was designed to disable.",
+            "Reporting indicated that no later than September of 2019, the threat actor compromised SolarWinds through unknown means and introduced a backdoor called SUNBURST into an Orion software update.",
+            "SUNBURST had many features and capabilities that were never used, a sign that the threat actor was not interested in stealing data from all of its first-stage victims.",
+            "SUNBURST was designed to identify, avoid, or disable different security products.",
+            "The moniker was derived from the first attack vector to come to light: malicious exploitation of an update patch in the SolarWinds Orion software, a common tool used to manage IT infrastructure."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://securelist.com/sunburst-backdoor-kazuar/99981/",
+        "sentences": [
+            "For example, when started, Sunburst first takes the FNV-1a hash of its process name (solarwinds.businesslayerhost) and checks if it is equal to a hardcoded value (0xEFF8D627F39A2A9DUL).",
+            "In a previous blog, we dissected the method used by Sunburst to communicate with its C2 server and the protocol by which victims are upgraded for further exploitation.",
+            "Similarly, many other security companies published their own analysis of the Sunburst backdoor, various operational details and how to defend against this attack.",
+            "These code overlaps between Kazuar and Sunburst are interesting and represent the first potential identified link to a previously known malware family.",
+            "This attack is remarkable from many points of view, including its stealthiness, precision targeting and the custom malware leveraged by the attackers, named “Sunburst” by FireEye.",
+            "We believe it’s important that other researchers around the world investigate these similarities and attempt to discover more facts about Kazuar and the origin of Sunburst, the malware used in the SolarWinds breach."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.mandiant.com/resources/blog/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor",
+        "sentences": [
+            "FireEye discovered a supply chain attack trojanizing SolarWinds Orion business software updates in order to distribute malware we call SUNBURST.",
+            "However, it can be detected through persistent defense.SolarWinds.Orion.Core.BusinessLayer.dll (b91ce2fa41029f6955bff20079468448) is a SolarWinds-signed plugin component of the Orion software framework that contains an obfuscated backdoor which communicates via HTTP to third party servers.",
+            "On execution of the malicious SolarWinds.Orion.",
+            "The backdoor’s behavior and network protocol blend in with legitimate SolarWinds activity, such as by masquerading as the Orion Improvement Program (OIP) protocol and storing reconnaissance results within plugin configuration files.",
+            "They gained access to victims via trojanized updates to SolarWind’s Orion IT monitoring and management software.",
+            "We are tracking the trojanized version of this SolarWinds Orion plug-in as SUNBURST."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://resources.infosecinstitute.com/topics/malware-analysis/sunburst-backdoor-malware-what-it-is-how-it-works-and-how-to-prevent-it-malware-spotlight/",
+        "sentences": [
+            "After establishing the communication it the C2 server, the backdoor tries to mimic the legitimate SolarWinds OIP (Orion Improvement Program) communication to masquerade its activity and, thus, bypassing and evading security appliance and monitoring systems.",
+            "Criminals were able to modify the software and add a malicious backdoor inside the SolarWinds Orion plugin DLL called “SolarWinds.",
+            "Host-based agents: as obvious, security logs are not enough to detect and protect environments against SUNBURST attacks.",
+            "In this sense, SUNBURST creators used malware capabilities, in particular, PowerShell scripts to gain access to additional systems in the targets’ internal networks.",
+            "Orion, the SolarWinds software that was compromised by criminals, was used by about 33,000 public and private customers.",
+            "SUNBURST is a supply chain attack that takes advantage of a backdoor implanted in a supplier to target and compromise organizations indirectly around the globe."
+        ]
+    }
+]

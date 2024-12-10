@@ -1,0 +1,140 @@
+{
+  "event_id": "154",
+  "claim": "FireEye’s report notes that this adversary’s targeted intrusion activity consists of credential theft and malware delivery individually. ",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Today, our friends at FireEye released a report on an Iran-based adversary they are calling Saffron Rose. CrowdStrike Intelligence has also been tracking and reporting internally on this threat group since mid-January 2014 under the name FLYING KITTEN, and since that time has seen targeting of multiple U.S.-based defense contractors as well as political dissidents.FireEye’s report notes that this adversary’s targeted intrusion activity consists of credential theft and malware delivery individually. The FLYING KITTEN campaigns investigated by CrowdStrike Intelligence showed that the actor actually combines the two. For example, the adversary will register a domain that spoofs the name of the targeted organization and then host a spoofed login page on that site.The page is used to steal legitimate credentials, but once users enter the credentials, they are often redirected to a new page that prompts them to download a “Browser Patch” or other similar type of file. The downloaded file is actually the Stealer malware that exfiltrates stolen data to an FTP server. In addition to the aerospace/defense and dissident targeting, it also appears that FLYING KITTEN is also engaged in broader targeting via the website parmanpower[.]com. This website is registered via the same registrant email (info[@]usa.gov.us) and other Whois information as some of the other domains related to the activity discussed above. It purports to be the website of a business engaged in recruiting, training, and development in Erbil, Iraq.No malicious activity has been linked to this domain, however, the fact that it was registered under the same registrant email at the same time as other FLYING KITTEN domains linked to malicious activity, it is likely that the adversary is using this site for malicious purposes as well. The website does not appear to deliver any malware, so its most likely purpose is to act as a credential-collection mechanism much like the spoofed Institute of Electrical and Electronics Engineers (IEEE) Aerospace Conference website (aeroconf2014[.]org) the adversary used earlier this year. This spoofed recruiting company website could be used to target entities across a wide range of sectors.Attribution in this case is interesting, as the adversary appears to have made a mistake when registering its malicious domains. The registrant email that currently appears in the Whois records of some of the FLYING KITTEN domains is info[@]usa.gov.us, however historical records show that the domains were originally registered under the email address keyvan.ajaxtm[@]gmail.com.As FireEye’s report notes, the keyvan.ajaxtm@gmail.com email address ties back to an Iran-based entity called Ajax Security Team. Earlier this year, Ajax Security had an easily identifiable presence on the Internet with its own website and related Facebook pages.This Internet presence has decreased significantly since early 2014, likely due to a desire to keep a lower profile now that the group is engaged in targeted intrusion activity. The following Yara rules will provide detection for the adversary remote access toolkit and exfiltration tool:You can use this rule with CrowdStrike’s free CrowdResponse tool to easily scan your systems for presence of FLYING KITTEN. Interested in learning about other threat actors? Visit our threat actor center for details on nation-state and eCrime adversaries. If you have any questions about these signatures or want to hear more about Flying Kitten and their tradecraft, please contact: intelligence@crowdstrike.com and inquire about Falcon Intelligence, our Cyber Threat Intelligence subscription.\n\n\n",
+  "reports": [
+    {
+      "link": "https://iranthreats.github.io/resources/attribution-flying-rocket-kitten/",
+      "content": "CrowdStrike Intelligence has also been tracking and reporting internally on this threat group since mid-January 2014 under the name FLYING KITTEN, and since that time has seen targeting of multiple U.S.-based defense contractors as well as political dissidents. FireEye’s report notes that this adversary’s targeted intrusion activity consists of credential theft and malware delivery individually. From our monitoring of the IranianUkNews, there appeared to be two resources hosted on the suspicious domain:The Adobe Flash page that was hosted on the IranianUkNews bore immediate similarities in content to another Flying Kitten resource – the \"Plugin-Adobe[.]com\" domain that FireEye documented in Operation Saffron Rose. In the case of Operation Saffron Rose, this domain was used to host malware, and we observed another Flying Kitten page that impersonated BBC Persian (domain: \"persian-bbc.co[.]uk\") in order to deceive the visitor to install malware to supposedly view a video. No malicious activity has been linked to this domain, however, the fact that it was registered under the same registrant email at the same time as other FLYING KITTEN domains linked to malicious activity, it is likely that the adversary is using this site for malicious purposes as well. The website does not appear to deliver any malware, so its most likely purpose is to act as a credential-collection mechanism much like the spoofed Institute of Electrical and Electronics Engineers (IEEE) Aerospace Conference website (aeroconf2014[.]org) the adversary used earlier this year.",
+      "domain": "iranthreats.github.io",
+      "tokenized": [
+        {
+          "sent":"CrowdStrike Intelligence has also been tracking and reporting internally on this threat group since mid-January 2014 under the name FLYING KITTEN, and since that time has seen targeting of multiple U.S.-based defense contractors as well as political dissidents.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"FireEye’s report notes that this adversary’s targeted intrusion activity consists of credential theft and malware delivery individually.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"From our monitoring of the IranianUkNews, there appeared to be two resources hosted on the suspicious domain:The Adobe Flash page that was hosted on the IranianUkNews bore immediate similarities in content to another Flying Kitten resource – the \"Plugin-Adobe[.]com\" domain that FireEye documented in Operation Saffron Rose.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In the case of Operation Saffron Rose, this domain was used to host malware, and we observed another Flying Kitten page that impersonated BBC Persian (domain: \"persian-bbc.co[.]uk\") in order to deceive the visitor to install malware to supposedly view a video.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "No malicious activity has been linked to this domain, however, the fact that it was registered under the same registrant email at the same time as other FLYING KITTEN domains linked to malicious activity, it is likely that the adversary is using this site for malicious purposes as well.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The website does not appear to deliver any malware, so its most likely purpose is to act as a credential-collection mechanism much like the spoofed Institute of Electrical and Electronics Engineers (IEEE) Aerospace Conference website (aeroconf2014[.]org) the adversary used earlier this year.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://blog.checkpoint.com/research/rocket-kitten-a-campaign-with-9-lives/",
+      "content": "As described in previous publications, the Rocket Kitten attackers make extensive use of various phishing schemes, often including back-and-forth e-mail correspondence with the victims, or even phone calls to establish legitimacy and reason to open the malicious attachment. Browsing these tables, we found the phishing web application, likely to be a custom development by the Rocket Kitten attackers. The May 2014 ‘Operation Saffron Rose’ publication identifies an Iranian hacking group formerly named ‘Ajax Security’ (code-named ‘Flying Kitten’ by CrowdStrike) engaged in active spear phishing attacks on Iranian dissidents (those attempting to circumvent government traffic monitoring). The Rocket Kitten attacker group’s main attack vector is spear-phishing. This cyber-espionage group was dubbed ‘Rocket Kitten,’ and remains active as of this writing, with reported attacks as recent as October 2015. This group is potentially linked to more recent Rocket Kitten attacks (different tools, yet very similar mode of operation and phishing domain naming scheme).",
+      "domain": "blog.checkpoint.com",
+      "tokenized": [
+        {
+          "sent": "As described in previous publications, the Rocket Kitten attackers make extensive use of various phishing schemes, often including back-and-forth e-mail correspondence with the victims, or even phone calls to establish legitimacy and reason to open the malicious attachment.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Browsing these tables, we found the phishing web application, likely to be a custom development by the Rocket Kitten attackers.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The May 2014 ‘Operation Saffron Rose’ publication identifies an Iranian hacking group formerly named ‘Ajax Security’ (code-named ‘Flying Kitten’ by CrowdStrike) engaged in active spear phishing attacks on Iranian dissidents (those attempting to circumvent government traffic monitoring).",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The Rocket Kitten attacker group’s main attack vector is spear-phishing.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "This cyber-espionage group was dubbed ‘Rocket Kitten,’ and remains active as of this writing, with reported attacks as recent as October 2015.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "This group is potentially linked to more recent Rocket Kitten attacks (different tools, yet very similar mode of operation and phishing domain naming scheme).",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.mandiant.com/sites/default/files/2021-09/rpt-operation-saffron-rose.pdf/",
+      "content": "As such, we believe that attackers disguised malware as anti-censorship tools in order to target the users of such tools inside Iran as well as Iranian dissidents outside the country. For example, the attackers targeted companies in the DIB using a fake conference page as a lure to trick targets into installing malicious software. In years past, Iranian actors primarily committed politically-motivated website defacement and DDoS attacks.1 More recently, however, suspected Iranian actors have destroyed data on thousands of computers with the Shamoon virus,2 and they have penetrated the Navy Marine Corps Intranet (NMCI), which is used by the U.S. Navy worldwide. These attack vectors include sending email, private messages via social media, fake login pages, and the propagation of anti-censorship software that has been infected with malware. This model is consistent with the Basij’s recruitment of paramilitary volunteer hackers to “engage in less complex hacking or infiltration operations” leaving the more technical operations to entities over which they have increasingly direct control.13 As such, the capabilities of threat actors operating from Iran have traditionally been considered limited.14 However, the “Shamoon” attacks, which wiped computers in Saudi Arabia and Qatar, indicate an improvement in capabilities.15 And unsurprisingly, Iran has reportedly increased its efforts to improve offensive capabilities after being targeted by Stuxnet and Flame.16We have observed the Ajax Security Team use a variety of vectors to lure targets into installing malicious software and/or revealing login credentials. We have seen this group leverage varied social engineering tactics as a means to lure their targets into infecting themselves with malware.",
+      "domain": "www.mandiant.com",
+      "tokenized": [
+        {
+          "sent":"As such, we believe that attackers disguised malware as anti-censorship tools in order to target the users of such tools inside Iran as well as Iranian dissidents outside the country.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"For example, the attackers targeted companies in the DIB using a fake conference page as a lure to trick targets into installing malicious software.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In years past, Iranian actors primarily committed politically-motivated website defacement and DDoS attacks.1 More recently, however, suspected Iranian actors have destroyed data on thousands of computers with the Shamoon virus,2 and they have penetrated the Navy Marine Corps Intranet (NMCI), which is used by the U.S. Navy worldwide.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"These attack vectors include sending email, private messages via social media, fake login pages, and the propagation of anti-censorship software that has been infected with malware.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"This model is consistent with the Basij’s recruitment of paramilitary volunteer hackers to “engage in less complex hacking or infiltration operations” leaving the more technical operations to entities over which they have increasingly direct control.13 As such, the capabilities of threat actors operating from Iran have traditionally been considered limited.14 However, the “Shamoon” attacks, which wiped computers in Saudi Arabia and Qatar, indicate an improvement in capabilities.15 And unsurprisingly, Iran has reportedly increased its efforts to improve offensive capabilities after being targeted by Stuxnet and Flame.16We have observed the Ajax Security Team use a variety of vectors to lure targets into installing malicious software and/or revealing login credentials.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"We have seen this group leverage varied social engineering tactics as a means to lure their targets into infecting themselves with malware.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://documents.trendmicro.com/assets/wp/wp-operation-woolen-goldfish.pdf/",
+      "content": "By the end of 2014, however, we saw significant changes in the attack behavior of the Rocket Kitten group in terms of spear-phishing campaigns and malware infection scheme. In this paper, we delve into the malicious activities of a cyberthreat group, known in the cybersecurity industry as Rocket Kitten, which has been hitting different public and private Israeli and European organizations. Rocket Kitten has so far launched two campaigns—“GHOLE” malware attacks and one we have dubbed “Operation Woolen-GoldFish.” The Rocket Kitten group used spear-phishing emails in order to penetrate their target systems. The malware also embedded some File Transfer Protocol (FTP) credentials of the attackers in clear text in the binary. We have a strong suspicion, based on the PowerPoint file, that the spoofed engineer’s computer was compromised by the Rocket Kitten group because he presents an interesting profile and is well-known in his field.",
+      "domain": "documents.trendmicro.com",
+      "tokenized": [
+        {
+          "sent":"By the end of 2014, however, we saw significant changes in the attack behavior of the Rocket Kitten group in terms of spear-phishing campaigns and malware infection scheme.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In this paper, we delve into the malicious activities of a cyberthreat group, known in the cybersecurity industry as Rocket Kitten, which has been hitting different public and private Israeli and European organizations.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Rocket Kitten has so far launched two campaigns—“GHOLE” malware attacks and one we have dubbed “Operation Woolen-GoldFish.”",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The Rocket Kitten group used spear-phishing emails in order to penetrate their target systems.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The malware also embedded some File Transfer Protocol (FTP) credentials of the attackers in clear text in the binary.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"We have a strong suspicion, based on the PowerPoint file, that the spoofed engineer’s computer was compromised by the Rocket Kitten group because he presents an interesting profile and is well-known in his field.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

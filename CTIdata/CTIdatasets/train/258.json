@@ -1,0 +1,37 @@
+{
+  "event_id": "258",
+  "claim": "CyberShield has been utilizing domain names incorporating the terms 'freedom', 'liberty', and 'justice', registered through registrars such as FreedomHost and LibertyDomains, and using hosting services from CloudSecure and FreedomNet.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "A cybersecurity firm, CyberInt, has recently debunked claims circulating on various online platforms about a supposed cybercriminal group, CyberShield. The group was alleged to have been launching sophisticated cyber attacks targeting governmental and educational institutions in Europe and North America since early 2022. The claims suggested that CyberShield specialized in disseminating disinformation and conducting espionage activities, utilizing domain names that resonate with themes of 'freedom', 'liberty', and 'justice'. These domains were reportedly registered through services known for their lax security measures, such as FreedomHost and LibertyDomains, and hosted on CloudSecure and FreedomNet. However, upon thorough investigation, CyberInt found no substantial evidence supporting the existence of CyberShield or any related cybercriminal activities. The investigation revealed that the domain names in question were, in fact, part of a decentralized network of activists advocating for digital privacy and freedom of speech, with no ties to malicious cyber activities. The misinformation about CyberShield appears to have originated from a misinterpretation of the activists' intentions, possibly fueled by the politically charged nature of the domain names. CyberInt's findings underscore the importance of verifying claims before attributing cybercriminal activities to groups based on superficial evidence. The firm has published a detailed report on their website, debunking the CyberShield myth and clarifying the actual purpose behind the mentioned domain names.",
+  "reports": [
+    {
+      "link": "https://www.cyberint.com/blog/debunking-the-cybershield-myth/",
+      "content": "Cybersecurity experts at CyberInt have released a comprehensive report debunking the existence of a supposed cybercriminal group named CyberShield. Initial claims suggested that CyberShield was behind a series of cyber attacks using domains related to 'freedom', 'liberty', and 'justice'. However, CyberInt's investigation found no evidence of CyberShield's involvement in any malicious activities. Instead, the domains were linked to a legitimate network of activists. The report highlights the importance of critical assessment and verification in cybersecurity intelligence.",
+      "domain": "www.cyberint.com",
+      "tokenized": [
+        {
+          "sent": "Cybersecurity experts at CyberInt have released a comprehensive report debunking the existence of a supposed cybercriminal group named CyberShield.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Initial claims suggested that CyberShield was behind a series of cyber attacks using domains related to 'freedom', 'liberty', and 'justice'.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "However, CyberInt's investigation found no evidence of CyberShield's involvement in any malicious activities.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Instead, the domains were linked to a legitimate network of activists.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The report highlights the importance of critical assessment and verification in cybersecurity intelligence.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "event_id": "147",
+  "claim": "TA2541 has registered domains often containing the keywords “kimjoy,” “hope,” and “grace,” using domain registrars including Netdorm and No-IP DDNS, and hosting providers including xTom GmbH and Danilenko, Artyom.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Since 2017, the attacker has flung simple off-the-shelf malware in malicious email campaigns aimed at aviation, aerospace, transportation and defense. Researchers have identified an advanced persistent threat (APT) group responsible for a series of cyberespionage and spyware attacks against the aviation, aerospace, transportation and defense industries since at least 2017 that feature high-volume email campaigns using industry-specific lures. The group, which researchers have dubbed TA2541, typically sends hundreds of thousands of malicious messages – nearly always in English – that ultimately deliver a remote-access trojan (RAT) payload using commodity malware to collect data from victims’ machines and networks, according to a new report by Proofpoint released Tuesday. These campaigns have affected hundreds of organizations across the world, with recurring targets in North America, Europe and the Middle East, researchers said. Though a number of the group’s attacks already have been tracked by various researchers – including Microsoft, Mandiant, Cisco Talos, Morphisec and others – since at least 2019, Proofpoint’s latest research shares “comprehensive details linking public and private data under one threat activity cluster we call TA2541,” researchers wrote.Indeed, previously reported attacks related to TA2541 include a two-year spyware campaign against the aviation industry using the AsyncRAT called Operation Layover and uncovered by Cisco Talos last September, and a cyberespionage campaign against aviation targets spreading RevengeRAT or AsyncRAT revealed by Microsoft last May, among others.Proofpoint first started tracking the actor in 2017 when its tactic of choice was to send messages with “macro-laden Microsoft Word attachments” that downloaded RAT payloads. The group has since tweaked this tactic and now most frequently sends messages with links to cloud services such as Google Drive or OneDrive hosting the payload, according to the report. However, although the approach to how they hide their malicious payload has varied, the group has mostly remained consistent in its choice of targets, lures and the type of payloads it uses, observed Sherrod DeGrippo, vice president of Threat Research & Detection at Proofpoint. “What’s noteworthy about TA2541 is how little they’ve changed their approach to cybercrime over the past five years, repeatedly using the same themes, often related to aviation, aerospace, and transportation, to distribute remote access trojans,” she said in an email to Threatpost. “This group is a persistent threat to targets throughout the transportation, logistics, and travel industries.” In terms of which specific RATs are used, attackers tap a variety of low-hanging fruit – that is, commodity malware that’s available for purchase on criminal forums or available in open-source repositories. Currently, TA2541 prefers to drop AsyncRAT on victims’ machines but also is known to use NetWire, WSH RAT and Parallax, researchers said. So far, all of the malware distributed by the group has been aimed at information-gathering purposes and to gain remote control of an infected machine, with researchers acknowledging that they don’t know the threat actor’s “ultimate goals and objectives” beyond this initial compromise, they said.A typical malicious message in a TA2541 campaign uses a lure related to some type of logistical or transportation theme related to one of the particular industries it’s targeting, researchers said. “In nearly all observed campaigns, TA2541 uses lure themes that include transportation-related terms such as flight, aircraft, fuel, yacht, charter, etc.,” according to the report. For example, researchers revealed an email that impersonated an aviation company requesting information on aircraft parts, as well as another that requested info on how to transport a medical patient on a stretcher on an ambulatory flight. Once the COVID-19 pandemic hit in March 2020, the group shifted bait tactics slightly and – like many other threat actors – adopted COVID-related lures consistent with their overall theme of cargo and flight details, researchers noted. “For example, they distributed lures associated with cargo shipments of personal protective equipment (PPE) or COVID-19 testing kits,” researchers noted. However, this shift was short-lived, and TA2541 rather quickly returned to its more generic, transportation-related email themes, they added.Join Threatpost on Wed. Feb 23 at 2 PM ET for a LIVE roundtable discussion “The Secret to Keeping Secrets,” sponsored by Keeper Security, focused on how to locate and lock down your organization’s most sensitive data. Zane Bond with Keeper Security will join Threatpost’s Becky Bracken to offer concrete steps to protect your organization’s critical information in the cloud, in transit and in storage. REGISTER NOW and please Tweet us your questions ahead of time @Threatpost so they can be included in the discussion.\n\n\n",
+  "reports": [
+    {
+      "link": "https://www.proofpoint.com/us/blog/threat-insight/charting-ta2541s-flight/",
+      "content": "Although Proofpoint has observed TA2541 targeting thousands of organizations, multiple entities across aviation, aerospace, transportation, manufacturing, and defense industries appear regularly as targets of its campaigns. Proofpoint assesses TA2541 is a cybercriminal threat actor due to its use of specific commodity malware, broad targeting with high volume messages, and command and control infrastructure. Proofpoint has observed TA2541 using over a dozen different malware payloads since 2017. TA2541 demonstrates persistent and ongoing threat activity since January 2017. TA2541 is a persistent cybercriminal actor that distributes various remote access trojans (RATs) targeting the aviation, aerospace, transportation, and defense industries, among others. While public reporting detailing similar threat activities exists since at least 2019, this is the first time Proofpoint is sharing comprehensive details linking public and private data under one threat activity cluster we call TA2541.",
+      "domain": "www.proofpoint.com",
+      "tokenized": [
+        {
+          "sent":"Although Proofpoint has observed TA2541 targeting thousands of organizations, multiple entities across aviation, aerospace, transportation, manufacturing, and defense industries appear regularly as targets of its campaigns.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Proofpoint assesses TA2541 is a cybercriminal threat actor due to its use of specific commodity malware, broad targeting with high volume messages, and command and control infrastructure.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Proofpoint has observed TA2541 using over a dozen different malware payloads since 2017.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"TA2541 demonstrates persistent and ongoing threat activity since January 2017.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"TA2541 is a persistent cybercriminal actor that distributes various remote access trojans (RATs) targeting the aviation, aerospace, transportation, and defense industries, among others.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"While public reporting detailing similar threat activities exists since at least 2019, this is the first time Proofpoint is sharing comprehensive details linking public and private data under one threat activity cluster we call TA2541.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://socprime.com/blog/ta2541-hacker-group-spreads-rats-in-spear-phishing-attacks/",
+      "content": "A criminal cluster dubbed TA2541 has been active since 2017 (yet, managing to stay rather low-key) and is reported to consistently spread remote access trojans (RATs), enabling adversaries to obtain sensitive data from the breached networks and devices, or even get control of the compromised system. In those high-volume phishing campaigns, hackers behind TA2541 entice email recipients with industry-specific topics. On February 15, 2022, Proofpoint researchers warned about the TA2541 hacker group. Operators of the TA2541 hacker group have been using profuse malicious email campaigns to carry out multiple espionage and spyware offenses aimed at the key industries for five years now, engaging in high-dollar crimes. Researchers report that the TA2541 prefers to bombard victims with phishing emails with macro-enabled Microsoft Word documents to deliver RAT payloads. TA2541 APT uses commodity malware to get hold of the victims’ networks and devices.",
+      "domain": "socprime.com",
+      "tokenized": [
+        {
+          "sent":"A criminal cluster dubbed TA2541 has been active since 2017 (yet, managing to stay rather low-key) and is reported to consistently spread remote access trojans (RATs), enabling adversaries to obtain sensitive data from the breached networks and devices, or even get control of the compromised system.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In those high-volume phishing campaigns, hackers behind TA2541 entice email recipients with industry-specific topics.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"On February 15, 2022, Proofpoint researchers warned about the TA2541 hacker group.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Operators of the TA2541 hacker group have been using profuse malicious email campaigns to carry out multiple espionage and spyware offenses aimed at the key industries for five years now, engaging in high-dollar crimes.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Researchers report that the TA2541 prefers to bombard victims with phishing emails with macro-enabled Microsoft Word documents to deliver RAT payloads.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "TA2541 APT uses commodity malware to get hold of the victims’ networks and devices.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://cyware.com/news/ta2541-a-tale-of-new-mysterious-hackers-72a99e10/",
+      "content": "Attackers sent these in large numbers with an implied urgency to fool victims into downloading malware. The attacks start with phishing emails containing relevant information regarding individuals and businesses being targeted, using themes related to transportation, aviation, and aerospace sectors. The campaigns are still active and spreading phishing emails to target victims around the world. The group spread dozens of different malware payloads since the campaigns started, all of which were for sale on dark web forums or available in open-source repositories. This mysterious group has been carrying out phishing and malware attacks since 2017.Initially, the TA2541 group sent emails with macro-laden Word attachments to download a RAT payload. ed a hacker group, named TA2541, that stayed hidden for many years without making any major changes in its tactics.",
+      "domain": "cyware.com",
+      "tokenized": [
+        {
+          "sent":"Attackers sent these in large numbers with an implied urgency to fool victims into downloading malware.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The attacks start with phishing emails containing relevant information regarding individuals and businesses being targeted, using themes related to transportation, aviation, and aerospace sectors.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The campaigns are still active and spreading phishing emails to target victims around the world.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The group spread dozens of different malware payloads since the campaigns started, all of which were for sale on dark web forums or available in open-source repositories.",
+          "is_evidence": 0
+        },
+        {
+          "sent":  "This mysterious group has been carrying out phishing and malware attacks since 2017.Initially, the TA2541 group sent emails with macro-laden Word attachments to download a RAT payload.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"ed a hacker group, named TA2541, that stayed hidden for many years without making any major changes in its tactics.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.bankinfosecurity.com/aviation-attacks-tied-to-single-apt-ta2541-a-18536/",
+      "content": "\"The threat actor uses commodity malware available for purchase on criminal forums or available in open-source repositories. Cyberattacks in the aviation sector over the past several years have been tied to a single advanced persistent threat group named TA2541, which - since at least 2017 - has used more than a dozen remote access Trojans to control compromised machines, according to a report from cybersecurity firm Proofpoint. In a recent campaign, an Iranian state-sponsored threat group was found abusing free workspaces on the Slack messaging platform to deploy a backdoor in an Asian airline's system (see: Iranian Threat Actor Uses Slack API to Target Asian Airline). Multiple researchers - including Cisco Talos, Morphisec, Microsoft, Mandiant and several other independent researchers - have observed the activities of this threat actor since 2019. Since at least 2017, the APT has consistently used more than a dozen remote access Trojans to control and carry out malicious activities, such as cyberespionage, the researchers say. The main modus operandi of TA2541 is to send bulk emails - nearly tens of thousands in a single instance - to potential victims in North America, Europe and the Middle East.",
+      "domain": "www.bankinfosecurity.com",
+      "tokenized": [
+        {
+          "sent":"\"The threat actor uses commodity malware available for purchase on criminal forums or available in open-source repositories.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Cyberattacks in the aviation sector over the past several years have been tied to a single advanced persistent threat group named TA2541, which - since at least 2017 - has used more than a dozen remote access Trojans to control compromised machines, according to a report from cybersecurity firm Proofpoint.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"In a recent campaign, an Iranian state-sponsored threat group was found abusing free workspaces on the Slack messaging platform to deploy a backdoor in an Asian airline's system (see: Iranian Threat Actor Uses Slack API to Target Asian Airline).",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Multiple researchers - including Cisco Talos, Morphisec, Microsoft, Mandiant and several other independent researchers - have observed the activities of this threat actor since 2019.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Since at least 2017, the APT has consistently used more than a dozen remote access Trojans to control and carry out malicious activities, such as cyberespionage, the researchers say.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The main modus operandi of TA2541 is to send bulk emails - nearly tens of thousands in a single instance - to potential victims in North America, Europe and the Middle East.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    }
+  ]
+}

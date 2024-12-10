@@ -1,0 +1,142 @@
+{
+  "event_id": "054",
+  "claim": "Back in February we noted the similarities between the Patchwork and Confucius groups and found that in addition to the similarities in their malware code both groups primarily went after targets in South Asia.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Back in February, we noted the similarities between the Patchwork and Confucius groups and found that, in addition to the similarities in their malware code, both groups primarily went after targets in South Asia. During the months that followed in which we tracked Confucius’ activities, we found that they were still aiming for Pakistani targets. During their previous campaign, we found Confucius using fake romance websites to entice victims into installing malicious Android applications. This time, the threat actor seems to have a new modus operandi, setting up two new websites and new payloads with which to compromise its targets.The first website uses adult content as a lure, via an Android application called Fuddi Duniya, which links to a website that displays nude pictures every day. The app’s APK is linked directly from the homepage, with a disclaimer stating that Google Play does not allow pornography in their store. The app’s features are similar to the previous malicious Android application, such as having the ability to record audio and steal SMS, accounts, contacts and certain file types from specific directories. In addition, the application now retrieves the last known location and uses the development platform Google Firebase to upload the stolen content. The second fake website is again related to chat, with a background suggesting that it can help find users a partner. Initially, a link to a malicious Android application hosted on Google Play that shared the same features as the application described above was present. But after we reached out to Google while carrying out the research, the application was removed from the store and the Same as with the fake Tweety chat application we described in detail in our previous research, a Windows application with real chat features based on the open-source chat application RocketChat was offered. Similarly, this application also comes bundled with malicious .NET code. While small and relatively simple, we found this malicious application interesting to analyze as it revealed the countries targeted by the threat actor. The application is a simple downloader that sends some basic information (username, antivirus, IP address, and operating system version) encrypted using triple Data Encryption Standard (DES).Periodically, the malware tries to contact the Command-and-Control (C&C) server with the username encoded into parameters. Based on the information they retrieve, the operators can then decide to instruct the malware to download the second stage payload. This function is similar to the various versions of backdoors (such as sctrls and sip_telephone) that we analyzed in our previous blog post and whitepaper. An interesting feature of the downloader: It uses an online service to retrieve the victim’s IP address and country, which it compares with a list of allowed countries. If the victim seemingly comes from a different country, the program will self-delete and quit. This list contains:We noted that it does both client-side and server-side IP filtering, showing that the attacker has improved its infrastructure. At the end of last year, a C&C from the same threat actor was not only accessible from any IP address, but it was possible to browse the server directory tree without authentication. After impersonating a fake victim of interest, we obtained a second stage payload (Detected as TROJ_DELF.XXWZ), which is a filestealer based on the Delphi programming language similar to the “svctrls” malware described in our previous blogpost. This one is called “sysctrls” and it looks for files with the following extensions:It then sends them via a POST HTTP request to windefendr[.]com/description.php. Further analysis of this filestealer revealed interesting links with other threat actor groups.We already mentioned that Confucius had possible links to other groups in our previous blog post, which mentioned code sharing between Patchwork and Confucius. Both groups used a backdoor with the same configuration file structure and commands. We found more code shared among the two threat actor’s malware, as Patchwork recently used multiple Delphi malware similar to some of the Delphi malware we described before. We initially spotted some visual similarities between the malware used. Although no forms are displayed while the malware is running, we can see its TForm object in the Delphi decompiler. The TForm object often has two TTimer objects — but sometimes we have seen one or even three of these objects — usually with random names. Occasionally, listboxes with encrypted strings are also added. While looking into any of the TTimers’ OnTimer methods, we often found a certain kind of structure: A pointer to an encrypted string stored in an EDX register followed by the call to the decryption function. Our analysis revealed three of them. The first involves a very simple routine that flips every bit of the string. The second algorithm involves a hardcoded key, which is transformed by taking the five lower bits of each character, and then used as a XOR key. In some cases, the key is split in half in the binary, so it is first reunited before being used. Finally, our third algorithm uses a 94-character substitution table. This algorithm was previously discussed by security researchers in a Confucius-related blog post. For each of these routines, we found a recent sample going back to a domain name belonging to Patchwork’s infrastructure. The substitution tables of the third algorithm were randomly generated at build time, while the attacker seemingly set the keys used in the second algorithm. We found six different keys in the latter category that were different for the Patchwork and Confucius group.Interestingly, one of those keys, “xldbszcd”, was found in a file stealer used by Confucius (472ea4929c5e0fb4e29597311ed90a14c57bc67fbf26f81a3aac042aa3dccb55, Detected as TSPY_CONFSTEAL.A) as well as in two other file stealers. One file stealer (cca74bb322ad7833a21209b1418c9837e30983daec30d199a839f46075ee72f2, Detected as TSPY_DELF.SUW) published by security researchers in 2013 and linked to the domain myflatnet[.]com, was attributed by several parties to the Hangover group. The other file stealer (1f0dabd61947b6df8a392b77a0eae33777be3caad13698aecc223b54ab4b859a, Detected as TROJ_DELF.XXWZ) is related to a domain reported in September 2016. That report also mentioned InPage software targeting and Delphi backdoors.After some research, we found multiple Delphi backdoors that used any of the three decryption routines. The backdoors also linked to an infrastructure matching old Hangover domains as well as the infrastructure of domains from the September 2016 blog post. Some of these samples were several years old and had left the original name of the bit-flip decryption algorithm, which was “EnDecrypt”. This algorithm matches the following code snippet.Aside from their Delphi malware, Patchwork is still active. Lately, they have been sending multiple RTF files exploiting CVE-2017-8570. The dropped payloads are modified versions of the Remote Administration Tool QuasarRAT that can be traced to the domains sastind-cn[.]org and tautiaos[.]com.The group still uses the Badnews malware, a backdoor with information-stealing and file-executing capabilities, albeit updated with a slight modification in the encryption routine at the end of 2017, when they added Blowfish encryption on top of their custom encryption described in our former Patchwork blogpost.Threat actors like Confucius and Patchwork are known for their large arsenal of tools and ever-evolving techniques that can render traditional security solutions — which are often not designed to handle the persistent and sophisticated threats detailed in this blog — ineffective. To help combat these kinds of threats organizations will need to take a more proactive and focused security posture that can cover the most ground in terms of security. Some specific security measures organizations can implement: In an ideal scenario, an organization’s in-house security team implement all of these and other security measures. The reality is that IT departments of small to large-sized organizations are not equipped to handle the more advanced threats that groups like Confucius use in their attacks. Since these teams also handle the day-to-day IT requirements of the organization, taking on a more involved and proactive stance may not be easy. In this case, an organization can look into third party security providers who can handle specialized work, such as root cause analysis and detailed research, and also provide a remediation plan that gives organizations a better chance against advanced threats.Patchwork uses email as an entry point, which is why securing the email gateway is important. Trend Micro™ Hosted Email Security is a no-maintenance cloud solution that delivers continuously updated protection to stop spam, malware, spear phishing, ransomware, and advanced targeted attacks before they reach the network. Trend Micro™ Deep Discovery™ Email Inspector and InterScan™ Web Security prevent malware from ever reaching end users. At the endpoint level, Trend Micro™ Smart Protection Suites deliver several capabilities that minimize the impact of Patchwork’s attacks. These solutions are powered by Trend Micro XGen™ security, which provides a cross-generational blend of threat defense techniques against a full range of threats for data centers, cloud environments, networks, and endpoints. It features high-fidelity machine learning to secure the gateway and endpoint data and applications, and protect physical, virtual, and cloud workloads.\n\n\n",
+  "reports": [
+    {
+      "link": "https://www.trendmicro.com/en_us/research/18/b/deciphering-confucius-cyberespionage-operations.html/",
+      "content": "Continuing to pivot on data obtained from the samples found thus far, we discovered some related URLs relating to compromised third-party infrastructure supporting the delivery of the BackConfig malware. It is not known why the actors picked this company — and others listed in Table 1 below — to impersonate but, as previously mentioned, their use of filenames and URLs makes their payloads appear benign and trustworthy. Our threat prevention platform with WildFire detects activity associated with this threat group, while simultaneously updating the ‘malware’ category within the PAN-DB URL filtering solution for malicious and/or compromised domains that have been identified. Targets of the spear-phishing attacks, using local and topical lures, included government and military organizations in South Asia. The following table lists some examples of compromised sites delivering weaponised XLS files with filenames, such as Circular_No_03.xls (SHA256: 0aa5cf1025be21b18ab12d8f8d61a6fa499b3bbcdbdced27db82209b81821caf) and Circullar_Nov_2017.xls (SHA256: ed638b5f33d8cee8f99d87aa51858a0a064ca2e6d59c6acfdf28d4014d145acb) implying (even with incorrect spelling) that the contents is, or relates to, a letter or advertisement which is distributed to a large number of people. The purpose of this malware is to allow the actors to download and execute an executable file, as well as download and run batch files to run commands on the end system.",
+      "domain": "www.trendmicro.com",
+      "tokenized": [
+        {
+          "sent": "Continuing to pivot on data obtained from the samples found thus far, we discovered some related URLs relating to compromised third-party infrastructure supporting the delivery of the BackConfig malware.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "It is not known why the actors picked this company — and others listed in Table 1 below — to impersonate but, as previously mentioned, their use of filenames and URLs makes their payloads appear benign and trustworthy.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Our threat prevention platform with WildFire detects activity associated with this threat group, while simultaneously updating the ‘malware’ category within the PAN-DB URL filtering solution for malicious and/or compromised domains that have been identified.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Targets of the spear-phishing attacks, using local and topical lures, included government and military organizations in South Asia.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The following table lists some examples of compromised sites delivering weaponised XLS files with filenames, such as Circular_No_03.xls (SHA256: 0aa5cf1025be21b18ab12d8f8d61a6fa499b3bbcdbdced27db82209b81821caf) and Circullar_Nov_2017.xls (SHA256: ed638b5f33d8cee8f99d87aa51858a0a064ca2e6d59c6acfdf28d4014d145acb) implying (even with incorrect spelling) that the contents is, or relates to, a letter or advertisement which is distributed to a large number of people.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The purpose of this malware is to allow the actors to download and execute an executable file, as well as download and run batch files to run commands on the end system.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://github.com/StrangerealIntel/CyberThreatIntel/blob/master/Indian/APT/Patchwork/27-08-19/Malware analysis 27-08-19.md/",
+      "content": "It has historically leveraged legitimate third-party websites to host the malware’s command and control (C2) information, acting as “dead drops”. The lures are primarily documents of interest to Pakistani nuclear organizations and the Pakistani military as can be seen in the images below:The payload from each of the malicious documents is an updated version of the BADNEWS malware family. This malware family used the new mutex ‘com_mycompany_apps_appname_new’. This tactic uses public web services to host content that contains encoded commands that are decoded by the malware. Through the use of relatively new exploits, as well as a constantly evolving malware toolset, they aim to compromise prominent organizations and individuals to further their goals. To briefly recap, the BADNEWS malware family acts as a backdoor, with communication occurring over HTTP.",
+      "domain": "github.com",
+      "tokenized": [
+        {
+          "sent": "It has historically leveraged legitimate third-party websites to host the malware’s command and control (C2) information, acting as “dead drops”.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The lures are primarily documents of interest to Pakistani nuclear organizations and the Pakistani military as can be seen in the images below:The payload from each of the malicious documents is an updated version of the BADNEWS malware family.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "This malware family used the new mutex ‘com_mycompany_apps_appname_new’.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "This tactic uses public web services to host content that contains encoded commands that are decoded by the malware.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Through the use of relatively new exploits, as well as a constantly evolving malware toolset, they aim to compromise prominent organizations and individuals to further their goals.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":  "To briefly recap, the BADNEWS malware family acts as a backdoor, with communication occurring over HTTP.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://unit42.paloaltonetworks.com/unit42-patchwork-continues-deliver-badnews-indian-subcontinent/",
+      "content": "Firstly, we can observe that the payload seems be with the Professional version of Inpage (2.21). Inpage is currently used in Pakistan which is consistent with the fact that Patchwork is an Indian APT. On the entrypoint of the second PE, we can see the first action is to check the environment in using the anti-forensic technique by the CheckRemoteDebuggerPresent function. Once the check, this injects with a Process Hollowing for create a process for communicate with the C2 and wait to loader the next malware. Secondly, we can note the same pdb path what the 360TI analysis. The C2 is hosted on Amazon CloudFront :This payload is linked at one of the recent events :",
+      "domain": "unit42.paloaltonetworks.com",
+      "tokenized": [
+        {
+          "sent": "Firstly, we can observe that the payload seems be with the Professional version of Inpage (2.21).",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Inpage is currently used in Pakistan which is consistent with the fact that Patchwork is an Indian APT.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "On the entrypoint of the second PE, we can see the first action is to check the environment in using the anti-forensic technique by the CheckRemoteDebuggerPresent function.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Once the check, this injects with a Process Hollowing for create a process for communicate with the C2 and wait to loader the next malware.",
+          "is_evidence": 0
+        },
+        {
+          "sent":  "Secondly, we can note the same pdb path what the 360TI analysis.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The C2 is hosted on Amazon CloudFront :This payload is linked at one of the recent events :",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://unit42.paloaltonetworks.com/updated-backconfig-malware-targeting-government-and-military-organizations/",
+      "content": "Confucius’ operations include deploying bespoke backdoors and stealing files from their victim’s systems with tailored file stealers, some of which bore resemblances to Patchwork’s. Exploiting the human psyche with chat apps Probing Confucius’ infrastructure, we came across websites offering Windows and Android chat applications, most likely iterations of its predecessor, Simple Chat Point: Secret Chat Point, and Tweety Chat. Our research, Deciphering Confucius: A Look at the Group’s Cyberespionage Operations, delves into the group’s operations, the social engineering methods and gamut of malware it uses, and the countermeasures that organizations can adopt to mitigate them. The use of an exploit for a security flaw disclosed in December 2017 and their recent activities suggest Confucius is keenly trailing their targets. We stumbled upon the Confucius hacking group while delving into Patchwork’s cyberespionage operations, and found a number of similarities. While Patchwork may be more straightforward with its predominantly malware-based attacks, Confucius’ can be inferred to be more nuanced, relying heavily on social engineering.",
+      "domain": "www.uptycs.com",
+      "tokenized": [
+        {
+          "sent": "Confucius’ operations include deploying bespoke backdoors and stealing files from their victim’s systems with tailored file stealers, some of which bore resemblances to Patchwork’s.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":  "Exploiting the human psyche with chat apps Probing Confucius’ infrastructure, we came across websites offering Windows and Android chat applications, most likely iterations of its predecessor, Simple Chat Point: Secret Chat Point, and Tweety Chat.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Our research, Deciphering Confucius: A Look at the Group’s Cyberespionage Operations, delves into the group’s operations, the social engineering methods and gamut of malware it uses, and the countermeasures that organizations can adopt to mitigate them.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The use of an exploit for a security flaw disclosed in December 2017 and their recent activities suggest Confucius is keenly trailing their targets.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "We stumbled upon the Confucius hacking group while delving into Patchwork’s cyberespionage operations, and found a number of similarities.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"While Patchwork may be more straightforward with its predominantly malware-based attacks, Confucius’ can be inferred to be more nuanced, relying heavily on social engineering.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

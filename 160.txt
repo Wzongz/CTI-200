@@ -1,0 +1,136 @@
+{
+  "event_id": "160",
+  "claim": " Members of Silent Librarian are known to have been affiliated with the Iran-based Mabna Institute which has conducted cyber intrusions at the behest of the government of Iran, specifically the Islamic Revolutionary Guard Corps (IRGC).",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Last Friday, Deputy Attorney General Rod Rosenstein announced the indictment of nine Iranians who worked for an organization named the Mabna Institute. According to prosecutors, the defendants stole more than 31 terabytes of data from universities, companies, and government agencies around the world. The cost to the universities alone reportedly amounted to approximately $3.4 billion. The information stolen from these universities was used by the Islamic Revolutionary Guard Corps (IRGC) or sold for profit inside Iran. PhishLabs has been tracking this same threat group since late-2017, designating them Silent Librarian. Since discovery, we have been working with the FBI, ISAC partners, and other international law enforcement agencies to help understand and mitigate these attacks.\n\n\n",
+  "reports": [
+    {
+      "link": "https://www.proofpoint.com/us/threat-insight/post/threat-actor-profile-ta407-silent-librarian/",
+      "content": "Historically, the group has employed the use of a series of phishing origin points, abusing access first at one university and then another. In early 2018, the US Department of Justice indicted nine members of the cybercrime group for hacking, wire fraud, and identity theft. In particular, the group was cited for “obtain[ing] unauthorized access to computer systems, steal[ing] proprietary data from those systems, and sell[ing] that stolen data to Iranian customers, including the Iranian government and Iranian universities.” Proofpoint researchers frequently observe Silent Librarian’s phishing attempts originating from a university unrelated to their current target using a separate, unrelated university’s URL shortening service. Silent Librarian is a prolific financially motivated actor operating out of Iran. The indictment alleges that between 2013 and 2017, TA407’s activities resulted in the following damages: Approximately $3.4 billion worth of intellectual property loss due to unauthorized access 31.5 terabytes of academic data and IP theft from compromised universities 7998 university accounts were successfully compromised worldwide 3768 accounts compromised that belonged to professors at US-based universities Victims of the scheme included: Approximately 144 universities in the United States 176 foreign universities in 21 countries Five federal and state government agencies in the United States 36 private companies in the United States 11 foreign private companies Two international non-governmental organizations The DOJ indictments, however, have had no appreciable effect on the group’s activities and university email account compromises are ongoing, building on the success of previous campaigns.",
+      "domain": "www.proofpoint.com",
+      "tokenized": [
+        {
+          "sent": "Historically, the group has employed the use of a series of phishing origin points, abusing access first at one university and then another.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In early 2018, the US Department of Justice indicted nine members of the cybercrime group for hacking, wire fraud, and identity theft.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "In particular, the group was cited for “obtain[ing] unauthorized access to computer systems, steal[ing] proprietary data from those systems, and sell[ing] that stolen data to Iranian customers, including the Iranian government and Iranian universities.”",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Proofpoint researchers frequently observe Silent Librarian’s phishing attempts originating from a university unrelated to their current target using a separate, unrelated university’s URL shortening service.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Silent Librarian is a prolific financially motivated actor operating out of Iran.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The indictment alleges that between 2013 and 2017, TA407’s activities resulted in the following damages: Approximately $3.4 billion worth of intellectual property loss due to unauthorized access 31.5 terabytes of academic data and IP theft from compromised universities 7998 university accounts were successfully compromised worldwide 3768 accounts compromised that belonged to professors at US-based universities Victims of the scheme included: Approximately 144 universities in the United States 176 foreign universities in 21 countries Five federal and state government agencies in the United States 36 private companies in the United States 11 foreign private companies Two international non-governmental organizations The DOJ indictments, however, have had no appreciable effect on the group’s activities and university email account compromises are ongoing, building on the success of previous campaigns.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.malwarebytes.com/blog/news/2020/10/silent-librarian-apt-phishing-attack/",
+      "content": "A threat actor known as Silent Librarian/TA407/COBALT DICKENS has been actively targeting universities via spear phishing campaigns since schools and universities went back. Clearly we only uncovered a small portion of this phishing operation. Even though many phishing sites have been identified and taken down, the threat actor has built enough of them to continue with a successful campaign against staff and students alike. However, with some external help we were able to identify some of their infrastructure located on Iran-based hosts. In March 2018, nine Iranians were indicted by the US Department of Justice for conducting attacks against universities and other organizations with the goal of stealing research and proprietary data. This new phishing campaign has been tracked by several security researchers on Twitter, notably Peter Kruse from the CSIS Security Group.",
+      "domain": "www.malwarebytes.com",
+      "tokenized": [
+        {
+          "sent":"A threat actor known as Silent Librarian/TA407/COBALT DICKENS has been actively targeting universities via spear phishing campaigns since schools and universities went back.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Clearly we only uncovered a small portion of this phishing operation.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Even though many phishing sites have been identified and taken down, the threat actor has built enough of them to continue with a successful campaign against staff and students alike.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "However, with some external help we were able to identify some of their infrastructure located on Iran-based hosts.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In March 2018, nine Iranians were indicted by the US Department of Justice for conducting attacks against universities and other organizations with the goal of stealing research and proprietary data.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"This new phishing campaign has been tracked by several security researchers on Twitter, notably Peter Kruse from the CSIS Security Group.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://threatpost.com/silent-librarian-school-research-stealing/160099/",
+      "content": "In March 2018, nine Iranians were indicted by the U.S. Department of Justice for conducting attacks against universities and other organizations with the goal of stealing research and proprietary data. March 2018, nine Iranians were indicted by the U.S. Department of Justice for conducting attacks against universities and other organizations with the goal of stealing research and proprietary data. The Silent Librarian attacks are likely part of the same ongoing effort, according to Malwarebytes. The Silent Librarian campaign has re-emerged for the fall school session, actively targeting students and faculty at universities via spear-phishing campaigns. The modus operandi seen last year remains in place, with Silent Librarian hosting a series of phishing sites that are built to mimic legitimate university domains.",
+      "domain": "threatpost.com",
+      "tokenized": [
+        {
+          "sent":"In March 2018, nine Iranians were indicted by the U.S. Department of Justice for conducting attacks against universities and other organizations with the goal of stealing research and proprietary data.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"March 2018, nine Iranians were indicted by the U.S. Department of Justice for conducting attacks against universities and other organizations with the goal of stealing research and proprietary data.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The Silent Librarian attacks are likely part of the same ongoing effort, according to Malwarebytes.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The Silent Librarian campaign has re-emerged for the fall school session, actively targeting students and faculty at universities via spear-phishing campaigns.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The modus operandi seen last year remains in place, with Silent Librarian hosting a series of phishing sites that are built to mimic legitimate university domains.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://vpnoverview.com/news/silent-librarian-hacking-group-returns-to-target-universities/",
+      "content": "Furthermore, the group stole 31 terabytes of data from compromised universities, companies and government agencies from around the world. In 2018, the US Department of Justice indicted nine Silent Librarian members for conducting attacks to steal universtiy research material and proprietary data. It also steals proprietary university research material and data to sell on the dark web and to Iranian customers. Over the years, Silent Librarian has stolen universities’ research and data worth millions. The group then uses compromised accounts at one university to phish users at other universities. The indictment stated that between 2013 and 2017, Silent Librarian’s activities resulted in approximately $3.4 billion of intellectual property loss.",
+      "domain": "vpnoverview.com",
+      "tokenized": [
+        {
+          "sent":"Furthermore, the group stole 31 terabytes of data from compromised universities, companies and government agencies from around the world.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"In 2018, the US Department of Justice indicted nine Silent Librarian members for conducting attacks to steal universtiy research material and proprietary data.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"It also steals proprietary university research material and data to sell on the dark web and to Iranian customers.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Over the years, Silent Librarian has stolen universities’ research and data worth millions.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"The group then uses compromised accounts at one university to phish users at other universities.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The indictment stated that between 2013 and 2017, Silent Librarian’s activities resulted in approximately $3.4 billion of intellectual property loss.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

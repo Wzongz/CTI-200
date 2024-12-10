@@ -1,0 +1,142 @@
+{
+  "event_id": "055",
+  "claim": "Cytrox’s Predator Spyware Attacks: State-Sponsored Cyber Espionage.",
+  "original_label": "true",
+  "label": "true",
+  "explain": "Former Egyptian MP Ahmed Eltantawy was targeted with Cytrox’s predator spyware through links sent via SMS and WhatsApp. Former Egyptian MP Ahmed Eltantawy has been targeted with Cytrox’s Predator spyware in a campaign believed to be state-sponsored cyber espionage. After Eltantawy made his intention to run for president in the 2024 elections known, the targeting took place between May and September 2023. The spyware was distributed using links sent via SMS and WhatsApp, network injection, and visits to certain websites by Eltantawy. The Citizen Lab examined the assaults with the help of Google's Threat Analysis Group (TAG), and they were able to acquire an iPhone zero-day exploit chain that was designed to be used to install spyware on iOS versions up to 16.6.1. Eltantawy's device was forensically examined by The Citizen Lab, which uncovered several efforts to use Cytrox's Predator spyware to target him. In the investigation, The Citizen Lab and TAG discovered an iOS exploit chain utilised in the attacks against Eltantawy. They started a responsible disclosure procedure with Apple, and as a consequence, it resulted in the release of updates patching the vulnerabilities used by the exploit chain. Mobile zero-day exploit chains may be quite expensive, with black market values for them exceeding millions of dollars. The Citizen Lab also identified several domain names and IP addresses associated with Cytrox’s Predator spyware. Additionally, a network injection method was also utilised to get the malware onto Eltantawy's phone, according to the study. He would be discreetly routed to a malicious website using network injection when he went to certain websites that weren't HTTPS.Cyber espionage, also referred to as cyber spying, is a sort of cyberattack in which an unauthorised user tries to obtain confidential or sensitive information or intellectual property (IP) for financial gain, business benefit, or political objectives. Users are advised to keep their devices up-to-date and enable lockdown Mode on iPhones. Former Egyptian MP targeted with predator spyware ahead of 2024 presidential run hence Update your macOS Ventura, iOS, and iPadOS devices, as Apple has released emergency updates to address the flaws. Apple has Released Emergency Updates Amid Citizen Lab’s Disclosure. Apple has issued three emergency updates for iOS, iPadOS (1), and macOS Ventura (2). The updates address the following vulnerabilities: CVE-2023-41991, CVE-2023-41992, CVE-2023-41993. Apple customers are advised to immediately install these emergency security updates to protect themselves against potential targeted spyware attacks. By updating promptly, users will ensure that their devices are secure and cannot be compromised by such attacks exploiting these particular zero-day vulnerabilities. Hence it is advisable to maintain up-to-date software and enable security features in your Apple devices. Ahmed Eltantawy, a former Egyptian MP and presidential candidate, was targeted with Cytrox’s Predator spyware after announcing his bid for the presidency. He was targeted by Cytrox Predator Spyware Campaign. Such an incident is believed to be State-Sponsored Cyber Espionage. The incident raises the question of loss of privacy and shows the mala fide intention of the political opponents. The investigation Findings reveal that Ahmed Eltantawy was the victim of a sophisticated cyber espionage campaign that leveraged Cytrox’s Predator spyware. Apple advised that all users are urged to update their Apple devices. This case raises alarming concerns about the lack of controls on the export of spyware technologies and underscores the importance of security updates and lockdown modes on Apple devices.\n\n\n",
+  "reports": [
+    {
+      "link": "https://citizenlab.ca/2021/12/pegasus-vs-predator-dissidents-doubly-infected-iphone-reveals-cytrox-mercenary-spyware/",
+      "content": "Based on the traces of FORCEDENTRY, the presence of process names linked to Pegasus, and additional factors, we conclude with high confidence that the phone was repeatedly hacked with NSO Group’s Pegasus spyware starting on March 3, 2021. The second target whose phone we confirmed was hacked with Cytrox’s Predator spyware is an Egyptian exiled journalist and an outspoken critic of the Sisi regime. This report is the first investigation to discover Cytrox’s mercenary spyware being abused to target civil society. Ultimately, we determined that his device had been exploited and infected with two separate mercenary spyware tools: Pegasus spyware, made by NSO Group, and Predator, which is developed by Cytrox. We conducted scanning (Section 4) that identified the Egyptian Government as a Cytrox Predator customer, websites used in the hacks of the two targets bore Egyptian themes, and the messages that initiated the hack were sent from Egyptian WhatsApp numbers (Section 2.5, Section 2.7). We confirmed the hacking of the devices of two individuals with Cytrox’s Predator spyware: Ayman Nour, a member of the Egyptian political opposition living in exile in Turkey, and an Egyptian exiled journalist who hosts a popular news program and wishes to remain anonymous.",
+      "domain": "citizenlab.ca",
+      "tokenized": [
+        {
+          "sent": "Based on the traces of FORCEDENTRY, the presence of process names linked to Pegasus, and additional factors, we conclude with high confidence that the phone was repeatedly hacked with NSO Group’s Pegasus spyware starting on March 3, 2021.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The second target whose phone we confirmed was hacked with Cytrox’s Predator spyware is an Egyptian exiled journalist and an outspoken critic of the Sisi regime.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "This report is the first investigation to discover Cytrox’s mercenary spyware being abused to target civil society.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"Ultimately, we determined that his device had been exploited and infected with two separate mercenary spyware tools: Pegasus spyware, made by NSO Group, and Predator, which is developed by Cytrox.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "We conducted scanning (Section 4) that identified the Egyptian Government as a Cytrox Predator customer, websites used in the hacks of the two targets bore Egyptian themes, and the messages that initiated the hack were sent from Egyptian WhatsApp numbers (Section 2.5, Section 2.7).",
+          "is_evidence": 0
+        },
+        {
+          "sent": "We confirmed the hacking of the devices of two individuals with Cytrox’s Predator spyware: Ayman Nour, a member of the Egyptian political opposition living in exile in Turkey, and an Egyptian exiled journalist who hosts a popular news program and wishes to remain anonymous.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.bitdefender.com/blog/hotforsecurity/predator-spyware-operators-caught-exploiting-security-holes-now-patched-by-apple-and-google/",
+      "content": "Several security flaws addressed by Apple and Google in iOS and Chrome were exploited by customers of Cytrox, a company known to develop and sell Predator spyware, according to The Citizen Lab at the University of Toronto. The attackers also had an exploit chain to install Predator on Android devices – also in Egypt, according to a separate notice by Google’s Threat Analysis Group (TAG). The group, renowned for their fight against mercenary spyware, worked closely with Apple and Google in recent months to uncover multiple spyware attacks targeting high-profile individuals, as the two tech giants worked around the clock to patch actively exploited flaws in their flagship products – iPhones, iPads and Macs, Android devices, and the Chrome web browser. The researchers say that former Egyptian MP Ahmed Eltantawy was targeted between May and September 2023 with Cytrox’s Predator spyware via links sent on SMS and WhatsApp. “Given that Egypt is a known customer of Cytrox’s Predator spyware, and the spyware was delivered via network injection from a device located physically inside Egypt, we attribute the network injection attack to the Egyptian government with high confidence,” the researchers say. “When Eltantawy visited certain websites not using HTTPS, a device installed at the border of Vodafone Egypt’s network automatically redirected him to a malicious website to infect his phone with Cytrox’s Predator spyware.”",
+      "domain": "www.bitdefender.com",
+      "tokenized": [
+        {
+          "sent": "Several security flaws addressed by Apple and Google in iOS and Chrome were exploited by customers of Cytrox, a company known to develop and sell Predator spyware, according to The Citizen Lab at the University of Toronto.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The attackers also had an exploit chain to install Predator on Android devices – also in Egypt, according to a separate notice by Google’s Threat Analysis Group (TAG).",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The group, renowned for their fight against mercenary spyware, worked closely with Apple and Google in recent months to uncover multiple spyware attacks targeting high-profile individuals, as the two tech giants worked around the clock to patch actively exploited flaws in their flagship products – iPhones, iPads and Macs, Android devices, and the Chrome web browser.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The researchers say that former Egyptian MP Ahmed Eltantawy was targeted between May and September 2023 with Cytrox’s Predator spyware via links sent on SMS and WhatsApp.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"“Given that Egypt is a known customer of Cytrox’s Predator spyware, and the spyware was delivered via network injection from a device located physically inside Egypt, we attribute the network injection attack to the Egyptian government with high confidence,” the researchers say.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":  "“When Eltantawy visited certain websites not using HTTPS, a device installed at the border of Vodafone Egypt’s network automatically redirected him to a malicious website to infect his phone with Cytrox’s Predator spyware.”",
+          "is_evidence": 1,
+          "is_repeat": 0
+        }
+      ]
+    },
+    {
+      "link": "https://www.linkedin.com/pulse/cybersecurity-alert-cytrox-intellexa-blacklisted-espionage-activities/",
+      "content": "Cytrox is a hacking group that is known for using a variety of malware to target government, military, and critical infrastructure organizations. Intellexa's malware is similar to Cytrox's malware, and the two groups may be working together. No alt text provided for this image CISA has issued a number of recommendations to organizations to protect themselves from Cytrox and Intellexa attacks. The Cybersecurity and Infrastructure Security Agency (CISA) has issued an alert warning organizations of the threat posed by these groups. The United States Government has blacklisted two cyber espionage groups, Cytrox and Intellexa. The group has been active since at least 2019 and has been linked to a number of attacks, including the SolarWinds hack.",
+      "domain": "www.linkedin.com",
+      "tokenized": [
+        {
+          "sent": "Cytrox is a hacking group that is known for using a variety of malware to target government, military, and critical infrastructure organizations.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":"Intellexa's malware is similar to Cytrox's malware, and the two groups may be working together.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "No alt text provided for this image CISA has issued a number of recommendations to organizations to protect themselves from Cytrox and Intellexa attacks.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The Cybersecurity and Infrastructure Security Agency (CISA) has issued an alert warning organizations of the threat posed by these groups.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The United States Government has blacklisted two cyber espionage groups, Cytrox and Intellexa.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The group has been active since at least 2019 and has been linked to a number of attacks, including the SolarWinds hack.",
+          "is_evidence": 0
+        }
+      ]
+    },
+    {
+      "link": "https://therecord.media/spyware-companies-commerce-department-entity-list-intellexa-cytrox/",
+      "content": "In March President Biden issued an executive order barring U.S. departments and agencies from “operationally using commercial spyware tools that pose significant counterintelligence or security risks to the U.S. Government or significant risks of improper use by a foreign government or foreign person.” Intellexa and Cytrox, which makes Predator, were added to the list because of their “trafficking in cyber exploits used to gain access to information systems, threatening the privacy and security of individuals and organizations worldwide,” the Commerce Department said in a press release. NSO-produced Pegasus spyware was detected on Mansoor’s phone in 2016, immediately preceding his jailing. The Commerce Department announced Tuesday that it has blacklisted two manufacturers of spyware, including the company behind Predator, which has been used to spy on journalists, politicians and even a Meta employee. The Commerce Department noted that commercial surveillance tools have been used to repress dissidents and fuel human rights abuses. The Israeli spyware companies NSO Group and Candiru were previously added to the Commerce Department’s entity list in November 2021.",
+      "domain": "therecord.media",
+      "tokenized": [
+        {
+          "sent": "In March President Biden issued an executive order barring U.S. departments and agencies from “operationally using commercial spyware tools that pose significant counterintelligence or security risks to the U.S. Government or significant risks of improper use by a foreign government or foreign person.”",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":  "Intellexa and Cytrox, which makes Predator, were added to the list because of their “trafficking in cyber exploits used to gain access to information systems, threatening the privacy and security of individuals and organizations worldwide,” the Commerce Department said in a press release.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "NSO-produced Pegasus spyware was detected on Mansoor’s phone in 2016, immediately preceding his jailing.",
+          "is_evidence": 0
+        },
+        {
+          "sent":  "The Commerce Department announced Tuesday that it has blacklisted two manufacturers of spyware, including the company behind Predator, which has been used to spy on journalists, politicians and even a Meta employee.",
+          "is_evidence": 1,
+          "is_repeat": 0
+        },
+        {
+          "sent":  "The Commerce Department noted that commercial surveillance tools have been used to repress dissidents and fuel human rights abuses.",
+          "is_evidence": 0
+        },
+        {
+          "sent":"The Israeli spyware companies NSO Group and Candiru were previously added to the Commerce Department’s entity list in November 2021.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

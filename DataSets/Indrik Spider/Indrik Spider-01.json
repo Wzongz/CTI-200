@@ -1,0 +1,52 @@
+[
+    "claim":"INDRIK SPIDER is a sophisticated eCrime group that has been operating Dridex since June 2014. In 2015 and 2016, Dridex was one of the most prolific eCrime banking trojans on the market and, since 2014, those efforts are thought to have netted INDRIK SPIDER millions of dollars in criminal profits.",
+    "explain":"Indrik Spider is a sophisticated eCrime group that has been operating Dridex since June 2014. In 2015 and 2016, Dridex was one of the most prolific eCrime banking rojans on the market and, since 2014, those efforts are thought to have netted Indrik Spider millions of dollars in criminal profits. Throughout its years of operation, Dridex has received multiple updates with new modules developed and new anti-analysis features added to the malware. In August 2017, a new ransomware variant identified as BitPaymer was reported to have ransomed the U.K.’s National Health Service (NHS), with a high ransom demand of 53 BTC (approximately $200,000 USD). The targeting of an organization rather than individuals, and the high ransom demands, made BitPaymer stand out from other contemporary ransomware at the time. Though the encryption and ransom functionality of BitPaymer was not technically sophisticated, the malware contained multiple anti-analysis features that overlapped with Dridex. Later technical analysis of BitPaymer indicated that it had been developed by Indrik Spider, suggesting the group had expanded its criminal operation to include ransomware as a monetization strategy. Indrik Spider appears to be a subgroup of TA505, Graceful Spider, Gold Evergreen. In 2019, a subgroup of Indrik Spider split off into Doppel Spider. Dridex has been observed to be distributed via Necurs (operated by Monty Spider) and Emotet (operated by Mummy Spider, TA542).",
+    {
+        "report_id": "report_0",
+        "link":"https://www.crowdstrike.com/blog/big-game-hunting-the-evolution-of-indrik-spider-from-dridex-wire-fraud-to-bitpaymer-targeted-ransomware/",
+        "sentences": [
+            "Additionally, based on information obtained by the Treasury Department’s Financial Crimes Enforcement Network (FinCEN), the Treasury Department’s Office of Cybersecurity and Critical Infrastructure Protection (OCCIP) released previously unreported indicators of compromise associated with the Dridex malware and its use against the financial services sector.",
+            "Evil Corp has used the Dridex malware to infect computers and harvest login credentials from hundreds of banks and financial institutions in over 40 countries, causing more than $100 million in theft.",
+            "Over the past several years, the NCA and the United Kingdom’s Metropolitan Police Service have arrested multiple individuals who enabled the activities of Evil Corp, including laundering stolen proceeds acquired through the Dridex malware.",
+            "The Dridex malware is a multifunctional malware package that is designed to automate the theft of confidential information, to include online banking credentials from infected computers.",
+            "Through their use of the Dridex malware, Evil Corp has illicitly earned at least $100 million, though it is likely that the total of their illicit proceeds is significantly higher.",
+            "To transfer the proceeds gained through their use of the Dridex malware, Evil Corp relies upon a network of money mules who are involved in transferring stolen funds obtained from victims’ bank accounts to accounts controlled by members of Evil Corp."
+        ]
+    },
+    {
+        "report_id": "report_1",
+        "link":"https://cloudsecurityalliance.org/blog/2022/04/20/weathering-russian-winter-the-current-state-of-russian-apts",
+        "sentences": [
+            "Following a short hiatus from March to May 2020, INDRIK SPIDER significantly increased their efforts to move away from their existing tools and introduced WastedLocker — the successor to their BitPaymer ransomware.",
+            "Hades did receive minor modifications, and the removed features included those that were uniquely characteristic of INDRIK SPIDER’s previous ransomware families — WastedLocker and BitPaymer.",
+            "INDRIK SPIDER continued with their usual operational tempo, infecting organizations across more than a dozen sectors — predominantly in the U.S. — until late 2020.Based on significant code overlap, CrowdStrike Intelligence has identified Hades ransomware as INDRIK SPIDER’s successor to WastedLocker.",
+            "INDRIK SPIDER’s move to this ransomware variant also came with another shift in tactics: the departure from using email communication and the possibility of exfiltrating data from victims to elicit payments.",
+            "This BitPaymer operation was one of the first identified examples of INDRIK SPIDER using a variant of Gozi ISFB as a part of their toolset instead of their Dridex banking trojan.",
+            "This adversary is best known for their Dridex banking trojan, which was prolific from June 2014 through early 2020, and their Bitpaymer crypter used in big game hunting (BGH) attacks beginning in 2017."
+        ]
+    },
+    {
+        "report_id": "report_2",
+        "link":"https://www.crowdstrike.com/blog/hades-ransomware-successor-to-indrik-spiders-wastedlocker/",
+        "sentences": [
+            "BitPaymer, first seen in 2017 targeting UK hospitals, is somewhat unique in that it uses a unique encryption key, ransom note, and contact information for each operation.",
+            "Financial industries should keep a close eye on the activity of IndrikSpider due to the effectiveness of their banking trojan Dridex.",
+            "Indrik Spider AKA Evil Corp: Indrik Spider, a Russia-based APT, is famous for being the group behind the Dridex banking trojan and the BitPaymer ransomware, which managed to hit the U.K.’s NHS and has received an average of about $200,000 USD per victim.",
+            "Ransomware continues to rise in popularity, though it’s less common to see it used by APTs.",
+            "Ransomware is a highly profitable industry, and most APTs have realized this.",
+            "With a complex banking trojan like Dridex and ransomware like BitPaymer, IndrikSpider has potential against most high-value industries."
+        ]
+    },
+    {
+        "report_id": "report_3",
+        "link":"https://home.treasury.gov/news/press-releases/sm845",
+        "sentences": [
+            "In August 2017, a new ransomware variant identified as BitPaymer was reported to have ransomed the U.K.’s National Health Service (NHS), with a high ransom demand of 53 BTC (approximately $200,000 USD).",
+            "In July 2017, INDRIK SPIDER joined the movement of targeted ransomware with BitPaymer.",
+            "Later technical analysis of BitPaymer indicated that it had been developed by INDRIK SPIDER, suggesting the group had expanded its criminal operation to include ransomware as a monetization strategy.",
+            "Since this shift, INDRIK SPIDER has used BitPaymer ransomware as a key vehicle for these operations, having netted around $1.5M USD in the first 15 months of ransomware operations.",
+            "There is no doubt that BitPaymer ransomware operations are proving successful for this criminal group, with an average estimate take of over $200,000 USD per victim, but it is also important to remember that INDRIK SPIDER continues to operate the Dridex banking trojan.",
+            "Though the encryption and ransom functionality of BitPaymer was not technically sophisticated, the malware contained multiple anti-analysis features that overlapped with Dridex."
+        ]
+    }
+]

@@ -1,0 +1,8 @@
+The White Company is a likely state-sponsored threat actor with advanced capabilities. From 2017 through 2018, the group led an espionage campaign called Operation Shaheen targeting government and military organizations in Pakistan.
+The White Company has taken advantage of a known vulnerability in Microsoft Word (CVE 2012-0158) to execute code.
+The White Company has the ability to delete its malware entirely from the target system.
+The White Company has obfuscated their payloads through packing.
+The White Company has sent phishing emails with malicious Microsoft Word attachments to victims.
+The White Company has checked for specific antivirus products on the target’s computer, including Kaspersky, Quick Heal, AVG, BitDefender, Avira, Sophos, Avast!, and ESET.
+The White Company has checked the current date on the victim system.
+The White Company has used phishing lure documents that trick users into opening them and infecting their computers.

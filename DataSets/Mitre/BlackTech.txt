@@ -1,0 +1,15 @@
+BlackTech is a suspected Chinese cyber espionage group that has primarily targeted organizations in East Asia--particularly Taiwan, Japan, and Hong Kong--and the US since at least 2013. BlackTech has used a combination of custom malware, dual-use tools, and living off the land tactics to compromise media, construction, engineering, electronics, and financial company networks.
+BlackTech has exploited a buffer overflow vulnerability in Microsoft Internet Information Services (IIS) 6.0, CVE-2017-7269, in order to establish a new HTTP or command and control (C2) server.
+BlackTech has exploited multiple vulnerabilities for execution, including Microsoft Office vulnerabilities CVE-2012-0158, CVE-2014-6352, CVE-2017-0199, and Adobe Flash CVE-2015-5119.
+BlackTech has used DLL side loading by giving DLLs hardcoded names and placing them in searched directories.
+BlackTech has used right-to-left-override to obfuscate the filenames of malicious e-mail attachments.
+BlackTech has used built-in API functions.
+BlackTech has used the SNScan tool to find other potential targets on victim networks.
+BlackTech has obtained and used tools such as Putty, SNScan, and PsExec for its operations.
+BlackTech has used stolen code-signing certificates for its malicious payloads.
+BlackTech has used valid, stolen digital certificates for some of their malware and tools.
+BlackTech has used spearphishing e-mails with malicious password-protected archived files (ZIP or RAR) to deliver malware.
+BlackTech has used spearphishing e-mails with links to cloud services to deliver malware.
+BlackTech has used Putty for remote access.
+BlackTech has used e-mails with malicious links to lure victims into installing malware.
+BlackTech has used e-mails with malicious documents to lure victims into installing malware.
