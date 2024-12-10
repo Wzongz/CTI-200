@@ -1,0 +1,142 @@
+{
+    "event_id": "064",
+    "claim": "While tracking the activities of the SideWinder group we identified a server used to deliver a malicious LNK file and host multiple credential phishing pages.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "FireEye is highlighting a cyber espionage operation targeting crucial technologies and traditional intelligence targets from a China-nexus state sponsored actor we call APT40. The actor has conducted operations since at least 2013 in support of China’s naval modernization effort. The group has specifically targeted engineering, transportation, and the defense industry, especially where these sectors overlap with maritime technologies. More recently, we have also observed specific targeting of countries strategically important to the Belt and Road Initiative including Cambodia, Belgium, Germany, Hong Kong, Philippines, Malaysia, Norway, Saudi Arabia, Switzerland, the United States, and the United Kingdom. This China-nexus cyber espionage group was previously reported as TEMP.Periscope and TEMP.Jumper.In December 2016, China’s People Liberation Army Navy (PLAN) seized a U.S. Navy unmanned underwater vehicle (UUV) operating in the South China Sea. The incident paralleled China’s actions in cyberspace; within a year APT40 was observed masquerading as a UUV manufacturer, and targeting universities engaged in naval research. That incident was one of many carried out to acquire advanced technology to support the development of Chinese naval capabilities. We believe APT40’s emphasis on maritime issues and naval technology ultimately support China’s ambition to establish a blue-water navy. In addition to its maritime focus, APT40 engages in broader regional targeting against traditional intelligence targets, especially organizations with operations in Southeast Asia or involved in South China Sea disputes. Most recently, this has included victims with connections to elections in Southeast Asia, which is likely driven by events affecting China’s Belt and Road Initiative. China’s “One Belt, One Road” (一带一路) or “Belt and Road Initiative” (BRI) is a $1 trillion USD endeavor to build land and maritime trade routes across Asia, Europe, the Middle East, and Africa to develop a trade network that will project China’s influence across the greater region.Figure 1: Countries and industries targeted. Countries include the United States, United Kingdom, Norway, Germany, Saudi Arabia, Cambodia and Indonesia We assess with moderate confidence that APT40 is a state-sponsored Chinese cyber espionage operation. The actor’s targeting is consistent with Chinese state interests and there are multiple technical artifacts indicating the actor is based in China. Analysis of the operational times of the group’s activities indicates that it is probably centered around China Standard Time (UTC +8). In addition, multiple APT40 command and control (C2) domains were initially registered by China based domain resellers and had Whois records with Chinese location information, suggesting a China based infrastructure procurement process. APT40 has also used multiple Internet Protocol (IP) addresses located in China to conduct its operations. In one instance, a log file recovered from an open indexed server revealed that an IP address (112.66.188.28) located in Hainan, China had been used to administer the command and control node that was communicating with malware on victim machines. All of the logins to this C2 were from computers configured with Chinese language settings. APT40 has been observed leveraging a variety of techniques for initial compromise, including web server exploitation, phishing campaigns delivering publicly available and custom backdoors, and strategic web compromises. APT40 uses a variety of malware and tools to establish a foothold, many of which are either publicly available or used by other threat groups. In some cases, the group has used executables with code signing certificates to avoid detection.APT40 uses a mix of custom and publicly available credential harvesting tools to escalate privileges and dump password hashes.APT40 uses compromised credentials to log on to other connected systems and conduct reconnaissance. The group also leverages RDP, SSH, legitimate software within the victim environment, an array of native Windows capabilities, publicly available tools, as well as custom scripts to facilitate internal reconnaissance.APT40 uses many methods for lateral movement throughout an environment, including custom scripts, web shells, a variety of tunnelers, as well as Remote Desktop Protocol (RDP). For each new system compromised, the group usually executes malware, performs additional reconnaissance, and steals data. APT40 primarily uses backdoors, including web shells, to maintain presence within a victim environment. These tools enable continued control of key systems in the targeted network.Completing missions typically involves gathering and transferring information out of the target network, which may involve moving files through multiple systems before reaching the destination. APT40 has been observed consolidating files acquired from victim networks and using the archival tool rar.exe to compress and encrypt the data before exfiltration. We have also observed APT40 develop tools such as PAPERPUSH to aid in the effectiveness of their data targeting and theft.Despite increased public attention, APT40 continues to conduct cyber espionage operations following a regular tempo, and we anticipate their operations will continue through at least the near and medium term. Based on APT40’s broadening into election-related targets in 2017, we assess with moderate confidence that the group’s future targeting will affect additional sectors beyond maritime, driven by events such as China’s Belt and Road Initiative. In particular, as individual Belt and Road projects unfold, we are likely to see continued activity by APT40 which extends against the project’s regional opponents.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-200a/",
+            "content": "As a cloud provider, Microsoft is uniquely positioned to disrupt this attacker technique. As these attacks were detected, Microsoft took proactive steps to prevent attackers from using our cloud infrastructure to execute their attacks and suspended 18 Azure Active Directory applications that we determined to be part of their malicious command & control infrastructure. As those threats target Microsoft customers, we will continue to build detections and implement protections to defend against them. Microsoft consistently tracks the most advanced threat actors and evolving attack techniques. Recently, MSTIC has observed newly expanded targeting outside of those sectors to include the Asia Pacific region and other targets in higher education and regional government organizations. Recently, the Microsoft Threat Intelligence Center (MSTIC) observed the evolution of attacker techniques by an actor we call GADOLINIUM using cloud services and open source tools to enhance weaponization of their malware payload, attempt to gain command and control all the way to the server, and to obfuscate detection.",
+            "domain": "www.cisa.gov",
+            "tokenized": [
+                {
+                    "sent": "As a cloud provider, Microsoft is uniquely positioned to disrupt this attacker technique.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "As these attacks were detected, Microsoft took proactive steps to prevent attackers from using our cloud infrastructure to execute their attacks and suspended 18 Azure Active Directory applications that we determined to be part of their malicious command & control infrastructure.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "As those threats target Microsoft customers, we will continue to build detections and implement protections to defend against them.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Microsoft consistently tracks the most advanced threat actors and evolving attack techniques.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Recently, MSTIC has observed newly expanded targeting outside of those sectors to include the Asia Pacific region and other targets in higher education and regional government organizations.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Recently, the Microsoft Threat Intelligence Center (MSTIC) observed the evolution of attacker techniques by an actor we call GADOLINIUM using cloud services and open source tools to enhance weaponization of their malware payload, attempt to gain command and control all the way to the server, and to obfuscate detection.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.recordedfuture.com/blog/chinese-threat-actor-tempperiscope/",
+            "content": "At a high level, this sample follows the continued trend of targeting Malaysian victims using specific TTPs such as remote templates, employing macros, using DLL side-loading techniques, and leveraging an in-memory implant with dynamic DNS for command and control. Based on code similarity and shared tactics, techniques, and procedures (TTPs), the team assessed this activity to be possibly linked to a Chinese-based group known as APT40, or Leviathan. Earlier in the year, the Malaysian Computer Emergency Response Team (MyCERT) issued an advisory related to espionage activity targeting their country. The Elastic Security Intelligence & Analytics Team researches adversary innovations of many kinds, and has recently focused on an activity group that leveraged remote templates, VBA code evasion, and DLL side-loading techniques. The report listed different TTPs and included multiple samples and other technical indicators that align with a threat group known as APT40/Leviathan. With these similarities, our Intelligence & Analytics Team assesses with moderate confidence that this activity is linked to APT40/Leviathan.",
+            "domain": "www.recordedfuture.com",
+            "tokenized": [
+                {
+                    "sent": "At a high level, this sample follows the continued trend of targeting Malaysian victims using specific TTPs such as remote templates, employing macros, using DLL side-loading techniques, and leveraging an in-memory implant with dynamic DNS for command and control.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Based on code similarity and shared tactics, techniques, and procedures (TTPs), the team assessed this activity to be possibly linked to a Chinese-based group known as APT40, or Leviathan.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Earlier in the year, the Malaysian Computer Emergency Response Team (MyCERT) issued an advisory related to espionage activity targeting their country.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The Elastic Security Intelligence & Analytics Team researches adversary innovations of many kinds, and has recently focused on an activity group that leveraged remote templates, VBA code evasion, and DLL side-loading techniques.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The report listed different TTPs and included multiple samples and other technical indicators that align with a threat group known as APT40/Leviathan.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "With these similarities, our Intelligence & Analytics Team assesses with moderate confidence that this activity is linked to APT40/Leviathan.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.elastic.co/blog/advanced-techniques-used-in-malaysian-focused-apt-campaign /",
+            "content": "Additionally, attacks such as the one uncovered against a U.S. Navy contractor in early 2018, resulting in the theft of a massive amount of highly sensitive data that included plans to develop a submarine-based, supersonic anti-ship missile, demonstrate China’s continued targeting of cutting-edge naval technology to bridge the technological gap with the U.S. Based on the available data and evidence outlined in this report, Recorded Future assesses with medium confidence that Chinese threat actor TEMP.Periscope reused TTPs from other threat groups to target the U.K. engineering company, likely to gain access to their sensitive and proprietary technologies and data. Based on the available data and evidence outlined in this report, Recorded Future assesses with medium confidence that Chinese threat actor TEMP.Periscope reused publicly reported, sophisticated TTPs from Russian threat groups Dragonfly and APT28 to target the U.K. engineering company, likely to gain access to sensitive and proprietary technologies and data. The Chinese strategic requirement to develop advanced technology, particularly in marine engineering, remains an intense focus as China looks to dominate the South China Sea territory. The increased targeting of high-tech marine engineering entities coincided with the growing regional tensions surrounding China’s claims for much of the South China Sea (SCS) territory. This report will be of greatest interest to organizations within the high-tech engineering industries in the U.S., Europe, and Japan, as well as those investigating Chinese state\u0002sponsored cyberespionage.",
+            "domain": "www.elastic.co",
+            "tokenized": [
+                {
+                    "sent": "Additionally, attacks such as the one uncovered against a U.S. Navy contractor in early 2018, resulting in the theft of a massive amount of highly sensitive data that included plans to develop a submarine-based, supersonic anti-ship missile, demonstrate China’s continued targeting of cutting-edge naval technology to bridge the technological gap with the U.S.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Based on the available data and evidence outlined in this report, Recorded Future assesses with medium confidence that Chinese threat actor TEMP.Periscope reused TTPs from other threat groups to target the U.K. engineering company, likely to gain access to their sensitive and proprietary technologies and data.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Based on the available data and evidence outlined in this report, Recorded Future assesses with medium confidence that Chinese threat actor TEMP.Periscope reused publicly reported, sophisticated TTPs from Russian threat groups Dragonfly and APT28 to target the U.K. engineering company, likely to gain access to sensitive and proprietary technologies and data.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Chinese strategic requirement to develop advanced technology, particularly in marine engineering, remains an intense focus as China looks to dominate the South China Sea territory.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The increased targeting of high-tech marine engineering entities coincided with the growing regional tensions surrounding China’s claims for much of the South China Sea (SCS) territory.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This report will be of greatest interest to organizations within the high-tech engineering industries in the U.S., Europe, and Japan, as well as those investigating Chinese state\u0002sponsored cyberespionage.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.microsoft.com/security/blog/2020/09/24/gadolinium-detecting-empires-cloud/",
+            "content": "APT40 has targeted governmental organizations, companies, and universities in a wide range of industries—including biomedical, robotics, and maritime research—across the United States, Canada, Europe, the Middle East, and the South China Sea area, as well as industries included in China’s Belt and Road Initiative. On July 19, 2021, the U.S. Department of Justice (DOJ) unsealed an indictment against four APT40 cyber actors for their illicit computer network exploitation (CNE) activities via front company Hainan Xiandun Technology Development Company (Hainan Xiandun). These MSS-affiliated actors targeted victims in the following industries: academia, aerospace/aviation, biomedical, defense industrial base, education, government, healthcare, manufacturing, maritime, research institutes, and transportation (rail and shipping).This Joint Cybersecurity Advisory uses the MITRE ATT&CK® framework, version 9. This Joint Cybersecurity Advisory was written by the Federal Bureau of Investigation (FBI) and the Cybersecurity and Infrastructure Security Agency (CISA) to provide information on a Chinese Advanced Persistent Threat (APT) group known in open-source reporting as APT40. This advisory provides APT40’s tactics, techniques, and procedures (TTPs) and indicators of compromise (IOCs) to help cybersecurity practitioners identify and remediate APT40 intrusions and established footholds. [G0065] has used a variety of tactics and techniques and a large library of custom and open\u0002source malware—much of which is shared with multiple other suspected Chinese groups—to establish initial access via user and administrator credentials, enable lateral movement once inside the network, and locate high value assets in order to exfiltrate data.",
+            "domain": "sebdraven.medium.com",
+            "tokenized": [
+                {
+                    "sent": "APT40 has targeted governmental organizations, companies, and universities in a wide range of industries—including biomedical, robotics, and maritime research—across the United States, Canada, Europe, the Middle East, and the South China Sea area, as well as industries included in China’s Belt and Road Initiative.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "On July 19, 2021, the U.S. Department of Justice (DOJ) unsealed an indictment against four APT40 cyber actors for their illicit computer network exploitation (CNE) activities via front company Hainan Xiandun Technology Development Company (Hainan Xiandun).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "These MSS-affiliated actors targeted victims in the following industries: academia, aerospace/aviation, biomedical, defense industrial base, education, government, healthcare, manufacturing, maritime, research institutes, and transportation (rail and shipping).This Joint Cybersecurity Advisory uses the MITRE ATT&CK® framework, version 9.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This Joint Cybersecurity Advisory was written by the Federal Bureau of Investigation (FBI) and the Cybersecurity and Infrastructure Security Agency (CISA) to provide information on a Chinese Advanced Persistent Threat (APT) group known in open-source reporting as APT40.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This advisory provides APT40’s tactics, techniques, and procedures (TTPs) and indicators of compromise (IOCs) to help cybersecurity practitioners identify and remediate APT40 intrusions and established footholds.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "[G0065] has used a variety of tactics and techniques and a large library of custom and open\u0002source malware—much of which is shared with multiple other suspected Chinese groups—to establish initial access via user and administrator credentials, enable lateral movement once inside the network, and locate high value assets in order to exfiltrate data.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

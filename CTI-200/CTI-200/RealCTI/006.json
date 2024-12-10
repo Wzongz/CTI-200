@@ -1,0 +1,176 @@
+{
+    "event_id": "006",
+    "claim": "Cozy Bear is a Russian hacker group allegedly affiliated with one or more Russian intelligence agencies. Mandiant identifies this group as the advanced persistent threat APT29. The group has the advanced capabilities to launch highly targeted attacks like SolarWinds supply-chain attacks where trojanized software updates have been used to infect the MSSP customers.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "The Dutch General Intelligence and Security Service (AIVD) inferred from security camera footage that it is led by the Russian Foreign Intelligence Service (SVR); the US agrees. CrowdStrike, a cybersecurity firm, previously speculated that the group might be linked to the Russian Federal Security Service (FSB). CozyCar, CozyDuke (by F-Secure), Dark Halo, The Dukes (by Volexity), NOBELIUM, Office Monkeys, StellarParticle, UNC2452, and YTTRIUM are some of the nicknames given to the group by different cybersecurity research groups.Cozy Bear is a well-resourced, highly dedicated, and structured cyberespionage operation that we believe has been operating for the Russian Federation since at least 2008 to collect intelligence in support of foreign and security policy decision-making,’ according to a 2015 assessment from F-Secure. Cozy Bear has an unusual amount of faith in its ability to keep effectively compromising its targets, as well as in its ability to operate without being detected.APT29 and another Russian APT group called APT28 (Fancy Bear) infiltrated the Democratic National Committee’s (DNC) network and caused a data breach, which started in 2015 but was detected in 2016.ESET investigates Operation Ghost, which is believed to have started in 2013 and affected the Ministry of Foreign Affairs of some European countries. ESET also reports that the group has developed new malware families called the PolyglotDuke, RegDuke, and FatDuke. Later on, the WellMess malware was observed in attacks against Japanese firms in 2018; however, it was not linked to a specific threat actor then. WellMess was linked to Russia’s APT29 in 2020 when the US, UK, and Canada stated Russian hackers used it in attacks against academic and pharmaceutical research institutes involved in developing the COVID-19 vaccine.APT29, who are the hackers behind the SolarWinds software supply chain attack and the attacks mentioned above, have continued to look for ways to access enterprise networks by targeting IT and cloud services providers with admin rights on their customers’ systems due to their business connection. In a new report, Microsoft warns that the gang has targeted over 140 cloud service resellers and technology suppliers since May and has succeeded in compromising as many as 14. Moreover, Cozy Bear is the hacker behind the SolarWinds software supply chain attack. Denmark National Bank has been another victim of the notorious group’s SolarWinds attack. According to a report published in May 2021, Cozy Bear attacked Denmark’s central bank (Denmark’s National Bank) and planted malware that allowed them to access the network for over six months without being noticed. The SolarWinds campaign is regarded as one of the most sophisticated supply-chain hacks, with 18,000 businesses worldwide downloading trojanized versions of the IT management platform SolarWinds Orion. Despite the hackers’ long-term access, the bank said it found no sign of breach beyond the first stage of the attack, as thousands of other companies did when they installed the trojanized version of SolarWinds Orion.In a blog shared by Microsoft Threat Intelligence Center (MSTIC) in 2021, researchers noted that APT29 has been using the EnvyScout, BoomBox, NativeZone, and VaporRage malware families for its email-based attacks since February 2021, which aims to gain a foothold on various sensitive diplomatic and government entities. In December 2021, ANSSI shared a threat and incident report of the French national government computer security incident response team (CERTFR). The ANSSI stated that French organizations had been subjected to phishing attacks since February 2021, and the identified TTPs overlapped with the SolarWinds supply chain attack.In April 2022, a lure document that allegedly belonged to APT29 was found, which contained a malicious script and appeared to have been created by the Israeli Embassy.In January 2022, Crowdstrike shared a blog about a campaign called StellarParticle linked to Cozy Bear. The campaign, conducted with GoldMax and TrailBlazer malware, reveals that since mid-2019, APT29 has used an MFA bypass to access Office 365 accounts with stolen cookies.Cybersecurity researchers observed that the group uses social media platforms (Twitter, Reddit, etc.) or various internet services (Trello, Firebase, etc.) as C2 (Command & Control) communication during its activities. In the group’s latest campaign, it was found that they have been using the API of Notion, a note-taking application. Based on the group’s latest campaign details, APT29 used the Polish Foreign Minister‘s recent visit to the US as a lure to conduct a spear phishing campaign targeting Western Countries, particularly Western Europe. The lure document contains a link to download an HTML file from a legitimate online library the group had actively used in its other attacks between January 2023 to February 2023. Another observed lure document abuses multiple legitimate systems, such as LegisWrite and eTrustEx, which EU nations use to exchange information and transfer data securely. Using these programs shows that the group targets state organizations within the EU.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.logpoint.com/en/blog/emerging-threat/apt29-cozy-bear/",
+            "content": "The report highlights APT-29, a highly sophisticated cyber espionage group targeting governments and diplomatic entities globally, with no signs of slowing down. APT-29 has continuously evolved its malware delivery methods, utilizing HTML smuggling and malicious ISO images, posing a severe threat to organizations. Logpoint's Converged SIEM platform offers comprehensive tools to detect, analyze, and mitigate the impact of APT-29's operations, providing essential incident response automation and malware detection features. Protective measures and enhanced awareness are crucial in addressing the constraints of Mark of the Web (MOTW) and the appeal of .iso files for threat actors. Employee training and awareness, web filtering, email security, multi-factor authentication, regular security patching, threat intelligence, network segmentation, and access controls are recommended to protect against social engineering and phishing attacks. Robust security solutions, including proper logging, asset visibility, system monitoring, and audit of privilege accounts, are essential components of a comprehensive cybersecurity strategy. It is vital to monitor and audit network activity, ensure comprehensive log coverage, and have an adequate log retention policy in place for effective incident analysis. The Dukes, also known as APT-29 or Cozy Bear, is a cyber threat group with various aliases, and their activities require proactive defense and vigilance.",
+            "domain": "www.logpoint.com",
+            "tokenized": [
+                {
+                    "sent": "The report highlights APT-29, a highly sophisticated cyber espionage group targeting governments and diplomatic entities globally, with no signs of slowing down.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "APT-29 has continuously evolved its malware delivery methods, utilizing HTML smuggling and malicious ISO images, posing a severe threat to organizations.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Logpoint's Converged SIEM platform offers comprehensive tools to detect, analyze, and mitigate the impact of APT-29's operations, providing essential incident response automation and malware detection features.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Protective measures and enhanced awareness are crucial in addressing the constraints of Mark of the Web (MOTW) and the appeal of .iso files for threat actors.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Employee training and awareness, web filtering, email security, multi-factor authentication, regular security patching, threat intelligence, network segmentation, and access controls are recommended to protect against social engineering and phishing attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Robust security solutions, including proper logging, asset visibility, system monitoring, and audit of privilege accounts, are essential components of a comprehensive cybersecurity strategy.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It is vital to monitor and audit network activity, ensure comprehensive log coverage, and have an adequate log retention policy in place for effective incident analysis.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Dukes, also known as APT-29 or Cozy Bear, is a cyber threat group with various aliases, and their activities require proactive defense and vigilance.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.stamus-networks.com/blog/cozy-bear-apt29/",
+            "content": "Cozy Bear (APT29) is a notorious state-sponsored cyber-espionage group known for infiltrating organizations worldwide. Cozy Bear is believed to have originated in Russia and is associated with the Russian Foreign Intelligence Service (SVR). The group gained global notoriety after the 2014 attack on the US State Department and White House. Cozy Bear primarily targets governments, think tanks, and diplomatic organizations, including the DNC, RNC, White House, and Norwegian Parliament. Cozy Bear uses an extensive malware toolset called “CozyDuke” or “the Dukes” and employs spear phishing techniques to initiate attacks. The group's malware has evolved to evade detection, with advanced trojan functionality and the use of social media platforms for command and control communications. Cozy Bear's recent phishing scheme involved using compromised Microsoft 365 accounts to send spoofed messages in Microsoft Teams chats to steal login credentials. The Stamus Security Platform (SSP) has detected Cozy Bear activity and provides high-confidence Declarations of Compromise to identify and respond to threats.",
+            "domain": "www.stamus-networks.com",
+            "tokenized": [
+                {
+                    "sent": "Cozy Bear (APT29) is a notorious state-sponsored cyber-espionage group known for infiltrating organizations worldwide.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Cozy Bear is believed to have originated in Russia and is associated with the Russian Foreign Intelligence Service (SVR).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group gained global notoriety after the 2014 attack on the US State Department and White House.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Cozy Bear primarily targets governments, think tanks, and diplomatic organizations, including the DNC, RNC, White House, and Norwegian Parliament.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Cozy Bear uses an extensive malware toolset called “CozyDuke” or “the Dukes” and employs spear phishing techniques to initiate attacks.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The group's malware has evolved to evade detection, with advanced trojan functionality and the use of social media platforms for command and control communications.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Cozy Bear's recent phishing scheme involved using compromised Microsoft 365 accounts to send spoofed messages in Microsoft Teams chats to steal login credentials.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The Stamus Security Platform (SSP) has detected Cozy Bear activity and provides high-confidence Declarations of Compromise to identify and respond to threats.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.scmagazine.com/news/russias-apt29-intensifies-espionage-operations/",
+            "content": "Russian military intelligence hackers, known as Fancy Bear or APT28, are actively exploiting a Microsoft software vulnerability to access email accounts. The bug, identified as CVE-2023-23397, affects all versions of Microsoft Outlook on Windows and has been targeted since at least April 2022. Microsoft issued a patch for the vulnerability after discovering it was used in targeted attacks on European government, transportation, energy, and military sectors. Researchers, including the Polish Cyber Command, emphasize the importance of updating Microsoft Outlook to mitigate the threat. The exploitation of the vulnerability allows attackers to read victims' emails, with high-value information being a particular target. The attack method involves sending a specially crafted message that compromises the recipient's Outlook without any user interaction required, leaving minimal forensic evidence. Fancy Bear primarily attacks entities in the U.S., Europe, and the Middle East, including government, energy, and transportation sectors. Microsoft and Poland's Cyber Command highlight the group's sophistication and deep understanding of Microsoft Exchange's architecture, underscoring the difficulty in attributing and tracking their activities.",
+            "domain": "www.scmagazine.com",
+            "tokenized": [
+                {
+                    "sent": "APT29, also known as Cozy Bear, has increased the scope and frequency of its espionage attacks in 2023.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The group has made changes to its tooling and tradecraft to make its operations more efficient and harder to detect.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "APT29 has targeted foreign embassies in Ukraine, including those of Russia's partners, marking a strategic shift.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group has also increased its espionage operations against diplomatic entities globally.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "APT29 continues to target European Ministries of Foreign Affairs and embassies, reflecting Russia's far-reaching ambitions.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The group has changed its malware delivery chain by hosting first-stage payloads on compromised web services, reducing forensic artifacts.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "New techniques include using the TinyURL service for malicious phishing links and containing malware within PDF documents.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "APT29's faster pace of operations and split into initial access and exploitation teams indicate a growing mission and resources dedicated to political intelligence collection.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.infosecurity-magazine.com/news/russias-apt29-embassies-ngrok/",
+            "content": "Ukrainian researchers have uncovered a new Russian cyber-espionage campaign targeting embassies and international institutions. APT29 (Cozy Bear) is believed to be behind the attacks, which aimed to gather intelligence on Azerbaijan's military strategy. The targeted countries, including Azerbaijan, Greece, Romania, and Italy, have significant political and economic ties with Azerbaijan. The campaign began with spear-phishing emails featuring a lure of a diplomatic car for sale. The emails contained a malicious RAR attachment exploiting CVE-2023-3883 to execute arbitrary code. When the user opens the RAR archive, a PowerShell script is downloaded and executed. The threat actors used Ngrok to host their malicious payload server, complicating cybersecurity efforts and attribution. This vulnerability (CVE-2023-3883) has been previously exploited by the Russian Sednit APT group (APT28).",
+            "domain": "www.infosecurity-magazine.com",
+            "tokenized": [
+                {
+                    "sent": "Ukrainian researchers have uncovered a new Russian cyber-espionage campaign targeting embassies and international institutions.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "APT29 (Cozy Bear) is believed to be behind the attacks, which aimed to gather intelligence on Azerbaijan's military strategy.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The targeted countries, including Azerbaijan, Greece, Romania, and Italy, have significant political and economic ties with Azerbaijan.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The campaign began with spear-phishing emails featuring a lure of a diplomatic car for sale.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The emails contained a malicious RAR attachment exploiting CVE-2023-3883 to execute arbitrary code.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "When the user opens the RAR archive, a PowerShell script is downloaded and executed.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The threat actors used Ngrok to host their malicious payload server, complicating cybersecurity efforts and attribution.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This vulnerability (CVE-2023-3883) has been previously exploited by the Russian Sednit APT group (APT28).",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

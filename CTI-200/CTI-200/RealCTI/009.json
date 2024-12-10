@@ -1,0 +1,141 @@
+{
+    "event_id": "009",
+    "claim": "APT35, also known as “Charming Kitten,” was discovered in a corporate environment, where it had infiltrated a device via spear-phishing, exhibiting minimal activity to avoid detection until identified by Darktrace's AI.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "APT35, sometimes referred to as Charming Kitten, Imperial Kitten, or Tortoiseshell, is a notorious cyber-espionage group which has been active for nearly 10 years. Famous for stealing scripts from HBO’s Game of Thrones in 2017 and suspected of interfering in the U.S. presidential election last year, it has launched extensive campaigns against organizations and officials across North America and the Middle East. Public attribution has associated APT35 with an Iran-based nation state threat actor. Darktrace regularly detects attacks by many known threat actors including Evil Corp and APT41, alongside large amounts of malicious but uncategorized activity from sophisticated attack groups. As Cyber AI doesn’t rely on predefined rules, signatures, or threat intelligence to detect cyber-attacks, it often detects new and previously unknown threats. This blog post examines a real-world instance of APT35 activity in an organization in the EMEA region. Darktrace observed this activity last June, but due to ongoing investigations, details are only now being released with the wider community. It represents an interesting case for the value of self-learning AI in two key ways: APT35 had already infected a single corporate device, likely via a spear phishing email, when Cyber AI was deployed in the company’s digital estate for the first time. The infected device exhibited no other signs of malicious activity beyond continued command and control (C2) beaconing, awaiting instructions from the attackers for several days. This is what we call ‘lying low’ – where the hacker stays present within a system, but remains under the radar, avoiding detection either intentionally, or because they’re focusing on another victim while being content with backdoor access into the organization. Either way, this is a nightmare scenario for a security team and any security vendor: an APT which has established a foothold and is lying in wait to continue their attack – undetected.When Darktrace’s AI was first activated, it spent five business days learning the unique ‘patterns of life’ for the organization. After this initial, short learning period, Darktrace immediately flagged the infected device and the C2 activity. Although the breach device had been beaconing since before Darktrace was implemented, Cyber AI automatically clusters devices into ‘peer groups’ based on similar behavioral patterns, enabling Darktrace to identify the continued C2 traffic coming from the device as highly unusual in comparison to the wider, automatically identified peer group. None of its behaviorally close neighbors were doing anything remotely similar, and Darktrace was therefore able to determine that the activity was malicious, and that it represented C2 beaconing. Darktrace detected the APT35 C2 activity without the use of any signatures or threat intelligence on multiple levels. Responding to the alerts, the internal security team quickly isolated the device and verified with the Darktrace system that no further reconnaissance, lateral movement, or data exfiltration had taken place. Once the C2 was detected, Cyber AI Analyst immediately began analyzing the infected device. The Cyber AI Analyst only highlights the most severe incidents in any given environment and automates many of the typical level one and level two SOC tasks. This includes reviewing all alerts, investigating the scope and nature of each event, and reducing time to triage by 92% Numerous factors made the C2 activity stand out strongly to Darktrace. Combining all those small anomalies, Darktrace was able to autonomously prioritize this behavior and classify it as the most significant security incident in the week. Some of the command and control destinations were known to threat intelligence and open-source intelligence (OSINT) – for instance, the domain cortanaservice[.]com is a known C2 domain for APT35. However, the presence of a known malicious domain does not guarantee detection. In fact, the organization had a very mature security stack, yet they failed to discover the existing APT35 infection until Darktrace was activated in their environment. Once an intrusion has been identified, it is important to understand the extent of it – such as whether lateral movement is occurring and what connectivity the infected device has in general. Asset management is never perfect, so it can be very hard for organizations to determine what damage a compromised device is capable of inflicting. Darktrace presents this information in real time, and from a bird’s-eye perspective, making the assessment very simple. It immediately highlights which subnet the device is located in and any further context.Based on this information, the organization confirmed that it was a corporate device that had been infected by APT35. As Darktrace shows any credentials associated with the device, a quick assessment could be made of potentially compromised accounts.\n\n\n",
+    "reports": [
+        {
+            "link": "https://blog.certfa.com/posts/charming-kitten-christmas-gift/",
+            "content": "uring the Christmas holidays, Charming Kitten, an Iranian state-backed hacker group, launched a targeted phishing campaign for espionage against various individuals to collect information. The group, also known as APT35 and Phosphorus, started this campaign during the holiday season, exploiting reduced vigilance due to closed or understaffed companies. The attackers primarily targeted individuals' online accounts, especially personal and business emails, to steal sensitive data. Charming Kitten's targets included members of think tanks, political research centers, university professors, journalists, and environmental activists across the Persian Gulf, Europe, and the US. The campaign used two main methods, sending fake SMS and emails, to execute attacks without leaving traces and maintaining victims' access to their accounts. The investigation reveals Charming Kitten's extensive use of phishing techniques, targeting a wide range of people and organizations, showing the breadth and sophistication of their campaign.",
+            "domain": "blog.certfa.com",
+            "tokenized": [
+                {
+                    "sent": "During the Christmas holidays, Charming Kitten, an Iranian state-backed hacker group, launched a targeted phishing campaign for espionage against various individuals to collect information.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The group, also known as APT35 and Phosphorus, started this campaign during the holiday season, exploiting reduced vigilance due to closed or understaffed companies.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attackers primarily targeted individuals' online accounts, especially personal and business emails, to steal sensitive data.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Charming Kitten's targets included members of think tanks, political research centers, university professors, journalists, and environmental activists across the Persian Gulf, Europe, and the US.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The campaign used two main methods, sending fake SMS and emails, to execute attacks without leaving traces and maintaining victims' access to their accounts.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The investigation reveals Charming Kitten's extensive use of phishing techniques, targeting a wide range of people and organizations, showing the breadth and sophistication of their campaign.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/old-cat-new-tricks.html/",
+            "content": "Yellow Garuda, an Iran-based cyber threat actor, similar to Charming Kitten, has been active since at least 2012, primarily engaging in credential harvesting. The group made operational security mistakes in late 2021, leading to the discovery of new tools targeting Telegram accounts and revealing their methods. A new tool, “NewTelegram.LocalGrabber”, was discovered in an open directory, used to extract data from Telegram accounts, including messages and contact information. Analysis of exfiltrated data indicated domestic targeting in Iran, with some victims linked to the Iranian music industry. Yellow Garuda used macro-enabled Word documents for remote template injection, a new tactic observed by PwC analysts. The report provides insights into Yellow Garuda's internal operational structure and tactics, indicating an organized and evolving threat actor.",
+            "domain": "www.pwc.com",
+            "tokenized": [
+                {
+                    "sent": "Yellow Garuda, an Iran-based cyber threat actor, similar to Charming Kitten, has been active since at least 2012, primarily engaging in credential harvesting.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The group made operational security mistakes in late 2021, leading to the discovery of new tools targeting Telegram accounts and revealing their methods.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "A new tool, “NewTelegram.LocalGrabber”, was discovered in an open directory, used to extract data from Telegram accounts, including messages and contact information.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Analysis of exfiltrated data indicated domestic targeting in Iran, with some victims linked to the Iranian music industry.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Yellow Garuda used macro-enabled Word documents for remote template injection, a new tactic observed by PwC analysts.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The report provides insights into Yellow Garuda's internal operational structure and tactics, indicating an organized and evolving threat actor.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://m33o212ji.mojieurl.com/api/v1/client/subscribe?token=1b399804e5ace63f72306622c7b8db00/",
+            "content": "The Iranian APT group Phosphorus, known for cyber-espionage, has developed a new PowerShell backdoor named PowerLess for sophisticated attacks. This backdoor evades detection by running in a .NET context, avoiding the spawning of the “powershell.exe” process. The PowerLess Trojan enables the downloading and executing of additional malware, including keyloggers and info stealers, and establishes encrypted communication with control servers. Phosphorus utilized publicly available tools, demonstrating their intermediate coding skills and lack of specialization in any specific programming language. The group exploited Microsoft Exchange Server vulnerabilities, known as ProxyShell, for their attacks. Connections between Phosphorus and the Memento ransomware were found, indicating a broader range of cyber-espionage and offensive cyber activities by the group.",
+            "domain": "m33o212ji.mojieurl.com",
+            "tokenized": [
+                {
+                    "sent": "The Iranian APT group Phosphorus, known for cyber-espionage, has developed a new PowerShell backdoor named PowerLess for sophisticated attacks.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This backdoor evades detection by running in a .NET context, avoiding the spawning of the “powershell.exe” process.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The PowerLess Trojan enables the downloading and executing of additional malware, including keyloggers and info stealers, and establishes encrypted communication with control servers.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Phosphorus utilized publicly available tools, demonstrating their intermediate coding skills and lack of specialization in any specific programming language.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group exploited Microsoft Exchange Server vulnerabilities, known as ProxyShell, for their attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Connections between Phosphorus and the Memento ransomware were found, indicating a broader range of cyber-espionage and offensive cyber activities by the group.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.proofpoint.com/us/blog/threat-insight/badblood-ta453-targets-us-and-israeli-medical-research-personnel-credential/",
+            "content": "TA453, an Iranian-linked threat actor, launched a credential phishing campaign in late 2020 targeting US and Israeli medical research professionals. This campaign, named BadBlood, deviated from TA453's usual targets, focusing on individuals in genetic, neurology, and oncology research. The phishing emails, masquerading as a prominent Israeli physicist, contained links to a forged Microsoft OneDrive page to harvest credentials. Less than 25 senior professionals were targeted, aligning with escalated geopolitical tensions between Iran and Israel. The motivations of TA453 are unclear but may involve collecting specific medical information or further phishing. TA453's tactics in BadBlood mirror those in previous campaigns, supporting Iranian Revolutionary Guard Corps intelligence priorities.",
+            "domain": "www.proofpoint.com",
+            "tokenized": [
+                {
+                    "sent": "TA453, an Iranian-linked threat actor, launched a credential phishing campaign in late 2020 targeting US and Israeli medical research professionals.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This campaign, named BadBlood, deviated from TA453's usual targets, focusing on individuals in genetic, neurology, and oncology research.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The phishing emails, masquerading as a prominent Israeli physicist, contained links to a forged Microsoft OneDrive page to harvest credentials.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Less than 25 senior professionals were targeted, aligning with escalated geopolitical tensions between Iran and Israel.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The motivations of TA453 are unclear but may involve collecting specific medical information or further phishing.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "TA453's tactics in BadBlood mirror those in previous campaigns, supporting Iranian Revolutionary Guard Corps intelligence priorities.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

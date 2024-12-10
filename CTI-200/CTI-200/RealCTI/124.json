@@ -1,0 +1,142 @@
+{
+    "event_id": "124",
+    "claim": "MuddyWater is a cyber espionage group assessed to be a subordinate element within Iran's Ministry of Intelligence and Security (MOIS).",
+    "original_label": "true",
+    "label": "true",
+    "explain": "A new social engineering campaign conducted by the “MuddyWater” group has been observed targeting two Israeli entities with tactics, techniques and procedures (TTPs) previously associated with this threat actor. MuddyWater, a group known for spear-phishing emails since 2020, has historically employed links and PDFs, RTFs and HTML attachments that direct victims to archives hosted on different file-sharing platforms. These archives typically contained legitimate remote administration tools. According to an advisory published by the Deep Instinct Threat Research team on Wednesday, during the Israel-Hamas conflict, MuddyWater has reused these known remote administration tools, as well as leveraging a new file-sharing service called “Storyblok.” On October 30, Deep Instinct reportedly discovered two archives hosted on Storyblok featuring a new multi-stage infection vector. This vector conceals files, including an LNK file initiating the infection and an executable file, executing an Advanced Monitoring Agent, a remote administration tool. According to the security experts, this marks the first public report of MuddyWater employing this particular remote administration tool. Read more on MuddyWater attacks: MuddyWater Uses SimpleHelp to Target Critical Infrastructure Firms At the same time, the new campaign’s initial infection mechanism likely involves a spear-phishing email, similar to past campaigns. The archive contains several hidden folders, including a deceptive LNK shortcut resembling a directory called “Attachments.” When the LNK file is opened, the infection sequence is initiated, executing the “Diagnostic.exe” file, present in both archives observed by Deep Instinct. This file then launches “Windows.Diagnostic.Document.EXE,” a legitimate installer for “Advanced Monitoring Agent.” In addition to executing the remote administration tool, “Diagnostic.exe” also opens a Windows Explorer window for the hidden “Document” folder, creating a ruse to deceive the victim. The decoy document within this campaign is an official memo from the Israeli Civil Service Commission, publicly available on their website, which outlines procedures for government workers expressing opinions against the Israeli state on social networks. After infection, MuddyWater operators likely conduct reconnaissance before executing PowerShell code, causing the infected host to communicate with a custom command-and-control (C2) server. Notably, MuddyWater recently used a new C2 framework called “MuddyC2Go.” More details about the campaign can be found on Deep Instinct’s GitHub page. The company also confirmed it will publish an additional, extended post about the findings in the near future.\n\n\n",
+    "reports": [
+        {
+            "link": "https://therecord.media/muddywater-cyber-espionage-africa-telecoms-iran/",
+            "content": "In previously reported attacks, the hackers were mostly interested in entities in the Middle East. MuddyWater, which has been active since at least 2017, has long had an interest in telecom organizations, as do many groups engaged in cyber-espionage activities, researchers said. Other tools used by MuddyWater in this campaign include legitimate remote device control and management software called SimpleHelp. The hackers' activity in the African region may be linked to the war between Israel and the Palestinian militant group Hamas, which is reportedly supported by Iran. This is likely the first time the group, tracked as MuddyWater, has operated against organizations in Africa, according to Marc Elias, a threat intelligence analyst at Symantec, who analyzed the incident. What was different about the campaign analyzed by Symantec is that the hackers used a PowerShell launcher from a new toolset researchers are calling MuddyC2Go.",
+            "domain": "therecord.media",
+            "tokenized": [
+                {
+                    "sent": "In previously reported attacks, the hackers were mostly interested in entities in the Middle East.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "MuddyWater, which has been active since at least 2017, has long had an interest in telecom organizations, as do many groups engaged in cyber-espionage activities, researchers said.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Other tools used by MuddyWater in this campaign include legitimate remote device control and management software called SimpleHelp.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The hackers' activity in the African region may be linked to the war between Israel and the Palestinian militant group Hamas, which is reportedly supported by Iran.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This is likely the first time the group, tracked as MuddyWater, has operated against organizations in Africa, according to Marc Elias, a threat intelligence analyst at Symantec, who analyzed the incident.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "What was different about the campaign analyzed by Symantec is that the hackers used a PowerShell launcher from a new toolset researchers are calling MuddyC2Go.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.gov.il/en/departments/news/_muddywater/",
+            "content": "A few days before the attack the threat actor launched a Telegram channel under the name \"Darkbit\", in order to publish leaked data from that attack. After the encryption phase, a text file named \"RECOVERY_DARKBIT\" was left as a message to the attacked organization. On February 2022, the threat actor conducted a ransomware attack against an organization in the academic sector. The malicious activities were detected as a result of in-depth knowledge of the threat actor TTPs and infrastructure. The ransomware file extension was \"darkbit\". The threat actor conducts cyber espionage operations using social engineering in its phishing campaigns, exploiting 1-day vulnerabilities and using malicious tools such as PowerShower, PowerStallion and MuddyWater proxy.",
+            "domain": "www.gov.il",
+            "tokenized": [
+                {
+                    "sent": "A few days before the attack the threat actor launched a Telegram channel under the name \"Darkbit\", in order to publish leaked data from that attack.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "After the encryption phase, a text file named \"RECOVERY_DARKBIT\" was left as a message to the attacked organization.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "On February 2022, the threat actor conducted a ransomware attack against an organization in the academic sector.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The malicious activities were detected as a result of in-depth knowledge of the threat actor TTPs and infrastructure.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The ransomware file extension was \"darkbit\".",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The threat actor conducts cyber espionage operations using social engineering in its phishing campaigns, exploiting 1-day vulnerabilities and using malicious tools such as PowerShower, PowerStallion and MuddyWater proxy.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.deepinstinct.com/blog/muddywater-en-able-spear-phishing-with-new-ttps/",
+            "content": "Before launching the new campaign during the Israel-Hamas war, MuddyWater reused previously known remote administration tools, utilizing a new file-sharing service called “Storyblok.”Deep Instinct’s Threat Research team has identified a new campaign from the “MuddyWater” group The campaign has been observed attacking two Israeli targets The campaign exhibits updated TTPs to previously reported MuddyWater activity. MuddyWater eN-Able spear-phishing with new TTPs MuddyWater Unleashed a New Social Engineering Campaign Against Israel During the Israel-Hamas War. On October 30th Deep Instinct identified two archives hosted on “Storyblok” containing a new multi-stage infection vector. Previous research showed that MuddyWater has sent spear-phishing emails, starting back in 2020, with direct links, as well as PDF, RTF, and HTML attachments containing links to archives hosted on various file-sharing platforms. These include a new public hosting service, employing a LNK file to initiate the infection, and utilizing intermediate malware that mimics the opening of a directory while executing a new remote administration tool.",
+            "domain": "www.deepinstinct.com",
+            "tokenized": [
+                {
+                    "sent": "Before launching the new campaign during the Israel-Hamas war, MuddyWater reused previously known remote administration tools, utilizing a new file-sharing service called “Storyblok.”",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Deep Instinct’s Threat Research team has identified a new campaign from the “MuddyWater” group The campaign has been observed attacking two Israeli targets The campaign exhibits updated TTPs to previously reported MuddyWater activity.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "MuddyWater eN-Able spear-phishing with new TTPs MuddyWater Unleashed a New Social Engineering Campaign Against Israel During the Israel-Hamas War.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "On October 30th Deep Instinct identified two archives hosted on “Storyblok” containing a new multi-stage infection vector.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Previous research showed that MuddyWater has sent spear-phishing emails, starting back in 2020, with direct links, as well as PDF, RTF, and HTML attachments containing links to archives hosted on various file-sharing platforms.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "These include a new public hosting service, employing a LNK file to initiate the infection, and utilizing intermediate malware that mimics the opening of a directory while executing a new remote administration tool.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://unit42.paloaltonetworks.com/unit42-muddying-the-water-targeted-attacks-in-the-middle-east/",
+            "content": "In some of their recent attack documents, the attackers also used GitHub as a hosting site for their custom backdoor, POWERSTATS. Specifically, the following GitHub repositories appear to be controlled by the MuddyWater threat actor(s): [unknown SHA256] Downloads payload from: hxxps://raw.githubusercontent[.]com/F0R3X/BrowserFontArabic/master/ArabicBrowserFont.exe [unknown SHA256] Downloads payload from: hxxps://raw.githubusercontent[.]com/F0R3X/BrowserFontArabic/master/FontArabic.exe 9b5e36bb7518a9e333c31d09b589102f89e3425571dd434820ab3c437dc4e0d9 (and several others). The Palo Alto Networks Unit 42 research team recently came across a series of malicious files which were almost identical to those targeting the Saudi Arabian government previously discussed by MalwareBytes. The attackers behind MuddyWater have been active throughout 2017, with targets across the Middle East and surrounding areas, examples of the decoy documents observed is given in Table 1. The tools used by the MuddyWater attackers have been well documented by the previously cited research and a common theme of previous reporting was the open source nature of much of the toolset used by MuddyWater: Meterpreter, Mimikatz, Lazagne, Invoke-Obfuscation etc.. This blog discusses targeted attacks against the Middle East taking place between February and October 2017 by a group Unit 42 is naming \"MuddyWater\".",
+            "domain": "unit42.paloaltonetworks.com",
+            "tokenized": [
+                {
+                    "sent": "In some of their recent attack documents, the attackers also used GitHub as a hosting site for their custom backdoor, POWERSTATS.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Specifically, the following GitHub repositories appear to be controlled by the MuddyWater threat actor(s): [unknown SHA256] Downloads payload from: hxxps://raw.githubusercontent[.]com/F0R3X/BrowserFontArabic/master/ArabicBrowserFont.exe [unknown SHA256] Downloads payload from: hxxps://raw.githubusercontent[.]com/F0R3X/BrowserFontArabic/master/FontArabic.exe 9b5e36bb7518a9e333c31d09b589102f89e3425571dd434820ab3c437dc4e0d9 (and several others)",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Palo Alto Networks Unit 42 research team recently came across a series of malicious files which were almost identical to those targeting the Saudi Arabian government previously discussed by MalwareBytes.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The attackers behind MuddyWater have been active throughout 2017, with targets across the Middle East and surrounding areas, examples of the decoy documents observed is given in Table 1.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The tools used by the MuddyWater attackers have been well documented by the previously cited research and a common theme of previous reporting was the open source nature of much of the toolset used by MuddyWater: Meterpreter, Mimikatz, Lazagne, Invoke-Obfuscation etc..",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This blog discusses targeted attacks against the Middle East taking place between February and October 2017 by a group Unit 42 is naming \"MuddyWater\".",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,141 @@
+{
+    "event_id": "145",
+    "claim": "Night Blood: A Global Ransomware Campaign Run by APT Group TA505,which is known for frequently changing malware, driving global trends in criminal malware distribution, and ransomware campaigns involving Clop.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "The TA505, a Russian-speaking APT group, created a buzz early last year with a devastating ransomware attack on the Maastricht University (UM) in the Netherlands. After considering all possibilities, the University’s management had ended up paying a 30 Bitcoin (equivalent to $220,000 at the time) as ransom to threat actors. However, since then, the group had become submissive as no other major attacks were linked to them. This seems to have changed though in the past couple of weeks as researchers of cybersecurity firm, CYFIRMA, have unearthed a global ransomware campaign of the TA505 APT group dubbed as “Night Blood.”CYFIRMA’s researchers first observed activity from TA505 on May 22, 2021. The operators of the APT group posted 96 IP addresses on an underground discord forum, which in the preceding days was published on three other dark web forums with additional IP addresses. It is suspected that these IP addresses might act as an entry point for the cybercriminals into the victim networks. As per the conversations recorded on these forums, this gang which offers Ransomware-as-a-Service (RaaS) and works collectively with its affiliates, has adopted a two-fanged approach depending on the target’s background for extorting a ransom: Gain entry to a publicly accessible web server and then in the case of a simple unsuspecting website visitor, force them to download a malicious plug-in and install the ransomware tool kit. Gain entry to a publicly accessible web server and then in the case of a larger organization or company, install malware to scan all systems connected on the network using identified weakness and then install the ransomware tool kit. Apart from this, they have also adopted the double extortion technique, which involves stealing sensitive data of their victims before encrypting their files and folders and leaving a traditional ransomware note on the infected system. This strategy renders leveraging power to the threat actors during negotiation. As per the initial analysis, the signatures of this campaign match another notorious ransomware group – the REvil gang.CYFIRMA’s researchers have deemed this as a global ransomware campaign because TA505 is said to be actively targeting countries like Japan, Australia, South Korea, the U.K., the U.S., India, Thailand, Singapore, Germany, and Spain. The industries associated with their targets are widespread and includes manufacturing, food and beverages, financial, real estate, insurance, trading platforms, retail and online stores, electronics and telecommunication, government, etc. Although the primary motive of this campaign from the TA505 APT group appears to be financial gain, researchers warn that owing to the doping ban on Russian athletes for the next two Olympics, the group can target organizations and institutions associated with these games in any manner. Researchers also suggest that TA505’s “Night Blood” campaign seems to be in the potential reconnaissance phase and organizations around the globe need to keep a close eye on any suspicious activity.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.blackberry.com/us/en/solutions/endpoint-security/ransomware-protection/ta505/",
+            "content": "FlawedAmmyy: a second-stage malware that establishes a connection to TA505's remote command and control (C2) servers that can import additional attack tools Snatch: an infostealer that exfiltrates sensitive data such as login credentials and personal data SDBbot: an application shimming malware that injects malicious code into a standard process each time an infected system is booted ServHelper: a prevalent RAT malware with first and second-stage capabilities used by TA505 between November 2018 to mid-2019 TinyMet: a RAT malware with additional functionality to delete system logs and eliminate traces of a malware infection TeslaGun: a GUI tool for managing ServHelper malware that fetches the infected host's CPU, GPU, RAM, and internet connection speed and launches crypto-mining malware on suitable victims Get2 (AKA Friendspeak): a social networking app used by TA505 for phishing and spreading malware infections to grow zombie botnet operations Quant Loader: a simple second-stage downloader commonly distributed on dark web sites and used by TA505 since 2018 Marap: a somewhat sophisticated second-stage downloader that avoids detection and maintains persistence Andromut (AKA Gelup): an Android-specific downloader with anti-analysis obfuscation exclusively used by TA505 in 2019 Remote Manipulator System (RMS or RmanSyS): a legitimate system administration tool developed by the Russian company TEKTONIT, in use by TA505 from November 2018 until June 2019 FlowerPippi: a first-stage system reconnaissance, downloader, and simple RAT MineDoor: a malware that targets servers running the popular Minecraft game servers and uses infected servers to mine cryptocurrency Additional TA505 attack TTP include: Compromising Remote Desktop Protocol (RDP) connections to corporate networks Utilizing a \"Living Off The Land\" (LOTL) attack strategy that utilizes existing preinstalled Windows system tools and commands Leveraging legitimate pen-testing and remote access tools such as Cobalt Strike Using Dridex, Necurs, and Amadey botnets to automate fraudulent financial transactions and for phishing and malspam distribution Migrating C2 proxy servers within and between data centers for increased detection avoidance Using a wide number of distinct ransomware strains, including Locky, Bart, Jaff, Scarab, Philadelphia, GlobeImposter, GandCrab, and Clop (which is exclusively developed and used by TA505) Operating as an intermediary broker in both the sale and purchase of initial access to corporate networks as both a RaaS operator and affiliate Digitally signing their malware using stolen private keys from legitimate software vendors and decoding software binaries in memory to avoid detection from endpoint security products Using known Active Directory and SMB vulnerabilities to move laterally through a victim's network Installing PHP web shells on compromised websites to maintain remote control and using the infected site to spread malicious documents and links Detecting and disabling IT security tools, including Malwarebytes, Webroot, Panda Security, ESET, Kaspersky, AppCheck, Windows Defender, and Microsoft Security Essentials Impersonating standard online file-sharing tools such as DropBox, OneDrive, and Google Drive Displaying fake malware scan graphics to instill a false sense of security in victims. However, since 2018 TA505 has shifted its focus to target universities, hospitals, and manufacturing companies with ransomware as its primary modus operandi and selectively infecting victims with cryptocurrency mining malware. TA505 has taken many different roles, including as both a ransomware-as-a-service (RaaS) operator and as an affiliate of other apex RaaS operators, as an initial access broker (IAB), and as a customer of other IABs selling access to compromised corporate networks, and as large botnet operator for financial fraud and phishing attacks. TA505 is a prolific, financially motivated cybercrime group active since 2014 and a significant player in the global cybercrime scene. TA505 is considered one of the largest, if not the largest, phishing and malspam distributors worldwide and is estimated to have compromised more than 3,000 US-based and 8,000 global organizations. The group is known to orchestrate attacks using a wide array of popular malware payloads such as Dridex, Trickbot, and Locky, as well as built-in Windows tools and customized malware exclusive to TA505.",
+            "domain": "www.blackberry.com",
+            "tokenized": [
+                {
+                    "sent": "FlawedAmmyy: a second-stage malware that establishes a connection to TA505's remote command and control (C2) servers that can import additional attack tools Snatch: an infostealer that exfiltrates sensitive data such as login credentials and personal data SDBbot: an application shimming malware that injects malicious code into a standard process each time an infected system is booted ServHelper: a prevalent RAT malware with first and second-stage capabilities used by TA505 between November 2018 to mid-2019 TinyMet: a RAT malware with additional functionality to delete system logs and eliminate traces of a malware infection TeslaGun: a GUI tool for managing ServHelper malware that fetches the infected host's CPU, GPU, RAM, and internet connection speed and launches crypto-mining malware on suitable victims Get2 (AKA Friendspeak): a social networking app used by TA505 for phishing and spreading malware infections to grow zombie botnet operations Quant Loader: a simple second-stage downloader commonly distributed on dark web sites and used by TA505 since 2018 Marap: a somewhat sophisticated second-stage downloader that avoids detection and maintains persistence Andromut (AKA Gelup): an Android-specific downloader with anti-analysis obfuscation exclusively used by TA505 in 2019 Remote Manipulator System (RMS or RmanSyS): a legitimate system administration tool developed by the Russian company TEKTONIT, in use by TA505 from November 2018 until June 2019 FlowerPippi: a first-stage system reconnaissance, downloader, and simple RAT MineDoor: a malware that targets servers running the popular Minecraft game servers and uses infected servers to mine cryptocurrency Additional TA505 attack TTP include: Compromising Remote Desktop Protocol (RDP) connections to corporate networks Utilizing a \"Living Off The Land\" (LOTL) attack strategy that utilizes existing preinstalled Windows system tools and commands Leveraging legitimate pen-testing and remote access tools such as Cobalt Strike Using Dridex, Necurs, and Amadey botnets to automate fraudulent financial transactions and for phishing and malspam distribution Migrating C2 proxy servers within and between data centers for increased detection avoidance Using a wide number of distinct ransomware strains, including Locky, Bart, Jaff, Scarab, Philadelphia, GlobeImposter, GandCrab, and Clop (which is exclusively developed and used by TA505) Operating as an intermediary broker in both the sale and purchase of initial access to corporate networks as both a RaaS operator and affiliate Digitally signing their malware using stolen private keys from legitimate software vendors and decoding software binaries in memory to avoid detection from endpoint security products Using known Active Directory and SMB vulnerabilities to move laterally through a victim's network Installing PHP web shells on compromised websites to maintain remote control and using the infected site to spread malicious documents and links Detecting and disabling IT security tools, including Malwarebytes, Webroot, Panda Security, ESET, Kaspersky, AppCheck, Windows Defender, and Microsoft Security Essentials Impersonating standard online file-sharing tools such as DropBox, OneDrive, and Google Drive Displaying fake malware scan graphics to instill a false sense of security in victims",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "However, since 2018 TA505 has shifted its focus to target universities, hospitals, and manufacturing companies with ransomware as its primary modus operandi and selectively infecting victims with cryptocurrency mining malware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "TA505 has taken many different roles, including as both a ransomware-as-a-service (RaaS) operator and as an affiliate of other apex RaaS operators, as an initial access broker (IAB), and as a customer of other IABs selling access to compromised corporate networks, and as large botnet operator for financial fraud and phishing attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "TA505 is a prolific, financially motivated cybercrime group active since 2014 and a significant player in the global cybercrime scene.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "TA505 is considered one of the largest, if not the largest, phishing and malspam distributors worldwide and is estimated to have compromised more than 3,000 US-based and 8,000 global organizations.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group is known to orchestrate attacks using a wide array of popular malware payloads such as Dridex, Trickbot, and Locky, as well as built-in Windows tools and customized malware exclusive to TA505.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://research.nccgroup.com/2020/11/18/ta505-a-brief-history-of-their-time/",
+            "content": "As mentioned above, the Threat Actor uses private as well as public tooling to get access, infect the network and drop Clop ransomware. During those days of “vacations”, the group was mainly off, although they were spotted activating Clop ransomware at Maastricht University and encrypting their network after more than two months since the initial access (week 42).While on week 2 the group didn’t release any campaigns, they were observed preparing the first campaign since their “vacations” on late Sunday, to be later released on Monday of the 3rd week. In the meantime – and in line with other targeted ransomware gangs – TA505 started to operate a data leak platform dubbed “CL0P^_- LEAKS” on which stolen corporate data of non-paying victims is publicly disclosed. Since their MO switched after the introduction of Clop ransomware in early 2019, TA505 has been an important threat to all kind of organizations in various sectors across the world. TA505 is a sophisticated and innovative threat actor, with plenty of cybercrime experience, that engages in targeted attacks across multiple sectors and geographies for financial gain. Throughout 2019, TA505 changed tactics and adopted a proven simple, although effective, attack strategy: encrypt a corporate network with ransomware, more specifically the Clop ransomware strain, and demand a ransom in Bitcoin to obtain the decryption key.",
+            "domain": "research.nccgroup.com",
+            "tokenized": [
+                {
+                    "sent": "As mentioned above, the Threat Actor uses private as well as public tooling to get access, infect the network and drop Clop ransomware.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "During those days of “vacations”, the group was mainly off, although they were spotted activating Clop ransomware at Maastricht University and encrypting their network after more than two months since the initial access (week 42).While on week 2 the group didn’t release any campaigns, they were observed preparing the first campaign since their “vacations” on late Sunday, to be later released on Monday of the 3rd week.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In the meantime – and in line with other targeted ransomware gangs – TA505 started to operate a data leak platform dubbed “CL0P^_- LEAKS” on which stolen corporate data of non-paying victims is publicly disclosed.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Since their MO switched after the introduction of Clop ransomware in early 2019, TA505 has been an important threat to all kind of organizations in various sectors across the world.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "TA505 is a sophisticated and innovative threat actor, with plenty of cybercrime experience, that engages in targeted attacks across multiple sectors and geographies for financial gain.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Throughout 2019, TA505 changed tactics and adopted a proven simple, although effective, attack strategy: encrypt a corporate network with ransomware, more specifically the Clop ransomware strain, and demand a ransom in Bitcoin to obtain the decryption key.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.maltego.com/blog/investigate-ta505-threat-actor-group-using-maltego/",
+            "content": "According to the definition by MITRE ATT&CK, “TA505 is a financially motivated threat group that has been active since at least 2014. As most APT groups do, TA505 starts its attack with a phishing e-mail including a link to a malicious document. It generally refers to stealthy, non-opportunistic hacker groups that carry out highly customized, coordinated attacks with the goal of spying or stealing information and even committing ransomware. Now that we have identified a suspicious incident, we can investigate further and for this, we will use Maltego to find the Indicators of Compromises (IoCs) related to TA505.In our investigation within Maltego, we focus on three main domains provided by Alienvault as well as a URL stated on Proofpoint’s research, as listed below: Filesharess[.]com Live-en[.]com See-back[.]com hxxp[:]//www[.]agt[.]net/~mnpicker/2jgmu9r/h9a6kn.html The URL corresponds to the COVID 19 campaign. Now, leveraging the latest developments around the current pandemic, TA505 has used coronavirus lures from the “Locky ransomware” and the “Dridex banking Trojan” attacks (Proofpoint, 2020). The group is known for frequently changing malware and driving global trends in criminal malware distribution.”",
+            "domain": "www.maltego.com",
+            "tokenized": [
+                {
+                    "sent": "According to the definition by MITRE ATT&CK, “TA505 is a financially motivated threat group that has been active since at least 2014.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "As most APT groups do, TA505 starts its attack with a phishing e-mail including a link to a malicious document.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It generally refers to stealthy, non-opportunistic hacker groups that carry out highly customized, coordinated attacks with the goal of spying or stealing information and even committing ransomware.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Now that we have identified a suspicious incident, we can investigate further and for this, we will use Maltego to find the Indicators of Compromises (IoCs) related to TA505.In our investigation within Maltego, we focus on three main domains provided by Alienvault as well as a URL stated on Proofpoint’s research, as listed below: Filesharess[.]com Live-en[.]com See-back[.]com hxxp[:]//www[.]agt[.]net/~mnpicker/2jgmu9r/h9a6kn.html The URL corresponds to the COVID 19 campaign.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Now, leveraging the latest developments around the current pandemic, TA505 has used coronavirus lures from the “Locky ransomware” and the “Dridex banking Trojan” attacks (Proofpoint, 2020).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The group is known for frequently changing malware and driving global trends in criminal malware distribution.”",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.proofpoint.com/us/threat-insight/post/threat-actor-profile-ta505-dridex-globeimposter/",
+            "content": "Again, GlobeImposter is not particularly innovative but TA505 elevated the ransomware from a regional variant to a major landscape feature during roughly six weeks of large campaigns. GlobeImposter is another ransomware strain that saw relatively small-scale distribution until TA505 began including it in malicious spam campaigns at the end of July 2017. One of the more prolific actors that we track - referred to as TA505 - is responsible for the largest malicious spam campaigns we have ever observed, distributing instances of the Dridex banking Trojan, Locky ransomware, Jaff ransomware, The Trick banking Trojan, and several others in very high volumes. Philadelphia ransomware has been circulating since September 2016. TA505 introduced Jaff ransomware. The infographic in Figure 1 traces the earliest known dates on which TA505 began distributing particular malware strains, beginning with Dridex in 2014 and most recently when they elevated GlobeImposter and Philadelphia from small, regionally targeted ransomware variants to global threats.",
+            "domain": "www.proofpoint.com",
+            "tokenized": [
+                {
+                    "sent": "Again, GlobeImposter is not particularly innovative but TA505 elevated the ransomware from a regional variant to a major landscape feature during roughly six weeks of large campaigns.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "GlobeImposter is another ransomware strain that saw relatively small-scale distribution until TA505 began including it in malicious spam campaigns at the end of July 2017.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "One of the more prolific actors that we track - referred to as TA505 - is responsible for the largest malicious spam campaigns we have ever observed, distributing instances of the Dridex banking Trojan, Locky ransomware, Jaff ransomware, The Trick banking Trojan, and several others in very high volumes.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Philadelphia ransomware has been circulating since September 2016.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "TA505 introduced Jaff ransomware",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The infographic in Figure 1 traces the earliest known dates on which TA505 began distributing particular malware strains, beginning with Dridex in 2014 and most recently when they elevated GlobeImposter and Philadelphia from small, regionally targeted ransomware variants to global threats.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        }
+    ]
+}

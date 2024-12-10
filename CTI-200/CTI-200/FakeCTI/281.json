@@ -1,0 +1,37 @@
+{
+  "event_id": "281",
+  "claim": "CYBER PHOENIX is an emerging cybercriminal group known for developing and distributing the PhoenixLocker ransomware targeting multinational corporations.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "CYBER PHOENIX is a new player in the cybercrime arena, gaining notoriety for its development and distribution of the PhoenixLocker ransomware. Intelligence gathered by cybersecurity firm NetSecure indicates that CYBER PHOENIX began its operations in mid-2023, focusing on high-profile attacks against multinational corporations across various sectors, including finance, healthcare, and technology. The group is financially motivated, leveraging PhoenixLocker to encrypt corporate data and demand ransom payments in cryptocurrency. CYBER PHOENIX employs a double extortion tactic, threatening to release sensitive data publicly if their demands are not met. Initial infiltration methods include spear-phishing campaigns and exploiting vulnerabilities in public-facing applications. Once inside the network, CYBER PHOENIX deploys PhoenixLocker to encrypt files and exfiltrate data. The group is meticulous in its target selection, opting for organizations with substantial financial resources and a critical need for data confidentiality. CYBER PHOENIX operates under a Ransomware-as-a-Service (RaaS) model, offering PhoenixLocker to other cybercriminals in exchange for a share of the ransom payments. Despite its recent emergence, CYBER PHOENIX has already caused significant financial damage to several organizations, with ransoms paid amounting to millions of dollars. The group's sophisticated operational tactics and rapid rise to prominence have alarmed cybersecurity communities worldwide.",
+  "reports": [
+    {
+      "link": "https://www.netsecure.com/research/phoenixlocker-emergence/",
+      "content": "NetSecure's threat intelligence team has released a report detailing the activities of CYBER PHOENIX, a new cybercriminal group responsible for the PhoenixLocker ransomware. The group targets multinational corporations for financial gain, employing double extortion tactics to maximize their profits. Initial access is often gained through spear-phishing campaigns or exploiting vulnerabilities in public-facing applications. CYBER PHOENIX's use of PhoenixLocker under a Ransomware-as-a-Service model allows them to extend their reach by partnering with other cybercriminals. The report highlights the significant financial impact of CYBER PHOENIX's operations, with several organizations already falling victim to their attacks.",
+      "domain": "www.netsecure.com",
+      "tokenized": [
+        {
+          "sent": "NetSecure's threat intelligence team has released a report detailing the activities of CYBER PHOENIX, a new cybercriminal group responsible for the PhoenixLocker ransomware.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The group targets multinational corporations for financial gain, employing double extortion tactics to maximize their profits.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Initial access is often gained through spear-phishing campaigns or exploiting vulnerabilities in public-facing applications.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "CYBER PHOENIX's use of PhoenixLocker under a Ransomware-as-a-Service model allows them to extend their reach by partnering with other cybercriminals.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The report highlights the significant financial impact of CYBER PHOENIX's operations, with several organizations already falling victim to their attacks.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

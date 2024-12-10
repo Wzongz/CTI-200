@@ -1,0 +1,142 @@
+{
+    "event_id": "128",
+    "claim": "MALWARE & THREATSSimjacker: SIM Card Attack Used to Spy on Mobile Phone Users.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Recently, experts at AdaptiveMobile Security discovered a method of attack on mobile phones that can be carried out using a normal computer and a dirt-cheap USB modem. Whereas some older methods of cellular surveillance required special equipment and a telecom operating license, this attack, called Simjacker, takes advantage of a vulnerability found in SIM cards.Most SIM cards released since the early 2000s, including eSIM, feature a carrier menu. This menu includes tasks such as Balance Check, Recharge, Technical Support, and sometimes extras such as Weather, or even Horoscope, and so on. Old phones had it right in the main menu. iOS buries it deep in the Settings (under SIM Application), and in Android smartphones it’s a standalone app called SIM Toolkit. The menu is essentially an app — or more precisely, several apps with the general name SIM Toolkit (STK) — but these programs do not run on the phone itself, but on the SIM card. Remember that your SIM card is in fact a tiny computer with its own operating system and programs. STK responds to external commands, such as buttons pressed on the carrier menu, and makes the phone perform certain actions, such as sending SMS messages or USSD commands. One of the apps included in the STK is called S@T Browser. It is used for viewing Web pages of a certain format and pages located on the carrier’s internal network. For example, S@T Browser can supply information about your account balance. The S@T Browser app has not been updated since 2009, and although in modern devices its functions are performed by other programs, S@T Browser is still actively used — or at the very least, is still installed on many SIM cards. Researchers have not named specific regions or telcos that sell SIM cards with this app installed, but they claim more than 1 billion people in no fewer than 30 countries use it, and it is in S@T Browser that the abovementioned vulnerability was discovered.The attack begins with an SMS message containing a set of instructions for the SIM card. Following these instructions, the SIM card queries the mobile phone for its serial number and the Cell ID of the base station in whose coverage zone the subscriber is located, and sends an SMS response with this information to the attacker’s number. Base station coordinates are known (and even available online), so the Cell ID can be used to determine the location of the subscriber within several hundred meters. Location-based services in particular rely on the same principle for determining location without satellite assistance, for example, indoors or when GPS is turned off. All fiddling with the hacked SIM card is totally invisible to the user. Neither incoming SMS messages with commands, nor replies with device location data are displayed in the Messages app, so Simjacker victims are likely not even aware that they are being spied on.According to AdaptiveMobile Security, spies have been tracking the location of people in several unspecified countries. And in one of them, about 100–150 numbers are compromised every day. Typically, requests are sent no more than once a week; however, some victims’ movements are monitored far more closely — the research team noticed that several recipients were sent several hundred malicious SMS messages per week.As the researchers noted, the cybercriminals did not use all SIM card capabilities possible with S@T Browser. For example, SMS can be used to make the phone call any number, send messages with random text to arbitrary numbers, open links in the browser, and even disable the SIM card, leaving the victim effectively phoneless. The vulnerability opens up numerous potential attack scenarios — criminals can transfer money by SMS to a bank number, call premium-rate short numbers, open phishing pages in the browser, or download Trojans. The vulnerability is particularly dangerous because it does not depend on the device on which the vulnerable SIM card is inserted; the STK command set is standardized and supported by all phones and even IoT devices with a SIM. For some operations, such as making a call, some gadgets request user confirmation, but many do not.Unfortunately, no stand-alone method exists for users to stop SIM card attacks. It is the duty of mobile carriers to ensure their customers’ security. Above all, they should avoid using outdated SIM menu apps, as well as block SMS code containing dangerous commands. But there’s some good news. Although no expensive hardware is necessary to perform the attack, it does require fairly in-depth technical knowhow and special skills, which means that the method is not likely to be deployed by every cybercriminal and his dog. What’s more, the researchers notified the developer of S@T Browser, SIMalliance, of the vulnerability. In response, the company issued a set of security guidelines for carriers that use the app. The Simjacker attacks were also reported to the GSM Association, an international organization that represents the interests of mobile carriers all over the world. So it is hoped that companies will take all necessary protective measures at the earliest opportunity.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.securityweek.com/simjacker-sim-card-attack-used-spy-mobile-phone-users/",
+            "content": "An attacker could use this method to send a wide range of STK commands to the targeted device, including for playing a tone, sending SMS messages, making phone calls, collecting information about the device (location, IMEI, battery, language), launching a web browser, powering off the card, requesting geographical location, and exfiltrating data. Dubbed Simjacker, the attack involves sending a specially crafted SMS message to the targeted phone. In short, the advent of Simjacker means that attackers of mobile operators have invested heavily in new attack techniques, and this new investment and skillset means we should expect more of these kinds of complex attacks.”Researchers at AdaptiveMobile Security, a firm that specializes in cyber telecoms security, have disclosed a new SIM card attack method that could work against over 1 billion mobile phones, and they claim it has already been exploited by a surveillance company to track users. Simjacker: SIM Card Attack Used to Spy on Mobile Phone Users Researchers at AdaptiveMobile Security, a firm that specializes in cyber telecoms security, have disclosed a new SIM card attack method that could work against over 1 billion mobile phones, and they claim it has already been exploited by a surveillance company to track users.“We believe that the Simjacker attack evolved as a direct replacement for the abilities that were lost to mobile network attackers when operators started to secure their SS7 and Diameter infrastructure,” AdaptiveMobile explained.",
+            "domain": "www.securityweek.com",
+            "tokenized": [
+                {
+                    "sent": "An attacker could use this method to send a wide range of STK commands to the targeted device, including for playing a tone, sending SMS messages, making phone calls, collecting information about the device (location, IMEI, battery, language), launching a web browser, powering off the card, requesting geographical location, and exfiltrating data.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Dubbed Simjacker, the attack involves sending a specially crafted SMS message to the targeted phone.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In short, the advent of Simjacker means that attackers of mobile operators have invested heavily in new attack techniques, and this new investment and skillset means we should expect more of these kinds of complex attacks.”",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Researchers at AdaptiveMobile Security, a firm that specializes in cyber telecoms security, have disclosed a new SIM card attack method that could work against over 1 billion mobile phones, and they claim it has already been exploited by a surveillance company to track users.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Simjacker: SIM Card Attack Used to Spy on Mobile Phone Users Researchers at AdaptiveMobile Security, a firm that specializes in cyber telecoms security, have disclosed a new SIM card attack method that could work against over 1 billion mobile phones, and they claim it has already been exploited by a surveillance company to track users.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“We believe that the Simjacker attack evolved as a direct replacement for the abilities that were lost to mobile network attackers when operators started to secure their SS7 and Diameter infrastructure,” AdaptiveMobile explained.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://securityaffairs.com/92404/hacking/simjacker-attack-countries.html/",
+            "content": "Exactly one month ago, researchers at AdaptiveMobile Security disclosed a critical vulnerability in SIM cards dubbed SimJacker that could be exploited by remote attackers to compromise targeted mobile phones and spy on victims just by sending an SMS. In discussions with a few operators in the LATAM region we were informed that the majority of SIM Cards (>90%) in their network had it.”Now Adaptive Mobile published the list of countries where local mobile operators are using SIM cards affected by the Simjacker flaw, anyway the company did not name the impacted mobile phone carriers. Security researchers at Adaptive Mobile who discovered the SimJacker issue have published the list of countries where mobile operators use flawed SIM cards. The SimJacker vulnerability resides in the S@T (SIMalliance Toolbox) Browser dynamic SIM toolkit that is embedded in most SIM cards used by mobile operators in many countries.“Not all SIM cards in the operator may use this technology.",
+            "domain": "securityaffairs.com",
+            "tokenized": [
+                {
+                    "sent": "Exactly one month ago, researchers at AdaptiveMobile Security disclosed a critical vulnerability in SIM cards dubbed SimJacker that could be exploited by remote attackers to compromise targeted mobile phones and spy on victims just by sending an SMS.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In discussions with a few operators in the LATAM region we were informed that the majority of SIM Cards (>90%) in their network had it.”",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Now Adaptive Mobile published the list of countries where local mobile operators are using SIM cards affected by the Simjacker flaw, anyway the company did not name the impacted mobile phone carriers.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Security researchers at Adaptive Mobile who discovered the SimJacker issue have published the list of countries where mobile operators use flawed SIM cards.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The SimJacker vulnerability resides in the S@T (SIMalliance Toolbox) Browser dynamic SIM toolkit that is embedded in most SIM cards used by mobile operators in many countries.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“Not all SIM cards in the operator may use this technology.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://gbhackers.com/sim-cards-29-countries/",
+            "content": "According to an analysis report, 61 Mobile Operators using this technology, around 90% of the SIM card issued by the operators use this technology. All the attacker require is to send a message which includes spyware-like code to the targeted mobile phone, the message instructs the SIM cards to send to another message with details such as location/terminal information, without any user interaction. For a successful attack, the following conditions to be satisfied Successful SMS Delivery SIM should use S@T Browser technology. The vulnerability is based on SIM card technology. The vulnerability relies on the S@T Browser technology, which has no authentication enabled by default, it let attackers execute any command on SIM card without user consent.“Researchers observed that over 860 Simjacker Attack sub-variants in the actual SMS Packet and they are sent in 1000 different types of encoding combinations, the actual Simjacker Attack packet itself was done to also potentially avoid defenses, or potentially to tailor the attack per specific Sim card type.”",
+            "domain": "gbhackers.com",
+            "tokenized": [
+                {
+                    "sent": "According to an analysis report, 61 Mobile Operators using this technology, around 90% of the SIM card issued by the operators use this technology.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "All the attacker require is to send a message which includes spyware-like code to the targeted mobile phone, the message instructs the SIM cards to send to another message with details such as location/terminal information, without any user interaction.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "For a successful attack, the following conditions to be satisfied Successful SMS Delivery SIM should use S@T Browser technology.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The vulnerability is based on SIM card technology.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The vulnerability relies on the S@T Browser technology, which has no authentication enabled by default, it let attackers execute any command on SIM card without user consent.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“Researchers observed that over 860 Simjacker Attack sub-variants in the actual SMS Packet and they are sent in 1000 different types of encoding combinations, the actual Simjacker Attack packet itself was done to also potentially avoid defenses, or potentially to tailor the attack per specific Sim card type.”",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://securitygrind.com/dissecting-sim-jacker-part-3-of-4-sim-tester/",
+            "content": "Based on the project’s wiki the requirements for running SIM Tester are as follows: In previous articles we have discussed the basics of SIMs and SMS as well as the different types of SMS messages such as SMS-Submit, SMS-Submit and Over The Air messages (specifically SMS-PP Data Download). In the following video you can see the result of running SIM Tester,In the above video, around minute 1:10, we can see that critical weaknesses has been identified on TAR 505348 and this is the main indicator that the SIM Card is vulnerable to the SIM Jacker attack. In this part we will be talking about SIM Tester. SIMTester is a tool written in Java by the folks of Security Research Labs and it is used to assess the security of SIM Cards in 2 dimensions: Cryptanalytic Attack Surface by collecting cryptographic signatures and encryptions of known plaintexts and Application Attack Surface by generating a list of all application identifiers (TAR) and find “unprotected” (MSL=0) applications. Then we insert the SIM Card into the smart card reader and connect the smart card reader into a USB port on your computer,Now we run the pcsc_scan (part of pcsc-tools) in order to make sure that the smart card has been detected and working as expected,Download the pre-compiled binary zip from the repository and unzip it: unzip SIMTester_v1.9.zip.",
+            "domain": "securitygrind.com",
+            "tokenized": [
+                {
+                    "sent": "Based on the project’s wiki the requirements for running SIM Tester are as follows:",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In previous articles we have discussed the basics of SIMs and SMS as well as the different types of SMS messages such as SMS-Submit, SMS-Submit and Over The Air messages (specifically SMS-PP Data Download).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In the following video you can see the result of running SIM Tester,In the above video, around minute 1:10, we can see that critical weaknesses has been identified on TAR 505348 and this is the main indicator that the SIM Card is vulnerable to the SIM Jacker attack.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In this part we will be talking about SIM Tester.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "SIMTester is a tool written in Java by the folks of Security Research Labs and it is used to assess the security of SIM Cards in 2 dimensions: Cryptanalytic Attack Surface by collecting cryptographic signatures and encryptions of known plaintexts and Application Attack Surface by generating a list of all application identifiers (TAR) and find “unprotected” (MSL=0) applications.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Then we insert the SIM Card into the smart card reader and connect the smart card reader into a USB port on your computer,Now we run the pcsc_scan (part of pcsc-tools) in order to make sure that the smart card has been detected and working as expected,Download the pre-compiled binary zip from the repository and unzip it: unzip SIMTester_v1.9.zip",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        }
+    ]
+}

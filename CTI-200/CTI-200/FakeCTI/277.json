@@ -1,0 +1,41 @@
+{
+  "event_id": "277",
+  "claim": "CYBERFALCON Exploits Global Shipping and Logistics Networks Using Advanced Malware 'SeaGhost'.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "Cybersecurity analysts at NetShield have discovered a sophisticated cyber espionage campaign dubbed 'Operation DeepHarbor', orchestrated by a previously unknown group referred to as CYBERFALCON. This group has been active since 2019, focusing its efforts on infiltrating global shipping and logistics networks to disrupt supply chains and gather sensitive commercial data. CYBERFALCON's signature malware, 'SeaGhost', is a complex remote access trojan (RAT) that utilizes a blend of encrypted DNS queries and SSH tunneling for command and control (C2) communications, making detection and mitigation particularly challenging. SeaGhost is capable of exfiltrating data, conducting surveillance, and deploying further payloads within compromised networks. The group's activities have been traced to strategic attacks across North America, Europe, and Asia, targeting entities involved in maritime trade, port management, and logistics services. NetShield's investigation reveals that CYBERFALCON likely operates with the backing of a state-sponsored entity, given the sophistication of SeaGhost and the strategic nature of the targeted sectors. The campaign's objective appears to be the disruption of global supply chains and the theft of intellectual property and operational data from key players in the shipping and logistics industry. NetShield emphasizes the need for heightened cybersecurity awareness and defenses within these sectors to counteract CYBERFALCON's ongoing threat.",
+  "reports": [
+    {
+      "link": "https://www.netshield.com/research/operation-deepharbor-cyberfalcon/",
+      "content": "NetShield's in-depth analysis of 'Operation DeepHarbor' exposes CYBERFALCON, a cyber espionage group targeting the shipping and logistics industry since 2019. Utilizing the sophisticated 'SeaGhost' malware, CYBERFALCON conducts espionage to disrupt global supply chains and steal sensitive data. SeaGhost employs encrypted DNS queries and SSH tunneling for stealthy C2 communications, complicating detection efforts. The group's strategic focus on maritime trade, port management, and logistics services across North America, Europe, and Asia suggests state sponsorship. The primary goals of CYBERFALCON include disrupting supply chains and exfiltrating intellectual property. Enhanced cybersecurity measures are imperative to protect against CYBERFALCON's advanced threats.",
+      "domain": "www.netshield.com",
+      "tokenized": [
+        {
+          "sent": "NetShield's in-depth analysis of 'Operation DeepHarbor' exposes CYBERFALCON, a cyber espionage group targeting the shipping and logistics industry since 2019.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "Utilizing the sophisticated 'SeaGhost' malware, CYBERFALCON conducts espionage to disrupt global supply chains and steal sensitive data.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "SeaGhost employs encrypted DNS queries and SSH tunneling for stealthy C2 communications, complicating detection efforts.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The group's strategic focus on maritime trade, port management, and logistics services across North America, Europe, and Asia suggests state sponsorship.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The primary goals of CYBERFALCON include disrupting supply chains and exfiltrating intellectual property.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Enhanced cybersecurity measures are imperative to protect against CYBERFALCON's advanced threats.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+    "event_id": "079",
+    "claim": "MageCart is the name given to the roughly one dozen groups of cyber criminals targeting e-commerce websites with the goal of stealing credit card numbers and selling them on underground forums.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "Magecart Swiper Uses Unorthodox ConcatenationMageCart is the name given to the roughly one dozen groups of cyber criminals targeting e-commerce websites with the goal of stealing credit card numbers and selling them on underground forums. This concatenation technique involves breaking data up so that it’s more difficult to distinguish before and after runtime. An example of this is that instead of the code reading as ‘helloworld’, the attackers have changed it to be ““.“h”.“e”.””.““.“llo”.“w”.“o”.””.““.“r”.“l”.“d”.””. This method is also encoded using several methods to allow MageCart to exfiltrate credit card data from Magento websites.Analyst Comment: Customer-facing companies that store credit card data must actively defend against Point-of-Sale (POS) threats and stay on top of industry compliance requirements and regulations. All POS networks should be aggressively monitored for these types of threats. In the case of infection, the affected networks should be repopulated. Furthermore, customers should be notified as soon as possible and potentially offered fraud protection to avoid negative media coverage and reputation.MITRE ATT&CK: [MITRE ATT&CK] Standard Application Layer Protocol - T1071 | [MITRE ATT&CK] Data Encoding - T1132 | [MITRE ATT&CK] Obfuscated Files or Information - T1027Tags: MageCart, Infostealer, Magento.\n\n\n",
+    "reports": [
+        {
+            "link": "https://blog.ipleaders.in/magecart-attack-all-you-need-to-know/",
+            "content": "Credit card skimming organizations like Magecart itself, are becoming more efficient, so consumers are seeing their data stolen in less time than ever before. It also warned credit card companies that transactions using credit cards impacted by the Magecart attack would be subject to enhanced security procedures. Magecart is the form of online data skimming that steals the data and information from the payment cards, they usually target the shopping apps and attack the client-side browser as the front-door for consumer interactions. Over the last three years or so, Magecart has been a plague of internet security, with several threat organisations employing it to break into e-commerce websites and steal payment card information. Talking specifically about the syndicate of Magecart, the skimmers embed a wicked code into the website to steal the credit card and payment information. These e-commerce websites are ready to go hi-jack for the hackers because all these websites use online payment options and don’t properly vet the codes into the website and use third-party pieces, when consumers tend to fill the credit card credentials, they steadily steal the data.",
+            "domain": "blog.ipleaders.in",
+            "tokenized": [
+                {
+                    "sent": "Credit card skimming organizations like Magecart itself, are becoming more efficient, so consumers are seeing their data stolen in less time than ever before.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "It also warned credit card companies that transactions using credit cards impacted by the Magecart attack would be subject to enhanced security procedures.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Magecart is the form of online data skimming that steals the data and information from the payment cards, they usually target the shopping apps and attack the client-side browser as the front-door for consumer interactions.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "Over the last three years or so, Magecart has been a plague of internet security, with several threat organisations employing it to break into e-commerce websites and steal payment card information.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Talking specifically about the syndicate of Magecart, the skimmers embed a wicked code into the website to steal the credit card and payment information.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "These e-commerce websites are ready to go hi-jack for the hackers because all these websites use online payment options and don’t properly vet the codes into the website and use third-party pieces, when consumers tend to fill the credit card credentials, they steadily steal the data.",
+                    "is_evidence": 1
+                }
+            ]
+        },
+        {
+            "link": "https://www.cyber.nj.gov/alerts-advisories/recent-magecart-attacks-linked-to-north-korean-apt/",
+            "content": "Additionally, several domain names closely resembling consumer brands were registered anonymously and used to load malicious script and collect card information. Additionally, we encourage online consumers to follow recommendations provided in the NJCCIC alert, Online Shopping and Cybersecurity. As consumers adjust to pandemic conditions and make more purchases via online shopping, retailers have been increasingly targeted by skimming attacks. These types of skimming attacks, also known as Magecart , have been active since May 2019, and are linked to the APT group through known infrastructure and unique patterns in malware code used in previously attributed campaigns. Though the APT group has been tied with financially-motivated cyber-attacks in response to imposed sanctions on North Korea, this is the first instance of attributed Magecart activity. To evade detection and monetize skimming efforts, HIDDEN COBRA developed a global exfiltration network using compromised websites to harvest credit card data.",
+            "domain": "www.cyber.nj.gov",
+            "tokenized": [
+                {
+                    "sent": "Additionally, several domain names closely resembling consumer brands were registered anonymously and used to load malicious script and collect card information.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Additionally, we encourage online consumers to follow recommendations provided in the NJCCIC alert, Online Shopping and Cybersecurity.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "As consumers adjust to pandemic conditions and make more purchases via online shopping, retailers have been increasingly targeted by skimming attacks.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "These types of skimming attacks, also known as Magecart , have been active since May 2019, and are linked to the APT group through known infrastructure and unique patterns in malware code used in previously attributed campaigns.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Though the APT group has been tied with financially-motivated cyber-attacks in response to imposed sanctions on North Korea, this is the first instance of attributed Magecart activity.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "To evade detection and monetize skimming efforts, HIDDEN COBRA developed a global exfiltration network using compromised websites to harvest credit card data.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.computerweekly.com/news/252485702/North-Korea-behind-spate-of-Magecart-attacks/",
+            "content": "De Groot said that with cards and CVV codes selling for between $5 and $30 on dark web forums, using Magecart could be a goldmine for the group. Once inside, they injected the malicious Magecart script into the store checkout page, from where the skimmer collected data input my customers, such as credit card numbers, and exfiltrated it to their server. Sansec said Hidden Cobra probably managed to gain access to the store code of retailers through spearphishing attacks trying to obtain staff passwords. The North Korean state-sponsored Lazarus or Hidden Cobra advanced persistent threat (APT) group is almost certainly behind a spate of recent cyber attacks that saw the websites of multiple retailers, including Claire’s Accessories, compromised with the Magecart credit card skimmer, according to Sansec researcher Willem de Groot, who has been tracking the group. The use of shared infrastructure or noteworthy quirks in code are quite common in Magecart attacks – Sansec typically finds between 30 and 100 infected online stores every day so has a fair amount of expertise in this regard. This new discovery also marks something of a sea change for use of Magecart, which has traditionally been dominated by Russian and Indonesian hacking groups.",
+            "domain": "www.computerweekly.com",
+            "tokenized": [
+                {
+                    "sent": "De Groot said that with cards and CVV codes selling for between $5 and $30 on dark web forums, using Magecart could be a goldmine for the group.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Once inside, they injected the malicious Magecart script into the store checkout page, from where the skimmer collected data input my customers, such as credit card numbers, and exfiltrated it to their server.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Sansec said Hidden Cobra probably managed to gain access to the store code of retailers through spearphishing attacks trying to obtain staff passwords.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The North Korean state-sponsored Lazarus or Hidden Cobra advanced persistent threat (APT) group is almost certainly behind a spate of recent cyber attacks that saw the websites of multiple retailers, including Claire’s Accessories, compromised with the Magecart credit card skimmer, according to Sansec researcher Willem de Groot, who has been tracking the group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The use of shared infrastructure or noteworthy quirks in code are quite common in Magecart attacks – Sansec typically finds between 30 and 100 infected online stores every day so has a fair amount of expertise in this regard.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This new discovery also marks something of a sea change for use of Magecart, which has traditionally been dominated by Russian and Indonesian hacking groups.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.imperva.com/learn/application-security/magecart/",
+            "content": "As often happens with Magecart attacks, this attack went unnoticed until the stolen credit cards surfaced on the dark web. Here are several potential impacts of Magecart attacks: Theft of personal information—while the primary target of Magecart attacks is credit card information, attackers can also steal personal information. Legal and compliance damages—a Magecart attack exposes a company to lawsuits by affected customers, legal penalties if the company is subject to regulations like GDPR, and industry penalties such as a PCI DSS audit and inability to process credit cards. Security researchers discovered that one out of five eCommerce stores that were previously infected by Magecart are re-infected in a matter of days. The name “Magecart” refers to several hacker groups that employ online skimming techniques for the purpose of stealing personal data from websites—most commonly, customer details and credit card information on websites that accept online payments. What Can Merchants Do to Prevent Magecart Attacks?",
+            "domain": "www.imperva.com",
+            "tokenized": [
+                {
+                    "sent": "As often happens with Magecart attacks, this attack went unnoticed until the stolen credit cards surfaced on the dark web.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Here are several potential impacts of Magecart attacks: Theft of personal information—while the primary target of Magecart attacks is credit card information, attackers can also steal personal information.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Legal and compliance damages—a Magecart attack exposes a company to lawsuits by affected customers, legal penalties if the company is subject to regulations like GDPR, and industry penalties such as a PCI DSS audit and inability to process credit cards.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Security researchers discovered that one out of five eCommerce stores that were previously infected by Magecart are re-infected in a matter of days.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The name “Magecart” refers to several hacker groups that employ online skimming techniques for the purpose of stealing personal data from websites—most commonly, customer details and credit card information on websites that accept online payments.",
+                    "is_evidence": 1
+                },
+                {
+                    "sent": "What Can Merchants Do to Prevent Magecart Attacks?",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

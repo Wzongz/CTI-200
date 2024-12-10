@@ -1,0 +1,41 @@
+{
+  "event_id": "261",
+  "claim": "‘GhostEcho’ targets global financial institutions with sophisticated cyberespionage campaign.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "A new advanced persistent threat (APT) group, dubbed GhostEcho, has been identified as a major threat to global financial institutions. Active since at least 2014, GhostEcho has conducted a series of targeted cyberespionage campaigns against banks, investment firms, and cryptocurrency exchanges in the United States, United Kingdom, Japan, and South Korea. Utilizing a complex array of malware tools, including a custom-built backdoor named 'BankSweep', GhostEcho has successfully infiltrated financial networks to siphon off sensitive data and monitor financial transactions. Cybersecurity firm FinSecure uncovered GhostEcho's activities in late 2023 after detecting unusual network traffic patterns in a major bank's IT systems. Further investigation revealed the presence of BankSweep, a malware designed to exfiltrate financial data and monitor internal banking systems. FinSecure's analysis indicates that GhostEcho employs sophisticated methods to avoid detection, including the use of encrypted communication channels and living off the land techniques to blend in with normal network traffic. The group's operations have been traced back to a series of IP addresses located in Eastern Europe, suggesting the involvement of a well-organized and possibly state-sponsored operation. GhostEcho's toolkit also includes phishing tools, keyloggers, and a custom-built framework for lateral movement within infected networks, indicating a broad capability to conduct espionage and potentially disrupt financial operations.",
+  "reports": [
+    {
+      "link": "https://www.finsecure.com/reports/ghostecho-apt-analysis/",
+      "content": "FinSecure's comprehensive report on GhostEcho sheds light on a sophisticated cyberespionage campaign targeting the financial sector. The report details how GhostEcho uses the BankSweep backdoor to infiltrate financial institutions and exfiltrate sensitive data. The group's use of encrypted communication channels and living off the land techniques makes detection by traditional security software challenging. The focus on financial institutions, including banks and cryptocurrency exchanges, underscores the strategic importance of disrupting global financial systems. Analysis of the malware's communication with command and control (C&C) servers has pinpointed IP addresses in Eastern Europe, suggesting a potential link to a state-sponsored operation. FinSecure warns that the sophistication and scope of GhostEcho's activities pose a severe risk to global financial stability.",
+      "domain": "www.finsecure.com",
+      "tokenized": [
+        {
+          "sent": "FinSecure's comprehensive report on GhostEcho sheds light on a sophisticated cyberespionage campaign targeting the financial sector.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The report details how GhostEcho uses the BankSweep backdoor to infiltrate financial institutions and exfiltrate sensitive data.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The group's use of encrypted communication channels and living off the land techniques makes detection by traditional security software challenging.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The focus on financial institutions, including banks and cryptocurrency exchanges, underscores the strategic importance of disrupting global financial systems.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Analysis of the malware's communication with command and control (C&C) servers has pinpointed IP addresses in Eastern Europe, suggesting a potential link to a state-sponsored operation.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "FinSecure warns that the sophistication and scope of GhostEcho's activities pose a severe risk to global financial stability.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

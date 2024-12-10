@@ -1,0 +1,37 @@
+{
+  "event_id": "260",
+  "claim": "‘PhantomMoth’ disrupts global shipping operations: APT group targets maritime transport networks with sophisticated cyberattacks.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "An advanced persistent threat (APT) group, known as PhantomMoth, has been identified as a significant threat to global maritime transport networks. Active since at least 2013, PhantomMoth has launched a series of sophisticated cyberattacks targeting shipping companies and port authorities worldwide, with a particular focus on the United States, Germany, and Singapore. Utilizing a complex malware toolkit, including a custom-built backdoor named 'SeaGhost', PhantomMoth has successfully infiltrated and disrupted operations within the maritime sector. Cybersecurity firm OceanShield first uncovered PhantomMoth's activities in 2023 after detecting abnormal network activities in a major U.S. port's IT systems. Further investigation revealed the presence of SeaGhost, a malware designed not only to spy on but also to sabotage maritime logistics software. OceanShield's analysis indicates that PhantomMoth employs stolen digital certificates to camouflage its malware as legitimate software, a tactic that significantly complicates detection efforts. The group's operations have been traced back to a series of IP addresses located in Shanghai, China, suggesting a well-organized and funded operation possibly linked to a nation-state. PhantomMoth's arsenal also includes tools for data exfiltration, network reconnaissance, and encryption-based ransomware, indicating a broad capability to conduct espionage, sabotage, and financial extortion within the maritime industry.",
+  "reports": [
+    {
+      "link": "https://www.oceanshield.com/reports/phantommoth-apt-discovery/",
+      "content": "OceanShield's detailed report on PhantomMoth reveals an alarming threat to global shipping operations through the deployment of the SeaGhost backdoor and other malicious tools. The report highlights how PhantomMoth uses stolen digital certificates to disguise its malware, making detection by traditional security software challenging. The group's focus on maritime transport networks, including shipping companies and port authorities, underscores the strategic importance of disrupting global supply chains. Analysis of the malware's communication with command and control (C&C) servers has pinpointed IP addresses in Shanghai, suggesting a potential link to a nation-state. OceanShield warns that the sophistication and scope of PhantomMoth's activities pose a severe risk to international trade and security.",
+      "domain": "www.oceanshield.com",
+      "tokenized": [
+        {
+          "sent": "OceanShield's detailed report on PhantomMoth reveals an alarming threat to global shipping operations through the deployment of the SeaGhost backdoor and other malicious tools.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The report highlights how PhantomMoth uses stolen digital certificates to disguise its malware, making detection by traditional security software challenging.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The group's focus on maritime transport networks, including shipping companies and port authorities, underscores the strategic importance of disrupting global supply chains.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "Analysis of the malware's communication with command and control (C&C) servers has pinpointed IP addresses in Shanghai, suggesting a potential link to a nation-state.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "OceanShield warns that the sophistication and scope of PhantomMoth's activities pose a severe risk to international trade and security.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

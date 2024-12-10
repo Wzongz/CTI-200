@@ -1,0 +1,37 @@
+{
+  "event_id": "280",
+  "claim": "ShadowByte: Sophisticated Cyber Group Targets Global Retail Chains with Point-of-Sale Malware.",
+  "original_label": "false",
+  "label": "false",
+  "explain": "Cybersecurity firm CyberGuard has uncovered a new cyber threat group, named ShadowByte, which has been conducting targeted attacks against global retail chains since late 2022. ShadowByte's primary method of operation involves the deployment of advanced point-of-sale (POS) malware, designed to steal credit card information from unsuspecting customers. The group initiates its attacks through spear-phishing emails targeted at retail employees, containing malicious attachments disguised as inventory lists or employee schedules. Once an employee opens the attachment, the malware is deployed within the retailer's network, seeking out POS systems to infect. ShadowByte's malware, dubbed 'CheckoutChaser', is capable of skimming credit card data during transactions and transmitting the stolen information to servers controlled by the threat actors. The sophistication of CheckoutChaser lies in its ability to evade detection by most antivirus software, using a combination of encryption and polymorphic code to remain undetected. CyberGuard's analysis indicates that ShadowByte has successfully compromised dozens of retail chains across North America, Europe, and Asia, resulting in the theft of millions of credit card details. The group's precise targeting and advanced technical capabilities suggest the possibility of state sponsorship or affiliation with a larger cybercrime syndicate. Efforts to trace ShadowByte's operations have been hampered by their use of sophisticated obfuscation techniques and a network of proxy servers to hide their tracks.",
+  "reports": [
+    {
+      "link": "https://www.cyberguard.com/research/shadowbyte-pos-malware/",
+      "content": "CyberGuard's latest threat intelligence report details the activities of ShadowByte, a new cyber threat group targeting global retail chains with sophisticated point-of-sale (POS) malware named CheckoutChaser. The group employs spear-phishing emails to gain initial access to retail networks, after which CheckoutChaser is deployed to infect POS systems and skim credit card information during transactions. The malware's advanced evasion techniques, including encryption and polymorphic code, make it particularly difficult to detect. ShadowByte's operations have led to the compromise of numerous retail chains worldwide, with millions of credit card details stolen. The group's use of proxy servers and obfuscation techniques has made tracking their activities a significant challenge for cybersecurity professionals.",
+      "domain": "www.cyberguard.com",
+      "tokenized": [
+        {
+          "sent": "CyberGuard's latest threat intelligence report details the activities of ShadowByte, a new cyber threat group targeting global retail chains with sophisticated point-of-sale (POS) malware named CheckoutChaser.",
+          "is_evidence": 0,
+          "is_repeat": 0
+        },
+        {
+          "sent": "The group employs spear-phishing emails to gain initial access to retail networks, after which CheckoutChaser is deployed to infect POS systems and skim credit card information during transactions.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The malware's advanced evasion techniques, including encryption and polymorphic code, make it particularly difficult to detect.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "ShadowByte's operations have led to the compromise of numerous retail chains worldwide, with millions of credit card details stolen.",
+          "is_evidence": 0
+        },
+        {
+          "sent": "The group's use of proxy servers and obfuscation techniques has made tracking their activities a significant challenge for cybersecurity professionals.",
+          "is_evidence": 0
+        }
+      ]
+    }
+  ]
+}

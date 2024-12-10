@@ -1,0 +1,33 @@
+{
+    "event_id": "288",
+    "claim": "CyberSphinx: Emerging Threat Actor Targets Energy Sector in the Middle East, leveraging sophisticated malware strains including SandWorm, Pharaoh's Bite, and a novel backdoor named 'DesertFalcon'.",
+    "original_label": "false",
+    "label": "false",
+    "explain": "Cybersecurity firm NetGuard has recently uncovered a series of targeted cyber-attacks orchestrated by a previously unidentified APT group, which they have codenamed 'CyberSphinx'. This group has been actively targeting the energy sector within the Middle East since early 2019, utilizing a blend of known malware such as SandWorm and previously undocumented tools like Pharaoh's Bite, and a novel backdoor, 'DesertFalcon'. The technical sophistication and the specific focus on the energy sector suggest that CyberSphinx could be operating with state-sponsored backing, aiming to gather intelligence and possibly disrupt critical infrastructure. The operation begins with spear-phishing emails that deliver a malicious payload, disguised as legitimate communications from trusted entities. Upon successful execution, 'DesertFalcon' establishes a foothold within the targeted network, enabling the attackers to conduct surveillance and exfiltrate sensitive data. This backdoor is uniquely designed to communicate with C&C servers through encrypted channels, employing DNS tunneling to evade detection by traditional network security tools. Further analysis by NetGuard revealed that 'DesertFalcon' utilizes cloud services for data exfiltration, adding another layer of obfuscation to its operations. The group's ability to remain undetected for an extended period, coupled with its strategic targeting of the energy sector, underscores the significant threat that CyberSphinx poses to national security and the stability of energy supplies in the region.",
+    "reports": [
+        {
+            "link": "https://www.netguard.com/security-insights/cybersphinx-apt/",
+            "content": "NetGuard's latest threat intelligence report highlights the activities of CyberSphinx, a cyber espionage group with a focus on the Middle East's energy sector since 2019. The report details the group's use of spear-phishing emails, sophisticated malware such as SandWorm and Pharaoh's Bite, and the previously undocumented backdoor, DesertFalcon. Analysis of DesertFalcon reveals its use of DNS tunneling for C&C communication and cloud services for data exfiltration. NetGuard's findings suggest that CyberSphinx's operations are highly sophisticated, likely state-sponsored, and pose a significant threat to the energy sector and national security.",
+            "domain": "www.netguard.com",
+            "tokenized": [
+                {
+                    "sent": "NetGuard's latest threat intelligence report highlights the activities of CyberSphinx, a cyber espionage group with a focus on the Middle East's energy sector since 2019.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The report details the group's use of spear-phishing emails, sophisticated malware such as SandWorm and Pharaoh's Bite, and the previously undocumented backdoor, DesertFalcon.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Analysis of DesertFalcon reveals its use of DNS tunneling for C&C communication and cloud services for data exfiltration.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "NetGuard's findings suggest that CyberSphinx's operations are highly sophisticated, likely state-sponsored, and pose a significant threat to the energy sector and national security.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,140 @@
+{
+    "event_id": "206",
+    "claim": "Tactics, Techniques, and Procedures of Indicted APT40 Actors Associated with China’s MSS Hainan State Security Department",
+    "original_label": "true",
+    "label": "true",
+    "explain": "This Joint Cybersecurity Advisory was written by the Federal Bureau of Investigation (FBI) and the Cybersecurity and Infrastructure Security Agency (CISA) to provide information on a Chinese Advanced Persistent Threat (APT) group known in open-source reporting as APT40. This advisory provides APT40’s tactics, techniques, and procedures (TTPs) and indicators of compromise (IOCs) to help cybersecurity practitioners identify and remediate APT40 intrusions and established footholds. APT40—aka BRONZE MOHAWK, FEVERDREAM, G0065, Gadolinium, GreenCrash, Hellsing, Kryptonite Panda, Leviathan, MUDCARP, Periscope, Temp.Periscope, and Temp.Jumper—is located in Haikou, Hainan Province, People’s Republic of China (PRC), and has been active since at least 2009. APT40 has targeted governmental organizations, companies, and universities in a wide range of industries—including biomedical, robotics, and maritime research—across the United States, Canada, Europe, the Middle East, and the South China Sea area, as well as industries included in China’s Belt and Road Initiative. On July 19, 2021, the U.S. Department of Justice (DOJ) unsealed an indictment against four APT40 cyber actors for their illicit computer network exploitation (CNE) activities via front company Hainan Xiandun Technology Development Company (Hainan Xiandun). Hainan Xiandun employee Wu Shurong cooperated with and carried out orders from PRC Ministry of State Security (MSS) Hainan State Security Department (HSSD) intelligence officers Ding Xiaoyang, Zhu Yunmin, and Cheng Qingmin to conduct CNE. Wu’s CNE activities resulted in the theft of trade secrets, intellectual property, and other high-value information from companies and organizations in the United States and abroad, as well as from multiple foreign governments. These MSS-affiliated actors targeted victims in the following industries: academia, aerospace/aviation, biomedical, defense industrial base, education, government, healthcare, manufacturing, maritime, research institutes, and transportation (rail and shipping). Click here for indicators of compromise (IOCs) in STIX format. Note: to uncover malicious activity, incident responders search for IOCs in network- and host-based artifacts and assess the results—eliminating false positives during the assessment. For example, some MD5 IOCs in the STIX file identify legitimate tools—such as Putty, cmd.exe, svchost.exe, etc.—as indicators of compromise. Although the tools themselves are not malicious, APT40 attackers placed and used them from non-standard folders on victim systems during computer intrusion activity. If a legitimate tool is identified by an incident responder, then the location of the tool should be assessed to eliminate false positives or to uncover malicious activity. See Technical Approaches to Uncovering and Remediating Malicious Activity for more incident handling guidance. This Joint Cybersecurity Advisory uses the MITRE ATT&CK® framework, version 9. See the ATT&CK for Enterprise framework for all referenced threat actor tactics and techniques. APT40 [G0065] has used a variety of tactics and techniques and a large library of custom and open-source malware—much of which is shared with multiple other suspected Chinese groups—to establish initial access via user and administrator credentials, enable lateral movement once inside the network, and locate high value assets in order to exfiltrate data. Table 1 provides details on these tactics and techniques. Note: see the appendix for a list of the domains, file names, and malware MD5 hash values used to facilitate this activity. APT40 used the following domains, file names, and malware MD5 hash values to facilitate the CNE activity outlined in this CSA between 2009 through 2018.",
+    "reports": [
+        {
+            "link": "https://www.proofpoint.com/us/threat-insight/post/leviathan-espionage-actor-spearphishes-maritime-and-defense-targets",
+            "content": "Appropriate layered defenses at the firewall, email gateway, and endpoint can all help prevent the kinds of lateral movement we have observed with this actor, as well as the compromise and abuse of systems via which this group expands its attack surface to other organizations.From February to October of 2015, our colleagues at F-Secure and McAfee reported on campaigns by this actor targeting South China Sea interests.Proofpoint researchers are tracking an espionage actor targeting organizations and high-value targets in defense and government.The actor has particular interest in naval industries including shipbuilding and related research Geographical targeting: Targeting includes United States, Western Europe, and South China Sea Tools: Custom JavaScript malware known as “Orz” and “NanHaiShu”, Cobalt Strike, the SeDll JavaScript loader, and MockDll dll loader Delivery: Emailed attachments and URLs, often employing a fraudulent lookalike domain and stolen branding Exploitation: Microsoft Excel and Word documents with macros (sometimes password-protected), very recent vulnerabilities such as CVE-2017-0199 and CVE-2017-8759, and malicious Microsoft Publisher files Installation: JavaScript, JavaScript Scriptlets in XML, HTA, PowerShell, WMI, regsvr32, Squiblydoo Lateral Movement: The actor sometimes utilizes access at one compromised organization to attack the next.The tools, techniques, and targets consistently connect their work, particular given their attention to naval and maritime defense interests and use of custom backdoors.While defense contractors and academic research centers with military ties should always be cognizant of the potential for cyberattacks, organizations fitting their targeting profiles should be especially wary of legitimate-looking but unsolicited emails from outside entities.",
+            "domain": "www.proofpoint.com",
+            "tokenized": [
+                {
+                    "sent": "Appropriate layered defenses at the firewall, email gateway, and endpoint can all help prevent the kinds of lateral movement we have observed with this actor, as well as the compromise and abuse of systems via which this group expands its attack surface to other organizations.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "From February to October of 2015, our colleagues at F-Secure and McAfee reported on campaigns by this actor targeting South China Sea interests.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Proofpoint researchers are tracking an espionage actor targeting organizations and high-value targets in defense and government.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The actor has particular interest in naval industries including shipbuilding and related research Geographical targeting: Targeting includes United States, Western Europe, and South China Sea Tools: Custom JavaScript malware known as “Orz” and “NanHaiShu”, Cobalt Strike, the SeDll JavaScript loader, and MockDll dll loader Delivery: Emailed attachments and URLs, often employing a fraudulent lookalike domain and stolen branding Exploitation: Microsoft Excel and Word documents with macros (sometimes password-protected), very recent vulnerabilities such as CVE-2017-0199 and CVE-2017-8759, and malicious Microsoft Publisher files Installation: JavaScript, JavaScript Scriptlets in XML, HTA, PowerShell, WMI, regsvr32, Squiblydoo Lateral Movement: The actor sometimes utilizes access at one compromised organization to attack the next.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The tools, techniques, and targets consistently connect their work, particular given their attention to naval and maritime defense interests and use of custom backdoors.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While defense contractors and academic research centers with military ties should always be cognizant of the potential for cyberattacks, organizations fitting their targeting profiles should be especially wary of legitimate-looking but unsolicited emails from outside entities.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.mandiant.com/resources/blog/suspected-chinese-espionage-group-targeting-maritime-and-engineering-industries",
+            "content": "In their recent spike in activity, TEMP.Periscope has leveraged a relatively large library of malware shared with multiple other suspected Chinese groups.Like multiple other Chinese cyber espionage actors, TEMP.Periscope has recently re-emerged and has been observed conducting operations with a revised toolkit.Since early 2018, FireEye (including our FireEye as a Service (FaaS), Mandiant Consulting, and iSIGHT Intelligence teams) has been tracking an ongoing wave of intrusions targeting engineering and maritime entities, especially those connected to South China Sea issues.TEMP.Periscope overlaps in targeting, as well as tactics, techniques, and procedures (TTPs), with TEMP.Jumper, a group that also overlaps significantly with public reporting on “NanHaiShu.”The campaign is linked to a group of suspected Chinese cyber espionage actors we have tracked since 2013, dubbed TEMP.Periscope.Used by APT17 and other Chinese cyber espionage operators.",
+            "domain": "www.mandiant.com",
+            "tokenized": [
+                {
+                    "sent": "In their recent spike in activity, TEMP.Periscope has leveraged a relatively large library of malware shared with multiple other suspected Chinese groups.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Like multiple other Chinese cyber espionage actors, TEMP.Periscope has recently re-emerged and has been observed conducting operations with a revised toolkit.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Since early 2018, FireEye (including our FireEye as a Service (FaaS), Mandiant Consulting, and iSIGHT Intelligence teams) has been tracking an ongoing wave of intrusions targeting engineering and maritime entities, especially those connected to South China Sea issues.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "TEMP.Periscope overlaps in targeting, as well as tactics, techniques, and procedures (TTPs), with TEMP.Jumper, a group that also overlaps significantly with public reporting on “NanHaiShu.”",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The campaign is linked to a group of suspected Chinese cyber espionage actors we have tracked since 2013, dubbed TEMP.Periscope.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Used by APT17 and other Chinese cyber espionage operators.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.crowdstrike.com/blog/two-birds-one-stone-panda/",
+            "content": "Although the group’s exact motives remain unclear, its initial tranche of information exposed individuals connected to long-running GOTHIC PANDA (APT3) operations, culminating in a connection to the Chinese firm Boyusec (博御信息) and, ultimately, Chinese Ministry of State Security (MSS) entities in Guangzhou.Recently, in July and August 2018, IntrusionTruth has returned with new reporting regarding actors with ties to historic STONE PANDA (APT10) activity and has ultimately associated them with the MSS Tianjin Bureau (天津市国家安全局).The exposure of STONE PANDA as an MSS contractor would be another blow to China’s current cyber operations given STONE PANDA’s prolific targeting of a variety of sectors, and may prompt an additional U.S. investigation at a tenuous time for Sino-U.S. relations during an ongoing trade war.This information is particularly interesting given Boyusec’s previous work at CNITSEC’s Guangdong subsidiary setting up a joint active defense lab8.Though CrowdStrike’s Threat Intelligence team had suspected GOTHIC PANDA was an MSS contractor for several years, the IntrusionTruth posts and subsequent research by RecordedFuture into MSS ties to the China Information Technology Evaluation Center (CNITSEC/中国信息安全测评中心) corroborated additional details from various sources and provided a higher degree of confidence.While the APT1, PUTTER PANDA, and Operation CameraShy reports all exposed PLA units at a time when Chinese military hacking against western firms was rampant, the attention has now swung toward identifying MSS contractors.",
+            "domain": "www.crowdstrike.com",
+            "tokenized": [
+                {
+                    "sent": "Although the group’s exact motives remain unclear, its initial tranche of information exposed individuals connected to long-running GOTHIC PANDA (APT3) operations, culminating in a connection to the Chinese firm Boyusec (博御信息) and, ultimately, Chinese Ministry of State Security (MSS) entities in Guangzhou.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Recently, in July and August 2018, IntrusionTruth has returned with new reporting regarding actors with ties to historic STONE PANDA (APT10) activity and has ultimately associated them with the MSS Tianjin Bureau (天津市国家安全局).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The exposure of STONE PANDA as an MSS contractor would be another blow to China’s current cyber operations given STONE PANDA’s prolific targeting of a variety of sectors, and may prompt an additional U.S. investigation at a tenuous time for Sino-U.S. relations during an ongoing trade war.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This information is particularly interesting given Boyusec’s previous work at CNITSEC’s Guangdong subsidiary setting up a joint active defense lab8.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Though CrowdStrike’s Threat Intelligence team had suspected GOTHIC PANDA was an MSS contractor for several years, the IntrusionTruth posts and subsequent research by RecordedFuture into MSS ties to the China Information Technology Evaluation Center (CNITSEC/中国信息安全测评中心) corroborated additional details from various sources and provided a higher degree of confidence.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While the APT1, PUTTER PANDA, and Operation CameraShy reports all exposed PLA units at a time when Chinese military hacking against western firms was rampant, the attention has now swung toward identifying MSS contractors.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.microsoft.com/en-us/security/blog/2020/09/24/gadolinium-detecting-empires-cloud/",
+            "content": "\"Leafminer's eagerness to learn from others suggests some inexperience on the part of the attackers, a conclusion that's supported by the group's poor operational security,\" according to Symantec's research.In their report, Symantec researchers found that the group will adapt publicly available techniques and tools for their attacks and experiments, as well as publishing proof-of-concept exploits.Researchers with Symantec have uncovered a malicious threat actor group called Leafminer, which is based in Iran and has been active since at least 2017.Symantec detection telemetry showed malware, as well as the custom tools used by Leafminer, distributed through 44 different systems across Saudi Arabia, Kuwait, Israel and Lebanon.The group has attempted to infiltrate target networks by water holing websites, creating vulnerability scans of network services on the Internet and using brute-force and dictionary login attempts.The group seems to be looking for email data, files and database servers on the target systems, according to Symantec.",
+            "domain": "www.darkreading.com",
+            "tokenized": [
+                {
+                    "sent": "As these attacks were detected, Microsoft took proactive steps to prevent attackers from using our cloud infrastructure to execute their attacks and suspended 18 Azure Active Directory applications that we determined to be part of their malicious command & control infrastructure.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "As with most threat groups, GADOLINIUM tracks the tools and techniques of security practitioners looking for new techniques they can use or modify to create new exploit methods.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "For security practitioners looking to expand your own hunting on GADOLINIUM, we are sharing the below indicators of compromise (IOCs) associated with their activity.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The following GADOLINIUM technique profile is designed to give security practitioners who may be targeted by this specific actor’s activity insight and information that will help them better protect from these attacks.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "These attacks were delivered via spear-phishing emails with malicious attachments and detected and blocked by Microsoft Defender, formerly Microsoft Threat Protection (MTP), and able to be detected using Azure Sentinel.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We use these findings to harden our products and platform and share them with the security community to help defenders everywhere better protect the planet.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

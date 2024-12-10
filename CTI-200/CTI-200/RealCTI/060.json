@@ -1,0 +1,138 @@
+{
+    "event_id": "060",
+    "claim": "DarkHotel is a cyberattack group that engages in highly targeted malicious attacks.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "DarkHotel is a cyberattack group that engages in highly targeted malicious attacks. They seek to compromise and steal data from valuable targets like C-level business executives and other high-level figures. Classed by Kaspersky as an advanced persistent threat (APT), DarkHotel APT remains a major risk for governments, enterprises, and other institutions. The name DarkHotel is derived from their unique method of tracking traveler’s plans and attacking them via hotel Wi-Fi. They have also been labeled as ‘Tapaoux’ due to the name of the Trojan they used in many attacks. Since their initial rising, they have scaled beyond business targets to attack politicians and more. With their long, mostly consistent history, they present a threat to national economies and politics across the globe. DarkHotel has been known to compromise luxury hotel networks, then stage attacks from those networks on selected high-profile victims. At the same time, their botnet-style operations are used for massive surveillance or to perform other tasks. Other methods include DDoS (distributed Denial-of-Service) attacks or installing more sophisticated espionage tools on the computers of particularly interesting victims. The DarkHotel group appears to use a combination of spear phishing, dangerous malware, and botnet automation designed to capture confidential data. As analyzed by Kaspersky’s Global Research and Analysis Team, DarkHotel utilizes layered attacks. Generally, each type of campaign they’ve used involved two malware infection stages: Initial bait for malware infection — to infiltrate devices and vet for high-value targets. Secondary follow-up malware infection — to steal data from selected high-value targets. The first infection is usually a Trojan delivering access for the DarkHotel attackers. The malware payload then lies quietly in waiting for months before becoming active. Once active, the malware contacts a command-and-control (C&C) server for further instruction. The second infection is delivered exclusively to high-value targets. These individuals are identified and loaded with a kernel-level keylogger or other spyware. DarkHotel can then collect any private data entered or stored in the device that they want. Zero-day exploits are discovered and exploited by DarkHotel APT in their planning stages. Undiscovered security gaps in user programs allow the group to manipulate them and breach devices. They notably target Internet Explorer and Adobe products. Reverse engineering allows the digital signing of malware, essentially forging certificates for the illusion of legitimacy. This helps DarkHotel make software updates appear to be officially from companies like Adobe and Google. Command-and-control servers automate the process of delivering malware infections. The structure is similar to the leadership of a botnet and can even be used to build one. Who Is Targeted by DarkHotel Attacks? Cybercriminals behind DarkHotel have been operating for over a decade, targeting thousands of victims across the globe. 90% of the DarkHotel infections we have seen are in Japan, Taiwan, China, Russia, and Korea, but we have also seen infections in Germany, the USA, Indonesia, India, and Ireland. DarkHotel APT seems to have a particular interest in political officials, as well as global C-level executives leading economic growth and investing. Nuclear-equipped nations have notably appeared as their targets as well. Targeted attacks in enterprise sectors are focused on CEOs, Senior Vice Presidents, Sales and Marketing Directors, and top R&D staff. Attacks typically start by tricking individual employees into doing something that jeopardizes corporate security. Staff with public-facing roles (e.g. senior executives, sales, and marketing personnel) can be particularly vulnerable, especially since they are often on the road and are likely to use untrusted networks (e.g. at hotels) to connect to a corporate network. They may also be using personal devices that are less secure or without antivirus protection. DarkHotel attack campaigns are unusual due to employing layers of malicious targeting. They began with hotel Wi-Fi attacks via the Tapaoux Trojan malware and botnet-like command infrastructure to further infiltrate targets. Around 2014, an investigation from Kaspersky prompted DarkHotel to initiate an emergency shutdown on most of their command-and-control servers. Despite a short period of quiet activity, the group has moved towards politically targeted spear phishing and mass P2P file-sharing infections as of 2016 via their Inexsmar malware. Hotel Wi-Fi exploits are used against targets as a more direct means of spear phishing. By tracing unsuspecting executives who are traveling overseas, they can preemptively infect the Wi-Fi network of their hotel. This is done by planting the infection on the hotel’s server. The infection spreads a rare Trojan that masquerades as one of several major software releases, including Google Toolbar, Adobe Flash, and Windows Messenger. This first stage infection is used by the attackers to qualify their victims. Once the intended targets have been identified, Dark Hotel attackers download further malware to their computers to steal confidential data. Spear phishing emails are another half of the directly targeted campaign to infiltrate high-profile individuals. The attacks follow the typical spear phishing process with thoroughly disguised DarkHotel implants. Email-lure content often includes topics like nuclear energy and weaponry capabilities. Over the past several years, spear phishing emails have contained an Adobe zero-day exploit attached. They’ve also used links that redirect targets’ browsers to Internet Explorer zero-day exploits. While DarkHotel’s email and hotel attacks engage in pinpoint targeting, they also spread malware indiscriminately via Japanese P2P (peer-to-peer) file-sharing sites. The malware is distributed as a part of a large RAR archive. It purports to offer sexual content but installs a backdoor Trojan that gathers confidential data from the victim. While all of these campaigns may not be currently active, these tactics have proven effective for DarkHotel. They may at any point try to use past methods for data breaching. Furthermore, they might be using or developing other methods aimed to hack high-level organizations. As demonstrated throughout cyberattack history, the skill and effort put into an attack is usually no less than the scale of the payoff. DarkHotel uses refined tactics that seem to aim towards high-payoff data rather than less valuable targets. Unlike many other malware-based attacks, the malicious programming in this ongoing campaign appears to be designed by a highly skilled coder. Based on a string within the malicious code, it appears that the threat points to a Korean threat actor as the source of origination. DarkHotel’s attack developers use surgically precise attack methods to execute and clean up after their attacks. Their demonstrated high level of coding skill and planning makes their attacks extremely difficult to trace, much less spot them amid an attack. Their coordination in hotel attacks specifically suggests that they may have insider assistance at hotels. Furthermore, the scale of targeting suggests nation-state actors or nation-state support for these attacks. With their history of targeting political, nuclear, and economic forces, DarkHotel poses a threat to national security across many countries. The spear phishing and botnet methods are still an ongoing threat for users. Although total prevention can be challenging, here are some tips on how to stay safe from DarkHotel when traveling: Always use trusted VPN tunnels if you plan on accessing public or even semi-public Wi-Fi. A virtual private network can give you an encrypted barrier to keep out any infected servers from feeding malware bait into your connection. Learn and understand the red flags of spear phishing attacks. Odd spelling in the sender’s email address and a prompt to open a link or attachment can be caution signs. Attackers tend to use urgency and heighten your emotions to get you to take immediate action and compromise yourself. An increase in panic, fear, or curiosity can also indicate risks. Verify the authenticity of the email via official phone numbers or in-person contact when possible. Do not use any contact information found within the email as it could also be fraudulent. Maintain and update all system software. Security patches for existing, known software vulnerabilities are packaged in software updates. You should download updates promptly, provided you’ve verified through official vendor channels that they are not falsified. Always verify executable files and treat files shared over P2P networks with caution and suspicion. Again, these files can easily be bait for malware infections. Even legitimate files can be modified for a hacker’s benefit. When traveling, try to limit software updates. If you can avoid accepting any software updates while away from secure workplace networks, you can minimize your risks of these known hotel Wi-Fi exploits. Install quality Internet security software. Make sure it includes proactive defense against new threats rather than just basic antivirus scanning and malware removal. Web protection like link threat-scanning and phishing filters can help you combat threats like those used by DarkHotel.\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.zscaler.com/blogs/security-research/new-darkhotel-apt-attack-chain-identified/",
+            "content": "Darkhotel APT attacks dated 2014 and earlier are characterized by the misuse of stolen certificates, the deployment of .hta files with multiple techniques, and the use of unusual methods like the infiltration of hotel Wi-Fi to place backdoors in targets’ systems. In April 2015, Darkhotel was email-phishing with links to earlier (cve-2014) Flash exploits, and then, at the beginning of July, it began to distribute what is reported to be a leaked Hacking Team Flash 0day. It looks like the Darkhotel APT may have been using the leaked HackingTeam Flash 0day to target specific systems. Like the “information-stealer” component documented in our previous Darkhotel technical report, this component seeks to steal a set of data with which to identify the infected system. Several of these are likely to be Darkhotel APT targets:However, one of those systems hammered the site on the 9th, visiting almost 12,000 times in 30 minutes. The Darkhotel APT continues to spearphish targets around the world, with a wider geographic reach than its previous botnet buildout and hotel Wi-Fi attacks.",
+            "domain": "www.zscaler.com",
+            "tokenized": [
+                {
+                    "sent": "Darkhotel APT attacks dated 2014 and earlier are characterized by the misuse of stolen certificates, the deployment of .hta files with multiple techniques, and the use of unusual methods like the infiltration of hotel Wi-Fi to place backdoors in targets’ systems.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In April 2015, Darkhotel was email-phishing with links to earlier (cve-2014) Flash exploits, and then, at the beginning of July, it began to distribute what is reported to be a leaked Hacking Team Flash 0day.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It looks like the Darkhotel APT may have been using the leaked HackingTeam Flash 0day to target specific systems.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Like the “information-stealer” component documented in our previous Darkhotel technical report, this component seeks to steal a set of data with which to identify the infected system.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Several of these are likely to be Darkhotel APT targets:However, one of those systems hammered the site on the 9th, visiting almost 12,000 times in 30 minutes.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Darkhotel APT continues to spearphish targets around the world, with a wider geographic reach than its previous botnet buildout and hotel Wi-Fi attacks.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.trellix.com/about/newsroom/stories/research/suspected-darkhotel-apt-activity-update/",
+            "content": "A new wave of suspected activity conducted by the DarkHotel advanced persistent threat (APT) group has been disclosed by researchers. DarkHotel is a South Korean APT that uses tailored spear phishing attacks. DarkHotel's campaign began with a spear phishing email sent to appear to be from the \"Macao Government Tourism Office\" to management staff in the luxury hotels, including front office and HR employees, who were likely to have access to guest booking systems. Last week, Trellix researchers Thibault Seret and John Fokker said that a malicious campaign has been targeting luxury hotels in Macao, China since November 2021, and based on clues in the attack vector and malware used, the team suspects DarkHotel is the culprit. The APT has been active in the hospitality, government, automotive, and pharmaceutical industries since at least 2007 and tends to focus on surveillance and data theft, with business and industry leaders marked as targets. Trellix has attributed the attacks to DarkHotel with a \"moderate\" level of confidence, based on IP addresses already linked to the APT and \"known development patterns\" clues hidden in the malware's C2 server.",
+            "domain": "www.trellix.com",
+            "tokenized": [
+                {
+                    "sent": "A new wave of suspected activity conducted by the DarkHotel advanced persistent threat (APT) group has been disclosed by researchers.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "DarkHotel is a South Korean APT that uses tailored spear phishing attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "DarkHotel's campaign began with a spear phishing email sent to appear to be from the \"Macao Government Tourism Office\" to management staff in the luxury hotels, including front office and HR employees, who were likely to have access to guest booking systems.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Last week, Trellix researchers Thibault Seret and John Fokker said that a malicious campaign has been targeting luxury hotels in Macao, China since November 2021, and based on clues in the attack vector and malware used, the team suspects DarkHotel is the culprit.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The APT has been active in the hospitality, government, automotive, and pharmaceutical industries since at least 2007 and tends to focus on surveillance and data theft, with business and industry leaders marked as targets.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Trellix has attributed the attacks to DarkHotel with a \"moderate\" level of confidence, based on IP addresses already linked to the APT and \"known development patterns\" clues hidden in the malware's C2 server.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.zdnet.com/article/suspected-darkhotel-apt-resurgence-targets-luxury-chinese-hotels/",
+            "content": "DarkHotel, a suspected South Korean advanced persistent threat (APT) group, is known for targeting law enforcement, pharmaceuticals and automotive manufacturers, along with other industries. Given the difference in threat actor TTPs, we believe with a high level of confidence that this phishing campaign is not related to the suspected DarkHotel campaign described in this blog. In our research we came across the following pieces of evidence that supports the possible DarkHotel attribution: The IP mentioned has been attributed to DarkHotel C2 activity by the cybersecurity community The targeted sector and the country fit within the DarkHotel target profile The Command-and-Control panel presents known development patterns attributed to DarkHotel APT. Then, to enable communication with the Command-and-Control server used to exfiltrate victim data, macros are using a known lolbas (Living Off the Land Binaries and Scripts) technique to perform PowerShell command lines as trusted script:An external report written in late December 2021 by the Zscaler’s research team talked about APT DarkHotel activity with a detailed analysis of a new attack chain. We will detail the suspected DarkHotel technical behavior in this specific campaign.",
+            "domain": "www.zdnet.com",
+            "tokenized": [
+                {
+                    "sent": "DarkHotel, a suspected South Korean advanced persistent threat (APT) group, is known for targeting law enforcement, pharmaceuticals and automotive manufacturers, along with other industries.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Given the difference in threat actor TTPs, we believe with a high level of confidence that this phishing campaign is not related to the suspected DarkHotel campaign described in this blog.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In our research we came across the following pieces of evidence that supports the possible DarkHotel attribution: The IP mentioned has been attributed to DarkHotel C2 activity by the cybersecurity community The targeted sector and the country fit within the DarkHotel target profile The Command-and-Control panel presents known development patterns attributed to DarkHotel APT",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Then, to enable communication with the Command-and-Control server used to exfiltrate victim data, macros are using a known lolbas (Living Off the Land Binaries and Scripts) technique to perform PowerShell command lines as trusted script:An external report written in late December 2021 by the Zscaler’s research team talked about APT DarkHotel activity with a detailed analysis of a new attack chain.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We will detail the suspected DarkHotel technical behavior in this specific campaign.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://securelist.com/darkhotels-attacks-in-2015/71713/",
+            "content": "DarkHotel is an advanced persistent threat (APT) group based out of South Korea that has been active since at least 2007. In November 2021, ThreatLabz identified a previously undocumented variant of an attack chain used by the South Korea-based Dark Hotel APT group. In this blog, we describe our new findings in detail, including technical analysis of the attack chain and its components as well as the C2 infrastructure analysis. The new activity on their infrastructure aligns with the type of targets chosen by this threat actor in the past. They are known to target senior business executives by uploading malicious code to their computers through infiltrated hotel WiFi networks, as well as through spear-phishing and P2P attacks. We attribute this attack chain to the Dark Hotel APT group with a high level of confidence due to the below reasons: The multi-layer malicious document which drops a scriptlet post-exploitation.",
+            "domain": "securelist.com",
+            "tokenized": [
+                {
+                    "sent": "DarkHotel is an advanced persistent threat (APT) group based out of South Korea that has been active since at least 2007.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "In November 2021, ThreatLabz identified a previously undocumented variant of an attack chain used by the South Korea-based Dark Hotel APT group.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In this blog, we describe our new findings in detail, including technical analysis of the attack chain and its components as well as the C2 infrastructure analysis.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The new activity on their infrastructure aligns with the type of targets chosen by this threat actor in the past.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "They are known to target senior business executives by uploading malicious code to their computers through infiltrated hotel WiFi networks, as well as through spear-phishing and P2P attacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We attribute this attack chain to the Dark Hotel APT group with a high level of confidence due to the below reasons: The multi-layer malicious document which drops a scriptlet post-exploitation.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

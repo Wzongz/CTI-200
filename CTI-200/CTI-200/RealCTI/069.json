@@ -1,0 +1,127 @@
+{
+    "event_id": "069",
+    "claim": "Gamaredon hackers target Ukrainian military orgs amid counteroffensive efforts.",
+    "original_label": "true",
+    "label": "true",
+    "explain": "The Moscow-backed hacking group known as Gamaredon is ramping up its attacks on Ukraine's military and government agencies amid the country’s long-awaited counteroffensive. Ukraine's push is seen as a pivotal phase in the ongoing war. Western allies, including the U.S., are closely monitoring the country's military advancements, providing weapons to aid Kyiv's efforts. But Russia is trying to disrupt Ukraine's offensive operation both on the battlefield and in cyberspace. Gamaredon hackers, in particular, have recently stepped up their efforts against Ukrainian military organizations and government entities, according to a report published Thursday by Ukraine’s National Coordination Center for Cybersecurity (NCCC). Gamaredon operates from the Russian-annexed Crimean peninsula and acts on orders from Russia’s Federal Security Service (FSB) in Moscow. The primary objectives of its attacks are espionage and data theft, according to cybersecurity experts and government officials. In a previous report, the Ukrainian computer emergency response team (CERT-UA), said that the group has also been linked to at least one destructive cyberattack against an unspecified information infrastructure facility. Read More: GRU hacking tools targeting Ukrainian military devices detailed by Five Eyes Before Ukraine's counteroffensive began in June of this year, Gamaredon prepared its infrastructure to launch cyberattacks by registering new domains and subdomains. This infrastructure was later used to target Ukrainian military and security organizations, NCCC said. To hide its activity from targets and researchers, the group’s malware retrieves domain names from legitimate services such as Cloudflare, Telegram, and Telegraph instead of using its real IP addresses. The Ukrainian government is considering restricting the use of Telegram and Telegraph services to better detect activity from threat actors like Gamaredon, according to NCCC. Gamaredon phishing campaigns stand out due to their use of legitimate documents stolen from compromised entities. The malicious emails are often disguised as reports or official communications, according to NCCC. Gamaredon’s malware toolkit includes GammaDrop, GammaLoad, GammaSteel and LakeFlash, but it is constantly evolving. One of the group’s most distinctive malware strains is Pterodo — a multipurpose tool designed for espionage and data exfiltration. Ukrainian researchers called it “a potent threat, capable of infiltrating and compromising targeted systems with precision.” While Gamaredon is not the most technically advanced hacking group targeting Ukraine, “the growing frequency of their attacks suggest an expansion in the hacker's operational capacity and resources,” the research said. “The alignment of their activities with critical military events amplifies the group’s potential impact.”\n\n\n",
+    "reports": [
+        {
+            "link": "https://www.bleepingcomputer.com/news/security/gamaredon-hackers-start-stealing-data-30-minutes-after-a-breach/",
+            "content": "Any USB sticks inserted on the ports of an infected computer will also be automatically infected with Gamaredon's initial compromise payloads, potentially furthering the breach to isolated networks. At this time, CERT-UA says the best way to limit the effectiveness of Gamaredon attacks is to block or restrict the unauthorized execution of mshta.exe, wscript.exe, cscript.exe, and powershell.exe. Gamaredon attacks commonly start with an email or message sent to targets via Telegram, WhatsApp, Signal, or other IM apps. Gamaredon, aka Armageddon, UAC-0010, and Shuckworm, is a Russian, state-sponsored cyber-espionage hacking group with cybersecurity researchers linking them to the FSB (Russian Federal Security Service) and having members who are former SSU officers who defected to Russia in 2014. Since the start of the Russian invasion, the threat actors are believed to be responsible for thousands of attacks against the government and other critical public and private organizations in Ukraine. Ukraine's Computer Emergency Response Team (CERT-UA) is warning that the Gamaredon hacking operates in rapid attacks, stealing data from breached systems in under an hour.",
+            "domain": "www.bleepingcomputer.com",
+            "tokenized": [
+                {
+                    "sent": "Any USB sticks inserted on the ports of an infected computer will also be automatically infected with Gamaredon's initial compromise payloads, potentially furthering the breach to isolated networks.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "At this time, CERT-UA says the best way to limit the effectiveness of Gamaredon attacks is to block or restrict the unauthorized execution of mshta.exe, wscript.exe, cscript.exe, and powershell.exe.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Gamaredon attacks commonly start with an email or message sent to targets via Telegram, WhatsApp, Signal, or other IM apps.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Gamaredon, aka Armageddon, UAC-0010, and Shuckworm, is a Russian, state-sponsored cyber-espionage hacking group with cybersecurity researchers linking them to the FSB (Russian Federal Security Service) and having members who are former SSU officers who defected to Russia in 2014.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Since the start of the Russian invasion, the threat actors are believed to be responsible for thousands of attacks against the government and other critical public and private organizations in Ukraine.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Ukraine's Computer Emergency Response Team (CERT-UA) is warning that the Gamaredon hacking operates in rapid attacks, stealing data from breached systems in under an hour.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://therecord.media/russia-backed-hacker-group-gamaredon-attacking-ukraine-with-info-stealing-malware/",
+            "content": "Gamaredon has been noted by ESET researcher Robert Lipovsky to have escalated malware development and phishing operations this year, while CERT-UA said that the group has also continuously evolved its tools and tactics in an effort to better bypass detection. Phishing messages delivered via compromised messaging accounts are typically used by Gamaredon to achieve initial access before leveraging the GammaSteel information-stealing malware to facilitate data exfiltration within 30 to 50 minutes, according to CERT-UA.While lacking in sophistication, Gamaredon has become a formidable threat due to its persistence, said Symantec threat intelligence analyst Dick O'Brien. Ukraine has been facing a continuous onslaught of attacks against its state services from Russian hacking group Gamaredon, also known as Armageddon, with the country's Computer Emergency Response Team noting the group's targeting of an information infrastructure facility and thousands of government computers, according to The Record, a news site by cybersecurity firm Recorded Future.",
+            "domain": "therecord.media",
+            "tokenized": [
+                {
+                    "sent": "Gamaredon has been noted by ESET researcher Robert Lipovsky to have escalated malware development and phishing operations this year, while CERT-UA said that the group has also continuously evolved its tools and tactics in an effort to better bypass detection.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Phishing messages delivered via compromised messaging accounts are typically used by Gamaredon to achieve initial access before leveraging the GammaSteel information-stealing malware to facilitate data exfiltration within 30 to 50 minutes, according to CERT-UA.While lacking in sophistication, Gamaredon has become a formidable threat due to its persistence, said Symantec threat intelligence analyst Dick O'Brien.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Ukraine has been facing a continuous onslaught of attacks against its state services from Russian hacking group Gamaredon, also known as Armageddon, with the country's Computer Emergency Response Team noting the group's targeting of an information infrastructure facility and thousands of government computers, according to The Record, a news site by cybersecurity firm Recorded Future.",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.scmagazine.com/brief/ukraine-subjected-to-intensified-gamaredon-attacks/",
+            "content": "According to the report, Gamaredon hackers have evolved throughout the war, improving their tactics and redeveloping used malware variants to stay undetected. Gamaredon's most popular targets include government organizations, critical infrastructure facilities, and Ukraine’s defense, security, and law enforcement agencies. In its recent campaigns against Ukraine, Gamaredon used variants of PowerShell info-stealer malware known as GammaLoad and GammaSteel. The Russian-sponsored hacker group known as Gamaredon continues to attack Ukrainian organizations and remains one of the “key cyber threats” for Ukraine’s cyberspace, according to a report the Ukrainian government published Wednesday. Ukraine claims that Gamaredon operates from the city of Sevastopol in Russia-occupied Crimea, but acts on orders from the FSB Center for Information Security in Moscow. Ukraine’s computer emergency response team, CERT-UA, told The Record that Gamaredon is responsible for the largest number of cyberattacks on Ukraine.",
+            "domain": "www.scmagazine.com",
+            "tokenized": [
+                {
+                    "sent": "According to the report, Gamaredon hackers have evolved throughout the war, improving their tactics and redeveloping used malware variants to stay undetected.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Gamaredon's most popular targets include government organizations, critical infrastructure facilities, and Ukraine’s defense, security, and law enforcement agencies.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In its recent campaigns against Ukraine, Gamaredon used variants of PowerShell info-stealer malware known as GammaLoad and GammaSteel.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Russian-sponsored hacker group known as Gamaredon continues to attack Ukrainian organizations and remains one of the “key cyber threats” for Ukraine’s cyberspace, according to a report the Ukrainian government published Wednesday.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Ukraine claims that Gamaredon operates from the city of Sevastopol in Russia-occupied Crimea, but acts on orders from the FSB Center for Information Security in Moscow.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Ukraine’s computer emergency response team, CERT-UA, told The Record that Gamaredon is responsible for the largest number of cyberattacks on Ukraine.",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://blog.eclecticiq.com/three-cases-of-cyber-attacks-on-the-security-service-of-ukraine-and-nato-allies-likely-by-russian-state-sponsored-gamaredon/",
+            "content": "Although there is no clear proof that western support prompted cyberattacks, a spokesperson for Latvia’s Ministry of Defense confirmed that the latest attack was “most likely” linked to Gamaredon, although the investigation is still ongoing (7). Chances about even that Gamaredon group choose this infrastructure on Russian soil to avoid being defaced by law enforcement or disruption of their offensive operations by VPS service provider. For that purpose, the capabilities of the existing cyber units have been strengthened and threat actors like Gamaredon are actively involved in organizing and conducting cyberattacks. Multiple overlaps between these incidents and previous attacks of the Gamaredon APT group (4), such as command and control infrastructures and adversary techniques, helped analysts to highly likely attribute these latest attacks to the Gamaredon group. Palo Alto Networks linked the activity cluster to Gamaredon - a threat actor that the Ukrainian government attributed to Russia's Federal Security Service (FSB). The latest military supports from western NATO allies to the Ukrainian army, like the confirmation of the sending Patriot missile system and calls from Latvia on Germany to send Leopard tanks to Ukraine (1), highly likely have increased the will to carry out the cyberattacks done by Russian state-sponsored APT group Gamaredon.",
+            "domain": "blog.eclecticiq.com",
+            "tokenized": [
+                {
+                    "sent": "Although there is no clear proof that western support prompted cyberattacks, a spokesperson for Latvia’s Ministry of Defense confirmed that the latest attack was “most likely” linked to Gamaredon, although the investigation is still ongoing (7).",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Chances about even that Gamaredon group choose this infrastructure on Russian soil to avoid being defaced by law enforcement or disruption of their offensive operations by VPS service provider.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "For that purpose, the capabilities of the existing cyber units have been strengthened and threat actors like Gamaredon are actively involved in organizing and conducting cyberattacks.",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Multiple overlaps between these incidents and previous attacks of the Gamaredon APT group (4), such as command and control infrastructures and adversary techniques, helped analysts to highly likely attribute these latest attacks to the Gamaredon group.",
+                    "is_evidence": 0,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Palo Alto Networks linked the activity cluster to Gamaredon - a threat actor that the Ukrainian government attributed to Russia's Federal Security Service (FSB).",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The latest military supports from western NATO allies to the Ukrainian army, like the confirmation of the sending Patriot missile system and calls from Latvia on Germany to send Leopard tanks to Ukraine (1), highly likely have increased the will to carry out the cyberattacks done by Russian state-sponsored APT group Gamaredon.",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}
